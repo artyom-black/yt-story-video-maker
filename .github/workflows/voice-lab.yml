@@ -1,0 +1,76 @@
+name: Voice lab (try voices)
+
+# Makes voice samples with Chatterbox-Turbo and saves them to the "voice-samples" branch.
+# Only started by hand. Does not touch anything else.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: voice-lab
+  cancel-in-progress: false
+
+jobs:
+  lab:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      TTS_DIR: ${{ github.workspace }}/tools/tts
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Voice tools cache (Kokoro + espeak)
+        id: tools
+        uses: actions/cache@v4
+        with:
+          path: tools
+          key: tools-kokoro1.0-piper2023.11.14-2
+
+      - name: Download voice tools (only when not cached)
+        if: steps.tools.outputs.cache-hit != 'true'
+        run: |
+          set -e
+          mkdir -p tools/tts && G="https://github.com"
+          curl -sSfL -o tools/tts/kokoro-v1.0.int8.onnx "$G/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.int8.onnx"
+          curl -sSfL -o tools/tts/voices-v1.0.bin "$G/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin"
+          curl -sSfL "$G/rhasspy/piper/releases/download/2023.11.14-2/piper_linux_x86_64.tar.gz" | tar xz -C tools/tts
+          chmod +x tools/tts/piper/espeak-ng
+
+      - name: Reference clips (Kokoro)
+        run: |
+          pip install -q numpy onnxruntime
+          python -m maker.voice_lab work/refs work/jobs.json
+
+      - name: Model cache (Chatterbox-Turbo)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-chatterbox-turbo-v1
+
+      - name: Chatterbox-Turbo (own environment)
+        run: |
+          python -m venv .venv-tts
+          .venv-tts/bin/pip install -q chatterbox-tts --extra-index-url https://download.pytorch.org/whl/cpu
+
+      - name: Perform all lines
+        run: .venv-tts/bin/python maker/voice_lab_cb.py work/jobs.json work/out
+
+      - name: Save samples to the voice-samples branch
+        run: |
+          set -e
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          mkdir -p pub
+          for f in work/out/*.wav; do ffmpeg -loglevel error -y -i "$f" -b:a 128k "pub/$(basename "${f%.wav}").mp3"; done
+          cp work/out/jobs.json pub/
+          cd pub
+          git init -q -b voice-samples
+          git config user.name "voice-lab"
+          git config user.email "voice-lab@users.noreply.github.com"
+          git add -A && git commit -q -m "Voice samples (run ${{ github.run_number }})"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" voice-samples
