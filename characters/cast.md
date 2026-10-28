@@ -28,7 +28,7 @@ See `acting.png` (every expression, per character) and `python -m maker.showcase
 | | KAI | IRIS | BOB |
 |---|---|---|---|
 | Role | The curious one: asks what the viewer is thinking | The smart one: explains, sometimes overconfident | The clueless one: dumb questions, gets everything wrong, lovable |
-| Never changes | Short black crop with a textured fringe, burnt-orange hoodie with pocket, dark jeans, dark sneakers | Dark brown ponytail, rectangular glasses, teal jacket over white tee, black jeans, white sneakers | Olive beanie with messy brown hair poking out, no beard, round face, dopey grin, red flannel shirt open over a mustard tee, blue jeans, brown boots, bigger build |
+| Never changes | Black wolf cut (shaggy layers, choppy bangs, longer at the sides), burnt-orange hoodie with pocket, dark jeans, dark sneakers | Dark brown ponytail, rectangular glasses, teal jacket over white tee, black jeans, white sneakers | Olive beanie with messy brown hair poking out, no beard, round face, dopey grin, red flannel shirt open over a mustard tee, blue jeans, brown boots, bigger build |
 | Colour | Burnt orange #C8642B | Teal #2F7F78 | Red flannel #8C3B2E / mustard #D6B04A |
 | Typical line | "Wait, why is everyone wearing bedsheets?" | "Those are togas. And we have 24 hours." | "Wait, the sun is a star? Since when?" |
 

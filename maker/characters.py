@@ -382,11 +382,14 @@ def _kai(c, face):
     body = (_torso(c) + hood + _line("M-12 -486 L-14 -440 M12 -486 L14 -440", 3)
             + f'<path d="M-34 -340 L34 -340 L40 -290 L-40 -290 Z" fill="{c["top_shade"]}" '
               f'stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>')
-    # short crop: close to the head, short textured fringe with a side part
-    hair = (f'<path d="M-58 -588 Q-66 -656 0 -658 Q66 -656 58 -588 Q54 -616 40 -624 '
-            f'Q30 -616 18 -622 Q8 -614 -4 -621 Q-16 -613 -28 -620 Q-40 -612 -50 -616 Q-56 -604 -58 -588 Z" '
+    # wolf cut: shaggy layered volume on top, choppy bangs, longer layers flaring out at the sides
+    hair = (f'<path d="M-60 -536 L-71 -560 L-62 -565 L-75 -592 L-64 -598 L-73 -628 Q-60 -676 0 -678 '
+            f'Q60 -676 73 -628 L64 -598 L75 -592 L62 -565 L71 -560 L60 -536 L53 -562 L56 -606 '
+            f'L47 -628 L40 -614 L30 -627 L20 -613 L10 -627 L0 -614 L-10 -627 L-20 -613 L-30 -627 '
+            f'L-40 -614 L-47 -628 L-56 -606 L-53 -562 Z" '
             f'fill="{c["hair"]}" stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>'
-            + _line("M14 -655 Q8 -640 12 -626", 3, "#4a4a52"))
+            + _line("M-34 -660 Q-8 -672 22 -664", 3, "#4a4a52") + _line("M-62 -600 Q-58 -620 -52 -634", 3, "#4a4a52")
+            + _line("M62 -600 Q58 -620 52 -634", 3, "#4a4a52"))
     return body, _head(c, "", hair + eyes + brows + _nose() + mouth)
 
 
