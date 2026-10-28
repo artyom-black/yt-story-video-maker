@@ -23,7 +23,7 @@ CAST = {
         "skin": "#e8b894", "hair": "#1f1f22",
         "top": "#c8642b", "top_shade": "#a6501f",
         "pants": "#2f3b55", "shoes": "#2a2a2e", "shoe_accent": "#c8642b",
-        "half_w": 58, "label": "#c8642b",
+        "half_w": 58, "label": "#c8642b", "hairstyle": "sideswept",
         # signature eyebrows: (inner, middle, outer) offsets, per side (screen-left, screen-right)
         "brows": ((0, -7, 1), (0, -7, 1)),
         "mouth": "smile",
@@ -382,7 +382,7 @@ def _kai(c, face):
     body = (_torso(c) + hood + _line("M-12 -486 L-14 -440 M12 -486 L14 -440", 3)
             + f'<path d="M-34 -340 L34 -340 L40 -290 L-40 -290 Z" fill="{c["top_shade"]}" '
               f'stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>')
-    hair = KAI_HAIR[c.get("hairstyle", "curly")](c["hair"])
+    hair = KAI_HAIR[c.get("hairstyle", "sideswept")](c["hair"])
     return body, _head(c, "", hair + eyes + brows + _nose() + mouth)
 
 

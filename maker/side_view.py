@@ -151,12 +151,11 @@ def _profile_head(name, c, expression, talking, blink=False):
 
     if name == "KAI":
         back = ""
-        # wolf cut in profile: shaggy crown, choppy fringe, longer layers at the nape
-        hair = (f'<path d="M-50 -528 L-62 -548 L-53 -553 L-67 -580 L-56 -586 L-64 -622 Q-52 -668 4 -672 '
-                f'Q56 -670 66 -622 L57 -618 L51 -628 L43 -614 L35 -627 L26 -613 L14 -624 Q0 -614 -14 -606 '
-                f'Q-24 -592 -30 -578 L-36 -556 L-40 -536 Z" fill="{c["hair"]}" stroke="{INK}" '
+        # side-swept fringe in profile: smooth crown, fringe sweeping forward over the brow
+        hair = (f'<path d="M-50 -552 Q-66 -650 0 -664 Q52 -668 66 -626 Q70 -606 60 -598 Q50 -612 34 -616 '
+                f'Q14 -620 -6 -608 Q-26 -596 -36 -578 Q-44 -566 -50 -552 Z" fill="{c["hair"]}" stroke="{INK}" '
                 f'stroke-width="{LW}" stroke-linejoin="round"/>'
-                + _line("M-40 -650 Q-6 -668 30 -660", 3, "#4a4a52"))
+                + _line("M-30 -644 Q10 -662 52 -640", 3, "#4a4a52"))
         extra = ""
     elif name == "IRIS":
         back = (f'<path d="M-40 -636 C-120 -640 -128 -560 -104 -520 C-100 -560 -80 -590 -46 -596 Z" '
