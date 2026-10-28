@@ -190,7 +190,9 @@ def _check(st: Story) -> None:
         if not s.lines:
             E(f"{tag}: no spoken lines")
         for l in s.lines:
-            if l.speaker != "NARRATOR" and l.speaker not in s.cast:
+            if l.speaker == "NARRATOR":
+                E(f"{tag}: no narrator in this show, give the line to KAI, IRIS or BOB")
+            elif l.speaker not in s.cast:
                 E(f"{tag}: {l.speaker} speaks but is not in CAST")
         if s.lines and s.words < 15:
             W(f"{tag}: only {s.words} words; very short scenes can feel choppy")

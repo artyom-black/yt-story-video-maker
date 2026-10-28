@@ -39,7 +39,6 @@ MOOD: curious
 CAMERA: zoom-in
 MUSIC: mystery
 SFX: crowd
-NARRATOR: You wake up. The air smells like smoke and bread. And someone is yelling at you in Latin.
 KAI: Uh... why is everyone wearing bedsheets?
 IRIS: Those are togas, Kai. And we have exactly twenty-four hours to survive here.
 ```
@@ -54,7 +53,7 @@ IRIS: Those are togas, Kai. And we have exactly twenty-four hours to survive her
 | CAMERA | no (default `still`) | `still`, `zoom-in`, `zoom-out`, `pan-left`, `pan-right`, `shake`, `slow-push` |
 | MUSIC | no (keeps previous) | `mystery`, `tension`, `action`, `comedy`, `sad`, `epic`, `calm`, `none` |
 | SFX | no | Comma separated: `crowd`, `whoosh`, `boom`, `swords`, `thunder`, `wind`, `fire`, `footsteps`, `water`, `ding`, `gasp`, `heartbeat` |
-| NARRATOR / name | at least 1 line | Spoken lines, in order. Speaker must be `NARRATOR` or someone in CAST. |
+| KAI / IRIS / BOB / backup name | at least 1 line | Spoken lines, in order. Speaker must be in that scene's CAST. There is no narrator: the trio tells the whole story (Iris explains the facts). |
 
 ## 3. Rules the checker enforces
 
@@ -62,7 +61,7 @@ IRIS: Those are togas, Kai. And we have exactly twenty-four hours to survive her
 - At least one `twist` every 12 scenes (roughly every 2-3 minutes), so viewers never feel safe leaving.
 - A scene should be short: 15-70 spoken words. Short scenes mean the picture changes often.
 - Total spoken words between 1,400 and 2,800, which is roughly 10-20 minutes of video.
-- Every speaker must be NARRATOR or someone listed in that scene's CAST.
+- Every speaker must be listed in that scene's CAST. There is no narrator.
 
 Problems are reported as **errors** (the video will not be made) or **warnings**
 (the video is made, but the story may be weaker).
