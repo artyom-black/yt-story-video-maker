@@ -12,10 +12,10 @@
     <rect x="-26" y="-380" width="52" height="80" rx="10" fill="#f5c9a3"/>
     <!-- legs -->
     <path d="M-38 -150 L-48 -32 M38 -150 L50 -32" fill="none" stroke-width="50"/>
-    <path d="M-38 -150 L-48 -32 M38 -150 L50 -32" fill="none" stroke="#2f3a66" stroke-width="36"/>
+    <path d="M-38 -150 L-48 -32 M38 -150 L50 -32" fill="none" stroke="#4a78c2" stroke-width="36"/>
     <!-- sneakers -->
-    <path d="M-95 -2 Q-100 -40 -60 -42 L-25 -40 Q-15 -10 -30 -2 Z" fill="#ffffff"/>
-    <path d="M95 -2 Q100 -40 60 -42 L25 -40 Q15 -10 30 -2 Z" fill="#ffffff"/>
+    <path d="M-95 -2 Q-100 -40 -60 -42 L-25 -40 Q-15 -10 -30 -2 Z" fill="#3b3b45"/>
+    <path d="M95 -2 Q100 -40 60 -42 L25 -40 Q15 -10 30 -2 Z" fill="#3b3b45"/>
     <path d="M-80 -16 L-35 -16 M80 -16 L35 -16" fill="none" stroke="#ff7a1a" stroke-width="7"/>
     <!-- hoodie -->
     <path d="M-82 -300 Q-104 -210 -88 -140 Q0 -122 88 -140 Q104 -210 82 -300 Q0 -338 -82 -300 Z" fill="#ff7a1a"/>
@@ -135,31 +135,28 @@
     <circle cx="126" cy="-465" r="22" fill="#e9b28a"/>
     <circle cx="0" cy="-470" r="125" fill="#e9b28a"/>
     <!-- beanie with a flopped pom-pom, hair tuft poking out -->
-    <path d="M-70 -528 Q-92 -515 -78 -495 M-45 -528 Q-58 -510 -40 -496" fill="none" stroke="#c46a1d" stroke-width="10"/>
+    
     <path d="M-122 -540 Q-122 -640 0 -643 Q122 -640 122 -540 Z" fill="#2e9d4f"/>
     <rect x="-130" y="-560" width="260" height="34" rx="14" fill="#25803f"/>
     <path d="M70 -630 Q120 -660 140 -620" fill="none" stroke-width="7"/>
     <circle cx="150" cy="-610" r="24" fill="#2e9d4f"/>
-    <!-- goofy eyes: same style as the others, pupils wandering in different directions -->
-    <ellipse cx="-44" cy="-450" rx="33" ry="41" fill="#fff"/>
-    <ellipse cx="46" cy="-450" rx="33" ry="41" fill="#fff"/>
-    <circle cx="-30" cy="-440" r="17" fill="#1d1d1f" stroke="none"/>
-    <circle cx="36" cy="-466" r="17" fill="#1d1d1f" stroke="none"/>
-    <circle cx="-25" cy="-446" r="5" fill="#fff" stroke="none"/>
-    <circle cx="41" cy="-472" r="5" fill="#fff" stroke="none"/>
-    <!-- wiggly happy eyebrows -->
-    <path d="M-80 -500 Q-64 -516 -48 -504 Q-34 -494 -18 -508" fill="none" stroke-width="10"/>
-    <path d="M18 -512 Q34 -526 50 -512 Q64 -500 82 -514" fill="none" stroke-width="10"/>
-    <!-- nose -->
-    <circle cx="2" cy="-405" r="16" fill="#f0957a"/>
-    <!-- huge laughing mouth, missing tooth, tongue out -->
-    <path d="M-78 -380 Q0 -262 80 -380 Q0 -362 -78 -380 Z" fill="#8a2c2c"/>
-    <path d="M-56 -372 Q0 -356 58 -372 L54 -360 Q0 -346 -52 -360 Z" fill="#fff" stroke-width="5"/>
-    <rect x="6" y="-362" width="12" height="14" fill="#8a2c2c" stroke="none"/>
-    <path d="M10 -328 Q30 -300 48 -330 Q30 -322 10 -328 Z" fill="#ff8aa0" stroke-width="5"/>
-    <circle cx="-84" cy="-392" r="16" fill="#f29b8a" stroke="none" opacity=".75"/>
-    <circle cx="88" cy="-392" r="16" fill="#f29b8a" stroke="none" opacity=".75"/>
-    
+    <!-- friendly, cheeky face -->
+    <ellipse cx="-44" cy="-452" rx="31" ry="38" fill="#fff"/>
+    <ellipse cx="46" cy="-452" rx="31" ry="38" fill="#fff"/>
+    <circle cx="-40" cy="-450" r="17" fill="#1d1d1f" stroke="none"/>
+    <circle cx="50" cy="-450" r="17" fill="#1d1d1f" stroke="none"/>
+    <circle cx="-34" cy="-457" r="5" fill="#fff" stroke="none"/>
+    <circle cx="56" cy="-457" r="5" fill="#fff" stroke="none"/>
+    <!-- one eyebrow up: always about to make a joke -->
+    <path d="M-78 -506 Q-48 -516 -18 -504" fill="none" stroke-width="10"/>
+    <path d="M18 -514 Q50 -540 82 -516" fill="none" stroke-width="10"/>
+    <circle cx="2" cy="-408" r="15" fill="#f0957a"/>
+    <!-- big happy grin -->
+    <path d="M-64 -384 Q0 -300 66 -384 Q0 -368 -64 -384 Z" fill="#8a2c2c"/>
+    <path d="M-50 -378 Q0 -366 52 -378 L48 -366 Q0 -356 -46 -366 Z" fill="#fff" stroke-width="5"/>
+    <path d="M-68 -390 Q-74 -382 -66 -376 M68 -390 Q74 -382 66 -376" fill="none" stroke-width="5"/>
+    <circle cx="-84" cy="-396" r="16" fill="#f29b8a" stroke="none" opacity=".7"/>
+    <circle cx="88" cy="-396" r="16" fill="#f29b8a" stroke="none" opacity=".7"/>
     <!-- the fly that follows Bob everywhere -->
     <path d="M-175 -640 q30 -30 60 0 q30 30 55 -5" fill="none" stroke="#55524c" stroke-width="3" stroke-dasharray="6 9"/>
     <ellipse cx="-66" cy="-648" rx="10" ry="7" fill="#1d1d1f" stroke="none"/>
