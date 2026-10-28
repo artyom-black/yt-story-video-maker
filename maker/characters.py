@@ -382,11 +382,11 @@ def _kai(c, face):
     body = (_torso(c) + hood + _line("M-12 -486 L-14 -440 M12 -486 L14 -440", 3)
             + f'<path d="M-34 -340 L34 -340 L40 -290 L-40 -290 Z" fill="{c["top_shade"]}" '
               f'stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>')
-    hair = (f'<path d="M-58 -588 Q-64 -652 0 -654 Q64 -652 58 -588 Q52 -618 32 -624 L24 -604 L10 -628 '
-            f'L-6 -606 L-22 -630 L-34 -608 Q-54 -614 -58 -588 Z" fill="{c["hair"]}" stroke="{INK}" '
-            f'stroke-width="{LW}" stroke-linejoin="round"/>'
-            f'<path d="M-4 -652 C-10 -688 24 -702 42 -688 C24 -686 18 -672 16 -652 Z" fill="{c["hair"]}" '
-            f'stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>')
+    # swept-up quiff: volume on top, fringe swooping to one side
+    hair = (f'<path d="M-60 -580 Q-72 -650 -24 -682 Q20 -706 56 -678 Q72 -652 57 -592 '
+            f'Q58 -622 44 -632 Q18 -612 -14 -622 Q-40 -616 -52 -600 Q-58 -592 -60 -580 Z" '
+            f'fill="{c["hair"]}" stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>'
+            + _line("M-30 -660 Q4 -684 40 -664", 3.5, "#4a4a52") + _line("M-40 -640 Q-4 -660 34 -646", 3.5, "#4a4a52"))
     return body, _head(c, "", hair + eyes + brows + _nose() + mouth)
 
 

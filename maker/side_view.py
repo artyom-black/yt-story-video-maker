@@ -151,13 +151,11 @@ def _profile_head(name, c, expression, talking, blink=False):
 
     if name == "KAI":
         back = ""
-        hair = (f'<path d="M-50 -556 Q-64 -650 2 -654 Q52 -654 58 -604 Q44 -622 24 -614 L18 -632 '
-                f'L4 -610 L-10 -634 L-22 -608 Q-36 -596 -50 -556 Z" fill="{c["hair"]}" stroke="{INK}" '
-                f'stroke-width="{LW}" stroke-linejoin="round"/>'
-                f'<path d="M-46 -612 L-72 -622 L-52 -596 L-74 -592 L-50 -572" fill="{c["hair"]}" '
-                f'stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>'
-                f'<path d="M-6 -652 C-14 -688 20 -704 40 -690 C22 -688 16 -672 14 -652 Z" fill="{c["hair"]}" '
-                f'stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>')
+        # swept-up quiff in profile: volume rising towards the front
+        hair = (f'<path d="M-50 -556 Q-68 -640 -30 -672 Q14 -704 62 -680 Q80 -664 70 -640 '
+                f'Q60 -626 46 -626 Q24 -614 2 -620 Q-20 -616 -30 -600 Q-40 -584 -50 -556 Z" '
+                f'fill="{c["hair"]}" stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>'
+                + _line("M-34 -650 Q10 -684 56 -668", 3.5, "#4a4a52"))
         extra = ""
     elif name == "IRIS":
         back = (f'<path d="M-40 -636 C-120 -640 -128 -560 -104 -520 C-100 -560 -80 -590 -46 -596 Z" '
