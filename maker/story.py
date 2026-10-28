@@ -16,7 +16,7 @@ CAMERAS = {"still", "zoom-in", "zoom-out", "pan-left", "pan-right", "shake", "sl
 MUSIC = {"mystery", "tension", "action", "comedy", "sad", "epic", "calm", "none"}
 SFX = {"crowd", "whoosh", "boom", "swords", "thunder", "wind", "fire",
        "footsteps", "water", "ding", "gasp", "heartbeat"}
-HEADER_KEYS = {"TITLE", "THUMBNAIL_TEXT", "THUMBNAIL_IDEA", "DESCRIPTION", "TAGS"}
+HEADER_KEYS = {"TITLE", "THUMBNAIL_TEXT", "THUMBNAIL_IDEA", "DESCRIPTION", "TAGS", "SOURCES"}
 SCENE_KEYS = {"BEAT", "PLACE", "CAST", "EXTRAS", "MOOD", "CAMERA", "MUSIC", "SFX"}
 
 SCENE_RE = re.compile(r"^=+\s*SCENE\s+(\d+)\s*=+$", re.I)
@@ -44,7 +44,7 @@ class Scene:
 
     @property
     def words(self) -> int:
-        return sum(len(l.text.split()) for l in self.lines)
+        return sum(len(re.sub(r"\[[a-z]+\]", "", l.text).split()) for l in self.lines)
 
 
 @dataclass
@@ -54,6 +54,7 @@ class Story:
     thumbnail_ideas: list[str] = field(default_factory=list)
     description: str = ""
     tags: list[str] = field(default_factory=list)
+    sources: list[str] = field(default_factory=list)
     scenes: list[Scene] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
     warnings: list[str] = field(default_factory=list)
@@ -116,6 +117,8 @@ def parse(text: str) -> Story:
                 st.description = val
             elif key == "TAGS":
                 st.tags = [t.strip() for t in val.split(",") if t.strip()]
+            elif key == "SOURCES":
+                st.sources = [t.strip() for t in val.split(";") if t.strip()]
             else:
                 st.warnings.append(f"line {n}: unknown header key {key}")
             continue
@@ -155,6 +158,8 @@ def _check(st: Story) -> None:
         W(f"only {len(st.thumbnail_ideas)} THUMBNAIL_IDEA lines; 3 gives you options to test")
     if not st.description:
         W("missing DESCRIPTION")
+    if not st.sources:
+        W("no SOURCES line; listing real sources helps viewers and YouTube trust the channel")
     if not st.scenes:
         E("no scenes found (each scene starts with === SCENE 1 ===)")
         return

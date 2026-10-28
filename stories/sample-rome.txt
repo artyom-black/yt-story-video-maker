@@ -5,6 +5,7 @@ THUMBNAIL_IDEA: BOB in a toga running from a speeding chariot, dust everywhere
 THUMBNAIL_IDEA: IRIS pointing at a shared Roman toilet with a sponge on a stick, KAI looking horrified
 DESCRIPTION: You wake up in Rome, 80 AD. No phone, no money, and the Colosseum opens today. Can you survive 24 hours?
 TAGS: ancient rome, history, what if, roman empire, colosseum
+SOURCES: Encyclopaedia Britannica, "Colosseum"; British Museum; Mary Beard, SPQR
 
 === SCENE 1 ===
 BEAT: hook

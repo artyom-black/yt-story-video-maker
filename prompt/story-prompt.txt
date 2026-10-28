@@ -1,0 +1,161 @@
+=====================================================================
+STORY PROMPT. Copy everything below this box into ChatGPT, Claude or
+any AI chat. Replace the topic on the first line, then send.
+=====================================================================
+
+TOPIC: [write your topic here, e.g. "We Survived 24 Hours as Medieval Peasants"]
+
+You are the head writer of a YouTube channel. Write the full script for one
+episode about the TOPIC above, in the exact file format at the end of this
+message. Output ONLY the script file, nothing before or after it.
+
+---------------------------------------------------------------------
+1. THE SHOW
+---------------------------------------------------------------------
+Three friends in their twenties keep getting dropped into the past, and
+have to survive it. Every episode is a challenge ("can they make it?")
+that secretly teaches real history and science about how people lived.
+Audience: adults 18-35 worldwide. Tone: funny, fast, a bit edgy, never
+childish. Think MrBeast pacing with the curiosity of a great explainer.
+
+There is NO narrator. The three characters tell the whole story
+themselves, through dialogue. Only these three speak:
+
+KAI (the curious one)
+- Asks what the viewer is thinking ("wait, why didn't they just...?")
+- Energetic, overreacts, jumps in first, panics loudly
+- Short, punchy lines. Lots of "Wait." "Hold on." "No way."
+
+IRIS (the smart one)
+- Knows the history and explains it clearly, in one or two sentences
+- Calm, a bit smug, dry humour, sometimes overconfident and wrong
+- She delivers the facts, so most facts come out of her mouth
+
+BOB (the clueless one)
+- Lovable and dumb. Asks the stupid question the viewer is too shy to ask
+- Misunderstands things in a funny way, gets into trouble, eats things
+- Slow to get it ("...wait, so the sun is a star?")
+
+Make them sound different from each other. Jokes come from their
+personalities bouncing off each other, not from puns.
+
+---------------------------------------------------------------------
+2. RETENTION RULES (this is what makes people watch to the end)
+---------------------------------------------------------------------
+1. THE HOOK (scene 1, first 15 seconds): open in the middle of the action,
+   state the challenge and the stakes, and promise the craziest thing we
+   will see later. No greetings, no "welcome back", no "in this video".
+2. OPEN LOOPS: keep raising a question and answering it later ("and that's
+   not even the worst part..."). Always have at least one unanswered question.
+3. A TWIST at least every 8 to 10 scenes: a surprising fact, a new danger,
+   or the plan going wrong. Mark it BEAT: twist.
+4. ESCALATION: each part must be more surprising or more dangerous than the
+   one before. Save the most shocking fact for the PEAK, near the end.
+5. MIDPOINT RE-HOOK: halfway through, remind the viewer what is still coming.
+6. NO DEAD TIME: every scene either teaches a fact, makes a joke, or raises
+   the stakes. Ideally two of those. Cut anything that does none.
+7. ENDING: pay off the promise from the hook, give one final surprising
+   fact, then end FAST (1-2 short scenes). No long goodbyes. The last line
+   can tease the next episode.
+
+---------------------------------------------------------------------
+3. FACTS (very important)
+---------------------------------------------------------------------
+- Use only well-documented historical and scientific facts.
+- Never invent dates, numbers, names or quotes. If unsure, leave it out.
+- If historians disagree, say so in character (IRIS: "Historians still
+  argue about this, but...").
+- The characters time-travelling is the only fiction. Everything they
+  learn and see must be real.
+- At the top, list 3 to 6 real, well-known sources in the SOURCES line
+  (books, museums, encyclopedias, universities).
+- Avoid graphic violence, gore and sexual content. Hint, don't show.
+
+---------------------------------------------------------------------
+4. LENGTH AND PACING
+---------------------------------------------------------------------
+- 45 to 70 scenes. Total spoken words: 1,700 to 2,600 (about 12-18 minutes).
+- Each scene: 2 to 5 lines, 20 to 60 words in total. Short scenes = the
+  picture changes often, which keeps people watching.
+- Lines are spoken out loud: write how people talk. Short sentences.
+  Contractions. Commas for pauses. No stage directions inside lines.
+- You may add sounds inside a line: [laugh] [chuckle] [sigh] [gasp]
+  (at most one per line, and only where it really fits).
+
+---------------------------------------------------------------------
+5. VISUALS (keep them simple)
+---------------------------------------------------------------------
+Everything is drawn in a simple flat cartoon style by code, so:
+- PLACE: describe where they are with 2 to 4 simple, concrete things,
+  e.g. "medieval village street, mud road, wooden huts, a pig".
+  No complicated details, no text on signs, no famous real faces.
+- Reuse places: 6 to 12 different places per episode is ideal.
+- EXTRAS: background people or animals, a few words, e.g. "peasants, chickens".
+
+---------------------------------------------------------------------
+6. TITLE AND THUMBNAIL
+---------------------------------------------------------------------
+- TITLE: max 60 characters. A challenge or a curiosity question.
+  Good: "We Survived 24 Hours as Medieval Peasants"
+  Good: "$1 vs $1,000,000 Meal in Ancient Rome"
+- THUMBNAIL_TEXT: 1 to 3 words, max 20 characters, adds to the title
+  without repeating it (e.g. "DAY 1" or "NOT SAFE").
+- 3 x THUMBNAIL_IDEA: one big character face showing a strong emotion,
+  plus ONE clear object or danger. Simple enough to understand in one
+  second on a phone.
+
+---------------------------------------------------------------------
+7. THE FILE FORMAT (follow it exactly)
+---------------------------------------------------------------------
+Plain text only. No markdown, no bold, no code blocks, no commentary.
+Header lines first, then the scenes. Every scene starts with
+=== SCENE N === (numbered 1, 2, 3...).
+
+Allowed values (use only these words):
+BEAT:   hook, setup, rise, twist, peak, payoff, outro
+MOOD:   curious, funny, tense, scary, sad, epic, calm, shock
+CAMERA: still, zoom-in, zoom-out, pan-left, pan-right, shake, slow-push
+MUSIC:  mystery, tension, action, comedy, sad, epic, calm, none
+SFX:    crowd, whoosh, boom, swords, thunder, wind, fire, footsteps,
+        water, ding, gasp, heartbeat   (0 to 2 per scene, comma separated)
+CAST:   who is on screen: KAI, IRIS, BOB (comma separated)
+
+Rules: scene 1 is BEAT: hook. The last scene is BEAT: outro. Only
+characters listed in a scene's CAST may speak in that scene. Write
+MUSIC only when it changes.
+
+Example of the format (the content is only an example):
+
+TITLE: We Survived 24 Hours as Medieval Peasants
+THUMBNAIL_TEXT: DAY 1
+THUMBNAIL_IDEA: BOB terrified, holding a dead rat by the tail, muddy village behind him
+THUMBNAIL_IDEA: KAI shocked, pointing at a bucket of brown water
+THUMBNAIL_IDEA: IRIS smug, holding a tiny piece of black bread
+DESCRIPTION: Three friends wake up in 1320 England with nothing. No money, no food, and the lord wants his taxes by sunset.
+TAGS: medieval, history, peasants, middle ages, survival
+SOURCES: British Museum; Encyclopaedia Britannica, "Peasant"; Ian Mortimer, The Time Traveller's Guide to Medieval England
+
+=== SCENE 1 ===
+BEAT: hook
+PLACE: medieval village at sunrise, mud road, wooden huts, smoke from chimneys
+CAST: KAI, IRIS, BOB
+MOOD: shock
+CAMERA: slow-push
+MUSIC: tension
+SFX: wind
+KAI: Okay. Nobody panic. But I'm pretty sure we're in the year thirteen twenty.
+IRIS: And if we don't pay the lord his tax by sunset, we lose the hut. Which we don't have.
+BOB: Do they have pizza in thirteen twenty?
+
+=== SCENE 2 ===
+BEAT: setup
+PLACE: inside a tiny wooden hut, straw floor, a fire pit, a sleeping cow
+CAST: IRIS, BOB
+MOOD: funny
+CAMERA: zoom-in
+MUSIC: comedy
+IRIS: Good news, we found a house. Bad news, we share it with the cow.
+BOB: [gasp] We have a cow?
+IRIS: Bob, peasants slept next to their animals. The heat kept them warm in winter.
+
+(continue until the end, 45 to 70 scenes)
