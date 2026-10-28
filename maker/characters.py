@@ -382,14 +382,7 @@ def _kai(c, face):
     body = (_torso(c) + hood + _line("M-12 -486 L-14 -440 M12 -486 L14 -440", 3)
             + f'<path d="M-34 -340 L34 -340 L40 -290 L-40 -290 Z" fill="{c["top_shade"]}" '
               f'stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>')
-    # wolf cut: shaggy layered volume on top, choppy bangs, longer layers flaring out at the sides
-    hair = (f'<path d="M-60 -536 L-71 -560 L-62 -565 L-75 -592 L-64 -598 L-73 -628 Q-60 -676 0 -678 '
-            f'Q60 -676 73 -628 L64 -598 L75 -592 L62 -565 L71 -560 L60 -536 L53 -562 L56 -606 '
-            f'L47 -628 L40 -614 L30 -627 L20 -613 L10 -627 L0 -614 L-10 -627 L-20 -613 L-30 -627 '
-            f'L-40 -614 L-47 -628 L-56 -606 L-53 -562 Z" '
-            f'fill="{c["hair"]}" stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>'
-            + _line("M-34 -660 Q-8 -672 22 -664", 3, "#4a4a52") + _line("M-62 -600 Q-58 -620 -52 -634", 3, "#4a4a52")
-            + _line("M62 -600 Q58 -620 52 -634", 3, "#4a4a52"))
+    hair = KAI_HAIR[c.get("hairstyle", "curly")](c["hair"])
     return body, _head(c, "", hair + eyes + brows + _nose() + mouth)
 
 
@@ -536,6 +529,58 @@ def mouth_open(t: float, name: str) -> bool:
     seed = {"KAI": 0.0, "IRIS": 2.0, "BOB": 4.0}[name]
     v = math.sin(2 * math.pi * rate * t + seed) + 0.6 * math.sin(2 * math.pi * rate * 0.35 * t + 2 * seed)
     return v > 0.15
+
+
+# ---------------------------------------------------------------- Kai hairstyle options (front view)
+def _hair_path(d, colour, extra=""):
+    return (f'<path d="{d}" fill="{colour}" stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>' + extra)
+
+
+def _hair_curly(col):
+    """A: fluffy messy curls."""
+    pts = []
+    for i in range(11):
+        a = math.radians(196 + i * 14.8)
+        pts.append((63 * math.cos(a), -592 + 66 * math.sin(a)))
+    curls = "".join(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="17" fill="{col}" stroke="{INK}" stroke-width="{LW}"/>'
+                    for x, y in pts)
+    fill = (f'<path d="M-56 -596 Q-60 -656 0 -660 Q60 -656 56 -596 Q40 -616 0 -618 Q-40 -616 -56 -596 Z" '
+            f'fill="{col}"/>')
+    swirls = "".join(_line(f"M{x - 6:.1f} {y + 2:.1f} q6 -8 12 0", 3, "#4a4a52") for x, y in pts[2:9:2])
+    return curls + fill + swirls
+
+
+def _hair_spiky(col):
+    """B: short spikes pointing up, full of energy."""
+    return _hair_path("M-58 -592 Q-64 -640 -40 -650 L-46 -684 L-22 -658 L-14 -696 L2 -662 L18 -692 L22 -658 "
+                      "L46 -680 L40 -650 Q64 -638 58 -592 Q44 -616 0 -618 Q-44 -616 -58 -592 Z", col)
+
+
+def _hair_sideswept(col):
+    """C: side-swept fringe falling to one side."""
+    return _hair_path("M-58 -585 Q-66 -662 -4 -666 Q62 -664 60 -600 Q58 -614 46 -622 Q12 -632 -24 -614 "
+                      "Q-44 -604 -52 -580 Q-58 -580 -58 -585 Z", col,
+                      _line("M40 -650 Q4 -648 -26 -628", 3, "#4a4a52"))
+
+
+def _hair_fade(col):
+    """D: short faded sides, textured top."""
+    sides = "".join(f'<path d="M{s * 56} -606 Q{s * 60} -590 {s * 56} -572 L{s * 50} -572 L{s * 50} -606 Z" '
+                    f'fill="#55555c" opacity=".55"/>' for s in (-1, 1))
+    top = _hair_path("M-54 -606 Q-58 -664 0 -668 Q58 -664 54 -606 Q46 -626 36 -628 L28 -620 L20 -634 L10 -620 "
+                     "L0 -636 L-10 -622 L-20 -636 L-28 -622 L-38 -630 Q-48 -624 -54 -606 Z", col)
+    return sides + top
+
+
+def _hair_curtains(col):
+    """E: middle part, curtain bangs framing the face."""
+    return _hair_path("M-58 -560 Q-68 -662 0 -668 Q68 -662 58 -560 Q56 -600 40 -618 Q22 -630 4 -614 L0 -630 "
+                      "L-4 -614 Q-22 -630 -40 -618 Q-56 -600 -58 -560 Z", col,
+                      _line("M-6 -660 Q-30 -652 -44 -628", 3, "#4a4a52") + _line("M6 -660 Q30 -652 44 -628", 3, "#4a4a52"))
+
+
+KAI_HAIR = {"curly": _hair_curly, "spiky": _hair_spiky, "sideswept": _hair_sideswept,
+            "fade": _hair_fade, "curtains": _hair_curtains}
 
 
 BUILD = {"KAI": _kai, "IRIS": _iris, "BOB": _bob}
