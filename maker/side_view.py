@@ -97,12 +97,13 @@ def _eye(kind, x, y):
     return f'<ellipse cx="{x}" cy="{y}" rx="5" ry="7.5" fill="{INK}"/>'
 
 
-def _brow(kind, x, y):
+def _brow(kind, x, y, scale=1.0):
     d = {"up": (-8, -13, -5), "upup": (-14, -21, -11), "one-up": (-8, -15, -6), "angry": (-6, 0, 6),
          "one-angry": (-6, 0, 6), "worried": (5, -4, -8), "worried2": (8, -6, -13),
          "flat": (0, 0, 0)}.get(kind, (0, -6, 1))
     # drawn from the back of the brow (x - 10) to the front (x + 10)
-    return _line(f"M{x - 11} {y + d[2]} Q{x} {y + d[1]} {x + 11} {y + d[0]}", 4.5)
+    d = [v * scale for v in d]
+    return _line(f"M{x - 11} {y + d[2]:.1f} Q{x} {y + d[1]:.1f} {x + 11} {y + d[0]:.1f}", 4.5)
 
 
 def _mouth(kind, x, y, beard=False):
@@ -164,8 +165,8 @@ def _profile_head(name, c, expression, talking, blink=False):
         back = ""
         hair = (f'<path d="M-4 -572 Q-12 -522 22 -506 Q52 -500 60 -528 L58 -554 Q46 -550 36 -553 Q22 -557 12 -549 '
                 f'Q0 -550 -4 -572 Z" fill="{c["hair"]}" stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>'
-                f'<path d="M-56 -612 Q-58 -684 4 -686 Q58 -684 60 -616 Z" fill="{c["beanie"]}" stroke="{INK}" '
-                f'stroke-width="{LW}"/><rect x="-60" y="-632" width="124" height="24" rx="8" '
+                f'<path d="M-56 -620 Q-58 -692 4 -694 Q58 -692 60 -624 Z" fill="{c["beanie"]}" stroke="{INK}" '
+                f'stroke-width="{LW}"/><rect x="-60" y="-640" width="124" height="24" rx="8" '
                 f'fill="{c["beanie_band"]}" stroke="{INK}" stroke-width="{LW}"/>')
         extra = ""
         mouth_y = -541
@@ -173,7 +174,7 @@ def _profile_head(name, c, expression, talking, blink=False):
     face = (_eye(eyes, 30, eye_y) + extra + _brow(brow_kind, 30, brow_y)
             + _mouth(mouth, 36, mouth_y, beard=(name == "BOB")))
     if name == "BOB":  # beanie must sit over the brow line, brows on top
-        return back + skull + nose + ear + _eye(eyes, 30, eye_y) + hair + _mouth(mouth, 36, mouth_y, True) + _brow(brow_kind, 30, brow_y)
+        return back + skull + nose + ear + _eye(eyes, 30, eye_y) + hair + _mouth(mouth, 36, mouth_y, True) + _brow(brow_kind, 30, -600, 0.6)
     return back + skull + nose + ear + hair + face
 
 

@@ -19,9 +19,18 @@ CANDIDATES = {
     "NARRATOR": ["bm_george", "am_michael", "bm_fable"],
 }
 
-# A lively 10-second read so the reference carries some energy, not a flat list of words.
+# A 10-second read per character; Chatterbox copies the delivery as well as the voice.
 REF_TEXT = ("Okay, so here's the thing. Nobody tells you how weird the past really was. "
             "I mean it. Every single day was a little adventure, and most of them were terrible.")
+REF_TEXT_BY = {
+    # Bob: slow, dry, unimpressed
+    "BOB": ("Yeah... no. I'm good. Honestly, I don't need to see the past. "
+            "I've seen enough of the present. Wake me up when we find snacks."),
+}
+REF_SPEED = {"BOB": 0.88}
+
+# Round 2 for Bob: new candidates (round 1 had am_onyx, am_fenrir, bm_lewis; none fit)
+CANDIDATES_ROUND2 = {"BOB": ["am_eric", "am_michael", "bm_daniel", "am_adam"]}
 
 # The same lines as the first audition, now written for a performer:
 # punctuation for rhythm, and [laugh] [chuckle] [sigh] [gasp] for real reactions.
@@ -47,14 +56,16 @@ EXAGGERATION = {"calm": 0.45, "shock": 0.85, "funny": 0.7, "epic": 0.65}
 def main(refs_dir, jobs_path):
     os.makedirs(refs_dir, exist_ok=True)
     jobs = []
-    for who, voices in CANDIDATES.items():
+    only = [w for w in os.environ.get("ONLY", "").split(",") if w]
+    cands = {w: CANDIDATES_ROUND2.get(w, CANDIDATES[w]) for w in only} if only else CANDIDATES
+    for who, voices in cands.items():
         for vi, voice in enumerate(voices):
-            ref = os.path.join(refs_dir, f"ref_{voice}.wav")
-            save_wav(ref, speak(REF_TEXT, voice, 1.0))
+            ref = os.path.join(refs_dir, f"ref_{who.lower()}_{voice}.wav")
+            save_wav(ref, speak(REF_TEXT_BY.get(who, REF_TEXT), voice, REF_SPEED.get(who, 1.0)))
             for li, (mood, text) in enumerate(LINES[who]):
-                jobs.append({"who": who, "option": "ABC"[vi], "voice": voice, "mood": mood, "text": text,
+                jobs.append({"who": who, "option": "ABCD"[vi], "voice": voice, "mood": mood, "text": text,
                              "ref": ref, "exaggeration": EXAGGERATION[mood], "seed": 7,
-                             "out": f"{who.lower()}_{'ABC'[vi]}_{li}_{mood}.wav"})
+                             "out": f"{who.lower()}_{'ABCD'[vi]}_{li}_{mood}.wav"})
     with open(jobs_path, "w") as f:
         json.dump(jobs, f, indent=1)
     print(len(jobs), "jobs")

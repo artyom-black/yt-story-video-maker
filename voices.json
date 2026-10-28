@@ -1,0 +1,7 @@
+{
+  "_note": "The chosen voice of each character. Never change these once videos are published.",
+  "KAI":  {"engine": "chatterbox-turbo", "reference_voice": "am_puck",  "chosen": "2026-10-28, voice lab round 2, option A"},
+  "IRIS": {"engine": "chatterbox-turbo", "reference_voice": "af_bella", "chosen": "2026-10-28, voice lab round 2, option B"},
+  "BOB":  null,
+  "NARRATOR": null
+}

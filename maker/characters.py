@@ -341,7 +341,9 @@ def _face(name, c, expression, talking, blink=False):
     elif level >= 0.15:
         mouth = "talk-small" if name != "IRIS" else "small-o"
     if name == "BOB":
-        return _eyes(eyes, 21, -584, look), _brows(brow_off, -604), _mouth(mouth, -540, beard=True)
+        # Bob's brows sit lower and move less, so even fully raised they stay below the beanie
+        bob_off = tuple(tuple(round(v * 0.6) for v in side) for side in brow_off)
+        return _eyes(eyes, 21, -584, look), _brows(bob_off, -600), _mouth(mouth, -540, beard=True)
     if name == "IRIS":
         return _eyes(eyes, 22, -583, look), _brows(brow_off, -604), _mouth(mouth, -544)
     return _eyes(eyes, 20, -582, look), _brows(brow_off, -603), _mouth(mouth, -544)
@@ -403,9 +405,9 @@ def _bob(c, face):
             + f'<path d="M-26 -496 L26 -496 L24 -250 L-24 -250 Z" fill="{c["inner"]}" stroke="{INK}" stroke-width="4"/>')
     beard = (f'<path d="M-56 -578 Q-58 -506 0 -502 Q58 -506 56 -578 Q50 -548 26 -546 Q0 -556 -26 -546 '
              f'Q-50 -548 -56 -578 Z" fill="{c["hair"]}" stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>')
-    beanie = (f'<path d="M-60 -612 Q-60 -680 0 -682 Q60 -680 60 -612 Z" fill="{c["beanie"]}" stroke="{INK}" '
+    beanie = (f'<path d="M-60 -620 Q-60 -688 0 -690 Q60 -688 60 -620 Z" fill="{c["beanie"]}" stroke="{INK}" '
               f'stroke-width="{LW}"/>'
-              f'<rect x="-64" y="-630" width="128" height="24" rx="8" fill="{c["beanie_band"]}" stroke="{INK}" '
+              f'<rect x="-64" y="-638" width="128" height="24" rx="8" fill="{c["beanie_band"]}" stroke="{INK}" '
               f'stroke-width="{LW}"/>')
     return body, _head(c, "", eyes + _nose(-570) + beard + mouth + beanie + brows)
 

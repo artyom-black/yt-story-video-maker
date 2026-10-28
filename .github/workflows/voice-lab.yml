@@ -4,6 +4,10 @@ name: Voice lab (try voices)
 # Only started by hand. Does not touch anything else.
 on:
   workflow_dispatch:
+    inputs:
+      only:
+        description: "Only these characters, e.g. BOB (empty = everyone)"
+        default: ""
 
 permissions:
   contents: write
@@ -45,7 +49,7 @@ jobs:
       - name: Reference clips (Kokoro)
         run: |
           pip install -q numpy onnxruntime
-          python -m maker.voice_lab work/refs work/jobs.json
+          ONLY="${{ inputs.only }}" python -m maker.voice_lab work/refs work/jobs.json
 
       - name: Model cache (Chatterbox-Turbo)
         uses: actions/cache@v4
