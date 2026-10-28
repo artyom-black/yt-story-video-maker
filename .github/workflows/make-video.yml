@@ -12,9 +12,13 @@ on:
       scenes:
         description: "Only these scenes, for a quick test, e.g. 1-6 (leave empty = whole video)"
         default: ""
+      voices_run:
+        description: "Reuse the voices of an earlier run (its number from the run URL). Empty = record new voices"
+        default: ""
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: make-video
@@ -26,14 +30,12 @@ env:
 jobs:
   voices:
     name: Record voices (part ${{ matrix.shard }} of 4)
+    if: inputs.voices_run == ''
     runs-on: ubuntu-24.04
     timeout-minutes: 75
     strategy:
       matrix:
         shard: [0, 1, 2, 3]
-    outputs:
-      story: ${{ steps.pick.outputs.story }}
-      slug: ${{ steps.pick.outputs.slug }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -83,18 +85,22 @@ jobs:
         with:
           name: voices-${{ matrix.shard }}
           path: work/voice/out/*.wav
-          retention-days: 3
+          retention-days: 14
 
   video:
     name: Draw, edit and mix the video
     needs: voices
+    if: ${{ !cancelled() && (needs.voices.result == 'success' || needs.voices.result == 'skipped') }}
     runs-on: ubuntu-24.04
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
+      - name: Which story
+        id: pick
+        run: python -m maker.pick_story "${{ inputs.story }}"
       - name: Tools (ffmpeg, fonts)
         run: |
           sudo apt-get update -qq
@@ -113,30 +119,32 @@ jobs:
           pattern: voices-*
           path: work/voice/out
           merge-multiple: true
+          run-id: ${{ inputs.voices_run || github.run_id }}
+          github-token: ${{ github.token }}
       - name: Make the video
         env:
           RENDER_TMP: ${{ runner.temp }}
         run: |
           ARGS=""
           if [ -n "${{ inputs.scenes }}" ]; then ARGS="--scenes ${{ inputs.scenes }}"; fi
-          python -m maker.render "${{ needs.voices.outputs.story }}" --voices work/voice/out --out out $ARGS
+          python -m maker.render "${{ steps.pick.outputs.story }}" --voices work/voice/out --out out $ARGS
       - name: Thumbnails and upload text
         run: |
-          python -m maker.thumbnail "${{ needs.voices.outputs.story }}" out
-          python -m maker.metadata "${{ needs.voices.outputs.story }}" out/upload.txt
-          cp "${{ needs.voices.outputs.story }}" out/story.txt
-          mv out/video.mp4 "out/${{ needs.voices.outputs.slug }}.mp4"
+          python -m maker.thumbnail "${{ steps.pick.outputs.story }}" out
+          python -m maker.metadata "${{ steps.pick.outputs.story }}" out/upload.txt
+          cp "${{ steps.pick.outputs.story }}" out/story.txt
+          mv out/video.mp4 "out/${{ steps.pick.outputs.slug }}.mp4"
       - uses: actions/upload-artifact@v4
         with:
-          name: VIDEO-${{ needs.voices.outputs.slug }}
+          name: VIDEO-${{ steps.pick.outputs.slug }}
           path: out/
-          retention-days: 30
+          retention-days: 140
       - name: Move the story to stories/done (full videos only)
         if: inputs.scenes == ''
         run: |
           git config user.name "video-maker"
           git config user.email "video-maker@users.noreply.github.com"
           mkdir -p stories/done
-          git mv "${{ needs.voices.outputs.story }}" stories/done/
-          git commit -q -m "Made video: ${{ needs.voices.outputs.slug }}"
+          git mv "${{ steps.pick.outputs.story }}" stories/done/
+          git commit -q -m "Made video: ${{ steps.pick.outputs.slug }}"
           for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done
