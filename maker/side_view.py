@@ -128,8 +128,11 @@ def _profile_head(name, c, expression, talking, blink=False):
     eyes = {"one-squint": "squint"}.get(eyes, eyes)
     if blink and eyes not in ("happy", "closed"):
         eyes = "closed"
-    if talking:
+    level = 1.0 if talking is True else float(talking or 0)
+    if level >= 0.55:
         mouth = {"KAI": "talk-big", "IRIS": "talk", "BOB": "talk-small"}[name]
+    elif level >= 0.15:
+        mouth = "talk-small"
     s = c["skin"]
     ear = (f'<path d="M-10 -592 Q-30 -594 -28 -576 Q-28 -560 -10 -562" fill="{_shade(s, 0.9)}" stroke="{INK}" '
            f'stroke-width="4" stroke-linejoin="round"/>' + _line("M-14 -584 Q-22 -580 -16 -570", 3))

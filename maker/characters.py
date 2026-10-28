@@ -334,8 +334,12 @@ def _face(name, c, expression, talking, blink=False):
     if blink and eyes not in ("happy", "closed"):
         eyes = "closed"
     brow_off = c["brows"] if brows == "sig" else BROWS[brows]
-    if talking:
+    # talking: True, or a loudness 0..1 from the voice track (lip sync)
+    level = 1.0 if talking is True else float(talking or 0)
+    if level >= 0.55:
         mouth = TALK_MOUTH[name]
+    elif level >= 0.15:
+        mouth = "talk-small" if name != "IRIS" else "small-o"
     if name == "BOB":
         return _eyes(eyes, 21, -584, look), _brows(brow_off, -604), _mouth(mouth, -540, beard=True)
     if name == "IRIS":
