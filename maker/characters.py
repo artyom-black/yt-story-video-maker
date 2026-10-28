@@ -38,14 +38,14 @@ CAST = {
         "mouth": "smile",
     },
     "BOB": {
-        "role": "the funny one",
-        "skin": "#e2ae86", "hair": "#6b4423",
+        "role": "the clueless one",
+        "skin": "#e2ae86", "hair": "#8a5a2b", "head": (61, 63),
         "top": "#8c3b2e", "top_shade": "#6f2e24", "inner": "#d6b04a",
         "beanie": "#556b3d", "beanie_band": "#46592f",
         "pants": "#3f4c63", "shoes": "#5a3d26", "shoe_accent": "#3b2818",
         "half_w": 74, "label": "#b8902f",
-        "brows": ((0, 0, 1), (-2, -12, -4)),
-        "mouth": "smirk",
+        "brows": ((-3, -9, -2), (-3, -9, -2)),
+        "mouth": "dopey",
     },
 }
 
@@ -158,25 +158,25 @@ ACTING = {
     "IRIS": {
         "default": ("normal", (0, 0), "sig", "smile"),
         "happy":   ("happy", (0, 0), "flat", "closed-smile"),
-        "shock":   ("wide", (0, 0), "up", "small-o"),
-        "scared":  ("wide", (-3, 0), "worried", "neutral"),
+        "shock":   ("tall", (0, 0), "up", "small-o"),
+        "scared":  ("tall", (-6, 0), "worried", "neutral"),
         "sad":     ("half", (0, 2), "worried", "frown"),
         "annoyed": ("roll", (0, 0), "flat", "flat-side"),
         "curious": ("normal", (4, 0), "one-up", "smirk"),
         "smirk":   ("half", (2, 0), "one-up", "smirk"),
         "serious": ("normal", (0, 0), "angry", "neutral"),
     },
-    # BOB: deadpan. Sleepy eyes, slow reactions, but a huge belly laugh.
+    # BOB: the lovable clueless one. Slow to get it, blank stares, a dopey grin, a huge laugh.
     "BOB": {
-        "default": ("half", (0, 0), "sig", "smirk"),
+        "default": ("normal", (0, 0), "sig", "dopey"),
         "happy":   ("happy", (0, 0), "up", "laugh"),
-        "shock":   ("wide", (0, 0), "upup", "neutral"),
-        "scared":  ("huge", (0, 0), "worried2", "wobbly"),
-        "sad":     ("half", (0, 3), "worried", "frown"),
+        "shock":   ("tiny", (0, 0), "upup", "O"),
+        "scared":  ("clench", (0, 0), "worried2", "wobbly"),
+        "sad":     ("normal", (0, 4), "worried2", "frown"),
         "annoyed": ("one-squint", (0, 0), "one-angry", "flat-side"),
-        "curious": ("half", (4, -1), "one-up", "small-o"),
+        "curious": ("normal", (5, -4), "one-up", "small-o"),
         "smirk":   ("half", (3, 0), "one-up", "smirk"),
-        "serious": ("half", (0, 0), "angry", "neutral"),
+        "serious": ("normal", (0, 0), "angry", "neutral"),
     },
 }
 
@@ -262,7 +262,15 @@ def _eyes(kind, dx, y, look=(0, 0)):
         k = kind
         if kind == "one-squint":
             k = "squint" if i == 0 else "normal"
-        if k in ("wide", "huge"):
+        if k == "tall":        # Iris: sharp, stretched "wait, what?" eyes
+            out.append(f'<ellipse cx="{x + lx * 0.5:.1f}" cy="{y + ly * 0.5:.1f}" rx="5" ry="10.5" fill="{INK}"/>')
+        elif k == "tiny":      # Bob: blank pinpoint stare, brain loading
+            out.append(f'<circle cx="{x}" cy="{y}" r="3.2" fill="{INK}"/>')
+        elif k == "clench":    # Bob: eyes squeezed shut  > <
+            d = (f"M{x - 8} {y - 6} L{x + 5} {y} L{x - 8} {y + 6}" if s < 0
+                 else f"M{x + 8} {y - 6} L{x - 5} {y} L{x + 8} {y + 6}")
+            out.append(_line(d, 4.5))
+        elif k in ("wide", "huge"):
             r = 11 if k == "wide" else 14
             out.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#fff" stroke="{INK}" stroke-width="3.5"/>'
                        f'<circle cx="{x + lx * 0.6:.1f}" cy="{y + 1 + ly * 0.6:.1f}" r="5.5" fill="{INK}"/>')
@@ -301,6 +309,9 @@ def _mouth(kind, y, beard=False):
     if kind == "laugh":
         return (f'<path d="M-24 {y - 8} Q1 {y + 36} 26 {y - 8} Z" {dark}/>' + teeth(-20, 22, y - 7, y)
                 + f'<ellipse cx="2" cy="{y + 14}" rx="10" ry="5" fill="#d9707a"/>')
+    if kind == "dopey":
+        return (f'<path d="M-13 {y - 3} Q2 {y + 13} 17 {y - 4} Q2 {y + 3} -13 {y - 3} Z" {dark}/>'
+                f'<path d="M-9 {y - 1} Q2 {y + 2} 13 {y - 2} L12 {y + 1} Q2 {y + 4} -8 {y + 1} Z" fill="#fff"/>')
     if kind == "O":
         return f'<ellipse cx="2" cy="{y + 2}" rx="8" ry="11" {dark}/>'
     if kind == "big-O":
@@ -343,7 +354,7 @@ def _face(name, c, expression, talking, blink=False):
     if name == "BOB":
         # Bob's brows sit lower and move less, so even fully raised they stay below the beanie
         bob_off = tuple(tuple(round(v * 0.6) for v in side) for side in brow_off)
-        return _eyes(eyes, 21, -584, look), _brows(bob_off, -600), _mouth(mouth, -540, beard=True)
+        return _eyes(eyes, 24, -584, look), _brows(bob_off, -600), _mouth(mouth, -542)
     if name == "IRIS":
         return _eyes(eyes, 22, -583, look), _brows(brow_off, -604), _mouth(mouth, -544)
     return _eyes(eyes, 20, -582, look), _brows(brow_off, -603), _mouth(mouth, -544)
@@ -351,10 +362,11 @@ def _face(name, c, expression, talking, blink=False):
 
 def _head(c, back, front):
     s = c["skin"]
+    rx, ry = c.get("head", (56, 65))
     return (back
             + "".join(f'<ellipse cx="{x}" cy="-578" rx="9" ry="13" fill="{s}" stroke="{INK}" stroke-width="{LW}"/>'
-                      for x in (-56, 56))
-            + f'<ellipse cx="0" cy="-578" rx="56" ry="65" fill="{s}" stroke="{INK}" stroke-width="{LW}"/>'
+                      for x in (-rx, rx))
+            + f'<ellipse cx="0" cy="-578" rx="{rx}" ry="{ry}" fill="{s}" stroke="{INK}" stroke-width="{LW}"/>'
             + front)
 
 
@@ -403,13 +415,15 @@ def _bob(c, face):
             + "".join(stripe(f"M{-w + 4} {y} L-26 {y} M26 {y} L{w - 4} {y}") for y in (-440, -380, -320))
             + "".join(stripe(f"M{x} -488 L{x} -256") for x in (-w + 22, w - 22))
             + f'<path d="M-26 -496 L26 -496 L24 -250 L-24 -250 Z" fill="{c["inner"]}" stroke="{INK}" stroke-width="4"/>')
-    beard = (f'<path d="M-56 -578 Q-58 -506 0 -502 Q58 -506 56 -578 Q50 -548 26 -546 Q0 -556 -26 -546 '
-             f'Q-50 -548 -56 -578 Z" fill="{c["hair"]}" stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>')
+    hair = "".join(f'<path d="{d}" fill="{c["hair"]}" stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>'
+                   for d in ("M-60 -622 L-70 -600 L-56 -608 L-60 -590 L-46 -606 L-44 -622 Z",
+                             "M60 -622 L70 -600 L56 -608 L60 -590 L46 -606 L44 -622 Z",
+                             "M-20 -616 L-14 -598 L-6 -610 L2 -594 L8 -610 L16 -598 L20 -616 Z"))
     beanie = (f'<path d="M-60 -620 Q-60 -688 0 -690 Q60 -688 60 -620 Z" fill="{c["beanie"]}" stroke="{INK}" '
               f'stroke-width="{LW}"/>'
               f'<rect x="-64" y="-638" width="128" height="24" rx="8" fill="{c["beanie_band"]}" stroke="{INK}" '
               f'stroke-width="{LW}"/>')
-    return body, _head(c, "", eyes + _nose(-570) + beard + mouth + beanie + brows)
+    return body, _head(c, "", eyes + _nose(-570) + mouth + hair + beanie + brows)
 
 
 def _speed_lines():

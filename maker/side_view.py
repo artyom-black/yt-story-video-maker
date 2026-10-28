@@ -77,6 +77,12 @@ def _foot_bottom(thigh, shin, foot, drop):
 
 # ---------------------------------------------------------------- profile faces
 def _eye(kind, x, y):
+    if kind == "tall":
+        return f'<ellipse cx="{x + 1}" cy="{y}" rx="4.5" ry="10" fill="{INK}"/>'
+    if kind == "tiny":
+        return f'<circle cx="{x + 1}" cy="{y}" r="3" fill="{INK}"/>'
+    if kind == "clench":
+        return _line(f"M{x + 7} {y - 6} L{x - 5} {y} L{x + 7} {y + 6}", 4.5)
     if kind in ("huge", "roll"):
         r = 13 if kind == "huge" else 10
         py = -5 if kind == "roll" else 1
@@ -108,7 +114,7 @@ def _brow(kind, x, y, scale=1.0):
 
 def _mouth(kind, x, y, beard=False):
     dark = f'fill="{MOUTH}" stroke="{INK}" stroke-width="3.5"'
-    kind = {"big-grin": "grin", "laugh": "grin", "closed-smile": "smile", "flat-side": "neutral",
+    kind = {"big-grin": "grin", "laugh": "grin", "dopey": "grin", "closed-smile": "smile", "flat-side": "neutral",
             "wobbly": "frown", "talk-big": "talk-big", "talk-small": "talk-small"}.get(kind, kind)
     if kind in ("O", "big-O", "talk", "talk-big", "talk-small", "small-o"):
         r = {"O": (6, 10), "big-O": (8, 13), "talk": (7, 6), "talk-big": (9, 8), "talk-small": (6, 3.5),
@@ -141,7 +147,7 @@ def _profile_head(name, c, expression, talking, blink=False):
     nose = (f'<path d="M54 -598 L70 -570 Q66 -563 55 -563" fill="{s}" stroke="{INK}" stroke-width="{LW}" '
             f'stroke-linejoin="round"/><path d="M52 -598 L52 -562" stroke="{s}" stroke-width="8"/>')
     eye_y, brow_y, mouth_y = -584, -604, -545
-    brow_kind = {"KAI": "up", "IRIS": "flat", "BOB": "one-up"}[name] if brows == "sig" else brows
+    brow_kind = {"KAI": "up", "IRIS": "flat", "BOB": "up"}[name] if brows == "sig" else brows
 
     if name == "KAI":
         back = ""
@@ -161,10 +167,12 @@ def _profile_head(name, c, expression, talking, blink=False):
                 f'stroke-linejoin="round"/><circle cx="-44" cy="-618" r="9" fill="{_shade(c["hair"], 0.7)}"/>')
         extra = (f'<rect x="18" y="-596" width="30" height="24" rx="6" fill="none" stroke="{INK}" stroke-width="4"/>'
                  + _line("M18 -588 L-6 -586", 3.5))
-    else:  # BOB
+    else:  # BOB: no beard, messy hair poking out under the beanie
         back = ""
-        hair = (f'<path d="M-4 -572 Q-12 -522 22 -506 Q52 -500 60 -528 L58 -554 Q46 -550 36 -553 Q22 -557 12 -549 '
-                f'Q0 -550 -4 -572 Z" fill="{c["hair"]}" stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>'
+        hair = (f'<path d="M-46 -622 L-64 -604 L-46 -608 L-56 -590 L-34 -606 L-30 -622 Z" fill="{c["hair"]}" '
+                f'stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>'
+                f'<path d="M24 -620 L30 -602 L38 -614 L44 -604 L48 -620 Z" fill="{c["hair"]}" stroke="{INK}" '
+                f'stroke-width="4" stroke-linejoin="round"/>'
                 f'<path d="M-56 -620 Q-58 -692 4 -694 Q58 -692 60 -624 Z" fill="{c["beanie"]}" stroke="{INK}" '
                 f'stroke-width="{LW}"/><rect x="-60" y="-640" width="124" height="24" rx="8" '
                 f'fill="{c["beanie_band"]}" stroke="{INK}" stroke-width="{LW}"/>')
@@ -174,7 +182,7 @@ def _profile_head(name, c, expression, talking, blink=False):
     face = (_eye(eyes, 30, eye_y) + extra + _brow(brow_kind, 30, brow_y)
             + _mouth(mouth, 36, mouth_y, beard=(name == "BOB")))
     if name == "BOB":  # beanie must sit over the brow line, brows on top
-        return back + skull + nose + ear + _eye(eyes, 30, eye_y) + hair + _mouth(mouth, 36, mouth_y, True) + _brow(brow_kind, 30, -600, 0.6)
+        return back + skull + nose + ear + _eye(eyes, 30, eye_y) + hair + _mouth(mouth, 36, mouth_y) + _brow(brow_kind, 30, -600, 0.6)
     return back + skull + nose + ear + hair + face
 
 
