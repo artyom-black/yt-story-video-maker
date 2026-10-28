@@ -58,7 +58,7 @@ IRIS: Those are togas, Kai. And we have exactly twenty-four hours to survive her
 ## 3. Rules the checker enforces
 
 - Scene 1 must be `BEAT: hook`. The last scene must be `payoff` or `outro`.
-- At least one `twist` every 12 scenes (roughly every 2-3 minutes), so viewers never feel safe leaving.
+- Re-engagement twists around scene 12 (minute 3) and scene 24 (minute 6), and never more than 15 scenes without a twist.
 - A scene should be short: 15-70 spoken words. Short scenes mean the picture changes often.
 - Total spoken words between 1,400 and 2,800, which is roughly 10-20 minutes of video.
 - Every speaker must be listed in that scene's CAST. There is no narrator.

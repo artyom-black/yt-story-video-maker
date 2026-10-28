@@ -1,161 +1,204 @@
 =====================================================================
-STORY PROMPT. Copy everything below this box into ChatGPT, Claude or
-any AI chat. Replace the topic on the first line, then send.
+TEMPLATE. Copy everything below this box into ChatGPT, Claude or any
+AI chat. Replace the topic on the TOPIC line, then send.
 =====================================================================
 
-TOPIC: [write your topic here, e.g. "We Survived 24 Hours as Medieval Peasants"]
+TOPIC: [your topic, e.g. "life in the Middle Ages" or "Ancient Egypt"]
 
-You are the head writer of a YouTube channel. Write the full script for one
-episode about the TOPIC above, in the exact file format at the end of this
-message. Output ONLY the script file, nothing before or after it.
+You are the head writer of a YouTube channel that is run exactly like
+MrBeast's, but about history. Write one full episode about the TOPIC, in
+the exact file format at the end. Output ONLY the finished file.
 
----------------------------------------------------------------------
-1. THE SHOW
----------------------------------------------------------------------
-Three friends in their twenties keep getting dropped into the past, and
-have to survive it. Every episode is a challenge ("can they make it?")
-that secretly teaches real history and science about how people lived.
-Audience: adults 18-35 worldwide. Tone: funny, fast, a bit edgy, never
-childish. Think MrBeast pacing with the curiosity of a great explainer.
+=====================================================================
+STEP 1: THE CONCEPT (decide this first, MrBeast always does)
+=====================================================================
+MrBeast designs the title and thumbnail BEFORE the video. The video then
+delivers exactly what they promise, immediately.
 
-There is NO narrator. The three characters tell the whole story
-themselves, through dialogue. Only these three speak:
+1. Turn the topic into ONE extreme, simple concept that a stranger
+   understands in one second, from the title alone.
+2. Pick ONE of these formats (they keep people watching to the end):
+   - PRICE LADDER:  "$1 vs $1,000,000 [thing] in [era]"
+                    Each step costs more and is more extreme.
+   - SURVIVAL:      "We Survived 7 Days as [people] in [era]"
+                    Day counter, every day harder than the last.
+   - EVERY LEVEL:   "Every Century, [thing] Gets Worse"
+                    Jump forward step by step; each step more shocking.
+   - RANKED:        "The Worst [jobs/punishments/cures] in History, Ranked"
+                    From bad to unbelievable; number one is saved for last.
+   - LAST TO LEAVE: "Last to Quit [era] Wins"
+                    The three compete; the winner is only revealed at the end.
+3. Write the title like MrBeast: extreme, intriguing, specific numbers.
+   "We Survived" beats "We Visited". "$1 vs $1,000,000" beats "Rich vs Poor".
+   Max 60 characters.
 
-KAI (the curious one)
-- Asks what the viewer is thinking ("wait, why didn't they just...?")
-- Energetic, overreacts, jumps in first, panics loudly
-- Short, punchy lines. Lots of "Wait." "Hold on." "No way."
+=====================================================================
+STEP 2: THE CAST (no narrator, only these three speak)
+=====================================================================
+Viewers come back for people they love. Make them fall for these three.
 
-IRIS (the smart one)
-- Knows the history and explains it clearly, in one or two sentences
-- Calm, a bit smug, dry humour, sometimes overconfident and wrong
-- She delivers the facts, so most facts come out of her mouth
+KAI (the curious one): asks what the viewer is thinking ("wait, why
+didn't they just...?"). Energetic, competitive, overreacts, panics loudly.
+Short punchy lines: "Wait." "Hold on." "No way."
 
-BOB (the clueless one)
-- Lovable and dumb. Asks the stupid question the viewer is too shy to ask
-- Misunderstands things in a funny way, gets into trouble, eats things
-- Slow to get it ("...wait, so the sun is a star?")
+IRIS (the smart one): knows the history and gives the facts in one or
+two sentences, never a lecture. Calm, smug, dry humour. Sometimes too
+confident, and it backfires on her.
 
-Make them sound different from each other. Jokes come from their
-personalities bouncing off each other, not from puns.
+BOB (the clueless one): lovable and dumb. Asks the stupid question the
+viewer is too shy to ask, takes things literally, gets into trouble,
+always thinks about food. Slow to get it.
 
----------------------------------------------------------------------
-2. RETENTION RULES (this is what makes people watch to the end)
----------------------------------------------------------------------
-1. THE HOOK (scene 1, first 15 seconds): open in the middle of the action,
-   state the challenge and the stakes, and promise the craziest thing we
-   will see later. No greetings, no "welcome back", no "in this video".
-2. OPEN LOOPS: keep raising a question and answering it later ("and that's
-   not even the worst part..."). Always have at least one unanswered question.
-3. A TWIST at least every 8 to 10 scenes: a surprising fact, a new danger,
-   or the plan going wrong. Mark it BEAT: twist.
-4. ESCALATION: each part must be more surprising or more dangerous than the
-   one before. Save the most shocking fact for the PEAK, near the end.
-5. MIDPOINT RE-HOOK: halfway through, remind the viewer what is still coming.
-6. NO DEAD TIME: every scene either teaches a fact, makes a joke, or raises
-   the stakes. Ideally two of those. Cut anything that does none.
-7. ENDING: pay off the promise from the hook, give one final surprising
-   fact, then end FAST (1-2 short scenes). No long goodbyes. The last line
-   can tease the next episode.
+Give them personal stakes: a bet, a rivalry, a fear, a goal. If Bob loses
+the bet, he has to do something gross. Kai wants to win at everything.
 
----------------------------------------------------------------------
-3. FACTS (very important)
----------------------------------------------------------------------
-- Use only well-documented historical and scientific facts.
-- Never invent dates, numbers, names or quotes. If unsure, leave it out.
-- If historians disagree, say so in character (IRIS: "Historians still
+=====================================================================
+STEP 3: THE MINUTE-BY-MINUTE PLAN (MrBeast's structure)
+=====================================================================
+About 4 scenes = 1 minute of video. Target length: 13 minutes
+(MrBeast's average), so 50 to 56 scenes.
+
+0:00-0:30  THE HOOK (scenes 1-2). The most important minute.
+           - Deliver the title's promise IMMEDIATELY. No intro, no
+             greeting, no "in this video", no explaining the rules slowly.
+           - Show the most extreme moment first, then the goal and the
+             stakes in one or two lines.
+           - The first scene must match the thumbnail exactly.
+
+0:30-3:00  CRAZY PROGRESSION (scenes 3-12).
+           - Stop telling, start showing. Move fast through several
+             stages, days or steps, so the viewer gets invested quickly.
+           - New place or new surprise every scene.
+
+~3:00      RE-ENGAGEMENT #1 (around scene 12).
+           - The biggest "no way, that's real?" moment so far. A spectacle
+             that makes the viewer forget about leaving. Mark it BEAT: twist.
+
+3:00-6:00  THE BEST SIMPLE CONTENT (scenes 13-24).
+           - Your most exciting AND simplest material goes here. Fast
+             scene changes. This is where viewers fall for the characters.
+             People who get past the halfway point almost always finish.
+
+~6:00      RE-ENGAGEMENT #2 (around scene 24).
+           - A second huge moment, one that pushes the story forward
+             (the plan fails, a new danger, a rule changes). BEAT: twist.
+
+6:00-END   KEEP CLIMBING (scenes 25 onward).
+           - The back half is where weak videos die. Keep it strong:
+             unexpected failures, the bet heating up, stakes always rising.
+           - Stair-step: every stage bigger, more expensive or more
+             shocking than the one before. Biggest moment = BEAT: peak.
+           - Never hint that the video is about to end.
+
+THE END    The payoff (BEAT: payoff) answers the hook's promise with a
+           surprise, then END ABRUPTLY: one short last scene (BEAT: outro).
+           No goodbyes, no "thanks for watching". The last line can tease
+           where they go next.
+
+Rules for every single scene:
+- No dull moments. Every scene teaches a fact, makes a joke, or raises
+  the stakes (ideally two of those). Cut anything else.
+- Always keep at least one question open ("but that's not even the worst
+  part..."), so leaving feels like missing out.
+- Use TEXT for big on-screen numbers, like MrBeast: the price, the day,
+  the rank, a shocking number ("DAY 3", "$10,000", "1 IN 3").
+
+=====================================================================
+STEP 4: WOW FACTOR AND REAL FACTS
+=====================================================================
+- Each episode needs at least 5 facts that make people say "no way, that's
+  real?". The best one goes in the peak; the second best at re-engagement #1.
+- MrBeast: "we don't fake things". Every fact must be true and well
+  documented. Never invent dates, numbers, names or quotes. If unsure, leave
+  it out. If historians disagree, say so in character ("historians still
   argue about this, but...").
-- The characters time-travelling is the only fiction. Everything they
-  learn and see must be real.
-- At the top, list 3 to 6 real, well-known sources in the SOURCES line
-  (books, museums, encyclopedias, universities).
-- Avoid graphic violence, gore and sexual content. Hint, don't show.
+- The time travel is the only fiction. Everything they see is real history.
+- List 3 to 6 real, well-known sources in the SOURCES line.
+- No graphic violence, gore or sexual content. Hint, don't show.
 
----------------------------------------------------------------------
-4. LENGTH AND PACING
----------------------------------------------------------------------
-- 45 to 70 scenes. Total spoken words: 1,700 to 2,600 (about 12-18 minutes).
-- Each scene: 2 to 5 lines, 20 to 60 words in total. Short scenes = the
-  picture changes often, which keeps people watching.
-- Lines are spoken out loud: write how people talk. Short sentences.
-  Contractions. Commas for pauses. No stage directions inside lines.
-- You may add sounds inside a line: [laugh] [chuckle] [sigh] [gasp]
-  (at most one per line, and only where it really fits).
+=====================================================================
+STEP 5: HOW THE LINES SOUND
+=====================================================================
+- 2 to 5 lines per scene, 20 to 60 words per scene.
+  Total spoken words: 1,700 to 2,100.
+- Written to be spoken: short sentences, contractions, commas for pauses.
+  No stage directions inside lines.
+- Optional sounds inside a line, max one per line: [laugh] [chuckle] [sigh] [gasp]
 
----------------------------------------------------------------------
-5. VISUALS (keep them simple)
----------------------------------------------------------------------
-Everything is drawn in a simple flat cartoon style by code, so:
-- PLACE: describe where they are with 2 to 4 simple, concrete things,
-  e.g. "medieval village street, mud road, wooden huts, a pig".
-  No complicated details, no text on signs, no famous real faces.
-- Reuse places: 6 to 12 different places per episode is ideal.
-- EXTRAS: background people or animals, a few words, e.g. "peasants, chickens".
+=====================================================================
+STEP 6: VISUALS (drawn simply by code)
+=====================================================================
+- PLACE: where they are, with 2 to 4 simple concrete things, e.g.
+  "castle great hall, long table, roast swan, fire". No complicated detail,
+  no writing on signs, no famous real faces.
+- Use 6 to 12 different places per episode.
+- EXTRAS: background people or animals, a few words, e.g. "knights, horses".
 
----------------------------------------------------------------------
-6. TITLE AND THUMBNAIL
----------------------------------------------------------------------
-- TITLE: max 60 characters. A challenge or a curiosity question.
-  Good: "We Survived 24 Hours as Medieval Peasants"
-  Good: "$1 vs $1,000,000 Meal in Ancient Rome"
+=====================================================================
+STEP 7: THUMBNAIL
+=====================================================================
 - THUMBNAIL_TEXT: 1 to 3 words, max 20 characters, adds to the title
-  without repeating it (e.g. "DAY 1" or "NOT SAFE").
-- 3 x THUMBNAIL_IDEA: one big character face showing a strong emotion,
-  plus ONE clear object or danger. Simple enough to understand in one
-  second on a phone.
+  without repeating it.
+- 3 x THUMBNAIL_IDEA: one big character face with an extreme emotion plus
+  ONE clear object or contrast. Readable in one second on a phone.
+  It must show something that really happens in the first minute.
 
----------------------------------------------------------------------
-7. THE FILE FORMAT (follow it exactly)
----------------------------------------------------------------------
-Plain text only. No markdown, no bold, no code blocks, no commentary.
-Header lines first, then the scenes. Every scene starts with
-=== SCENE N === (numbered 1, 2, 3...).
+=====================================================================
+STEP 8: THE FILE FORMAT (follow it exactly)
+=====================================================================
+Plain text only. No markdown, no bold, no code blocks, no notes.
+Header lines first, then scenes. Each scene starts with === SCENE N ===.
 
 Allowed values (use only these words):
+FORMAT: price-ladder, survival, every-level, ranked, last-to-leave
 BEAT:   hook, setup, rise, twist, peak, payoff, outro
 MOOD:   curious, funny, tense, scary, sad, epic, calm, shock
 CAMERA: still, zoom-in, zoom-out, pan-left, pan-right, shake, slow-push
 MUSIC:  mystery, tension, action, comedy, sad, epic, calm, none
 SFX:    crowd, whoosh, boom, swords, thunder, wind, fire, footsteps,
-        water, ding, gasp, heartbeat   (0 to 2 per scene, comma separated)
-CAST:   who is on screen: KAI, IRIS, BOB (comma separated)
+        water, ding, gasp, heartbeat   (0 to 2 per scene)
+CAST:   who is on screen: KAI, IRIS, BOB
+TEXT:   optional big on-screen text, max 20 characters
 
-Rules: scene 1 is BEAT: hook. The last scene is BEAT: outro. Only
-characters listed in a scene's CAST may speak in that scene. Write
-MUSIC only when it changes.
+Rules: scene 1 is BEAT: hook. Use BEAT: twist for both re-engagements.
+One BEAT: peak, then BEAT: payoff, and the last scene is BEAT: outro.
+Only characters in a scene's CAST may speak in it. Write MUSIC only when
+it changes.
 
-Example of the format (the content is only an example):
+Example of the format (only an example):
 
-TITLE: We Survived 24 Hours as Medieval Peasants
-THUMBNAIL_TEXT: DAY 1
-THUMBNAIL_IDEA: BOB terrified, holding a dead rat by the tail, muddy village behind him
-THUMBNAIL_IDEA: KAI shocked, pointing at a bucket of brown water
-THUMBNAIL_IDEA: IRIS smug, holding a tiny piece of black bread
-DESCRIPTION: Three friends wake up in 1320 England with nothing. No money, no food, and the lord wants his taxes by sunset.
-TAGS: medieval, history, peasants, middle ages, survival
-SOURCES: British Museum; Encyclopaedia Britannica, "Peasant"; Ian Mortimer, The Time Traveller's Guide to Medieval England
+TITLE: $1 vs $1,000,000 Life in Ancient Rome
+FORMAT: price-ladder
+THUMBNAIL_TEXT: $1 vs $1M
+THUMBNAIL_IDEA: BOB crying in a tiny dark room, KAI laughing in a giant marble bath
+THUMBNAIL_IDEA: KAI shocked, holding a sponge on a stick
+THUMBNAIL_IDEA: IRIS smug on a golden couch, BOB eating bread on the floor
+DESCRIPTION: We lived four Roman lives in one day, from a $1 slave to a $1,000,000 senator.
+TAGS: ancient rome, history, rich vs poor, roman empire
+SOURCES: Encyclopaedia Britannica, "Ancient Rome"; British Museum; Mary Beard, SPQR
 
 === SCENE 1 ===
 BEAT: hook
-PLACE: medieval village at sunrise, mud road, wooden huts, smoke from chimneys
-CAST: KAI, IRIS, BOB
+PLACE: a giant marble bath, golden statues, steam
+CAST: KAI, BOB
 MOOD: shock
 CAMERA: slow-push
-MUSIC: tension
-SFX: wind
-KAI: Okay. Nobody panic. But I'm pretty sure we're in the year thirteen twenty.
-IRIS: And if we don't pay the lord his tax by sunset, we lose the hut. Which we don't have.
-BOB: Do they have pizza in thirteen twenty?
+MUSIC: epic
+SFX: water
+TEXT: $1,000,000
+KAI: This is the one million dollar life in Ancient Rome. And it is insane.
+BOB: Why do I have the one dollar life then?
+KAI: Because you lost the coin toss, Bob.
 
 === SCENE 2 ===
 BEAT: setup
-PLACE: inside a tiny wooden hut, straw floor, a fire pit, a sleeping cow
-CAST: IRIS, BOB
+PLACE: a tiny dark room, a straw bed, one small window
+CAST: KAI, IRIS, BOB
 MOOD: funny
-CAMERA: zoom-in
+CAMERA: zoom-out
 MUSIC: comedy
-IRIS: Good news, we found a house. Bad news, we share it with the cow.
-BOB: [gasp] We have a cow?
-IRIS: Bob, peasants slept next to their animals. The heat kept them warm in winter.
+TEXT: $1
+IRIS: Four lives, one day. Every few hours we move up. Whoever survives their life best picks where we go next.
+BOB: I'm not gonna survive this, am I.
 
-(continue until the end, 45 to 70 scenes)
+(continue until the end, 50 to 56 scenes)

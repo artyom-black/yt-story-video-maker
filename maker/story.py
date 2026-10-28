@@ -16,8 +16,9 @@ CAMERAS = {"still", "zoom-in", "zoom-out", "pan-left", "pan-right", "shake", "sl
 MUSIC = {"mystery", "tension", "action", "comedy", "sad", "epic", "calm", "none"}
 SFX = {"crowd", "whoosh", "boom", "swords", "thunder", "wind", "fire",
        "footsteps", "water", "ding", "gasp", "heartbeat"}
-HEADER_KEYS = {"TITLE", "THUMBNAIL_TEXT", "THUMBNAIL_IDEA", "DESCRIPTION", "TAGS", "SOURCES"}
-SCENE_KEYS = {"BEAT", "PLACE", "CAST", "EXTRAS", "MOOD", "CAMERA", "MUSIC", "SFX"}
+HEADER_KEYS = {"TITLE", "FORMAT", "THUMBNAIL_TEXT", "THUMBNAIL_IDEA", "DESCRIPTION", "TAGS", "SOURCES"}
+FORMATS = {"price-ladder", "survival", "every-level", "ranked", "last-to-leave"}
+SCENE_KEYS = {"BEAT", "PLACE", "CAST", "EXTRAS", "MOOD", "CAMERA", "MUSIC", "SFX", "TEXT"}
 
 SCENE_RE = re.compile(r"^=+\s*SCENE\s+(\d+)\s*=+$", re.I)
 LINE_RE = re.compile(r"^([A-Za-z][A-Za-z0-9_ -]*?)\s*:\s*(.*)$")
@@ -40,6 +41,7 @@ class Scene:
     camera: str = "still"
     music: str = ""          # filled with the previous scene's music if empty
     sfx: list[str] = field(default_factory=list)
+    text: str = ""
     lines: list[Line] = field(default_factory=list)
 
     @property
@@ -50,6 +52,7 @@ class Scene:
 @dataclass
 class Story:
     title: str = ""
+    format: str = ""
     thumbnail_text: str = ""
     thumbnail_ideas: list[str] = field(default_factory=list)
     description: str = ""
@@ -109,6 +112,8 @@ def parse(text: str) -> Story:
         if cur is None:
             if key == "TITLE":
                 st.title = val
+            elif key == "FORMAT":
+                st.format = val.lower()
             elif key == "THUMBNAIL_TEXT":
                 st.thumbnail_text = val
             elif key == "THUMBNAIL_IDEA":
@@ -138,6 +143,8 @@ def parse(text: str) -> Story:
             cur.music = val.lower()
         elif key == "SFX":
             cur.sfx = [s.strip().lower() for s in val.split(",") if s.strip()]
+        elif key == "TEXT":
+            cur.text = val
         elif val:
             cur.lines.append(Line(key, val))
     _check(st)
@@ -150,6 +157,8 @@ def _check(st: Story) -> None:
         E("missing TITLE")
     elif len(st.title) > 70:
         W(f"TITLE is {len(st.title)} characters; YouTube cuts it after ~70")
+    if st.format and st.format not in FORMATS:
+        W(f"FORMAT '{st.format}' unknown; use one of {', '.join(sorted(FORMATS))}")
     if not st.thumbnail_text:
         E("missing THUMBNAIL_TEXT")
     elif len(st.thumbnail_text) > 25:
@@ -194,6 +203,8 @@ def _check(st: Story) -> None:
             s.sfx = [x for x in s.sfx if x in SFX]
         if not s.lines:
             E(f"{tag}: no spoken lines")
+        if len(s.text) > 20:
+            W(f"{tag}: TEXT is {len(s.text)} characters; keep on-screen text to 20 or fewer")
         for l in s.lines:
             if l.speaker == "NARRATOR":
                 E(f"{tag}: no narrator in this show, give the line to KAI, IRIS or BOB")
@@ -204,11 +215,25 @@ def _check(st: Story) -> None:
         if s.words > 70:
             W(f"{tag}: {s.words} words; split it so the picture changes more often")
         since_twist = 0 if s.beat in ("twist", "peak") else since_twist + 1
-        if since_twist == 12:
-            W(f"{tag}: 12 scenes without a twist or peak; viewers may leave here")
+        if since_twist == 15:
+            W(f"{tag}: 15 scenes (almost 4 minutes) without a twist or peak; viewers may leave here")
 
     if st.scenes[0].beat != "hook":
         E("scene 1 must be BEAT: hook")
+    # MrBeast structure: re-engagements around minute 3 and minute 6 (about 4 scenes per minute)
+    beats = [s.beat for s in st.scenes]
+    if len(beats) >= 30:
+        if "twist" not in beats[7:17]:
+            W("no BEAT: twist around scene 12 (minute 3); add re-engagement #1 there")
+        if "twist" not in beats[19:30]:
+            W("no BEAT: twist around scene 24 (minute 6); add re-engagement #2 there")
+    if "peak" not in beats:
+        W("no BEAT: peak; the biggest moment should be marked near the end")
+    elif "payoff" in beats and beats.index("payoff") < beats.index("peak"):
+        W("the payoff comes before the peak; build up to the peak first")
+    tail = beats[-4:]
+    if "payoff" not in beats:
+        W("no BEAT: payoff; answer the hook's promise before the end")
     if st.scenes[-1].beat not in ("payoff", "outro"):
         W("last scene should be BEAT: payoff or outro")
     if st.words < 1400:
