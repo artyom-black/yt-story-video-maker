@@ -113,10 +113,11 @@ def _step(x, y, side, angle, length):
     return x + side * length * math.sin(a), y + length * math.cos(a)
 
 
-def _arm(side, c, upper, fore):
+def _arm(side, c, upper, fore, upper_len=1.0, fore_len=1.0):
+    """A length < 1 reads as that part of the arm pointing towards the camera."""
     sx, sy = side * (c["half_w"] - 8), -478
-    ex, ey = _step(sx, sy, side, upper, 100)
-    hx, hy = _step(ex, ey, side, fore, 92)
+    ex, ey = _step(sx, sy, side, upper, 100 * upper_len)
+    hx, hy = _step(ex, ey, side, fore, 92 * fore_len)
     ux, uy = _step(hx, hy, side, fore, 9)          # hand sits at the end of the sleeve
     return (_limb([(sx, sy), (ex, ey), (hx, hy)], c["top"], 30)
             + f'<circle cx="{ux:.1f}" cy="{uy:.1f}" r="13" fill="{c["skin"]}" stroke="{INK}" stroke-width="{LW}"/>')
@@ -281,14 +282,39 @@ def _speed_lines():
 _EFFECTS = {"speed": _speed_lines}
 
 
+
+def run_pose(phase: float) -> dict:
+    """One moment of the run cycle. phase 0..1 = one full stride (left step + right step).
+
+    Each knee lifts in turn, the opposite arm pumps up, and the body bounces.
+    """
+    lift_l = max(0.0, math.sin(2 * math.pi * phase))
+    lift_r = max(0.0, -math.sin(2 * math.pi * phase))
+
+    def leg(lift):
+        # knee comes up towards the camera: short thigh, shin hanging under the knee
+        return (2 - 6 * lift, 2 - 4 * lift, 1 - 0.62 * lift, 1 - 0.22 * lift)
+
+    def arm(up):
+        # elbows stay tucked in; the hand pumps up to the chest, then back down to the hip
+        return (14 + 4 * up, 8 - 170 * up, 0.95, 0.72 - 0.17 * up)
+
+    # the arm opposite to the lifted knee comes up
+    swing = 0.5 + 0.5 * math.sin(2 * math.pi * phase)          # 1 = left knee up
+    bounce = abs(math.sin(2 * math.pi * phase))
+    return {"L": arm(1 - swing), "R": arm(swing),
+            "Lleg": leg(lift_l), "Rleg": leg(lift_r),
+            "drop": 14 - 14 * bounce, "lean": 0, "tilt": 2 * math.sin(2 * math.pi * phase)}
+
+
 BUILD = {"KAI": _kai, "IRIS": _iris, "BOB": _bob}
 
 
-def character(name: str, x: float, y: float, scale: float = 1.0, pose: str = "stand",
+def character(name: str, x: float, y: float, scale: float = 1.0, pose: str | dict = "stand",
               expression: str = "default", talking: bool = False, flip: bool = False) -> str:
     """SVG group for one character with feet at (x, y). flip=True mirrors left/right."""
     c = CAST[name]
-    p = POSES[pose]
+    p = POSES[pose] if isinstance(pose, str) else pose
     drop, lean, tilt = p.get("drop", 0), p.get("lean", 0), p.get("tilt", 0)
     body, head = BUILD[name](c, _face(name, c, expression, talking))
     neck = f'<rect x="-15" y="-522" width="30" height="36" fill="{c["skin"]}" stroke="{INK}" stroke-width="{LW}"/>'
