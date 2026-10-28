@@ -14,7 +14,7 @@ import tempfile
 import numpy as np
 
 from .characters import character, idle_pose, is_blinking
-from .voice import RATE, mouth_track, save_wav, speak
+from .voice import RATE, mouth_track, save_wav, speak, tighten_pauses
 
 FPS = 24
 W, H = 1920, 1080
@@ -121,7 +121,7 @@ def make_from_lab(who: str, lab_dir: str, out_dir: str, engine: str = "Chatterbo
     tmp = tempfile.mkdtemp(prefix=f"lab_{who}_")
     audio_parts, frames = [], 0
     for job in jobs:
-        a = load_audio(os.path.join(lab_dir, job["out"].replace(".wav", ".mp3")))
+        a = tighten_pauses(load_audio(os.path.join(lab_dir, job["out"].replace(".wav", ".mp3"))))
         clip = np.concatenate([np.zeros(int(RATE * 0.3), np.float32), a, np.zeros(int(RATE * 0.7), np.float32)])
         track = mouth_track(clip, FPS)
         shown = job["text"].replace("[", "(").replace("]", ")")

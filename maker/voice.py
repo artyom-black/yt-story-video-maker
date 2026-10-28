@@ -44,7 +44,18 @@ def _phonemes(text: str) -> str:
     return "".join(c for c in ph if c in VOCAB)
 
 
-def speak(text: str, voice: str, speed: float = 1.0) -> np.ndarray:
+def _style(voice: str, n_tokens: int):
+    """A voice name, or a blend like "am_echo:0.6+am_michael:0.4" (weights default to equal)."""
+    parts = []
+    for item in voice.split("+"):
+        name, _, w = item.partition(":")
+        parts.append((name.strip(), float(w) if w else 1.0))
+    total = sum(w for _, w in parts)
+    vecs = [_voices[n][min(n_tokens, len(_voices[n])) - 1] * (w / total) for n, w in parts]
+    return sum(vecs)
+
+
+def speak(text: str, voice: str, speed: float = 1.0, gap: float = 0.12) -> np.ndarray:
     """Return mono float32 audio at 24 kHz."""
     global _sess, _voices
     import onnxruntime as ort
@@ -60,15 +71,42 @@ def speak(text: str, voice: str, speed: float = 1.0) -> np.ndarray:
         if p[-1] in ".!?":
             ph += p[-1]
         toks = [VOCAB[c] for c in ph if c in VOCAB][:510]
-        style = _voices[voice][min(len(toks), len(_voices[voice])) - 1]
+        style = _style(voice, len(toks))
         out = _sess.run(None, {tok_name: np.array([[0, *toks, 0]], dtype=np.int64),
                                "style": np.asarray(style, dtype=np.float32),
                                "speed": np.array([speed], dtype=np.float32)})[0].ravel()
         audio.append(out.astype(np.float32))
-        audio.append(np.zeros(int(RATE * 0.12), dtype=np.float32))
+        if gap:
+            audio.append(np.zeros(int(RATE * gap), dtype=np.float32))
     a = np.concatenate(audio) if audio else np.zeros(1, dtype=np.float32)
     peak = float(np.abs(a).max()) or 1.0
     return (a / peak * 0.9).astype(np.float32)
+
+
+def tighten_pauses(audio: np.ndarray, max_gap: float = 0.26, keep: float = 0.2) -> np.ndarray:
+    """Shorten unnaturally long silences inside a line (the "robotic cut" sound).
+    Any pause longer than max_gap seconds is shortened to keep seconds; start and end are trimmed too."""
+    hop = int(0.01 * RATE)
+    env = np.array([np.sqrt(np.mean(audio[i:i + hop] ** 2)) for i in range(0, len(audio) - hop + 1, hop)])
+    if not len(env):
+        return audio
+    quiet = env < 0.04 * (env.max() or 1)
+    voiced = np.where(~quiet)[0]
+    if not len(voiced):
+        return audio
+    out, i, n = [], voiced[0], voiced[-1] + 1
+    while i < n:
+        j = i
+        while j < n and quiet[j] == quiet[i]:
+            j += 1
+        seg = audio[i * hop:j * hop]
+        if quiet[i] and (j - i) * 0.01 > max_gap:
+            k = int(keep * RATE)
+            fade = np.linspace(1, 0, k // 2, dtype=np.float32)
+            seg = np.concatenate([seg[:k // 2] * fade, seg[-(k - k // 2):] * fade[::-1][:k - k // 2]])
+        out.append(seg)
+        i = j
+    return np.concatenate(out).astype(np.float32)
 
 
 def mouth_track(audio: np.ndarray, fps: int = 24) -> list[float]:

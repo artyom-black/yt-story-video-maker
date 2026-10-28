@@ -23,14 +23,18 @@ CANDIDATES = {
 REF_TEXT = ("Okay, so here's the thing. Nobody tells you how weird the past really was. "
             "I mean it. Every single day was a little adventure, and most of them were terrible.")
 REF_TEXT_BY = {
-    # Bob: slow, dry, unimpressed
-    "BOB": ("Yeah... no. I'm good. Honestly, I don't need to see the past. "
-            "I've seen enough of the present. Wake me up when we find snacks."),
+    # Bob (the lovable dumb one): one long, flowing, rambling thought, no forced pauses
+    "BOB": ("So like, if the moon is so big, why doesn't it just fall down on us, you know, because "
+            "I dropped my phone yesterday and it fell really fast, so I think the moon is just being lazy "
+            "or something, and honestly I kind of respect that."),
 }
-REF_SPEED = {"BOB": 0.88}
+REF_SPEED = {"BOB": 0.96}
+REF_GAP = {"BOB": 0.0}
 
-# Round 2 for Bob: new candidates (round 1 had am_onyx, am_fenrir, bm_lewis; none fit)
-CANDIDATES_ROUND2 = {"BOB": ["am_eric", "am_michael", "bm_daniel", "am_adam"]}
+# Round 4 for Bob: blends between a lighter and a fuller voice, aiming for "not too manly, not too young"
+# (measured pitch with maker/voice_measure.py: all 133-141 Hz; Kai is ~106 Hz)
+CANDIDATES_ROUND2 = {"BOB": ["am_liam:0.5+am_eric:0.5", "am_eric:0.6+am_michael:0.4",
+                             "am_echo:0.4+am_eric:0.6", "am_eric:0.5+am_fenrir:0.5"]}
 
 # The same lines as the first audition, now written for a performer:
 # punctuation for rhythm, and [laugh] [chuckle] [sigh] [gasp] for real reactions.
@@ -41,9 +45,9 @@ LINES = {
     "IRIS": [("calm", "Actually, the water was so dirty that weak beer was the safer choice."),
              ("shock", "Oh no. Kai... that is not a sponge."),
              ("funny", "Congratulations, Bob. [chuckle] You just invented the first toilet tax.")],
-    "BOB": [("calm", "[sigh] Cool. So we're stuck here. Great. Love that for us."),
-            ("shock", "Nope. Nope! Absolutely not. I'm going home."),
-            ("funny", "A medieval dentist? [chuckle] So... a guy with pliers. And confidence.")],
+    "BOB": [("calm", "Wait, so if they didn't have phones back then, how did they know what time it was, like, did they just guess?"),
+            ("shock", "Hold on, hold on, the sun is a star? Since when? Why did nobody tell me that!"),
+            ("funny", "[chuckle] Okay, but what if we just take the whole castle with us, like, in a really big bag?")],
     "NARRATOR": [("calm", "In the year thirteen forty-seven, a ship arrived in Sicily."),
                  ("shock", "Nobody on board was alive."),
                  ("epic", "And what it carried... would kill half of Europe.")],
@@ -60,8 +64,8 @@ def main(refs_dir, jobs_path):
     cands = {w: CANDIDATES_ROUND2.get(w, CANDIDATES[w]) for w in only} if only else CANDIDATES
     for who, voices in cands.items():
         for vi, voice in enumerate(voices):
-            ref = os.path.join(refs_dir, f"ref_{who.lower()}_{voice}.wav")
-            save_wav(ref, speak(REF_TEXT_BY.get(who, REF_TEXT), voice, REF_SPEED.get(who, 1.0)))
+            ref = os.path.join(refs_dir, f"ref_{who.lower()}_{vi}.wav")
+            save_wav(ref, speak(REF_TEXT_BY.get(who, REF_TEXT), voice, REF_SPEED.get(who, 1.0), REF_GAP.get(who, 0.12)))
             for li, (mood, text) in enumerate(LINES[who]):
                 jobs.append({"who": who, "option": "ABCD"[vi], "voice": voice, "mood": mood, "text": text,
                              "ref": ref, "exaggeration": EXAGGERATION[mood], "seed": 7,
