@@ -1,21 +1,31 @@
 {
-  "_note": "The chosen voice of each character. Never change these once videos are published.",
+  "_note": "The chosen voice of each character. Never change these once videos are published. Chatterbox-Turbo copies each voice from a reference clip made with Kokoro using exactly these settings.",
+  "_no_narrator": "Decided 2026-10-28: no narrator, the trio tells the whole story.",
   "KAI": {
     "engine": "chatterbox-turbo",
-    "reference_voice": "am_puck",
+    "kokoro_voice": "am_puck",
+    "ref_text": "Okay, so here's the thing. Nobody tells you how weird the past really was. I mean it. Every single day was a little adventure, and most of them were terrible.",
+    "ref_speed": 1.0,
+    "ref_gap": 0.12,
+    "seed": 7,
     "chosen": "2026-10-28, voice lab round 2, option A"
   },
   "IRIS": {
     "engine": "chatterbox-turbo",
-    "reference_voice": "af_bella",
+    "kokoro_voice": "af_bella",
+    "ref_text": "Okay, so here's the thing. Nobody tells you how weird the past really was. I mean it. Every single day was a little adventure, and most of them were terrible.",
+    "ref_speed": 1.0,
+    "ref_gap": 0.12,
+    "seed": 7,
     "chosen": "2026-10-28, voice lab round 2, option B"
   },
   "BOB": {
     "engine": "chatterbox-turbo",
-    "reference_voice": "am_eric:0.5+am_fenrir:0.5",
-    "reference_text": "BOB",
-    "reference_speed": 0.96,
+    "kokoro_voice": "am_eric:0.5+am_fenrir:0.5",
+    "ref_text": "So like, if the moon is so big, why doesn't it just fall down on us, you know, because I dropped my phone yesterday and it fell really fast, so I think the moon is just being lazy or something, and honestly I kind of respect that.",
+    "ref_speed": 0.96,
+    "ref_gap": 0.0,
+    "seed": 7,
     "chosen": "2026-10-28, voice lab round 4, option D"
-  },
-  "_no_narrator": "Decided 2026-10-28: no narrator, the trio tells the whole story."
+  }
 }
