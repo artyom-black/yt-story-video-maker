@@ -1,0 +1,9 @@
+# Never commit keys or generated media
+.env
+*.key
+output/
+work/
+__pycache__/
+*.mp4
+*.wav
+*.mp3

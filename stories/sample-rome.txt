@@ -1,0 +1,81 @@
+TITLE: What If You Lived One Day in Ancient Rome?
+THUMBNAIL_TEXT: 24 HOURS IN ROME
+THUMBNAIL_IDEA: KAI with a shocked face holding a gladiator helmet, Colosseum behind him glowing orange
+THUMBNAIL_IDEA: BOB in a toga running from a speeding chariot, dust everywhere
+THUMBNAIL_IDEA: IRIS pointing at a shared Roman toilet with a sponge on a stick, KAI looking horrified
+DESCRIPTION: You wake up in Rome, 80 AD. No phone, no money, and the Colosseum opens today. Can you survive 24 hours?
+TAGS: ancient rome, history, what if, roman empire, colosseum
+
+=== SCENE 1 ===
+BEAT: hook
+PLACE: Rome, 80 AD, the giant new Colosseum at sunset, roaring crowd of 50,000 people
+CAST: KAI
+MOOD: shock
+CAMERA: slow-push
+MUSIC: epic
+SFX: crowd, boom
+NARRATOR: By tonight, you will be standing inside the Colosseum on its opening day. But first, you have to survive the morning. And in Rome, that is harder than it sounds.
+KAI: Wait. Inside? As in, in the arena?
+
+=== SCENE 2 ===
+BEAT: setup
+PLACE: a cramped Roman apartment room at dawn, cracked plaster walls, light through a tiny window
+CAST: KAI, IRIS, BOB
+MOOD: curious
+CAMERA: zoom-out
+MUSIC: mystery
+SFX: crowd
+NARRATOR: You wake up on a straw mattress, three floors above a noisy street. This is an insula, a Roman apartment block.
+BOB: Why is the floor moving?
+IRIS: Because these buildings were built fast and cheap. Some of them just fell down.
+
+=== SCENE 3 ===
+BEAT: rise
+PLACE: a narrow Roman street at sunrise, bakeries with smoke, merchants opening shops
+CAST: KAI, IRIS, BOB
+EXTRAS: merchants, a goat, kids running
+MOOD: funny
+CAMERA: pan-right
+MUSIC: comedy
+SFX: crowd, footsteps
+NARRATOR: Breakfast in Rome is quick. A piece of bread, maybe some cheese, eaten while walking. Nobody sits down for a big morning meal.
+BOB: Bread for breakfast? Fine. I can live with bread.
+KAI: Bob, you are holding someone else's bread.
+
+=== SCENE 4 ===
+BEAT: rise
+PLACE: a Roman public toilet, a long stone bench with many holes in a row, people sitting side by side chatting
+CAST: KAI, IRIS
+EXTRAS: Roman men chatting on the bench
+MOOD: funny
+CAMERA: zoom-in
+MUSIC: comedy
+SFX: water
+NARRATOR: Then nature calls. Roman public toilets were long stone benches. No walls. No doors. Just you and twenty strangers, chatting about the weather.
+KAI: Absolutely not.
+IRIS: And instead of toilet paper, they shared a sponge on a stick.
+
+=== SCENE 5 ===
+BEAT: twist
+PLACE: a Roman laundry workshop, big tubs, workers stomping on clothes with bare feet
+CAST: BOB, IRIS
+EXTRAS: laundry workers stomping in tubs
+MOOD: shock
+CAMERA: shake
+MUSIC: tension
+SFX: water, gasp
+NARRATOR: But the strangest job in Rome is right around the corner. These workers are washing clothes by stomping on them. In a tub full of collected urine.
+BOB: Why would anyone do that?
+IRIS: The ammonia cleans the stains. It worked so well that the emperor put a tax on it.
+
+=== SCENE 6 ===
+BEAT: outro
+PLACE: the Colosseum entrance in the afternoon, huge crowds pushing through arches
+CAST: KAI, IRIS, BOB
+MOOD: epic
+CAMERA: slow-push
+MUSIC: epic
+SFX: crowd
+NARRATOR: And this is only the morning. Ahead of you is the most famous building in the world, and it is about to open its gates for the very first time.
+KAI: Okay. I'm ready.
+BOB: I am not.
