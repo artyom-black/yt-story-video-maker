@@ -6,4 +6,4 @@ Turns a story `.txt` file into a finished YouTube video.
 - Example story: [stories/sample-rome.txt](stories/sample-rome.txt)
 - Check a story: `python -m maker.story stories/your-story.txt`
 
-- Story template (paste into ChatGPT/Claude): [TEMPLATE.txt](TEMPLATE.txt)
+- Story template (paste into ChatGPT/Claude): [stories/template.txt](stories/template.txt)
