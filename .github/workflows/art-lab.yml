@@ -1,0 +1,41 @@
+name: Art lab (try AI art)
+
+# Draws a small test set of AI pictures (characters + backgrounds) with Cloudflare Workers AI
+# (free daily allowance) and saves them to the "art-lab" branch. Started by hand only.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  art:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q requests numpy "rembg[cpu]" pillow
+      - name: Draw the test set
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          if [ -z "$CF_ACCOUNT_ID" ] || [ -z "$CF_API_TOKEN" ]; then echo "Add the CF_ACCOUNT_ID and CF_API_TOKEN secrets first"; exit 1; fi
+          python -m maker.art_lab art_test
+      - name: Save to the art-lab branch
+        if: always()
+        run: |
+          set -e
+          [ -d art_test ] || exit 0
+          cd art_test
+          git init -q -b art-lab
+          git config user.name "art-lab"
+          git config user.email "art-lab@users.noreply.github.com"
+          git add -A && git commit -q -m "Art test (run ${{ github.run_number }})"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" art-lab
