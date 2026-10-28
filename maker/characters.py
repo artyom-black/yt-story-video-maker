@@ -62,7 +62,8 @@ POSES = {
     "wave":   {"L": (10, 4), "R": (125, 168), "Lleg": (3, 3), "Rleg": (3, 3), "tilt": 5},
     "scared": {"L": (-12, -150), "R": (-12, -150), "Lleg": (2, 6), "Rleg": (2, 6), "drop": 14, "tilt": -4},
     "explain": {"L": (18, 70), "R": (14, 4), "Lleg": (3, 3), "Rleg": (4, 4), "tilt": 3},
-    "run":    {"L": (35, 110), "R": (-25, 60), "Lleg": (28, -8), "Rleg": (-6, 28), "lean": 4, "drop": 18},
+    "run":    {"L": (28, 150), "R": (32, -35), "Lleg": (5, 3), "Rleg": (-12, 30, 0.45, 0.85),
+               "lean": 9, "tilt": 5, "fx": "speed"},
     "facepalm": {"L": (10, 4), "R": (150, -102), "Lleg": (3, 3), "Rleg": (3, 3), "tilt": 8},
 }
 
@@ -121,10 +122,11 @@ def _arm(side, c, upper, fore):
             + f'<circle cx="{ux:.1f}" cy="{uy:.1f}" r="13" fill="{c["skin"]}" stroke="{INK}" stroke-width="{LW}"/>')
 
 
-def _leg(side, c, thigh, shin, drop):
+def _leg(side, c, thigh, shin, drop, thigh_len=1.0, shin_len=1.0):
+    """thigh_len < 1 shortens the thigh, which reads as a knee lifted towards the camera."""
     hx, hy = side * 26, -255 + drop
-    kx, ky = _step(hx, hy, side, thigh, 112)
-    fx, fy = _step(kx, ky, side, shin, 113 - drop)
+    kx, ky = _step(hx, hy, side, thigh, 112 * thigh_len)
+    fx, fy = _step(kx, ky, side, shin, (113 - drop) * shin_len)
     shoe = (f'<path d="M{fx - side * 20:.1f} {fy - 10:.1f} L{fx + side * 30:.1f} {fy - 8:.1f} '
             f'Q{fx + side * 56:.1f} {fy + 8:.1f} {fx + side * 52:.1f} {fy + 22:.1f} '
             f'L{fx - side * 24:.1f} {fy + 22:.1f} Z" fill="{c["shoes"]}" stroke="{INK}" '
@@ -266,6 +268,19 @@ def _bob(c, face):
     return body, _head(c, "", eyes + _nose(-570) + beard + mouth + beanie + brows)
 
 
+def _speed_lines():
+    """Motion lines behind the runner and a dust puff at the planted foot."""
+    lines = "".join(_line(f"M{x1} {y} L{x2} {y}", 5, "#9b948a")
+                    for x1, x2, y in ((-215, -120, -470), (-245, -125, -400), (-205, -115, -330),
+                                      (-235, -130, -255), (-190, -120, -180)))
+    dust = "".join(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#d8d1c4" stroke="#9b948a" stroke-width="3"/>'
+                   for x, y, r in ((-95, -14, 20), (-128, -24, 15), (-155, -12, 11)))
+    return dust + lines
+
+
+_EFFECTS = {"speed": _speed_lines}
+
+
 BUILD = {"KAI": _kai, "IRIS": _iris, "BOB": _bob}
 
 
@@ -278,11 +293,13 @@ def character(name: str, x: float, y: float, scale: float = 1.0, pose: str = "st
     body, head = BUILD[name](c, _face(name, c, expression, talking))
     neck = f'<rect x="-15" y="-522" width="30" height="36" fill="{c["skin"]}" stroke="{INK}" stroke-width="{LW}"/>'
     arms = _arm(-1, c, *p["L"]) + _arm(1, c, *p["R"])
-    legs = _leg(-1, c, *p["Lleg"], drop) + _leg(1, c, *p["Rleg"], drop)
+    legs = (_leg(-1, c, *p["Lleg"][:2], drop, *p["Lleg"][2:])
+            + _leg(1, c, *p["Rleg"][:2], drop, *p["Rleg"][2:]))
+    fx = _EFFECTS[p["fx"]]() if p.get("fx") else ""
     upper = (f'<g transform="translate(0 {drop}) rotate({lean} 0 -255)">'
              f'{neck}{body}<g transform="rotate({tilt} 0 -515)">{head}</g>{arms}</g>')
     sx = -scale if flip else scale
-    return f'<g transform="translate({x} {y}) scale({sx} {scale})">{legs}{upper}</g>'
+    return f'<g transform="translate({x} {y}) scale({sx} {scale})">{fx}{legs}{upper}</g>'
 
 
 # ---------------------------------------------------------------- preview sheets
