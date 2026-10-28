@@ -9,6 +9,7 @@
   <!-- ===================================================== KAI : the curious one -->
   <g transform="translate(270,780)" stroke="#1d1d1f" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
     <ellipse cx="0" cy="0" rx="120" ry="16" fill="#000" opacity=".12" stroke="none"/>
+    <rect x="-26" y="-380" width="52" height="80" rx="10" fill="#f5c9a3"/>
     <!-- legs -->
     <path d="M-38 -150 L-48 -32 M38 -150 L50 -32" fill="none" stroke-width="50"/>
     <path d="M-38 -150 L-48 -32 M38 -150 L50 -32" fill="none" stroke="#2f3a66" stroke-width="36"/>
@@ -22,46 +23,42 @@
     <path d="M-45 -215 L45 -215 L52 -160 L-52 -160 Z" fill="#e2620c"/>
     <path d="M-22 -318 L-28 -258 M22 -318 L28 -258" fill="none" stroke-width="5"/>
     <circle cx="-28" cy="-252" r="6" fill="#fff" stroke-width="4"/><circle cx="28" cy="-252" r="6" fill="#fff" stroke-width="4"/>
-    <!-- arm to chin (thinking) -->
-    <path d="M-72 -292 Q-128 -318 -46 -352" fill="none" stroke-width="48"/>
-    <path d="M-72 -292 Q-128 -318 -46 -352" fill="none" stroke="#ff7a1a" stroke-width="34"/>
-    <!-- arm holding magnifying glass -->
-    <path d="M72 -292 Q140 -280 165 -330" fill="none" stroke-width="48"/>
-    <path d="M72 -292 Q140 -280 165 -330" fill="none" stroke="#ff7a1a" stroke-width="34"/>
-    <path d="M172 -342 L205 -398" fill="none" stroke="#6b4423" stroke-width="16"/>
-    <circle cx="228" cy="-440" r="48" fill="#bfe6ff" fill-opacity=".55" stroke="#3b3b45" stroke-width="12"/>
-    <path d="M205 -460 Q215 -478 232 -480" fill="none" stroke="#fff" stroke-width="7"/>
-    <circle cx="170" cy="-338" r="22" fill="#f5c9a3"/>
+    
+    <path d="M-76 -292 Q-116 -240 -104 -158" fill="none" stroke-width="48"/>
+    <path d="M-76 -292 Q-116 -240 -104 -158" fill="none" stroke="#ff7a1a" stroke-width="34"/>
+    <circle cx="-104" cy="-146" r="21" fill="#f5c9a3"/>
+    <path d="M76 -292 Q116 -240 104 -158" fill="none" stroke-width="48"/>
+    <path d="M76 -292 Q116 -240 104 -158" fill="none" stroke="#ff7a1a" stroke-width="34"/>
+    <circle cx="104" cy="-146" r="21" fill="#f5c9a3"/>
     <!-- head -->
     <circle cx="-126" cy="-465" r="22" fill="#f5c9a3"/>
     <circle cx="126" cy="-465" r="22" fill="#f5c9a3"/>
     <circle cx="0" cy="-470" r="125" fill="#f5c9a3"/>
-    <!-- hand on chin -->
-    <circle cx="-40" cy="-352" r="22" fill="#f5c9a3"/>
+    
     <!-- messy hair + giant cowlick -->
     <path d="M-130 -470 Q-145 -605 0 -610 Q145 -605 130 -470 Q118 -535 72 -545 L58 -505 L30 -550 L2 -508 L-30 -552 L-58 -510 L-88 -545 Q-122 -530 -130 -470 Z" fill="#1d1d1f"/>
     <path d="M-5 -603 C-20 -680 45 -720 92 -690 C50 -688 35 -650 32 -600 Z" fill="#1d1d1f"/>
     <!-- eyes: huge, sparkling, looking at the lens -->
     <ellipse cx="-44" cy="-458" rx="33" ry="41" fill="#fff"/>
     <ellipse cx="46" cy="-458" rx="33" ry="41" fill="#fff"/>
-    <circle cx="-30" cy="-466" r="18" fill="#1d1d1f" stroke="none"/>
-    <circle cx="60" cy="-466" r="18" fill="#1d1d1f" stroke="none"/>
-    <circle cx="-24" cy="-473" r="6" fill="#fff" stroke="none"/>
-    <circle cx="66" cy="-473" r="6" fill="#fff" stroke="none"/>
+    <circle cx="-40" cy="-462" r="18" fill="#1d1d1f" stroke="none"/>
+    <circle cx="50" cy="-462" r="18" fill="#1d1d1f" stroke="none"/>
+    <circle cx="-34" cy="-469" r="6" fill="#fff" stroke="none"/>
+    <circle cx="56" cy="-469" r="6" fill="#fff" stroke="none"/>
     <!-- eyebrows raised way up -->
     <path d="M-78 -522 Q-50 -545 -18 -528 M18 -530 Q50 -550 82 -526" fill="none" stroke-width="10"/>
     <!-- nose, "ooh" mouth, freckles -->
     <path d="M2 -425 Q12 -410 0 -402" fill="none" stroke-width="5"/>
-    <ellipse cx="6" cy="-376" rx="15" ry="19" fill="#8a2c2c"/>
+    <path d="M-28 -385 Q2 -350 32 -385 Z" fill="#8a2c2c"/>
     <g fill="#d9926a" stroke="none"><circle cx="-72" cy="-410" r="4"/><circle cx="-60" cy="-400" r="4"/><circle cx="-80" cy="-396" r="4"/>
     <circle cx="74" cy="-410" r="4"/><circle cx="86" cy="-398" r="4"/><circle cx="66" cy="-398" r="4"/></g>
-    <!-- question mark -->
-    <text x="-170" y="-610" font-family="DejaVu Sans, Arial" font-weight="bold" font-size="90" fill="#ff7a1a" stroke-width="5" transform="rotate(-12 -170 -610)">?</text>
+    
   </g>
 
   <!-- ===================================================== IRIS : the smart one -->
   <g transform="translate(750,780)" stroke="#1d1d1f" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
     <ellipse cx="0" cy="0" rx="110" ry="16" fill="#000" opacity=".12" stroke="none"/>
+    <rect x="-26" y="-380" width="52" height="80" rx="10" fill="#c98d63"/>
     <path d="M-32 -150 L-40 -32 M32 -150 L40 -32" fill="none" stroke-width="44"/>
     <path d="M-32 -150 L-40 -32 M32 -150 L40 -32" fill="none" stroke="#3b3550" stroke-width="30"/>
     <path d="M-85 -2 Q-90 -38 -54 -40 L-22 -38 Q-14 -10 -28 -2 Z" fill="#7b5cff"/>
@@ -70,17 +67,13 @@
     <path d="M-78 -300 Q-98 -215 -84 -140 Q0 -125 84 -140 Q98 -215 78 -300 Q0 -332 -78 -300 Z" fill="#14b8a6"/>
     <path d="M-30 -318 L0 -250 L30 -318 L22 -140 L-22 -140 Z" fill="#ffffff" stroke-width="6"/>
     <path d="M45 -305 Q86 -220 82 -142 L50 -138 Q62 -220 45 -305 Z" fill="#0e9384" stroke="none"/>
-    <!-- arm hugging a fat book -->
-    <rect x="-112" y="-275" width="70" height="92" rx="6" fill="#d94a4a" transform="rotate(-10 -77 -229)"/>
-    <path d="M-100 -245 L-60 -251 M-98 -230 L-62 -236" fill="none" stroke="#fff" stroke-width="5" transform="rotate(-10 -77 -229)"/>
-    <path d="M-72 -292 Q-120 -250 -62 -210" fill="none" stroke-width="44"/>
-    <path d="M-72 -292 Q-120 -250 -62 -210" fill="none" stroke="#14b8a6" stroke-width="30"/>
-    <circle cx="-56" cy="-208" r="19" fill="#c98d63"/>
-    <!-- arm with "well, actually..." finger -->
-    <path d="M72 -292 Q160 -300 178 -385" fill="none" stroke-width="44"/>
-    <path d="M72 -292 Q160 -300 178 -385" fill="none" stroke="#14b8a6" stroke-width="30"/>
-    <rect x="172" y="-455" width="16" height="50" rx="8" fill="#c98d63" stroke-width="6"/>
-    <circle cx="180" cy="-400" r="21" fill="#c98d63"/>
+    
+    <path d="M-74 -292 Q-114 -240 -102 -158" fill="none" stroke-width="48"/>
+    <path d="M-74 -292 Q-114 -240 -102 -158" fill="none" stroke="#14b8a6" stroke-width="34"/>
+    <circle cx="-102" cy="-146" r="21" fill="#c98d63"/>
+    <path d="M74 -292 Q114 -240 102 -158" fill="none" stroke-width="48"/>
+    <path d="M74 -292 Q114 -240 102 -158" fill="none" stroke="#14b8a6" stroke-width="34"/>
+    <circle cx="102" cy="-146" r="21" fill="#c98d63"/>
     <!-- hair back + ponytail -->
     <path d="M70 -575 C150 -640 215 -560 190 -470 C175 -520 140 -545 95 -535 Z" fill="#5a3418"/>
     <path d="M-132 -470 Q-150 -620 0 -618 Q150 -620 132 -470 Q138 -410 112 -392 Q100 -440 60 -440 L-60 -440 Q-100 -440 -112 -392 Q-138 -410 -132 -470 Z" fill="#5a3418"/>
@@ -94,7 +87,8 @@
     <circle cx="46" cy="-458" r="40" fill="#fff" stroke-width="10"/>
     <path d="M-6 -462 Q0 -470 6 -462" fill="none" stroke-width="8"/>
     <path d="M-72 -470 Q-62 -490 -48 -494 M20 -470 Q30 -490 44 -494" fill="none" stroke="#bfe6ff" stroke-width="7"/>
-    <path d="M-62 -448 Q-46 -462 -30 -448" fill="none" stroke-width="9"/>
+    <circle cx="-44" cy="-455" r="15" fill="#1d1d1f" stroke="none"/>
+    <circle cx="-39" cy="-461" r="5" fill="#fff" stroke="none"/>
     <circle cx="48" cy="-455" r="15" fill="#1d1d1f" stroke="none"/>
     <circle cx="53" cy="-461" r="5" fill="#fff" stroke="none"/>
     <!-- one brow flat, one arched: "um, actually" -->
@@ -104,17 +98,12 @@
     <path d="M-30 -385 Q10 -370 40 -398" fill="none" stroke-width="8"/>
     <circle cx="-72" cy="-400" r="14" fill="#e07a6a" stroke="none" opacity=".5"/>
     <circle cx="74" cy="-400" r="14" fill="#e07a6a" stroke="none" opacity=".5"/>
-    <!-- lightbulb -->
-    <g transform="translate(-175,-580) rotate(10)">
-      <circle cx="0" cy="0" r="28" fill="#ffe14d" stroke-width="6"/>
-      <rect x="-12" y="24" width="24" height="18" rx="3" fill="#b8b8b8" stroke-width="5"/>
-      <path d="M-48 -10 L-62 -16 M0 -44 L0 -60 M48 -10 L62 -16" fill="none" stroke="#e8b800" stroke-width="6"/>
-    </g>
   </g>
 
   <!-- ===================================================== BOB : the funny one -->
   <g transform="translate(1215,780)" stroke="#1d1d1f" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
     <ellipse cx="0" cy="0" rx="125" ry="16" fill="#000" opacity=".12" stroke="none"/>
+    <rect x="-26" y="-380" width="52" height="80" rx="10" fill="#e9b28a"/>
     <!-- legs + mismatched socks -->
     <path d="M-40 -150 L-48 -32 M40 -150 L50 -32" fill="none" stroke-width="50"/>
     <path d="M-40 -150 L-48 -32 M40 -150 L50 -32" fill="none" stroke="#e9b28a" stroke-width="36"/>
@@ -134,24 +123,13 @@
     <path d="M-38 -255 Q0 -270 38 -255" fill="none" stroke="#c46a1d" stroke-width="9"/>
     <g fill="#e23b3b" stroke="none"><circle cx="-12" cy="-238" r="7"/><circle cx="12" cy="-225" r="7"/><circle cx="0" cy="-202" r="6"/></g>
     <path d="M58 -200 Q70 -212 82 -202 Q90 -190 76 -184 Q64 -178 58 -190 Z" fill="#e23b3b" stroke="none"/>
-    <!-- thumbs up arm -->
-    <path d="M-92 -290 Q-160 -270 -168 -335" fill="none" stroke-width="48"/>
-    <path d="M-92 -290 Q-160 -270 -168 -335" fill="none" stroke="#ffd23f" stroke-width="34"/>
-    <rect x="-180" y="-392" width="18" height="40" rx="9" fill="#e9b28a" stroke-width="6"/>
-    <circle cx="-168" cy="-345" r="22" fill="#e9b28a"/>
-    <!-- arm with a tall, half-eaten sandwich -->
-    <path d="M92 -290 Q155 -275 165 -330" fill="none" stroke-width="48"/>
-    <path d="M92 -290 Q155 -275 165 -330" fill="none" stroke="#ffd23f" stroke-width="34"/>
-    <g transform="translate(185,-390) rotate(12)">
-      <rect x="-48" y="18" width="96" height="20" rx="8" fill="#e8b46a"/>
-      <path d="M-52 18 Q-40 6 -28 18 Q-16 6 -4 18 Q8 6 20 18 Q32 6 44 18 Q52 10 54 18" fill="#5cb85c" stroke-width="5"/>
-      <rect x="-46" y="0" width="92" height="16" rx="3" fill="#e23b3b" stroke-width="5"/>
-      <rect x="-48" y="-16" width="96" height="14" rx="3" fill="#ffd23f" stroke-width="5"/>
-      <path d="M-50 -20 Q-50 -48 0 -50 Q50 -48 50 -20 Z" fill="#e8b46a"/>
-      <circle cx="44" cy="-40" r="16" fill="#fdf6e9" stroke="none"/>
-      <circle cx="54" cy="-14" r="14" fill="#fdf6e9" stroke="none"/>
-    </g>
-    <circle cx="166" cy="-338" r="22" fill="#e9b28a"/>
+    
+    <path d="M-92 -292 Q-132 -240 -120 -158" fill="none" stroke-width="48"/>
+    <path d="M-92 -292 Q-132 -240 -120 -158" fill="none" stroke="#ffd23f" stroke-width="34"/>
+    <circle cx="-120" cy="-146" r="21" fill="#e9b28a"/>
+    <path d="M92 -292 Q132 -240 120 -158" fill="none" stroke-width="48"/>
+    <path d="M92 -292 Q132 -240 120 -158" fill="none" stroke="#ffd23f" stroke-width="34"/>
+    <circle cx="120" cy="-146" r="21" fill="#e9b28a"/>
     <!-- head -->
     <circle cx="-126" cy="-465" r="22" fill="#e9b28a"/>
     <circle cx="126" cy="-465" r="22" fill="#e9b28a"/>
@@ -181,8 +159,7 @@
     <path d="M10 -328 Q30 -300 48 -330 Q30 -322 10 -328 Z" fill="#ff8aa0" stroke-width="5"/>
     <circle cx="-84" cy="-392" r="16" fill="#f29b8a" stroke="none" opacity=".75"/>
     <circle cx="88" cy="-392" r="16" fill="#f29b8a" stroke="none" opacity=".75"/>
-    <!-- crumbs on his face -->
-    <g fill="#c48a3a" stroke="none"><circle cx="-60" cy="-338" r="5"/><circle cx="68" cy="-344" r="4"/><circle cx="96" cy="-322" r="5"/><circle cx="110" cy="-350" r="4"/></g>
+    
     <!-- the fly that follows Bob everywhere -->
     <path d="M-175 -640 q30 -30 60 0 q30 30 55 -5" fill="none" stroke="#55524c" stroke-width="3" stroke-dasharray="6 9"/>
     <ellipse cx="-66" cy="-648" rx="10" ry="7" fill="#1d1d1f" stroke="none"/>
