@@ -101,3 +101,43 @@ if __name__ == "__main__":
     os.makedirs(out_dir, exist_ok=True)
     for who in (sys.argv[2:] or CANDIDATES):
         make(who, out_dir)
+
+
+# ---------------------------------------------------------------- auditions from recorded files
+def load_audio(path: str) -> np.ndarray:
+    """Decode any audio file to mono float32 at 24 kHz using ffmpeg."""
+    raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", path, "-f", "f32le", "-ac", "1", "-ar", str(RATE), "-"],
+                         capture_output=True, check=True).stdout
+    return np.frombuffer(raw, dtype=np.float32).copy()
+
+
+def make_from_lab(who: str, lab_dir: str, out_dir: str, engine: str = "Chatterbox-Turbo"):
+    """Audition video from voice-lab recordings (jobs.json + mp3 files)."""
+    import json
+    jobs = [j for j in json.load(open(os.path.join(lab_dir, "jobs.json"))) if j["who"] == who]
+    expr = {"calm": "default", "shock": "shock", "funny": "happy", "epic": "default"}
+    if who == "IRIS":
+        expr["funny"] = "smirk"
+    tmp = tempfile.mkdtemp(prefix=f"lab_{who}_")
+    audio_parts, frames = [], 0
+    for job in jobs:
+        a = load_audio(os.path.join(lab_dir, job["out"].replace(".wav", ".mp3")))
+        clip = np.concatenate([np.zeros(int(RATE * 0.3), np.float32), a, np.zeros(int(RATE * 0.7), np.float32)])
+        track = mouth_track(clip, FPS)
+        shown = job["text"].replace("[", "(").replace("]", ")")
+        for lv in track:
+            t = frames / FPS
+            with open(f"{tmp}/f{frames:05d}.svg", "w") as fh:
+                fh.write(frame_svg(who, job["option"], f'{job["voice"]} + {engine}', job["mood"], shown, t, lv,
+                                   expr[job["mood"]]))
+            frames += 1
+        n = int(len(track) * RATE / FPS)
+        audio_parts.append(np.concatenate([clip, np.zeros(max(0, n - len(clip)), np.float32)])[:n])
+    wav = f"{tmp}/voice.wav"
+    save_wav(wav, np.concatenate(audio_parts))
+    out = os.path.join(out_dir, f"voices2_{who.lower()}.mp4")
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-framerate", str(FPS), "-i", f"{tmp}/f%05d.svg",
+                    "-i", wav, "-c:v", "libx264", "-preset", "veryfast", "-crf", "22", "-pix_fmt", "yuv420p",
+                    "-c:a", "aac", "-b:a", "160k", "-shortest", out], check=True)
+    shutil.rmtree(tmp)
+    print("wrote", out, f"{frames / FPS:.0f}s")
