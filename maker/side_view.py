@@ -108,8 +108,10 @@ def _mouth(kind, x, y, beard=False):
     return _line(shapes.get(kind, f"M{x - 6} {y + 1} L{x + 13} {y + 1}"), w)
 
 
-def _profile_head(name, c, expression, talking):
+def _profile_head(name, c, expression, talking, blink=False):
     eyes, brows, mouth = EXPRESSIONS[expression]
+    if blink and eyes != "happy":
+        eyes = "squint"
     mouth = "talk" if talking else (mouth or c["mouth"])
     s = c["skin"]
     ear = (f'<path d="M-10 -592 Q-30 -594 -28 -576 Q-28 -560 -10 -562" fill="{_shade(s, 0.9)}" stroke="{INK}" '
@@ -176,14 +178,15 @@ def _profile_torso(name, c):
 
 
 def character_side(name: str, x: float, y: float, scale: float = 1.0, pose: dict | None = None,
-                   expression: str = "default", talking: bool = False, flip: bool = False) -> str:
+                   expression: str = "default", talking: bool = False, flip: bool = False,
+                   blink: bool = False) -> str:
     """Profile view with feet at (x, y). pose keys: front_arm, back_arm, front_leg, back_leg
     (each (upper, lower) angle), lean, drop."""
     c = CAST[name]
     p = pose or WALK_STAND
     drop, lean = p.get("drop", 0), p.get("lean", 0)
     neck = f'<rect x="-10" y="-522" width="28" height="36" fill="{c["skin"]}" stroke="{INK}" stroke-width="{LW}"/>'
-    head = _profile_head(name, c, expression, talking)
+    head = _profile_head(name, c, expression, talking, blink)
     upper_back = _arm(c, *p["back_arm"], back=True)
     upper = (f'<g transform="translate(0 {drop}) rotate({lean} 0 {HIP_Y})">{upper_back}{neck}'
              f'{_profile_torso(name, c)}<g transform="rotate({p.get("tilt", 0)} 0 -515)">{head}</g></g>')

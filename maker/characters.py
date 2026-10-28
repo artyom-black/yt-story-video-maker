@@ -157,6 +157,8 @@ def _eyes(kind, dx, y):
                        f'<circle cx="{x}" cy="{y + 1}" r="5" fill="{INK}"/>')
         elif kind == "happy":
             out.append(_line(f"M{x - 8} {y + 3} Q{x} {y - 7} {x + 8} {y + 3}", 4.5))
+        elif kind == "closed":
+            out.append(_line(f"M{x - 8} {y} Q{x} {y + 5} {x + 8} {y}", 4.5))
         elif kind == "squint":
             out.append(_line(f"M{x - 8} {y} L{x + 8} {y}", 4.5))
         else:
@@ -195,8 +197,10 @@ def _mouth(kind, y, beard=False):
     return _line(lines.get(kind, lines["neutral"]), w)
 
 
-def _face(name, c, expression, talking):
+def _face(name, c, expression, talking, blink=False):
     eyes, brows, mouth = EXPRESSIONS[expression]
+    if blink and eyes != "happy":
+        eyes = "closed"
     brow_off = BROWS[brows] if brows else c["brows"]
     mouth = "talk" if talking else (mouth or c["mouth"])
     if name == "BOB":
@@ -307,16 +311,59 @@ def run_pose(phase: float) -> dict:
             "drop": 14 - 14 * bounce, "lean": 0, "tilt": 2 * math.sin(2 * math.pi * phase)}
 
 
+
+def blend_pose(a: str | dict, b: str | dict, t: float) -> dict:
+    """Smoothly move from pose a to pose b. t = 0..1 (eased)."""
+    pa = POSES[a] if isinstance(a, str) else a
+    pb = POSES[b] if isinstance(b, str) else b
+    t = t * t * (3 - 2 * t)
+    out = {}
+    for k in ("L", "R", "Lleg", "Rleg"):
+        va, vb = list(pa[k]), list(pb[k])
+        n = max(len(va), len(vb))
+        va += [1.0] * (n - len(va))
+        vb += [1.0] * (n - len(vb))
+        out[k] = tuple(x + (y - x) * t for x, y in zip(va, vb))
+    for k in ("lean", "tilt", "drop"):
+        out[k] = pa.get(k, 0) + (pb.get(k, 0) - pa.get(k, 0)) * t
+    out["fx"] = pb.get("fx") if t > 0.5 else pa.get("fx")
+    return out
+
+
+def idle_pose(t: float, seed: float = 0.0, base: str | dict = "stand") -> dict:
+    """Standing still but alive: slow breathing and a little sway."""
+    p = dict(POSES[base] if isinstance(base, str) else base)
+    breath = math.sin(2 * math.pi * (t / 3.2 + seed))
+    p["drop"] = p.get("drop", 0) + 2.5 * breath
+    p["tilt"] = p.get("tilt", 0) + 1.5 * math.sin(2 * math.pi * (t / 5.1 + seed))
+    p["L"] = (p["L"][0] + 1.5 * breath, *p["L"][1:])
+    p["R"] = (p["R"][0] + 1.5 * breath, *p["R"][1:])
+    return p
+
+
+def is_blinking(t: float, seed: float = 0.0) -> bool:
+    """A quick blink roughly every 3-4 seconds, different timing per character."""
+    period = 3.3 + seed * 1.7
+    return (t + seed * 2.1) % period < 0.12
+
+
+def mouth_open(t: float, seed: float = 0.0) -> bool:
+    """Talking mouth flap: open and close at speech rhythm, slightly irregular."""
+    v = math.sin(2 * math.pi * 6.5 * t + seed) + 0.6 * math.sin(2 * math.pi * 2.3 * t + 2 * seed)
+    return v > 0.15
+
+
 BUILD = {"KAI": _kai, "IRIS": _iris, "BOB": _bob}
 
 
 def character(name: str, x: float, y: float, scale: float = 1.0, pose: str | dict = "stand",
-              expression: str = "default", talking: bool = False, flip: bool = False) -> str:
+              expression: str = "default", talking: bool = False, flip: bool = False,
+              blink: bool = False) -> str:
     """SVG group for one character with feet at (x, y). flip=True mirrors left/right."""
     c = CAST[name]
     p = POSES[pose] if isinstance(pose, str) else pose
     drop, lean, tilt = p.get("drop", 0), p.get("lean", 0), p.get("tilt", 0)
-    body, head = BUILD[name](c, _face(name, c, expression, talking))
+    body, head = BUILD[name](c, _face(name, c, expression, talking, blink))
     neck = f'<rect x="-15" y="-522" width="30" height="36" fill="{c["skin"]}" stroke="{INK}" stroke-width="{LW}"/>'
     arms = _arm(-1, c, *p["L"]) + _arm(1, c, *p["R"])
     legs = (_leg(-1, c, *p["Lleg"][:2], drop, *p["Lleg"][2:])
