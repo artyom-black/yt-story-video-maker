@@ -37,7 +37,7 @@ def _arm(c, upper, fore, fore_len=1.0, back=False):
 
 
 # shoe outline with the ankle at (0, 0), toes pointing along +x and the sole along +y
-SHOE = "M-18 -8 L14 -12 Q42 -8 50 8 Q50 18 42 18 L-20 18 Q-24 6 -18 -8 Z"
+SHOE = "M-22 -14 L18 -16 Q44 -8 50 8 Q50 18 42 18 L-22 18 Q-28 2 -22 -14 Z"
 SHOE_SOLE = ((-20, 18), (46, 18))
 
 
@@ -57,7 +57,14 @@ def _leg(c, thigh, shin, foot, drop, back=False):
     shoe = (f'<g transform="translate({fx:.1f} {fy:.1f}) rotate({_foot_rot(foot):.1f})">'
             f'<path d="{SHOE}" fill="{shoes}" stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>'
             f'<path d="M-19 12 L46 12" stroke="{accent}" stroke-width="4"/></g>')
-    return _limb([(hx, hy), (kx, ky), (fx, fy)], pants, 40) + shoe
+    # trouser leg ends square and slightly above the ankle, so no rounded end pokes out of the shoe
+    ax, ay = _fwd(kx, ky, shin, 113 - 10)
+    d = f"M{hx:.1f} {hy:.1f} L{kx:.1f} {ky:.1f} L{ax:.1f} {ay:.1f}"
+    leg = (f'<path d="{d}" fill="none" stroke="{INK}" stroke-width="{40 + 2 * LW}" '
+           f'stroke-linecap="butt" stroke-linejoin="round"/>'
+           f'<path d="{d}" fill="none" stroke="{pants}" stroke-width="40" '
+           f'stroke-linecap="butt" stroke-linejoin="round"/>')
+    return leg + shoe
 
 
 def _foot_bottom(thigh, shin, foot, drop):
