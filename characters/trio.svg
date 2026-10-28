@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 900" width="1500" height="900">
+  <rect width="1500" height="900" fill="#f4efe6"/>
+  <ellipse cx="750" cy="790" rx="640" ry="28" fill="#e2dacb"/>
+
+  <!-- ================= KAI : the curious one (orange hoodie, spiky hair) ================= -->
+  <g transform="translate(260,0)" stroke="#1d1d1f" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <!-- legs + sneakers -->
+    <path d="M-35 560 L-45 745" fill="none" stroke="#2f3a56" stroke-width="30"/>
+    <path d="M35 560 L45 745" fill="none" stroke="#2f3a56" stroke-width="30"/>
+    <path d="M-80 745 Q-80 720 -50 722 L-20 726 Q-12 760 -30 765 L-80 765 Z" fill="#ffffff"/>
+    <path d="M80 745 Q80 720 50 722 L20 726 Q12 760 30 765 L80 765 Z" fill="#ffffff"/>
+    <!-- hoodie body -->
+    <path d="M-85 360 Q-95 470 -80 575 L80 575 Q95 470 85 360 Q60 335 0 335 Q-60 335 -85 360 Z" fill="#ff7a1a"/>
+    <path d="M-40 470 L40 470 L48 535 L-48 535 Z" fill="#e8650a"/>
+    <path d="M-22 345 L-26 410 M22 345 L26 410" fill="none" stroke-width="5"/>
+    <!-- arms: one raised, asking -->
+    <path d="M-85 370 Q-150 430 -135 520" fill="none" stroke="#1d1d1f" stroke-width="50"/>
+    <path d="M-85 370 Q-150 430 -135 520" fill="none" stroke="#ff7a1a" stroke-width="36"/>
+    <circle cx="-135" cy="530" r="20" fill="#f2c29b"/>
+    <path d="M85 370 Q150 330 160 255" fill="none" stroke="#1d1d1f" stroke-width="50"/>
+    <path d="M85 370 Q150 330 160 255" fill="none" stroke="#ff7a1a" stroke-width="36"/>
+    <circle cx="162" cy="240" r="20" fill="#f2c29b"/>
+    <!-- head -->
+    <circle cx="0" cy="235" r="105" fill="#f2c29b"/>
+    <!-- spiky hair -->
+    <path d="M-105 225 Q-110 140 -60 120 L-70 85 L-25 112 L-15 65 L15 108 L45 70 L50 115 L95 95 L85 140 Q112 175 105 225 Q80 170 0 168 Q-70 168 -105 225 Z" fill="#1d1d1f"/>
+    <!-- face: wide curious eyes, small open mouth -->
+    <ellipse cx="-38" cy="240" rx="22" ry="27" fill="#ffffff"/>
+    <ellipse cx="38" cy="240" rx="22" ry="27" fill="#ffffff"/>
+    <circle cx="-34" cy="245" r="10" fill="#1d1d1f" stroke="none"/>
+    <circle cx="42" cy="245" r="10" fill="#1d1d1f" stroke="none"/>
+    <path d="M-60 200 Q-40 188 -18 198 M18 194 Q40 182 62 196" fill="none"/>
+    <ellipse cx="0" cy="295" rx="14" ry="11" fill="#7a2e2e"/>
+  </g>
+
+  <!-- ================= IRIS : the smart one (teal jacket, round glasses, ponytail) ================= -->
+  <g transform="translate(750,-25)" stroke="#1d1d1f" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M-30 580 L-38 770" fill="none" stroke="#3b3b45" stroke-width="28"/>
+    <path d="M30 580 L38 770" fill="none" stroke="#3b3b45" stroke-width="28"/>
+    <path d="M-72 770 Q-72 748 -46 750 L-16 752 Q-10 784 -26 790 L-72 790 Z" fill="#7b5cff"/>
+    <path d="M72 770 Q72 748 46 750 L16 752 Q10 784 26 790 L72 790 Z" fill="#7b5cff"/>
+    <!-- jacket -->
+    <path d="M-80 375 Q-90 490 -75 595 L75 595 Q90 490 80 375 Q55 352 0 352 Q-55 352 -80 375 Z" fill="#14b8a6"/>
+    <path d="M0 360 L0 595" fill="none" stroke-width="5"/>
+    <path d="M-30 362 L0 410 L30 362" fill="#ffffff"/>
+    <!-- arm pointing (explaining) + arm holding tablet -->
+    <path d="M80 390 Q160 380 205 345" fill="none" stroke="#1d1d1f" stroke-width="48"/>
+    <path d="M80 390 Q160 380 205 345" fill="none" stroke="#14b8a6" stroke-width="34"/>
+    <circle cx="215" cy="338" r="18" fill="#c98d63"/>
+    <ellipse cx="236" cy="326" rx="16" ry="8" fill="#c98d63" transform="rotate(-35 236 326)"/>
+    <path d="M-80 390 Q-125 450 -95 500" fill="none" stroke="#1d1d1f" stroke-width="48"/>
+    <path d="M-80 390 Q-125 450 -95 500" fill="none" stroke="#14b8a6" stroke-width="34"/>
+    <rect x="-130" y="455" width="62" height="82" rx="8" fill="#2f3a56" transform="rotate(-12 -100 495)"/>
+    <circle cx="-92" cy="505" r="17" fill="#c98d63"/>
+    <!-- ponytail -->
+    <path d="M80 200 Q160 210 150 320 Q130 280 95 270 Z" fill="#5a3418"/>
+    <!-- head -->
+    <circle cx="0" cy="240" r="100" fill="#c98d63"/>
+    <path d="M-100 240 Q-110 135 0 132 Q110 135 100 240 Q95 190 60 178 Q10 200 -45 185 Q-85 195 -100 240 Z" fill="#5a3418"/>
+    <!-- glasses -->
+    <circle cx="-38" cy="252" r="30" fill="#ffffff"/>
+    <circle cx="38" cy="252" r="30" fill="#ffffff"/>
+    <path d="M-8 250 L8 250" fill="none"/>
+    <circle cx="-34" cy="255" r="9" fill="#1d1d1f" stroke="none"/>
+    <circle cx="42" cy="255" r="9" fill="#1d1d1f" stroke="none"/>
+    <path d="M-62 208 Q-40 200 -18 210 M18 206 Q40 196 62 204" fill="none"/>
+    <!-- confident smile -->
+    <path d="M-28 300 Q0 322 30 298" fill="none"/>
+  </g>
+
+  <!-- ================= BOB : the funny one (round, yellow tee, green beanie, snack) ================= -->
+  <g transform="translate(1235,40)" stroke="#1d1d1f" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M-45 600 L-50 715" fill="none" stroke="#6b4e2e" stroke-width="34"/>
+    <path d="M45 600 L50 715" fill="none" stroke="#6b4e2e" stroke-width="34"/>
+    <path d="M-92 715 Q-92 690 -60 692 L-28 696 Q-20 728 -40 735 L-92 735 Z" fill="#e23b3b"/>
+    <path d="M92 715 Q92 690 60 692 L28 696 Q20 728 40 735 L92 735 Z" fill="#e23b3b"/>
+    <!-- round body -->
+    <ellipse cx="0" cy="500" rx="125" ry="125" fill="#ffd23f"/>
+    <path d="M-30 470 Q0 455 30 470" fill="none" stroke-width="5"/>
+    <!-- arms: holding a big sandwich -->
+    <path d="M-118 455 Q-150 520 -70 545" fill="none" stroke="#1d1d1f" stroke-width="52"/>
+    <path d="M-118 455 Q-150 520 -70 545" fill="none" stroke="#ffd23f" stroke-width="38"/>
+    <path d="M118 455 Q150 520 70 545" fill="none" stroke="#1d1d1f" stroke-width="52"/>
+    <path d="M118 455 Q150 520 70 545" fill="none" stroke="#ffd23f" stroke-width="38"/>
+    <path d="M-75 525 L75 525 L70 560 L-70 560 Z" fill="#e8b46a"/>
+    <path d="M-80 540 L80 540" fill="none" stroke="#5cb85c" stroke-width="10"/>
+    <circle cx="-70" cy="548" r="19" fill="#e9b28a"/>
+    <circle cx="70" cy="548" r="19" fill="#e9b28a"/>
+    <!-- head -->
+    <circle cx="0" cy="270" r="100" fill="#e9b28a"/>
+    <!-- beanie -->
+    <path d="M-98 250 Q-100 150 0 145 Q100 150 98 250 Z" fill="#2e9d4f"/>
+    <rect x="-104" y="232" width="208" height="34" rx="12" fill="#25803f"/>
+    <circle cx="0" cy="138" r="22" fill="#2e9d4f"/>
+    <!-- face: big grin, raised brow -->
+    <circle cx="-35" cy="298" r="12" fill="#1d1d1f" stroke="none"/>
+    <circle cx="35" cy="298" r="12" fill="#1d1d1f" stroke="none"/>
+    <path d="M-55 278 Q-35 270 -15 280" fill="none"/>
+    <path d="M15 272 Q35 255 55 268" fill="none"/>
+    <path d="M-45 325 Q0 375 45 325 Z" fill="#7a2e2e"/>
+    <circle cx="-62" cy="325" r="13" fill="#f29b8a" stroke="none" opacity=".7"/>
+    <circle cx="62" cy="325" r="13" fill="#f29b8a" stroke="none" opacity=".7"/>
+  </g>
+
+  <!-- name labels -->
+  <g font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" text-anchor="middle">
+    <text x="260" y="840" font-size="44" fill="#ff7a1a">KAI</text>
+    <text x="260" y="875" font-size="22" fill="#55524c">the curious one</text>
+    <text x="750" y="840" font-size="44" fill="#0e9384">IRIS</text>
+    <text x="750" y="875" font-size="22" fill="#55524c">the smart one</text>
+    <text x="1235" y="840" font-size="44" fill="#c79400">BOB</text>
+    <text x="1235" y="875" font-size="22" fill="#55524c">the funny one</text>
+  </g>
+</svg>
