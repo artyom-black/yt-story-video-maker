@@ -36,19 +36,36 @@ def _arm(c, upper, fore, fore_len=1.0, back=False):
             + f'<circle cx="{ux:.1f}" cy="{uy:.1f}" r="13" fill="{skin}" stroke="{INK}" stroke-width="{LW}"/>')
 
 
-def _leg(c, thigh, shin, drop, back=False):
+# shoe outline with the ankle at (0, 0), toes pointing along +x and the sole along +y
+SHOE = "M-18 -8 L14 -12 Q42 -8 50 8 Q50 18 42 18 L-20 18 Q-24 6 -18 -8 Z"
+SHOE_SOLE = ((-20, 18), (46, 18))
+
+
+def _foot_rot(foot):
+    """foot = direction heel->toe in our angle system (90 = flat, toes forward)."""
+    return 90 - foot
+
+
+def _leg(c, thigh, shin, foot, drop, back=False):
     hx, hy = 0, HIP_Y + drop
     kx, ky = _fwd(hx, hy, thigh, 112)
     fx, fy = _fwd(kx, ky, shin, 113)
     pants = _shade(c["pants"]) if back else c["pants"]
     shoes = _shade(c["shoes"]) if back else c["shoes"]
-    # the shoe follows the shin a little, so a lifted foot points down naturally
-    tip = math.radians((shin - 0) * 0.5)
-    tx, ty = fx + 52 * math.cos(tip), fy + 52 * math.sin(tip) * 0.3
-    shoe = (f'<path d="M{fx - 18:.1f} {fy - 10:.1f} L{fx + 22:.1f} {fy - 10:.1f} '
-            f'Q{tx + 4:.1f} {ty - 2:.1f} {tx:.1f} {ty + 14:.1f} L{fx - 20:.1f} {fy + 20:.1f} Z" '
-            f'fill="{shoes}" stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>')
-    return _limb([(hx, hy), (kx, ky), (fx, fy - 4)], pants, 40) + shoe
+    accent = _shade(c["shoe_accent"]) if back else c["shoe_accent"]
+    # the foot hinges at the ankle: flat on the ground, toes down when the heel kicks up
+    shoe = (f'<g transform="translate({fx:.1f} {fy:.1f}) rotate({_foot_rot(foot):.1f})">'
+            f'<path d="{SHOE}" fill="{shoes}" stroke="{INK}" stroke-width="{LW}" stroke-linejoin="round"/>'
+            f'<path d="M-19 12 L46 12" stroke="{accent}" stroke-width="4"/></g>')
+    return _limb([(hx, hy), (kx, ky), (fx, fy)], pants, 40) + shoe
+
+
+def _foot_bottom(thigh, shin, foot, drop):
+    """Lowest point of the shoe (ground contact)."""
+    kx, ky = _fwd(0, HIP_Y + drop, thigh, 112)
+    fx, fy = _fwd(kx, ky, shin, 113)
+    r = math.radians(_foot_rot(foot))
+    return max(fy + px * math.sin(r) + py * math.cos(r) for px, py in SHOE_SOLE)
 
 
 # ---------------------------------------------------------------- profile faces
@@ -177,33 +194,29 @@ def character_side(name: str, x: float, y: float, scale: float = 1.0, pose: dict
             f'{legs_back}{upper}{legs_front}{front_arm}</g>')
 
 
-def _foot_bottom(thigh, shin, drop):
-    kx, ky = _fwd(0, HIP_Y + drop, thigh, 112)
-    fx, fy = _fwd(kx, ky, shin, 113)
-    return fy + 20
 
-
-WALK_STAND = {"front_arm": (4, 4, 1.0), "back_arm": (-4, -2, 1.0), "front_leg": (3, 2), "back_leg": (-3, -2)}
+WALK_STAND = {"front_arm": (4, 4, 1.0), "back_arm": (-4, -2, 1.0), "front_leg": (3, 2, 90), "back_leg": (-3, -2, 90)}
 
 
 # Key poses for ONE leg over one stride (phase 0..1), as (phase, thigh, shin).
 # This is the classic animator's run cycle: contact, down, push-off, heel kick, passing, reach.
 RUN_LEG_KEYS = [
-    (0.00, 24, 6),      # contact: foot lands just ahead of the hip, knee soft
-    (0.12, 10, -14),    # down: knee bends to absorb the landing, body lowest
-    (0.26, -10, -22),   # support: body passes over the foot
-    (0.38, -32, -40),   # push-off: leg extended behind
-    (0.55, -20, -100),  # heel kick: foot flicks up behind
-    (0.70, 14, -96),    # passing: knee comes forward, heel tucked high
-    (0.84, 48, -42),    # reach: knee high, foot still in the air
+    #  phase thigh shin foot   (foot: 90 = flat, >90 toes up, <90 toes pointing down)
+    (0.00, 24, 6, 96),       # contact: lands on the front of the foot, just ahead of the hip
+    (0.12, 10, -14, 90),     # down: knee bends to absorb the landing, foot flat
+    (0.26, -10, -22, 88),    # support: body passes over the foot
+    (0.38, -32, -40, 52),    # push-off: heel up, toes pushing the ground
+    (0.55, -20, -100, 8),    # heel kick: foot flicks up behind, toes point down
+    (0.70, 14, -96, 22),     # passing: knee comes forward, heel tucked high
+    (0.84, 48, -42, 62),     # reach: knee high, foot swinging forward
 ]
 WALK_LEG_KEYS = [
-    (0.00, 18, 16),     # heel strike
-    (0.18, 6, 2),
-    (0.38, -14, -16),   # push
-    (0.52, -18, -44),   # toe off
-    (0.72, 6, -40),     # passing
-    (0.88, 20, 4),
+    (0.00, 18, 16, 108),     # heel strike, toes up
+    (0.16, 6, 2, 90),        # foot flat
+    (0.38, -14, -16, 84),    # body over the foot
+    (0.52, -18, -44, 50),    # toe off
+    (0.72, 6, -40, 62),      # passing, toes down
+    (0.88, 20, 4, 96),       # swing forward
 ]
 
 
@@ -219,12 +232,12 @@ def _interp(keys, phase):
             t = (ph - p0) / (p1 - p0)
             a, b, c, d = keys[i - 1], keys[i], keys[(i + 1) % n], keys[(i + 2) % n]
             out = []
-            for j in (1, 2):
+            for j in range(1, len(b)):
                 v0, v1, v2, v3 = a[j], b[j], c[j], d[j]
                 out.append(0.5 * ((2 * v1) + (-v0 + v2) * t + (2 * v0 - 5 * v1 + 4 * v2 - v3) * t * t
                                   + (-v0 + 3 * v1 - 3 * v2 + v3) * t ** 3))
             return tuple(out)
-    return keys[0][1], keys[0][2]
+    return tuple(keys[0][1:])
 
 
 def _pump_arm(swing, amount, bend, close=0.25, fore_len=1.0):
@@ -260,7 +273,7 @@ def stride_speed(keys=None, scale=1.0, stride_seconds=0.5):
     """Ground speed (px/s) that keeps the planted foot from sliding."""
     keys = keys or RUN_LEG_KEYS
     def foot_x(ph):
-        th, sh = _interp(keys, ph)
+        th, sh, _ = _interp(keys, ph)
         kx, _ = _fwd(0, HIP_Y, th, 112)
         fx, _ = _fwd(kx, 0, sh, 113)
         return fx
