@@ -5,7 +5,12 @@ Made for an adult audience (18+): realistic proportions, simple faces, muted col
 The humour comes from what they say, not from looking cartoonish.
 
 All three are drawn by code (`maker/characters.py`), so they look identical in every scene.
-To redraw the line-up: `python -m maker.characters characters/trio.svg`
+To redraw the line-up: `python -m maker.characters lineup`
+To check every pose and expression: `python -m maker.characters sheet` (see `sheet.png`)
+
+Poses: stand, point, shrug, shock, wave, scared, explain, run, facepalm.
+Expressions: default, happy, shock, scared, sad, annoyed, curious, smirk, serious.
+The story's MOOD picks the expression automatically; whoever is speaking gets a moving mouth.
 
 | | KAI | IRIS | BOB |
 |---|---|---|---|
