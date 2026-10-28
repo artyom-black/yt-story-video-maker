@@ -12,6 +12,17 @@ Poses: stand, point, shrug, shock, wave, scared, explain, run, facepalm.
 Expressions: default, happy, shock, scared, sad, annoyed, curious, smirk, serious.
 The story's MOOD picks the expression automatically; whoever is speaking gets a moving mouth.
 
+## Acting styles (each character performs every emotion and pose differently)
+
+- **KAI**: big, fast, open reactions. Huge eyes and eyebrows, open-mouth grins, both hands when talking,
+  fidgets when standing, grabs his head when shocked. Fast, bouncy walk; sprinting run.
+- **IRIS**: small, controlled, a bit smug. Arms folded when listening, one-eyebrow raises, closed-mouth
+  smiles, eye-rolls. Talks with one hand, on the beat. Neat walk, efficient run.
+- **BOB**: deadpan and lazy. Half-closed eyes, hands in pockets, slouch, reacts late. His shock is a stare;
+  his laugh is a huge belly laugh. Slow lumbering walk, heavy flailing run.
+
+See `acting.png` (every expression, per character) and `python -m maker.showcase out.mp4` for motion.
+
 | | KAI | IRIS | BOB |
 |---|---|---|---|
 | Role | The curious one: asks what the viewer is thinking | The smart one: explains, sometimes overconfident | The funny one: dry jokes, reacts, gets into trouble |

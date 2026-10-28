@@ -67,19 +67,68 @@ POSES = {
     "facepalm": {"L": (10, 4), "R": (150, -102), "Lleg": (3, 3), "Rleg": (3, 3), "tilt": 8},
 }
 
-# ---------------------------------------------------------------- expressions
-EXPRESSIONS = {
-    #            eyes       brows       mouth
-    "default":  ("normal",  None,       None),
-    "happy":    ("happy",   None,       "grin"),
-    "shock":    ("wide",    "up",       "O"),
-    "scared":   ("wide",    "worried",  "O"),
-    "sad":      ("normal",  "worried",  "frown"),
-    "annoyed":  ("squint",  "angry",    "neutral"),
-    "curious":  ("normal",  "up",       "small-o"),
-    "smirk":    ("normal",  None,       "smirk"),
-    "serious":  ("normal",  "angry",    "neutral"),
+POSES["idle"] = POSES["stand"]
+
+# Arm tuples may have up to 5 values: (upper, forearm, upper_len, fore_len, show_hand).
+CROSSED = (10, -98, 1.0, 1.02)             # Iris: arms folded across the chest
+CROSSED_TOP = (12, -106, 1.0, 1.0)
+POCKET = (5, -14, 1.0, 0.62, 0)            # Bob: hands in his jeans pockets
+
+# Each character performs the same pose in their own way.
+POSE_STYLE = {
+    "KAI": {   # big, open, energetic
+        "idle":     {"L": (13, 7), "R": (13, 7), "Lleg": (4, 4), "Rleg": (4, 4)},
+        "point":    {"L": (34, 125), "R": (86, 94), "Lleg": (3, 3), "Rleg": (8, 8), "lean": 6, "tilt": 5},
+        "shrug":    {"L": (38, 132), "R": (38, 132), "Lleg": (5, 5), "Rleg": (5, 5), "tilt": -10, "drop": -6},
+        "shock":    {"L": (150, -120), "R": (150, -120), "Lleg": (11, 11), "Rleg": (11, 11), "lean": -3, "drop": -10},
+        "wave":     {"L": (14, 6), "R": (162, 176), "Lleg": (3, 3), "Rleg": (3, 3), "tilt": 8},
+        "scared":   {"L": (62, -150), "R": (62, -150), "Lleg": (8, 10), "Rleg": (8, 10), "drop": 34, "tilt": -8},
+        "explain":  {"L": (46, 96), "R": (46, 96), "Lleg": (4, 4), "Rleg": (4, 4), "tilt": 4},
+        "facepalm": {"L": (140, -115), "R": (140, -115), "Lleg": (3, 3), "Rleg": (3, 3), "tilt": 10, "drop": 8},
+    },
+    "IRIS": {  # contained and precise: arms folded, one hand does the talking
+        "idle":     {"L": CROSSED_TOP, "R": CROSSED, "Lleg": (3, 3), "Rleg": (2, 2), "tilt": 2},
+        "point":    {"L": CROSSED, "R": (80, 84), "Lleg": (3, 3), "Rleg": (4, 4), "tilt": -3},
+        "shrug":    {"L": CROSSED, "R": (24, 104), "Lleg": (3, 3), "Rleg": (3, 3), "tilt": -6},
+        "shock":    {"L": CROSSED, "R": (155, -80, 1.0, 0.8), "Lleg": (4, 4), "Rleg": (4, 4), "lean": -4},
+        "wave":     {"L": CROSSED, "R": (60, 150), "Lleg": (3, 3), "Rleg": (3, 3), "tilt": 4},
+        "scared":   {"L": (-12, -150), "R": (-12, -150), "Lleg": (2, 6), "Rleg": (2, 6), "drop": 10, "tilt": -3},
+        "explain":  {"L": CROSSED, "R": (36, 122), "Lleg": (3, 3), "Rleg": (3, 3), "tilt": 3},
+        "facepalm": {"L": CROSSED, "R": (150, -102), "Lleg": (3, 3), "Rleg": (3, 3), "tilt": 10},
+    },
+    "BOB": {   # lazy: hands in pockets, slouched, minimum effort (except when he panics)
+        "idle":     {"L": POCKET, "R": POCKET, "Lleg": (5, 5), "Rleg": (5, 5), "lean": -3, "tilt": 5},
+        "point":    {"L": POCKET, "R": (56, 62), "Lleg": (5, 5), "Rleg": (5, 5), "lean": -3, "tilt": 6},
+        "shrug":    {"L": (16, 96), "R": (16, 96), "Lleg": (5, 5), "Rleg": (5, 5), "tilt": 15, "lean": -3},
+        "shock":    {"L": (152, 176), "R": (152, 176), "Lleg": (13, 13), "Rleg": (13, 13), "lean": -7},
+        "wave":     {"L": POCKET, "R": (150, -100, 1.0, 0.8), "Lleg": (5, 5), "Rleg": (5, 5), "lean": -3, "tilt": 4},
+        "scared":   {"L": (155, -92, 1.0, 0.8), "R": (155, -92, 1.0, 0.8), "Lleg": (6, 9), "Rleg": (6, 9), "drop": 12},
+        "explain":  {"L": POCKET, "R": (40, 72), "Lleg": (5, 5), "Rleg": (5, 5), "lean": -3, "tilt": 6},
+        "facepalm": {"L": POCKET, "R": (150, -102), "Lleg": (5, 5), "Rleg": (5, 5), "lean": -4, "tilt": -8},
+    },
 }
+
+# How each character moves through time.
+#   move  = seconds to get into a new pose, delay = how late they react,
+#   breath/amp/sway = idle breathing period (s), breathing size, side-to-side sway,
+#   talk_rate = mouth movements per second
+TIMING = {
+    "KAI":  {"move": 0.18, "delay": 0.0, "breath": 2.4, "amp": 3.0, "sway": 3.0, "talk_rate": 7.5},
+    "IRIS": {"move": 0.32, "delay": 0.08, "breath": 3.6, "amp": 1.8, "sway": 0.8, "talk_rate": 6.0},
+    "BOB":  {"move": 0.55, "delay": 0.3, "breath": 4.4, "amp": 3.5, "sway": 2.2, "talk_rate": 4.6},
+}
+
+
+def pose_for(name: str, pose) -> dict:
+    if isinstance(pose, dict):
+        return pose
+    return POSE_STYLE.get(name, {}).get(pose) or POSES[pose]
+
+
+# ---------------------------------------------------------------- expressions
+# The 9 expression names the story engine uses. HOW each one looks is different per character
+# (see ACTING below): same emotion, three different personalities.
+EXPRESSIONS = ["default", "happy", "shock", "scared", "sad", "annoyed", "curious", "smirk", "serious"]
 
 # story MOOD -> expression for the speaker
 MOOD_EXPRESSION = {
@@ -87,11 +136,66 @@ MOOD_EXPRESSION = {
     "sad": "sad", "epic": "default", "calm": "default", "shock": "shock",
 }
 
+# eyes: normal | wide | huge | happy | closed | squint | half (droopy lids) | roll | one-squint
+# look: where the pupils point (dx, dy)
+# brows: sig (the character's own) | up | upup | angry | worried | worried2 | one-up | one-angry | flat
+# mouth: smile | closed-smile | neutral | flat-side | frown | wobbly | smirk | grin | big-grin | laugh
+#        | O | big-O | small-o
+ACTING = {
+    # KAI: big, fast, open reactions. Everything is a bit "too much".
+    "KAI": {
+        "default": ("normal", (0, 0), "sig", "smile"),
+        "happy":   ("happy", (0, 0), "up", "big-grin"),
+        "shock":   ("huge", (0, 0), "upup", "big-O"),
+        "scared":  ("huge", (0, 3), "worried2", "wobbly"),
+        "sad":     ("normal", (0, 4), "worried2", "frown"),
+        "annoyed": ("squint", (0, 0), "angry", "flat-side"),
+        "curious": ("wide", (4, -3), "up", "small-o"),
+        "smirk":   ("normal", (3, 0), "one-up", "smirk"),
+        "serious": ("normal", (0, 0), "angry", "neutral"),
+    },
+    # IRIS: small, controlled, a little smug. Closed mouth, one eyebrow, eye-rolls.
+    "IRIS": {
+        "default": ("normal", (0, 0), "sig", "smile"),
+        "happy":   ("happy", (0, 0), "flat", "closed-smile"),
+        "shock":   ("wide", (0, 0), "up", "small-o"),
+        "scared":  ("wide", (-3, 0), "worried", "neutral"),
+        "sad":     ("half", (0, 2), "worried", "frown"),
+        "annoyed": ("roll", (0, 0), "flat", "flat-side"),
+        "curious": ("normal", (4, 0), "one-up", "smirk"),
+        "smirk":   ("half", (2, 0), "one-up", "smirk"),
+        "serious": ("normal", (0, 0), "angry", "neutral"),
+    },
+    # BOB: deadpan. Sleepy eyes, slow reactions, but a huge belly laugh.
+    "BOB": {
+        "default": ("half", (0, 0), "sig", "smirk"),
+        "happy":   ("happy", (0, 0), "up", "laugh"),
+        "shock":   ("wide", (0, 0), "upup", "neutral"),
+        "scared":  ("huge", (0, 0), "worried2", "wobbly"),
+        "sad":     ("half", (0, 3), "worried", "frown"),
+        "annoyed": ("one-squint", (0, 0), "one-angry", "flat-side"),
+        "curious": ("half", (4, -1), "one-up", "small-o"),
+        "smirk":   ("half", (3, 0), "one-up", "smirk"),
+        "serious": ("half", (0, 0), "angry", "neutral"),
+    },
+}
+
+TALK_MOUTH = {"KAI": "talk-big", "IRIS": "talk", "BOB": "talk-small"}
+
 BROWS = {
     "up": ((-8, -14, -6), (-8, -14, -6)),
+    "upup": ((-15, -23, -12), (-15, -23, -12)),
     "angry": ((7, 0, -6), (7, 0, -6)),
     "worried": ((-9, -4, 5), (-9, -4, 5)),
+    "worried2": ((-15, -8, 8), (-15, -8, 8)),
+    "one-up": ((1, 0, 1), (-7, -17, -7)),
+    "one-angry": ((8, 1, -5), (-4, -11, -3)),
+    "flat": ((1, 0, 1), (1, 0, 1)),
 }
+
+
+def face_spec(name: str, expression: str):
+    return ACTING[name].get(expression, ACTING[name]["default"])
 
 
 # ---------------------------------------------------------------- drawing helpers
@@ -113,14 +217,16 @@ def _step(x, y, side, angle, length):
     return x + side * length * math.sin(a), y + length * math.cos(a)
 
 
-def _arm(side, c, upper, fore, upper_len=1.0, fore_len=1.0):
-    """A length < 1 reads as that part of the arm pointing towards the camera."""
+def _arm(side, c, upper, fore, upper_len=1.0, fore_len=1.0, hand=1):
+    """A length < 1 reads as that part of the arm pointing towards the camera.
+    hand=0 hides the hand (hands in pockets)."""
     sx, sy = side * (c["half_w"] - 8), -478
     ex, ey = _step(sx, sy, side, upper, 100 * upper_len)
     hx, hy = _step(ex, ey, side, fore, 92 * fore_len)
     ux, uy = _step(hx, hy, side, fore, 9)          # hand sits at the end of the sleeve
     return (_limb([(sx, sy), (ex, ey), (hx, hy)], c["top"], 30)
-            + f'<circle cx="{ux:.1f}" cy="{uy:.1f}" r="13" fill="{c["skin"]}" stroke="{INK}" stroke-width="{LW}"/>')
+            + (f'<circle cx="{ux:.1f}" cy="{uy:.1f}" r="13" fill="{c["skin"]}" stroke="{INK}" stroke-width="{LW}"/>'
+               if hand else ""))
 
 
 def _leg(side, c, thigh, shin, drop, thigh_len=1.0, shin_len=1.0):
@@ -148,21 +254,33 @@ def _torso(c):
 
 
 # ---------------------------------------------------------------- faces
-def _eyes(kind, dx, y):
+def _eyes(kind, dx, y, look=(0, 0)):
+    lx, ly = look
     out = []
-    for s in (-1, 1):
+    for i, s in enumerate((-1, 1)):
         x = s * dx
-        if kind == "wide":
-            out.append(f'<circle cx="{x}" cy="{y}" r="11" fill="#fff" stroke="{INK}" stroke-width="3.5"/>'
-                       f'<circle cx="{x}" cy="{y + 1}" r="5" fill="{INK}"/>')
-        elif kind == "happy":
+        k = kind
+        if kind == "one-squint":
+            k = "squint" if i == 0 else "normal"
+        if k in ("wide", "huge"):
+            r = 11 if k == "wide" else 14
+            out.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#fff" stroke="{INK}" stroke-width="3.5"/>'
+                       f'<circle cx="{x + lx * 0.6:.1f}" cy="{y + 1 + ly * 0.6:.1f}" r="5.5" fill="{INK}"/>')
+        elif k == "roll":
+            out.append(f'<circle cx="{x}" cy="{y}" r="10" fill="#fff" stroke="{INK}" stroke-width="3.5"/>'
+                       f'<circle cx="{x + 2}" cy="{y - 5}" r="5" fill="{INK}"/>'
+                       + _line(f"M{x - 11} {y - 3} Q{x} {y - 8} {x + 11} {y - 3}", 4))
+        elif k == "half":
+            out.append(f'<ellipse cx="{x + lx:.1f}" cy="{y + 2 + ly:.1f}" rx="5.5" ry="5" fill="{INK}"/>'
+                       + _line(f"M{x - 10} {y - 2} Q{x} {y - 4} {x + 10} {y - 2}", 4.5))
+        elif k == "happy":
             out.append(_line(f"M{x - 8} {y + 3} Q{x} {y - 7} {x + 8} {y + 3}", 4.5))
-        elif kind == "closed":
+        elif k == "closed":
             out.append(_line(f"M{x - 8} {y} Q{x} {y + 5} {x + 8} {y}", 4.5))
-        elif kind == "squint":
+        elif k == "squint":
             out.append(_line(f"M{x - 8} {y} L{x + 8} {y}", 4.5))
         else:
-            out.append(f'<ellipse cx="{x}" cy="{y}" rx="5.5" ry="7.5" fill="{INK}"/>')
+            out.append(f'<ellipse cx="{x + lx:.1f}" cy="{y + ly:.1f}" rx="5.5" ry="7.5" fill="{INK}"/>')
     return "".join(out)
 
 
@@ -175,39 +293,54 @@ def _brows(offsets, y=-603):
 
 def _mouth(kind, y, beard=False):
     dark = f'fill="{MOUTH}" stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"'
+    teeth = lambda x1, x2, y1, y2: f'<path d="M{x1} {y1} L{x2} {y1} L{x2 - 2} {y2} L{x1 + 2} {y2} Z" fill="#fff"/>'
     if kind == "grin":
-        return (f'<path d="M-18 {y - 4} Q1 {y + 20} 20 {y - 4} Z" {dark}/>'
-                f'<path d="M-15 {y - 3} L17 {y - 3} L15 {y + 3} L-13 {y + 3} Z" fill="#fff"/>')
+        return f'<path d="M-18 {y - 4} Q1 {y + 20} 20 {y - 4} Z" {dark}/>' + teeth(-15, 17, y - 3, y + 3)
+    if kind == "big-grin":
+        return f'<path d="M-22 {y - 6} Q1 {y + 28} 24 {y - 6} Z" {dark}/>' + teeth(-18, 20, y - 5, y + 2)
+    if kind == "laugh":
+        return (f'<path d="M-24 {y - 8} Q1 {y + 36} 26 {y - 8} Z" {dark}/>' + teeth(-20, 22, y - 7, y)
+                + f'<ellipse cx="2" cy="{y + 14}" rx="10" ry="5" fill="#d9707a"/>')
     if kind == "O":
         return f'<ellipse cx="2" cy="{y + 2}" rx="8" ry="11" {dark}/>'
+    if kind == "big-O":
+        return f'<ellipse cx="2" cy="{y + 4}" rx="11" ry="16" {dark}/>'
     if kind == "small-o":
         return f'<ellipse cx="2" cy="{y}" rx="5" ry="6" {dark}/>'
     if kind == "talk":
         return f'<ellipse cx="2" cy="{y + 1}" rx="10" ry="7" {dark}/>'
+    if kind == "talk-big":
+        return f'<path d="M-14 {y - 3} Q2 {y + 18} 18 {y - 3} Z" {dark}/>' + teeth(-11, 15, y - 2, y + 2)
+    if kind == "talk-small":
+        return f'<ellipse cx="4" cy="{y + 1}" rx="8" ry="4.5" {dark}/>'
     if kind == "smirk" and beard:
         return (f'<path d="M-14 {y + 6} Q4 {y + 16} 22 {y} Q4 {y + 10} -14 {y + 6} Z" fill="#fff" '
                 f'stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"/>')
     w = 5 if beard else 4
     lines = {
         "smile": f"M-12 {y - 2} Q2 {y + 7} 16 {y - 3}",
+        "closed-smile": f"M-17 {y - 4} Q2 {y + 9} 21 {y - 5}",
         "neutral": f"M-10 {y + 1} L12 {y + 1}",
+        "flat-side": f"M-2 {y + 2} L20 {y - 2}",
         "frown": f"M-12 {y + 6} Q2 {y - 3} 16 {y + 7}",
+        "wobbly": f"M-14 {y + 3} q4 -5 8 0 q4 5 8 0 q4 -5 8 0",
         "smirk": f"M-10 {y + 1} Q6 {y + 4} 18 {y - 6}",
     }
     return _line(lines.get(kind, lines["neutral"]), w)
 
 
 def _face(name, c, expression, talking, blink=False):
-    eyes, brows, mouth = EXPRESSIONS[expression]
-    if blink and eyes != "happy":
+    eyes, look, brows, mouth = face_spec(name, expression)
+    if blink and eyes not in ("happy", "closed"):
         eyes = "closed"
-    brow_off = BROWS[brows] if brows else c["brows"]
-    mouth = "talk" if talking else (mouth or c["mouth"])
+    brow_off = c["brows"] if brows == "sig" else BROWS[brows]
+    if talking:
+        mouth = TALK_MOUTH[name]
     if name == "BOB":
-        return _eyes(eyes, 21, -584), _brows(brow_off, -604), _mouth(mouth, -540, beard=True)
+        return _eyes(eyes, 21, -584, look), _brows(brow_off, -604), _mouth(mouth, -540, beard=True)
     if name == "IRIS":
-        return _eyes(eyes, 22, -583), _brows(brow_off, -604), _mouth(mouth, -544)
-    return _eyes(eyes, 20, -582), _brows(brow_off, -603), _mouth(mouth, -544)
+        return _eyes(eyes, 22, -583, look), _brows(brow_off, -604), _mouth(mouth, -544)
+    return _eyes(eyes, 20, -582, look), _brows(brow_off, -603), _mouth(mouth, -544)
 
 
 def _head(c, back, front):
@@ -312,44 +445,73 @@ def run_pose(phase: float) -> dict:
 
 
 
-def blend_pose(a: str | dict, b: str | dict, t: float) -> dict:
+def blend_pose(a, b, t: float, name: str | None = None) -> dict:
     """Smoothly move from pose a to pose b. t = 0..1 (eased)."""
-    pa = POSES[a] if isinstance(a, str) else a
-    pb = POSES[b] if isinstance(b, str) else b
+    pa = pose_for(name, a) if name else (POSES[a] if isinstance(a, str) else a)
+    pb = pose_for(name, b) if name else (POSES[b] if isinstance(b, str) else b)
+    t = max(0.0, min(1.0, t))
     t = t * t * (3 - 2 * t)
     out = {}
     for k in ("L", "R", "Lleg", "Rleg"):
         va, vb = list(pa[k]), list(pb[k])
         n = max(len(va), len(vb))
-        va += [1.0] * (n - len(va))
-        vb += [1.0] * (n - len(vb))
-        out[k] = tuple(x + (y - x) * t for x, y in zip(va, vb))
+        defaults = [0, 0, 1.0, 1.0, 1]
+        va += defaults[len(va):n]
+        vb += defaults[len(vb):n]
+        vals = [x + (y - x) * t for x, y in zip(va, vb)]
+        if n >= 5:  # hand visibility switches halfway
+            vals[4] = vb[4] if t > 0.5 else va[4]
+        out[k] = tuple(vals)
     for k in ("lean", "tilt", "drop"):
         out[k] = pa.get(k, 0) + (pb.get(k, 0) - pa.get(k, 0)) * t
     out["fx"] = pb.get("fx") if t > 0.5 else pa.get("fx")
     return out
 
 
-def idle_pose(t: float, seed: float = 0.0, base: str | dict = "stand") -> dict:
-    """Standing still but alive: slow breathing and a little sway."""
-    p = dict(POSES[base] if isinstance(base, str) else base)
-    breath = math.sin(2 * math.pi * (t / 3.2 + seed))
-    p["drop"] = p.get("drop", 0) + 2.5 * breath
-    p["tilt"] = p.get("tilt", 0) + 1.5 * math.sin(2 * math.pi * (t / 5.1 + seed))
-    p["L"] = (p["L"][0] + 1.5 * breath, *p["L"][1:])
-    p["R"] = (p["R"][0] + 1.5 * breath, *p["R"][1:])
+def idle_pose(t: float, name: str, base="idle") -> dict:
+    """Standing still but alive: breathing and sway in the character's own rhythm."""
+    tm = TIMING[name]
+    seed = {"KAI": 0.0, "IRIS": 0.37, "BOB": 0.71}[name]
+    p = dict(pose_for(name, base))
+    breath = math.sin(2 * math.pi * (t / tm["breath"] + seed))
+    p["drop"] = p.get("drop", 0) + tm["amp"] * breath
+    p["tilt"] = p.get("tilt", 0) + tm["sway"] * math.sin(2 * math.pi * (t / (tm["breath"] * 1.6) + seed))
+    if name == "KAI":   # can't keep still: little weight shifts
+        p["lean"] = p.get("lean", 0) + 2.0 * math.sin(2 * math.pi * t / 1.9)
+    p["L"] = (p["L"][0] + 0.6 * tm["amp"] * breath, *p["L"][1:])
+    p["R"] = (p["R"][0] + 0.6 * tm["amp"] * breath, *p["R"][1:])
     return p
 
 
-def is_blinking(t: float, seed: float = 0.0) -> bool:
-    """A quick blink roughly every 3-4 seconds, different timing per character."""
-    period = 3.3 + seed * 1.7
-    return (t + seed * 2.1) % period < 0.12
+def talk_pose(t: float, name: str) -> dict:
+    """Gestures while speaking, in each character's style."""
+    p = dict(idle_pose(t, name, "explain"))
+    if name == "KAI":     # both hands, fast, big
+        p["L"] = (46 + 14 * math.sin(5.1 * t), 96 + 30 * math.sin(5.1 * t + 1.2))
+        p["R"] = (46 + 14 * math.sin(4.3 * t + 2), 96 + 30 * math.sin(4.3 * t + 0.4))
+        p["tilt"] = 4 * math.sin(2.7 * t)
+    elif name == "IRIS":  # one hand making points, on the beat
+        beat = abs(math.sin(3.0 * t)) ** 3
+        p["R"] = (34 + 8 * beat, 118 - 26 * beat)
+    else:                 # Bob: lazy hand, slow head wobble
+        p["R"] = (38 + 8 * math.sin(1.7 * t), 70 + 18 * math.sin(1.7 * t + 0.8))
+        p["tilt"] = 6 + 5 * math.sin(1.3 * t)
+    return p
 
 
-def mouth_open(t: float, seed: float = 0.0) -> bool:
-    """Talking mouth flap: open and close at speech rhythm, slightly irregular."""
-    v = math.sin(2 * math.pi * 6.5 * t + seed) + 0.6 * math.sin(2 * math.pi * 2.3 * t + 2 * seed)
+def is_blinking(t: float, name: str) -> bool:
+    """A quick blink every few seconds; Bob blinks slower and longer."""
+    period = {"KAI": 2.6, "IRIS": 3.8, "BOB": 4.6}[name]
+    length = {"KAI": 0.1, "IRIS": 0.12, "BOB": 0.25}[name]
+    seed = {"KAI": 0.3, "IRIS": 1.4, "BOB": 2.2}[name]
+    return (t + seed) % period < length
+
+
+def mouth_open(t: float, name: str) -> bool:
+    """Talking mouth flap at the character's own speaking speed."""
+    rate = TIMING[name]["talk_rate"]
+    seed = {"KAI": 0.0, "IRIS": 2.0, "BOB": 4.0}[name]
+    v = math.sin(2 * math.pi * rate * t + seed) + 0.6 * math.sin(2 * math.pi * rate * 0.35 * t + 2 * seed)
     return v > 0.15
 
 
@@ -361,7 +523,7 @@ def character(name: str, x: float, y: float, scale: float = 1.0, pose: str | dic
               blink: bool = False) -> str:
     """SVG group for one character with feet at (x, y). flip=True mirrors left/right."""
     c = CAST[name]
-    p = POSES[pose] if isinstance(pose, str) else pose
+    p = pose_for(name, pose)
     drop, lean, tilt = p.get("drop", 0), p.get("lean", 0), p.get("tilt", 0)
     body, head = BUILD[name](c, _face(name, c, expression, talking, blink))
     neck = f'<rect x="-15" y="-522" width="30" height="36" fill="{c["skin"]}" stroke="{INK}" stroke-width="{LW}"/>'

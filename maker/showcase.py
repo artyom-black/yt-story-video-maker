@@ -10,14 +10,13 @@ import subprocess
 import sys
 import tempfile
 
-from .characters import (POSES, EXPRESSIONS, blend_pose, character, idle_pose, is_blinking,
-                         mouth_open)
-from .side_view import (WALK_LEG_KEYS, character_side, side_run_pose, side_walk_pose,
+from .characters import (EXPRESSIONS, POSE_STYLE, TIMING, blend_pose, character, idle_pose,
+                         is_blinking, mouth_open, talk_pose)
+from .side_view import (WALK_LEG_KEYS, _gait, character_side, side_run_pose, side_walk_pose,
                         stride_speed)
 
 W, H, FPS = 1920, 1080, 24
 CAST = ("KAI", "IRIS", "BOB")
-SEED = {"KAI": 0.0, "IRIS": 0.37, "BOB": 0.71}
 X = {"KAI": 480, "IRIS": 960, "BOB": 1440}
 FLOOR = 1010
 SCALE = 1.12
@@ -56,8 +55,8 @@ def outdoors(t, speed, ground=900):
 
 # ---------------------------------------------------------------- sections
 def section_idle(t, d):
-    return room() + "".join(character(n, X[n], FLOOR, SCALE, idle_pose(t, SEED[n]), blink=is_blinking(t, SEED[n]))
-                            for n in CAST) + caption("Standing", "breathing and blinking")
+    return room() + "".join(character(n, X[n], FLOOR, SCALE, idle_pose(t, n), blink=is_blinking(t, n))
+                            for n in CAST) + caption("Standing", "Kai fidgets, Iris folds her arms, Bob slouches")
 
 
 TALK = [("KAI", "curious", {"IRIS": "smirk", "BOB": "default"}),
@@ -65,70 +64,108 @@ TALK = [("KAI", "curious", {"IRIS": "smirk", "BOB": "default"}),
         ("BOB", "happy", {"KAI": "happy", "IRIS": "annoyed"})]
 
 
+def _react(t, n, start):
+    """Fraction 0..1 of how far a character has reacted, using their own speed and delay."""
+    tm = TIMING[n]
+    return max(0.0, min(1.0, (t - start - tm["delay"]) / tm["move"]))
+
+
 def section_talk(t, d):
-    i = min(int(t / (d / 3)), 2)
+    seg = d / 3
+    i = min(int(t / seg), 2)
     speaker, expr, others = TALK[i]
-    lt = t - i * d / 3
+    lt = t - i * seg
     out = room()
     for n in CAST:
         if n == speaker:
-            pose = idle_pose(t, SEED[n], blend_pose("stand", "explain", min(1, lt / 0.5)))
-            out += character(n, X[n], FLOOR, SCALE, pose, expr, talking=mouth_open(t, SEED[n] * 9),
-                             blink=is_blinking(t, SEED[n]))
+            k = _react(lt, n, 0)
+            pose = blend_pose(idle_pose(t, n), talk_pose(t, n), k)
+            out += character(n, X[n], FLOOR, SCALE, pose, expr, talking=mouth_open(t, n), blink=is_blinking(t, n))
         else:
-            out += character(n, X[n], FLOOR, SCALE, idle_pose(t, SEED[n]), others[n], blink=is_blinking(t, SEED[n]))
-    return out + caption("Talking", f"{speaker} speaks, the others react")
+            ex = others[n] if _react(lt, n, 0.4) > 0.5 else "default"
+            out += character(n, X[n], FLOOR, SCALE, idle_pose(t, n), ex, blink=is_blinking(t, n))
+    return out + caption("Talking", f"{speaker} speaks, the others react in their own way")
 
 
 def section_expressions(t, d):
-    names = list(EXPRESSIONS)
-    i = min(int(t / (d / len(names))), len(names) - 1)
-    ex = names[i]
-    # close-up: bigger and lower so faces fill the frame
-    return room() + "".join(character(n, X[n], 1720, 2.0, idle_pose(t, SEED[n]), ex,
-                                      blink=is_blinking(t, SEED[n]) and ex == "default")
-                            for n in CAST) + caption("Expressions", ex)
+    i = min(int(t / (d / len(EXPRESSIONS))), len(EXPRESSIONS) - 1)
+    ex = EXPRESSIONS[i]
+    lt = t - i * d / len(EXPRESSIONS)
+    out = room()
+    for n in CAST:
+        shown = ex if _react(lt, n, 0) > 0.5 else (EXPRESSIONS[i - 1] if i else "default")
+        out += character(n, X[n], 1720, 2.0, idle_pose(t, n), shown, blink=is_blinking(t, n) and shown == "default")
+    return out + caption("Expressions", ex)
+
+
+POSE_ORDER = ["idle", "point", "shrug", "shock", "wave", "scared", "explain", "facepalm", "idle"]
+POSE_FACE = {"shock": "shock", "scared": "scared", "facepalm": "annoyed", "wave": "happy",
+             "shrug": "smirk", "explain": "default", "point": "curious", "idle": "default"}
 
 
 def section_poses(t, d):
-    names = [p for p in POSES if p != "run"] + ["stand"]
-    step = d / (len(names) - 1)
-    i = min(int(t / step), len(names) - 2)
-    lt = (t - i * step) / step
-    move = min(1.0, lt / 0.35)                  # first 35% of each step: move into the new pose
-    a, b = names[i], names[i + 1]
-    expr = {"shock": "shock", "scared": "scared", "facepalm": "annoyed", "wave": "happy",
-            "shrug": "smirk", "explain": "default", "point": "curious"}.get(b, "default")
+    step = d / (len(POSE_ORDER) - 1)
+    i = min(int(t / step), len(POSE_ORDER) - 2)
+    lt = t - i * step
+    a, b = POSE_ORDER[i], POSE_ORDER[i + 1]
     out = room()
     for n in CAST:
-        pose = idle_pose(t, SEED[n], blend_pose(a, b, move))
-        out += character(n, X[n], FLOOR, SCALE, pose, expr if move > 0.5 else "default",
-                         blink=is_blinking(t, SEED[n]))
-    return out + caption("Poses", b)
+        k = _react(lt, n, 0)
+        pose = blend_pose(idle_pose(t, n, a), idle_pose(t, n, b), k)
+        face = POSE_FACE[b] if k > 0.5 else POSE_FACE[a]
+        out += character(n, X[n], FLOOR, SCALE, pose, face, blink=is_blinking(t, n))
+    return out + caption("Poses", b if b != "idle" else "back to standing")
 
 
-WALK_STRIDE, RUN_STRIDE = 1.05, 0.5
-WALK_SPEED = stride_speed(WALK_LEG_KEYS, 0.95, WALK_STRIDE)
-RUN_SPEED = stride_speed(scale=0.95, stride_seconds=RUN_STRIDE)
+LANE_H = 300
+
+
+def lanes(t, kind, title):
+    """Three stacked lanes, one per character, each moving at their own natural speed."""
+    out = f'<rect width="{W}" height="{H}" fill="#bcd9e6"/>'
+    keys = WALK_LEG_KEYS if kind == "walk" else None
+    pose_fn = side_walk_pose if kind == "walk" else side_run_pose
+    expr = {"walk": {"KAI": "curious", "IRIS": "default", "BOB": "default"},
+            "run": {"KAI": "shock", "IRIS": "serious", "BOB": "scared"}}[kind]
+    for row, n in enumerate(CAST):
+        top = 150 + row * LANE_H
+        ground = top + LANE_H - 30
+        g = _gait(n, kind)
+        speed = stride_speed(keys, 0.42, name=n, kind=kind)
+        out += f'<svg x="0" y="{top}" width="{W}" height="{LANE_H}" viewBox="0 {ground - LANE_H + 30} {W} {LANE_H}">'
+        out += outdoors_strip(t, speed, ground)
+        out += character_side(n, 900, ground + 4, 0.42, pose_fn(t / g["stride"], n), expr[n],
+                              talking=(kind == "walk" and n == "KAI" and mouth_open(t, n)), blink=is_blinking(t, n))
+        out += '</svg>'
+        out += (f'<text x="60" y="{top + 60}" font-family="DejaVu Sans, Arial" font-weight="bold" font-size="38" '
+                f'fill="#26262b">{n}</text>')
+    return out + caption(title, "each with their own gait and speed")
+
+
+def outdoors_strip(t, speed, ground):
+    def layer(sp, spacing, draw):
+        off = (t * sp) % spacing
+        return "".join(draw(x - off) for x in range(0, W + 2 * spacing, spacing))
+    tree = lambda x: (f'<rect x="{x - 7}" y="{ground - 110}" width="14" height="110" fill="#6b4e2e" stroke="#26262b" stroke-width="3"/>'
+                      f'<circle cx="{x}" cy="{ground - 140}" r="50" fill="#5f7f4a" stroke="#26262b" stroke-width="3"/>')
+    tuft = lambda x: (f'<path d="M{x} {ground + 22} l6 -14 l4 14 l5 -11 l3 11" fill="none" stroke="#5f7f4a" '
+                      f'stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>')
+    return (f'<rect x="0" y="{ground - 400}" width="{W}" height="400" fill="#bcd9e6"/>'
+            + f'<rect x="0" y="{ground - 40}" width="{W}" height="40" fill="#a6bb93"/>' + layer(speed * 0.45, 420, tree)
+            + f'<rect y="{ground}" width="{W}" height="60" fill="#86a06f"/>'
+            + f'<rect y="{ground}" width="{W}" height="7" fill="#c9b892"/>' + layer(speed, 180, tuft))
 
 
 def section_walk(t, d):
-    out = outdoors(t, WALK_SPEED)
-    for n, x, off, ex in (("BOB", 470, 0.5, "smirk"), ("IRIS", 900, 0.25, "default"), ("KAI", 1330, 0.0, "curious")):
-        out += character_side(n, x, 906, 0.95, side_walk_pose(t / WALK_STRIDE + off), ex,
-                              talking=(n == "KAI" and mouth_open(t)), blink=is_blinking(t, SEED[n]))
-    return out + caption("Walking", "side view")
+    return lanes(t, "walk", "Walking")
 
 
 def section_run(t, d):
-    out = outdoors(t, RUN_SPEED)
-    for n, x, off, ex in (("BOB", 470, 0.5, "serious"), ("IRIS", 900, 0.25, "default"), ("KAI", 1330, 0.0, "shock")):
-        out += character_side(n, x, 906, 0.95, side_run_pose(t / RUN_STRIDE + off), ex, blink=is_blinking(t, SEED[n]))
-    return out + caption("Running", "side view")
+    return lanes(t, "run", "Running")
 
 
-SECTIONS = [(section_idle, 4), (section_talk, 10.5), (section_expressions, 15.3),
-            (section_poses, 17.6), (section_walk, 7), (section_run, 7)]
+SECTIONS = [(section_idle, 5), (section_talk, 12), (section_expressions, 18),
+            (section_poses, 19.2), (section_walk, 7), (section_run, 7)]
 
 
 def render(out_mp4: str):

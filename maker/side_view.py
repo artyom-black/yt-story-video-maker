@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import math
 
-from .characters import CAST, EXPRESSIONS, INK, LW, MOUTH, _limb, _line
+from .characters import CAST, INK, LW, MOUTH, _limb, _line, face_spec
 
 HIP_Y, SHOULDER_Y = -255, -478
 
@@ -77,6 +77,16 @@ def _foot_bottom(thigh, shin, foot, drop):
 
 # ---------------------------------------------------------------- profile faces
 def _eye(kind, x, y):
+    if kind in ("huge", "roll"):
+        r = 13 if kind == "huge" else 10
+        py = -5 if kind == "roll" else 1
+        return (f'<circle cx="{x}" cy="{y}" r="{r}" fill="#fff" stroke="{INK}" stroke-width="3.5"/>'
+                f'<circle cx="{x + 4}" cy="{y + py}" r="5.5" fill="{INK}"/>')
+    if kind == "half":
+        return (f'<ellipse cx="{x + 1}" cy="{y + 2}" rx="5" ry="5" fill="{INK}"/>'
+                + _line(f"M{x - 9} {y - 2} Q{x} {y - 4} {x + 9} {y - 3}", 4.5))
+    if kind == "closed":
+        return _line(f"M{x - 7} {y} Q{x} {y + 5} {x + 7} {y}", 4.5)
     if kind == "wide":
         return (f'<circle cx="{x}" cy="{y}" r="10" fill="#fff" stroke="{INK}" stroke-width="3.5"/>'
                 f'<circle cx="{x + 3}" cy="{y + 1}" r="5" fill="{INK}"/>')
@@ -88,15 +98,20 @@ def _eye(kind, x, y):
 
 
 def _brow(kind, x, y):
-    d = {"up": (-8, -13, -5), "angry": (-6, 0, 6), "worried": (5, -4, -8)}.get(kind, (0, -6, 1))
+    d = {"up": (-8, -13, -5), "upup": (-14, -21, -11), "one-up": (-8, -15, -6), "angry": (-6, 0, 6),
+         "one-angry": (-6, 0, 6), "worried": (5, -4, -8), "worried2": (8, -6, -13),
+         "flat": (0, 0, 0)}.get(kind, (0, -6, 1))
     # drawn from the back of the brow (x - 10) to the front (x + 10)
     return _line(f"M{x - 11} {y + d[2]} Q{x} {y + d[1]} {x + 11} {y + d[0]}", 4.5)
 
 
 def _mouth(kind, x, y, beard=False):
     dark = f'fill="{MOUTH}" stroke="{INK}" stroke-width="3.5"'
-    if kind in ("O", "talk", "small-o"):
-        r = {"O": (6, 10), "talk": (7, 6), "small-o": (4, 5)}[kind]
+    kind = {"big-grin": "grin", "laugh": "grin", "closed-smile": "smile", "flat-side": "neutral",
+            "wobbly": "frown", "talk-big": "talk-big", "talk-small": "talk-small"}.get(kind, kind)
+    if kind in ("O", "big-O", "talk", "talk-big", "talk-small", "small-o"):
+        r = {"O": (6, 10), "big-O": (8, 13), "talk": (7, 6), "talk-big": (9, 8), "talk-small": (6, 3.5),
+             "small-o": (4, 5)}[kind]
         return f'<ellipse cx="{x + 4}" cy="{y + 1}" rx="{r[0]}" ry="{r[1]}" {dark}/>'
     if kind == "grin":
         return (f'<path d="M{x - 8} {y - 3} Q{x + 6} {y + 14} {x + 14} {y - 4} Z" {dark}/>'
@@ -109,10 +124,12 @@ def _mouth(kind, x, y, beard=False):
 
 
 def _profile_head(name, c, expression, talking, blink=False):
-    eyes, brows, mouth = EXPRESSIONS[expression]
-    if blink and eyes != "happy":
-        eyes = "squint"
-    mouth = "talk" if talking else (mouth or c["mouth"])
+    eyes, _look, brows, mouth = face_spec(name, expression)
+    eyes = {"one-squint": "squint"}.get(eyes, eyes)
+    if blink and eyes not in ("happy", "closed"):
+        eyes = "closed"
+    if talking:
+        mouth = {"KAI": "talk-big", "IRIS": "talk", "BOB": "talk-small"}[name]
     s = c["skin"]
     ear = (f'<path d="M-10 -592 Q-30 -594 -28 -576 Q-28 -560 -10 -562" fill="{_shade(s, 0.9)}" stroke="{INK}" '
            f'stroke-width="4" stroke-linejoin="round"/>' + _line("M-14 -584 Q-22 -580 -16 -570", 3))
@@ -120,7 +137,7 @@ def _profile_head(name, c, expression, talking, blink=False):
     nose = (f'<path d="M54 -598 L70 -570 Q66 -563 55 -563" fill="{s}" stroke="{INK}" stroke-width="{LW}" '
             f'stroke-linejoin="round"/><path d="M52 -598 L52 -562" stroke="{s}" stroke-width="8"/>')
     eye_y, brow_y, mouth_y = -584, -604, -545
-    brow_kind = brows or ("up" if name == "KAI" else None)
+    brow_kind = {"KAI": "up", "IRIS": "flat", "BOB": "one-up"}[name] if brows == "sig" else brows
 
     if name == "KAI":
         back = ""
@@ -250,40 +267,74 @@ def _interp(keys, phase):
     return tuple(keys[0][1:])
 
 
-def _pump_arm(swing, amount, bend, close=0.25, fore_len=1.0):
+# Each character's own way of moving.
+#   stride = seconds per full stride, arm = arm swing, bend = elbow angle, lean = forward lean,
+#   hop = height of the in-air moment, kick = how high the heel kicks up, reach = stride length,
+#   bounce = extra up-down in the walk, wobble = head/body wobble (Bob)
+GAIT = {
+    "KAI":  {"run": {"stride": 0.44, "arm": 40, "bend": 92, "lean": 17, "hop": 22, "kick": 1.12, "reach": 1.05},
+             "walk": {"stride": 0.86, "arm": 22, "lean": 4, "bounce": 7, "reach": 1.0, "wobble": 0}},
+    "IRIS": {"run": {"stride": 0.5, "arm": 28, "bend": 100, "lean": 11, "hop": 14, "kick": 0.95, "reach": 0.95},
+             "walk": {"stride": 1.0, "arm": 12, "lean": 1, "bounce": 1, "reach": 0.9, "wobble": 0}},
+    "BOB":  {"run": {"stride": 0.6, "arm": 48, "bend": 62, "lean": 6, "hop": 8, "kick": 0.7, "reach": 0.85,
+                     "wobble": 6},
+             "walk": {"stride": 1.22, "arm": 24, "lean": -3, "bounce": 3, "reach": 0.9, "wobble": 5}},
+}
+DEFAULT_GAIT = GAIT["IRIS"]
+
+
+def _gait(name, kind):
+    return (GAIT.get(name) or DEFAULT_GAIT)[kind]
+
+
+def _leg_at(keys, phase, g):
+    """Key-pose leg, adjusted for a character's stride length (reach) and heel kick."""
+    th, sh, ft = _interp(keys, phase)
+    th2 = th * g.get("reach", 1.0)
+    sh2 = th2 - (th - sh) * g.get("kick", 1.0)
+    return th2, sh2, ft + (sh2 - sh) * 0.5
+
+
+def _pump_arm(swing, amount, bend, close=0.12, fore_len=0.85):
     """swing -1..1 (1 = arm forward). Elbow closes as the arm comes forward."""
     upper = amount * swing
     return upper, upper + bend + close * upper * 4, fore_len
 
 
-def side_run_pose(phase: float) -> dict:
+def side_run_pose(phase: float, name: str | None = None) -> dict:
     """Run cycle in profile. phase 0..1 = one full stride (front leg lands at 0, back leg at 0.5)."""
-    # arms swing opposite to their leg: front arm is forward when the back leg is forward
+    g = _gait(name, "run")
     swing = math.cos(2 * math.pi * (phase - 0.43))
-    front, back = _interp(RUN_LEG_KEYS, phase), _interp(RUN_LEG_KEYS, phase + 0.5)
-    return {"front_leg": front, "back_leg": back,
-            "front_arm": _pump_arm(swing, 36, 96, 0.12, 0.85), "back_arm": _pump_arm(-swing, 36, 96, 0.12, 0.85),
-            "lean": 15, "ground": _run_ground(phase), "tilt": -5 + 2 * math.sin(4 * math.pi * phase)}
+    wob = g.get("wobble", 0) * math.sin(2 * math.pi * phase)
+    return {"front_leg": _leg_at(RUN_LEG_KEYS, phase, g), "back_leg": _leg_at(RUN_LEG_KEYS, phase + 0.5, g),
+            "front_arm": _pump_arm(swing, g["arm"], g["bend"]), "back_arm": _pump_arm(-swing, g["arm"], g["bend"]),
+            "lean": g["lean"] + 0.4 * wob, "ground": _run_ground(phase, g),
+            "tilt": -5 + 2 * math.sin(4 * math.pi * phase) + wob}
 
 
-def _run_ground(phase):
+def _run_ground(phase, g=None):
     """Body height for the run: the supporting foot stays on the ground from contact (0) to
-    push-off (0.40); then both feet are in the air until the other foot lands (0.5)."""
+    push-off; then both feet are in the air until the other foot lands (0.5)."""
+    g = g or DEFAULT_GAIT["run"]
     push = RUN_LEG_KEYS[3][0]
     half = phase % 0.5
     if half <= push:
-        return -_foot_bottom(*_interp(RUN_LEG_KEYS, half), 0)
+        return -_foot_bottom(*_leg_at(RUN_LEG_KEYS, half, g), 0)
     u = (half - push) / (0.5 - push)
-    start = -_foot_bottom(*_interp(RUN_LEG_KEYS, push), 0)
-    end = -_foot_bottom(*_interp(RUN_LEG_KEYS, 0.0), 0)
-    return start + (end - start) * u - 18 * math.sin(math.pi * u)
+    start = -_foot_bottom(*_leg_at(RUN_LEG_KEYS, push, g), 0)
+    end = -_foot_bottom(*_leg_at(RUN_LEG_KEYS, 0.0, g), 0)
+    return start + (end - start) * u - g["hop"] * math.sin(math.pi * u)
 
 
-def stride_speed(keys=None, scale=1.0, stride_seconds=0.5):
+def stride_speed(keys=None, scale=1.0, stride_seconds=None, name=None, kind=None):
     """Ground speed (px/s) that keeps the planted foot from sliding."""
     keys = keys or RUN_LEG_KEYS
+    kind = kind or ("run" if keys is RUN_LEG_KEYS else "walk")
+    g = _gait(name, kind)
+    stride_seconds = stride_seconds or g["stride"]
+
     def foot_x(ph):
-        th, sh, _ = _interp(keys, ph)
+        th, sh, _ = _leg_at(keys, ph, g)
         kx, _ = _fwd(0, HIP_Y, th, 112)
         fx, _ = _fwd(kx, 0, sh, 113)
         return fx
@@ -291,9 +342,12 @@ def stride_speed(keys=None, scale=1.0, stride_seconds=0.5):
     return (foot_x(contact) - foot_x(lift)) * scale / ((lift - contact) * stride_seconds)
 
 
-def side_walk_pose(phase: float) -> dict:
+def side_walk_pose(phase: float, name: str | None = None) -> dict:
     """Walk cycle in profile. phase 0..1 = one full stride."""
+    g = _gait(name, "walk")
     swing = math.cos(2 * math.pi * (phase - 0.45))
-    return {"front_leg": _interp(WALK_LEG_KEYS, phase), "back_leg": _interp(WALK_LEG_KEYS, phase + 0.5),
-            "front_arm": _pump_arm(swing, 18, 12, 0.1), "back_arm": _pump_arm(-swing, 18, 12, 0.1),
-            "lean": 2, "air": 0}
+    wob = g["wobble"] * math.sin(2 * math.pi * phase)
+    bounce = g["bounce"] * (0.5 + 0.5 * math.cos(4 * math.pi * (phase - 0.3)))
+    return {"front_leg": _leg_at(WALK_LEG_KEYS, phase, g), "back_leg": _leg_at(WALK_LEG_KEYS, phase + 0.5, g),
+            "front_arm": _pump_arm(swing, g["arm"], 12, 0.1, 1.0), "back_arm": _pump_arm(-swing, g["arm"], 12, 0.1, 1.0),
+            "lean": g["lean"] + 0.3 * wob, "air": bounce, "tilt": wob}
