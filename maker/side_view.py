@@ -25,10 +25,10 @@ def _fwd(x, y, angle, length):
     return x + length * math.sin(a), y + length * math.cos(a)
 
 
-def _arm(c, upper, fore, back=False):
+def _arm(c, upper, fore, fore_len=1.0, back=False):
     sx, sy = (-4 if back else 2), SHOULDER_Y
     ex, ey = _fwd(sx, sy, upper, 100)
-    hx, hy = _fwd(ex, ey, fore, 92)
+    hx, hy = _fwd(ex, ey, fore, 92 * fore_len)
     ux, uy = _fwd(hx, hy, fore, 9)
     sleeve = _shade(c["top"]) if back else c["top"]
     skin = _shade(c["skin"], 0.88) if back else c["skin"]
@@ -138,9 +138,9 @@ def _profile_torso(name, c):
     else:
         body = "M-36 -494 Q-48 -470 -44 -420 L-40 -252 L36 -252 Q42 -320 38 -380 Q44 -460 30 -494 Q0 -504 -36 -494 Z"
     out = (f'<path d="{body}" fill="{t}"/>'
-           f'<path d="M-36 -494 Q-48 -470 -44 -420 L-40 -252 L-14 -252 L-16 -496 Z" fill="{sh}"/>')
+           f'<path d="M-36 -494 Q-48 -470 -44 -420 L-40 -252 L-30 -252 L-30 -496 Z" fill="{sh}" opacity=".55"/>')
     if name == "KAI":
-        out += (f'<path d="M-30 -500 Q-58 -476 -42 -452 Q-30 -478 -14 -498 Z" fill="{sh}" stroke="{INK}" stroke-width="4"/>'
+        out += (f'<path d="M-26 -502 Q-46 -490 -38 -470 Q-28 -484 -12 -500 Z" fill="{sh}" stroke="{INK}" stroke-width="4"/>'
                 f'<path d="M8 -342 L38 -342 L40 -292 L6 -292 Z" fill="{sh}" stroke="{INK}" stroke-width="4"/>')
     elif name == "IRIS":
         out += f'<path d="M24 -494 Q40 -460 38 -380 Q40 -320 36 -252 L26 -252 Q30 -380 18 -494 Z" fill="{c["inner"]}"/>'
@@ -167,8 +167,11 @@ def character_side(name: str, x: float, y: float, scale: float = 1.0, pose: dict
     legs_back = _leg(c, *p["back_leg"], drop, back=True)
     legs_front = _leg(c, *p["front_leg"], drop)
     # keep the lowest foot on the ground; "air" lifts the whole body for the hop between steps
-    lowest = max(_foot_bottom(*p["front_leg"], drop), _foot_bottom(*p["back_leg"], drop))
-    lift = -lowest - p.get("air", 0)
+    if "ground" in p:
+        lift = p["ground"]
+    else:
+        lowest = max(_foot_bottom(*p["front_leg"], drop), _foot_bottom(*p["back_leg"], drop))
+        lift = -lowest - p.get("air", 0)
     sx = -scale if flip else scale
     return (f'<g transform="translate({x} {y}) scale({sx} {scale}) translate(0 {lift:.1f})">'
             f'{legs_back}{upper}{legs_front}{front_arm}</g>')
@@ -180,40 +183,94 @@ def _foot_bottom(thigh, shin, drop):
     return fy + 20
 
 
-WALK_STAND = {"front_arm": (4, 4), "back_arm": (-4, -2), "front_leg": (3, 2), "back_leg": (-3, -2)}
+WALK_STAND = {"front_arm": (4, 4, 1.0), "back_arm": (-4, -2, 1.0), "front_leg": (3, 2), "back_leg": (-3, -2)}
+
+
+# Key poses for ONE leg over one stride (phase 0..1), as (phase, thigh, shin).
+# This is the classic animator's run cycle: contact, down, push-off, heel kick, passing, reach.
+RUN_LEG_KEYS = [
+    (0.00, 24, 6),      # contact: foot lands just ahead of the hip, knee soft
+    (0.12, 10, -14),    # down: knee bends to absorb the landing, body lowest
+    (0.26, -10, -22),   # support: body passes over the foot
+    (0.38, -32, -40),   # push-off: leg extended behind
+    (0.55, -20, -100),  # heel kick: foot flicks up behind
+    (0.70, 14, -96),    # passing: knee comes forward, heel tucked high
+    (0.84, 48, -42),    # reach: knee high, foot still in the air
+]
+WALK_LEG_KEYS = [
+    (0.00, 18, 16),     # heel strike
+    (0.18, 6, 2),
+    (0.38, -14, -16),   # push
+    (0.52, -18, -44),   # toe off
+    (0.72, 6, -40),     # passing
+    (0.88, 20, 4),
+]
+
+
+def _interp(keys, phase):
+    """Smooth looping interpolation (Catmull-Rom) through the key poses."""
+    phase %= 1.0
+    n = len(keys)
+    for i in range(n):
+        p0 = keys[i][0]
+        p1 = keys[(i + 1) % n][0] + (1.0 if i + 1 == n else 0.0)
+        ph = phase if phase >= p0 else phase + 1.0
+        if p0 <= ph < p1:
+            t = (ph - p0) / (p1 - p0)
+            a, b, c, d = keys[i - 1], keys[i], keys[(i + 1) % n], keys[(i + 2) % n]
+            out = []
+            for j in (1, 2):
+                v0, v1, v2, v3 = a[j], b[j], c[j], d[j]
+                out.append(0.5 * ((2 * v1) + (-v0 + v2) * t + (2 * v0 - 5 * v1 + 4 * v2 - v3) * t * t
+                                  + (-v0 + 3 * v1 - 3 * v2 + v3) * t ** 3))
+            return tuple(out)
+    return keys[0][1], keys[0][2]
+
+
+def _pump_arm(swing, amount, bend, close=0.25, fore_len=1.0):
+    """swing -1..1 (1 = arm forward). Elbow closes as the arm comes forward."""
+    upper = amount * swing
+    return upper, upper + bend + close * upper * 4, fore_len
 
 
 def side_run_pose(phase: float) -> dict:
-    """Run cycle in profile. phase 0..1 = one full stride."""
-    a = 2 * math.pi * phase
+    """Run cycle in profile. phase 0..1 = one full stride (front leg lands at 0, back leg at 0.5)."""
+    # arms swing opposite to their leg: front arm is forward when the back leg is forward
+    swing = math.cos(2 * math.pi * (phase - 0.43))
+    front, back = _interp(RUN_LEG_KEYS, phase), _interp(RUN_LEG_KEYS, phase + 0.5)
+    return {"front_leg": front, "back_leg": back,
+            "front_arm": _pump_arm(swing, 36, 96, 0.12, 0.85), "back_arm": _pump_arm(-swing, 36, 96, 0.12, 0.85),
+            "lean": 15, "ground": _run_ground(phase), "tilt": -5 + 2 * math.sin(4 * math.pi * phase)}
 
-    def leg(ph):
-        thigh = 38 * math.sin(ph)
-        # knee folds most while the leg swings forward from behind (recovery)
-        fold = 20 + 95 * max(0.0, math.cos(ph)) ** 1.4
-        return thigh, thigh - fold
 
-    def arm(ph):
-        upper = -42 * math.sin(ph)
-        return upper, upper + 88       # elbow bent about 90 degrees
+def _run_ground(phase):
+    """Body height for the run: the supporting foot stays on the ground from contact (0) to
+    push-off (0.40); then both feet are in the air until the other foot lands (0.5)."""
+    push = RUN_LEG_KEYS[3][0]
+    half = phase % 0.5
+    if half <= push:
+        return -_foot_bottom(*_interp(RUN_LEG_KEYS, half), 0)
+    u = (half - push) / (0.5 - push)
+    start = -_foot_bottom(*_interp(RUN_LEG_KEYS, push), 0)
+    end = -_foot_bottom(*_interp(RUN_LEG_KEYS, 0.0), 0)
+    return start + (end - start) * u - 18 * math.sin(math.pi * u)
 
-    return {"front_leg": leg(a), "back_leg": leg(a + math.pi),
-            "front_arm": arm(a + math.pi), "back_arm": arm(a),
-            "lean": 11, "drop": 0, "air": 14 * abs(math.cos(a)), "tilt": -4}
+
+def stride_speed(keys=None, scale=1.0, stride_seconds=0.5):
+    """Ground speed (px/s) that keeps the planted foot from sliding."""
+    keys = keys or RUN_LEG_KEYS
+    def foot_x(ph):
+        th, sh = _interp(keys, ph)
+        kx, _ = _fwd(0, HIP_Y, th, 112)
+        fx, _ = _fwd(kx, 0, sh, 113)
+        return fx
+    contact, lift = 0.0, keys[3][0]
+    return (foot_x(contact) - foot_x(lift)) * scale / ((lift - contact) * stride_seconds)
 
 
 def side_walk_pose(phase: float) -> dict:
     """Walk cycle in profile. phase 0..1 = one full stride."""
-    a = 2 * math.pi * phase
-
-    def leg(ph):
-        thigh = 22 * math.sin(ph)
-        return thigh, thigh - (6 + 38 * max(0.0, math.cos(ph)) ** 2)
-
-    def arm(ph):
-        upper = -20 * math.sin(ph)
-        return upper, upper + 14
-
-    return {"front_leg": leg(a), "back_leg": leg(a + math.pi),
-            "front_arm": arm(a + math.pi), "back_arm": arm(a),
-            "lean": 2, "drop": 0}
+    swing = math.cos(2 * math.pi * (phase - 0.45))
+    return {"front_leg": _interp(WALK_LEG_KEYS, phase), "back_leg": _interp(WALK_LEG_KEYS, phase + 0.5),
+            "front_arm": _pump_arm(swing, 18, 12, 0.1), "back_arm": _pump_arm(-swing, 18, 12, 0.1),
+            "lean": 2, "air": 0}
