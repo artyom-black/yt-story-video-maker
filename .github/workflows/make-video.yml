@@ -135,11 +135,11 @@ jobs:
       - name: Chatterbox-Turbo (own environment)
         run: |
           python -m venv .venv-tts
-          .venv-tts/bin/pip install -q chatterbox-tts --extra-index-url https://download.pytorch.org/whl/cpu
-      - name: Record this part
+          .venv-tts/bin/pip install -q chatterbox-tts faster-whisper --extra-index-url https://download.pytorch.org/whl/cpu
+      - name: Record this part (every line is listened back and redone if words are missing)
         run: |
           mkdir -p work/out
-          .venv-tts/bin/python maker/voice_lab_cb.py work/jobs.json work/out --shard ${{ matrix.shard }}/4
+          .venv-tts/bin/python maker/voice_lab_cb.py work/jobs.json work/out --shard ${{ matrix.shard }}/4 --check
       - uses: actions/upload-artifact@v4
         with:
           name: voice-part-${{ matrix.shard }}
