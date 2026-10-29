@@ -214,6 +214,45 @@ def run_kai_set(out_dir: str):
         json.dump(log, f, indent=1)
 
 
+KAI_LOOK = ("the exact same character as in image 0: same young face (about 22 years old, clean-shaven), same short "
+            "black side-swept hair with the fringe falling to the same side, same deep red hoodie with front pocket and "
+            "drawstrings, same dark blue jeans and dark grey sneakers, same art style and colours")
+
+TURNAROUND = {
+    "front": "seen from the front, facing the viewer",
+    "3q_left": "seen in three-quarter view, body and face turned towards the left side of the picture",
+    "3q_right": "seen in three-quarter view, body and face turned towards the right side of the picture",
+    "side_left": "seen exactly from the side in profile, facing the left side of the picture",
+    "side_right": "seen exactly from the side in profile, facing the right side of the picture",
+    "back": "seen from behind, his back to the viewer, back of his head and hood visible",
+    "low_angle": "seen from a low camera angle looking up at him, he looks tall and heroic, facing the viewer",
+    "high_angle": "seen from a high camera angle looking down at him, he looks up at the viewer",
+}
+
+
+def run_kai_turnaround(out_dir: str):
+    """Step 1 of the model sheet: neutral Kai from every angle, 2 versions each."""
+    os.makedirs(out_dir, exist_ok=True)
+    refs = ["characters/ai/kai_master_ref.png"]
+    log = []
+    for angle, view in TURNAROUND.items():
+        for v in range(2):
+            name = f"kai_turn_{angle}_{v + 1}.png"
+            prompt = (f"Character turnaround sheet drawing of {KAI_LOOK}. He is standing relaxed with a calm friendly "
+                      f"face, arms down, {view}. Full body, whole body visible from head to shoes, plain light grey "
+                      f"background. {RICH_STYLE}")
+            path = os.path.join(out_dir, name)
+            try:
+                with open(path, "wb") as f:
+                    f.write(generate(prompt, 768, 1024, seed=4000 + v * 61, refs=refs))
+                log.append({"file": name, "prompt": prompt})
+            except Exception as ex:
+                log.append({"file": name, "error": str(ex)[:400]})
+            print(name, log[-1].get("error", "ok"), flush=True)
+    with open(os.path.join(out_dir, "log.json"), "w") as f:
+        json.dump(log, f, indent=1)
+
+
 def run_test(out_dir: str):
     os.makedirs(out_dir, exist_ok=True)
     log = []
@@ -270,4 +309,4 @@ def run_test(out_dir: str):
 if __name__ == "__main__":
     task = os.environ.get("TASK", "test")
     out = sys.argv[1] if len(sys.argv) > 1 else "art_test"
-    {"test": run_test, "design": run_design, "kai_older": run_kai_older, "kai_set": run_kai_set}[task](out)
+    {"test": run_test, "design": run_design, "kai_older": run_kai_older, "kai_set": run_kai_set, "kai_turnaround": run_kai_turnaround}[task](out)
