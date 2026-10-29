@@ -19,7 +19,14 @@ Read `docs/HANDOFF.md`, `characters/ai/README.md` and `maker/art_lab.py` first.
 - Channel name: **Kai Films**, handle **@KaiFilms**. I'm in Armenia.
 - I want quality over speed.
 
-## Current phase: characters ONLY
+## DIRECTION (decided 2026-10-29): smart SLIDESHOW, like Ink Explainer
+No lip sync, no body rigs. Each sentence gets a whole-scene AI picture with the characters INSIDE it
+(face-locked with the master + face reference), the right expression drawn in, showing exactly what is said.
+Life comes from camera moves, punch-zooms, shakes, cuts on the beat, text pops and sounds from the measured
+sound kit (`maker/sound_kit.py`, candidates on branch `sound-candidates`). Ink Explainer: 137K subs,
+22.7M views from 18 videos in about 6 months, using stills. We beat it with the trio, MrBeast stakes and pacing.
+
+## Earlier phase: characters
 We are building the characters from scratch with AI. Don't work on the video or the renderer yet.
 
 - AI art: **Cloudflare Workers AI**, model `@cf/black-forest-labs/flux-2-klein-4b`, free tier
