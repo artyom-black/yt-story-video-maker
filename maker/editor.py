@@ -404,7 +404,7 @@ def mix_audio(out_wav, length, voices, sfx, music=None, music_db=-21):
         filters.append(f"[vox1][duck]{fx}amix=inputs={2 + len(sfx)}:normalize=0[mixed]")
     else:
         filters.append(f"[vox1]{fx}amix=inputs={1 + len(sfx)}:normalize=0[mixed]")
-    filters.append(f"[mixed]atrim=0:{length},loudnorm=I=-14:TP=-1.5:LRA=11[out]")
+    filters.append(f"[mixed]apad=whole_dur={length},atrim=0:{length},loudnorm=I=-14:TP=-1.5:LRA=11[out]")
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", *inputs, "-filter_complex", ";".join(filters),
                     "-map", "[out]", "-ar", "48000", out_wav], check=True)
 
@@ -435,6 +435,11 @@ class Shot:
             rig, since = self.pick(local)
         elif self.talk:                               # lip-synced talking rig
             rig = self.talk[shape_at(self.cues, local)]
+        if rig is None:                               # a cut-away picture without a character
+            frame = self.camera.frame(stage, local).convert("RGBA")
+            for tt, layer, cx, cy in self.texts:
+                draw_text(frame, layer, cx, cy, local - tt)
+            return frame
         kw, (dx, dy, sx, sy) = acting(self.kind, t, since)
         body = rig.pose(**kw)
         if sx != 1 or sy != 1:
@@ -465,7 +470,11 @@ def render(shots, length, audio_wav, out_mp4, flash_at=()):
     black = Image.new("RGB", (OUT_W, OUT_H), "black")
     for f in range(int(length * FPS)):
         t = f / FPS
-        shot = next((s for s in shots if s.start <= t < s.end), None)
+        # later shots in the list win: a cut-away listed after its scene interrupts it, then the scene resumes
+        shot = None
+        for s_ in shots:
+            if s_.start <= t < s_.end:
+                shot = s_
         if shot is None:
             ff.stdin.write(black.tobytes())
             continue

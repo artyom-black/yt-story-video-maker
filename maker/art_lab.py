@@ -380,6 +380,14 @@ DEMO2_BASES = {   # name: (size, head share of the figure height, what he does)
 }
 
 
+CUTAWAYS = {   # pictures that SHOW what the character is talking about
+    "work": "A medieval peasant ploughing a muddy field by hand with a wooden plough from dawn until the sun sets, "
+            "exhausted, sweat on his face, wide shot, warm evening light",
+    "tooth": "Close-up of an open hand holding a chunk of hard dark medieval bread with small grey stones in it, and a "
+             "small cracked tooth lying on the palm next to it, comedic, dramatic light",
+}
+
+
 def face_square(img, head_frac):
     """(x, y, side): a square around the head, found from the figure's outline."""
     from .art_check import figure_box
@@ -410,9 +418,32 @@ def run_demo2_bases(out_dir: str):
             except Exception as ex:
                 log.append({"file": fname, "error": str(ex)[:400]})
             print(fname, log[-1].get("error", "ok"), flush=True)
+    for name, desc in CUTAWAYS.items():
+        for v in range(2):
+            fname = f"cut_{name}_{v + 1}.png"
+            try:
+                data = generate(f"{desc}. {RICH_STYLE}", 1344, 768, seed=8500 + v * 13)
+                with open(os.path.join(out_dir, fname), "wb") as f:
+                    f.write(data)
+                log.append({"file": fname})
+            except Exception as ex:
+                log.append({"file": fname, "error": str(ex)[:400]})
+            print(fname, log[-1].get("error", "ok"), flush=True)
     with open(os.path.join(out_dir, "log.json"), "w") as f:
         json.dump(log, f, indent=1)
 
+
+EXPRESSIONS = {   # extra faces per picture: only the eyes and eyebrows change (3-5 face changes per sentence)
+    "hook": {"disbelief": "his eyes even wider in total disbelief, eyebrows shot up very high",
+             "panic": "panicked worried eyes glancing to the side, eyebrows pulled up and together"},
+    "bread": {"confused": "a confused squint, one eyebrow raised high, the other low",
+              "outraged": "outraged wide eyes, eyebrows pulled down hard"},
+    "talkA": {"knowing": "one eyebrow raised, a knowing look", "amazed": "eyes wide open, eyebrows up, amazed",
+              "serious": "serious narrowed eyes, eyebrows slightly down"},
+    "talkB": {"knowing": "one eyebrow raised, a knowing look", "amazed": "eyes wide open, eyebrows up, amazed",
+              "serious": "serious narrowed eyes, eyebrows slightly down"},
+    "laugh": {"smug": "eyes half open in a happy smug squint, eyebrows relaxed"},
+}
 
 BLINK = "his eyes are fully closed in a relaxed blink, eyelids down, eyebrows unchanged"
 
@@ -436,8 +467,8 @@ def run_demo2_patches(out_dir: str):
         face.save(face_path)
         json.dump({"box": [x, y, side]}, open(os.path.join(out_dir, f"{name}_face_box.json"), "w"))
         edits = {} if name == "laugh" else {"blink": BLINK}
-        if name.startswith("talk"):
-            edits.update(MOUTHS)
+        edits.update(MOUTHS)                                  # every speaking shot gets lip sync
+        edits.update({f"x_{k}": v for k, v in EXPRESSIONS.get(name, {}).items()})
         for key, desc in edits.items():
             fname = f"{name}_{key}.png"
             prompt = ("Exactly the same picture as image 0: same face, eyes, eyebrows, hair, clothes, lighting, framing "
