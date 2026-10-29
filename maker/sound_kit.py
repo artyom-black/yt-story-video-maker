@@ -152,15 +152,16 @@ VIDEO_MOODS = {   # our MUSIC tags -> Mixkit mood pages that describe them
     "epic": ["epic", "heroic", "triumphant"],
 }
 BAD_MUSIC = ("techno", "dance", "edm", "trap", "rap", "hip-hop", "dubstep", "rock", "metal", "party", "club", "house",
-             "disco", "reggaeton", "funk", "sexy", "christmas", "xmas", "sci-fi", "cyber", "synthwave", "lofi", "lo-fi")
+             "disco", "reggaeton", "funk", "sexy", "christmas", "xmas", "sci-fi", "cyber", "synthwave", "lofi", "lo-fi",
+             "acid", "horror", "fright", "games", "corporate")
 
 
 GOOD_GENRES = {   # genres that fit a history story; per mood
-    "tense": ("cinematic", "classical", "orchestral", "soundtrack", "ambient", "experimental"),
-    "funny": ("comedy", "classical", "jazz", "acoustic", "folk", "contemporary folk", "world", "cinematic", "soundtrack"),
-    "calm": ("acoustic", "folk", "contemporary folk", "classical", "world", "ambient", "cinematic", "piano"),
-    "sad": ("classical", "cinematic", "piano", "ambient", "acoustic", "soundtrack"),
-    "epic": ("cinematic", "orchestral", "classical", "soundtrack"),
+    "tense": ("film score", "atmospheres", "drone music", "orchestral hybrid", "orchestral", "cinematic", "classical"),
+    "funny": ("comedy", "classical", "jazz", "acoustic", "folk", "contemporary folk", "world", "film score"),
+    "calm": ("folk", "contemporary folk", "acoustic", "classical", "world", "film score", "piano", "ambient"),
+    "sad": ("film score", "classical", "piano", "ambient", "atmospheres", "world"),
+    "epic": ("film score", "orchestral hybrid", "orchestral", "march & military", "classical"),
 }
 
 
@@ -186,7 +187,10 @@ def music_by_mood(cands_dir: str, analysed: list[dict]) -> dict:
                     continue
                 count[key] = count.get(key, 0) + 1
                 files[key] = (os.path.relpath(p, cands_dir), name)
-        ranked = sorted(count, key=lambda k: (-count[k], k))
+        # most matching mood pages first, then the steadiest track (a calm bed under the voice)
+        # best-fitting genre first (the order in GOOD_GENRES), then most matching mood pages, then the steadiest
+        order = {g: i for i, g in enumerate(GOOD_GENRES[mood])}
+        ranked = sorted(count, key=lambda k: (order.get(genre.get(k), 99), -count[k], ok[k]["loudness_spread"]))
         out[mood] = [{"file": files[k][0], "name": files[k][1], "genre": genre.get(k), "pages": count[k]}
                      for k in ranked[:5]]
     return out
@@ -208,7 +212,7 @@ def pick_music(cands_dir: str) -> list[dict]:
         name = os.path.basename(p)
         out.append({"file": os.path.relpath(p, cands_dir), "name": name, "key": name.split("__")[-1],
                     "starts_at": first, "quiet_share": quiet,
-                    "loudness_spread": spread, "ok": first < 1.5 and quiet < 0.05 and spread < 6})
+                    "loudness_spread": spread, "ok": first < 2.0 and quiet < 0.10 and spread < 6.5})
     return out
 
 
