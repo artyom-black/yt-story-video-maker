@@ -107,6 +107,39 @@ def cut_out(src: str, dst: str):
         f.write(out)
 
 
+# The rich look we want (what came out when the AI drew freely in the selfie test)
+RICH_STYLE = ("high quality 2D character design for a modern adult animated comedy series, bold clean outlines, "
+              "rich cel shading with soft highlights and shadows, detailed expressive face with expressive eyes, "
+              "natural adult proportions, appealing and charismatic, vivid colours, professional studio quality, "
+              "no text, no watermark")
+
+KAI_DESIGN = ("a young man about 25 years old, slim, light skin, short black side-swept hair with the fringe falling "
+              "to one side, friendly curious face, a {colour} hoodie with a front pocket and drawstrings, dark blue jeans, "
+              "dark grey sneakers")
+DESIGN_COLOURS = ["royal blue", "sunflower yellow", "deep red", "forest green"]
+
+
+def run_design(out_dir: str):
+    """Round 1 for Kai: fresh designs (no old reference), 2 per hoodie colour. The user picks the master."""
+    os.makedirs(out_dir, exist_ok=True)
+    log = []
+    for colour in DESIGN_COLOURS:
+        for v in range(2):
+            prompt = (f"Full body character design of {KAI_DESIGN.format(colour=colour)}, standing in a relaxed natural "
+                      f"pose, slight confident smile, front view turned slightly to the side, whole body visible from "
+                      f"head to shoes, plain light grey background. {RICH_STYLE}")
+            path = os.path.join(out_dir, f"kai_{colour.split()[-1]}_{colour.split()[0]}_{v + 1}.png")
+            try:
+                with open(path, "wb") as f:
+                    f.write(generate(prompt, 768, 1024, seed=1000 + v * 37 + DESIGN_COLOURS.index(colour)))
+                log.append({"file": os.path.basename(path), "prompt": prompt})
+            except Exception as ex:
+                log.append({"file": os.path.basename(path), "error": str(ex)[:400]})
+            print(log[-1]["file"], log[-1].get("error", "ok"), flush=True)
+    with open(os.path.join(out_dir, "log.json"), "w") as f:
+        json.dump(log, f, indent=1)
+
+
 def run_test(out_dir: str):
     os.makedirs(out_dir, exist_ok=True)
     log = []
@@ -161,4 +194,6 @@ def run_test(out_dir: str):
 
 
 if __name__ == "__main__":
-    run_test(sys.argv[1] if len(sys.argv) > 1 else "art_test")
+    task = os.environ.get("TASK", "test")
+    out = sys.argv[1] if len(sys.argv) > 1 else "art_test"
+    {"test": run_test, "design": run_design}[task](out)

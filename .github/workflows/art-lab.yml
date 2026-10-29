@@ -4,6 +4,10 @@ name: Art lab (try AI art)
 # (free daily allowance) and saves them to the "art-lab" branch. Started by hand only.
 on:
   workflow_dispatch:
+    inputs:
+      task:
+        description: "test = small test set, design = fresh Kai designs"
+        default: "design"
 
 permissions:
   contents: write
@@ -21,10 +25,11 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
           pip install -q requests numpy "rembg[cpu]" pillow
-      - name: Draw the test set
+      - name: Draw
         env:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          TASK: ${{ inputs.task }}
         run: |
           if [ -z "$CF_ACCOUNT_ID" ] || [ -z "$CF_API_TOKEN" ]; then echo "Add the CF_ACCOUNT_ID and CF_API_TOKEN secrets first"; exit 1; fi
           python -m maker.art_lab art_test
