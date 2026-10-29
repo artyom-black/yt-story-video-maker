@@ -359,6 +359,95 @@ def run_demo_kai(out_dir: str):
         json.dump(log, f, indent=1)
 
 
+FACE_LOCK = ("Image 0 shows his whole look and outfit. Image 1 shows his exact face: keep that face exactly the same "
+             "(same eyes, eyebrows, nose, face shape and hairline, about 22 years old, clean-shaven, not older, not angrier).")
+KAI_REFS = ["characters/ai/kai_master_ref.png", "characters/ai/kai_face_ref.png"]
+
+DEMO2_BASES = {   # name: (size, head share of the figure height, what he does)
+    "hook": ((1024, 1024), 0.55, "Medium close-up from the chest up, filling the frame. He is extremely shocked: eyes wide, "
+                                 "eyebrows raised, mouth open, both hands on his head."),
+    "bread": ((768, 1024), 0.26, "Full body. He holds up a hard dark brown medieval loaf of bread in one hand with small grey "
+                                 "stones stuck in it, looking at it with a disgusted surprised face, mouth open."),
+    "talkA": ((768, 1024), 0.26, "Full body, three-quarter view turned slightly to the left side of the picture. He explains "
+                                 "something with one hand raised palm up, mouth closed, eyes open, looking left."),
+    "talkB": ((768, 1024), 0.26, "Full body, three-quarter view turned slightly to the left side of the picture, same stance. "
+                                 "He makes a point by pointing his index finger up, mouth closed, eyes open, looking left."),
+    "laugh": ((768, 1024), 0.26, "Full body. He laughs hard with eyes squeezed shut, mouth wide open, one hand on his belly."),
+}
+
+
+def face_square(img, head_frac):
+    """(x, y, side): a square around the head, found from the figure's outline."""
+    from .art_check import figure_box
+    x0, y0, x1, y1 = figure_box(img)
+    h = y1 - y0
+    side = min(img.width, img.height, int(h * head_frac))
+    top = img.crop((x0, y0, x1, y0 + max(10, int(h * head_frac * 0.7))))
+    bx = figure_box(top)
+    cx = x0 + (bx[0] + bx[2]) // 2
+    x = max(0, min(img.width - side, cx - side // 2))
+    y = max(0, min(img.height - side, y0 - int(side * 0.06)))
+    return x, y, side
+
+
+def run_demo2_bases(out_dir: str):
+    """Demo v2, phase A: two candidates of each picture, face locked with two references."""
+    os.makedirs(out_dir, exist_ok=True)
+    log = []
+    for name, ((w, h), _hf, action) in DEMO2_BASES.items():
+        for v in range(2):
+            fname = f"kai2_{name}_{v + 1}.png"
+            prompt = f"{KAI_LOOK}. {FACE_LOCK} {action} {ANATOMY} Plain light grey background. {RICH_STYLE}"
+            try:
+                with open(os.path.join(out_dir, fname), "wb") as f:
+                    f.write(generate(prompt, w, h, seed=8000 + v * 97, refs=KAI_REFS))
+                log.append({"file": fname, "prompt": prompt})
+            except Exception as ex:
+                log.append({"file": fname, "error": str(ex)[:400]})
+            print(fname, log[-1].get("error", "ok"), flush=True)
+    with open(os.path.join(out_dir, "log.json"), "w") as f:
+        json.dump(log, f, indent=1)
+
+
+BLINK = "his eyes are fully closed in a relaxed blink, eyelids down, eyebrows unchanged"
+
+
+def run_demo2_patches(out_dir: str):
+    """Demo v2, phase B: for the chosen pictures (env PICKS, e.g. "hook=1,bread=2,talkA=1,talkB=2,laugh=1"),
+    a cut-out, plus face crops edited for blinking and (talk pictures) every mouth shape."""
+    from PIL import Image
+    os.makedirs(out_dir, exist_ok=True)
+    picks = dict(p.split("=") for p in os.environ["PICKS"].split(","))
+    log = []
+    for name, v in picks.items():
+        src = f"characters/ai/demo2/kai2_{name}_{v}.png"
+        base = os.path.join(out_dir, f"{name}.png")
+        img = Image.open(src).convert("RGB")
+        img.save(base)
+        cut_out(base, base.replace(".png", "_cut.png"))
+        x, y, side = face_square(img, DEMO2_BASES[name][1])
+        face = img.crop((x, y, x + side, y + side)).resize((512, 512), Image.LANCZOS)
+        face_path = os.path.join(out_dir, f"{name}_face.png")
+        face.save(face_path)
+        json.dump({"box": [x, y, side]}, open(os.path.join(out_dir, f"{name}_face_box.json"), "w"))
+        edits = {} if name == "laugh" else {"blink": BLINK}
+        if name.startswith("talk"):
+            edits.update(MOUTHS)
+        for key, desc in edits.items():
+            fname = f"{name}_{key}.png"
+            prompt = ("Exactly the same picture as image 0: same face, eyes, eyebrows, hair, clothes, lighting, framing "
+                      f"and art style, nothing moved. Only change: {desc}. {RICH_STYLE}")
+            try:
+                with open(os.path.join(out_dir, fname), "wb") as f:
+                    f.write(generate(prompt, 512, 512, seed=8200, refs=[face_path]))
+                log.append({"file": fname})
+            except Exception as ex:
+                log.append({"file": fname, "error": str(ex)[:400]})
+            print(fname, log[-1].get("error", "ok"), flush=True)
+    with open(os.path.join(out_dir, "log.json"), "w") as f:
+        json.dump(log, f, indent=1)
+
+
 def run_test(out_dir: str):
     os.makedirs(out_dir, exist_ok=True)
     log = []
@@ -415,4 +504,4 @@ def run_test(out_dir: str):
 if __name__ == "__main__":
     task = os.environ.get("TASK", "test")
     out = sys.argv[1] if len(sys.argv) > 1 else "art_test"
-    {"test": run_test, "design": run_design, "kai_older": run_kai_older, "kai_set": run_kai_set, "kai_turnaround": run_kai_turnaround, "designs": run_designs, "demo_kai": run_demo_kai}[task](out)
+    {"test": run_test, "design": run_design, "kai_older": run_kai_older, "kai_set": run_kai_set, "kai_turnaround": run_kai_turnaround, "designs": run_designs, "demo_kai": run_demo_kai, "demo2_bases": run_demo2_bases, "demo2_patches": run_demo2_patches}[task](out)
