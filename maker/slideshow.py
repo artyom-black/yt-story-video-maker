@@ -122,6 +122,23 @@ def word_time(line, word, a):
     return float(v[k]) - 0.03
 
 
+def phrase_starts(a, min_gap=0.16):
+    """Times where Kai starts a new phrase after a short pause: natural places to cut."""
+    hop = SR // 100
+    n = len(a) // hop
+    env = np.sqrt((a[:n * hop].reshape(n, hop) ** 2).mean(axis=1) + 1e-12)
+    on = env > 0.06 * env.max()
+    out, silent = [], 0
+    for i, v in enumerate(on):
+        if v:
+            if silent >= min_gap * 100 and i > 30:
+                out.append(i / 100)
+            silent = 0
+        else:
+            silent += 1
+    return out
+
+
 def db(x):
     return 10 ** (x / 20)
 
@@ -187,7 +204,8 @@ def make_plan(st, assets, kit_dir, cands):
                            ["push", "pan", "pull", "push", "pan"][idx % 5])
         side = 1 - side if s.text else side
         scenes.append({"n": s.number, "start": start, "dur": dur, "pics": pics, "camera": cam, "mood": s.mood,
-                       "text": s.text, "text_at": tt, "text_side": side, "voice": voice})
+                       "text": s.text, "text_at": tt, "text_side": side, "voice": voice,
+                       "phrases": phrase_starts(voice)})
         # sounds, each placed on its hit
         if section_change or s.sfx == "whoosh":
             sfx.append((start, "whoosh"))
@@ -319,27 +337,161 @@ def camera(kind, t, dur, text_at, n):
     return z, fx + dx, fy + dy
 
 
+# ---------- the camera operator: several shots inside every picture ----------
+
+FACE_CASCADE = None
+MAX_SHOT = 1.5          # never hold one framing longer than this
+MIN_SHOT = 0.7
+
+
+def analyse_picture(path):
+    """Where things are in a picture (shares of width/height): Kai's face, and the most eye-catching
+    other spots (objects), so the editor can cut between wide, face and detail shots."""
+    global FACE_CASCADE
+    import cv2
+    if FACE_CASCADE is None:
+        xml = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "models",
+                           "lbpcascade_animeface.xml")
+        FACE_CASCADE = cv2.CascadeClassifier(xml) if os.path.exists(xml) else False
+    im = cv2.imread(path)
+    h, w = im.shape[:2]
+    face = None
+    if FACE_CASCADE is not False:
+        g = cv2.equalizeHist(cv2.cvtColor(im, cv2.COLOR_BGR2GRAY))
+        found = [tuple(r) for r in FACE_CASCADE.detectMultiScale(g, 1.05, 3, minSize=(max(24, w // 40),) * 2)]
+        big = cv2.resize(g, None, fx=1.6, fy=1.6)              # a second, looser look for turned faces
+        found += [tuple(int(v / 1.6) for v in r) for r in FACE_CASCADE.detectMultiScale(big, 1.04, 2,
+                                                                                         minSize=(40, 40))]
+        best, best_score = None, 0.0
+        for x, y, fw, fh in found:
+            patch = im[y + fh // 3:y + 2 * fh // 3, x + fw // 4:x + 3 * fw // 4].reshape(-1, 3).astype(float)
+            if not len(patch):
+                continue
+            b_, g_, r_ = patch.mean(axis=0)
+            if not (r_ > 110 and r_ > g_ > b_ * 0.9):            # must look like skin (not a cow, not a wall)
+                continue
+            score = (fh / h) * (1.4 - (y + fh / 2) / h)          # big, and high in the picture
+            if score > best_score:
+                best, best_score = (x, y, fw, fh), score
+        if best:
+            x, y, fw, fh = best
+            face = ((x + fw / 2) / w, (y + fh / 2) / h, fh / h)
+    # eye-catching spots: strong local contrast and colour, away from the face
+    small = cv2.resize(im, (160, 90)).astype(np.float32)
+    blur = cv2.GaussianBlur(small, (0, 0), 6)
+    sal = np.abs(small - blur).sum(axis=2) + 0.4 * cv2.cvtColor(small.astype(np.uint8), cv2.COLOR_BGR2HSV)[:, :, 1]
+    sal = cv2.GaussianBlur(sal, (0, 0), 5)
+    if face:                                           # a detail shot never lands on Kai's body or legs
+        fx, fy, fs = int(face[0] * 160), int(face[1] * 90), max(6, int(face[2] * 90))
+        sal[max(0, fy - fs):, max(0, fx - 2 * fs):fx + 2 * fs] = 0
+    spots = []
+    for _ in range(2):
+        yy, xx = np.unravel_index(np.argmax(sal), sal.shape)
+        cx, cy = (xx + 0.5) / 160, (yy + 0.5) / 90
+        spots.append((cx, cy))
+        sal[max(0, yy - 22):yy + 22, max(0, xx - 40):xx + 40] = 0
+        if face:
+            fx, fy = int(face[0] * 160), int(face[1] * 90)
+            sal[max(0, fy - 20):fy + 20, max(0, fx - 30):fx + 30] = 0
+    return {"face": face, "spots": spots}
+
+
+def plan_shots(sc, info):
+    """Cut the scene into shots of 0.7-1.5 s on the rhythm of Kai's voice, each with its own framing."""
+    dur = sc["dur"]
+    cuts = sorted(set([0.0] + [p for p in sc["phrases"] if 0.5 < p < dur - 0.5] +
+                      ([sc["text_at"]] if sc["text_at"] and 0.4 < sc["text_at"] < dur - 0.4 else [])))
+    pts = []
+    for i, c in enumerate(cuts):                         # split long pieces, drop pieces that are too short
+        end = cuts[i + 1] if i + 1 < len(cuts) else dur
+        n = max(1, math.ceil((end - c) / MAX_SHOT))
+        pts += [c + k * (end - c) / n for k in range(n)]
+    shots = [pts[0]]
+    for p in pts[1:]:
+        if p - shots[-1] >= MIN_SHOT and dur - p >= MIN_SHOT:
+            shots.append(p)
+    face = info["face"]
+    order = (["face", "wide", "detail", "face", "medium", "detail2"] if sc["mood"] == "shock" else
+             ["wide", "face", "detail", "medium", "face", "detail2"])
+    if not face:
+        order = ["wide", "detail", "medium", "detail2"]
+    out = []
+    for i, st in enumerate(shots):
+        kind = order[i % len(order)]
+        if sc["text_at"] is not None and abs(st - sc["text_at"]) < 0.05:
+            kind = "face" if face else "detail"          # the key word: punch into the face
+        if out and kind == out[-1]["kind"]:
+            kind = order[(i + 1) % len(order)]
+        end = shots[i + 1] if i + 1 < len(shots) else dur
+        out.append({"start": st, "end": end, "kind": kind,
+                    "punch": sc["text_at"] is not None and abs(st - sc["text_at"]) < 0.05})
+    return out
+
+
+def framing(kind, info, aspect):
+    """(zoom, centre_x, centre_y) for a kind of shot."""
+    face = info["face"]
+    if kind == "face" and face:
+        z = min(2.6, max(1.6, 0.42 / face[2]))
+        return z, face[0], face[1] + (0.5 - 0.42) / z      # eyes slightly above the middle
+    if kind == "medium" and face:
+        z = 1.45                                          # waist-up: the face sits in the top third
+        return z, face[0], face[1] + (0.5 - 0.30) / z
+    if kind in ("detail", "detail2"):
+        sp = info["spots"][0 if kind == "detail" else -1]
+        z, cx, cy = 1.9, sp[0], sp[1]
+        if face:                     # never cut Kai's body in half: move the detail shot clear of him
+            half = 0.5 / z
+            body_l, body_r = face[0] - 1.3 * face[2] * 9 / 16, face[0] + 1.3 * face[2] * 9 / 16
+            if cx - half < body_r and cx + half > body_l:
+                right, left = body_r + half, body_l - half
+                cx = right if right <= 1 - half else left if left >= half else None
+                if cx is None:
+                    return 1.45, face[0], face[1] + (0.5 - 0.30) / 1.45   # no room: waist-up shot instead
+        return z, cx, cy
+    if kind == "medium":
+        return 1.35, 0.5, 0.5
+    return 1.0, 0.5, 0.5
+
+
 def render_scene(job):
     sc, out = job["scene"], job["out"]
     tmp = out + ".tmp.mp4"
-    pics = []
+    pics, infos = [], []
     for p in sc["pics"]:
         im = Image.open(p).convert("RGB")
         s = max(2400 / im.width, 1350 / im.height)
         pics.append(im.resize((int(im.width * s), int(im.height * s)), Image.LANCZOS))
+        infos.append(analyse_picture(p))
+    shots = [plan_shots(dict(sc, dur=sc["dur"] if len(pics) == 1 else sc["dur"]), infos[0])]
     layer = text_layer(sc["text"].upper(), 175) if sc["text"] else None
     frames = sc["frames"]
     ff = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24",
                            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "veryfast",
                            "-crf", "19", "-pix_fmt", "yuv420p", "-r", str(FPS), tmp], stdin=subprocess.PIPE)
+    plan = shots[0]
     for f in range(frames):
         t = f / FPS
-        im = pics[0] if len(pics) == 1 or t < sc["dur"] / 2 else pics[1]
-        z, cx, cy = camera(sc["camera"], t, sc["dur"], sc["text_at"], sc["n"])
+        k = 0 if len(pics) == 1 or t < sc["dur"] / 2 else 1
+        im, info = pics[k], infos[k]
+        shot = next(x for x in reversed(plan) if x["start"] <= t + 1e-6)
+        z, cx, cy = framing(shot["kind"], info, W / H)
+        local = t - shot["start"]
+        length = max(0.01, shot["end"] - shot["start"])
+        z *= 1.0 + 0.05 * ease(local / length)            # every shot slowly pushes in
+        if shot["punch"] and local < 0.08:                # punch-in on the key word
+            z *= 0.82 + 0.18 * local / 0.08
+        dx = dy = 0.0
+        if (shot["punch"] or (sc["camera"] == "punch" and shot is plan[0])) and local < 0.35:
+            fade = 1 - local / 0.35                       # shake on the hit
+            dx, dy = 0.01 * fade * math.sin(t * 90), 0.01 * fade * math.cos(t * 75)
         vw, vh = im.width / z, im.width / z * H / W
-        x0 = min(max(cx * im.width - vw / 2, 0), im.width - vw)
-        y0 = min(max(cy * im.height - vh / 2, 0), im.height - vh)
-        fr = im.resize((W, H), Image.BILINEAR, box=(x0, y0, x0 + vw, y0 + vh)).convert("RGBA")
+        x0 = min(max((cx + dx) * im.width - vw / 2, 0), im.width - vw)
+        y0 = min(max((cy + dy) * im.height - vh / 2, 0), im.height - vh)
+        fr = im.resize((W, H), Image.BICUBIC, box=(x0, y0, x0 + vw, y0 + vh))
+        if z > 1.5:
+            fr = fr.filter(ImageFilter.UnsharpMask(radius=2, percent=50, threshold=2))
+        fr = fr.convert("RGBA")
         if layer is not None and t >= sc["text_at"]:
             since = t - sc["text_at"]
             if since < 0.18:
