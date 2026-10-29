@@ -21,11 +21,31 @@ def spoken(text):
     return re.sub(r"\[[^\]]+\]", "", text).strip()
 
 
-def word_time(line_start, line_len, text, word):
-    """Rough time a word is said: its position in the text, as a share of the line's length."""
-    s = spoken(text)
-    i = s.lower().find(word.lower())
-    return line_start + line_len * (0.08 + 0.88 * max(0, i) / max(1, len(s)))
+_VOICED = {}
+
+
+def voiced_times(wav):
+    """Times (seconds) of every 10 ms step where the voice is actually sounding."""
+    if wav not in _VOICED:
+        import wave
+        import numpy as np
+        with wave.open(wav) as w:
+            a = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32)
+            rate = w.getframerate()
+        hop = rate // 100
+        env = np.array([np.sqrt(np.mean(a[i:i + hop] ** 2)) for i in range(0, len(a) - hop, hop)])
+        _VOICED[wav] = np.where(env > 0.08 * env.max())[0] / 100.0
+    return _VOICED[wav]
+
+
+def word_time(line_start, line, word):
+    """When a word is said: its position in the text, spread over the voiced parts of the recording only
+    (so pauses and gasps don't push the timing off)."""
+    s = spoken(line["text"])
+    i = max(0, s.lower().find(word.lower()))
+    v = voiced_times(line["wav"])
+    k = min(len(v) - 1, int(len(v) * i / max(1, len(s))))
+    return line_start + float(v[k]) - 0.04
 
 
 def snd(sounds, folder, name):
@@ -51,8 +71,7 @@ def main(sprites, art, voices, sounds, bg, rhubarb_exe, out):
     bread = Rig(os.path.join(art, "kai_bread_1_cut.png"), 1000)
     box = json.load(open(os.path.join(art, "face_box.json")))["box"]
     mouths = mouth_images(os.path.join(art, "kai_talkbase.png"), box, art, "kai_mouth_")
-    talk = {k: Rig(os.path.join(art, "kai_talkbase_cut.png"), 1500, full_body=False, rgb_override=v)
-            for k, v in mouths.items()}
+    talk = {k: Rig(os.path.join(art, "kai_talkbase_cut.png"), 1000, rgb_override=v) for k, v in mouths.items()}
     cues = rhubarb(l3["wav"], spoken(l3["text"]), rhubarb_exe)
 
     x = int(STAGE_W * 0.30)
@@ -64,8 +83,8 @@ def main(sprites, art, voices, sounds, bg, rhubarb_exe, out):
     cam = Camera()
     cam.key(0, 2.2, x, head_y + 110, 0)
     cam.key(0.01, 2.2, x, head_y + 110, 0)
-    t1347 = word_time(l1["start"], l1["len"], l1["text"], "thirteen")
-    tone = word_time(l1["start"], l1["len"], l1["text"], "ONE")
+    t1347 = word_time(l1["start"], l1, "thirteen")
+    tone = word_time(l1["start"], l1, "ONE")
     cam.key(t1347, 1.5, x, head_y + 300, 0.25)
     cam.key(tone, 2.4, x, head_y + 110, 0.10)
     cam.shake(0.0, 0.4, 24)
@@ -83,8 +102,8 @@ def main(sprites, art, voices, sounds, bg, rhubarb_exe, out):
     cam = Camera()
     cam.key(0, 1.15, x + 150, STAGE_H / 2 + 60, 0)
     cam.key(0.01, 1.15, x + 150, STAGE_H / 2 + 60, 0)
-    tday = word_time(0, l2["len"], l2["text"], "whole day")
-    tst = word_time(0, l2["len"], l2["text"], "STONES")
+    tday = word_time(0, l2, "whole day")
+    tst = word_time(0, l2, "STONES")
     cam.key(tday, 1.45, x + 120, head_y + 330, 0.6)
     cam.key(tst, 2.3, x + 120, head_y + 240, 0.1)
     cam.shake(tst, 0.4, 26)
@@ -99,11 +118,12 @@ def main(sprites, art, voices, sounds, bg, rhubarb_exe, out):
     # 3. talking close-up with lip sync (background blurred for depth)
     s3 = l3["start"]
     cam = Camera()
-    cam.key(0, 1.0, STAGE_W / 2, STAGE_H / 2, 0)
-    cam.key(0.01, 1.0, STAGE_W / 2, STAGE_H / 2, 0)
-    cam.key(l3["len"], 1.12, STAGE_W / 2 + 60, STAGE_H / 2 - 40, l3["len"])
-    treal = word_time(0, l3["len"], l3["text"], "actually")
-    shots.append(Shot(s3, l4["start"], bg, None, "talk", x=int(STAGE_W * 0.40), talk=talk, cues=cues,
+    xt = int(STAGE_W * 0.42)
+    cam.key(0, 1.85, xt - 40, head_y + 190, 0)
+    cam.key(0.01, 1.85, xt - 40, head_y + 190, 0)
+    cam.key(l3["len"], 2.1, xt - 40, head_y + 150, l3["len"])        # slow push-in while he explains
+    treal = word_time(0, l3, "actually")
+    shots.append(Shot(s3, l4["start"], bg, None, "talk", x=xt, talk=talk, cues=cues,
                       blur_bg=9, camera=cam,
                       texts=[(treal, text_layer("100% REAL", 150), W * 0.76, H * 0.30)]))
     sfx += [(s3 - 0.1, snd(sounds, "sfx_whoosh", "cinematic-whoosh-fast-transition"), -9),
@@ -112,9 +132,9 @@ def main(sprites, art, voices, sounds, bg, rhubarb_exe, out):
     # 4. the laugh and the king promise
     s4 = l4["start"]
     cam = Camera()
-    cam.key(0, 1.0, STAGE_W / 2, STAGE_H / 2, 0)
-    cam.key(0.01, 1.0, STAGE_W / 2, STAGE_H / 2, 0)
-    tking = word_time(0, l4["len"], l4["text"], "KING")
+    cam.key(0, 1.4, x + 250, STAGE_H / 2 + 150, 0)
+    cam.key(0.01, 1.4, x + 250, STAGE_H / 2 + 150, 0)
+    tking = word_time(0, l4, "KING")
     cam.key(tking, 2.0, x, head_y + 140, 0.12)
     cam.shake(tking, 0.45, 28)
     shots.append(Shot(s4, length, bg, laughing, "laughing", x=x, camera=cam,
