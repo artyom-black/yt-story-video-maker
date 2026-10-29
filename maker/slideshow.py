@@ -128,21 +128,52 @@ def db(x):
 
 # ---------- the plan ----------
 
+MIN_MUSIC_RUN = 20.0          # seconds: music never changes more often than this
+
+
+def smooth_music(st, voices):
+    """The music mood of every scene. Short mood flips are merged into the music around them, so the music
+    changes rarely and only for real sections (professional videos don't switch tracks every 15 seconds)."""
+    moods, cur = [], "tense"
+    for s in st.scenes:
+        if s.music not in ("same", ""):
+            cur = s.music
+        moods.append(cur)
+    dur = [len(v) / SR + BREATH for v in voices]
+    for _ in range(10):
+        runs, i = [], 0
+        while i < len(moods):
+            j = i
+            while j < len(moods) and moods[j] == moods[i]:
+                j += 1
+            runs.append((i, j, sum(dur[i:j])))
+            i = j
+        short = [r for k, r in enumerate(runs) if r[2] < MIN_MUSIC_RUN and 0 < k < len(runs) - 1]  # keep the hook
+        if not short or len(runs) == 1:
+            break
+        a, b, _ = min(short, key=lambda r: r[2])
+        # join the shorter neighbour, so the bigger sections keep their music
+        before = next(r for r in runs if r[1] == a)
+        after = next(r for r in runs if r[0] == b)
+        fill = moods[before[0]] if before[2] <= after[2] else moods[after[0]]
+        for k in range(a, b):
+            moods[k] = fill
+    return moods
+
 def make_plan(st, assets, kit_dir, cands):
     kit = {c["kit_file"]: c for ch in json.load(open(os.path.join(kit_dir, "kit.json")))["roles"].values() for c in ch}
     music_info = json.load(open(os.path.join(kit_dir, "kit.json")))["music"]
     from .pictures import picture_files
     files = picture_files(st, assets)
+    voices = [clean_voice(load_audio(os.path.join(assets, "voice", s.voice_file))) for s in st.scenes]
+    moods = smooth_music(st, voices)
     t = 0.1
     scenes, sfx, music_runs = [], [], []
-    mood_music = "tense"
     prev_music = None
     side = 0
     for idx, s in enumerate(st.scenes):
-        wav = os.path.join(assets, "voice", s.voice_file)
-        voice = clean_voice(load_audio(wav))
-        if s.music not in ("same", ""):
-            mood_music = s.music
+        voice = voices[idx]
+        mood_music = moods[idx]
         section_change = prev_music is not None and mood_music != prev_music
         if section_change:
             t += SECTION_PAUSE
@@ -236,10 +267,17 @@ def mix(scenes, placed, music_runs, length, out_wav):
     fx *= (1 - 0.3 * smooth)
     mixed = voice + fx + music
     mixed /= max(1.0, float(np.abs(mixed).max()) / 0.95)
+    raw = mixed.astype(np.float32).tobytes()
+    # pass 1: measure; pass 2: exact -14 LUFS (YouTube's level) with a true-peak limit
+    probe = subprocess.run(["ffmpeg", "-hide_banner", "-f", "f32le", "-ar", str(SR), "-ac", "1", "-i", "-", "-af",
+                            "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"],
+                           input=raw, capture_output=True, check=True).stderr.decode()
+    m = json.loads(probe[probe.rindex("{"):probe.rindex("}") + 1])
+    af = (f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
+          f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
     tmp = out_wav + ".raw.wav"
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "1", "-i", "-",
-                    "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", str(SR), "-ac", "2", tmp],
-                   input=mixed.astype(np.float32).tobytes(), check=True)
+                    "-af", af, "-ar", str(SR), "-ac", "2", tmp], input=raw, check=True)
     os.replace(tmp, out_wav)
 
 
