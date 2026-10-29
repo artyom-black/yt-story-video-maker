@@ -52,6 +52,13 @@ class Scene:
         return re.sub(r"\[[^\]]+\]", "", self.line).strip()
 
     @property
+    def voice_file(self) -> str:
+        """Recording name; it changes when the line or its mood changes, so edited lines are recorded again."""
+        import hashlib
+        h = hashlib.sha1(f"{self.line}|{self.mood}".encode()).hexdigest()[:8]
+        return f"scene_{self.number:03d}_{h}.wav"
+
+    @property
     def has_kai(self) -> bool:
         return bool(re.search(r"\bKAI\b", self.picture))
 

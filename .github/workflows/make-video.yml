@@ -55,11 +55,8 @@ jobs:
           SCENES=$(grep -c '^# SCENE' "${{ steps.pick.outputs.story }}")
           git clone -q --depth 1 -b "pics-$S" "$REPO_URL" pics 2>/dev/null || mkdir -p pics
           git clone -q --depth 1 -b "voice-$S" "$REPO_URL" voice 2>/dev/null || mkdir -p voice
-          if [ -f pics/pictures_status.json ] && grep -q '"complete": true' pics/pictures_status.json; then
-            echo "need_pictures=false" >> $GITHUB_OUTPUT; else echo "need_pictures=true" >> $GITHUB_OUTPUT; fi
-          HAVE=$(ls voice/scene_*.wav 2>/dev/null | wc -l)
-          echo "voice lines: $HAVE of $SCENES"
-          if [ "$HAVE" -ge "$SCENES" ]; then echo "need_voice=false" >> $GITHUB_OUTPUT; else echo "need_voice=true" >> $GITHUB_OUTPUT; fi
+          pip install -q pillow requests numpy
+          python -m maker.status "${{ steps.pick.outputs.story }}" pics voice >> $GITHUB_OUTPUT
 
   pictures:
     name: Draw the pictures
@@ -186,15 +183,16 @@ jobs:
           S="${{ needs.prepare.outputs.slug }}"
           git clone -q --depth 1 -b "pics-$S" "$REPO_URL" assets 2>/dev/null || mkdir -p assets
           git clone -q --depth 1 -b "voice-$S" "$REPO_URL" assets/voice 2>/dev/null || mkdir -p assets/voice
-          SCENES=$(grep -c '^# SCENE' "${{ needs.prepare.outputs.story }}")
-          HAVE=$(ls assets/voice/scene_*.wav 2>/dev/null | wc -l)
-          if grep -q '"complete": true' assets/pictures_status.json 2>/dev/null && [ "$HAVE" -ge "$SCENES" ]; then
+          pip install -q pillow requests numpy
+          python -m maker.status "${{ needs.prepare.outputs.story }}" assets assets/voice > state.txt
+          cat state.txt
+          if grep -q "need_pictures=false" state.txt && grep -q "need_voice=false" state.txt; then
             echo "go=true" >> $GITHUB_OUTPUT
           else
             echo "go=false" >> $GITHUB_OUTPUT
             echo "### Not finished yet" >> $GITHUB_STEP_SUMMARY
-            echo "Pictures: $(cat assets/pictures_status.json 2>/dev/null || echo 'none yet')" >> $GITHUB_STEP_SUMMARY
-            echo "Narration: $HAVE of $SCENES lines" >> $GITHUB_STEP_SUMMARY
+            echo "Pictures: $(grep pictures_done state.txt | cut -d= -f2) of $(grep pictures_total state.txt | cut -d= -f2)" >> $GITHUB_STEP_SUMMARY
+            echo "Narration: $(grep voice_done state.txt | cut -d= -f2) of $(grep voice_total state.txt | cut -d= -f2) lines" >> $GITHUB_STEP_SUMMARY
             echo "It continues by itself tonight after the free allowance resets (04:20 Armenia time)." >> $GITHUB_STEP_SUMMARY
           fi
       - name: Tools

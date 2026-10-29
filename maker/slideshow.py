@@ -131,13 +131,15 @@ def db(x):
 def make_plan(st, assets, kit_dir, cands):
     kit = {c["kit_file"]: c for ch in json.load(open(os.path.join(kit_dir, "kit.json")))["roles"].values() for c in ch}
     music_info = json.load(open(os.path.join(kit_dir, "kit.json")))["music"]
+    from .pictures import picture_files
+    files = picture_files(st, assets)
     t = 0.1
     scenes, sfx, music_runs = [], [], []
     mood_music = "tense"
     prev_music = None
     side = 0
     for idx, s in enumerate(st.scenes):
-        wav = os.path.join(assets, "voice", f"scene_{s.number:03d}.wav")
+        wav = os.path.join(assets, "voice", s.voice_file)
         voice = clean_voice(load_audio(wav))
         if s.music not in ("same", ""):
             mood_music = s.music
@@ -147,9 +149,9 @@ def make_plan(st, assets, kit_dir, cands):
         start = t
         dur = len(voice) / SR + BREATH
         tt = word_time(s.line, s.text, voice) if s.text else None
-        pics = [os.path.join(assets, "pictures", f"scene_{s.number:03d}.png")]
+        pics = [files[f"scene_{s.number:03d}"]]
         if s.picture2:
-            pics.append(os.path.join(assets, "pictures", f"scene_{s.number:03d}b.png"))
+            pics.append(files[f"scene_{s.number:03d}b"])
         cam = s.camera or ("punch" if s.mood == "shock" or s.sfx == "hit" else
                            ["push", "pan", "pull", "push", "pan"][idx % 5])
         side = 1 - side if s.text else side
@@ -325,9 +327,11 @@ def render_scene(job):
 # ---------- thumbnails ----------
 
 def thumbnails(st, assets, out_dir):
+    from .pictures import picture_files
+    files = picture_files(st, assets)
     paths = []
     for i in range(3):
-        p = os.path.join(assets, "pictures", f"thumb_{i + 1}.png")
+        p = files.get(f"thumb_{i + 1}", "")
         if not os.path.exists(p):
             continue
         im = Image.open(p).convert("RGB").resize((1280, 720), Image.LANCZOS)

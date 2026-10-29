@@ -60,11 +60,27 @@ def kai_in(text: str) -> str:
     return re.sub(r"\bKAI\b", "Kai (the young man shown in the reference images)", text)
 
 
+def _named(path, prompt):
+    """scene_007.png -> scene_007_<hash of the prompt>.png, so a changed prompt makes a new picture."""
+    import hashlib
+    root, ext = os.path.splitext(path)
+    return f"{root}_{hashlib.sha1(prompt.encode()).hexdigest()[:8]}{ext}"
+
+
+def picture_files(st, assets):
+    """{key: path} for every picture: 'costume', 'scene_007', 'scene_007b', 'thumb_1'."""
+    out = {}
+    for name, path, prompt, *_ in jobs(st, assets):
+        key = os.path.splitext(os.path.basename(path))[0].rsplit("_", 1)[0] if name != "costume" else "costume"
+        out[key] = path
+    return out
+
+
 def jobs(st, assets):
     """Every picture the video needs, in the order they are made."""
     costume = os.path.join(assets, "costume.png")
     costume_ref = os.path.join(assets, "costume_ref.png")
-    out = [("costume", costume,
+    out = [("costume", costume, None,
             f"Full body character design of {KAI_ID}. He wears {st.costume}. Standing relaxed, facing the viewer, a "
             f"friendly face, the whole body from head to shoes visible. Image 0 shows his exact face and hair: keep "
             f"them exactly the same. Plain light grey background. {STYLE}", 768, 1024, [FACE_REF])]
@@ -81,12 +97,15 @@ def jobs(st, assets):
             else:
                 prompt = f"{pic}. Setting: {st.era}. Wide 16:9 scene. {STYLE}"
                 refs = []
-            out.append((f"scene {s.number}{k}", path, prompt, W, H, refs))
+            out.append((f"scene {s.number}{k}", _named(path, prompt), prompt, W, H, refs))
     for i, idea in enumerate(st.thumbnail_ideas[:3]):
         path = os.path.join(assets, "pictures", f"thumb_{i + 1}.png")
         prompt = (f"{kai_in(idea)}. Kai wears {st.costume}. Keep his face and hair exactly as in image 0. "
                   f"{THUMB_STYLE}")
-        out.append((f"thumbnail {i + 1}", path, prompt, W, H, [FACE_REF, costume_ref]))
+        out.append((f"thumbnail {i + 1}", _named(path, prompt), prompt, W, H, [FACE_REF, costume_ref]))
+    # the costume entry: (name, path, prompt, w, h, refs) like the others
+    c = out[0]
+    out[0] = (c[0], _named(c[1], c[3]), c[3], c[4], c[5], c[6])
     return out
 
 
@@ -96,8 +115,8 @@ def run(story_path, assets):
         raise SystemExit("story has errors: " + "; ".join(st.errors))
     os.makedirs(os.path.join(assets, "pictures"), exist_ok=True)
     todo = jobs(st, assets)
-    if os.path.exists(os.path.join(assets, "costume.png")):
-        small_ref(os.path.join(assets, "costume.png"), os.path.join(assets, "costume_ref.png"))
+    if os.path.exists(todo[0][1]):
+        small_ref(todo[0][1], os.path.join(assets, "costume_ref.png"))
     done = 0
     stopped = ""
     for i, (name, path, prompt, w, h, refs) in enumerate(todo):

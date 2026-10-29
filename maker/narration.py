@@ -28,7 +28,7 @@ def plan(story_path, work, done_dir=None):
     save_wav(ref, speak(v["ref_text"], v["kokoro_voice"], v["ref_speed"], v["ref_gap"]))
     jobs = []
     for s in st.scenes:
-        out = f"scene_{s.number:03d}.wav"
+        out = s.voice_file
         if done_dir and os.path.exists(os.path.join(done_dir, out)):
             continue
         jobs.append({"who": "KAI", "text": s.line, "mood": s.mood, "ref": ref, "seed": v["seed"],
