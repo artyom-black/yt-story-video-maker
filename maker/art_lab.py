@@ -172,26 +172,6 @@ def run_kai_older(out_dir: str):
         json.dump(log, f, indent=1)
 
 
-def run_kai_hair(out_dir: str):
-    """Kai E with the brown streak removed: hair pure black, everything else unchanged."""
-    os.makedirs(out_dir, exist_ok=True)
-    log = []
-    for v in range(3):
-        name = f"kai_master_{v + 1}.png"
-        prompt = ("Exactly the same character, pose, face, expression, clothes, colours and art style as in image 0. "
-                  "Only change: his hair is completely jet black everywhere, no brown streak, no highlights. "
-                  "Plain light grey background. " + RICH_STYLE)
-        try:
-            with open(os.path.join(out_dir, name), "wb") as f:
-                f.write(generate(prompt, 768, 1024, seed=2200 + v * 29, refs=["characters/ai/kai_E_ref.png"]))
-            log.append({"file": name, "prompt": prompt})
-        except Exception as ex:
-            log.append({"file": name, "error": str(ex)[:400]})
-        print(name, log[-1].get("error", "ok"), flush=True)
-    with open(os.path.join(out_dir, "log.json"), "w") as f:
-        json.dump(log, f, indent=1)
-
-
 KAI_EMOTIONS = {
     "neutral": "standing relaxed, friendly smile, mouth closed",
     "talk_closed": "talking to a friend, one hand gesturing, mouth closed between words",
@@ -290,4 +270,4 @@ def run_test(out_dir: str):
 if __name__ == "__main__":
     task = os.environ.get("TASK", "test")
     out = sys.argv[1] if len(sys.argv) > 1 else "art_test"
-    {"test": run_test, "design": run_design, "kai_older": run_kai_older, "kai_hair": run_kai_hair}[task](out)
+    {"test": run_test, "design": run_design, "kai_older": run_kai_older, "kai_set": run_kai_set}[task](out)
