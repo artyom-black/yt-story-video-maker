@@ -26,6 +26,12 @@ Life comes from camera moves, punch-zooms, shakes, cuts on the beat, text pops a
 sound kit (`maker/sound_kit.py`, candidates on branch `sound-candidates`). Ink Explainer: 137K subs,
 22.7M views from 18 videos in about 6 months, using stills. We beat it with the trio, MrBeast stakes and pacing.
 
+### Costume rule (decided 2026-10-29)
+Each character keeps face, hair, body and signature colour forever (Kai red, Iris blue, Bob yellow).
+Clothes change per story to fit the era (e.g. Kai as a 1347 peasant in a red wool tunic).
+Per video: one costume master per character (from the face reference), then every scene uses
+face reference + costume master, so it stays consistent inside a video and recognisable across videos.
+
 ## Earlier phase: characters
 We are building the characters from scratch with AI. Don't work on the video or the renderer yet.
 
