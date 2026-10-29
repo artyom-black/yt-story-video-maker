@@ -18,7 +18,8 @@
     KAI: It's four in the morning, it's freezing, and something is breathing on my face.
 
 PICTURE describes what the viewer sees (write KAI when he is in it; leave him out for a cut-away).
-Optional per scene: PICTURE2 (a second picture for long lines), CAMERA (push, pull, pan, punch, still).
+THEN: (at "word") another picture - shown from the moment Kai says that word (any number of THEN lines).
+Optional per scene: CAMERA (push, pull, pan, punch, still).
 
 Usage:  python -m maker.script check STORY.txt
 """
@@ -46,6 +47,15 @@ class Scene:
     sfx: str = "none"
     camera: str = ""
     line: str = ""
+    extras: list = field(default_factory=list)       # [(word, picture)]: more pictures, each from a word on
+
+    @property
+    def all_pictures(self) -> list:
+        """[(word or None, picture)] in order: the first picture, then one per THEN line."""
+        out = [(None, self.picture)]
+        if self.picture2:
+            out.append((None, self.picture2))
+        return out + list(self.extras)
 
     @property
     def spoken(self) -> str:
@@ -114,6 +124,9 @@ def load(path: str) -> Script:
             continue
         if key == "KAI":
             cur.line = (cur.line + " " + val).strip()
+        elif key == "THEN":
+            m2 = re.match(r'\(\s*at\s+"([^"]+)"\s*\)\s*(.+)', val, re.I)
+            cur.extras.append((m2.group(1), m2.group(2).strip()) if m2 else (None, val))
         elif key in ("PICTURE", "PICTURE2", "MOOD", "MUSIC", "TEXT", "SFX", "CAMERA"):
             setattr(cur, key.lower(), val.lower() if key in ("MOOD", "MUSIC", "SFX", "CAMERA") else val)
         else:
@@ -148,6 +161,9 @@ def check(sc: Script):
             sc.warnings.append(f"{where}: TEXT is long ({len(s.text)} letters), keep it to 1-4 words")
         if s.text and s.text.lower().split()[0] not in s.spoken.lower() and not re.search(r"\d", s.text):
             sc.warnings.append(f"{where}: TEXT '{s.text}' is not said in the line, it will pop at the start")
+        for word, pic in s.extras:
+            if word and word.lower() not in s.spoken.lower():
+                sc.errors.append(f"{where}: THEN (at \"{word}\") - that word is not in the line")
         n = len(s.spoken.split())
         if n > 45:
             sc.warnings.append(f"{where}: long line ({n} words) - split it or add PICTURE2")

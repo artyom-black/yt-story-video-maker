@@ -107,8 +107,8 @@ def word_time(line, word, a):
     """When a word is said: its share of the text, spread over the voiced parts of the recording."""
     import re
     s = re.sub(r"\[[^\]]+\]", "", line).strip().lower()
-    i = -1
-    forms = [f for tok in (word.split() if word else []) for f in _spoken_forms(tok)]
+    i = s.find(word.lower()) if word else -1
+    forms = [] if i >= 0 else [f for tok in (word.split() if word else []) for f in _spoken_forms(tok)]
     for form in forms:
         i = s.find(form)
         if i >= 0:
@@ -197,13 +197,22 @@ def make_plan(st, assets, kit_dir, cands):
         start = t
         dur = len(voice) / SR + BREATH
         tt = word_time(s.line, s.text, voice) if s.text else None
-        pics = [files[f"scene_{s.number:03d}"]]
-        if s.picture2:
-            pics.append(files[f"scene_{s.number:03d}b"])
+        pics, switch = [], []
+        for k, (word, _pic) in enumerate(s.all_pictures):
+            key = f"scene_{s.number:03d}" + ("" if k == 0 else f"x{k + 1}")
+            pics.append(files[key])
+            switch.append(0.0 if k == 0 else (word_time(s.line, word, voice) if word else None))
+        # pictures without a word share the remaining time evenly
+        for k in range(1, len(switch)):
+            if switch[k] is None:
+                switch[k] = dur * k / len(switch)
+        order = sorted(range(len(pics)), key=lambda k: switch[k])
+        pics, switch = [pics[k] for k in order], [max(0.0, switch[k]) for k in order]
         cam = s.camera or ("punch" if s.mood == "shock" or s.sfx == "hit" else
                            ["push", "pan", "pull", "push", "pan"][idx % 5])
         side = 1 - side if s.text else side
-        scenes.append({"n": s.number, "start": start, "dur": dur, "pics": pics, "camera": cam, "mood": s.mood,
+        scenes.append({"n": s.number, "start": start, "dur": dur, "pics": pics, "switch": switch,
+                       "camera": cam, "mood": s.mood,
                        "text": s.text, "text_at": tt, "text_side": side, "voice": voice,
                        "phrases": phrase_starts(voice)})
         # sounds, each placed on its hit
@@ -463,26 +472,41 @@ def render_scene(job):
         s = max(2400 / im.width, 1350 / im.height)
         pics.append(im.resize((int(im.width * s), int(im.height * s)), Image.LANCZOS))
         infos.append(analyse_picture(p))
-    shots = [plan_shots(dict(sc, dur=sc["dur"] if len(pics) == 1 else sc["dur"]), infos[0])]
+    # one segment per picture (a new picture on its word), and shots inside each segment
+    sw = list(sc.get("switch") or [0.0]) + [sc["dur"]]
+    segs = []
+    for k in range(len(pics)):
+        a, b = sw[k], sw[k + 1]
+        if b - a < 0.35 and segs:                         # too short to see: merge into the previous one
+            segs[-1]["end"] = b
+            continue
+        sub = dict(sc, dur=b - a, phrases=[p - a for p in sc["phrases"] if a < p < b],
+                   text_at=(sc["text_at"] - a) if sc["text_at"] is not None and a <= sc["text_at"] < b else None,
+                   mood=sc["mood"] if k == 0 else "calm")
+        shots = plan_shots(sub, infos[k])
+        if k > 0 and shots:
+            shots[0]["kind"] = "wide" if shots[0]["kind"] != "face" else "face"   # first show what it is
+        segs.append({"start": a, "end": b, "pic": k, "shots": shots})
     layer = text_layer(sc["text"].upper(), 175) if sc["text"] else None
     frames = sc["frames"]
     ff = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24",
                            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "veryfast",
                            "-crf", "19", "-pix_fmt", "yuv420p", "-r", str(FPS), tmp], stdin=subprocess.PIPE)
-    plan = shots[0]
     for f in range(frames):
         t = f / FPS
-        k = 0 if len(pics) == 1 or t < sc["dur"] / 2 else 1
-        im, info = pics[k], infos[k]
-        shot = next(x for x in reversed(plan) if x["start"] <= t + 1e-6)
+        seg = next(x for x in reversed(segs) if x["start"] <= t + 1e-6)
+        im, info = pics[seg["pic"]], infos[seg["pic"]]
+        lt = t - seg["start"]
+        shot = next(x for x in reversed(seg["shots"]) if x["start"] <= lt + 1e-6)
         z, cx, cy = framing(shot["kind"], info, W / H)
-        local = t - shot["start"]
+        local = lt - shot["start"]
         length = max(0.01, shot["end"] - shot["start"])
         z *= 1.0 + 0.05 * ease(local / length)            # every shot slowly pushes in
         if shot["punch"] and local < 0.08:                # punch-in on the key word
             z *= 0.82 + 0.18 * local / 0.08
         dx = dy = 0.0
-        if (shot["punch"] or (sc["camera"] == "punch" and shot is plan[0])) and local < 0.35:
+        first = seg is segs[0] and shot is seg["shots"][0]
+        if (shot["punch"] or (sc["camera"] == "punch" and first)) and local < 0.35:
             fade = 1 - local / 0.35                       # shake on the hit
             dx, dy = 0.01 * fade * math.sin(t * 90), 0.01 * fade * math.cos(t * 75)
         vw, vh = im.width / z, im.width / z * H / W

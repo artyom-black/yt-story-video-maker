@@ -51,6 +51,9 @@ SOURCES: (separated by ; )
 PICTURE: (what we SEE: write KAI when he is in the picture, his pose and
          facial expression, the place, the important objects. Leave KAI
          out for a picture of something else. Never ask for text.)
+THEN: (at "word") (another picture, shown from the moment Kai says that word.
+      Add 1-3 THEN lines to EVERY scene, so a new picture appears about every
+      2 seconds, always showing exactly what Kai is talking about.)
 MOOD: (one of: calm, curious, funny, shock, gross, tense, sad, epic, happy)
 MUSIC: (only when the music should change: tense, funny, calm, sad, epic)
 TEXT: (optional, 1-3 words that pop up on screen; must be said in the line)
@@ -67,4 +70,6 @@ MOOD: shock
 MUSIC: tense
 TEXT: 4 AM
 SFX: hit
+THEN: (at "freezing") KAI curled up on straw shivering in the dark, his breath visible as cold steam
+THEN: (at "breathing") extreme close-up of a huge wet cow nose breathing warm steam, in a dark hut
 KAI: It's four in the morning. It's freezing. And something huge is breathing on my face.

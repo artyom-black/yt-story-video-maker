@@ -85,11 +85,12 @@ def jobs(st, assets):
             f"friendly face, the whole body from head to shoes visible. Image 0 shows his exact face and hair: keep "
             f"them exactly the same. Plain light grey background. {STYLE}", 768, 1024, [FACE_REF])]
     for s in st.scenes:
-        for k, pic in (("", s.picture), ("b", s.picture2)):
+        for i_pic, (_word, pic) in enumerate(s.all_pictures):
+            k = "" if i_pic == 0 else f"x{i_pic + 1}"
             if not pic:
                 continue
             path = os.path.join(assets, "pictures", f"scene_{s.number:03d}{k}.png")
-            if s.has_kai or "KAI" in pic:
+            if re.search(r"\bKAI\b", pic):
                 prompt = (f"{kai_in(pic)}. Setting: {st.era}. Kai wears exactly the clothes from image 1: "
                           f"{st.costume}. Keep his face and hair exactly as in image 0. Other people wear plain "
                           f"clothes of the time. Wide 16:9 scene. {STYLE}")
