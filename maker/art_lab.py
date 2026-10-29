@@ -192,6 +192,48 @@ def run_kai_hair(out_dir: str):
         json.dump(log, f, indent=1)
 
 
+KAI_EMOTIONS = {
+    "neutral": "standing relaxed, friendly smile, mouth closed",
+    "talk_closed": "talking to a friend, one hand gesturing, mouth closed between words",
+    "talk_open": "talking to a friend, one hand gesturing, mouth open mid-word",
+    "excited": "super excited, big open grin, both fists up",
+    "shocked": "extremely shocked, eyes wide, jaw dropped, both hands on his head",
+    "laughing": "laughing hard, eyes squeezed shut, mouth wide open, one hand on his belly",
+    "scared": "terrified, leaning back, hands up in front of him, eyes wide",
+    "disgusted": "disgusted, face scrunched up, tongue out, leaning away",
+    "thinking": "thinking, hand on chin, eyes looking up, mouth closed",
+    "pointing": "pointing forward at something with one arm, curious amazed face, mouth open",
+}
+
+
+def run_kai_set(out_dir: str):
+    """Kai's first emotion set, all drawn from the locked master (design D)."""
+    os.makedirs(out_dir, exist_ok=True)
+    ref = "characters/ai/kai_master_ref.png"
+    log = []
+    for emo, action in KAI_EMOTIONS.items():
+        for v in range(2):
+            name = f"kai_{emo}_{v + 1}.png"
+            prompt = ("The exact same character as in image 0: same young face (about 22 years old, clean-shaven), "
+                      "same short black side-swept hair, same deep red hoodie, dark blue jeans and dark grey sneakers, "
+                      f"same art style. Now he is {action}. Full body, whole body visible from head to shoes, "
+                      "plain light grey background. " + RICH_STYLE)
+            path = os.path.join(out_dir, name)
+            try:
+                with open(path, "wb") as f:
+                    f.write(generate(prompt, 768, 1024, seed=3000 + v * 53, refs=[ref]))
+                log.append({"file": name, "prompt": prompt})
+                try:
+                    cut_out(path, path.replace(".png", "_cut.png"))
+                except Exception as ex:
+                    log.append({"file": name, "cutout_error": str(ex)[:200]})
+            except Exception as ex:
+                log.append({"file": name, "error": str(ex)[:400]})
+            print(name, log[-1].get("error", "ok"), flush=True)
+    with open(os.path.join(out_dir, "log.json"), "w") as f:
+        json.dump(log, f, indent=1)
+
+
 def run_test(out_dir: str):
     os.makedirs(out_dir, exist_ok=True)
     log = []
