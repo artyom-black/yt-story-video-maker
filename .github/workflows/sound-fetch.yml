@@ -1,0 +1,32 @@
+name: Sound fetch (candidates for the sound kit)
+
+# Downloads candidate sound effects and music previews so they can be auditioned.
+# The files go to a temporary branch "sound-candidates" that is deleted after choosing.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - run: python -m maker.sound_fetch sound_candidates
+      - name: Save to the temporary branch
+        if: always()
+        run: |
+          set -e
+          [ -d sound_candidates ] || exit 0
+          cd sound_candidates
+          git init -q -b sound-candidates
+          git config user.name "sound-fetch"
+          git config user.email "sound-fetch@users.noreply.github.com"
+          git add -A && git commit -q -m "Sound candidates (run ${{ github.run_number }})"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" sound-candidates
