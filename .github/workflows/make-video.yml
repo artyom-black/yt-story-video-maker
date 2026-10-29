@@ -1,24 +1,21 @@
 name: Make video
 
-# Click "Run workflow". It takes the first story in stories/new/ (or the one you name),
-# records the voices, draws and edits the video, makes 3 thumbnails, and gives you a zip
-# to download at the bottom of the run page. The story then moves to stories/done/.
+# Click "Run workflow". It takes the first story in stories/new/ (or the one you name) and makes the whole
+# video by itself: Kai's narration, every picture, the edit with sound and music, 3 thumbnails and the
+# upload text. Pictures use the free daily AI allowance; if a video needs more than one day of pictures,
+# this workflow continues by itself every night (04:20 Armenia time) until the video is finished.
+# The finished video is at the bottom of the run page (VIDEO-...).
 on:
   workflow_dispatch:
     inputs:
       story:
         description: "Story file in stories/new/ (leave empty = the first one)"
         default: ""
-      scenes:
-        description: "Only these scenes, for a quick test, e.g. 1-6 (leave empty = whole video)"
-        default: ""
-      voices_run:
-        description: "Reuse the voices of an earlier run (its number from the run URL). Empty = record new voices"
-        default: ""
+  schedule:
+    - cron: "20 0 * * *"
 
 permissions:
   contents: write
-  actions: read
 
 concurrency:
   group: make-video
@@ -26,13 +23,81 @@ concurrency:
 
 env:
   TTS_DIR: ${{ github.workspace }}/tools/tts
+  REPO_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}
 
 jobs:
-  voices:
-    name: Record voices (part ${{ matrix.shard }} of 4)
-    if: inputs.voices_run == ''
+  prepare:
+    name: What to do
     runs-on: ubuntu-24.04
-    timeout-minutes: 75
+    outputs:
+      story: ${{ steps.pick.outputs.story }}
+      slug: ${{ steps.pick.outputs.slug }}
+      need_pictures: ${{ steps.state.outputs.need_pictures }}
+      need_voice: ${{ steps.state.outputs.need_voice }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Which story
+        id: pick
+        run: |
+          if ls stories/new/*.txt > /dev/null 2>&1; then python -m maker.pick_story "${{ inputs.story }}"
+          else echo "No story waiting in stories/new/. Nothing to do."; fi
+      - name: Check the story
+        if: steps.pick.outputs.story != ''
+        run: python -m maker.script check "${{ steps.pick.outputs.story }}"
+      - name: What is already made
+        id: state
+        if: steps.pick.outputs.story != ''
+        run: |
+          S="${{ steps.pick.outputs.slug }}"
+          SCENES=$(grep -c '^# SCENE' "${{ steps.pick.outputs.story }}")
+          git clone -q --depth 1 -b "pics-$S" "$REPO_URL" pics 2>/dev/null || mkdir -p pics
+          git clone -q --depth 1 -b "voice-$S" "$REPO_URL" voice 2>/dev/null || mkdir -p voice
+          if [ -f pics/pictures_status.json ] && grep -q '"complete": true' pics/pictures_status.json; then
+            echo "need_pictures=false" >> $GITHUB_OUTPUT; else echo "need_pictures=true" >> $GITHUB_OUTPUT; fi
+          HAVE=$(ls voice/scene_*.wav 2>/dev/null | wc -l)
+          echo "voice lines: $HAVE of $SCENES"
+          if [ "$HAVE" -ge "$SCENES" ]; then echo "need_voice=false" >> $GITHUB_OUTPUT; else echo "need_voice=true" >> $GITHUB_OUTPUT; fi
+
+  pictures:
+    name: Draw the pictures
+    needs: prepare
+    if: needs.prepare.outputs.need_pictures == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests numpy pillow
+      - name: Draw (continues where the last run stopped)
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          S="${{ needs.prepare.outputs.slug }}"
+          git clone -q --depth 1 -b "pics-$S" "$REPO_URL" assets 2>/dev/null || mkdir -p assets
+          python -m maker.pictures "${{ needs.prepare.outputs.story }}" assets
+      - name: Save the pictures
+        if: always()
+        run: |
+          S="${{ needs.prepare.outputs.slug }}"
+          cd assets
+          [ -d .git ] || git init -q -b "pics-$S"
+          git config user.name "video-maker"
+          git config user.email "video-maker@users.noreply.github.com"
+          git add -A && git commit -q -m "Pictures for $S" || true
+          git push -q "$REPO_URL" "HEAD:pics-$S"
+
+  voice:
+    name: Record Kai (part ${{ matrix.shard }} of 4)
+    needs: prepare
+    if: needs.prepare.outputs.need_voice == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
     strategy:
       matrix:
         shard: [0, 1, 2, 3]
@@ -41,11 +106,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Which story
-        id: pick
-        run: python -m maker.pick_story "${{ inputs.story }}"
-      - name: Check the story
-        run: python -m maker.story "${{ steps.pick.outputs.story }}"
       - name: Voice tools cache (Kokoro + espeak)
         id: tools
         uses: actions/cache@v4
@@ -61,15 +121,12 @@ jobs:
           curl -sSfL -o tools/tts/voices-v1.0.bin "$G/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin"
           curl -sSfL "$G/rhasspy/piper/releases/download/2023.11.14-2/piper_linux_x86_64.tar.gz" | tar xz -C tools/tts
           chmod +x tools/tts/piper/espeak-ng
-      - name: Plan the lines (reference voices with Kokoro)
+      - name: Plan the lines
         run: |
-          pip install -q numpy scipy onnxruntime
-          python -m maker.cast_voices plan "${{ steps.pick.outputs.story }}" work/voice
-      - name: Pip cache (Chatterbox)
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: pip-chatterbox-v1
+          pip install -q numpy onnxruntime
+          S="${{ needs.prepare.outputs.slug }}"
+          git clone -q --depth 1 -b "voice-$S" "$REPO_URL" have 2>/dev/null || mkdir -p have
+          python -m maker.narration plan "${{ needs.prepare.outputs.story }}" work have
       - name: Model cache (Chatterbox-Turbo)
         uses: actions/cache@v4
         with:
@@ -79,18 +136,43 @@ jobs:
         run: |
           python -m venv .venv-tts
           .venv-tts/bin/pip install -q chatterbox-tts --extra-index-url https://download.pytorch.org/whl/cpu
-      - name: Record this part of the lines
-        run: .venv-tts/bin/python maker/voice_lab_cb.py work/voice/jobs.json work/voice/out --shard ${{ matrix.shard }}/4
+      - name: Record this part
+        run: |
+          mkdir -p work/out
+          .venv-tts/bin/python maker/voice_lab_cb.py work/jobs.json work/out --shard ${{ matrix.shard }}/4
       - uses: actions/upload-artifact@v4
         with:
-          name: voices-${{ matrix.shard }}
-          path: work/voice/out/*.wav
-          retention-days: 14
+          name: voice-part-${{ matrix.shard }}
+          path: work/out/*.wav
+          if-no-files-found: ignore
+          retention-days: 3
+
+  save_voice:
+    name: Save the recordings
+    needs: [prepare, voice]
+    if: ${{ !cancelled() && needs.voice.result == 'success' }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: voice-part-*
+          path: new
+          merge-multiple: true
+      - name: Save
+        run: |
+          S="${{ needs.prepare.outputs.slug }}"
+          git clone -q --depth 1 -b "voice-$S" "$REPO_URL" voice 2>/dev/null || (mkdir -p voice && cd voice && git init -q -b "voice-$S")
+          cp -n new/*.wav voice/ 2>/dev/null || true
+          cd voice
+          git config user.name "video-maker"
+          git config user.email "video-maker@users.noreply.github.com"
+          git add -A && git commit -q -m "Narration for $S" || true
+          git push -q "$REPO_URL" "HEAD:voice-$S"
 
   video:
-    name: Draw, edit and mix the video
-    needs: voices
-    if: ${{ !cancelled() && (needs.voices.result == 'success' || needs.voices.result == 'skipped') }}
+    name: Edit the video
+    needs: [prepare, pictures, save_voice]
+    if: ${{ !cancelled() && needs.prepare.outputs.story != '' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 120
     steps:
@@ -98,53 +180,74 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Which story
-        id: pick
-        run: python -m maker.pick_story "${{ inputs.story }}"
-      - name: Tools (ffmpeg, fonts)
+      - name: Everything ready?
+        id: ready
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg fonts-dejavu fonts-inter > /dev/null
-          mkdir -p ~/.fonts
-          curl -sSfL -o ~/.fonts/Anton-Regular.ttf "https://github.com/google/fonts/raw/main/ofl/anton/Anton-Regular.ttf" || echo "Anton font not downloaded, using Inter"
-          fc-cache -f > /dev/null
-          pip install -q numpy scipy onnxruntime
-      - name: Voice tools cache (Kokoro + espeak)
+          S="${{ needs.prepare.outputs.slug }}"
+          git clone -q --depth 1 -b "pics-$S" "$REPO_URL" assets 2>/dev/null || mkdir -p assets
+          git clone -q --depth 1 -b "voice-$S" "$REPO_URL" assets/voice 2>/dev/null || mkdir -p assets/voice
+          SCENES=$(grep -c '^# SCENE' "${{ needs.prepare.outputs.story }}")
+          HAVE=$(ls assets/voice/scene_*.wav 2>/dev/null | wc -l)
+          if grep -q '"complete": true' assets/pictures_status.json 2>/dev/null && [ "$HAVE" -ge "$SCENES" ]; then
+            echo "go=true" >> $GITHUB_OUTPUT
+          else
+            echo "go=false" >> $GITHUB_OUTPUT
+            echo "### Not finished yet" >> $GITHUB_STEP_SUMMARY
+            echo "Pictures: $(cat assets/pictures_status.json 2>/dev/null || echo 'none yet')" >> $GITHUB_STEP_SUMMARY
+            echo "Narration: $HAVE of $SCENES lines" >> $GITHUB_STEP_SUMMARY
+            echo "It continues by itself tonight after the free allowance resets (04:20 Armenia time)." >> $GITHUB_STEP_SUMMARY
+          fi
+      - name: Tools
+        if: steps.ready.outputs.go == 'true'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q numpy pillow requests
+      - name: Sound candidates cache
+        if: steps.ready.outputs.go == 'true'
+        id: snd
         uses: actions/cache@v4
         with:
-          path: tools
-          key: tools-kokoro1.0-piper2023.11.14-2
-      - uses: actions/download-artifact@v4
-        with:
-          pattern: voices-*
-          path: work/voice/out
-          merge-multiple: true
-          run-id: ${{ inputs.voices_run || github.run_id }}
-          github-token: ${{ github.token }}
-      - name: Make the video
-        env:
-          RENDER_TMP: ${{ runner.temp }}
+          path: sound_candidates
+          key: sound-candidates-v2
+      - name: Sound kit (measured, chosen by rules)
+        if: steps.ready.outputs.go == 'true'
         run: |
-          ARGS=""
-          if [ -n "${{ inputs.scenes }}" ]; then ARGS="--scenes ${{ inputs.scenes }}"; fi
-          python -m maker.render "${{ steps.pick.outputs.story }}" --voices work/voice/out --out out $ARGS
-      - name: Thumbnails and upload text
+          [ -d sound_candidates ] || python -m maker.sound_fetch sound_candidates
+          python -m maker.sound_kit sound_candidates kit
+      - name: Edit
+        if: steps.ready.outputs.go == 'true'
+        run: python -m maker.slideshow "${{ needs.prepare.outputs.story }}" assets kit sound_candidates out
+      - name: Package
+        if: steps.ready.outputs.go == 'true'
         run: |
-          python -m maker.thumbnail "${{ steps.pick.outputs.story }}" out
-          python -m maker.metadata "${{ steps.pick.outputs.story }}" out/upload.txt
-          cp "${{ steps.pick.outputs.story }}" out/story.txt
-          mv out/video.mp4 "out/${{ steps.pick.outputs.slug }}.mp4"
+          S="${{ needs.prepare.outputs.slug }}"
+          mv out/video.mp4 "out/$S.mp4"
+          cp "${{ needs.prepare.outputs.story }}" out/story.txt
       - uses: actions/upload-artifact@v4
+        if: steps.ready.outputs.go == 'true'
         with:
-          name: VIDEO-${{ steps.pick.outputs.slug }}
+          name: VIDEO-${{ needs.prepare.outputs.slug }}
           path: out/
-          retention-days: 140
-      - name: Move the story to stories/done (full videos only)
-        if: inputs.scenes == ''
+          retention-days: 90
+      - name: Small preview for checking
+        if: steps.ready.outputs.go == 'true'
+        run: |
+          S="${{ needs.prepare.outputs.slug }}"
+          mkdir -p preview && cd preview && git init -q -b "preview-$S"
+          ffmpeg -loglevel error -i "../out/$S.mp4" -vf scale=854:480 -c:v libx264 -crf 30 -preset veryfast -c:a aac -b:a 96k preview.mp4
+          cp ../out/thumbnail_*.png ../out/upload.txt ../out/edit.json . 2>/dev/null || true
+          git config user.name "video-maker"
+          git config user.email "video-maker@users.noreply.github.com"
+          git add -A && git commit -q -m "Preview of $S"
+          git push -q -f "$REPO_URL" "HEAD:preview-$S"
+      - name: Move the story to stories/done
+        if: steps.ready.outputs.go == 'true'
         run: |
           git config user.name "video-maker"
           git config user.email "video-maker@users.noreply.github.com"
           mkdir -p stories/done
-          git mv "${{ steps.pick.outputs.story }}" stories/done/
-          git commit -q -m "Made video: ${{ steps.pick.outputs.slug }}"
+          git mv "${{ needs.prepare.outputs.story }}" stories/done/
+          git commit -q -m "Made video: ${{ needs.prepare.outputs.slug }}"
           for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done
+          echo "### Video ready" >> $GITHUB_STEP_SUMMARY
+          echo "Download **VIDEO-${{ needs.prepare.outputs.slug }}** below (video, 3 thumbnails, upload.txt)." >> $GITHUB_STEP_SUMMARY

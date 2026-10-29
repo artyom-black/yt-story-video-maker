@@ -83,11 +83,36 @@ def voiced_times(a):
     return np.where(env > 0.08 * env.max())[0] / 100.0
 
 
+NUMBER_WORDS = {"1": "one", "2": "two", "3": "three", "4": "four", "5": "five", "6": "six", "7": "seven", "8": "eight",
+                "9": "nine", "10": "ten", "11": "eleven", "12": "noon", "1/10": "tenth", "100%": "hundred"}
+
+
+def _spoken_forms(word):
+    """How a TEXT pop may be said out loud: '4 AM' -> 'four', '1346' -> 'thirteen', '12 PM' -> 'noon'."""
+    import re
+    w = word.lower().split()[0] if word else ""
+    forms = [w]
+    if w in NUMBER_WORDS:
+        forms.insert(0, NUMBER_WORDS[w])
+    m = re.match(r"^1(\d)\d\d$", w)                       # years like 1346 are said "thirteen forty-six"
+    if m:
+        forms.insert(0, ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen",
+                         "eighteen", "nineteen"][int(m.group(1))])
+    if w.endswith("s") and w[:-1].isdigit():                 # "MID 20s" -> "twenties"
+        forms.insert(0, "twent")
+    return forms
+
+
 def word_time(line, word, a):
     """When a word is said: its share of the text, spread over the voiced parts of the recording."""
     import re
     s = re.sub(r"\[[^\]]+\]", "", line).strip().lower()
-    i = s.find(word.lower().split()[0]) if word else -1
+    i = -1
+    forms = [f for tok in (word.split() if word else []) for f in _spoken_forms(tok)]
+    for form in forms:
+        i = s.find(form)
+        if i >= 0:
+            break
     if i < 0:
         return 0.12
     v = voiced_times(a)
@@ -262,7 +287,7 @@ def render_scene(job):
         im = Image.open(p).convert("RGB")
         s = max(2400 / im.width, 1350 / im.height)
         pics.append(im.resize((int(im.width * s), int(im.height * s)), Image.LANCZOS))
-    layer = text_layer(sc["text"].upper(), 150) if sc["text"] else None
+    layer = text_layer(sc["text"].upper(), 175) if sc["text"] else None
     frames = sc["frames"]
     ff = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24",
                            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "veryfast",
