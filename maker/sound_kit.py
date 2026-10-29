@@ -144,10 +144,40 @@ def save_wav(path, a):
                     path], input=a.astype(np.float32).tobytes(), check=True)
 
 
+VIDEO_MOODS = {   # our MUSIC tags -> Mixkit mood pages that describe them
+    "tense": ["mysterious", "tension", "suspenseful", "ominous", "cautious"],
+    "funny": ["humorous", "quirky", "silly", "mischievous", "playful"],
+    "calm": ["pastoral", "peaceful", "calm", "playful"],
+    "sad": ["melancholic", "sombre", "sad"],
+    "epic": ["epic", "heroic", "triumphant"],
+}
+BAD_MUSIC = ("techno", "dance", "edm", "trap", "rap", "hip-hop", "dubstep", "rock", "metal", "party", "club", "house",
+             "disco", "reggaeton", "funk", "sexy", "christmas", "xmas", "sci-fi", "cyber", "synthwave", "lofi", "lo-fi")
+
+
+def music_by_mood(cands_dir: str, analysed: list[dict]) -> dict:
+    """For each video mood: tracks ranked by how many matching mood pages list them, unsuitable genres removed."""
+    ok = {m["key"]: m for m in analysed if m["ok"]}
+    out = {}
+    for mood, pages in VIDEO_MOODS.items():
+        count, files = {}, {}
+        for page in pages:
+            for p in glob.glob(os.path.join(cands_dir, "mood_" + page, "*.mp3")):
+                name, key = os.path.basename(p).split("__")[0], os.path.basename(p).split("__")[-1]
+                if any(b in name for b in BAD_MUSIC) or key not in ok:
+                    continue
+                count[key] = count.get(key, 0) + 1
+                files[key] = (os.path.relpath(p, cands_dir), name)
+        ranked = sorted(count, key=lambda k: (-count[k], k))
+        out[mood] = [{"file": files[k][0], "name": files[k][1], "pages": count[k]} for k in ranked[:5]]
+    return out
+
+
 def pick_music(cands_dir: str) -> list[dict]:
     """Music: keep tracks that start within 1 s, have no long silences and steady loudness."""
     out = []
-    for p in sorted(glob.glob(os.path.join(cands_dir, "music_*", "*.mp3"))):
+    for p in sorted(glob.glob(os.path.join(cands_dir, "music_*", "*.mp3")) +
+                    glob.glob(os.path.join(cands_dir, "mood_*", "*.mp3"))):
         a = load(p)
         env = envelope(a, 4800)                         # 100 ms steps
         if len(env) < 300:
@@ -157,7 +187,8 @@ def pick_music(cands_dir: str) -> list[dict]:
         quiet = float((db[int(first * 10):] < -30).mean())
         spread = float(np.std(db[int(first * 10):int(first * 10) + 600]))
         name = os.path.basename(p)
-        out.append({"file": os.path.relpath(p, cands_dir), "name": name, "starts_at": first, "quiet_share": quiet,
+        out.append({"file": os.path.relpath(p, cands_dir), "name": name, "key": name.split("__")[-1],
+                    "starts_at": first, "quiet_share": quiet,
                     "loudness_spread": spread, "ok": first < 1.5 and quiet < 0.05 and spread < 6})
     return out
 
@@ -195,11 +226,13 @@ def build(cands_dir: str, kit_dir: str, per_role: int = 4):
                            "noise_vs_tone": round(f["flatness"], 3), "score": round(sc, 2)})
         report["roles"][role] = chosen
     report["music"] = pick_music(cands_dir)
+    report["music_by_mood"] = music_by_mood(cands_dir, report["music"])
     with open(os.path.join(kit_dir, "kit.json"), "w") as fh:
         json.dump(report, fh, indent=1)
     for role, ch in report["roles"].items():
         print(role, [c["name"] for c in ch])
-    print("music ok:", [m["name"] for m in report["music"] if m["ok"]])
+    for mood, tracks in report["music_by_mood"].items():
+        print("music", mood, [(t["name"], t["pages"]) for t in tracks])
 
 
 if __name__ == "__main__":
