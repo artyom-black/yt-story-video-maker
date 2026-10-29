@@ -1,0 +1,13 @@
+[
+ {
+  "who": "KAI",
+  "option": "-",
+  "voice": "am_puck",
+  "mood": "shock",
+  "text": "I just got sent back to the year thirteen forty-seven... with ONE dollar.",
+  "ref": "work/refs/ref_kai.wav",
+  "exaggeration": 0.85,
+  "seed": 7,
+  "out": "l1b.wav"
+ }
+]
