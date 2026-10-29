@@ -219,15 +219,25 @@ KAI_LOOK = ("the exact same character as in image 0: same young face (about 22 y
             "drawstrings, same dark blue jeans and dark grey sneakers, same art style and colours")
 
 TURNAROUND = {
-    "front": "seen from the front, facing the viewer",
-    "3q_left": "seen in three-quarter view, body and face turned towards the left side of the picture",
-    "3q_right": "seen in three-quarter view, body and face turned towards the right side of the picture",
-    "side_left": "seen exactly from the side in profile, facing the left side of the picture",
-    "side_right": "seen exactly from the side in profile, facing the right side of the picture",
-    "back": "seen from behind, his back to the viewer, back of his head and hood visible",
-    "low_angle": "seen from a low camera angle looking up at him, he looks tall and heroic, facing the viewer",
-    "high_angle": "seen from a high camera angle looking down at him, he looks up at the viewer",
+    "front": "seen from the front, facing the viewer, both feet pointing towards the viewer",
+    "3q_left": ("seen in three-quarter view: his whole body, hips, knees, feet and face are all turned towards the left "
+                "side of the picture; both shoes point to the lower left, the far foot partly hidden behind the near foot"),
+    "3q_right": ("seen in three-quarter view: his whole body, hips, knees, feet and face are all turned towards the right "
+                 "side of the picture; both shoes point to the lower right, the far foot partly hidden behind the near foot"),
+    "side_left": ("seen exactly from the side in profile, facing the left side of the picture; both shoes point to the "
+                  "left, one foot slightly in front of the other, the far leg partly hidden"),
+    "side_right": ("seen exactly from the side in profile, facing the right side of the picture; both shoes point to "
+                   "the right, one foot slightly in front of the other, the far leg partly hidden"),
+    "back": "seen from behind, his back to the viewer, back of his head and hood visible, both heels towards the viewer",
+    "low_angle": ("dramatic worm's-eye view: the camera is on the floor looking steeply up at him, strong perspective, "
+                  "big shoes close to the camera, his head small at the top, he looks down at the viewer"),
+    "high_angle": ("dramatic bird's-eye view: the camera is high above looking steeply down at him, strong perspective, "
+                   "his head and shoulders big, his feet small at the bottom, he looks up at the viewer"),
 }
+
+
+ANATOMY = ("Correct human anatomy and physics: the feet, knees and hips point the same way as the body, weight "
+           "balanced, two hands with five fingers each, natural proportions.")
 
 
 def run_kai_turnaround(out_dir: str):
@@ -235,20 +245,53 @@ def run_kai_turnaround(out_dir: str):
     os.makedirs(out_dir, exist_ok=True)
     refs = ["characters/ai/kai_master_ref.png"]
     log = []
+    only = [a for a in os.environ.get("ANGLES", "").split(",") if a]
     for angle, view in TURNAROUND.items():
-        for v in range(2):
+        if only and angle not in only:
+            continue
+        for v in range(4):
             name = f"kai_turn_{angle}_{v + 1}.png"
-            prompt = (f"Character turnaround sheet drawing of {KAI_LOOK}. He is standing relaxed with a calm friendly "
-                      f"face, arms down, {view}. Full body, whole body visible from head to shoes, plain light grey "
-                      f"background. {RICH_STYLE}")
+            prompt = (f"Character turnaround sheet drawing of {KAI_LOOK}. He is standing relaxed in a natural pose with "
+                      f"a calm friendly face, arms down, {view}. {ANATOMY} Full body, whole body visible from head to "
+                      f"shoes, plain light grey background. {RICH_STYLE}")
             path = os.path.join(out_dir, name)
             try:
                 with open(path, "wb") as f:
-                    f.write(generate(prompt, 768, 1024, seed=4000 + v * 61, refs=refs))
+                    f.write(generate(prompt, 768, 1024, seed=5000 + v * 61, refs=refs))
                 log.append({"file": name, "prompt": prompt})
             except Exception as ex:
                 log.append({"file": name, "error": str(ex)[:400]})
             print(name, log[-1].get("error", "ok"), flush=True)
+    with open(os.path.join(out_dir, "log.json"), "w") as f:
+        json.dump(log, f, indent=1)
+
+
+DESIGNS = {
+    "iris": ("a smart confident young woman about 22 years old, slim, light brown skin, dark brown hair in a neat high "
+             "ponytail, modern rectangular glasses, a fitted cobalt-blue blazer with the sleeves pushed up to the "
+             "elbows over a white t-shirt, slim dark charcoal trousers, clean white sneakers, a slightly smug clever smile"),
+    "bob": ("a big friendly clueless young man about 22 years old, tall and chubby with a round face, clean-shaven, "
+            "messy light brown hair, a happy dopey grin, an oversized mustard-yellow puffer vest over a grey t-shirt, "
+            "baggy khaki cargo pants, white sports socks pulled up with brown sandals"),
+}
+
+
+def run_designs(out_dir: str):
+    """Fresh design round for Iris or Bob (env WHO=iris|bob): 8 versions, no reference. The user picks the master."""
+    who = os.environ.get("WHO", "iris")
+    os.makedirs(out_dir, exist_ok=True)
+    log = []
+    for v in range(8):
+        name = f"{who}_design_{v + 1}.png"
+        prompt = (f"Full body character design of {DESIGNS[who]}, standing relaxed in a natural pose facing the viewer, "
+                  f"whole body visible from head to shoes, plain light grey background. {ANATOMY} {RICH_STYLE}")
+        try:
+            with open(os.path.join(out_dir, name), "wb") as f:
+                f.write(generate(prompt, 768, 1024, seed=6000 + v * 71))
+            log.append({"file": name, "prompt": prompt})
+        except Exception as ex:
+            log.append({"file": name, "error": str(ex)[:400]})
+        print(name, log[-1].get("error", "ok"), flush=True)
     with open(os.path.join(out_dir, "log.json"), "w") as f:
         json.dump(log, f, indent=1)
 
@@ -309,4 +352,4 @@ def run_test(out_dir: str):
 if __name__ == "__main__":
     task = os.environ.get("TASK", "test")
     out = sys.argv[1] if len(sys.argv) > 1 else "art_test"
-    {"test": run_test, "design": run_design, "kai_older": run_kai_older, "kai_set": run_kai_set, "kai_turnaround": run_kai_turnaround}[task](out)
+    {"test": run_test, "design": run_design, "kai_older": run_kai_older, "kai_set": run_kai_set, "kai_turnaround": run_kai_turnaround, "designs": run_designs}[task](out)

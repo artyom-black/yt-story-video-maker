@@ -8,6 +8,12 @@ on:
       task:
         description: "test = small test set, design = fresh Kai designs"
         default: "design"
+      who:
+        description: "For task designs: iris or bob"
+        default: ""
+      angles:
+        description: "For task kai_turnaround: only these angles, e.g. 3q_left,side_left (empty = all)"
+        default: ""
 
 permissions:
   contents: write
@@ -30,6 +36,8 @@ jobs:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           TASK: ${{ inputs.task }}
+          WHO: ${{ inputs.who }}
+          ANGLES: ${{ inputs.angles }}
         run: |
           if [ -z "$CF_ACCOUNT_ID" ] || [ -z "$CF_API_TOKEN" ]; then echo "Add the CF_ACCOUNT_ID and CF_API_TOKEN secrets first"; exit 1; fi
           python -m maker.art_lab art_test
