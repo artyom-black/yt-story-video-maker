@@ -140,6 +140,38 @@ def run_design(out_dir: str):
         json.dump(log, f, indent=1)
 
 
+def run_kai_older(out_dir: str):
+    """Round 2 for Kai: the chosen design (5, red) made about 26 years old. Same hair, hoodie and outfit."""
+    os.makedirs(out_dir, exist_ok=True)
+    ref = "characters/ai/kai_design5_ref.png"
+    log = []
+    look = KAI_DESIGN.replace("about 25 years old", "about 26 years old").format(colour="deep red")
+    jobs = []
+    for v in range(3):     # edits of design 5
+        jobs.append((f"kai_older_edit_{v + 1}.png",
+                     "The same character as in image 0, with exactly the same black side-swept hair, deep red hoodie, "
+                     "dark blue jeans and dark grey sneakers, same pose and same art style, but make him look like a "
+                     "man of about 26: a more defined jawline, slightly longer and less round face, adult features, "
+                     "light stubble shadow, confident friendly grin. Full body, plain light grey background. "
+                     + RICH_STYLE, [ref], 2000 + v * 41))
+    for v in range(2):     # fresh drawings of the older Kai, design 5 as a guide
+        jobs.append((f"kai_older_fresh_{v + 1}.png",
+                     f"Full body character design of {look}, defined jawline, adult face, confident friendly grin, "
+                     f"standing relaxed facing the viewer, whole body visible from head to shoes, plain light grey "
+                     f"background. Keep the outfit and hair from image 0. {RICH_STYLE}", [ref], 2100 + v * 43))
+    for name, prompt, refs, seed in jobs:
+        path = os.path.join(out_dir, name)
+        try:
+            with open(path, "wb") as f:
+                f.write(generate(prompt, 768, 1024, seed=seed, refs=refs))
+            log.append({"file": name, "prompt": prompt})
+        except Exception as ex:
+            log.append({"file": name, "error": str(ex)[:400]})
+        print(name, log[-1].get("error", "ok"), flush=True)
+    with open(os.path.join(out_dir, "log.json"), "w") as f:
+        json.dump(log, f, indent=1)
+
+
 def run_test(out_dir: str):
     os.makedirs(out_dir, exist_ok=True)
     log = []
@@ -196,4 +228,4 @@ def run_test(out_dir: str):
 if __name__ == "__main__":
     task = os.environ.get("TASK", "test")
     out = sys.argv[1] if len(sys.argv) > 1 else "art_test"
-    {"test": run_test, "design": run_design}[task](out)
+    {"test": run_test, "design": run_design, "kai_older": run_kai_older}[task](out)
