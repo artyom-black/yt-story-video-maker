@@ -8,6 +8,9 @@ on:
       only:
         description: "Only these characters, e.g. BOB (empty = everyone)"
         default: ""
+      lines:
+        description: "Record these lines in the locked voices instead (a JSON file in the repo, e.g. demo/kai_demo_lines.json)"
+        default: ""
 
 permissions:
   contents: write
@@ -49,7 +52,7 @@ jobs:
       - name: Reference clips (Kokoro)
         run: |
           pip install -q numpy onnxruntime
-          ONLY="${{ inputs.only }}" python -m maker.voice_lab work/refs work/jobs.json
+          ONLY="${{ inputs.only }}" LINES_FILE="${{ inputs.lines }}" python -m maker.voice_lab work/refs work/jobs.json
 
       - name: Model cache (Chatterbox-Turbo)
         uses: actions/cache@v4
@@ -71,6 +74,7 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
           mkdir -p pub
           for f in work/out/*.wav; do ffmpeg -loglevel error -y -i "$f" -b:a 128k "pub/$(basename "${f%.wav}").mp3"; done
+          if [ -n "${{ inputs.lines }}" ]; then cp work/out/*.wav pub/; fi
           cp work/out/jobs.json pub/
           cd pub
           git init -q -b voice-samples

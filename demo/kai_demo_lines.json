@@ -1,0 +1,6 @@
+[
+ {"who": "KAI", "mood": "shock", "text": "[gasp] Wait... I just woke up in the year thirteen forty-seven. With ONE dollar.", "out": "l1.wav"},
+ {"who": "KAI", "mood": "funny", "text": "This bread costs a whole day of work... and it has STONES in it!", "out": "l2.wav"},
+ {"who": "KAI", "mood": "curious", "text": "No joke. Medieval peasants actually broke their teeth on bread like this.", "out": "l3.wav"},
+ {"who": "KAI", "mood": "funny", "text": "[laugh] Okay, okay. If I survive this... I'm becoming KING.", "out": "l4.wav"}
+]

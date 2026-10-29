@@ -57,7 +57,31 @@ LINES = {
 EXAGGERATION = {"calm": 0.45, "shock": 0.85, "funny": 0.7, "epic": 0.65}
 
 
+def from_lines(refs_dir, jobs_path, lines_file):
+    """Record given lines in the locked voices (voices.json), e.g. for a demo."""
+    voices = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "voices.json")))
+    acting = {"shock": 0.85, "scary": 0.75, "tense": 0.6, "funny": 0.7, "epic": 0.65, "sad": 0.5,
+              "calm": 0.45, "curious": 0.55}
+    lines = json.load(open(lines_file))
+    os.makedirs(refs_dir, exist_ok=True)
+    refs, jobs = {}, []
+    for ln in lines:
+        who = ln["who"]
+        if who not in refs:
+            v = voices[who]
+            refs[who] = os.path.join(refs_dir, f"ref_{who.lower()}.wav")
+            save_wav(refs[who], speak(v["ref_text"], v["kokoro_voice"], v["ref_speed"], v["ref_gap"]))
+        jobs.append({"who": who, "option": "-", "voice": voices[who]["kokoro_voice"], "mood": ln["mood"],
+                     "text": ln["text"], "ref": refs[who], "exaggeration": acting.get(ln["mood"], 0.55),
+                     "seed": voices[who]["seed"], "out": ln["out"]})
+    with open(jobs_path, "w") as f:
+        json.dump(jobs, f, indent=1)
+    print(len(jobs), "jobs")
+
+
 def main(refs_dir, jobs_path):
+    if os.environ.get("LINES_FILE"):
+        return from_lines(refs_dir, jobs_path, os.environ["LINES_FILE"])
     os.makedirs(refs_dir, exist_ok=True)
     jobs = []
     only = [w for w in os.environ.get("ONLY", "").split(",") if w]
