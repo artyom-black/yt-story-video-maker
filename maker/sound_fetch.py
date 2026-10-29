@@ -37,6 +37,10 @@ def grab(page_url: str, folder: str, limit: int, log: list):
         with open(os.path.join(os.path.dirname(folder), "page_sample.html"), "w") as fh:
             fh.write(text)
     urls = list(dict.fromkeys(re.findall(r'https://assets\.mixkit\.co/[^"\'\s<>]+?\.mp3', text)))
+    # music pages list every track with its real name and genre (schema.org data)
+    meta = {m.group(3): (m.group(1), m.group(2)) for m in re.finditer(
+        r'"@type":"MusicRecording","name":"([^"]+)","genre":"([^"]*)".*?"url":"(https://assets\.mixkit\.co/music/\d+/\d+\.mp3)"',
+        text)}
     os.makedirs(folder, exist_ok=True)
     for u in urls[:limit]:
         # the visible title is usually close to the audio URL in the page
@@ -44,9 +48,9 @@ def grab(page_url: str, folder: str, limit: int, log: list):
         near = text[max(0, i - 3000):i]
         titles = re.findall(r'<h2[^>]*>\s*([^<]{3,80}?)\s*</h2>', near) or re.findall(r'title="([^"]{3,80})"', near)
         name = html.unescape(titles[-1]).strip() if titles else os.path.basename(u)
-        slug_m = re.search(r"mixkit-([a-z0-9-]+?)-(\d+)\.mp3", u)
-        if slug_m:                                     # music previews carry the track name in the URL
-            name = slug_m.group(1)
+        genre = ""
+        if u in meta:
+            name, genre = meta[u]
         slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")[:50] or "sound"
         fid = re.findall(r"(\d+)", u)
         fname = f"{slug}__{fid[0] if fid else len(log)}.mp3"
@@ -55,7 +59,7 @@ def grab(page_url: str, folder: str, limit: int, log: list):
             if a.status_code == 200 and len(a.content) > 2000:
                 with open(os.path.join(folder, fname), "wb") as f:
                     f.write(a.content)
-                log.append({"file": f"{os.path.basename(folder)}/{fname}", "name": name, "url": u})
+                log.append({"file": f"{os.path.basename(folder)}/{fname}", "name": name, "genre": genre, "url": u})
         except Exception as ex:
             log.append({"url": u, "error": str(ex)[:200]})
 

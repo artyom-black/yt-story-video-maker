@@ -155,9 +155,25 @@ BAD_MUSIC = ("techno", "dance", "edm", "trap", "rap", "hip-hop", "dubstep", "roc
              "disco", "reggaeton", "funk", "sexy", "christmas", "xmas", "sci-fi", "cyber", "synthwave", "lofi", "lo-fi")
 
 
+GOOD_GENRES = {   # genres that fit a history story; per mood
+    "tense": ("cinematic", "classical", "orchestral", "soundtrack", "ambient", "experimental"),
+    "funny": ("comedy", "classical", "jazz", "acoustic", "folk", "contemporary folk", "world", "cinematic", "soundtrack"),
+    "calm": ("acoustic", "folk", "contemporary folk", "classical", "world", "ambient", "cinematic", "piano"),
+    "sad": ("classical", "cinematic", "piano", "ambient", "acoustic", "soundtrack"),
+    "epic": ("cinematic", "orchestral", "classical", "soundtrack"),
+}
+
+
 def music_by_mood(cands_dir: str, analysed: list[dict]) -> dict:
-    """For each video mood: tracks ranked by how many matching mood pages list them, unsuitable genres removed."""
+    """For each video mood: tracks ranked by how many matching mood pages list them, keeping only genres
+    that fit a history story (no pop, corporate, children's, hip hop, electronic...)."""
     ok = {m["key"]: m for m in analysed if m["ok"]}
+    genre = {}
+    src = os.path.join(cands_dir, "sources.json")
+    if os.path.exists(src):
+        for x in json.load(open(src)):
+            if "file" in x:
+                genre[os.path.basename(x["file"]).split("__")[-1]] = (x.get("genre") or "").lower()
     out = {}
     for mood, pages in VIDEO_MOODS.items():
         count, files = {}, {}
@@ -166,10 +182,13 @@ def music_by_mood(cands_dir: str, analysed: list[dict]) -> dict:
                 name, key = os.path.basename(p).split("__")[0], os.path.basename(p).split("__")[-1]
                 if any(b in name for b in BAD_MUSIC) or key not in ok:
                     continue
+                if genre.get(key) not in GOOD_GENRES[mood]:
+                    continue
                 count[key] = count.get(key, 0) + 1
                 files[key] = (os.path.relpath(p, cands_dir), name)
         ranked = sorted(count, key=lambda k: (-count[k], k))
-        out[mood] = [{"file": files[k][0], "name": files[k][1], "pages": count[k]} for k in ranked[:5]]
+        out[mood] = [{"file": files[k][0], "name": files[k][1], "genre": genre.get(k), "pages": count[k]}
+                     for k in ranked[:5]]
     return out
 
 
@@ -232,7 +251,7 @@ def build(cands_dir: str, kit_dir: str, per_role: int = 4):
     for role, ch in report["roles"].items():
         print(role, [c["name"] for c in ch])
     for mood, tracks in report["music_by_mood"].items():
-        print("music", mood, [(t["name"], t["pages"]) for t in tracks])
+        print("music", mood, [(t["name"], t["genre"], t["pages"]) for t in tracks])
 
 
 if __name__ == "__main__":
