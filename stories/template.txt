@@ -1,204 +1,70 @@
 =====================================================================
 TEMPLATE. Copy everything below this box into ChatGPT, Claude or any
-AI chat. Replace the topic on the TOPIC line, then send.
+AI chat. Replace the topic on the TOPIC line, then send. Save the answer
+as a .txt file in stories/new/ (e.g. 002-medieval-toilets.txt), then run
+"Make video" on GitHub.
 =====================================================================
 
-TOPIC: [your topic, e.g. "life in the Middle Ages" or "Ancient Egypt"]
+TOPIC: [e.g. "How did medieval people survive without toilet paper?"]
 
-You are the head writer of a YouTube channel that is run exactly like
-MrBeast's, but about history. Write one full episode about the TOPIC, in
-the exact file format at the end. Output ONLY the finished file.
+You are the head writer of the YouTube channel "Kai Films", run exactly
+like MrBeast runs his channel, but about everyday life in history.
+Kai (about 22, curious, funny, a bit sarcastic, adult humour but clean)
+lives the topic himself in FIRST PERSON, as if he was sent back in time.
+Only Kai speaks. Write one full episode in the exact file format below.
+Output ONLY the finished file, nothing else.
 
-=====================================================================
-STEP 1: THE CONCEPT (decide this first, MrBeast always does)
-=====================================================================
-MrBeast designs the title and thumbnail BEFORE the video. The video then
-delivers exactly what they promise, immediately.
+RULES (MrBeast):
+1. Title first. Use the proven question style that gets clicks:
+   "What Did [people] Actually Do All Day?", "How Did [people] Survive
+   Without [thing]?", "Why You Wouldn't Survive a Day as [person]",
+   "When Did [people] Start [habit]?" A slightly gross or taboo angle
+   gets the most clicks (toilets, smells, food, pain, money, sleep).
+2. The first 5 seconds deliver the promise of the title. No intro, no
+   "hey guys". Scene 1 is the most shocking moment of the whole idea.
+3. By scene 5, promise something at the end ("there's one thing almost
+   everyone gets wrong about these people") and pay it off at the end.
+4. Something new or surprising every 2-3 scenes. Stakes keep rising.
+   Around 3 minutes and 6 minutes, a big twist or reveal.
+5. Every fact must be real. Add SOURCES (books or trusted sites).
+   Bust at least two famous myths.
+6. End fast: the payoff, then one line teasing the next video, then stop.
+7. About 85-95 scenes, 1,500-1,700 words in total (about 10 minutes).
+   One or two sentences per scene, never more than 40 words.
+8. Kai talks like a real person: short sentences, reactions, jokes.
 
-1. Turn the topic into ONE extreme, simple concept that a stranger
-   understands in one second, from the title alone.
-2. Pick ONE of these formats (they keep people watching to the end):
-   - PRICE LADDER:  "$1 vs $1,000,000 [thing] in [era]"
-                    Each step costs more and is more extreme.
-   - SURVIVAL:      "We Survived 7 Days as [people] in [era]"
-                    Day counter, every day harder than the last.
-   - EVERY LEVEL:   "Every Century, [thing] Gets Worse"
-                    Jump forward step by step; each step more shocking.
-   - RANKED:        "The Worst [jobs/punishments/cures] in History, Ranked"
-                    From bad to unbelievable; number one is saved for last.
-   - LAST TO LEAVE: "Last to Quit [era] Wins"
-                    The three compete; the winner is only revealed at the end.
-3. Write the title like MrBeast: extreme, intriguing, specific numbers.
-   "We Survived" beats "We Visited". "$1 vs $1,000,000" beats "Rich vs Poor".
-   Max 60 characters.
+FORMAT (copy exactly, keys in capitals):
 
-=====================================================================
-STEP 2: THE CAST (no narrator, only these three speak)
-=====================================================================
-Viewers come back for people they love. Make them fall for these three.
+TITLE: (max 60 letters)
+FORMAT: day-in-the-life / survival / question
+ERA: (where and when, very concrete: buildings, streets, landscape)
+COSTUME: (what Kai wears in this era; it MUST be mostly deep red)
+THUMBNAIL_TEXT: (1-3 huge words, e.g. "4 AM" or "NO PAPER?!")
+THUMBNAIL_IDEA: (KAI + one extreme emotion + one object, simple background)
+THUMBNAIL_IDEA: (a second, different idea)
+THUMBNAIL_IDEA: (a third)
+DESCRIPTION: (2-3 sentences for YouTube)
+TAGS: (10 tags, separated by commas)
+SOURCES: (separated by ; )
 
-KAI (the curious one): asks what the viewer is thinking ("wait, why
-didn't they just...?"). Energetic, competitive, overreacts, panics loudly.
-Short punchy lines: "Wait." "Hold on." "No way."
+# SCENE 1
+PICTURE: (what we SEE: write KAI when he is in the picture, his pose and
+         facial expression, the place, the important objects. Leave KAI
+         out for a picture of something else. Never ask for text.)
+MOOD: (one of: calm, curious, funny, shock, gross, tense, sad, epic, happy)
+MUSIC: (only when the music should change: tense, funny, calm, sad, epic)
+TEXT: (optional, 1-3 words that pop up on screen; must be said in the line)
+SFX: (optional: hit, whoosh, pop, sting, ding)
+KAI: (what Kai says)
 
-IRIS (the smart one): knows the history and gives the facts in one or
-two sentences, never a lecture. Calm, smug, dry humour. Sometimes too
-confident, and it backfires on her.
+# SCENE 2
+...
 
-BOB (the clueless one): lovable and dumb. Asks the stupid question the
-viewer is too shy to ask, takes things literally, gets into trouble,
-always thinks about food. Slow to get it.
-
-Give them personal stakes: a bet, a rivalry, a fear, a goal. If Bob loses
-the bet, he has to do something gross. Kai wants to win at everything.
-
-=====================================================================
-STEP 3: THE MINUTE-BY-MINUTE PLAN (MrBeast's structure)
-=====================================================================
-About 4 scenes = 1 minute of video. Target length: 13 minutes
-(MrBeast's average), so 50 to 56 scenes.
-
-0:00-0:30  THE HOOK (scenes 1-2). The most important minute.
-           - Deliver the title's promise IMMEDIATELY. No intro, no
-             greeting, no "in this video", no explaining the rules slowly.
-           - Show the most extreme moment first, then the goal and the
-             stakes in one or two lines.
-           - The first scene must match the thumbnail exactly.
-
-0:30-3:00  CRAZY PROGRESSION (scenes 3-12).
-           - Stop telling, start showing. Move fast through several
-             stages, days or steps, so the viewer gets invested quickly.
-           - New place or new surprise every scene.
-
-~3:00      RE-ENGAGEMENT #1 (around scene 12).
-           - The biggest "no way, that's real?" moment so far. A spectacle
-             that makes the viewer forget about leaving. Mark it BEAT: twist.
-
-3:00-6:00  THE BEST SIMPLE CONTENT (scenes 13-24).
-           - Your most exciting AND simplest material goes here. Fast
-             scene changes. This is where viewers fall for the characters.
-             People who get past the halfway point almost always finish.
-
-~6:00      RE-ENGAGEMENT #2 (around scene 24).
-           - A second huge moment, one that pushes the story forward
-             (the plan fails, a new danger, a rule changes). BEAT: twist.
-
-6:00-END   KEEP CLIMBING (scenes 25 onward).
-           - The back half is where weak videos die. Keep it strong:
-             unexpected failures, the bet heating up, stakes always rising.
-           - Stair-step: every stage bigger, more expensive or more
-             shocking than the one before. Biggest moment = BEAT: peak.
-           - Never hint that the video is about to end.
-
-THE END    The payoff (BEAT: payoff) answers the hook's promise with a
-           surprise, then END ABRUPTLY: one short last scene (BEAT: outro).
-           No goodbyes, no "thanks for watching". The last line can tease
-           where they go next.
-
-Rules for every single scene:
-- No dull moments. Every scene teaches a fact, makes a joke, or raises
-  the stakes (ideally two of those). Cut anything else.
-- Always keep at least one question open ("but that's not even the worst
-  part..."), so leaving feels like missing out.
-- Use TEXT for big on-screen numbers, like MrBeast: the price, the day,
-  the rank, a shocking number ("DAY 3", "$10,000", "1 IN 3").
-
-=====================================================================
-STEP 4: WOW FACTOR AND REAL FACTS
-=====================================================================
-- Each episode needs at least 5 facts that make people say "no way, that's
-  real?". The best one goes in the peak; the second best at re-engagement #1.
-- MrBeast: "we don't fake things". Every fact must be true and well
-  documented. Never invent dates, numbers, names or quotes. If unsure, leave
-  it out. If historians disagree, say so in character ("historians still
-  argue about this, but...").
-- The time travel is the only fiction. Everything they see is real history.
-- List 3 to 6 real, well-known sources in the SOURCES line.
-- No graphic violence, gore or sexual content. Hint, don't show.
-
-=====================================================================
-STEP 5: HOW THE LINES SOUND
-=====================================================================
-- 2 to 5 lines per scene, 20 to 60 words per scene.
-  Total spoken words: 1,700 to 2,100.
-- Written to be spoken: short sentences, contractions, commas for pauses.
-  No stage directions inside lines.
-- Optional sounds inside a line, max one per line: [laugh] [chuckle] [sigh] [gasp]
-
-=====================================================================
-STEP 6: VISUALS (drawn simply by code)
-=====================================================================
-- PLACE: where they are, with 2 to 4 simple concrete things, e.g.
-  "castle great hall, long table, roast swan, fire". No complicated detail,
-  no writing on signs, no famous real faces.
-- Use 6 to 12 different places per episode.
-- EXTRAS: background people or animals, a few words, e.g. "knights, horses".
-
-=====================================================================
-STEP 7: THUMBNAIL
-=====================================================================
-- THUMBNAIL_TEXT: 1 to 3 words, max 20 characters, adds to the title
-  without repeating it.
-- 3 x THUMBNAIL_IDEA: one big character face with an extreme emotion plus
-  ONE clear object or contrast. Readable in one second on a phone.
-  It must show something that really happens in the first minute.
-
-=====================================================================
-STEP 8: THE FILE FORMAT (follow it exactly)
-=====================================================================
-Plain text only. No markdown, no bold, no code blocks, no notes.
-Header lines first, then scenes. Each scene starts with === SCENE N ===.
-
-Allowed values (use only these words):
-FORMAT: price-ladder, survival, every-level, ranked, last-to-leave
-BEAT:   hook, setup, rise, twist, peak, payoff, outro
-MOOD:   curious, funny, tense, scary, sad, epic, calm, shock
-CAMERA: still, zoom-in, zoom-out, pan-left, pan-right, shake, slow-push
-MUSIC:  mystery, tension, action, comedy, sad, epic, calm, none
-SFX:    crowd, whoosh, boom, swords, thunder, wind, fire, footsteps,
-        water, ding, gasp, heartbeat   (0 to 2 per scene)
-CAST:   who is on screen: KAI, IRIS, BOB
-TEXT:   optional big on-screen text, max 20 characters
-
-Rules: scene 1 is BEAT: hook. Use BEAT: twist for both re-engagements.
-One BEAT: peak, then BEAT: payoff, and the last scene is BEAT: outro.
-Only characters in a scene's CAST may speak in it. Write MUSIC only when
-it changes.
-
-Example of the format (only an example):
-
-TITLE: $1 vs $1,000,000 Life in Ancient Rome
-FORMAT: price-ladder
-THUMBNAIL_TEXT: $1 vs $1M
-THUMBNAIL_IDEA: BOB crying in a tiny dark room, KAI laughing in a giant marble bath
-THUMBNAIL_IDEA: KAI shocked, holding a sponge on a stick
-THUMBNAIL_IDEA: IRIS smug on a golden couch, BOB eating bread on the floor
-DESCRIPTION: We lived four Roman lives in one day, from a $1 slave to a $1,000,000 senator.
-TAGS: ancient rome, history, rich vs poor, roman empire
-SOURCES: Encyclopaedia Britannica, "Ancient Rome"; British Museum; Mary Beard, SPQR
-
-=== SCENE 1 ===
-BEAT: hook
-PLACE: a giant marble bath, golden statues, steam
-CAST: KAI, BOB
+EXAMPLE:
+# SCENE 1
+PICTURE: extreme close-up of KAI waking up in the dark on straw, eyes wide open in shock, the huge nose of a cow right next to his face
 MOOD: shock
-CAMERA: slow-push
-MUSIC: epic
-SFX: water
-TEXT: $1,000,000
-KAI: This is the one million dollar life in Ancient Rome. And it is insane.
-BOB: Why do I have the one dollar life then?
-KAI: Because you lost the coin toss, Bob.
-
-=== SCENE 2 ===
-BEAT: setup
-PLACE: a tiny dark room, a straw bed, one small window
-CAST: KAI, IRIS, BOB
-MOOD: funny
-CAMERA: zoom-out
-MUSIC: comedy
-TEXT: $1
-IRIS: Four lives, one day. Every few hours we move up. Whoever survives their life best picks where we go next.
-BOB: I'm not gonna survive this, am I.
-
-(continue until the end, 50 to 56 scenes)
+MUSIC: tense
+TEXT: 4 AM
+SFX: hit
+KAI: It's four in the morning. It's freezing. And something huge is breathing on my face.
