@@ -208,7 +208,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: sound_candidates
-          key: sound-candidates-v2
+          key: sound-candidates-v3
       - name: Sound kit (measured, chosen by rules)
         if: steps.ready.outputs.go == 'true'
         run: |
