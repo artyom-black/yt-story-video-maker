@@ -32,6 +32,10 @@ def grab(page_url: str, folder: str, limit: int, log: list):
         log.append({"page": page_url, "status": r.status_code})
         return
     text = r.text
+    if "mood/pastoral" in page_url:                       # keep one page to check how names are written
+        os.makedirs(os.path.dirname(folder), exist_ok=True)
+        with open(os.path.join(os.path.dirname(folder), "page_sample.html"), "w") as fh:
+            fh.write(text)
     urls = list(dict.fromkeys(re.findall(r'https://assets\.mixkit\.co/[^"\'\s<>]+?\.mp3', text)))
     os.makedirs(folder, exist_ok=True)
     for u in urls[:limit]:
