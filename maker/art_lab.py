@@ -80,8 +80,10 @@ def generate(prompt: str, width: int, height: int, seed: int, refs=()):
              "seed": (None, str(seed))}
     for i, ref in enumerate(refs[:4]):
         files[f"input_image_{i}"] = (os.path.basename(ref), open(ref, "rb"), "image/png")
+    last = ""
     for attempt in range(3):
         r = requests.post(URL.format(acc=acc), headers={"Authorization": f"Bearer {tok}"}, files=files, timeout=180)
+        last = f"HTTP {r.status_code}: {r.text[:300]}"
         if r.status_code == 200:
             ctype = r.headers.get("content-type", "")
             if ctype.startswith("image/"):
@@ -91,11 +93,13 @@ def generate(prompt: str, width: int, height: int, seed: int, refs=()):
             if img:
                 return base64.b64decode(img)
             raise RuntimeError(f"no image in response: {str(data)[:300]}")
+        if r.status_code == 429 and ("daily" in r.text.lower() or "neuron" in r.text.lower() or "4006" in r.text):
+            raise RuntimeError("FREE DAILY ALLOWANCE USED UP (resets 00:00 UTC = 04:00 Armenia). " + last)
         if r.status_code in (429, 500, 502, 503):
             time.sleep(10 * (attempt + 1))
             continue
-        raise RuntimeError(f"HTTP {r.status_code}: {r.text[:400]}")
-    raise RuntimeError("gave up after retries")
+        raise RuntimeError(last)
+    raise RuntimeError("gave up after retries. " + last)
 
 
 def cut_out(src: str, dst: str):
@@ -399,8 +403,9 @@ def run_demo2_bases(out_dir: str):
             fname = f"kai2_{name}_{v + 1}.png"
             prompt = f"{KAI_LOOK}. {FACE_LOCK} {action} {ANATOMY} Plain light grey background. {RICH_STYLE}"
             try:
+                data = generate(prompt, w, h, seed=8000 + v * 97, refs=KAI_REFS)
                 with open(os.path.join(out_dir, fname), "wb") as f:
-                    f.write(generate(prompt, w, h, seed=8000 + v * 97, refs=KAI_REFS))
+                    f.write(data)
                 log.append({"file": fname, "prompt": prompt})
             except Exception as ex:
                 log.append({"file": fname, "error": str(ex)[:400]})
@@ -438,8 +443,9 @@ def run_demo2_patches(out_dir: str):
             prompt = ("Exactly the same picture as image 0: same face, eyes, eyebrows, hair, clothes, lighting, framing "
                       f"and art style, nothing moved. Only change: {desc}. {RICH_STYLE}")
             try:
+                data = generate(prompt, 512, 512, seed=8200, refs=[face_path])
                 with open(os.path.join(out_dir, fname), "wb") as f:
-                    f.write(generate(prompt, 512, 512, seed=8200, refs=[face_path]))
+                    f.write(data)
                 log.append({"file": fname})
             except Exception as ex:
                 log.append({"file": fname, "error": str(ex)[:400]})
