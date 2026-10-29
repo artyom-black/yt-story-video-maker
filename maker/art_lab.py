@@ -296,6 +296,69 @@ def run_designs(out_dir: str):
         json.dump(log, f, indent=1)
 
 
+MOUTHS = {   # Rhubarb Lip Sync mouth shapes (A and X = the closed base picture)
+    "B": "lips slightly parted showing clenched teeth, as when saying 'ee' or 's'",
+    "C": "mouth open medium, as when saying 'eh'",
+    "D": "mouth wide open, jaw dropped, as when saying 'ah'",
+    "E": "lips rounded open, as when saying 'oh'",
+    "F": "lips pushed forward into a small round pucker, as when saying 'oo'",
+    "G": "upper teeth resting on the lower lip, as when saying 'f'",
+}
+
+
+def run_demo_kai(out_dir: str):
+    """Pictures for the Kai demo: two story shots with a prop, a talking base, and its mouth shapes."""
+    from PIL import Image
+    from .art_check import figure_box
+    os.makedirs(out_dir, exist_ok=True)
+    ref = ["characters/ai/kai_master_ref.png"]
+    log = []
+
+    def draw(name, prompt, w, h, seed, refs_used):
+        path = os.path.join(out_dir, name)
+        try:
+            with open(path, "wb") as f:
+                f.write(generate(prompt, w, h, seed=seed, refs=refs_used))
+            log.append({"file": name, "prompt": prompt})
+            print(name, "ok", flush=True)
+            return path
+        except Exception as ex:
+            log.append({"file": name, "error": str(ex)[:400]})
+            print(name, ex, flush=True)
+
+    for v in range(2):   # story shot: the stone bread
+        p = draw(f"kai_bread_{v + 1}.png",
+                 f"{KAI_LOOK}. He holds up a hard dark brown medieval loaf of bread in one hand with small grey stones "
+                 f"stuck in it, looking at it disgusted and shocked, mouth open. Full body, whole body visible from head "
+                 f"to shoes. {ANATOMY} Plain light grey background. {RICH_STYLE}", 768, 1024, 7000 + v * 31, ref)
+        if p:
+            cut_out(p, p.replace(".png", "_cut.png"))
+    base = draw("kai_talkbase.png",
+                f"{KAI_LOOK}. Waist-up medium shot, three-quarter view, body and face turned slightly towards the left "
+                f"side of the picture, explaining something calmly with one hand raised, mouth closed, eyes open. "
+                f"{ANATOMY} Plain light grey background. {RICH_STYLE}", 768, 1024, 7100, ref)
+    if base:
+        cut_out(base, base.replace(".png", "_cut.png"))
+        img = Image.open(base).convert("RGB")
+        x0, y0, x1, y1 = figure_box(img)
+        # the face: a square around the top of the figure (waist-up, so the head is roughly the top 40 %)
+        side = min(512, int((y1 - y0) * 0.42))
+        cx = (x0 + x1) // 2
+        hx0 = max(0, min(img.width - side, cx - side // 2 - int(side * 0.05)))
+        hy0 = max(0, y0 - int(side * 0.05))
+        face = img.crop((hx0, hy0, hx0 + side, hy0 + side)).resize((512, 512), Image.LANCZOS)
+        face_path = os.path.join(out_dir, "kai_talkbase_face.png")
+        face.save(face_path)
+        json.dump({"box": [hx0, hy0, side]}, open(os.path.join(out_dir, "face_box.json"), "w"))
+        for shape, desc in MOUTHS.items():
+            draw(f"kai_mouth_{shape}.png",
+                 "Exactly the same picture as image 0: same face, eyes, eyebrows, hair, hoodie, lighting, framing and "
+                 f"art style, nothing moved. Only the mouth changes: {desc}. {RICH_STYLE}",
+                 512, 512, 7200, [face_path])
+    with open(os.path.join(out_dir, "log.json"), "w") as f:
+        json.dump(log, f, indent=1)
+
+
 def run_test(out_dir: str):
     os.makedirs(out_dir, exist_ok=True)
     log = []
@@ -352,4 +415,4 @@ def run_test(out_dir: str):
 if __name__ == "__main__":
     task = os.environ.get("TASK", "test")
     out = sys.argv[1] if len(sys.argv) > 1 else "art_test"
-    {"test": run_test, "design": run_design, "kai_older": run_kai_older, "kai_set": run_kai_set, "kai_turnaround": run_kai_turnaround, "designs": run_designs}[task](out)
+    {"test": run_test, "design": run_design, "kai_older": run_kai_older, "kai_set": run_kai_set, "kai_turnaround": run_kai_turnaround, "designs": run_designs, "demo_kai": run_demo_kai}[task](out)
