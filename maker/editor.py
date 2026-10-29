@@ -441,12 +441,12 @@ class Shot:
             body = affine(body, 0, (rig.foot_x, rig.bottom), sx, sy)
         if rig.full_body:
             lift = max(0.0, -dy) / 140
-            soft = shadow(int(rig.feet_w * 1.5 * (1 - 0.3 * lift)))
-            stage.alpha_composite(soft, (int(self.x - soft.width / 2 + dx), int(FLOOR_Y - soft.height * 0.55)))
-            if lift < 0.2:
-                contact = shadow(int(rig.feet_w * 1.05)).resize((int(rig.feet_w * 1.05), max(4, int(rig.feet_w * 0.09))))
-                stage.alpha_composite(contact, (int(self.x - contact.width / 2 + dx), int(FLOOR_Y - contact.height * 0.6)))
-                stage.alpha_composite(contact, (int(self.x - contact.width / 2 + dx), int(FLOOR_Y - contact.height * 0.6)))
+            soft = shadow(int(rig.feet_w * 1.35 * (1 - 0.3 * lift)), 70)
+            stage.alpha_composite(soft, (int(self.x - soft.width / 2 + dx), int(FLOOR_Y - soft.height * 0.5)))
+            if lift < 0.2:                            # dark contact shadow right under the soles
+                contact = shadow(int(rig.feet_w * 1.0), 150)
+                contact = contact.resize((contact.width, max(6, contact.height // 2)))
+                stage.alpha_composite(contact, (int(self.x - contact.width / 2 + dx), int(FLOOR_Y - contact.height * 0.55)))
             pos = (int(self.x - rig.foot_x + dx), int(FLOOR_Y - rig.bottom + dy))
         else:
             pos = (int(self.x - rig.hip_x + dx), int(STAGE_H - rig.bottom + 30 + dy))

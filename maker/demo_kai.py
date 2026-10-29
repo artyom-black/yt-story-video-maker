@@ -10,7 +10,7 @@ import os
 import re
 import sys
 
-from .editor import Rig, Shot, mix_audio, mouth_images, render, rhubarb, text_layer, wav_seconds
+from .editor import Rig, Shot, mix_audio, mouth_images, render, rhubarb, scene_light, text_layer, wav_seconds
 from .motion import FLOOR_Y, STAGE_H, STAGE_W, Camera, OUT_W, OUT_H
 
 LINES = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -54,8 +54,8 @@ def snd(sounds, folder, name):
 
 
 def main(sprites, art, voices, sounds, bg, rhubarb_exe, out):
-    gap = 0.22
-    t = 0.25
+    gap = 0.18
+    t = 0.12
     lines = []
     for ln in LINES:
         wav = os.path.join(voices, ln["out"])
@@ -66,12 +66,14 @@ def main(sprites, art, voices, sounds, bg, rhubarb_exe, out):
     l1, l2, l3, l4 = lines
 
     # characters
-    shocked = Rig(os.path.join(sprites, "kai_shocked_1_cut.png"), 1000)
-    laughing = Rig(os.path.join(sprites, "kai_laughing_1_cut.png"), 1000)
-    bread = Rig(os.path.join(art, "kai_bread_1_cut.png"), 1000)
+    L = scene_light(bg, 0.30, 0.50)                   # the fire is in the middle of the hut
+    shocked = Rig(os.path.join(sprites, "kai_shocked_1_cut.png"), 1000, light=L)
+    laughing = Rig(os.path.join(sprites, "kai_laughing_1_cut.png"), 1000, light=L)
+    bread = Rig(os.path.join(art, "kai_bread_1_cut.png"), 1000, light=L)
     box = json.load(open(os.path.join(art, "face_box.json")))["box"]
     mouths = mouth_images(os.path.join(art, "kai_talkbase.png"), box, art, "kai_mouth_")
-    talk = {k: Rig(os.path.join(art, "kai_talkbase_cut.png"), 1000, rgb_override=v) for k, v in mouths.items()}
+    talk = {k: Rig(os.path.join(art, "kai_talkbase_cut.png"), 1000, rgb_override=v, light=scene_light(bg, 0.42, 0.50))
+            for k, v in mouths.items()}
     cues = rhubarb(l3["wav"], spoken(l3["text"]), rhubarb_exe)
 
     x = int(STAGE_W * 0.30)
@@ -90,9 +92,11 @@ def main(sprites, art, voices, sounds, bg, rhubarb_exe, out):
     cam.shake(0.0, 0.4, 24)
     cam.shake(tone, 0.35, 20)
     shots.append(Shot(0, l2["start"], bg, shocked, "shocked", x=x, camera=cam,
-                      texts=[(t1347, text_layer("1347", 170, "#ffffff"), W * 0.72, H * 0.24),
+                      texts=[(0.2, text_layer("$1 CHALLENGE", 110, "#ffffff"), W * 0.72, H * 0.12),
+                             (t1347, text_layer("1347", 170, "#ffffff"), W * 0.72, H * 0.30),
                              (tone, text_layer("$1", 330), W * 0.73, H * 0.58)]))
     sfx += [(0.0, snd(sounds, "sfx_impact", "big-cinematic-impact"), -4),
+            (0.2, snd(sounds, "sfx_pop", "hard-pop-click"), -8),
             (t1347, snd(sounds, "sfx_pop", "hard-pop-click"), -6),
             (tone - 0.05, snd(sounds, "sfx_impact", "movie-impact-intro-presentation"), -5)]
     flashes.append(tone)

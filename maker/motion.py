@@ -141,10 +141,14 @@ def background(path: str) -> Image.Image:
     return bg.crop((x, y, x + STAGE_W, y + STAGE_H))
 
 
-def shadow(width: int) -> Image.Image:
-    sh = Image.new("RGBA", (width, width // 5), (0, 0, 0, 0))
-    ImageDraw.Draw(sh).ellipse((0, 0, width - 1, width // 5 - 1), fill=(0, 0, 0, 90))
-    return sh.filter(ImageFilter.GaussianBlur(width // 25))
+def shadow(width: int, opacity: int = 90) -> Image.Image:
+    """A soft oval shadow. Drawn with a margin so the blur never gets cut off into a box."""
+    width = max(8, width)
+    h = max(4, width // 5)
+    m = max(4, width // 12)
+    sh = Image.new("RGBA", (width + 2 * m, h + 2 * m), (0, 0, 0, 0))
+    ImageDraw.Draw(sh).ellipse((m, m, m + width - 1, m + h - 1), fill=(0, 0, 0, opacity))
+    return sh.filter(ImageFilter.GaussianBlur(max(1, width // 25)))
 
 
 def draw_character(stage: Image.Image, sprite: Sprite, x: int, kind: str, t: float, since: float):
