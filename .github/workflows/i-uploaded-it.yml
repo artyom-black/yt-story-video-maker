@@ -1,0 +1,35 @@
+name: I uploaded it
+
+# Click "Run workflow" after you uploaded a video to YouTube. It moves that video's folder from
+# ready-to-upload/ to old-videos/ (the video file itself stays downloadable in the repository's Releases).
+on:
+  workflow_dispatch:
+    inputs:
+      video:
+        description: "Folder name in ready-to-upload (leave empty if there is only one)"
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  move:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Move to old-videos
+        run: |
+          shopt -s nullglob
+          if [ -n "${{ inputs.video }}" ]; then DIRS=("ready-to-upload/${{ inputs.video }}"); else DIRS=(ready-to-upload/*/); fi
+          if [ ${#DIRS[@]} -ne 1 ] || [ ! -d "${DIRS[0]}" ]; then
+            echo "Found ${#DIRS[@]} videos in ready-to-upload. Type the folder name in the box and run again:"; ls ready-to-upload
+            exit 1
+          fi
+          D="${DIRS[0]%/}"; N="$(basename "$D")"
+          mkdir -p old-videos
+          git mv "$D" "old-videos/$N"
+          git config user.name "video-maker"
+          git config user.email "video-maker@users.noreply.github.com"
+          git commit -q -m "Uploaded to YouTube: $N"
+          git push -q
+          echo "### Moved **$N** to old-videos" >> $GITHUB_STEP_SUMMARY

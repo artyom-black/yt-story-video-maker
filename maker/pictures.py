@@ -215,16 +215,9 @@ def label(key):
     return f"T{m.group(1)}" if m else key
 
 
-def redo_requests(slug):
-    """stories/redo.txt, one line per video:  001-medieval-peasant-day: 1 1b 12 32b"""
-    want = set()
-    path = os.path.join(ROOT, "stories", "redo.txt")
-    if os.path.exists(path):
-        for line in open(path, encoding="utf-8"):
-            name, _, rest = line.partition(":")
-            if name.strip() == slug:
-                want |= {w.strip().lower() for w in re.split(r"[ ,]+", rest) if w.strip()}
-    return want
+def redo_requests():
+    """Pictures to draw again, typed when clicking Run (the REDO box), e.g. "12, 32b, T1"."""
+    return {w.strip().lower() for w in re.split(r"[ ,;]+", os.environ.get("REDO", "")) if w.strip()}
 
 
 def run(story_path, assets):
@@ -232,7 +225,6 @@ def run(story_path, assets):
     st = load(story_path)
     if st.errors:
         raise SystemExit("story has errors: " + "; ".join(st.errors))
-    slug = os.path.splitext(os.path.basename(story_path))[0]
     os.makedirs(os.path.join(assets, "pictures"), exist_ok=True)
     checks_path = os.path.join(assets, "checks.json")
     checks = json.load(open(checks_path)) if os.path.exists(checks_path) else {}
@@ -248,14 +240,15 @@ def run(story_path, assets):
         if name.startswith("cast ") and os.path.exists(path):
             small_ref(path, cast_ref(path))
 
-    # pictures you asked to redo in stories/redo.txt (each request is done once)
+    # pictures you asked to redo when clicking Run (each request is done once)
     for name, path, *_ in todo:
         lab = label(_key(path)).lower()
-        if lab in redo_requests(slug) and redone.get(lab) != os.path.basename(path) and os.path.exists(path):
+        if lab in redo_requests() and redone.get(lab) != os.path.basename(path) and os.path.exists(path):
             os.remove(path)
             redone[lab] = "pending"
 
     done, stopped = 0, ""
+    tried, rejected, checker_on = 0, 0, True   # safety: a checker that rejects almost everything is switched off
     try:
         for i, (name, path, prompt, w, h, refs, desc) in enumerate(todo):
             key = os.path.basename(path)
@@ -281,7 +274,7 @@ def run(story_path, assets):
                         except Exception as ex2:
                             print(f"{name}: drawing failed ({str(ex2)[:150]})", flush=True)
                             continue
-                    if desc is None:                 # the costume sheet is not checked
+                    if desc is None or not checker_on:   # reference sheets are not checked
                         best = (tmp, {"ok": True, "problems": []})
                         break
                     try:
@@ -292,6 +285,13 @@ def run(story_path, assets):
                             checks[key] = {"status": "unchecked"}
                             raise AllowanceUsedUp(str(ex))
                         res = {"ok": True, "problems": ["checker error: " + str(ex)[:120]]}
+                    if attempt == 0:
+                        tried += 1
+                        rejected += 0 if res["ok"] else 1
+                        if tried >= 12 and rejected / tried > 0.6 and checker_on:
+                            checker_on = False
+                            print("WARNING: the checker rejected most pictures - switched off for this run, "
+                                  "pictures are kept as drawn", flush=True)
                     print(f"  {name} try {attempt + 1}: {'ok' if res['ok'] else 'REDO ' + '; '.join(res['problems'])}",
                           flush=True)
                     if best is None or (res["ok"] and not best[1]["ok"]) or \
@@ -336,6 +336,7 @@ def run(story_path, assets):
     json.dump(redone, open(redone_path, "w"), indent=1)
     sheets(st, assets, checks)
     status = {"done": done, "total": len(todo), "complete": done == len(todo), "stopped": stopped,
+              "checker": "on" if checker_on else "switched off (rejected too much)",
               "kept_with_problems": sorted(label(_key(k)) for k, v in checks.items()
                                            if v.get("status") == "kept_with_problems")}
     json.dump(status, open(os.path.join(assets, "pictures_status.json"), "w"), indent=1)
@@ -344,7 +345,7 @@ def run(story_path, assets):
 
 
 def sheets(st, assets, checks, per=24):
-    """Picture sheets: every picture with its number (the numbers you can put in stories/redo.txt).
+    """Picture sheets: every picture with its number (the numbers you can type in the REDO box when clicking Run).
     A red frame = the checker still saw a problem after 3 tries."""
     from PIL import ImageDraw, ImageFont
     out_dir = os.path.join(assets, "sheets")

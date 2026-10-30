@@ -3,13 +3,16 @@
 Turns a story `.txt` file into a finished YouTube video with 3 thumbnails.
 
 ## How to make a video
-1. Paste [stories/template.txt](stories/template.txt) into ChatGPT or Claude with your topic.
-2. Save the answer as a new file in `stories/new/`, e.g. `002-ancient-egypt.txt`.
-3. Go to **Actions → Make video → Run workflow → Run workflow**.
-4. When it finishes (about 45-75 minutes), open the run and download **VIDEO-...** at the bottom.
-   Inside: the MP4, `thumbnail_1/2/3.png`, and `upload.txt` (title, description, sources, tags).
+1. Paste [template.txt](template.txt) into ChatGPT or Claude with your topic.
+2. Paste the answer into [new-story.txt](new-story.txt) and save (commit).
+3. Wait. The program runs by itself every night (or click **Actions → Make video → Run workflow**).
+   Pictures take about 3 nights on the free plan.
+4. When it's done, the video waits in **ready-to-upload/**: a download link, 3 thumbnails and
+   `upload.txt` (title, description, tags). The story is copied to **old-stories/** and new-story.txt is emptied.
+5. After uploading to YouTube: **Actions → I uploaded it → Run workflow**. The folder moves to **old-videos/**.
 
-The story then moves to `stories/done/` automatically.
+To redraw a picture you don't like: **Actions → Make video → Run workflow**, type its number from the
+picture sheet in the REDO box (e.g. `12, 32b`).
 
 ## Parts
 - Story format: [docs/story-format.md](docs/story-format.md), checker: `python -m maker.story FILE`

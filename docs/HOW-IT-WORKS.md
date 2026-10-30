@@ -1,11 +1,11 @@
 # Kai Films video maker: how it works
 
 ## What you do
-1. Put a story file in `stories/new/` (write it with `stories/template.txt` in ChatGPT/Claude, or ask Claude).
-2. On GitHub: **Actions → Make video → Run workflow**.
-3. Wait. When it's finished, open the run and download **VIDEO-...** at the bottom:
-   the video, 3 thumbnails and `upload.txt` (title, description, tags, settings).
-4. Upload to YouTube.
+1. Write a story with `template.txt` in ChatGPT/Claude (or ask Claude) and paste it into `new-story.txt`.
+2. Wait. The program runs every night by itself until the video is done.
+3. Open `ready-to-upload/<the video>/`: download the video from the link, pick one of the 3 thumbnails,
+   copy the title, description and tags from `upload.txt`, and upload to YouTube.
+4. **Actions → I uploaded it → Run workflow**: the folder moves to `old-videos/`.
 
 ## What the program does by itself
 1. **Checks the story** (every scene has a picture, a line and a mood).

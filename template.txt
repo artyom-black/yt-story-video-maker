@@ -1,8 +1,8 @@
 =====================================================================
 TEMPLATE. Copy everything below this box into ChatGPT, Claude or any
-AI chat. Replace the topic on the TOPIC line, then send. Save the answer
-as a .txt file in stories/new/ (e.g. 002-medieval-toilets.txt), then run
-"Make video" on GitHub.
+AI chat. Replace the topic on the TOPIC line, then send. Paste the answer
+into new-story.txt and save. The program makes the video by itself; when
+it's done, the video waits in the ready-to-upload folder.
 =====================================================================
 
 TOPIC: [e.g. "How did medieval people survive without toilet paper?"]

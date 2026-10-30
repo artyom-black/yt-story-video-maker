@@ -1,15 +1,18 @@
 name: Make video
 
-# Click "Run workflow". It takes the first story in stories/new/ (or the one you name) and makes the whole
-# video by itself: Kai's narration, every picture, the edit with sound and music, 3 thumbnails and the
-# upload text. Pictures use the free daily AI allowance; if a video needs more than one day of pictures,
-# this workflow continues by itself every night (04:20 Armenia time) until the video is finished.
-# The finished video is at the bottom of the run page (VIDEO-...).
+# Paste a story into new-story.txt. This workflow makes the whole video by itself: Kai's narration, every
+# picture (checked by the picture checker), the edit with sound and music, 3 thumbnails and the upload text.
+# Pictures use the free daily AI allowance, so it continues by itself every night until the video is done.
+# Then the video waits in ready-to-upload/, the story is copied to old-stories/ and new-story.txt is emptied.
+# After you upload it to YouTube, click "I uploaded it" (Actions tab) to move it to old-videos/.
 on:
   workflow_dispatch:
     inputs:
       story:
-        description: "Story file in stories/new/ (leave empty = the first one)"
+        description: "Leave empty (= new-story.txt)"
+        default: ""
+      redo:
+        description: "Pictures to draw again, numbers from the picture sheets (e.g. 12, 32b, T1)"
         default: ""
   schedule:                    # GitHub sometimes skips a scheduled run, so there are backups;
     - cron: "20 0 * * *"       # a run with nothing to do finishes in a few seconds
@@ -34,6 +37,7 @@ jobs:
     outputs:
       story: ${{ steps.pick.outputs.story }}
       slug: ${{ steps.pick.outputs.slug }}
+      title: ${{ steps.pick.outputs.title }}
       need_pictures: ${{ steps.state.outputs.need_pictures }}
       need_voice: ${{ steps.state.outputs.need_voice }}
     steps:
@@ -44,8 +48,9 @@ jobs:
       - name: Which story
         id: pick
         run: |
-          if [ -n "${{ inputs.story }}" ] || ls stories/new/*.txt > /dev/null 2>&1; then python -m maker.pick_story "${{ inputs.story }}"
-          else echo "No story waiting in stories/new/. Nothing to do."; fi
+          if [ -n "${{ inputs.story }}" ] || python -c "import sys, maker.pick_story as p; sys.exit(0 if p.has_story() else 1)"
+          then python -m maker.pick_story "${{ inputs.story }}"
+          else echo "new-story.txt is empty. Nothing to do."; fi
       - name: Check the story
         if: steps.pick.outputs.story != ''
         run: python -m maker.script check "${{ steps.pick.outputs.story }}"
@@ -63,7 +68,7 @@ jobs:
   pictures:
     name: Draw the pictures
     needs: prepare
-    if: needs.prepare.outputs.need_pictures == 'true'
+    if: needs.prepare.outputs.need_pictures == 'true' || inputs.redo != ''
     runs-on: ubuntu-24.04
     timeout-minutes: 150
     steps:
@@ -76,6 +81,7 @@ jobs:
         env:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          REDO: ${{ inputs.redo }}
         run: |
           S="${{ needs.prepare.outputs.slug }}"
           git clone -q --depth 1 -b "pics-$S" "$REPO_URL" assets 2>/dev/null || mkdir -p assets
@@ -242,14 +248,37 @@ jobs:
           git config user.email "video-maker@users.noreply.github.com"
           git add -A && git commit -q -m "Preview of $S"
           git push -q -f "$REPO_URL" "HEAD:preview-$S"
-      - name: Move the story to stories/done
+      - name: Put the video in ready-to-upload, keep the story in old-stories
         if: steps.ready.outputs.go == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: ${{ needs.prepare.outputs.title }}
         run: |
+          S="${{ needs.prepare.outputs.slug }}"
+          STORY="${{ needs.prepare.outputs.story }}"
+          NAME="$(echo "${S%%-*} - $TITLE" | tr -d '/\\:*?"<>|')"
+          # the video itself is too big for a git folder: it goes to the repo's Releases, the folder gets the link
+          gh release create "video-$S" "out/$S.mp4" --title "$NAME" --notes "Video for: $TITLE" 2>/dev/null \
+            || gh release upload "video-$S" "out/$S.mp4" --clobber
+          LINK="https://github.com/${{ github.repository }}/releases/download/video-$S/$S.mp4"
+          cp "$STORY" story_made.txt
           git config user.name "video-maker"
           git config user.email "video-maker@users.noreply.github.com"
-          mkdir -p stories/done
-          git mv "${{ needs.prepare.outputs.story }}" stories/done/
-          git commit -q -m "Made video: ${{ needs.prepare.outputs.slug }}"
-          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            mkdir -p "ready-to-upload/$NAME" old-stories
+            cp out/thumbnail_*.png out/upload.txt "ready-to-upload/$NAME/" 2>/dev/null || true
+            cp -r out/picture_sheets "ready-to-upload/$NAME/picture-sheets" 2>/dev/null || true
+            printf "Download the video (click, it starts downloading):\n%s\n\nThen upload it to YouTube with the title, description and tags from upload.txt and one of the 3 thumbnails.\nWhen it is uploaded, open Actions -> \"I uploaded it\" -> Run workflow.\n" "$LINK" > "ready-to-upload/$NAME/DOWNLOAD THE VIDEO.txt"
+            cp story_made.txt "old-stories/$NAME.txt"
+            # empty new-story.txt, unless you already pasted a different story into it meanwhile
+            if [ "$STORY" = "new-story.txt" ] && cmp -s new-story.txt story_made.txt; then
+              printf '%s' "$(python -c 'import maker.pick_story as p; print(p.EMPTY_NOTE, end="")')" > new-story.txt
+            fi
+            git add -A ready-to-upload old-stories new-story.txt
+            git commit -q -m "Ready to upload: $NAME"
+            git push -q origin HEAD:main && break
+            sleep 5
+          done
           echo "### Video ready" >> $GITHUB_STEP_SUMMARY
-          echo "Download **VIDEO-${{ needs.prepare.outputs.slug }}** below (video, 3 thumbnails, upload.txt)." >> $GITHUB_STEP_SUMMARY
+          echo "Open the **ready-to-upload/$NAME** folder in the repository: download link, 3 thumbnails, upload text." >> $GITHUB_STEP_SUMMARY
