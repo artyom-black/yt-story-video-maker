@@ -32,6 +32,15 @@ RULES (MrBeast):
 7. About 85-95 scenes, 1,500-1,700 words in total (about 10 minutes).
    One or two sentences per scene, never more than 40 words.
 8. Kai talks like a real person: short sentences, reactions, jokes.
+9. Never state a strange fact without the WHY. If a viewer would ask "why?",
+   Kai answers it right away, and every reason gets its own THEN picture.
+   Bad: "A cow is my heating." Good: "A cow gives off as much heat as a
+   small electric heater, all night. And inside, wolves and thieves can't
+   get it. It's worth more than everything I own."
+10. Pictures the AI can draw well: one clear subject. Never put an animal
+   touching Kai's face or sitting on his shoulder, never two bodies tangled
+   together; when Kai is alone write "one person only". Show the animal and
+   Kai in separate pictures instead.
 
 FORMAT (copy exactly, keys in capitals):
 

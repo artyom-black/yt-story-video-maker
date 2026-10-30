@@ -11,13 +11,13 @@ TAGS: medieval peasants, middle ages, medieval life, history, a day in the life,
 SOURCES: Christopher Dyer, Making a Living in the Middle Ages (Yale, 2002); Barbara Hanawalt, The Ties That Bound: Peasant Families in Medieval England (Oxford, 1986); A. Roger Ekirch, At Day's Close: Night in Times Past (Norton, 2005); Ian Mortimer, The Time Traveller's Guide to Medieval England (2008); English Heritage, Medieval village life
 
 # SCENE 1
-PICTURE: extreme close-up of KAI waking up in the dark on a pile of straw, eyes wide open in shock, the huge nose of a cow right next to his face, warm breath steam
+PICTURE: close-up of KAI's face alone in the dark, lying on straw, eyes wide open in shock, a faint warm steam drifting in from the right side, only one person in the picture
 MOOD: shock
 MUSIC: tense
 TEXT: 4 AM
 SFX: hit
-THEN: (at "freezing") KAI curled up on straw shivering in the dark, his breath visible as cold steam, frost on the wooden wall
-THEN: (at "breathing") extreme close-up of a huge wet cow nose and nostrils breathing warm steam, in a dark hut
+THEN: (at "freezing") KAI alone, one person only, lying on a straw bed in a dark wooden hut, hugging himself and shivering, his cold breath visible as steam, frost on the wooden wall
+THEN: (at "breathing") extreme close-up of a huge wet cow nose and nostrils breathing warm steam, in a dark hut, no people
 KAI: It's four in the morning. It's freezing. And something huge is breathing on my face.
 
 # SCENE 2
@@ -56,19 +56,20 @@ THEN: (at "cow") a big brown cow inside a medieval longhouse chewing hay and sta
 KAI: Okay, first. Why is there a cow in my bedroom?
 
 # SCENE 7
-PICTURE: KAI holding his hands out to warm them near the cow, smiling a little, steam from the cow's breath
+PICTURE: KAI holding his hands out to warm them, standing one step away from a big brown cow lying on straw, smiling a little, steam from the cow's breath
 MOOD: funny
-THEN: (at "heat") a cow lying on straw with warm orange glow and heat waves rising from its body in a cold dark hut
-THEN: (at "small fire") a small crackling fire in a stone ring on the earth floor of a medieval hut
-THEN: (at "For free") KAI cuddling up against the side of a lying cow with a happy cozy smile
-KAI: Turns out the animals are my heating. A cow puts out as much heat as a small fire. For free.
+THEN: (at "heat") a big brown cow lying on straw in a cold dark hut with a warm orange glow and heat waves rising from its body, no people
+THEN: (at "electric heater") a big brown cow and a small modern electric heater glowing orange standing side by side on a plain background, simple comparison
+THEN: (at "For free") KAI sitting on straw with his back leaning against the side of a big brown cow that is lying down, the whole cow visible, KAI with a happy cozy smile
+KAI: Turns out the animals are my heating. A big cow gives off about as much heat as a small electric heater. All night long. For free.
 
 # SCENE 8
-PICTURE: a hole in the thatched roof of a dark longhouse, thick smoke slowly escaping through it, no chimney
+PICTURE: a hole in the thatched roof of a dark longhouse seen from inside, thick smoke slowly escaping through it, no chimney, no people
 MOOD: calm
-THEN: (at "smoke") grey smoke from a fire rising and filling the top of a dark medieval room under the thatch
 THEN: (at "roof") outside view of a thatched medieval longhouse roof with smoke seeping out through the straw at dawn
-KAI: There's no chimney either. The smoke from the fire just floats up and finds its own way out through the roof.
+THEN: (at "bacon") strips of bacon and a ham hanging from smoky wooden roof beams inside a dark medieval hut, smoke drifting around them
+THEN: (at "bugs") close-up of thick straw thatch seen from inside, wisps of grey smoke drifting through it, a few small beetles crawling away
+KAI: There's no chimney either. The smoke just finds its own way out through the roof. Annoying, but useful. It smokes the bacon hanging up there, and it keeps the bugs out of the thatch.
 
 # SCENE 9
 PICTURE: KAI coughing in the smoke inside the dark longhouse, waving his hand in front of his face, eyes watering
@@ -92,10 +93,14 @@ THEN: (at "Bucket by bucket") a line of medieval villagers waiting at a stone we
 KAI: Before anything else, the jobs that never stop. Water has to be carried from the well. Bucket by bucket.
 
 # SCENE 12
-PICTURE: KAI throwing hay to the cow and sheep inside the longhouse, a chicken on his shoulder, a surprised face
+PICTURE: KAI throwing an armful of hay to a brown cow and two sheep inside a dark longhouse, a surprised face, the animals eating from the floor in front of him
 MOOD: funny
-THEN: (at "sick") a thin sick cow lying in the straw, a worried medieval peasant family kneeling next to it
-KAI: The animals eat before I do. Because if the cow gets sick, my family is in real trouble.
+THEN: (at "worth more") a big brown cow standing next to a small sad pile of a peasant's belongings: one clay pot, one wooden stool, one blanket, on a plain background
+THEN: (at "milk") a medieval woman milking a cow into a wooden bucket inside a dark longhouse
+THEN: (at "plough") two oxen pulling a wooden plough through a muddy field, a peasant walking behind
+THEN: (at "wolf") a grey wolf with yellow eyes lurking at the edge of a dark forest at night, a sleeping medieval village behind it
+THEN: (at "with us") inside a dark longhouse at night, a family sleeping on straw at one end and a cow sleeping at the other end, a low wooden rail between them
+KAI: The animals eat before I do. That cow is worth more than everything else I own. It gives milk, it pulls the plough, and if a wolf or a thief gets it, my family starves. So it sleeps inside. With us.
 
 # SCENE 13
 PICTURE: a medieval peasant woman stirring a big steaming wooden barrel of ale over a fire outside a longhouse, children watching
@@ -124,8 +129,9 @@ PICTURE: KAI explaining with a raised finger and a knowing look, holding the woo
 MOOD: curious
 SFX: ding
 THEN: (at "calories") a medieval peasant drinking ale from a wooden cup before going out to the field with a hoe
-THEN: (at "every single one") a long muddy field stretching to the horizon at dawn with a single wooden plough waiting
-KAI: It's not about getting drunk. Ale is food here. It's calories, and you're going to need every single one of them today.
+THEN: (at "drank water") a medieval peasant kneeling at a clear stream and drinking water from his cupped hands
+THEN: (at "myth") a wooden cup of water with a cartoon skull above it, the skull crossed out with a big red X
+KAI: It's not about getting drunk. Ale is food here. It's calories for a fourteen hour day. And no, people didn't think water was poison. They drank water too. That's a myth.
 
 # SCENE 17
 PICTURE: KAI biting into a hard dark loaf of bread, eyes squeezed shut in pain, holding his jaw
@@ -160,8 +166,10 @@ PICTURE: a medieval stone watermill by a river, a big wooden water wheel turning
 MOOD: tense
 TEXT: THE LORD'S MILL
 SFX: hit
-THEN: (at "keeps a cut") a medieval miller pouring a part of a peasant's sack of flour into his own big sack, the peasant watching unhappily
-KAI: Every peasant in the village has to grind their grain at the lord's mill. And the lord keeps a cut of it.
+THEN: (at "keeps a cut") a medieval miller pouring part of a peasant's sack of flour into his own big sack, the peasant watching unhappily
+THEN: (at "hand mills") a group of medieval peasants carrying small round stone hand mills, two flat round stones each, to a man in a monk's robe
+THEN: (at "floor of his own house") a medieval abbot in robes standing proudly on a stone floor made of many round broken millstones set into the ground
+KAI: Every peasant has to grind their grain at the lord's mill, and the lord keeps a cut. One abbot even took his peasants' hand mills away and set them into the floor of his own house.
 
 # SCENE 22
 PICTURE: KAI with a confused, worried face, standing in front of a large medieval manor house with a stone wall
@@ -181,9 +189,10 @@ PICTURE: KAI looking at the viewer with a shocked face, hands spread wide, in th
 MOOD: shock
 TEXT: NOT FREE
 SFX: hit
-THEN: (at "not a slave") KAI holding up both hands, confused, in the muddy village lane
+THEN: (at "The deal") a medieval lord in fine clothes giving a small strip of land to a kneeling peasant, the lord pointing at a field, symbolic
+THEN: (at "my work") KAI carrying a heavy sack of grain towards the lord's manor house, bent over
 THEN: (at "without his permission") a medieval guard with a spear standing at the wooden gate of the village, blocking the road
-KAI: I'm what's called a villein. I'm not a slave, but I'm not free either. I can't even leave this village without his permission.
+KAI: I'm what's called a villein. Not a slave, but not free either. The deal is: he gives me land to live on, I give him my work. And I can't leave this village without his permission.
 
 # SCENE 25
 PICTURE: an open medieval field at sunrise split into long thin strips of land, peasants walking out to them with tools
@@ -220,14 +229,15 @@ KAI: I've been doing this for an hour. That's how far I got.
 PICTURE: aerial view of an open medieval field divided into many long thin strips, each strip worked by a different family
 MOOD: curious
 THEN: (at "long strips") aerial view of a medieval open field cut into many long thin strips like stripes of different colours
-THEN: (at "scattered all over") a map-like view of a medieval village with small strips of land marked here and there all over the fields
-KAI: The fields aren't fenced like farms today. They're cut into long strips, and every family works a few of them, scattered all over.
+THEN: (at "good soil") two patches of earth side by side: one dark and rich with green sprouts, one dry and full of stones
+THEN: (at "walking") KAI walking alone across a giant empty field towards a tiny strip far away, exhausted
+KAI: The fields aren't fenced like farms today. They're cut into long strips, and every family gets a few, scattered all over. Why? So everyone gets some of the good soil and some of the bad. Fair. But a lot of walking.
 
 # SCENE 30
 PICTURE: KAI walking a long way across the field carrying a heavy wooden hoe on his shoulder, tired face, other strips far in the distance
 MOOD: funny
 THEN: (at "over there") KAI pointing far away across a huge field with a tired face
-THEN: (at "other end") KAI walking alone across a giant empty field towards a tiny strip far away, exhausted
+THEN: (at "other end") a tiny figure in red far away at the other end of a huge medieval field, seen from far
 KAI: So my strips are over here... and over there... and one more all the way at the other end. Great.
 
 # SCENE 31
@@ -331,9 +341,11 @@ KAI: And tomorrow? Pottage. And the day after that? You already know.
 # SCENE 44
 PICTURE: KAI looking at the viewer with a sad face, holding up an empty wooden spoon, inside the longhouse
 MOOD: sad
+THEN: (at "milk, eggs, wool") a medieval yard with a cow, hens and sheep, a woman carrying a bucket of milk and a basket of eggs
+THEN: (at "gone forever") an empty muddy pen with a broken rope, no animal left, a sad grey sky
 THEN: (at "bacon") a few strips of bacon hanging from the smoky roof beams of a medieval hut
 THEN: (at "Most days") KAI holding a bowl of plain brown stew with a sad, resigned smile
-KAI: Meat is rare. Maybe on a holiday, maybe some bacon in winter. Most days, it's this.
+KAI: Meat is rare. A live animal gives you milk, eggs, wool, every single day. Eat it, and it's gone forever. So meat is for holidays, and maybe some bacon in winter. Most days, it's this.
 
 # SCENE 45
 PICTURE: KAI sitting alone in an almost empty longhouse with an empty wooden bowl, thin and hungry, a cold grey spring day outside
@@ -444,9 +456,11 @@ KAI: Towns even had public bathhouses with hot water. Not every day for a peasan
 # SCENE 59
 PICTURE: KAI holding up the hem of his only red wool tunic, looking at it with a tired, resigned face
 MOOD: funny
-THEN: (at "this one tunic") close-up of KAI's red wool tunic with a hole and patches
+THEN: (at "this one tunic") close-up of a patched red wool tunic with a mended hole, hanging on a wooden peg
+THEN: (at "spun by hand") a medieval woman spinning wool into thread with a drop spindle by the door of a longhouse
+THEN: (at "weeks") a medieval woman weaving cloth on a big wooden loom by candlelight, tired eyes, a tall pile of thread next to her
 THEN: (at "falls apart") an old torn red tunic falling apart, hanging on a wooden peg
-KAI: Clothes are a different story. I own this one tunic. That's it. I'll wear it until it falls apart.
+KAI: Clothes are a different story. I own this one tunic. That's it. Every thread was spun by hand, and the cloth for one tunic takes weeks of work. So I'll wear it until it falls apart.
 
 # SCENE 60
 PICTURE: a medieval woman scrubbing linen shirts in a river on a flat stone, white linen hanging to dry on bushes
@@ -461,7 +475,7 @@ MOOD: calm
 TEXT: 2 PM
 SFX: whoosh
 THEN: (at "Afternoon") medieval peasants walking back out to the fields in the afternoon sun with tools
-THEN: (at "wants something from me") KAI looking over his shoulder nervously, several hands reaching towards him from the shadows (comedic)
+THEN: (at "wants something from me") KAI looking over his shoulder nervously at a priest and a tax collector with a money bag walking towards him across the field
 KAI: Afternoon. Back to work. Because the lord isn't the only one who wants something from me.
 
 # SCENE 62
@@ -692,9 +706,10 @@ PICTURE: KAI explaining with a raised finger and a knowing look, lit by fireligh
 MOOD: curious
 TEXT: FIRST SLEEP
 SFX: ding
-THEN: (at "first sleep") KAI sleeping peacefully on straw in the dark longhouse
-THEN: (at "awake in between") KAI sitting awake in the dark by the fire, relaxed, chatting quietly with a peasant
-KAI: Historians call it first sleep and second sleep. People slept in two parts, with an hour or two awake in between.
+THEN: (at "sixteen hours") a medieval village in deep winter darkness, snow on the roofs, a thin moon, no lights at all
+THEN: (at "two parts") KAI sleeping peacefully on straw in the dark longhouse, one person only
+THEN: (at "awake") KAI sitting awake in the dark by the fire, relaxed, chatting quietly with an old peasant man
+KAI: Historians call it first sleep and second sleep. In winter it's dark for sixteen hours, and nobody sleeps that long in one go. So people slept in two parts, awake for an hour or two in between.
 
 # SCENE 92
 PICTURE: KAI lying back down on straw with a peaceful smile, eyes half closed, by the dying fire
