@@ -1,1 +1,103 @@
-{}
+{
+ "costume_87f5eb20.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "costume_rich_f47c3bf0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "cast_cow_fa2de850.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "cast_house_515eb900.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "cast_great_hall_cd54e123.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "cast_bedchamber_40c2cae6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "cast_servant_d6dff0be.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "cast_mother_0a9f59c8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "cast_reeve_8c8d5e23.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "cast_cook_d8039fd8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "cast_falcon_1dc4aadf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "cast_joan_d4ea8c96.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_001_0c3283e6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2
+ },
+ "scene_001x2_160355dc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3
+ },
+ "scene_002_9b1272c3.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "The image does not show Kai waking up slowly in bed, but standing up and smiling.",
+   "The image shows a fireplace with flames, which could be considered a heavy object with fire floating in the air, but it seems to be in the hearth."
+  ],
+  "tries": 3
+ },
+ "scene_002x2_de78b60c.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "Kai appears twice"
+  ],
+  "tries": 3
+ },
+ "scene_002x3_bd3b402e.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "The person wears a green and yellow striped tunic, which is correct, but the shoes are bright red, which is incorrect according to rule 4."
+  ],
+  "tries": 3
+ },
+ "scene_003_7cebc9f8.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "The cow has a brass bell on a rope around her neck, but it is gold in the image, not brass.",
+   "The poor setting has a chair and a small fire is not visible, which is described in the prompt.",
+   "The rich Kai's outfit is red velvet with fur details, but no gold details are visible on his clothes, only a belt buckle."
+  ],
+  "tries": 3
+ }
+}
