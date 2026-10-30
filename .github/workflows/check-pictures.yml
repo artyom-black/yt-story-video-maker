@@ -1,0 +1,50 @@
+name: Test the picture checker
+
+# Runs the picture checker on pictures that already exist, to see whether it catches the bad ones.
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Video (pics-<slug> branch)"
+        default: "001-medieval-peasant-day"
+      story:
+        description: "Story file, as path@commit (the version the pictures were drawn from)"
+        default: "stories/new/001-medieval-peasant-day.txt@a36904e"
+      model:
+        description: "Vision model"
+        default: "@cf/meta/llama-4-scout-17b-16e-instruct"
+      keys:
+        description: "Pictures to check (empty = all)"
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests pillow numpy
+      - name: Check
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          IN="${{ inputs.story }}"
+          git show "${IN#*@}:${IN%@*}" > story_then.txt
+          git clone -q --depth 1 -b "pics-${{ inputs.slug }}" "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" assets
+          python -m maker.picture_check test story_then.txt assets "${{ inputs.model }}" ${{ inputs.keys }} | tee result.txt
+          echo '```' >> $GITHUB_STEP_SUMMARY; cat result.txt >> $GITHUB_STEP_SUMMARY; echo '```' >> $GITHUB_STEP_SUMMARY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: check-test
+          path: |
+            result.txt
+            check_test.json
