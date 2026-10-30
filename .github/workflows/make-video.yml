@@ -44,7 +44,7 @@ jobs:
       - name: Which story
         id: pick
         run: |
-          if ls stories/new/*.txt > /dev/null 2>&1; then python -m maker.pick_story "${{ inputs.story }}"
+          if [ -n "${{ inputs.story }}" ] || ls stories/new/*.txt > /dev/null 2>&1; then python -m maker.pick_story "${{ inputs.story }}"
           else echo "No story waiting in stories/new/. Nothing to do."; fi
       - name: Check the story
         if: steps.pick.outputs.story != ''
