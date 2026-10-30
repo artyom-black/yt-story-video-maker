@@ -1,7 +1,8 @@
 name: I uploaded it
 
 # Click "Run workflow" after you uploaded a video to YouTube. It moves that video's folder from
-# ready-to-upload/ to old-videos/ (the video file itself stays downloadable in the repository's Releases).
+# ready-to-upload/ to old-videos/ and its story to old-stories/ (the video file itself stays downloadable
+# in the repository's Releases).
 on:
   workflow_dispatch:
     inputs:
@@ -26,10 +27,11 @@ jobs:
             exit 1
           fi
           D="${DIRS[0]%/}"; N="$(basename "$D")"
-          mkdir -p old-videos
+          mkdir -p old-videos old-stories
+          [ -f "$D/story.txt" ] && git mv "$D/story.txt" "old-stories/$N.txt"
           git mv "$D" "old-videos/$N"
           git config user.name "video-maker"
           git config user.email "video-maker@users.noreply.github.com"
           git commit -q -m "Uploaded to YouTube: $N"
           git push -q
-          echo "### Moved **$N** to old-videos" >> $GITHUB_STEP_SUMMARY
+          echo "### Moved **$N** to old-videos (story to old-stories)" >> $GITHUB_STEP_SUMMARY

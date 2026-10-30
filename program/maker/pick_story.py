@@ -1,7 +1,7 @@
 """Which story to make: the one pasted into new-story.txt (or a story file named by hand).
 
 The video's short name (slug) comes from the story's number and title, e.g.
-"002-1-vs-1000000-life-in-the-middle-ages". The number is one more than the videos already in old-stories/.
+"002-1-vs-1000000-life-in-the-middle-ages". The number is one more than the videos already made.
 Prints the path; with GITHUB_OUTPUT set, also writes story=..., slug=... and title=...
 """
 import os
@@ -29,8 +29,10 @@ def title_of(path):
 
 
 def number():
+    """One more than the videos already uploaded (old-stories/) or waiting (ready-to-upload/)."""
     made = [f for f in os.listdir(OLD) if re.match(r"\d{3} ", f)] if os.path.isdir(OLD) else []
-    return len(made) + 1
+    ready = [f for f in os.listdir("ready-to-upload") if re.match(r"\d{3} ", f)] if os.path.isdir("ready-to-upload") else []
+    return len(made) + len(ready) + 1
 
 
 def slug_for(path):

@@ -3,8 +3,9 @@ name: Make video
 # Paste a story into new-story.txt. This workflow makes the whole video by itself: Kai's narration, every
 # picture (checked by the picture checker), the edit with sound and music, 3 thumbnails and the upload text.
 # Pictures use the free daily AI allowance, so it continues by itself every night until the video is done.
-# Then the video waits in ready-to-upload/, the story is copied to old-stories/ and new-story.txt is emptied.
-# After you upload it to YouTube, click "I uploaded it" (Actions tab) to move it to old-videos/.
+# Then the video and its story wait in ready-to-upload/ and new-story.txt is emptied for the next story.
+# After you upload it to YouTube, click "I uploaded it" (Actions tab): the video goes to old-videos/ and the
+# story to old-stories/. Only uploaded videos ever end up there.
 on:
   workflow_dispatch:
     inputs:
@@ -249,7 +250,7 @@ jobs:
           git config user.email "video-maker@users.noreply.github.com"
           git add -A && git commit -q -m "Preview of $S"
           git push -q -f "$REPO_URL" "HEAD:preview-$S"
-      - name: Put the video in ready-to-upload, keep the story in old-stories
+      - name: Put the video and its story in ready-to-upload
         if: steps.ready.outputs.go == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -267,16 +268,16 @@ jobs:
           git config user.email "video-maker@users.noreply.github.com"
           for i in 1 2 3 4 5; do
             git fetch -q origin main && git reset -q --hard origin/main
-            mkdir -p "ready-to-upload/$NAME" old-stories
+            mkdir -p "ready-to-upload/$NAME"
             cp out/thumbnail_*.png out/upload.txt "ready-to-upload/$NAME/" 2>/dev/null || true
             cp -r out/picture_sheets "ready-to-upload/$NAME/picture-sheets" 2>/dev/null || true
             printf "Download the video (click, it starts downloading):\n%s\n\nThen upload it to YouTube with the title, description and tags from upload.txt and one of the 3 thumbnails.\nWhen it is uploaded, open Actions -> \"I uploaded it\" -> Run workflow.\n" "$LINK" > "ready-to-upload/$NAME/DOWNLOAD THE VIDEO.txt"
-            cp story_made.txt "old-stories/$NAME.txt"
+            cp story_made.txt "ready-to-upload/$NAME/story.txt"
             # empty new-story.txt, unless you already pasted a different story into it meanwhile
             if [ "$STORY" = "new-story.txt" ] && cmp -s new-story.txt story_made.txt; then
               printf '%s' "$(python -c 'import maker.pick_story as p; print(p.EMPTY_NOTE, end="")')" > new-story.txt
             fi
-            git add -A ready-to-upload old-stories new-story.txt
+            git add -A ready-to-upload new-story.txt
             git commit -q -m "Ready to upload: $NAME"
             git push -q origin HEAD:main && break
             sleep 5

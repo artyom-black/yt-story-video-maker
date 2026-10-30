@@ -8,8 +8,9 @@ Turns a story `.txt` file into a finished YouTube video with 3 thumbnails.
 3. Wait. The program runs by itself every night (or click **Actions → Make video → Run workflow**).
    Pictures take about 3 nights on the free plan.
 4. When it's done, the video waits in **ready-to-upload/**: a download link, 3 thumbnails and
-   `upload.txt` (title, description, tags). The story is copied to **old-stories/** and new-story.txt is emptied.
-5. After uploading to YouTube: **Actions → I uploaded it → Run workflow**. The folder moves to **old-videos/**.
+   `upload.txt` (title, description, tags) and the story. new-story.txt is emptied for your next story.
+5. After uploading to YouTube: **Actions → I uploaded it → Run workflow**. The video moves to **old-videos/**
+   and its story to **old-stories/**. Only videos you really uploaded end up there.
 
 To redraw a picture you don't like: **Actions → Make video → Run workflow**, type its number from the
 picture sheet in the REDO box (e.g. `12, 32b`).
