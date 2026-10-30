@@ -11,8 +11,10 @@ on:
       story:
         description: "Story file in stories/new/ (leave empty = the first one)"
         default: ""
-  schedule:
-    - cron: "20 0 * * *"
+  schedule:                    # GitHub sometimes skips a scheduled run, so there are backups;
+    - cron: "20 0 * * *"       # a run with nothing to do finishes in a few seconds
+    - cron: "40 3 * * *"
+    - cron: "40 9 * * *"
 
 permissions:
   contents: write
