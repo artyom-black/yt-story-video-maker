@@ -1,0 +1,612 @@
+TITLE: $1 vs $1,000,000 Life in the Middle Ages
+FORMAT: $1 vs $1,000,000
+ERA: England in the year 1346: a small farming village with thatched wooden longhouses and muddy lanes, and on the hill above it a big stone castle with towers, a great hall, banners and a moat
+COSTUME: a long deep red rough wool tunic down to the knees, patched and stained, with a rope belt, brown wool hose, simple brown leather wrap shoes
+COSTUME_RICH: a long deep red velvet robe embroidered with gold thread, a white fur collar and fur trim, a wide gold belt, red silk hose, soft red leather shoes, gold rings on his fingers
+CAST: COW = a big brown cow with a white patch on her forehead, short curved horns and a small brass bell on a rope around her neck
+CAST: HOUSE = the inside of a small dark medieval peasant longhouse: rough wooden walls, a beaten earth floor, a small fire in a stone ring in the middle, straw beds along the left wall, a low wooden rail and an animal stall at the right end, a thatched roof with smoke under it
+CAST: GREAT HALL = the inside of a huge medieval castle great hall: tall stone walls with colourful tapestries, a giant fireplace, high wooden roof beams, long tables with white cloths, a raised high table at the end under a blue and gold canopy, big glass windows
+CAST: BEDCHAMBER = a rich medieval castle bedroom: a huge four-poster bed with thick blue curtains and white linen and fur blankets, painted walls with patterns, a fireplace, a carved wooden chest, a glass window
+CAST: SERVANT = a neat young medieval servant about 25, short brown hair, clean-shaven, a green and white striped tunic with a small badge, always polite and calm
+CAST: MOTHER = a medieval peasant woman about 35 with a kind tired face and brown hair under a plain off-white linen headscarf, a long dull green wool dress and a brown apron
+CAST: REEVE = a stern medieval village reeve, a broad man about 45 with a short black beard and thick eyebrows, a brown leather jerkin over a grey tunic, holding a wooden staff
+CAST: COOK = a huge round medieval castle cook about 50 with a big grey moustache, a white cap, rolled-up sleeves and a stained white apron
+CAST: FALCON = a beautiful peregrine falcon with grey-blue back feathers, a pale spotted chest and a small red leather hood with a tiny gold bell
+CAST: JOAN = Princess Joan of England, a girl about 14 with long golden-brown hair, a thin gold circlet, a long pale blue silk dress with gold embroidery
+THUMBNAIL_TEXT: $1 VS $1,000,000
+THUMBNAIL_IDEA: split screen: on the left KAI in torn patched wool, shocked and miserable, holding a hard dark loaf of bread in a dark hut with the COW behind him; on the right RICH KAI laughing and happy at a golden feast table with a roast peacock in its feathers, golden light
+THUMBNAIL_IDEA: split screen: on the left KAI disgusted holding a handful of green moss next to a wooden outhouse; on the right RICH KAI relaxing smugly in a steaming wooden bathtub in a castle room with a SERVANT pouring hot water
+THUMBNAIL_IDEA: RICH KAI terrified, his face pale, a black rat sitting on his golden feast table right in front of him, candles, dark red background
+DESCRIPTION: I lived the same day in 1346 twice: once as the poorest peasant in England and once as one of the richest lords. A cow in my bedroom vs a feather bed with curtains, bread full of stones vs a roast peacock, moss vs a toilet built into a castle wall. Then something arrived that money couldn't stop. Everything in this video is based on real history.
+TAGS: 1 dollar vs 1 million, medieval life, middle ages, rich vs poor, medieval peasants, medieval lords, history, life in the middle ages, 14th century, history explained
+SOURCES: Christopher Dyer, Standards of Living in the Later Middle Ages (Cambridge, 1989); Christopher Dyer, Making a Living in the Middle Ages (Yale, 2002); C. M. Woolgar, The Great Household in Late Medieval England (Yale, 1999); Ian Mortimer, The Time Traveller's Guide to Medieval England (2008); Ian Mortimer, The Perfect King: The Life of Edward III (2006); A. Roger Ekirch, At Day's Close: Night in Times Past (2005); English Heritage, Medieval village life; Wikipedia, Joan of England (died 1348)
+
+# SCENE 1
+PICTURE: close-up of KAI's face alone in the dark, lying on straw, eyes wide open in shock, a faint warm steam drifting in from the right side, only one person in the picture
+MOOD: shock
+MUSIC: tense
+TEXT: $1
+SFX: hit
+THEN: (at "breathing") extreme close-up of the nose and nostrils of the COW breathing warm steam, in the dark, no people
+KAI: Four in the morning. I'm freezing, and something huge is breathing on my face.
+
+# SCENE 2
+PICTURE: close-up of RICH KAI waking up slowly in the BEDCHAMBER, smiling, golden morning light through the bed curtains, warm and cozy, only one person
+MOOD: happy
+TEXT: $1,000,000
+SFX: whoosh
+THEN: (at "silk") RICH KAI stretching happily in the huge bed in the BEDCHAMBER, soft white linen and fur blankets around him
+THEN: (at "warming my shoes") the SERVANT kneeling by the fireplace in the BEDCHAMBER, holding a pair of soft red leather shoes close to the warm fire
+KAI: And at the same moment, I'm waking up in silk and fur, and someone is warming my shoes by the fire.
+
+# SCENE 3
+PICTURE: split image: on the left KAI in the dark HOUSE next to the COW, on the right RICH KAI in the bright BEDCHAMBER, both looking at the viewer
+MOOD: epic
+MUSIC: epic
+TEXT: 1346
+SFX: hit
+THEN: (at "poorest") KAI standing in the muddy village lane at dawn in his patched tunic, looking small and lost, thatched houses around him
+THEN: (at "richest") RICH KAI standing proudly on the stone wall of a big castle on a hill above the village, banners flying, morning sun
+THEN: (at "twice") two wooden doors side by side: a broken rotten wooden door of a peasant hut on the left, a huge iron-studded castle door on the right, plain background
+KAI: Today I'm living the same day in England, in thirteen forty-six, twice. Once as the poorest peasant, and once as one of the richest lords alive.
+
+# SCENE 4
+PICTURE: KAI looking at the viewer with a serious face, holding up one finger, in the HOUSE
+MOOD: tense
+THEN: (at "nobody can buy") a dark medieval ship sailing into a harbour at night under a red sky, no people
+THEN: (at "Not even a king") a medieval king with a golden crown sitting on a throne in a dark empty hall, looking worried, one candle
+KAI: And at the end of this day, something is coming that nobody can buy their way out of. Not even a king.
+
+# SCENE 5
+PICTURE: KAI sitting up on straw inside the HOUSE, the COW and two sheep standing at the far end of the same room, KAI pointing at them in disbelief
+MOOD: funny
+MUSIC: funny
+TEXT: $1
+THEN: (at "normal") a medieval peasant mother and two children sleeping peacefully on straw, the COW sleeping a few steps away behind a low wooden rail, calm and normal
+KAI: Okay. One dollar life. There's a cow in my bedroom, and apparently that's completely normal.
+
+# SCENE 6
+PICTURE: KAI holding his hands out to warm them, standing one step away from the COW lying on straw, smiling a little, steam from her breath
+MOOD: funny
+THEN: (at "electric heater") the COW and a small modern electric heater glowing orange standing side by side on a plain background, simple comparison
+THEN: (at "wolf") a grey wolf with yellow eyes lurking at the edge of a dark forest at night, a sleeping medieval village behind it
+THEN: (at "worth more") the COW standing next to a small sad pile of a peasant's belongings: one clay pot, one wooden stool, one blanket, on a plain background
+KAI: Why? A cow gives off as much heat as a small electric heater. All night, for free. And inside, no wolf or thief can get her. She's worth more than everything else I own.
+
+# SCENE 7
+PICTURE: a hole in the thatched roof of the HOUSE seen from inside, thick smoke slowly escaping through it, no chimney, no people
+MOOD: funny
+THEN: (at "campfire") KAI coughing in the smoke inside the HOUSE, waving his hand in front of his face, eyes watering
+THEN: (at "roof") outside view of a thatched medieval longhouse roof with grey smoke seeping out through the straw at dawn, no people
+KAI: No chimney. The smoke just finds its own way out through the roof, which means everything I own smells like a campfire.
+
+# SCENE 8
+PICTURE: RICH KAI sitting on the edge of the huge bed in the BEDCHAMBER while the SERVANT holds up a red velvet robe for him, a fire burning in the fireplace
+MOOD: happy
+TEXT: $1,000,000
+SFX: whoosh
+THEN: (at "chimney") a big stone fireplace with a real chimney in the BEDCHAMBER, a warm fire, no smoke in the room
+THEN: (at "glass") sunlight shining through a small medieval glass window with diamond-shaped panes onto a stone floor
+KAI: Million dollar life. My room has a real chimney, and glass in the windows. Most people in England have never even touched glass.
+
+# SCENE 9
+PICTURE: the SERVANT kneeling and putting soft red leather shoes on RICH KAI's feet, RICH KAI sitting relaxed with a surprised face
+MOOD: funny
+THEN: (at "dress me") the SERVANT and a second servant helping RICH KAI into his red velvet robe, one fixing the fur collar, one the gold belt
+THEN: (at "sleeps") the SERVANT sleeping on a thin straw mattress on the stone floor outside the door of the BEDCHAMBER
+THEN: (at "in case I need anything") RICH KAI in bed at night ringing a small silver bell, the SERVANT instantly opening the door with a candle
+KAI: I don't even dress myself. Servants dress me. And this guy sleeps on the floor outside my door, in case I need anything at night.
+
+# SCENE 10
+PICTURE: a long line of castle servants standing in rows in the GREAT HALL, cooks, grooms, maids, guards, musicians, the SERVANT in front, RICH KAI walking past them like a general
+MOOD: shock
+TEXT: 100+ SERVANTS
+SFX: hit
+THEN: (at "cooks") the COOK and his helpers working in a huge smoky castle kitchen with giant fireplaces and roasting spits
+THEN: (at "horses") grooms brushing tall horses in a big stone castle stable
+THEN: (at "guards") castle guards with spears and helmets standing at a big castle gate
+THEN: (at "musicians") medieval musicians playing a lute, a harp and a small drum on a wooden balcony
+THEN: (at "candles") a castle servant carefully lighting a long row of candles with a thin taper
+KAI: And this guy isn't alone. A great lord's household can be over a hundred people. Cooks, grooms for the horses, guards, musicians, even someone whose whole job is the candles.
+
+# SCENE 11
+PICTURE: RICH KAI washing his face in a silver bowl of warm water with rose petals floating in it, the SERVANT holding a white towel
+MOOD: calm
+THEN: (at "warm water") close-up of a shiny silver bowl of steaming water with rose petals and herbs floating in it
+THEN: (at "cold stream") KAI splashing freezing water on his face at a small stream at dawn, shivering, his breath steaming
+KAI: Warm water with rose petals to wash my face. My other self? Cold stream. But both of us wash, every single morning.
+
+# SCENE 12
+PICTURE: KAI looking at the viewer with a knowing face, wiping his wet face with his sleeve, by the stream
+MOOD: curious
+SFX: ding
+THEN: (at "myth") a cartoon of a filthy movie-style medieval peasant covered in mud with flies, crossed out with a big red X
+THEN: (at "hands and face") the MOTHER and two children washing their hands in a wooden bowl of water before eating, in the HOUSE
+KAI: The idea that medieval people never washed? That's a myth. They washed their hands and face every day. Being clean was polite.
+
+# SCENE 13
+PICTURE: KAI sitting at a rough wooden table in the HOUSE, a wooden cup and a dark hard loaf of bread in front of him, looking at them suspiciously
+MOOD: curious
+MUSIC: calm
+TEXT: BREAKFAST
+SFX: whoosh
+THEN: (at "ale") close-up of a wooden cup filled with cloudy brown ale on a rough wooden table
+KAI: Breakfast. One dollar version: dark bread and a cup of weak ale.
+
+# SCENE 14
+PICTURE: KAI biting into a hard dark loaf of bread, eyes squeezed shut in pain, holding his jaw
+MOOD: funny
+SFX: sting
+THEN: (at "two giant stones") inside a medieval watermill, two huge round millstones grinding grain into flour, dust in the air
+THEN: (at "teeth") a medieval skull and jaw on a dark background, the teeth worn down completely flat
+THEN: (at "every bite") extreme close-up of coarse dark flour with tiny grey bits of stone mixed in it
+KAI: And this bread is a weapon. The flour is ground between two giant stones, so tiny bits of stone end up in every bite. Archaeologists find teeth from this time worn down flat.
+
+# SCENE 15
+PICTURE: RICH KAI holding up a fluffy round loaf of pure white bread, amazed, in the GREAT HALL
+MOOD: happy
+TEXT: WHITE BREAD
+SFX: ding
+THEN: (at "sifted") a medieval baker shaking flour through a fine cloth sieve, a cloud of white flour, a castle kitchen
+THEN: (at "pure white") close-up of a soft pure white loaf of bread torn open on a silver plate, steam rising
+KAI: Rich version: white bread. The flour is sifted again and again through fine cloth, until it's soft and pure white.
+
+# SCENE 16
+PICTURE: RICH KAI holding a silver cup of red wine, the SERVANT pouring from a big jug, in the GREAT HALL
+MOOD: curious
+THEN: (at "wine") a medieval wooden ship loaded with big wine barrels sailing up a river towards a city with church towers
+THEN: (at "Bordeaux") a medieval city with stone walls and church towers on a wide river, ships at the docks, sunny
+KAI: And instead of ale, wine. Shipped all the way from Bordeaux in France, which England rules right now. Remember that name. Bordeaux.
+
+# SCENE 17
+PICTURE: KAI holding up the hem of his patched red wool tunic, looking at it with a tired, resigned face, in the muddy lane
+MOOD: funny
+MUSIC: funny
+TEXT: CLOTHES
+SFX: whoosh
+THEN: (at "spun by hand") the MOTHER spinning wool into thread with a drop spindle by the door of a longhouse
+THEN: (at "falls apart") an old torn red wool tunic falling apart, hanging on a wooden peg, no people
+THEN: (at "weeks of work") the MOTHER weaving cloth on a big wooden loom by firelight in the HOUSE, tired eyes, a pile of thread next to her
+KAI: Clothes. One dollar me owns this one tunic. Every thread was spun by hand, and the cloth takes weeks of work. So I'll wear it until it falls apart.
+
+# SCENE 18
+PICTURE: RICH KAI admiring himself in a polished silver mirror in the BEDCHAMBER, showing off his red velvet robe and fur collar
+MOOD: happy
+TEXT: SCARLET
+SFX: ding
+THEN: (at "insects") close-up of tiny red insects on a green oak twig and a bowl of bright red powder, plain background
+THEN: (at "fur") close-up of soft white ermine fur with little black tail tips on a red velvet collar
+THEN: (at "Most expensive") a medieval cloth merchant unrolling a shining bolt of bright scarlet cloth on a table, rich customers staring
+THEN: (at "costs more than a peasant earns") a red velvet robe with fur on one side and a tired medieval peasant holding a few coins on the other side, simple comparison on a plain background
+KAI: Million dollar me? Scarlet. The most expensive cloth in Europe, dyed with crushed insects. Trimmed with fur. One robe like this costs more than a peasant earns in a year.
+
+# SCENE 19
+PICTURE: KAI walking out of the HOUSE at sunrise carrying a heavy wooden hoe on his shoulder, tired face, peasants walking to the fields behind him
+MOOD: tense
+MUSIC: tense
+TEXT: 6 AM
+SFX: whoosh
+THEN: (at "plough") KAI pushing a heavy wooden plough pulled by two oxen through thick mud, sweating, straining with all his strength
+THEN: (at "hardest thing") close-up of KAI red-faced and sweating, gritting his teeth, gripping the plough handles
+KAI: Six in the morning. One dollar me goes to work. And this plough is the hardest thing I've ever done.
+
+# SCENE 20
+PICTURE: KAI stopping in the muddy field, out of breath, looking back at a very short crooked line he has ploughed behind him
+MOOD: funny
+THEN: (at "an hour") a wide muddy field with only one very short crooked ploughed line in it, no people
+KAI: I've been doing this for an hour. That's how far I got.
+
+# SCENE 21
+PICTURE: KAI looking up in amazement at a huge ox standing next to him in the muddy field, the ox much bigger than him
+MOOD: curious
+TEXT: SHARED
+THEN: (at "neighbours") four medieval peasant neighbours guiding one plough team of oxen together across a field, laughing
+THEN: (at "An ox costs") a medieval peasant counting a few small coins in his palm next to a huge ox, worried face
+KAI: And these oxen aren't even mine. An ox costs more than a year of my work, so they're shared between neighbours. Your plough team is your whole village.
+
+# SCENE 22
+PICTURE: the REEVE pointing with his staff towards a huge golden field next to a castle, looking angry at the viewer
+MOOD: tense
+SFX: hit
+TEXT: FOR FREE
+THEN: (at "lord's field") a huge golden wheat field belonging to the lord, much bigger than the peasants' little strips, the castle on the hill behind it
+THEN: (at "for free") KAI showing his open empty palms to the viewer, mud on them, no coins, a frustrated face
+THEN: (at "A few days every week") a long line of tired peasants working in a huge golden field under the hot sun, a castle on the hill behind them
+KAI: And when my own strips are done, the reeve sends me to the lord's field. A few days every week, I work his land. For free.
+
+# SCENE 23
+PICTURE: KAI looking at the viewer with a shocked face, hands spread wide, in the muddy village lane
+MOOD: shock
+TEXT: NOT FREE
+THEN: (at "the deal") RICH KAI giving a small strip of land to a kneeling peasant in patched wool, symbolic
+THEN: (at "permission") a medieval guard with a spear standing at the wooden gate of the village, blocking the road
+THEN: (at "not a slave") KAI holding up both hands, confused, in the muddy village lane
+KAI: That's the deal. He gives me land to live on, I give him my work. I'm not a slave, but I can't even leave this village without his permission.
+
+# SCENE 24
+PICTURE: RICH KAI looking down from the castle wall at tiny peasants working in the fields far below, a little guilty face
+MOOD: tense
+THEN: (at "That's me") close-up of RICH KAI on the castle wall pointing at himself with a guilty face
+KAI: And the lord? That's me. The other me.
+
+# SCENE 25
+PICTURE: RICH KAI sitting at a desk in the GREAT HALL looking at big rolls of parchment and piles of silver coins, a clerk in brown writing next to him
+MOOD: curious
+MUSIC: calm
+TEXT: $1,000,000
+SFX: whoosh
+THEN: (at "rent") medieval peasants lining up in front of a castle clerk at a table, handing over coins, chickens and sacks of grain
+THEN: (at "mill") a medieval stone watermill by a river, a big wooden water wheel turning, a man in fine clothes standing at the door with his arms crossed
+KAI: My job today is money. Rent from the village, a cut of every sack of flour from my mill, fines from my court.
+
+# SCENE 26
+PICTURE: inside the GREAT HALL used as a court, RICH KAI sitting in a big chair as judge, a nervous peasant standing in front of him, a clerk writing in a big book
+MOOD: funny
+TEXT: MANOR COURT
+SFX: ding
+THEN: (at "pig") a fat pink pig happily eating grain in the lord's golden field, no people
+THEN: (at "Guess who pays") the nervous peasant handing a small bag of coins to a clerk, RICH KAI smiling smugly in his big chair
+KAI: Like this guy. His pig got into my field. In my own manor court, I'm the judge. Guess who pays.
+
+# SCENE 27
+PICTURE: a big old-fashioned balance scale: on one side a tiny pile of copper coins, on the other side a huge pile of gold and silver coins pushing it down, plain background
+MOOD: shock
+TEXT: 5 YEARS
+SFX: hit
+THEN: (at "one day") RICH KAI counting a big pile of silver coins on a table in the GREAT HALL, eyes wide
+THEN: (at "five years") KAI holding a few small coins in his palm in the muddy field, a sad tired face
+KAI: Historians estimate a great lord earned in one day what a labourer earned in about five years.
+
+# SCENE 28
+PICTURE: KAI sitting on a log at the edge of the field, looking into a wooden bowl of thick brown stew with a disappointed face
+MOOD: funny
+MUSIC: funny
+TEXT: 12 PM
+SFX: whoosh
+THEN: (at "pottage") close-up of a wooden bowl of thick brown vegetable stew with cabbage, peas and onions, a wooden spoon in it
+THEN: (at "every day") a row of many identical wooden bowls of brown stew lined up on a long table, no people
+KAI: Lunch. It's called pottage. Peas, beans, cabbage, onions, boiled in one pot. Tomorrow? Pottage. Every day? Pottage.
+
+# SCENE 29
+PICTURE: KAI looking at the viewer with a sad face, holding up an empty wooden spoon
+MOOD: sad
+THEN: (at "milk") a medieval yard with the COW, hens and sheep, the MOTHER carrying a bucket of milk and a basket of eggs
+THEN: (at "gone forever") an empty muddy animal pen with a broken rope, no animal left, grey sky, no people
+KAI: Meat is rare. A live animal gives milk, eggs and wool every day. Eat it, and it's gone forever.
+
+# SCENE 30
+PICTURE: the GREAT HALL full of guests at long tables, servants carrying huge silver plates of food, musicians playing on a balcony, RICH KAI at the high table
+MOOD: epic
+MUSIC: epic
+TEXT: THE FEAST
+SFX: hit
+THEN: (at "dozens of dishes") a long medieval feast table covered with dozens of dishes: roast meats, pies, fish, fruit, in the GREAT HALL
+KAI: Million dollar lunch. This is dinner, the main meal, and it's dozens of dishes.
+
+# SCENE 31
+PICTURE: the COOK proudly carrying a huge silver plate with a whole roast peacock dressed back in its own colourful tail feathers, guests gasping
+MOOD: shock
+TEXT: PEACOCK
+SFX: sting
+THEN: (at "swan") a whole roast swan on a silver plate at a medieval feast, its neck held up as if alive
+THEN: (at "feathers") close-up of a roast peacock on a silver plate with its beautiful blue and green tail feathers spread behind it
+KAI: Roast peacock. And swan. They cook it, then dress it back in its own feathers, so it looks alive on the table.
+
+# SCENE 32
+PICTURE: RICH KAI holding a tiny pinch of black pepper over his food with a very careful face, the SERVANT watching
+MOOD: curious
+TEXT: SPICES
+SFX: ding
+THEN: (at "India") a medieval camel caravan carrying sacks across a desert at sunset, no Kai
+THEN: (at "two weeks") a small cloth bag of black peppercorns on one side and a tired medieval peasant with a hoe on the other side, simple comparison on a plain background
+THEN: (at "Pepper") close-up of piles of colourful spices on a medieval market table: black pepper, cinnamon sticks, red saffron threads
+KAI: And everything is covered in spices. Pepper, cinnamon, saffron, all the way from India. A small bag of pepper costs more than a peasant earns in two weeks.
+
+# SCENE 33
+PICTURE: close-up of thick slices of stale bread used as plates on a feast table, juicy meat on top of them, soaked with sauce
+MOOD: curious
+TEXT: TRENCHERS
+THEN: (at "plates") RICH KAI eating meat off a thick slice of bread on the table instead of a plate
+THEN: (at "poor") a castle servant handing a basket of sauce-soaked bread slices to thin hungry peasants at the castle gate
+KAI: Even the plates are bread. They're called trenchers. And after the feast, the sauce-soaked plates are given to the poor at the gate.
+
+# SCENE 34
+PICTURE: KAI at the castle gate receiving a soggy slice of bread from a servant, looking up at the castle with a mixed sad and grateful face
+MOOD: sad
+MUSIC: sad
+THEN: (at "plate") close-up of a soggy brown slice of bread in KAI's dirty hands
+KAI: So one dollar me finally gets meat today. It's the rich man's plate.
+
+# SCENE 35
+PICTURE: the MOTHER cutting a tiny loaf of bread into very thin slices for two children at a wooden table in the HOUSE, worried faces
+MOOD: sad
+MUSIC: sad
+TEXT: HUNGRY GAP
+SFX: hit
+THEN: (at "winter food") an empty wooden storage chest and empty sacks in the HOUSE, a mouse inside, no people
+THEN: (at "starve") thin hungry medieval peasants sitting against a wall in the cold, hungry faces
+THEN: (at "harvest") small green unripe wheat plants in a medieval field in spring, grey sky, no people
+KAI: And every spring, one dollar me hits the hungry gap. The winter food is gone, the new harvest isn't ready. One bad harvest, and people starve.
+
+# SCENE 36
+PICTURE: RICH KAI walking through a huge castle cellar packed to the ceiling with barrels of wine, sacks of grain, hanging hams and wheels of cheese, holding a torch
+MOOD: tense
+THEN: (at "whole year") a castle storeroom with shelves full of salted fish, cheeses and jars, a clerk counting with a quill, no Kai
+THEN: (at "Same village") a medieval village and its castle on the hill seen from far away in grey rain, the fields flooded
+THEN: (at "Only one of us") split image: on the left KAI holding an empty wooden bowl in the dark HOUSE, on the right RICH KAI holding a roast chicken leg in the bright GREAT HALL
+KAI: Million dollar me? My cellars are full for a whole year. Same village, same bad harvest. Only one of us goes hungry.
+
+# SCENE 37
+PICTURE: KAI standing in a muddy yard holding his stomach with a very worried face, a small wooden outhouse behind him
+MOOD: funny
+MUSIC: funny
+TEXT: THE TOILET
+SFX: sting
+THEN: (at "pit") a small wobbly wooden outhouse over a pit in a muddy yard, flies around it, no people
+KAI: And now, the toilet. One dollar version: a wooden seat over a pit.
+
+# SCENE 38
+PICTURE: KAI holding a handful of green moss in one hand and a bunch of leaves in the other, disgusted face
+MOOD: gross
+TEXT: MOSS
+SFX: sting
+THEN: (at "toilet paper") KAI patting all around himself in panic, looking for paper, next to a wooden outhouse
+THEN: (at "not soft") KAI walking out of the outhouse very slowly and stiffly, with a pained face
+KAI: Toilet paper? Doesn't exist. Moss, leaves, or hay. And the moss was not soft.
+
+# SCENE 39
+PICTURE: a medieval castle toilet: a small stone seat with a round hole built into a little room that sticks out of the outside of the castle wall, high above a moat
+MOOD: curious
+TEXT: GARDEROBE
+SFX: whoosh
+THEN: (at "castle wall") outside view of a tall castle wall with a small stone toilet box sticking out near the top, a long dark stain running down the wall into the moat
+THEN: (at "moat") a murky green castle moat at the bottom of a stone wall, a few ducks swimming away, no people
+KAI: Rich version: a toilet built right into the castle wall. It's called a garderobe. Everything just drops down the outside, into the moat.
+
+# SCENE 40
+PICTURE: RICH KAI holding a piece of soft white wool cloth with a satisfied face, sitting in the small stone castle toilet room
+MOOD: funny
+THEN: (at "clothes") rich medieval robes and furs hanging on wooden pegs inside a small stone castle toilet room
+THEN: (at "moths") close-up of a few moths flying away from a fur robe, as if pushed away by a bad smell, cartoon smell lines
+KAI: Soft wool instead of moss. And people even hung their best clothes in there, because some say the smell kept the moths away.
+
+# SCENE 41
+PICTURE: RICH KAI standing in a sunny meadow with the FALCON on his thick leather glove, smiling, horses and hunting dogs behind him
+MOOD: happy
+MUSIC: epic
+TEXT: HUNTING
+SFX: whoosh
+THEN: (at "falcon") close-up of the FALCON on a leather glove, its little hood being taken off
+THEN: (at "deer") a big beautiful deer standing in a sunny medieval forest clearing, no people
+KAI: Million dollar afternoon? Hunting. With my own falcon. And every deer in that forest belongs to people like me.
+
+# SCENE 42
+PICTURE: KAI hiding behind a tree in a deep green forest, looking at a big deer, a hungry face
+MOOD: tense
+MUSIC: tense
+TEXT: POACHING
+SFX: hit
+THEN: (at "fined") a medieval peasant locked in wooden stocks in the village square, people watching
+THEN: (at "deer") close-up of KAI crouching behind a bush looking at a deer, holding a stick, licking his lips
+THEN: (at "or worse") a medieval forester in green with a longbow grabbing a frightened peasant by the arm in a forest
+KAI: Which means if one dollar me catches a deer to feed his family, that's poaching. I could be fined, jailed, or worse.
+
+# SCENE 43
+PICTURE: a rich medieval doctor in a long dark blue robe and cap holding a round glass flask of yellow liquid up to the light, studying it seriously, in the BEDCHAMBER, RICH KAI watching nervously
+MOOD: funny
+MUSIC: funny
+TEXT: DOCTOR
+SFX: sting
+THEN: (at "urine") close-up of a round glass flask of yellow liquid held up against a window, a doctor's eye looking at it
+THEN: (at "stars") a medieval doctor pointing at a big round painted chart of the stars and planets, very serious
+THEN: (at "leeches") a few black leeches in a small glass jar of water on a wooden table, no people
+KAI: If million dollar me gets sick, I get a real doctor. He looks at my urine, checks the stars, and maybe puts leeches on me.
+
+# SCENE 44
+PICTURE: an old medieval village wise woman crushing herbs in a wooden bowl next to KAI lying sick on straw in the HOUSE
+MOOD: sad
+THEN: (at "herbs") close-up of dried herbs and roots hanging from the roof beams of a dark peasant house, no people
+THEN: (at "praying") the MOTHER kneeling and praying next to a sick child on straw in the HOUSE
+KAI: One dollar me gets an old woman who knows herbs, and praying. And honestly? The herbs might do less harm than the leeches.
+
+# SCENE 45
+PICTURE: KAI looking at the viewer with a serious, thoughtful face, standing in the muddy lane, the castle on the hill behind him
+MOOD: tense
+MUSIC: tense
+THEN: (at "taxes") a priest in a black robe collecting sheaves of grain at a church door, peasants handing them over unhappily
+THEN: (at "war") a line of medieval English archers with longbows marching away from the village down a muddy road, women and children waving
+THEN: (at "a tenth") a priest's helper loading every tenth sheaf of wheat from a field onto a cart
+KAI: And one dollar me pays everyone. The lord, the church takes a tenth of everything I grow, and the king takes taxes for his war with France.
+
+# SCENE 46
+PICTURE: a medieval battlefield at Crécy, a sky full of arrows flying over French knights on horses, English archers on a hill, 1346
+MOOD: epic
+MUSIC: epic
+TEXT: CRÉCY
+SFX: hit
+THEN: (at "front") RICH KAI in shining armour on a horse with a red cloak, at the front of a line of knights, a serious face
+THEN: (at "Crécy") a medieval battlefield at Crécy in 1346, a sky full of arrows flying over French knights on horses, English archers on a hill, no Kai
+KAI: But here's a twist. Rich doesn't mean safe. This summer, lords like me fight at a battle called Crécy. And lords ride at the front.
+
+# SCENE 47
+PICTURE: RICH KAI in shining armour on a horse riding at full speed with a long wooden lance at a tournament, colourful tents and flags, crowds cheering
+MOOD: epic
+TEXT: JOUSTING
+SFX: hit
+THEN: (at "for fun") two knights on horses crashing into each other with lances, a lance breaking into pieces, the crowd cheering
+THEN: (at "die") a knight lying on the ground of a tournament field, his helmet off, people running to help him
+KAI: And for fun? We train for war. Jousting. Grown men crashing into each other on horses, for fun. Some of them die doing it.
+
+# SCENE 48
+PICTURE: a huge round wooden table in a stone castle hall, knights in colourful tunics sitting all around it, candles, banners on the walls
+MOOD: epic
+TEXT: ROUND TABLE
+SFX: hit
+THEN: (at "King Arthur") a medieval painting style picture of a legendary king with a crown and a sword, knights kneeling around him
+THEN: (at "Windsor Castle") a big medieval stone castle on a green hill by a river, banners on the towers, sunny day
+KAI: The king loves this stuff so much, he even started building a real Round Table at Windsor Castle. Like King Arthur.
+
+# SCENE 49
+PICTURE: inside a small stone village church, peasants standing crowded together with no benches, a priest at the altar reading from a big book, KAI in the crowd looking confused
+MOOD: curious
+MUSIC: calm
+TEXT: SUNDAYS
+SFX: whoosh
+THEN: (at "Latin") a priest reading from a huge old book, peasants looking confused, candles
+THEN: (at "hell") a huge medieval wall painting inside a church showing devils dragging people into flames, frightened peasants staring at it
+KAI: And on Sundays, one dollar me stands in church, no benches, and the whole service is in Latin. Nobody understands it. But everybody understands the painting of hell on the wall.
+
+# SCENE 50
+PICTURE: RICH KAI kneeling alone on a red cushion in a small beautiful private castle chapel with colourful glass windows and gold candlesticks, a priest praying for him
+MOOD: calm
+THEN: (at "pay priests") a row of priests in white singing prayers in a candlelit stone chapel, no Kai
+THEN: (at "after I die") a stone tomb with a carved figure of a lord lying on top inside a candlelit chapel, a priest praying next to it
+KAI: Million dollar me has a private chapel, and I can pay priests to pray for my soul, even for years after I die.
+
+# SCENE 51
+PICTURE: KAI dancing awkwardly in a circle of laughing peasants on the village green, a man playing bagpipes, everyone having fun
+MOOD: happy
+MUSIC: funny
+TEXT: HOLY DAYS
+SFX: ding
+THEN: (at "football") medieval peasants playing a wild muddy football game with a pig's bladder ball in the village lane
+THEN: (at "days off") KAI lying on the grass relaxing in the sun with his hands behind his head, smiling
+THEN: (at "Dancing") KAI dancing awkwardly in a circle of laughing peasants on the village green, a man playing bagpipes
+KAI: One dollar me has fun too. Sundays and dozens of holy days, no work. Dancing, ale, football with a pig's bladder. Some historians think peasants had more days off than a lot of us.
+
+# SCENE 52
+PICTURE: a serious medieval ale taster in a grey hat sipping from a cup and thinking hard, a nervous woman brewer waiting next to her barrel, villagers watching
+MOOD: funny
+TEXT: ALE TASTER
+SFX: ding
+THEN: (at "bad") the ale taster pointing angrily at a barrel, the woman brewer throwing her hands up
+THEN: (at "Best job") KAI raising a wooden cup with a huge smile, villagers cheering
+KAI: There was even an official ale taster. His job was to drink everyone's ale and fine them if it was bad. Best job in the village.
+
+# SCENE 53
+PICTURE: a medieval peasant boy about seven years old in a field swinging a sling to scare away a flock of crows, geese walking nearby
+MOOD: curious
+TEXT: AGE 7
+SFX: whoosh
+THEN: (at "geese") a small medieval child chasing a flock of geese with a stick across a muddy field
+THEN: (at "scaring birds") a small medieval child swinging a sling at a flock of crows over a wheat field
+KAI: Even the kids live two lives. A seven-year-old peasant already has a job. Watching the geese, scaring birds off the fields all day.
+
+# SCENE 54
+PICTURE: a rich medieval boy about seven years old in a small blue velvet tunic standing with a little bag at the gate of another castle, a lady welcoming him, his parents waving goodbye
+MOOD: sad
+THEN: (at "page") a rich medieval boy about seven serving wine to knights at a feast table in the GREAT HALL, very serious and careful
+THEN: (at "Same age") split image: on the left a peasant boy of seven chasing geese in mud, on the right a rich boy of seven in blue velvet carrying a silver cup in a castle
+KAI: And a seven-year-old rich kid? Gets sent away from home to live in another lord's castle, to be trained as a page. Same age. Also leaving childhood early.
+
+# SCENE 55
+PICTURE: RICH KAI relaxing smugly in a big round wooden bathtub lined with white linen in the BEDCHAMBER, steam rising, the SERVANT pouring hot water from a jug
+MOOD: happy
+TEXT: HOT BATH
+SFX: ding
+THEN: (at "linen") close-up of a wooden bathtub lined with white linen cloth, herbs and rose petals floating on the steaming water, no people
+THEN: (at "carry") a line of castle servants carrying heavy buckets of hot water up a narrow stone staircase
+KAI: Evening. Million dollar me gets a hot bath. The tub is lined with linen so you don't get splinters, and servants carry every bucket of hot water up the stairs.
+
+# SCENE 56
+PICTURE: KAI standing knee-deep in a cold river, shivering, washing his arms, his tunic on the grass behind him, cold grey morning
+MOOD: funny
+THEN: (at "river") wide view of a cold grey river with reeds, a small medieval village in the background, no people
+THEN: (at "heat it yourself") the MOTHER heating a small clay pot of water over the small fire in the HOUSE
+KAI: One dollar me? A cold river. In summer. If you want hot water, you heat it yourself, one pot at a time.
+
+# SCENE 57
+PICTURE: a jester in a colourful costume with bells juggling in front of the high table in the GREAT HALL, RICH KAI laughing, candles everywhere
+MOOD: happy
+TEXT: 8 PM
+SFX: whoosh
+THEN: (at "candles") a huge iron ring of burning beeswax candles hanging from the ceiling of the GREAT HALL
+THEN: (at "rushlight") KAI sitting by the small fire in the HOUSE at night, holding a thin burning rushlight, the tiny flame lighting his face
+THEN: (at "twenty minutes") close-up of a thin rushlight burning down to almost nothing in an iron holder, smoke curling up
+KAI: Night. The rich hall glows with expensive beeswax candles. The poor house has one rushlight. A plant dipped in fat that burns for twenty minutes.
+
+# SCENE 58
+PICTURE: a medieval peasant grandfather with a white beard telling a dramatic story by the small fire in the HOUSE at night, two children listening with wide eyes, KAI listening too
+MOOD: calm
+MUSIC: calm
+THEN: (at "stories") close-up of the grandfather's face lit by the fire, big hand gestures, telling a story
+THEN: (at "ghosts") a cartoon medieval dragon and a ghost drawn in the smoke above a small fire
+THEN: (at "gossip") two medieval peasant women whispering behind their hands and giggling at a doorway
+KAI: No books, no TV. So after supper, the night is for stories. Saints, monsters, ghosts, and gossip about the neighbours.
+
+# SCENE 59
+PICTURE: KAI lying on straw at night in the HOUSE, scratching his arm and neck, annoyed face, the COW sleeping nearby
+MOOD: gross
+TEXT: FLEAS
+SFX: sting
+THEN: (at "fleas") extreme close-up of tiny fleas jumping on a rough wool blanket
+KAI: Bedtime. With the family, the cow, and about a thousand fleas.
+
+# SCENE 60
+PICTURE: KAI covering the glowing fire in the middle of the HOUSE with a round clay cover, the room going dark, a careful face
+MOOD: curious
+TEXT: CURFEW
+SFX: ding
+THEN: (at "burn") a medieval village at night with one thatched house on fire, people running with buckets
+THEN: (at "curfew") a dark medieval village at night, all windows dark, a bell ringing in the church tower
+KAI: But first, you cover the fire, so the straw roof doesn't burn down. In French that's couvre-feu. That's where the word curfew comes from.
+
+# SCENE 61
+PICTURE: RICH KAI lying in the huge bed in the BEDCHAMBER, the SERVANT closing the thick blue bed curtains, a warm fire, peaceful
+MOOD: calm
+THEN: (at "feather") close-up of a thick soft feather mattress and fur blanket on a huge carved bed
+THEN: (at "curtains") the SERVANT closing thick blue curtains around the huge bed in the BEDCHAMBER, a warm glow inside
+KAI: Million dollar bedtime. A feather mattress, fur blankets, and curtains around the bed to keep the cold out.
+
+# SCENE 62
+PICTURE: split image: on the left KAI sitting up awake on straw in the dark HOUSE, on the right RICH KAI sitting up awake in the dark BEDCHAMBER, both lit by a small flame
+MOOD: curious
+TEXT: MIDNIGHT
+SFX: hit
+THEN: (at "first sleep") KAI sleeping peacefully on straw in the HOUSE at night, one person only
+THEN: (at "second sleep") the MOTHER awake at night adding wood to the small fire in the HOUSE, quietly talking
+THEN: (at "an hour awake") the MOTHER awake at night quietly praying by the small fire in the HOUSE, the COW sleeping in the background
+KAI: And at midnight, both of me wake up. Everybody did. Historians call it first sleep and second sleep. People slept in two parts, with an hour awake in between.
+
+# SCENE 63
+PICTURE: KAI and RICH KAI facing each other as if in a mirror, one in rags in a dark hut, one in velvet in a golden room, both serious
+MOOD: tense
+MUSIC: tense
+THEN: (at "different") close-up of a dark hard bread and a white soft bread side by side on a wooden table
+KAI: Two lives, one day. Everything about them is different. Except one thing.
+
+# SCENE 64
+PICTURE: a dark medieval ship arriving at a harbour at night, black rats running down the ropes onto the dock
+MOOD: tense
+TEXT: 1348
+SFX: hit
+THEN: (at "east") a map-like view of medieval Europe with a dark shadow spreading from the east across it
+THEN: (at "half") a medieval village at night, half of the windows dark, an empty lane, a cart with sacks, no people
+THEN: (at "ships") a dark medieval ship sailing into a harbour at night under a red sky, black rats on the ropes
+KAI: Two years from now, a sickness arrives on ships from the east. It will kill around half of all the people in places like this.
+
+# SCENE 65
+PICTURE: JOAN in her pale blue dress standing on the deck of a ship, waving goodbye, the English coast behind her
+MOOD: sad
+MUSIC: sad
+THEN: (at "daughter") close-up of JOAN smiling gently, her thin gold circlet shining
+THEN: (at "Bordeaux") a medieval city with stone walls and church towers on a wide river under a dark grey sky
+THEN: (at "get married") JOAN on the deck of a ship looking out over the sea with a hopeful smile, sails above her
+KAI: In the summer of thirteen forty-eight, the king's own daughter, Princess Joan, fourteen years old, sails to Spain to get married. Her ship stops in Bordeaux.
+
+# SCENE 66
+PICTURE: an empty royal bed with pale blue curtains in a dark stone room, a thin gold circlet lying on the pillow, one candle burning, no people
+MOOD: sad
+TEXT: SEPTEMBER
+SFX: hit
+THEN: (at "letter") a sad medieval king with a crown sitting alone at a desk writing a letter with a feather quill by candlelight
+THEN: (at "September") the medieval city of Bordeaux under dark grey clouds, empty streets, a few closed doors marked with chalk crosses
+THEN: (at "dearest daughter") a sad medieval king with a crown sitting alone at a desk by candlelight, holding a letter, a tear on his cheek
+KAI: The sickness is already there. She dies in September. The richest family in England couldn't buy her a single day more. The king wrote a letter saying death had taken his dearest daughter.
+
+# SCENE 67
+PICTURE: KAI in the dark HOUSE and RICH KAI in the dark BEDCHAMBER, each lit by one tiny flame, both looking at the viewer with frightened faces
+MOOD: shock
+THEN: (at "Black Death") a long line of medieval people walking behind a cart in the rain, grey sky, sad faces
+THEN: (at "Subscribe") KAI pointing straight at the viewer with a serious, determined face, lit by firelight in the HOUSE
+KAI: One dollar or one million, it didn't matter. They called it the Black Death. And that's the next video. Subscribe, so you don't miss it.

@@ -71,6 +71,38 @@ def kai_in(text: str) -> str:
     return re.sub(r"\bKAI\b", "Kai (the young man in image 0 and image 1)", text)
 
 
+def kai_refs(text, st, costume_ref, costume_rich_ref):
+    """Kai's face + the right costume(s). 'KAI' = the normal costume, 'RICH KAI' = COSTUME_RICH.
+    Returns (text with Kai explained, refs, index of the next free reference image)."""
+    rich = "RICH KAI" in text
+    poor = bool(re.search(r"(?<!RICH )\bKAI\b", text))
+    if rich and poor:
+        text = text.replace("RICH KAI", "Kai in his rich clothes (image 2)")
+        text = re.sub(r"\bKAI\b", "Kai in his poor clothes (image 1)", text)
+        return (text + ". Both are the same young man, with exactly the face and hair from image 0",
+                [FACE_REF, costume_ref, costume_rich_ref], 3)
+    if rich:
+        return text.replace("RICH KAI", "Kai (the young man in image 0 and image 1)"), [FACE_REF, costume_rich_ref], 2
+    if poor:
+        return kai_in(text), [FACE_REF, costume_ref], 2
+    return text, [], 0
+
+
+def kai_clothes(text, st):
+    rich = "RICH KAI" in text
+    poor = bool(re.search(r"(?<!RICH )\bKAI\b", text))
+    if rich and poor:
+        return (f"Poor Kai wears exactly the clothes from image 1: {st.costume}. Rich Kai wears exactly the clothes "
+                f"from image 2: {st.costume_rich}. ")
+    if rich:
+        return (f"Kai wears exactly the clothes from image 1: {st.costume_rich}. Keep his face and hair exactly as "
+                f"in image 0. ")
+    if poor:
+        return (f"Kai wears exactly the clothes from image 1: {st.costume}. Keep his face and hair exactly as in "
+                f"image 0. ")
+    return ""
+
+
 def cast_slug(name):
     return re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
 
@@ -122,10 +154,17 @@ def jobs(st, assets):
     """Every picture the video needs, in the order they are made."""
     costume = os.path.join(assets, "costume.png")
     costume_ref = os.path.join(assets, "costume_ref.png")
+    costume_rich_ref = os.path.join(assets, "costume_rich_ref.png")
     out = [("costume", costume, None,
             f"Full body character design of {KAI_ID}. He wears {st.costume}. Standing relaxed, facing the viewer, a "
             f"friendly face, the whole body from head to shoes visible. Image 0 shows his exact face and hair: keep "
             f"them exactly the same. Plain light grey background. {STYLE}", 768, 1024, [FACE_REF])]
+    if st.costume_rich:
+        prompt = (f"Full body character design of {KAI_ID}. He wears {st.costume_rich}. Standing proudly, facing the "
+                  f"viewer, a confident friendly face, the whole body from head to shoes visible. Image 0 shows his "
+                  f"exact face and hair: keep them exactly the same. Plain light grey background. {STYLE}")
+        out.append(("costume rich", _named(os.path.join(assets, "costume_rich.png"), prompt), prompt, 768, 1024,
+                    [FACE_REF], None))
     # everyone and everything that comes back more than once gets one reference picture first
     cast_paths = {}
     for name, desc in st.cast.items():
@@ -141,25 +180,21 @@ def jobs(st, assets):
             if not pic:
                 continue
             path = os.path.join(assets, "pictures", f"scene_{s.number:03d}{k}.png")
-            if re.search(r"\bKAI\b", pic):
-                text, used = cast_in(kai_in(pic), st.cast, 2)
-                prompt = (f"{text}. {_place_rule(st)} Kai wears exactly the clothes from image 1: "
-                          f"{st.costume}. Keep his face and hair exactly as in image 0. {ONLY_KAI_RED} "
-                          f"16:9 picture. {STYLE}")
-                refs = [FACE_REF, costume_ref] + [cast_ref(cast_paths[n]) for n in used]
-            else:
-                text, used = cast_in(pic, st.cast, 0)
-                prompt = f"{text}. {_place_rule(st)} {ONLY_KAI_RED} 16:9 picture. {STYLE}"
-                refs = [cast_ref(cast_paths[n]) for n in used]
+            text, refs, first = kai_refs(pic, st, costume_ref, costume_rich_ref)
+            text, used = cast_in(text, st.cast, first)
+            refs = refs + [cast_ref(cast_paths[n]) for n in used]
+            prompt = f"{text}. {_place_rule(st)} {kai_clothes(pic, st)}{ONLY_KAI_RED} 16:9 picture. {STYLE}"
             check_desc = pic                         # what the checker reads: cast names spelled out
             for n_, d_ in st.cast.items():
                 check_desc = re.sub(rf"\b{re.escape(n_)}\b", f"{n_.lower()} ({d_})", check_desc)
             out.append((f"scene {s.number}{k}", _named(path, prompt), prompt, W, H, refs, check_desc))
     for i, idea in enumerate(st.thumbnail_ideas[:3]):
         path = os.path.join(assets, "pictures", f"thumb_{i + 1}.png")
-        prompt = (f"{kai_in(idea)}. Kai wears {st.costume}. Keep his face and hair exactly as in image 0. "
-                  f"{THUMB_STYLE}")
-        out.append((f"thumbnail {i + 1}", _named(path, prompt), prompt, W, H, [FACE_REF, costume_ref], idea))
+        text, refs, first = kai_refs(idea, st, costume_ref, costume_rich_ref)
+        text, used = cast_in(text, st.cast, first)
+        refs = refs + [cast_ref(cast_paths[n]) for n in used]
+        prompt = f"{text}. {kai_clothes(idea, st)}{THUMB_STYLE}"
+        out.append((f"thumbnail {i + 1}", _named(path, prompt), prompt, W, H, refs, idea))
     # the costume entry: (name, path, prompt, w, h, refs) like the others
     c = out[0]
     out[0] = (c[0], _named(c[1], c[3]), c[3], c[4], c[5], c[6], None)
@@ -208,6 +243,8 @@ def run(story_path, assets):
     if os.path.exists(todo[0][1]):
         small_ref(todo[0][1], os.path.join(assets, "costume_ref.png"))
     for name, path, *_ in todo:
+        if name == "costume rich" and os.path.exists(path):
+            small_ref(path, os.path.join(assets, "costume_rich_ref.png"))
         if name.startswith("cast ") and os.path.exists(path):
             small_ref(path, cast_ref(path))
 
@@ -285,6 +322,8 @@ def run(story_path, assets):
             print(f"[{done}/{len(todo)}] {name}", flush=True)
             if name == "costume":
                 small_ref(path, os.path.join(assets, "costume_ref.png"))
+            elif name == "costume rich":
+                small_ref(path, os.path.join(assets, "costume_rich_ref.png"))
             elif name.startswith("cast "):
                 small_ref(path, cast_ref(path))
     except AllowanceUsedUp as ex:

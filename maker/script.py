@@ -33,7 +33,7 @@ MOODS = {"calm", "curious", "funny", "shock", "gross", "tense", "sad", "epic", "
 MUSIC = {"tense", "funny", "calm", "epic", "sad", "none", "same"}
 SFX = {"hit", "whoosh", "pop", "sting", "ding", "none"}
 CAMERAS = {"push", "pull", "pan", "punch", "still"}
-HEADER = ("CAST", "TITLE", "ERA", "COSTUME", "THUMBNAIL_TEXT", "THUMBNAIL_IDEA", "DESCRIPTION", "TAGS", "SOURCES", "FORMAT")
+HEADER = ("CAST", "COSTUME_RICH", "TITLE", "ERA", "COSTUME", "THUMBNAIL_TEXT", "THUMBNAIL_IDEA", "DESCRIPTION", "TAGS", "SOURCES", "FORMAT")
 
 
 @dataclass
@@ -78,6 +78,7 @@ class Script:
     title: str = ""
     era: str = ""
     costume: str = ""
+    costume_rich: str = ""                            # a second look for Kai in the same video ("RICH KAI")
     thumbnail_text: str = ""
     thumbnail_ideas: list = field(default_factory=list)
     description: str = ""
@@ -174,6 +175,8 @@ def check(sc: Script):
         n = len(s.spoken.split())
         if n > 45:
             sc.warnings.append(f"{where}: long line ({n} words) - split it or add PICTURE2")
+    if any("RICH KAI" in p for s in sc.scenes for _w, p in s.all_pictures) and not sc.costume_rich:
+        sc.errors.append("pictures use RICH KAI but there is no COSTUME_RICH line")
     for name in sc.cast:
         uses = sum(len(re.findall(rf"\b{re.escape(name)}\b", p)) for s in sc.scenes for _w, p in s.all_pictures)
         if uses == 0:

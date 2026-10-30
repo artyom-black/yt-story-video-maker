@@ -45,6 +45,9 @@ Answer with JSON only, no other text:
 
 KAI_NOTE = ("The main character Kai is a young man with short black hair who wears a deep red tunic. "
             "There must be exactly one Kai.")
+KAI_TWO = ("The main character Kai appears twice on purpose: once poor in a patched red wool tunic and once rich in "
+           "red velvet with gold. Both must have the same face: a young man with short black hair.")
+RED_TWO = "Someone other than the two versions of Kai wears red clothes."
 RED_KAI = "Kai appears twice, or someone who is not Kai also wears red clothes."
 RED_NO_KAI = "Anyone wears bright red clothes (no red-dressed person should be in this picture)."
 
@@ -106,8 +109,10 @@ def _parse(answer):
 
 def check(path, description, has_kai, model=MODEL):
     """{'ok': bool, 'problems': [...], 'seen': str}. Raises on the daily allowance (caller stops)."""
-    text = QUESTION.format(desc=description, kai=KAI_NOTE if has_kai else "Kai is NOT in this picture.",
-                           red=RED_KAI if has_kai else RED_NO_KAI)
+    both = "RICH KAI" in description and re.search(r"(?<!RICH )\bKAI\b", description)
+    kai = (KAI_TWO if both else KAI_NOTE) if has_kai else "Kai is NOT in this picture."
+    red = (RED_TWO if both else RED_KAI) if has_kai else RED_NO_KAI
+    text = QUESTION.format(desc=description.replace("RICH KAI", "rich Kai"), kai=kai, red=red)
     return _parse(_ask(text, _image_data_url(path), model))
 
 

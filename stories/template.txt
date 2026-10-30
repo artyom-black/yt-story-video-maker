@@ -56,6 +56,7 @@ CAST: HOUSE = (a place that comes back: walls, floor, fire, furniture)
 FORMAT: day-in-the-life / survival / question
 ERA: (where and when, very concrete: buildings, streets, landscape)
 COSTUME: (what Kai wears in this era; it MUST be mostly deep red)
+COSTUME_RICH: (only for "$1 vs $1,000,000" stories: Kai's rich look, also deep red; write RICH KAI in pictures)
 THUMBNAIL_TEXT: (1-3 huge words, e.g. "4 AM" or "NO PAPER?!")
 THUMBNAIL_IDEA: (KAI + one extreme emotion + one object, simple background)
 THUMBNAIL_IDEA: (a second, different idea)
