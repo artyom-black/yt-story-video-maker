@@ -30,6 +30,17 @@ THUMB_STYLE = ("YouTube thumbnail illustration: one huge close-up subject fillin
                "expression, very bright saturated colours, strong contrast, simple uncluttered background, bold clean "
                "outlines, cel shading. Absolutely no text, no letters, no words.")
 W, H = 1280, 720
+# Everybody except Kai stays out of his signature colour, so viewers always know who Kai is.
+ONLY_KAI_RED = "Nobody except Kai wears red: other people wear plain brown, beige, grey or green clothes."
+
+
+def _place_rule(st):
+    """The scene's own place, light and framing come first; the era only adds period details.
+    (Before this, the era's 'muddy lanes, fields, church' was drawn into every picture, so indoor
+    and night scenes came out in a sunny street.)"""
+    return (f"Draw exactly the place, light and framing described above: indoors stays indoors, dark stays "
+            f"dark, a close-up stays a close-up; add no streets, fields or buildings the description does not "
+            f"mention. Time period, only for clothes, tools and buildings: {st.era}.")
 
 
 class AllowanceUsedUp(Exception):
@@ -91,12 +102,12 @@ def jobs(st, assets):
                 continue
             path = os.path.join(assets, "pictures", f"scene_{s.number:03d}{k}.png")
             if re.search(r"\bKAI\b", pic):
-                prompt = (f"{kai_in(pic)}. Setting: {st.era}. Kai wears exactly the clothes from image 1: "
-                          f"{st.costume}. Keep his face and hair exactly as in image 0. Other people wear plain "
-                          f"clothes of the time. Wide 16:9 scene. {STYLE}")
+                prompt = (f"{kai_in(pic)}. {_place_rule(st)} Kai wears exactly the clothes from image 1: "
+                          f"{st.costume}. Keep his face and hair exactly as in image 0. {ONLY_KAI_RED} "
+                          f"16:9 picture. {STYLE}")
                 refs = [FACE_REF, costume_ref]
             else:
-                prompt = f"{pic}. Setting: {st.era}. Wide 16:9 scene. {STYLE}"
+                prompt = f"{pic}. {_place_rule(st)} {ONLY_KAI_RED} 16:9 picture. {STYLE}"
                 refs = []
             out.append((f"scene {s.number}{k}", _named(path, prompt), prompt, W, H, refs))
     for i, idea in enumerate(st.thumbnail_ideas[:3]):
