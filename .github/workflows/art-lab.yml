@@ -21,6 +21,9 @@ on:
 permissions:
   contents: write
 
+env:
+  PYTHONPATH: ${{ github.workspace }}/program   # the program lives in program/
+
 jobs:
   art:
     runs-on: ubuntu-24.04

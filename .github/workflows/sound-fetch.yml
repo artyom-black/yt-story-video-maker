@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write
 
+env:
+  PYTHONPATH: ${{ github.workspace }}/program   # the program lives in program/
+
 jobs:
   fetch:
     runs-on: ubuntu-24.04

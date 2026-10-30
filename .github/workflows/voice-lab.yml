@@ -9,7 +9,7 @@ on:
         description: "Only these characters, e.g. BOB (empty = everyone)"
         default: ""
       lines:
-        description: "Record these lines in the locked voices instead (a JSON file in the repo, e.g. demo/kai_demo_lines.json)"
+        description: "Record these lines in the locked voices instead (a JSON file in the repo, e.g. program/demo/kai_demo_lines.json)"
         default: ""
 
 permissions:
@@ -18,6 +18,9 @@ permissions:
 concurrency:
   group: voice-lab
   cancel-in-progress: false
+
+env:
+  PYTHONPATH: ${{ github.workspace }}/program   # the program lives in program/
 
 jobs:
   lab:
@@ -66,7 +69,7 @@ jobs:
           .venv-tts/bin/pip install -q chatterbox-tts --extra-index-url https://download.pytorch.org/whl/cpu
 
       - name: Perform all lines
-        run: .venv-tts/bin/python maker/voice_lab_cb.py work/jobs.json work/out
+        run: .venv-tts/bin/python program/maker/voice_lab_cb.py work/jobs.json work/out
 
       - name: Save samples to the voice-samples branch
         run: |

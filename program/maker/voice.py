@@ -15,7 +15,7 @@ import wave
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TTS_DIR = os.environ.get("TTS_DIR", os.path.join(os.path.dirname(HERE), "tools", "tts"))
+TTS_DIR = os.environ.get("TTS_DIR", os.path.join(os.path.dirname(os.path.dirname(HERE)), "tools", "tts"))  # repo/tools/tts
 VOCAB = json.load(open(os.path.join(HERE, "kokoro_config.json")))["vocab"]
 RATE = 24000
 

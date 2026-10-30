@@ -27,6 +27,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
+  PYTHONPATH: ${{ github.workspace }}/program   # the program lives in program/
   TTS_DIR: ${{ github.workspace }}/tools/tts
   REPO_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}
 
@@ -144,7 +145,7 @@ jobs:
       - name: Record this part (every line is listened back and redone if words are missing)
         run: |
           mkdir -p work/out
-          .venv-tts/bin/python maker/voice_lab_cb.py work/jobs.json work/out --shard ${{ matrix.shard }}/4 --check
+          .venv-tts/bin/python program/maker/voice_lab_cb.py work/jobs.json work/out --shard ${{ matrix.shard }}/4 --check
       - uses: actions/upload-artifact@v4
         with:
           name: voice-part-${{ matrix.shard }}

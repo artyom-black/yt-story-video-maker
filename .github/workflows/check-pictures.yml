@@ -20,6 +20,9 @@ on:
 permissions:
   contents: read
 
+env:
+  PYTHONPATH: ${{ github.workspace }}/program   # the program lives in program/
+
 jobs:
   check:
     runs-on: ubuntu-24.04
