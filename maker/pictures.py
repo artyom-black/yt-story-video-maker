@@ -68,7 +68,38 @@ def small_ref(src, dst, max_side=500):
 
 
 def kai_in(text: str) -> str:
-    return re.sub(r"\bKAI\b", "Kai (the young man shown in the reference images)", text)
+    return re.sub(r"\bKAI\b", "Kai (the young man in image 0 and image 1)", text)
+
+
+def cast_slug(name):
+    return re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
+
+
+def cast_in(text, cast, first_index):
+    """Replace each CAST name written in capitals (THE COW -> 'the cow (the same one as in image 2: ...)').
+    Returns (new text, [cast names used, in image order]). Max 4 reference images in total."""
+    used = []
+    found = []
+    for name in cast:
+        m = re.search(rf"\b{re.escape(name)}\b", text)
+        if m:
+            found.append((m.start(), -len(name), name))
+    for _pos, _l, name in sorted(found):                     # in the order they appear in the sentence
+        if first_index + len(used) < 4:
+            idx = first_index + len(used)
+            used.append(name)
+            text = re.sub(rf"\b{re.escape(name)}\b",
+                          f"{name.lower()} (exactly the same one as in image {idx}: {cast[name]})", text, count=1)
+            text = re.sub(rf"\b{re.escape(name)}\b", name.lower(), text)
+        else:                                                # no image slot left: describe it in words
+            text = re.sub(rf"\b{re.escape(name)}\b", f"{name.lower()} ({cast[name]})", text, count=1)
+            text = re.sub(rf"\b{re.escape(name)}\b", name.lower(), text)
+    return text, used
+
+
+def cast_ref(path):
+    """The small reference copy of a cast picture."""
+    return path[:-4] + "_ref.png"
 
 
 def _named(path, prompt):
@@ -95,6 +126,15 @@ def jobs(st, assets):
             f"Full body character design of {KAI_ID}. He wears {st.costume}. Standing relaxed, facing the viewer, a "
             f"friendly face, the whole body from head to shoes visible. Image 0 shows his exact face and hair: keep "
             f"them exactly the same. Plain light grey background. {STYLE}", 768, 1024, [FACE_REF])]
+    # everyone and everything that comes back more than once gets one reference picture first
+    cast_paths = {}
+    for name, desc in st.cast.items():
+        prompt = (f"Reference design sheet of {desc}. One single subject, the whole subject clearly visible, "
+                  f"seen from the front at a slight angle, plain light grey background. "
+                  f"Time period: {st.era}. {STYLE}")
+        path = _named(os.path.join(assets, "cast", f"cast_{cast_slug(name)}.png"), prompt)
+        cast_paths[name] = path
+        out.append((f"cast {name.lower()}", path, prompt, 768, 768, [], None))
     for s in st.scenes:
         for i_pic, (_word, pic) in enumerate(s.all_pictures):
             k = "" if i_pic == 0 else f"x{i_pic + 1}"
@@ -102,14 +142,19 @@ def jobs(st, assets):
                 continue
             path = os.path.join(assets, "pictures", f"scene_{s.number:03d}{k}.png")
             if re.search(r"\bKAI\b", pic):
-                prompt = (f"{kai_in(pic)}. {_place_rule(st)} Kai wears exactly the clothes from image 1: "
+                text, used = cast_in(kai_in(pic), st.cast, 2)
+                prompt = (f"{text}. {_place_rule(st)} Kai wears exactly the clothes from image 1: "
                           f"{st.costume}. Keep his face and hair exactly as in image 0. {ONLY_KAI_RED} "
                           f"16:9 picture. {STYLE}")
-                refs = [FACE_REF, costume_ref]
+                refs = [FACE_REF, costume_ref] + [cast_ref(cast_paths[n]) for n in used]
             else:
-                prompt = f"{pic}. {_place_rule(st)} {ONLY_KAI_RED} 16:9 picture. {STYLE}"
-                refs = []
-            out.append((f"scene {s.number}{k}", _named(path, prompt), prompt, W, H, refs, pic))
+                text, used = cast_in(pic, st.cast, 0)
+                prompt = f"{text}. {_place_rule(st)} {ONLY_KAI_RED} 16:9 picture. {STYLE}"
+                refs = [cast_ref(cast_paths[n]) for n in used]
+            check_desc = pic                         # what the checker reads: cast names spelled out
+            for n_, d_ in st.cast.items():
+                check_desc = re.sub(rf"\b{re.escape(n_)}\b", f"{n_.lower()} ({d_})", check_desc)
+            out.append((f"scene {s.number}{k}", _named(path, prompt), prompt, W, H, refs, check_desc))
     for i, idea in enumerate(st.thumbnail_ideas[:3]):
         path = os.path.join(assets, "pictures", f"thumb_{i + 1}.png")
         prompt = (f"{kai_in(idea)}. Kai wears {st.costume}. Keep his face and hair exactly as in image 0. "
@@ -159,8 +204,12 @@ def run(story_path, assets):
     redone_path = os.path.join(assets, "redone.json")
     redone = json.load(open(redone_path)) if os.path.exists(redone_path) else {}
     todo = jobs(st, assets)
+    os.makedirs(os.path.join(assets, "cast"), exist_ok=True)
     if os.path.exists(todo[0][1]):
         small_ref(todo[0][1], os.path.join(assets, "costume_ref.png"))
+    for name, path, *_ in todo:
+        if name.startswith("cast ") and os.path.exists(path):
+            small_ref(path, cast_ref(path))
 
     # pictures you asked to redo in stories/redo.txt (each request is done once)
     for name, path, *_ in todo:
@@ -236,6 +285,8 @@ def run(story_path, assets):
             print(f"[{done}/{len(todo)}] {name}", flush=True)
             if name == "costume":
                 small_ref(path, os.path.join(assets, "costume_ref.png"))
+            elif name.startswith("cast "):
+                small_ref(path, cast_ref(path))
     except AllowanceUsedUp as ex:
         stopped = str(ex)[:200]
         print("Daily picture allowance used up - the next run continues from here.", flush=True)

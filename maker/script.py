@@ -33,7 +33,7 @@ MOODS = {"calm", "curious", "funny", "shock", "gross", "tense", "sad", "epic", "
 MUSIC = {"tense", "funny", "calm", "epic", "sad", "none", "same"}
 SFX = {"hit", "whoosh", "pop", "sting", "ding", "none"}
 CAMERAS = {"push", "pull", "pan", "punch", "still"}
-HEADER = ("TITLE", "ERA", "COSTUME", "THUMBNAIL_TEXT", "THUMBNAIL_IDEA", "DESCRIPTION", "TAGS", "SOURCES", "FORMAT")
+HEADER = ("CAST", "TITLE", "ERA", "COSTUME", "THUMBNAIL_TEXT", "THUMBNAIL_IDEA", "DESCRIPTION", "TAGS", "SOURCES", "FORMAT")
 
 
 @dataclass
@@ -84,6 +84,7 @@ class Script:
     tags: list = field(default_factory=list)
     sources: list = field(default_factory=list)
     format: str = ""
+    cast: dict = field(default_factory=dict)          # {"COW": "a big brown cow with ..."}
     scenes: list = field(default_factory=list)
     errors: list = field(default_factory=list)
     warnings: list = field(default_factory=list)
@@ -111,7 +112,13 @@ def load(path: str) -> Script:
         key, val = line.split(":", 1)
         key, val = key.strip().upper(), val.strip()
         if cur is None:
-            if key == "THUMBNAIL_IDEA":
+            if key == "CAST":
+                n, _, d = val.partition("=")
+                if not d.strip() or n.strip() != n.strip().upper():
+                    sc.errors.append(f"CAST line must look like  CAST: THE COW = a big brown cow ...  ({val[:40]})")
+                else:
+                    sc.cast[n.strip()] = d.strip()
+            elif key == "THUMBNAIL_IDEA":
                 sc.thumbnail_ideas.append(val)
             elif key == "TAGS":
                 sc.tags = [t.strip() for t in val.split(",") if t.strip()]
@@ -167,6 +174,10 @@ def check(sc: Script):
         n = len(s.spoken.split())
         if n > 45:
             sc.warnings.append(f"{where}: long line ({n} words) - split it or add PICTURE2")
+    for name in sc.cast:
+        uses = sum(len(re.findall(rf"\b{re.escape(name)}\b", p)) for s in sc.scenes for _w, p in s.all_pictures)
+        if uses == 0:
+            sc.warnings.append(f"CAST {name} is never used in a picture (write it in CAPITALS)")
     if sc.scenes and sc.scenes[0].music == "same":
         sc.scenes[0].music = "tense"
     if sc.words and not (1300 <= sc.words <= 2100):

@@ -8,6 +8,16 @@ THUMBNAIL_IDEA: KAI disgusted, holding a handful of moss next to a wooden outhou
 THUMBNAIL_IDEA: KAI terrified in the dark at night, lit by one small flame, with fleas jumping on his blanket
 DESCRIPTION: I lived one full day as a medieval peasant in 1346, hour by hour: waking up next to a cow, bread that destroys your teeth, working for the lord for free, the toilet situation, and the strange way everyone slept. Everything in this video is based on real history.
 TAGS: medieval peasants, middle ages, medieval life, history, a day in the life, medieval history, what did peasants do, life in the middle ages, 14th century, history explained
+CAST: COW = a big brown cow with a white patch on her forehead, short curved horns and a small brass bell on a rope around her neck
+CAST: HOUSE = the inside of a small dark medieval peasant longhouse: rough wooden walls, a beaten earth floor, a small fire in a stone ring in the middle, straw beds along the left wall, a low wooden rail and an animal stall at the right end, a thatched roof with smoke under it
+CAST: MOTHER = a medieval peasant woman about 35 with a kind tired face and brown hair under a plain off-white linen headscarf, a long dull green wool dress and a brown apron
+CAST: GRANDFATHER = an old medieval peasant man about 65 with a long white beard, bright eyes, a brown wool hood and a grey tunic
+CAST: FAMILY = a medieval peasant family of four: a mother about 35 in a dull green dress and off-white headscarf, a grandfather about 65 with a long white beard and a brown hood, a boy about 8 with messy blond hair and a girl about 6 with brown braids, the children in plain beige tunics
+CAST: OLD WOMAN = a very old medieval peasant woman with a deeply wrinkled face, white hair under a grey headscarf, a slightly hunched back, a brown wool shawl and a walking stick
+CAST: REEVE = a stern medieval village reeve, a broad man about 45 with a short black beard and thick eyebrows, a brown leather jerkin over a grey tunic, holding a wooden staff
+CAST: LORD = a rich medieval English lord about 50 with a neat grey beard, a blue and gold fine robe with a fur collar and a black velvet hat
+CAST: PRIEST = a medieval village priest about 40, bald on top with a ring of dark hair, a long black robe and a wooden cross on a cord
+CAST: ALE TASTER = a serious medieval ale taster, a thin man about 40 with a long nose and a grey felt hat, a brown coat
 SOURCES: Christopher Dyer, Making a Living in the Middle Ages (Yale, 2002); Barbara Hanawalt, The Ties That Bound: Peasant Families in Medieval England (Oxford, 1986); A. Roger Ekirch, At Day's Close: Night in Times Past (Norton, 2005); Ian Mortimer, The Time Traveller's Guide to Medieval England (2008); English Heritage, Medieval village life
 
 # SCENE 1
@@ -16,15 +26,15 @@ MOOD: shock
 MUSIC: tense
 TEXT: 4 AM
 SFX: hit
-THEN: (at "freezing") KAI alone, one person only, lying on a straw bed in a dark wooden hut, hugging himself and shivering, his cold breath visible as steam, frost on the wooden wall
-THEN: (at "breathing") extreme close-up of a huge wet cow nose and nostrils breathing warm steam, in a dark hut, no people
+THEN: (at "freezing") KAI alone, one person only, lying on a straw bed in the HOUSE at night, hugging himself and shivering, his cold breath visible as steam, frost on the wooden wall
+THEN: (at "breathing") extreme close-up of the nose and nostrils of the COW breathing warm steam, in the dark, no people
 KAI: It's four in the morning. It's freezing. And something huge is breathing on my face.
 
 # SCENE 2
-PICTURE: KAI sitting up on straw inside a dark medieval longhouse, a cow and two sheep standing at the far end of the same room, KAI pointing at them in disbelief
+PICTURE: KAI sitting up on straw inside the HOUSE, the COW and two sheep standing at the far end of the same room, KAI pointing at them in disbelief
 MOOD: funny
-THEN: (at "Inside my house") wide shot of KAI sitting on straw in a dark longhouse, a big cow standing two steps away from his bed
-THEN: (at "normal") a medieval peasant family sleeping peacefully on straw, a cow and sheep sleeping right next to them, calm and normal
+THEN: (at "Inside my house") wide shot of KAI sitting on straw in the HOUSE, the COW standing two steps away from his bed
+THEN: (at "normal") the FAMILY sleeping peacefully on straw, the COW sleeping a few steps away, calm and normal
 KAI: That's a cow. Inside my house. And apparently that's completely normal here.
 
 # SCENE 3
@@ -45,26 +55,26 @@ KAI: I'm going to live one full day the way most people in history actually live
 # SCENE 5
 PICTURE: KAI looking at the viewer with a raised eyebrow, a knowing look, a medieval church tower behind him
 MOOD: curious
-THEN: (at "wrong") KAI narrowing his eyes suspiciously at the viewer, one hand on his chin, in a dark medieval hut
+THEN: (at "wrong") KAI narrowing his eyes suspiciously at the viewer, one hand on his chin, in the HOUSE
 KAI: And at the end of this day, there's one thing almost everyone gets completely wrong about these people.
 
 # SCENE 6
-PICTURE: inside the longhouse, a cow sleeping on straw at one end, a family sleeping on straw at the other end, a small fire in the middle, smoke near the roof
+PICTURE: inside the HOUSE, the COW sleeping on straw at one end, the FAMILY sleeping on straw at the other end, the small fire in the middle, smoke near the roof
 MOOD: calm
 MUSIC: calm
-THEN: (at "cow") a big brown cow inside a medieval longhouse chewing hay and staring straight at the viewer
+THEN: (at "cow") the COW chewing hay and staring straight at the viewer, inside a dark wooden house
 KAI: Okay, first. Why is there a cow in my bedroom?
 
 # SCENE 7
-PICTURE: KAI holding his hands out to warm them, standing one step away from a big brown cow lying on straw, smiling a little, steam from the cow's breath
+PICTURE: KAI holding his hands out to warm them, standing one step away from the COW lying on straw, smiling a little, steam from her's breath
 MOOD: funny
-THEN: (at "heat") a big brown cow lying on straw in a cold dark hut with a warm orange glow and heat waves rising from its body, no people
-THEN: (at "electric heater") a big brown cow and a small modern electric heater glowing orange standing side by side on a plain background, simple comparison
-THEN: (at "For free") KAI sitting on straw with his back leaning against the side of a big brown cow that is lying down, the whole cow visible, KAI with a happy cozy smile
+THEN: (at "heat") the COW lying on straw in a cold dark room with a warm orange glow and heat waves rising from its body, no people
+THEN: (at "electric heater") the COW and a small modern electric heater glowing orange standing side by side on a plain background, simple comparison
+THEN: (at "For free") KAI sitting on straw with his back leaning against the side of the COW, she is lying down, her whole body visible, KAI with a happy cozy smile
 KAI: Turns out the animals are my heating. A big cow gives off about as much heat as a small electric heater. All night long. For free.
 
 # SCENE 8
-PICTURE: a hole in the thatched roof of a dark longhouse seen from inside, thick smoke slowly escaping through it, no chimney, no people
+PICTURE: a hole in the thatched roof of the HOUSE seen from inside, thick smoke slowly escaping through it, no chimney, no people
 MOOD: calm
 THEN: (at "roof") outside view of a thatched medieval longhouse roof with smoke seeping out through the straw at dawn
 THEN: (at "bacon") strips of bacon and a ham hanging from smoky wooden roof beams inside a dark medieval hut, smoke drifting around them
@@ -72,7 +82,7 @@ THEN: (at "bugs") close-up of thick straw thatch seen from inside, wisps of grey
 KAI: There's no chimney either. The smoke just finds its own way out through the roof. Annoying, but useful. It smokes the bacon hanging up there, and it keeps the bugs out of the thatch.
 
 # SCENE 9
-PICTURE: KAI coughing in the smoke inside the dark longhouse, waving his hand in front of his face, eyes watering
+PICTURE: KAI coughing in the smoke inside the HOUSE, waving his hand in front of his face, eyes watering
 MOOD: funny
 THEN: (at "Forever") KAI sniffing the sleeve of his red tunic and grimacing at the smell
 KAI: Which means my whole house smells like a campfire. Forever.
@@ -93,25 +103,25 @@ THEN: (at "Bucket by bucket") a line of medieval villagers waiting at a stone we
 KAI: Before anything else, the jobs that never stop. Water has to be carried from the well. Bucket by bucket.
 
 # SCENE 12
-PICTURE: KAI throwing an armful of hay to a brown cow and two sheep inside a dark longhouse, a surprised face, the animals eating from the floor in front of him
+PICTURE: KAI throwing an armful of hay to the COW and two sheep inside the HOUSE, a surprised face, the animals eating from the floor in front of him
 MOOD: funny
-THEN: (at "worth more") a big brown cow standing next to a small sad pile of a peasant's belongings: one clay pot, one wooden stool, one blanket, on a plain background
-THEN: (at "milk") a medieval woman milking a cow into a wooden bucket inside a dark longhouse
+THEN: (at "worth more") the COW standing next to a small sad pile of a peasant's belongings: one clay pot, one wooden stool, one blanket, on a plain background
+THEN: (at "milk") the MOTHER milking the COW into a wooden bucket
 THEN: (at "plough") two oxen pulling a wooden plough through a muddy field, a peasant walking behind
 THEN: (at "wolf") a grey wolf with yellow eyes lurking at the edge of a dark forest at night, a sleeping medieval village behind it
-THEN: (at "with us") inside a dark longhouse at night, a family sleeping on straw at one end and a cow sleeping at the other end, a low wooden rail between them
+THEN: (at "with us") the HOUSE at night, the FAMILY sleeping on straw at one end and the COW sleeping at the other end behind the low wooden rail
 KAI: The animals eat before I do. That cow is worth more than everything else I own. It gives milk, it pulls the plough, and if a wolf or a thief gets it, my family starves. So it sleeps inside. With us.
 
 # SCENE 13
-PICTURE: a medieval peasant woman stirring a big steaming wooden barrel of ale over a fire outside a longhouse, children watching
+PICTURE: the MOTHER stirring a big steaming wooden barrel of ale over a fire outside a longhouse, two children watching
 MOOD: calm
-THEN: (at "brewing ale") a medieval peasant woman stirring a big steaming wooden barrel of ale over a fire
-THEN: (at "baking") a medieval woman pulling round loaves of dark bread out of a clay oven
-THEN: (at "spinning wool") a medieval woman spinning wool with a drop spindle by the door of a longhouse, a child beside her
+THEN: (at "brewing ale") the MOTHER stirring a big steaming wooden barrel of ale over a fire
+THEN: (at "baking") the MOTHER pulling round loaves of dark bread out of a clay oven
+THEN: (at "spinning wool") the MOTHER spinning wool with a drop spindle by the door of a longhouse
 KAI: And while the men go to the fields, the women are already brewing ale, baking, spinning wool and keeping the whole house alive.
 
 # SCENE 14
-PICTURE: KAI sitting at a rough wooden table in the dark longhouse, a wooden cup and a dark hard loaf of bread in front of him, looking at them suspiciously
+PICTURE: KAI sitting at a rough wooden table in the HOUSE, a wooden cup and a dark hard loaf of bread in front of him, looking at them suspiciously
 MOOD: curious
 TEXT: BREAKFAST
 THEN: (at "bread") close-up of a hard dark round loaf of coarse medieval bread on a rough wooden table
@@ -125,7 +135,7 @@ THEN: (at "Weak beer") KAI taking a sip from a wooden cup and shrugging, surpris
 KAI: Yes, beer. For breakfast. Weak beer, but still beer.
 
 # SCENE 16
-PICTURE: KAI explaining with a raised finger and a knowing look, holding the wooden cup in the other hand, inside the longhouse
+PICTURE: KAI explaining with a raised finger and a knowing look, holding the wooden cup in the other hand, inside the HOUSE
 MOOD: curious
 SFX: ding
 THEN: (at "calories") a medieval peasant drinking ale from a wooden cup before going out to the field with a hoe
@@ -156,7 +166,7 @@ THEN: (at "From the bread") KAI holding his cheek in pain and staring angrily at
 KAI: Archaeologists find skeletons from this time with teeth worn down flat. From the bread.
 
 # SCENE 20
-PICTURE: KAI with an outraged face pointing at the bread on the table, in the longhouse
+PICTURE: KAI with an outraged face pointing at the bread on the table, in the HOUSE
 MOOD: funny
 THEN: (at "make my own flour") a small stone hand mill (quern) broken in pieces on the ground, a medieval official in fine clothes standing over it
 KAI: And the worst part? I'm not even allowed to make my own flour.
@@ -178,7 +188,7 @@ THEN: (at "lord") a big stone medieval manor house behind a wall, a flag on the 
 KAI: Wait. Who is this lord, and why does he get my flour?
 
 # SCENE 23
-PICTURE: a rich medieval lord in fine colourful clothes on a horse, looking down at peasants in a muddy field
+PICTURE: the LORD on a horse, looking down at peasants in a muddy field
 MOOD: tense
 THEN: (at "The fields") wide medieval farmland with fields, a forest, a river and a watermill, a manor house in the middle
 THEN: (at "he owns me too") KAI looking down at a heavy iron chain around his ankle, a worried face (symbolic)
@@ -189,7 +199,7 @@ PICTURE: KAI looking at the viewer with a shocked face, hands spread wide, in th
 MOOD: shock
 TEXT: NOT FREE
 SFX: hit
-THEN: (at "The deal") a medieval lord in fine clothes giving a small strip of land to a kneeling peasant, the lord pointing at a field, symbolic
+THEN: (at "The deal") the LORD giving a small strip of land to a kneeling peasant, the lord pointing at a field, symbolic
 THEN: (at "my work") KAI carrying a heavy sack of grain towards the lord's manor house, bent over
 THEN: (at "without his permission") a medieval guard with a spear standing at the wooden gate of the village, blocking the road
 KAI: I'm what's called a villein. Not a slave, but not free either. The deal is: he gives me land to live on, I give him my work. And I can't leave this village without his permission.
@@ -248,10 +258,10 @@ THEN: (at "kids") small medieval children gathering stones from a field into bas
 KAI: And it's not only the men. Women work the fields too, and kids start helping as soon as they can walk.
 
 # SCENE 32
-PICTURE: an old medieval peasant woman with a wrinkled face sitting on a tree stump at the edge of the field, telling a story with a serious face, KAI listening
+PICTURE: the OLD WOMAN sitting on a tree stump at the edge of the field, telling a story with a serious face, KAI standing next to her listening
 MOOD: tense
 MUSIC: tense
-THEN: (at "lucky to be alive") close-up of the old medieval peasant woman's wrinkled face, serious eyes looking at the viewer
+THEN: (at "lucky to be alive") close-up of the face of the OLD WOMAN, serious eyes looking at the viewer
 KAI: An old woman at the edge of the field is watching me. She tells me she's lucky to be alive.
 
 # SCENE 33
@@ -264,7 +274,7 @@ THEN: (at "rotted") close-up of black rotten wheat lying flat in a flooded field
 KAI: When she was a kid, it rained for three summers in a row. The crops rotted in the fields. They call it the Great Famine.
 
 # SCENE 34
-PICTURE: KAI with a shocked, horrified face, listening, his hand over his mouth, the old woman next to him
+PICTURE: KAI with a shocked, horrified face, listening, his hand over his mouth, the OLD WOMAN next to him
 MOOD: shock
 THEN: (at "tree bark") thin hungry medieval peasants scraping bark from a tree in a grey winter forest
 THEN: (at "Millions died") a long line of grieving medieval people walking behind a cart in the rain, grey sky
@@ -284,11 +294,11 @@ THEN: (at "free for the day") KAI stretching his arms happily and walking away f
 KAI: Okay. My strips are done. That means I'm free for the day, right?
 
 # SCENE 37
-PICTURE: a stern medieval reeve, a tough man with a stick, pointing towards the lord's big field, looking angry at the viewer
+PICTURE: the REEVE pointing towards the lord's big field, looking angry at the viewer
 MOOD: tense
 MUSIC: tense
 SFX: hit
-THEN: (at "reeve") a stern medieval reeve with a stick stepping in front of KAI, blocking his way
+THEN: (at "reeve") the REEVE stepping in front of KAI, blocking his way
 THEN: (at "the lord's field") a huge golden field belonging to the lord, much bigger than the peasants' strips, the manor house behind it
 KAI: Nope. That's the reeve. And he's pointing at the lord's field.
 
@@ -339,16 +349,16 @@ THEN: (at "You already know") a row of many identical wooden bowls of brown stew
 KAI: And tomorrow? Pottage. And the day after that? You already know.
 
 # SCENE 44
-PICTURE: KAI looking at the viewer with a sad face, holding up an empty wooden spoon, inside the longhouse
+PICTURE: KAI looking at the viewer with a sad face, holding up an empty wooden spoon, inside the HOUSE
 MOOD: sad
-THEN: (at "milk, eggs, wool") a medieval yard with a cow, hens and sheep, a woman carrying a bucket of milk and a basket of eggs
+THEN: (at "milk, eggs, wool") a medieval yard with the COW, hens and sheep, the MOTHER carrying a bucket of milk and a basket of eggs
 THEN: (at "gone forever") an empty muddy pen with a broken rope, no animal left, a sad grey sky
 THEN: (at "bacon") a few strips of bacon hanging from the smoky roof beams of a medieval hut
 THEN: (at "Most days") KAI holding a bowl of plain brown stew with a sad, resigned smile
 KAI: Meat is rare. A live animal gives you milk, eggs, wool, every single day. Eat it, and it's gone forever. So meat is for holidays, and maybe some bacon in winter. Most days, it's this.
 
 # SCENE 45
-PICTURE: KAI sitting alone in an almost empty longhouse with an empty wooden bowl, thin and hungry, a cold grey spring day outside
+PICTURE: KAI sitting alone in the almost empty HOUSE with an empty wooden bowl, thin and hungry, a cold grey spring day outside
 MOOD: sad
 MUSIC: sad
 SFX: hit
@@ -357,10 +367,10 @@ THEN: (at "isn't ready yet") small green unripe wheat plants in a medieval field
 KAI: And some months, there isn't even pottage. In late spring, the winter food is gone and the new harvest isn't ready yet.
 
 # SCENE 46
-PICTURE: a medieval family sharing one small loaf of bread between five people at a wooden table, worried faces
+PICTURE: the FAMILY sharing one small loaf of bread at a wooden table, worried faces
 MOOD: sad
 TEXT: HUNGRY GAP
-THEN: (at "last bread") a medieval mother cutting a tiny loaf of bread into very thin slices for her children
+THEN: (at "last bread") the MOTHER cutting a tiny loaf of bread into very thin slices for two children
 THEN: (at "people starved") thin medieval peasants sitting against a wall in the cold, hungry faces
 KAI: They called it the hungry gap. Families stretched their last bread for weeks. One bad harvest, and people starved.
 
@@ -442,8 +452,8 @@ KAI: But here's something most people get wrong. Medieval people did wash. Every
 PICTURE: KAI washing his hands and face in a wooden bowl of water outside the longhouse, smiling
 MOOD: happy
 SFX: ding
-THEN: (at "Hands and face") a medieval family washing their hands in a wooden bowl before eating
-THEN: (at "polite") a medieval woman handing a towel to a guest with a polite smile
+THEN: (at "Hands and face") the FAMILY washing their hands in a wooden bowl before eating
+THEN: (at "polite") the MOTHER handing a towel to a guest with a polite smile
 KAI: Hands and face every morning, before eating. They thought being clean was polite.
 
 # SCENE 58
@@ -457,8 +467,8 @@ KAI: Towns even had public bathhouses with hot water. Not every day for a peasan
 PICTURE: KAI holding up the hem of his only red wool tunic, looking at it with a tired, resigned face
 MOOD: funny
 THEN: (at "this one tunic") close-up of a patched red wool tunic with a mended hole, hanging on a wooden peg
-THEN: (at "spun by hand") a medieval woman spinning wool into thread with a drop spindle by the door of a longhouse
-THEN: (at "weeks") a medieval woman weaving cloth on a big wooden loom by candlelight, tired eyes, a tall pile of thread next to her
+THEN: (at "spun by hand") the MOTHER spinning wool into thread with a drop spindle by the door of a longhouse
+THEN: (at "weeks") the MOTHER weaving cloth on a big wooden loom by firelight, tired eyes, a tall pile of thread next to her
 THEN: (at "falls apart") an old torn red tunic falling apart, hanging on a wooden peg
 KAI: Clothes are a different story. I own this one tunic. That's it. Every thread was spun by hand, and the cloth for one tunic takes weeks of work. So I'll wear it until it falls apart.
 
@@ -475,23 +485,23 @@ MOOD: calm
 TEXT: 2 PM
 SFX: whoosh
 THEN: (at "Afternoon") medieval peasants walking back out to the fields in the afternoon sun with tools
-THEN: (at "wants something from me") KAI looking over his shoulder nervously at a priest and a tax collector with a money bag walking towards him across the field
+THEN: (at "wants something from me") KAI looking over his shoulder nervously at the PRIEST and a tax collector with a money bag walking towards him across the field
 KAI: Afternoon. Back to work. Because the lord isn't the only one who wants something from me.
 
 # SCENE 62
-PICTURE: a priest in a dark robe standing at the door of a stone church, collecting sheaves of grain from peasants
+PICTURE: the PRIEST standing at the door of a stone church, collecting sheaves of grain from peasants
 MOOD: tense
 MUSIC: tense
 TEXT: 1/10
 SFX: hit
-THEN: (at "tithe") a priest's helper loading every tenth sheaf of wheat from a field onto a cart
+THEN: (at "tithe") the PRIEST's helper loading every tenth sheaf of wheat from a field onto a cart
 THEN: (at "Every year") a huge stone tithe barn full to the roof with sacks of grain
 KAI: The church takes a tithe. One tenth of everything I grow. Every year.
 
 # SCENE 63
-PICTURE: KAI watching a man in fine clothes lead away his only cow by a rope, KAI reaching out in horror
+PICTURE: KAI watching a man in fine clothes lead away the COW by a rope, KAI reaching out in horror
 MOOD: shock
-THEN: (at "best animal") a lord's man leading a cow away by a rope while a crying family watches
+THEN: (at "best animal") a man in fine clothes leading the COW away by a rope while the FAMILY watches crying
 THEN: (at "pays the lord for your death") a medieval widow handing a goat to a man in fine clothes at her door
 KAI: And when a peasant dies, the lord can take his best animal. It's called a heriot. Your family pays the lord for your death.
 
@@ -500,12 +510,12 @@ PICTURE: KAI with a horrified face, both hands on his head, in the muddy lane
 MOOD: shock
 SFX: hit
 THEN: (at "grind your flour") the lord's watermill wheel turning
-THEN: (at "the church") a priest holding out a wooden bowl for coins at the church door
+THEN: (at "the church") the PRIEST holding out a wooden bowl for coins at the church door
 THEN: (at "when you die") a simple wooden cross in a medieval village graveyard
 KAI: You pay to grind your flour. You pay the church. You pay the lord when you die.
 
 # SCENE 65
-PICTURE: a young medieval couple standing nervously in front of the lord in his hall, the father of the bride handing over coins
+PICTURE: a young medieval couple standing nervously in front of the LORD in his hall, the father of the bride handing over coins
 MOOD: tense
 TEXT: MERCHET
 THEN: (at "daughter gets married") a young medieval bride in a simple dress with flowers in her hair, looking nervous
@@ -543,7 +553,7 @@ PICTURE: an old medieval village wise woman crushing herbs in a wooden bowl next
 MOOD: tense
 TEXT: NO DOCTORS
 THEN: (at "herbs") close-up of dried herbs and roots hanging from the roof of a medieval cottage
-THEN: (at "praying") a medieval family kneeling and praying next to a sick child in bed
+THEN: (at "praying") the MOTHER kneeling and praying next to a sick child in bed
 KAI: And if you get sick? There's no doctor for people like me. There's an old woman who knows herbs, and there's praying.
 
 # SCENE 71
@@ -578,11 +588,11 @@ THEN: (at "more days off") KAI lying on the grass relaxing in the sun with his h
 KAI: Feasts. Dancing. Football with a pig's bladder. Some historians think peasants had more days off than a lot of us.
 
 # SCENE 75
-PICTURE: inside a small stone medieval church, peasants standing crowded together (no benches), a priest at the altar reading from a big book, KAI in the crowd looking confused
+PICTURE: inside a small stone medieval church, peasants standing crowded together (no benches), the PRIEST at the altar reading from a big book, KAI in the crowd looking confused
 MOOD: curious
 TEXT: LATIN
 THEN: (at "no benches") a crowded stone church nave full of standing peasants, no seats
-THEN: (at "Latin") a priest reading from a huge old book written in Latin, peasants looking confused
+THEN: (at "Latin") the PRIEST reading from a huge old book, peasants looking confused
 KAI: Sunday starts at church. Everyone goes. There are no benches, you stand. And the whole service is in Latin, which almost nobody here understands.
 
 # SCENE 76
@@ -599,17 +609,17 @@ THEN: (at "a lot more ale") a medieval tavern table crowded with wooden cups of 
 KAI: And a lot more ale. I'm starting to understand these people.
 
 # SCENE 78
-PICTURE: a serious medieval official in a hat tasting ale from a cup in front of a nervous woman brewer, other villagers watching
+PICTURE: the ALE TASTER tasting ale from a cup in front of a nervous woman brewer, other villagers watching
 MOOD: funny
 TEXT: ALE TASTER
 SFX: ding
-THEN: (at "ale taster") a serious medieval ale taster sipping from a cup and thinking hard, a nervous brewer woman waiting
-THEN: (at "fine the brewers") the ale taster pointing angrily at a barrel, a woman brewer throwing her hands up
+THEN: (at "ale taster") the ALE TASTER sipping from a cup and thinking hard, a nervous brewer woman waiting
+THEN: (at "fine the brewers") the ALE TASTER pointing angrily at a barrel, a woman brewer throwing her hands up
 THEN: (at "Best job") KAI raising a wooden cup with a huge smile, a crowd cheering
 KAI: There was even an official ale taster. His job was to drink everyone's ale and fine the brewers if it was bad. Best job in the village.
 
 # SCENE 79
-PICTURE: a young medieval peasant couple in their twenties getting married at the church door, a priest blessing them, villagers smiling
+PICTURE: a young medieval peasant couple in their twenties getting married at the church door, the PRIEST blessing them, villagers smiling
 MOOD: happy
 TEXT: MID 20s
 THEN: (at "marry at twelve") a cartoon picture of a child bride crossed out with a big red X
@@ -634,7 +644,7 @@ THEN: (at "scaring the birds") a medieval child swinging a sling at a flock of c
 KAI: The kids are coming home too. A seven year old here already has a job. Watching the geese, or scaring the birds off the fields all day.
 
 # SCENE 82
-PICTURE: KAI sitting by the small fire in the dark longhouse, holding a thin burning stick of rush dipped in fat, the tiny flame lighting his face
+PICTURE: KAI sitting by the small fire in the HOUSE at night, holding a thin burning stick of rush dipped in fat, the tiny flame lighting his face
 MOOD: curious
 THEN: (at "Candles") a few expensive beeswax candles in a rich man's house
 THEN: (at "rushlights") close-up of a thin burning rushlight held in an iron clip, a tiny flame
@@ -642,27 +652,27 @@ THEN: (at "twenty minutes") a rushlight burning down to almost nothing, smoke cu
 KAI: Candles are expensive. Peasants use rushlights. A plant dipped in animal fat. It burns for maybe twenty minutes.
 
 # SCENE 83
-PICTURE: KAI eating a small bowl of stew by the fire with a family in the dark longhouse, the cow in the background
+PICTURE: KAI eating a small bowl of stew by the fire with the FAMILY at night, the COW in the background
 MOOD: calm
 THEN: (at "pottage") a bowl of brown stew and a crust of dark bread on a wooden table by the fire
 KAI: Supper is small. Usually the same pottage again, plus whatever bread is left.
 
 # SCENE 84
-PICTURE: a medieval family sitting around the small fire in the dark longhouse at night, an old man telling a dramatic story with his hands, children listening with wide eyes, KAI listening too
+PICTURE: the GRANDFATHER telling a dramatic story with his hands by the small fire at night, two children listening with wide eyes, KAI listening too
 MOOD: curious
-THEN: (at "stories") a medieval family around the fire listening to an old man telling a story with big hand gestures
+THEN: (at "stories") the GRANDFATHER telling a story with big hand gestures by the fire, his face lit by the flames
 THEN: (at "monsters") a cartoon medieval dragon and a ghost drawn in the smoke above the fire
 THEN: (at "gossip") two medieval women whispering behind their hands and giggling
 KAI: There's no TV, no books, almost nobody can read. So after supper, the night is for stories. Saints, monsters, ghosts, and gossip about the neighbours.
 
 # SCENE 85
-PICTURE: KAI laughing by the fire with the family, someone pointing at him, everyone laughing together in the dark longhouse
+PICTURE: KAI laughing by the fire with the FAMILY at night, the grandfather pointing at him, everyone laughing together
 MOOD: funny
 THEN: (at "couldn't plough a straight line") a crooked zigzag ploughed line in a muddy field, villagers laughing at it
 KAI: Tonight the best story is about the strange new guy who couldn't plough a straight line. That's me.
 
 # SCENE 86
-PICTURE: KAI covering the glowing fire in the middle of the longhouse with a clay cover, the room going dark, a worried face
+PICTURE: KAI covering the glowing fire in the middle of the HOUSE with a clay cover, the room going dark, a worried face
 MOOD: curious
 TEXT: CURFEW
 SFX: ding
@@ -675,12 +685,12 @@ PICTURE: KAI scratching his arm and neck on his straw bed, annoyed face, tiny fl
 MOOD: gross
 TEXT: FLEAS
 SFX: sting
-THEN: (at "animals") a dark medieval longhouse at night, a family and a cow and sheep all sleeping together
+THEN: (at "animals") the HOUSE at night, the FAMILY and the COW and two sheep all sleeping in the same room
 THEN: (at "fleas") extreme close-up of tiny fleas jumping on a wool blanket
 KAI: And then bedtime. With the family, the animals, and about a thousand fleas.
 
 # SCENE 88
-PICTURE: KAI lying on straw in the dark longhouse with eyes closed, a family sleeping close together, the cow lying nearby
+PICTURE: KAI lying on straw with eyes closed at night, the FAMILY sleeping close together, the COW lying nearby
 MOOD: calm
 MUSIC: tense
 THEN: (at "eight") the medieval village at night under the stars, completely dark
@@ -691,24 +701,24 @@ PICTURE: KAI waking up in the middle of the night in the dark, eyes wide, sittin
 MOOD: curious
 TEXT: MIDNIGHT
 SFX: hit
-THEN: (at "so is everyone else") a medieval family sitting up awake in the dark longhouse, lit by a small fire, chatting
+THEN: (at "so is everyone else") the FAMILY sitting up awake in the HOUSE at night, lit by the small fire, chatting
 KAI: Midnight. I'm wide awake. And so is everyone else.
 
 # SCENE 90
-PICTURE: a medieval family awake in the dark longhouse at night, one adding wood to the small fire, one praying, one quietly talking, lit only by the fire
+PICTURE: the FAMILY awake at night, the grandfather adding wood to the small fire, the mother praying, the children quietly talking, lit only by the fire
 MOOD: curious
 THEN: (at "pray") a medieval peasant kneeling and praying in the dark by the fire
 THEN: (at "visit the neighbours") two medieval neighbours talking quietly by a door at night holding a small light
 KAI: People talk, pray, go check on the animals, visit the neighbours. In the middle of the night.
 
 # SCENE 91
-PICTURE: KAI explaining with a raised finger and a knowing look, lit by firelight in the dark longhouse
+PICTURE: KAI explaining with a raised finger and a knowing look, lit by firelight in the HOUSE at night
 MOOD: curious
 TEXT: FIRST SLEEP
 SFX: ding
 THEN: (at "sixteen hours") a medieval village in deep winter darkness, snow on the roofs, a thin moon, no lights at all
-THEN: (at "two parts") KAI sleeping peacefully on straw in the dark longhouse, one person only
-THEN: (at "awake") KAI sitting awake in the dark by the fire, relaxed, chatting quietly with an old peasant man
+THEN: (at "two parts") KAI sleeping peacefully on straw in the HOUSE at night, one person only
+THEN: (at "awake") KAI sitting awake in the dark by the fire, relaxed, chatting quietly with the GRANDFATHER
 KAI: Historians call it first sleep and second sleep. In winter it's dark for sixteen hours, and nobody sleeps that long in one go. So people slept in two parts, awake for an hour or two in between.
 
 # SCENE 92
@@ -721,11 +731,11 @@ KAI: And honestly? It felt completely natural.
 PICTURE: KAI sitting on the straw bed in the dark, looking at the viewer with a serious face, firelight on his face
 MOOD: tense
 MUSIC: tense
-THEN: (at "wrong") KAI leaning in close to the viewer with a serious face in the dark longhouse
+THEN: (at "wrong") KAI leaning in close to the viewer with a serious face in the HOUSE at night
 KAI: So here's the thing almost everyone gets wrong about these people.
 
 # SCENE 94
-PICTURE: KAI looking at the viewer with a serious, thoughtful face in the dark longhouse, the cow sleeping behind him
+PICTURE: KAI looking at the viewer with a serious, thoughtful face at night, the COW sleeping behind him
 MOOD: tense
 THEN: (at "weren't dirty") medieval peasants washing at a stream
 THEN: (at "misery") medieval villagers dancing and laughing at a feast
@@ -750,11 +760,11 @@ MOOD: tense
 TEXT: 1348
 SFX: hit
 THEN: (at "ships") a dark medieval ship sailing into a harbour at night under a red sky
-THEN: (at "half of the people") the medieval family sleeping in the dark longhouse, half of them fading away like ghosts
+THEN: (at "half of the people") the FAMILY sleeping in the HOUSE at night, half of them fading away like ghosts
 KAI: In two years, a sickness will arrive on ships from the east. And half of the people sleeping in this room won't survive it.
 
 # SCENE 98
-PICTURE: KAI looking at the viewer with wide frightened eyes in the dark longhouse, lit by one tiny flame
+PICTURE: KAI looking at the viewer with wide frightened eyes in the HOUSE at night, lit by one tiny flame
 MOOD: shock
 THEN: (at "Subscribe") KAI pointing straight at the viewer with a serious, determined face, lit by firelight
 KAI: That's the Black Death. And that's the next video. Subscribe, so you don't miss it.

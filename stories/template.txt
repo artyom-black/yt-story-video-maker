@@ -37,6 +37,11 @@ RULES (MrBeast):
    Bad: "A cow is my heating." Good: "A cow gives off as much heat as a
    small electric heater, all night. And inside, wolves and thieves can't
    get it. It's worth more than everything I own."
+11. CAST: every person, animal or place that appears in more than one picture
+   gets a CAST line with a very concrete look, and is then always written in
+   CAPITALS in the pictures (the COW, the OLD WOMAN, the HOUSE). The program
+   draws it once and keeps it exactly the same in every picture. People who
+   appear only once (a crowd, a guard) don't need a CAST line.
 10. Pictures the AI can draw well: one clear subject. Never put an animal
    touching Kai's face or sitting on his shoulder, never two bodies tangled
    together; when Kai is alone write "one person only". Show the animal and
@@ -45,6 +50,9 @@ RULES (MrBeast):
 FORMAT (copy exactly, keys in capitals):
 
 TITLE: (max 60 letters)
+CAST: COW = (very concrete look: colour, marks, horns, anything special)
+CAST: OLD WOMAN = (age, face, hair, clothes; never red, red is only Kai)
+CAST: HOUSE = (a place that comes back: walls, floor, fire, furniture)
 FORMAT: day-in-the-life / survival / question
 ERA: (where and when, very concrete: buildings, streets, landscape)
 COSTUME: (what Kai wears in this era; it MUST be mostly deep red)
