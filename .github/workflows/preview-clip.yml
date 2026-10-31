@@ -28,7 +28,7 @@ jobs:
       - uses: actions/cache/restore@v4
         with:
           path: sonniss
-          key: sonniss-gdc2026-v1
+          key: sonniss-gdc2026-${{ hashFiles('program/sounds/selected_files.txt') }}
       - uses: actions/cache/restore@v4
         with:
           path: sound_candidates

@@ -1,0 +1,39 @@
+{
+ "_note": "Kai Films signature sounds (Sonniss GDC 2026 bundle, royalty-free). Paths inside the bundle.",
+ "cut": [
+  "Sonniss.com-GDC2026-GameAudioBundle/Cinematic Sound Design - Ultra Transitions & Impacts/Woosh Sweep Slide Infographics Basic.wav",
+  "Sonniss.com-GDC2026-GameAudioBundle/Cinematic Sound Design - Cartoon & Animation Vol 2/Cartoon Pull Swoosh Readout.wav"
+ ],
+ "swoosh": [
+  "Sonniss.com-GDC2026-GameAudioBundle/Cinematic Sound Design - Cartoon Impacts/Vibrato Impact Snap Spin Transition.wav",
+  "Sonniss.com-GDC2026-GameAudioBundle/Cinematic Sound Design - Colossal Impacts/Transition Frantic Shaker Snap.wav"
+ ],
+ "pop": [
+  "Sonniss.com-GDC2026-GameAudioBundle/Cinematic Sound Design - Interface & Infographics/Interface Pop High Short.wav"
+ ],
+ "boom": [
+  "Sonniss.com-GDC2026-GameAudioBundle/Federico Soler - Effective Trailer Booms Vol. 2/EffectiveTrailer_Booms_Vol2_011.wav",
+  "Sonniss.com-GDC2026-GameAudioBundle/344 Audio - Bass Drops & Downers Vol. 1/DSGNBass_Bass Drop & Downer Fast 16_344 Audio_Bass Drops & Downers.wav"
+ ],
+ "riser": [
+  "reverse:Sonniss.com-GDC2026-GameAudioBundle/Federico Soler - Effective Trailer Booms Vol. 2/EffectiveTrailer_Booms_Vol2_011.wav"
+ ],
+ "money": [
+  "Sonniss.com-GDC2026-GameAudioBundle/Cinematic Sound Design - UI Interaction Elements/Ting Coins.wav"
+ ],
+ "poor": [
+  "Sonniss.com-GDC2026-GameAudioBundle/Cinematic Sound Design - System & UI Feedback Elements/Interface Deny Low Fat Dark.wav"
+ ],
+ "ding": [
+  "Sonniss.com-GDC2026-GameAudioBundle/Cinematic Sound Design - User Interface/Button Arp Twinkle.wav"
+ ],
+ "splat": [
+  "Sonniss.com-GDC2026-GameAudioBundle/Epic Stock Media - Tower Defense Game/WOODImpt_Hit Blood Spill Splat Wood Impact Light Hit Squelch Small Thump 03_ESM_TDG.wav"
+ ],
+ "boing": [
+  "Sonniss.com-GDC2026-GameAudioBundle/Cinematic Sound Design - UI Interaction Elements/Accept Boing Crunch.wav"
+ ],
+ "gasp": [
+  "Sonniss.com-GDC2026-GameAudioBundle/Epic Stock Media - AAA Game Character Police Officer/HMNBrth_Police Officer Gasp Vocal Male Shocked Alert 1.wav"
+ ]
+}

@@ -98,8 +98,9 @@ HIT = {"cut": "peak", "swoosh": "peak", "riser": "end"}
 
 
 def build(cands, out_dir, pro_dir=None):
-    """pro_dir: the professional library (Sonniss). For every role that has a pick in sound_choices.json,
-    that exact sound is used; the other roles use the free Mixkit list above."""
+    """pro_dir: the professional library (Sonniss). Every role picked in sound_choices.json uses exactly those
+    sounds ("reverse:" = played backwards, e.g. a boom reversed is the riser that lands on it); roles without a
+    pick, or when the library is missing, use the free Mixkit list above."""
     os.makedirs(out_dir, exist_ok=True)
     choices = json.load(open(CHOICES)) if os.path.exists(CHOICES) else {}
     pack = {}
@@ -109,20 +110,28 @@ def build(cands, out_dir, pro_dir=None):
         picks = [picks] if isinstance(picks, str) else picks
         sources = []
         if pro_dir and os.path.isdir(pro_dir):
-            sources = [os.path.join(pro_dir, p) for p in picks if os.path.exists(os.path.join(pro_dir, p))]
+            for p in picks:
+                rev = p.startswith("reverse:")
+                path = os.path.join(pro_dir, p.split(":", 1)[1] if rev else p)
+                if os.path.exists(path):
+                    sources.append((path, rev))
         if not sources:
             for folder, stem in wanted:
                 hits = glob.glob(os.path.join(cands, folder, stem + ".*")) or glob.glob(os.path.join(cands, "*", stem + ".*"))
                 if hits:
-                    sources.append(hits[0])
-        for src in sources[:n_variants if not picks else len(sources)]:
-            a, hit_at = cut(load(src), max(max_s, 1.0) if picks else max_s, HIT.get(role, hit))
+                    sources.append((hits[0], False))
+            sources = sources[:n_variants]
+        for src, rev in sources:
+            a = load(src)
+            if rev:
+                a = a[::-1].copy()
+            a, hit_at = cut(a, max_s, "end" if rev else HIT.get(role, hit))
             rms = float(np.sqrt((a ** 2).mean() + 1e-12))
             a = a * (10 ** (LOUD.get(role, loud) / 20) / rms)
             a = a / max(1.0, float(np.abs(a).max()) / 0.98)
             out = os.path.join(out_dir, f"{role}_{len(pack[role]) + 1}.wav")
             save(out, a)
-            pack[role].append({"file": os.path.basename(out), "source": os.path.basename(src),
+            pack[role].append({"file": os.path.basename(out), "source": ("reversed " if rev else "") + os.path.basename(src),
                                "hit_at": round(hit_at, 3), "length": round(len(a) / SR, 3)})
         print(f"{role:8s} {[p['source'] for p in pack[role]]}")
     json.dump(pack, open(os.path.join(out_dir, "pack.json"), "w"), indent=1)
