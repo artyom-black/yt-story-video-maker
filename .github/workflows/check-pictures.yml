@@ -42,7 +42,7 @@ jobs:
           IN="${{ inputs.story }}"
           git show "${IN#*@}:${IN%@*}" > story_then.txt
           git clone -q --depth 1 -b "pics-${{ inputs.slug }}" "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" assets
-          python -m maker.picture_check test story_then.txt assets "${{ inputs.model }}" ${{ inputs.keys }} | tee result.txt
+          python -m maker.picture_check test story_then.txt assets "${{ inputs.model }}" ${{ inputs.keys }} 2>&1 | tee result.txt
           echo '```' >> $GITHUB_STEP_SUMMARY; cat result.txt >> $GITHUB_STEP_SUMMARY; echo '```' >> $GITHUB_STEP_SUMMARY
       - name: Save the result (branch check-results)
         if: always()
