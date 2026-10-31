@@ -15,10 +15,29 @@ jobs:
   look:
     runs-on: ubuntu-24.04
     steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
       - name: Look
         run: |
           mkdir info && cd info
           curl -sSL -A "Mozilla/5.0" -D headers.txt "${{ inputs.url }}" -o page.html || true
+          pip install -q playwright && python -m playwright install --with-deps chromium > /dev/null 2>&1
+          python - "${{ inputs.url }}" <<'PY' || true
+          import sys, asyncio
+          from playwright.async_api import async_playwright
+          async def main(u):
+              async with async_playwright() as p:
+                  b = await p.chromium.launch()
+                  pg = await b.new_page(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36")
+                  await pg.goto(u, timeout=60000)
+                  await pg.wait_for_timeout(12000)
+                  open("browser.html", "w").write(await pg.content())
+                  links = await pg.eval_on_selector_all("a", "els => els.map(e => e.href + '  |  ' + e.innerText.trim().slice(0,80))")
+                  open("browser_links.txt", "w").write("\n".join(links))
+                  await b.close()
+          asyncio.run(main(sys.argv[1]))
+          PY
           grep -oE 'href="[^"]+"' page.html | sort -u > links.txt || true
           grep -oiE 'https?://[^" ]+\.(zip|torrent|7z|rar)[^" ]*' page.html | sort -u > files.txt || true
           wc -c page.html; head -50 links.txt
