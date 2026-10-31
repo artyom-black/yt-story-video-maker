@@ -32,6 +32,9 @@ THUMB_STYLE = ("YouTube thumbnail illustration: one huge close-up subject fillin
 W, H = 1280, 720
 # Everybody except Kai stays out of his signature colour, so viewers always know who Kai is.
 ONLY_KAI_RED = "Nobody except Kai wears red: other people wear plain brown, beige, grey or green clothes."
+# added later; pictures drawn before it was added are kept (see "legacy" in jobs), new ones get it
+FACE_RULE = ("Only Kai has Kai's face and black hair: every other person has a clearly different face, hair "
+             "colour and age. Every person and animal has a normal body: one head, two arms, two legs.")
 
 
 def _place_rule(st):
@@ -183,7 +186,10 @@ def jobs(st, assets):
             text, refs, first = kai_refs(pic, st, costume_ref, costume_rich_ref)
             text, used = cast_in(text, st.cast, first)
             refs = refs + [cast_ref(cast_paths[n]) for n in used]
-            prompt = f"{text}. {_place_rule(st)} {kai_clothes(pic, st)}{ONLY_KAI_RED} 16:9 picture. {STYLE}"
+            legacy = f"{text}. {_place_rule(st)} {kai_clothes(pic, st)}{ONLY_KAI_RED} 16:9 picture. {STYLE}"
+            prompt = f"{text}. {_place_rule(st)} {kai_clothes(pic, st)}{ONLY_KAI_RED} {FACE_RULE} 16:9 picture. {STYLE}"
+            if os.path.exists(_named(path, legacy)):          # already drawn with the older rules: keep it
+                prompt = legacy
             check_desc = pic                         # what the checker reads: cast names spelled out
             for n_, d_ in st.cast.items():
                 check_desc = re.sub(rf"\b{re.escape(n_)}\b", f"{n_.lower()} ({d_})", check_desc)

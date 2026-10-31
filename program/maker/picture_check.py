@@ -25,35 +25,20 @@ from PIL import Image
 
 MODEL = os.environ.get("CHECK_MODEL", "@cf/meta/llama-4-scout-17b-16e-instruct")
 
-QUESTION = """You are the quality checker for a cartoon YouTube video. The picture was drawn by an image AI
-from this description:
-
-"{desc}"
-
-{kai}
-Answer "redo" ONLY for serious mistakes that a viewer would notice in one second:
-1. A person or animal with the wrong number of heads, faces, arms, hands or legs, or two bodies melted together.
-2. A person's face mixed with an animal or object (for example an animal nose growing out of a person's face).
-3. An animal, person or heavy object floating in the air with nothing holding it up, or fire burning somewhere
-   fire cannot be (fire is fine in a fireplace, hearth, torch, candle or campfire).
-4. {red}
-5. The picture shows something clearly different from the description: the wrong place (indoors drawn outdoors,
-   night drawn as day), the main person or animal missing, or the main action clearly not happening
-   (for example someone standing when the description says he is lying in bed).
-6. Written words, letters or signs.
-
-These are NOT mistakes, never "redo" for them: slightly different colours of small items, small details missing,
-extra harmless background details, the style, a person's exact age or hair length, shoes or accessories.
+QUESTION = """Look carefully at this cartoon picture and answer these questions about what you SEE.
 Answer with JSON only, no other text:
-{{"what_i_see": "<one short sentence>", "problems": ["<each serious mistake, short>"], "verdict": "ok" or "redo"}}"""
+{{"people": <how many people are in the picture>,
+  "people_in_red": <how many people wear mostly red clothes>,
+  "young_men_with_short_black_hair": <how many>,
+  "broken_body": <true if any person or animal has two heads, extra or missing arms, hands or legs, or two bodies melted together>,
+  "face_mixed": <true if a person's face has an animal part or object growing out of it>,
+  "floating": <true if an animal, a person or a heavy object hangs in the air with nothing holding it>,
+  "indoors": <true if the scene is inside a building or room>,
+  "has_text": <true if there are written words or letters>,
+  "what_i_see": "<one short sentence>"}}"""
 
-KAI_NOTE = ("The main character Kai is a young man with short black hair who wears a deep red tunic. "
-            "There must be exactly one Kai.")
-KAI_TWO = ("The main character Kai appears twice on purpose: once poor in a patched red wool tunic and once rich in "
-           "red velvet with gold. Both must have the same face: a young man with short black hair.")
-RED_TWO = "One of the two Kais is not dressed in red, or a third person wears mostly red clothes."
-RED_KAI = "Kai appears twice, or another person (not Kai) wears mostly red clothes."
-RED_NO_KAI = "A person wears mostly bright red clothes (nobody in this picture should be dressed in red)."
+INDOOR = r"\b(inside|indoors|HOUSE|BEDCHAMBER|GREAT HALL|room|hall|chapel|church|kitchen|cellar|stable|hut|longhouse|tower room)\b"
+OUTDOOR = r"\b(field|lane|village|forest|stream|river|meadow|yard|outside|outdoor|battlefield|harbour|road|sky|hill|garden)\b"
 
 
 def _image_data_url(path, max_w=768):
@@ -97,27 +82,43 @@ def _ask(text, data_url, model):
     raise RuntimeError("checker gave up: " + last)
 
 
-def _parse(answer):
+def _parse(answer, description, n_kai):
     m = re.search(r"\{.*\}", answer, re.S)
     try:
         d = json.loads(m.group(0)) if m else {}
     except Exception:
         d = {}
-    problems = [str(p) for p in d.get("problems") or [] if str(p).strip()]
-    verdict = str(d.get("verdict", "")).lower()
-    ok = verdict == "ok" or (verdict != "redo" and not problems)
     if not d:
-        ok, problems = True, ["(checker answer unreadable, picture kept): " + answer[:120]]
-    return {"ok": ok, "problems": problems, "seen": d.get("what_i_see", "")}
+        return {"ok": True, "problems": ["(checker answer unreadable, picture kept)"], "seen": answer[:120]}
+    num = lambda k: int(d.get(k) or 0) if str(d.get(k, 0)).strip("-").isdigit() else 0
+    yes = lambda k: d.get(k) is True or str(d.get(k)).lower() == "true"
+    problems = []
+    if yes("broken_body"):
+        problems.append("broken body (extra head/limbs or merged bodies)")
+    if yes("face_mixed"):
+        problems.append("a face mixed with an animal or object")
+    if yes("floating"):
+        problems.append("something floating in the air")
+    if yes("has_text"):
+        problems.append("written text in the picture")
+    if num("people_in_red") > max(n_kai, 0) + 0:
+        problems.append(f"{num('people_in_red')} people in red (only Kai may wear red)")
+    if n_kai and num("young_men_with_short_black_hair") > n_kai:
+        problems.append("Kai appears more often than he should")
+    want_in = bool(re.search(INDOOR, description, re.I)) and not re.search(OUTDOOR, description, re.I)
+    want_out = bool(re.search(OUTDOOR, description, re.I)) and not re.search(INDOOR, description, re.I)
+    if "indoors" in d and want_in and not yes("indoors"):
+        problems.append("should be indoors but is drawn outside")
+    if "indoors" in d and want_out and yes("indoors"):
+        problems.append("should be outdoors but is drawn inside")
+    return {"ok": not problems, "problems": problems, "seen": str(d.get("what_i_see", ""))}
 
 
 def check(path, description, has_kai, model=MODEL):
-    """{'ok': bool, 'problems': [...], 'seen': str}. Raises on the daily allowance (caller stops)."""
-    both = "RICH KAI" in description and re.search(r"(?<!RICH )\bKAI\b", description)
-    kai = (KAI_TWO if both else KAI_NOTE) if has_kai else "Kai is NOT in this picture."
-    red = (RED_TWO if both else RED_KAI) if has_kai else RED_NO_KAI
-    text = QUESTION.format(desc=description.replace("RICH KAI", "rich Kai"), kai=kai, red=red)
-    return _parse(_ask(text, _image_data_url(path), model))
+    """{'ok': bool, 'problems': [...], 'seen': str}. Raises on the daily allowance (caller stops).
+    The vision AI only describes what it sees (counts, yes/no); the rules decide, so it can't nitpick."""
+    n_kai = (2 if ("RICH KAI" in description and re.search(r"(?<!RICH )\bKAI\b", description)) else 1) if has_kai else 0
+    return _parse(_ask(QUESTION, _image_data_url(path), model), description, n_kai)
 
 
 def _test(story, assets, model, keys):

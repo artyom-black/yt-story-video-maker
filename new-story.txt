@@ -22,7 +22,7 @@ TAGS: 1 dollar vs 1 million, medieval life, middle ages, rich vs poor, medieval 
 SOURCES: Christopher Dyer, Standards of Living in the Later Middle Ages (Cambridge, 1989); Christopher Dyer, Making a Living in the Middle Ages (Yale, 2002); C. M. Woolgar, The Great Household in Late Medieval England (Yale, 1999); Ian Mortimer, The Time Traveller's Guide to Medieval England (2008); Ian Mortimer, The Perfect King: The Life of Edward III (2006); A. Roger Ekirch, At Day's Close: Night in Times Past (2005); English Heritage, Medieval village life; Wikipedia, Joan of England (died 1348)
 
 # SCENE 1
-PICTURE: close-up of KAI's face alone in the dark, lying on straw, eyes wide open in shock, a faint warm steam drifting in from the right side, only one person in the picture
+PICTURE: close-up of KAI's face alone, lying on his back on straw inside the dark HOUSE at night, only his face and shoulders visible, eyes wide open in shock, a faint warm steam drifting in from the right side, only one person in the picture
 MOOD: shock
 MUSIC: tense
 TEXT: $1
@@ -62,11 +62,11 @@ PICTURE: KAI sitting up on straw inside the HOUSE, the COW and two sheep standin
 MOOD: funny
 MUSIC: funny
 TEXT: $1
-THEN: (at "normal") a medieval peasant mother and two children sleeping peacefully on straw, the COW sleeping a few steps away behind a low wooden rail, calm and normal
+THEN: (at "normal") inside the HOUSE at night, the MOTHER and two children sleeping peacefully on straw, the COW sleeping a few steps away behind a low wooden rail, calm and normal
 KAI: Okay. One dollar life. There's a cow in my bedroom, and apparently that's completely normal.
 
 # SCENE 6
-PICTURE: KAI holding his hands out to warm them, standing one step away from the COW lying on straw, smiling a little, steam from her breath
+PICTURE: inside the HOUSE, KAI holding his hands out to warm them, standing one step away from the COW lying on straw, smiling a little, steam from her breath
 MOOD: funny
 THEN: (at "electric heater") the COW and a small modern electric heater glowing orange standing side by side on a plain background, simple comparison
 THEN: (at "wolf") a grey wolf with yellow eyes lurking at the edge of a dark forest at night, a sleeping medieval village behind it
@@ -94,7 +94,7 @@ PICTURE: the SERVANT kneeling and putting soft red leather shoes on RICH KAI's f
 MOOD: funny
 THEN: (at "dress me") the SERVANT and a second servant helping RICH KAI into his red velvet robe, one fixing the fur collar, one the gold belt
 THEN: (at "sleeps") the SERVANT sleeping on a thin straw mattress on the stone floor outside the door of the BEDCHAMBER
-THEN: (at "in case I need anything") RICH KAI in bed at night ringing a small silver bell, the SERVANT instantly opening the door with a candle
+THEN: (at "in case I need anything") RICH KAI in bed in the BEDCHAMBER at night ringing a small silver bell, the SERVANT instantly opening the door with a candle
 KAI: I don't even dress myself. Servants dress me. And this guy sleeps on the floor outside my door, in case I need anything at night.
 
 # SCENE 10
@@ -106,11 +106,11 @@ THEN: (at "cooks") the COOK and his helpers working in a huge smoky castle kitch
 THEN: (at "horses") grooms brushing tall horses in a big stone castle stable
 THEN: (at "guards") castle guards with spears and helmets standing at a big castle gate
 THEN: (at "musicians") medieval musicians playing a lute, a harp and a small drum on a wooden balcony
-THEN: (at "candles") a castle servant carefully lighting a long row of candles with a thin taper
+THEN: (at "candles") a castle servant in brown carefully lighting a long row of candles with a thin taper in the GREAT HALL
 KAI: And this guy isn't alone. A great lord's household can be over a hundred people. Cooks, grooms for the horses, guards, musicians, even someone whose whole job is the candles.
 
 # SCENE 11
-PICTURE: RICH KAI washing his face in a silver bowl of warm water with rose petals floating in it, the SERVANT holding a white towel
+PICTURE: in the BEDCHAMBER, RICH KAI washing his face in a silver bowl of warm water with rose petals floating in it, the SERVANT holding a white towel
 MOOD: calm
 THEN: (at "warm water") close-up of a shiny silver bowl of steaming water with rose petals and herbs floating in it
 THEN: (at "cold stream") KAI splashing freezing water on his face at a small stream at dawn, shivering, his breath steaming
@@ -130,7 +130,7 @@ MOOD: curious
 MUSIC: calm
 TEXT: BREAKFAST
 SFX: whoosh
-THEN: (at "ale") close-up of a wooden cup filled with cloudy brown ale on a rough wooden table
+THEN: (at "ale") close-up of a wooden cup filled with cloudy brown ale on a rough wooden table inside the dark HOUSE
 KAI: Breakfast. One dollar version: dark bread and a cup of weak ale.
 
 # SCENE 14
@@ -303,10 +303,10 @@ THEN: (at "Pepper") close-up of piles of colourful spices on a medieval market t
 KAI: And everything is covered in spices. Pepper, cinnamon, saffron, all the way from India. A small bag of pepper costs more than a peasant earns in two weeks.
 
 # SCENE 33
-PICTURE: close-up of thick slices of stale bread used as plates on a feast table, juicy meat on top of them, soaked with sauce
+PICTURE: in the GREAT HALL, close-up of thick slices of stale bread used as plates on a feast table, juicy meat on top of them, soaked with sauce
 MOOD: curious
 TEXT: TRENCHERS
-THEN: (at "plates") RICH KAI eating meat off a thick slice of bread on the table instead of a plate
+THEN: (at "plates") RICH KAI at the high table in the GREAT HALL eating meat off a thick slice of bread instead of a plate
 THEN: (at "poor") a castle servant handing a basket of sauce-soaked bread slices to thin hungry peasants at the castle gate
 KAI: Even the plates are bread. They're called trenchers. And after the feast, the sauce-soaked plates are given to the poor at the gate.
 
@@ -529,8 +529,8 @@ KAI: Night. The rich hall glows with expensive beeswax candles. The poor house h
 PICTURE: a medieval peasant grandfather with a white beard telling a dramatic story by the small fire in the HOUSE at night, two children listening with wide eyes, KAI listening too
 MOOD: calm
 MUSIC: calm
-THEN: (at "stories") close-up of the grandfather's face lit by the fire, big hand gestures, telling a story
-THEN: (at "ghosts") a cartoon medieval dragon and a ghost drawn in the smoke above a small fire
+THEN: (at "stories") inside the HOUSE at night, close-up of an old peasant grandfather's face lit by the fire, big hand gestures, telling a story
+THEN: (at "ghosts") a cartoon medieval dragon and a ghost drawn in the smoke above the small fire inside the HOUSE at night
 THEN: (at "gossip") two medieval peasant women whispering behind their hands and giggling at a doorway
 KAI: No books, no TV. So after supper, the night is for stories. Saints, monsters, ghosts, and gossip about the neighbours.
 
@@ -554,7 +554,7 @@ KAI: But first, you cover the fire, so the straw roof doesn't burn down. In Fren
 # SCENE 61
 PICTURE: RICH KAI lying in the huge bed in the BEDCHAMBER, the SERVANT closing the thick blue bed curtains, a warm fire, peaceful
 MOOD: calm
-THEN: (at "feather") close-up of a thick soft feather mattress and fur blanket on a huge carved bed
+THEN: (at "feather") close-up of a thick soft feather mattress and fur blanket on the huge carved bed in the BEDCHAMBER
 THEN: (at "curtains") the SERVANT closing thick blue curtains around the huge bed in the BEDCHAMBER, a warm glow inside
 KAI: Million dollar bedtime. A feather mattress, fur blankets, and curtains around the bed to keep the cold out.
 
