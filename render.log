@@ -1,0 +1,169 @@
+613 files
+cut      ['Woosh Sweep Slide Infographics Basic.wav', 'Cartoon Pull Swoosh Readout.wav']
+swoosh   ['Vibrato Impact Snap Spin Transition.wav', 'Transition Frantic Shaker Snap.wav']
+pop      ['Interface Pop High Short.wav']
+boom     ['EffectiveTrailer_Booms_Vol2_011.wav', 'DSGNBass_Bass Drop & Downer Fast 16_344 Audio_Bass Drops & Downers.wav']
+riser    ['reversed EffectiveTrailer_Booms_Vol2_011.wav']
+scratch  ['vinyl-stop-fast-scratch__711.mp3']
+money    ['Ting Coins.wav']
+poor     ['Interface Deny Low Fat Dark.wav']
+ding     ['Button Arp Twinkle.wav']
+splat    ['WOODImpt_Hit Blood Spill Splat Wood Impact Light Hit Squelch Small Thump 03_ESM_TDG.wav']
+boing    ['Accept Boing Crunch.wav']
+gasp     ['HMNBrth_Police Officer Gasp Vocal Male Shocked Alert 1.wav']
+wrote out/video.mp4 0.3 min
+{
+ "cut": [
+  {
+   "file": "cut_1.wav",
+   "source": "Woosh Sweep Slide Infographics Basic.wav",
+   "hit_at": 0.025,
+   "length": 0.465
+  },
+  {
+   "file": "cut_2.wav",
+   "source": "Cartoon Pull Swoosh Readout.wav",
+   "hit_at": 0.55,
+   "length": 0.7
+  }
+ ],
+ "swoosh": [
+  {
+   "file": "swoosh_1.wav",
+   "source": "Vibrato Impact Snap Spin Transition.wav",
+   "hit_at": 0.17,
+   "length": 1.2
+  },
+  {
+   "file": "swoosh_2.wav",
+   "source": "Transition Frantic Shaker Snap.wav",
+   "hit_at": 0.335,
+   "length": 1.2
+  }
+ ],
+ "pop": [
+  {
+   "file": "pop_1.wav",
+   "source": "Interface Pop High Short.wav",
+   "hit_at": 0.01,
+   "length": 0.35
+  }
+ ],
+ "boom": [
+  {
+   "file": "boom_1.wav",
+   "source": "EffectiveTrailer_Booms_Vol2_011.wav",
+   "hit_at": 0.01,
+   "length": 2.2
+  },
+  {
+   "file": "boom_2.wav",
+   "source": "DSGNBass_Bass Drop & Downer Fast 16_344 Audio_Bass Drops & Downers.wav",
+   "hit_at": 0.01,
+   "length": 1.975
+  }
+ ],
+ "riser": [
+  {
+   "file": "riser_1.wav",
+   "source": "reversed EffectiveTrailer_Booms_Vol2_011.wav",
+   "hit_at": 1.4,
+   "length": 1.43
+  }
+ ],
+ "scratch": [
+  {
+   "file": "scratch_1.wav",
+   "source": "vinyl-stop-fast-scratch__711.mp3",
+   "hit_at": 0.01,
+   "length": 0.9
+  }
+ ],
+ "money": [
+  {
+   "file": "money_1.wav",
+   "source": "Ting Coins.wav",
+   "hit_at": 0.01,
+   "length": 1.019
+  }
+ ],
+ "poor": [
+  {
+   "file": "poor_1.wav",
+   "source": "Interface Deny Low Fat Dark.wav",
+   "hit_at": 0.01,
+   "length": 0.743
+  }
+ ],
+ "ding": [
+  {
+   "file": "ding_1.wav",
+   "source": "Button Arp Twinkle.wav",
+   "hit_at": 0.01,
+   "length": 1.0
+  }
+ ],
+ "splat": [
+  {
+   "file": "splat_1.wav",
+   "source": "WOODImpt_Hit Blood Spill Splat Wood Impact Light Hit Squelch Small Thump 03_ESM_TDG.wav",
+   "hit_at": 0.01,
+   "length": 0.332
+  }
+ ],
+ "boing": [
+  {
+   "file": "boing_1.wav",
+   "source": "Accept Boing Crunch.wav",
+   "hit_at": 0.01,
+   "length": 0.7
+  }
+ ],
+ "gasp": [
+  {
+   "file": "gasp_1.wav",
+   "source": "HMNBrth_Police Officer Gasp Vocal Male Shocked Alert 1.wav",
+   "hit_at": 0.01,
+   "length": 0.427
+  }
+ ]
+}sonniss:
+raw
+
+sonniss/raw:
+Sonniss.com-GDC2026-GameAudioBundle
+Sonniss.com-GDC2026-GameAudioBundle.aria2
+
+sonniss/raw/Sonniss.com-GDC2026-GameAudioBundle:
+344 Audio - Barbershop Vol. 2
+344 Audio - Bass Drops & Downers Vol. 1
+Cinematic Sound Design - Cartoon & Animation Vol 2
+Cinematic Sound Design - Cartoon Impacts
+Cinematic Sound Design - Colossal Impacts
+Cinematic Sound Design - Hybrid Game & UI Elements
+Cinematic Sound Design - Interface & Infographics
+Cinematic Sound Design - Paper Foley
+Cinematic Sound Design - System & UI Feedback Elements
+Cinematic Sound Design - UI Interaction Elements
+Cinematic Sound Design - Ultra Transitions & Impacts
+Cinematic Sound Design - User Interface
+Epic Stock Media - AAA Game Character British Female Detective
+Epic Stock Media - AAA Game Character Police Officer
+Epic Stock Media - Tower Defense Game
+Federico Soler - Effective Trailer Alarms Vol. 2
+Federico Soler - Effective Trailer Booms Vol. 2
+
+sonniss/raw/Sonniss.com-GDC2026-GameAudioBundle/344 Audio - Barbershop Vol. 2:
+OBJMisc_Wahl Sterling Trimmer, On, Idle, Off_344 Audio_Barbershop Vol 2.wav
+
+sonniss/raw/Sonniss.com-GDC2026-GameAudioBundle/344 Audio - Bass Drops & Downers Vol. 1:
+DSGNBass_Bass Drop & Downer Fast 16_344 Audio_Bass Drops & Downers.wav
+DSGNBass_Bass Drop & Downer Medium 04_344 Audio_Bass Drops & Downers.wav
+
+sonniss/raw/Sonniss.com-GDC2026-GameAudioBundle/Cinematic Sound Design - Cartoon & Animation Vol 2:
+Cartoon Bubbles Short.wav
+Cartoon Pull Swoosh Readout.wav
+Cartoon Transition Bass Down.wav
+
+sonniss/raw/Sonniss.com-GDC2026-GameAudioBundle/Cinematic Sound Design - Cartoon Impacts:
+Cartoon Pops Random Sequence Reverb.wav

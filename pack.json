@@ -1,0 +1,116 @@
+{
+ "cut": [
+  {
+   "file": "cut_1.wav",
+   "source": "Woosh Sweep Slide Infographics Basic.wav",
+   "hit_at": 0.025,
+   "length": 0.465
+  },
+  {
+   "file": "cut_2.wav",
+   "source": "Cartoon Pull Swoosh Readout.wav",
+   "hit_at": 0.55,
+   "length": 0.7
+  }
+ ],
+ "swoosh": [
+  {
+   "file": "swoosh_1.wav",
+   "source": "Vibrato Impact Snap Spin Transition.wav",
+   "hit_at": 0.17,
+   "length": 1.2
+  },
+  {
+   "file": "swoosh_2.wav",
+   "source": "Transition Frantic Shaker Snap.wav",
+   "hit_at": 0.335,
+   "length": 1.2
+  }
+ ],
+ "pop": [
+  {
+   "file": "pop_1.wav",
+   "source": "Interface Pop High Short.wav",
+   "hit_at": 0.01,
+   "length": 0.35
+  }
+ ],
+ "boom": [
+  {
+   "file": "boom_1.wav",
+   "source": "EffectiveTrailer_Booms_Vol2_011.wav",
+   "hit_at": 0.01,
+   "length": 2.2
+  },
+  {
+   "file": "boom_2.wav",
+   "source": "DSGNBass_Bass Drop & Downer Fast 16_344 Audio_Bass Drops & Downers.wav",
+   "hit_at": 0.01,
+   "length": 1.975
+  }
+ ],
+ "riser": [
+  {
+   "file": "riser_1.wav",
+   "source": "reversed EffectiveTrailer_Booms_Vol2_011.wav",
+   "hit_at": 1.4,
+   "length": 1.43
+  }
+ ],
+ "scratch": [
+  {
+   "file": "scratch_1.wav",
+   "source": "vinyl-stop-fast-scratch__711.mp3",
+   "hit_at": 0.01,
+   "length": 0.9
+  }
+ ],
+ "money": [
+  {
+   "file": "money_1.wav",
+   "source": "Ting Coins.wav",
+   "hit_at": 0.01,
+   "length": 1.019
+  }
+ ],
+ "poor": [
+  {
+   "file": "poor_1.wav",
+   "source": "Interface Deny Low Fat Dark.wav",
+   "hit_at": 0.01,
+   "length": 0.743
+  }
+ ],
+ "ding": [
+  {
+   "file": "ding_1.wav",
+   "source": "Button Arp Twinkle.wav",
+   "hit_at": 0.01,
+   "length": 1.0
+  }
+ ],
+ "splat": [
+  {
+   "file": "splat_1.wav",
+   "source": "WOODImpt_Hit Blood Spill Splat Wood Impact Light Hit Squelch Small Thump 03_ESM_TDG.wav",
+   "hit_at": 0.01,
+   "length": 0.332
+  }
+ ],
+ "boing": [
+  {
+   "file": "boing_1.wav",
+   "source": "Accept Boing Crunch.wav",
+   "hit_at": 0.01,
+   "length": 0.7
+  }
+ ],
+ "gasp": [
+  {
+   "file": "gasp_1.wav",
+   "source": "HMNBrth_Police Officer Gasp Vocal Male Shocked Alert 1.wav",
+   "hit_at": 0.01,
+   "length": 0.427
+  }
+ ]
+}
