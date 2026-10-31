@@ -27,9 +27,12 @@ jobs:
           set -e
           mkdir -p sonniss info
           KEEP='whoosh|swoosh|swish|woosh|whip|swipe|impact|hit|boom|braam|thud|punch|slam|riser|rise|uplifter|build|sweep|reverse|pop|click|tick|blip|ui|interface|notification|coin|cash|money|register|ching|bell|ding|chime|sparkle|glitter|shimmer|magic|scratch|record|vinyl|stinger|sting|trailer|transition|sub|drop|bass|camera|shutter|flash|fail|wrong|buzzer|cartoon|comedy|boing|splat|gasp|crowd|laugh|cheer|applause'
+          pip install -q gdown
+          DRIVE=(x 1ndDWhCoq0NgkrJH6ku5MSA65zinEby9r 1s9GAn7KBS4jr4NlF_ggTYDrXySCg6HXS 16PX5T28pQaEs6S8j-m6ArR16JwQCQNNB 1HqMHc0o9Uxv5SmR3KQzx2nHIyrn3sW6M 1XL8zDflfC86Asd4D7G1T5N1DJ6hNLQVc)
           for i in 1 2 3 4 5; do
             Z="Sonniss.com-GDC2026-GameAudioBundle${i}of5.zip"
-            curl -sSfL -A "Mozilla/5.0" -o "$Z" "https://downloads.sonniss.com/$Z"
+            # the official mirror on Google Drive (the main site blocks scripts with a browser check)
+            curl -sSfL -A "Mozilla/5.0" -o "$Z" "https://downloads.sonniss.com/$Z" || gdown -q --fuzzy "https://drive.google.com/file/d/${DRIVE[$i]}/view" -O "$Z"
             ls -la "$Z"
             unzip -Z1 "$Z" >> info/all_files.txt
             unzip -Z1 "$Z" | grep -iE "($KEEP)" | grep -iE '\.(wav|flac|aif|aiff|mp3|ogg)$' > keep.txt || true
@@ -43,8 +46,20 @@ jobs:
         if: always()
         run: |
           mkdir -p info && cd info
-          curl -sSL -A "Mozilla/5.0" https://sonniss.com/gdc-bundle-license/ -o licence.html || true
-          python3 -c "import re,html;t=open('licence.html',errors='ignore').read();t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S);print(html.unescape(re.sub(r'<[^>]+>',' ',t)))" | tr -s ' \n' > licence.txt || true
+          pip install -q playwright && python -m playwright install --with-deps chromium > /dev/null 2>&1
+          python - <<'PY' || true
+          import asyncio
+          from playwright.async_api import async_playwright
+          async def main():
+              async with async_playwright() as p:
+                  b = await p.chromium.launch()
+                  pg = await b.new_page(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36")
+                  await pg.goto("https://sonniss.com/gdc-bundle-license/", timeout=60000)
+                  await pg.wait_for_timeout(12000)
+                  open("licence.txt", "w").write(await pg.inner_text("body"))
+                  await b.close()
+          asyncio.run(main())
+          PY
           [ -d ../sonniss/raw ] && (cd ../sonniss/raw && find . -type f | sort > ../../info/kept_files.txt) || true
           git init -q -b sound-library-info && git config user.name "video-maker" && git config user.email "video-maker@users.noreply.github.com"
           git add -A && git commit -q -m "Sonniss bundle: file list and licence" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:sound-library-info
