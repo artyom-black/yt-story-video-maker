@@ -36,7 +36,10 @@ jobs:
       - name: Render
         env:
           PRO_SOUNDS: ${{ github.workspace }}/sonniss/raw
+        shell: bash
         run: |
+          exec > >(tee render.log) 2>&1
+          set -e
           R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}"
           git clone -q --depth 1 -b pics-001-1-vs-1000000-life-in-the-middle-ages "$R" assets
           git clone -q --depth 1 -b voice-001-1-vs-1000000-life-in-the-middle-ages "$R" assets/voice
@@ -57,9 +60,12 @@ jobs:
           python -m maker.sound_kit sound_candidates kit > /dev/null
           python -m maker.slideshow opening.txt assets kit sound_candidates out
           cat kit/pack/pack.json
+          ls -R sonniss | head -40
       - name: Save
+        if: always()
         run: |
-          mkdir clip && ffmpeg -loglevel error -i out/video.mp4 -vf scale=1280:-2 -c:v libx264 -preset veryfast -crf 22 -c:a aac -b:a 192k -movflags +faststart clip/opening.mp4
+          mkdir clip && cp render.log clip/ 2>/dev/null || true
+          [ -f out/video.mp4 ] && ffmpeg -loglevel error -i out/video.mp4 -vf scale=1280:-2 -c:v libx264 -preset veryfast -crf 22 -c:a aac -b:a 192k -movflags +faststart clip/opening.mp4
           cp kit/pack/pack.json clip/
           cd clip && git init -q -b preview-clip && git config user.name "video-maker" && git config user.email "video-maker@users.noreply.github.com"
           git add -A && git commit -q -m "Preview clip" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:preview-clip
