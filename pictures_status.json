@@ -1,13 +1,21 @@
 {
- "done": 18,
+ "done": 80,
  "total": 231,
  "complete": false,
  "stopped": "FREE DAILY ALLOWANCE USED UP (resets 00:00 UTC = 04:00 Armenia). HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Clo",
- "checker": "on",
+ "checker": "switched off (rejected too much)",
  "kept_with_problems": [
   "2",
   "2b",
+  "2b",
   "2c",
-  "3"
+  "2c",
+  "3",
+  "3",
+  "3b",
+  "3c",
+  "4",
+  "4c",
+  "5"
  ]
 }

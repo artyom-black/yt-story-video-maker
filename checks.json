@@ -99,5 +99,356 @@
    "The rich Kai's outfit is red velvet with fur details, but no gold details are visible on his clothes, only a belt buckle."
   ],
   "tries": 3
+ },
+ "cast_bedchamber_e9dd2b09.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_002_32836df1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_002x2_450816f1.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "Kai is sitting on the bed, not lying in it and stretching"
+  ],
+  "tries": 2
+ },
+ "scene_002x3_41d9ad20.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "person wears mostly bright red clothes (shoes)"
+  ],
+  "tries": 2
+ },
+ "scene_003_b8687ab1.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "The image does not match the description: one location instead of two, no fire, no bedchamber, and no velvet"
+  ],
+  "tries": 2
+ },
+ "scene_003x2_2dfb5ee8.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "Another person wears mostly red clothes is not present, but there are multiple people present"
+  ],
+  "tries": 2
+ },
+ "scene_003x3_1c62a42f.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "Another person wears mostly red clothes is not present but there are people in the scene, the main character's hair is brown not black, and the main character's tunic is not deep red"
+  ],
+  "tries": 2
+ },
+ "scene_003x4_fc3ed3e2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_004_b848a7e7.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "fire burning outside a fireplace"
+  ],
+  "tries": 2
+ },
+ "scene_004x2_a254e626.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_004x3_ec17d9a2.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "The king is wearing a red cape"
+  ],
+  "tries": 2
+ },
+ "scene_005_4c0975b7.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "The room has windows which is not described, there is no small fire, and the cow has a bell but no description of it being brass"
+  ],
+  "tries": 2
+ },
+ "scene_005x2_37da9324.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2
+ },
+ "scene_006_c9f05261.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_006x2_bc15015c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_006x3_3e54a5e5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_006x4_28b5cdca.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_007_5f89262e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_007x2_e994d860.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_007x3_7139010e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_008_c0b04ad6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_008x2_75b72167.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_008x3_8530be30.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_009_62e4ffc7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_009x2_417b8990.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_009x3_d3b054ca.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_009x4_38c1fec2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_010_cb4cf9d4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_010x2_3b0ad4f1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_010x3_f3922771.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_010x4_01e663a6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_010x5_23a7349e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_010x6_fdf4c5f4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_011_b64784a6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_011x2_7d7872aa.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_011x3_c93bc2f6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_012_031a440a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_012x2_9e9d7075.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_012x3_245b091a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_013_85384654.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_013x2_3caa21eb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_014_ee3a427b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_014x2_405ac346.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_014x3_fa42a890.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_014x4_af7cf1cd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_015_afeea9a6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_015x2_949ab4ee.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_015x3_edda2418.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_016_c6f5ecd5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_016x2_4fae327c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_016x3_ce30afb1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_017_bee8a17e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_017x2_f5914f92.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_017x3_d23b75b6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_017x4_f8562d49.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_018_8600eca8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_018x2_914f9743.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_018x3_092dc6b6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_018x4_881156c6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_018x5_c66a2201.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_019_0ab42ab0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_019x2_9c68614a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_019x3_a7f2b780.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_020_48b79a57.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_020x2_852032e6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_021_2c827ec5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
+ },
+ "scene_021x2_adce2659.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1
  }
 }
