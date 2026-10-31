@@ -259,7 +259,7 @@ def run(story_path, assets):
             extra = 104729 * (1 if redone.get(lab) == "pending" else 0)
             if not os.path.exists(path):
                 best = None
-                for attempt in range(3):            # draw, check, and draw again if the checker finds a mistake
+                for attempt in range(2):            # draw, check, and draw once more if the checker finds a mistake
                     tmp = path + f".try{attempt}.png"
                     try:
                         _gen(prompt, w, h, seed=1000 + i * 17 + 7919 * attempt + extra, refs=refs, out=tmp)
