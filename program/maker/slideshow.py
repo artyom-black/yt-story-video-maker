@@ -5,8 +5,8 @@ Every decision follows fixed rules, so nothing is random:
 - camera: every picture moves (slow push-in, pull-out or pan, alternating); shocking moments get a fast
   punch-zoom and a shake on the key word; funny moments a small bounce;
 - key words (TEXT) pop up on the exact moment Kai says them, always in the same style;
-- sounds: one fixed sound per role for the whole video (the same hit, the same whoosh, the same pop), from the
-  measured kit, placed so the hit lands on the word; a whoosh only when the section changes;
+- sounds: MrBeast rules (sound_events): a whoosh on every new picture, pop on words, sparkle on money, sad
+  trombone on "$1", riser + boom + white flash on reveals with the music dropping out, record scratch on jokes;
 - music: one track per mood (tense / funny / calm / sad / epic), at most a handful per video, crossfaded when
   the mood changes, ducked under the voice;
 - loudness: voice first, everything at YouTube's -14 LUFS.
@@ -31,22 +31,26 @@ from .script import load
 
 W, H, FPS = 1920, 1080, 30
 SR = 48000
-BREATH = 0.22                  # pause after each line
-SECTION_PAUSE = 0.45           # extra pause when the music / section changes
+BREATH = 0.12                  # pause after each line (MrBeast pace: almost none)
+SECTION_PAUSE = 0.25           # extra pause when the music / section changes
+VOICE_TEMPO = 1.06             # Kai a little faster, same pitch
+VOICE_FILTER = (f"atempo={VOICE_TEMPO},highpass=f=80,"                       # energy: faster, tighter, more present
+                "acompressor=threshold=-22dB:ratio=3.5:attack=4:release=60:makeup=2,"
+                "equalizer=f=3200:t=q:w=1.2:g=3,equalizer=f=220:t=q:w=1:g=-1.5")
 ROLE_FILE = {"hit": "hit_1.wav", "whoosh": "whoosh_4.wav", "pop": "pop_3.wav", "sting": "sting_4.wav",
              "ding": "ding_2.wav"}
 ROLE_GAIN = {"hit": -5, "whoosh": -12, "pop": -11, "sting": -8, "ding": -10}
 MUSIC_FOLDERS = {"tense": ["music_suspense", "music_epic"], "funny": ["music_funny", "music_comedy", "music_quirky"],
                  "calm": ["music_medieval", "music_playful"], "sad": ["music_medieval", "music_suspense"],
                  "epic": ["music_epic", "music_suspense"]}
-MUSIC_DB = -21
+MUSIC_DB = -20
 
 
 # ---------- audio helpers ----------
 
-def load_audio(path, mono=True):
-    raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", path, "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"],
-                         capture_output=True, check=True).stdout
+def load_audio(path, mono=True, af=None):
+    raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", path, *(["-af", af] if af else []), "-ac", "1",
+                          "-ar", str(SR), "-f", "f32le", "-"], capture_output=True, check=True).stdout
     return np.frombuffer(raw, dtype=np.float32).copy()
 
 
@@ -67,8 +71,8 @@ def clean_voice(a):
         while j < len(env) and quiet[j] == quiet[i]:
             j += 1
         seg = a[i * hop:j * hop]
-        if quiet[i] and (j - i) > 35:                # pauses longer than 0.35 s become 0.3 s
-            k = int(0.3 * SR)
+        if quiet[i] and (j - i) > 24:                # pauses longer than 0.24 s become 0.2 s
+            k = int(0.2 * SR)
             seg = np.concatenate([seg[:k // 2], seg[-(k - k // 2):]])
         out.append(seg)
         i = j
@@ -182,7 +186,7 @@ def make_plan(st, assets, kit_dir, cands):
     music_info = json.load(open(os.path.join(kit_dir, "kit.json")))["music"]
     from .pictures import picture_files
     files = picture_files(st, assets)
-    voices = [clean_voice(load_audio(os.path.join(assets, "voice", s.voice_file))) for s in st.scenes]
+    voices = [clean_voice(load_audio(os.path.join(assets, "voice", s.voice_file), af=VOICE_FILTER)) for s in st.scenes]
     moods = smooth_music(st, voices)
     t = 0.1
     scenes, sfx, music_runs = [], [], []
@@ -215,24 +219,39 @@ def make_plan(st, assets, kit_dir, cands):
                        "camera": cam, "mood": s.mood,
                        "text": s.text, "text_at": tt, "text_side": side, "voice": voice,
                        "phrases": phrase_starts(voice)})
-        # sounds, each placed on its hit
-        if section_change or s.sfx == "whoosh":
-            sfx.append((start, "whoosh"))
-        if s.sfx in ("hit", "sting", "ding"):
-            sfx.append((start + (tt if tt is not None else 0.05), s.sfx))
-        if s.text and s.sfx not in ("hit", "sting", "ding"):
-            sfx.append((start + tt, "pop"))
+        # sounds: the MrBeast rules (see sound_events)
+        sfx += sound_events(s, start, dur, tt, switch, section_change, idx)
         if not music_runs or music_runs[-1]["mood"] != mood_music:
             music_runs.append({"mood": mood_music, "start": start})
         prev_music = mood_music
         t = start + dur
     length = t + 0.6
-    # sounds -> files, placed so the kit sound's hit lands on the moment
-    placed = []
-    for when, role in sfx:
-        f = ROLE_FILE[role]
-        if f in kit:
-            placed.append((max(0.0, when - kit[f]["hit_at"]), os.path.join(kit_dir, f), ROLE_GAIN[role]))
+    # sounds -> files, placed so each sound's hit lands on its moment; music drops out for the big hits
+    pack_dir = os.path.join(kit_dir, "pack")
+    if not os.path.exists(os.path.join(pack_dir, "pack.json")):
+        from .sfx_pack import build as build_pack
+        build_pack(cands, pack_dir)
+    pack = json.load(open(os.path.join(pack_dir, "pack.json")))
+    placed, drops, booms = [], [], []
+    sfx.sort()
+    big = [w for w, r, _ in sfx if r != "cut"]
+    last_cut = -9.0
+    for when, role, variant in sfx:
+        files = pack.get(role) or []
+        if not files:
+            continue
+        if role == "cut":
+            if any(abs(when - w) < 0.25 for w in big) or when - last_cut < 0.4:
+                continue                                       # a bigger sound is already there / too close
+            last_cut = when
+        f = files[variant % len(files)]
+        placed.append((max(0.0, when - f["hit_at"]), os.path.join(pack_dir, f["file"]), 0))
+        if role in ("boom", "scratch"):
+            drops.append((when - (0.05 if role == "boom" else 0.0), when + (0.55 if role == "boom" else 0.7)))
+        if role == "boom":
+            booms.append(when)
+    for sc in scenes:                                          # the picture flashes and shakes on every boom
+        sc["booms"] = [b - sc["start"] for b in booms if sc["start"] <= b < sc["start"] + sc["dur"]]
     # music: one track per mood, fixed for the whole video
     by_mood = json.load(open(os.path.join(kit_dir, "kit.json"))).get("music_by_mood", {})
     chosen = {}
@@ -249,12 +268,45 @@ def make_plan(st, assets, kit_dir, cands):
     for i, run in enumerate(music_runs):
         run["end"] = music_runs[i + 1]["start"] if i + 1 < len(music_runs) else length
         run["file"] = chosen.get(run["mood"])
-    return scenes, placed, music_runs, length
+    return scenes, placed, music_runs, length, drops
+
+
+def sound_events(s, start, dur, tt, switch, section_change, idx):
+    """Which sound goes where in one scene. The same moment always gets the same sound (sfx_pack.py):
+    - every new picture: a short whoosh (3 alternating variants); a new section: a bigger swoosh;
+    - a word on screen: a pop; money ($, a million) a sparkle; "$1" the sad trombone; a number a bell;
+    - SFX hit (a reveal): a riser that sucks in, then a boom on the word; the music drops out for a moment;
+    - SFX sting: a record scratch on a joke (funny mood), a splat on something gross, else a boom;
+    - SFX ding: the bell."""
+    import re
+    ev = []
+    text = (s.text or "").upper()
+    for k, w in enumerate(switch):
+        if k > 0:
+            ev.append((start + w, "cut", idx + k))
+    ev.append((start, "swoosh" if section_change or s.sfx == "whoosh" else "cut", idx))
+    at = start + (tt if tt is not None else 0.05)
+    label = text.strip() == "$1" or "$" in text or "MILLION" in text
+    if label:                                            # "$1" / "$1,000,000": their own sound, nothing else on top
+        ev.append((at, "poor" if text.strip() == "$1" else "money", 0))
+        return ev
+    if text:
+        if s.sfx not in ("hit", "sting", "ding"):
+            ev.append((at, "ding" if re.search(r"\d", text) else "pop", 0))
+    if s.sfx == "hit":
+        ev += [(at, "riser", 0), (at, "boom", 0)]
+    elif s.sfx == "sting":
+        ev.append((at, "scratch" if s.mood == "funny" else "splat" if s.mood == "gross" else "boom", 0))
+    elif s.sfx == "ding":
+        ev.append((at, "ding", 0))
+    if text and s.sfx in ("hit", "sting", "ding"):
+        ev.append((at + 0.02, "pop", 0))
+    return ev
 
 
 # ---------- audio mix ----------
 
-def mix(scenes, placed, music_runs, length, out_wav):
+def mix(scenes, placed, music_runs, length, out_wav, drops=()):
     n = int(length * SR)
     voice = np.zeros(n, np.float32)
     for sc in scenes:
@@ -291,6 +343,13 @@ def mix(scenes, placed, music_runs, length, out_wav):
     k = int(0.25 * SR)
     smooth = np.convolve(talking, np.ones(k) / k, mode="same").clip(0, 1)
     music *= db(MUSIC_DB) * (1 - 0.55 * smooth)
+    if drops:                                              # music cuts out on the big hits, then comes back
+        gate = np.ones(n, np.float32)
+        for a0, a1 in drops:
+            gate[max(0, int(a0 * SR)):min(n, int(a1 * SR))] = 0.0
+        k2 = int(0.06 * SR)
+        gate = np.convolve(gate, np.ones(k2) / k2, mode="same").astype(np.float32)
+        music *= gate
     fx *= (1 - 0.3 * smooth)
     mixed = voice + fx + music
     mixed /= max(1.0, float(np.abs(mixed).max()) / 0.95)
@@ -470,7 +529,10 @@ def render_scene(job):
     for p in sc["pics"]:
         im = Image.open(p).convert("RGB")
         s = max(2400 / im.width, 1350 / im.height)
-        pics.append(im.resize((int(im.width * s), int(im.height * s)), Image.LANCZOS))
+        im = im.resize((int(im.width * s), int(im.height * s)), Image.LANCZOS)
+        from PIL import ImageEnhance                          # MrBeast colour: a bit more saturated and punchy
+        im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.15)).enhance(1.06)
+        pics.append(im)
         infos.append(analyse_picture(p))
     # one segment per picture (a new picture on its word), and shots inside each segment
     sw = list(sc.get("switch") or [0.0]) + [sc["dur"]]
@@ -502,6 +564,9 @@ def render_scene(job):
         local = lt - shot["start"]
         length = max(0.01, shot["end"] - shot["start"])
         z *= 1.0 + 0.05 * ease(local / length)            # every shot slowly pushes in
+        since_pic = t - seg["start"]
+        if since_pic < 0.18 and (seg["pic"] > 0 or sc.get("snap_first")):   # snap-zoom when a new picture lands
+            z *= 1.0 + 0.10 * (1 - ease(since_pic / 0.18))
         if shot["punch"] and local < 0.08:                # punch-in on the key word
             z *= 0.82 + 0.18 * local / 0.08
         dx = dy = 0.0
@@ -509,12 +574,20 @@ def render_scene(job):
         if (shot["punch"] or (sc["camera"] == "punch" and first)) and local < 0.35:
             fade = 1 - local / 0.35                       # shake on the hit
             dx, dy = 0.01 * fade * math.sin(t * 90), 0.01 * fade * math.cos(t * 75)
+        boom = next((b for b in sc.get("booms", []) if 0 <= t - b < 0.45), None)
+        if boom is not None:                              # boom: punch in and shake harder
+            q = (t - boom) / 0.45
+            z *= 1.0 + 0.08 * (1 - q)
+            dx += 0.016 * (1 - q) * math.sin(t * 95)
+            dy += 0.016 * (1 - q) * math.cos(t * 80)
         vw, vh = im.width / z, im.width / z * H / W
         x0 = min(max((cx + dx) * im.width - vw / 2, 0), im.width - vw)
         y0 = min(max((cy + dy) * im.height - vh / 2, 0), im.height - vh)
         fr = im.resize((W, H), Image.BICUBIC, box=(x0, y0, x0 + vw, y0 + vh))
         if z > 1.5:
             fr = fr.filter(ImageFilter.UnsharpMask(radius=2, percent=50, threshold=2))
+        if boom is not None and t - boom < 0.1:           # white flash on the boom
+            fr = Image.blend(fr, Image.new("RGB", fr.size, (255, 255, 255)), 0.55 * (1 - (t - boom) / 0.1))
         fr = fr.convert("RGBA")
         if layer is not None and t >= sc["text_at"]:
             since = t - sc["text_at"]
@@ -582,7 +655,7 @@ def build(story_path, assets, kit_dir, cands, out_dir, workers=None):
     os.makedirs(out_dir, exist_ok=True)
     work = os.path.join(out_dir, "_scenes")
     os.makedirs(work, exist_ok=True)
-    scenes, placed, music_runs, length = make_plan(st, assets, kit_dir, cands)
+    scenes, placed, music_runs, length, drops = make_plan(st, assets, kit_dir, cands)
     # scenes start where the previous one ends, so the joined video matches the audio exactly
     jobs = []
     for i, sc in enumerate(scenes):
@@ -590,6 +663,7 @@ def build(story_path, assets, kit_dir, cands, out_dir, workers=None):
         sc2 = dict(sc)
         f0, f1 = round(sc["start"] * FPS), round(end * FPS)      # frame-exact, so picture and sound never drift
         sc2["frames"] = f1 - f0
+        sc2["snap_first"] = i > 0
         sc2["dur"] = (f1 - f0) / FPS
         sc2.pop("voice")
         jobs.append({"scene": sc2, "out": os.path.join(work, f"s{i:03d}.mp4")})
@@ -607,7 +681,7 @@ def build(story_path, assets, kit_dir, cands, out_dir, workers=None):
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "concat", "-safe", "0", "-i",
                     os.path.join(work, "list.txt"), "-c", "copy", silent], check=True)
     audio = os.path.join(work, "audio.wav")
-    mix(scenes, placed, music_runs, length, audio)
+    mix(scenes, placed, music_runs, length, audio, drops)
     final = os.path.join(out_dir, "video.mp4")
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", silent, "-i", audio, "-map", "0:v", "-map", "1:a",
                     "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", final + ".tmp.mp4"], check=True)
