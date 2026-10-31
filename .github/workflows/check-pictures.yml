@@ -18,7 +18,7 @@ on:
         default: ""
 
 permissions:
-  contents: read
+  contents: write
 
 env:
   PYTHONPATH: ${{ github.workspace }}/program   # the program lives in program/
@@ -44,6 +44,12 @@ jobs:
           git clone -q --depth 1 -b "pics-${{ inputs.slug }}" "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" assets
           python -m maker.picture_check test story_then.txt assets "${{ inputs.model }}" ${{ inputs.keys }} | tee result.txt
           echo '```' >> $GITHUB_STEP_SUMMARY; cat result.txt >> $GITHUB_STEP_SUMMARY; echo '```' >> $GITHUB_STEP_SUMMARY
+      - name: Save the result (branch check-results)
+        if: always()
+        run: |
+          mkdir -p res && cp result.txt check_test.json res/ 2>/dev/null || true
+          cd res && git init -q -b check-results && git config user.name "video-maker" && git config user.email "video-maker@users.noreply.github.com"
+          git add -A && git commit -q -m "Checker test" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:check-results
       - uses: actions/upload-artifact@v4
         if: always()
         with:
