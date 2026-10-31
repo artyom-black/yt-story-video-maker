@@ -65,7 +65,7 @@ jobs:
             curl -sSL -b cookies.txt -A "$UA" -e "https://gdc.sonniss.com/" --max-time 2400 -o "$Z" -w "part $i http %{http_code} %{size_download} bytes %{speed_download} B/s\n" "https://downloads.sonniss.com/$Z" >> info/log.txt 2>&1
             if ! unzip -tq "$Z" > /dev/null 2>&1; then
               echo "part $i: not a zip from the site ($(head -c 200 "$Z" | tr -dc '[:print:]'))" >> info/log.txt
-              rm -f "$Z"; gdown --fuzzy "https://drive.google.com/file/d/${DRIVE[$i]}/view" -O "$Z" >> info/log.txt 2>&1
+              rm -f "$Z"; gdown "${DRIVE[$i]}" -O "$Z" >> info/log.txt 2>&1
             fi
             ls -la "$Z" >> info/log.txt 2>&1 || { echo "part $i: download failed" >> info/log.txt; continue; }
             unzip -Z1 "$Z" >> info/all_files.txt 2>> info/log.txt
