@@ -24,30 +24,49 @@ jobs:
       - name: Download and keep the useful sounds
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          set -e
           mkdir -p sonniss info
-          KEEP='whoosh|swoosh|swish|woosh|whip|swipe|impact|hit|boom|braam|thud|punch|slam|riser|rise|uplifter|build|sweep|reverse|pop|click|tick|blip|ui|interface|notification|coin|cash|money|register|ching|bell|ding|chime|sparkle|glitter|shimmer|magic|scratch|record|vinyl|stinger|sting|trailer|transition|sub|drop|bass|camera|shutter|flash|fail|wrong|buzzer|cartoon|comedy|boing|splat|gasp|crowd|laugh|cheer|applause'
-          pip install -q gdown
+          pip install -q playwright gdown && python -m playwright install --with-deps chromium > /dev/null 2>&1
+          KEEP='whoosh|swoosh|swish|woosh|whip|swipe|impact|hit|boom|braam|thud|punch|slam|riser|rise|uplifter|build|sweep|reverse|pop|click|tick|blip|ui|interface|notification|coin|cash|money|register|ching|bell|ding|chime|sparkle|glitter|shimmer|magic|scratch|record|vinyl|stinger|sting|trailer|transition|sub|drop|bass|camera|shutter|flash|fail|wrong|buzzer|cartoon|comedy|boing|splat|gasp'
           DRIVE=(x 1ndDWhCoq0NgkrJH6ku5MSA65zinEby9r 1s9GAn7KBS4jr4NlF_ggTYDrXySCg6HXS 16PX5T28pQaEs6S8j-m6ArR16JwQCQNNB 1HqMHc0o9Uxv5SmR3KQzx2nHIyrn3sW6M 1XL8zDflfC86Asd4D7G1T5N1DJ6hNLQVc)
           for i in 1 2 3 4 5; do
             Z="Sonniss.com-GDC2026-GameAudioBundle${i}of5.zip"
-            # the official mirror on Google Drive (the main site blocks scripts with a browser check)
-            curl -sSfL -A "Mozilla/5.0" -o "$Z" "https://downloads.sonniss.com/$Z" || gdown -q --fuzzy "https://drive.google.com/file/d/${DRIVE[$i]}/view" -O "$Z"
-            ls -la "$Z"
-            unzip -Z1 "$Z" >> info/all_files.txt
+            # through a real browser (the site checks for one), else the official Google Drive mirror
+            python - "$Z" <<'PY' >> info/log.txt 2>&1
+          import sys, asyncio
+          from playwright.async_api import async_playwright
+          z = sys.argv[1]
+          async def main():
+              async with async_playwright() as p:
+                  b = await p.chromium.launch()
+                  ctx = await b.new_context(accept_downloads=True, user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36")
+                  pg = await ctx.new_page()
+                  await pg.goto("https://gdc.sonniss.com/", timeout=90000)
+                  await pg.wait_for_timeout(10000)
+                  async with pg.expect_download(timeout=3600000) as dl:
+                      await pg.click(f"a[href$='{z}']", timeout=60000)
+                  d = await dl.value
+                  await d.save_as(z)
+                  print("browser download ok", z)
+                  await b.close()
+          asyncio.run(main())
+          PY
+            [ -s "$Z" ] || gdown --fuzzy "https://drive.google.com/file/d/${DRIVE[$i]}/view" -O "$Z" >> info/log.txt 2>&1
+            ls -la "$Z" >> info/log.txt 2>&1 || { echo "part $i: download failed" >> info/log.txt; continue; }
+            unzip -Z1 "$Z" >> info/all_files.txt 2>> info/log.txt
             unzip -Z1 "$Z" | grep -iE "($KEEP)" | grep -iE '\.(wav|flac|aif|aiff|mp3|ogg)$' > keep.txt || true
-            echo "part $i: $(wc -l < keep.txt) kept"
-            if [ -s keep.txt ]; then unzip -q -o "$Z" -d sonniss/raw -@ < keep.txt || true; fi
+            echo "part $i: $(wc -l < keep.txt) kept" >> info/log.txt
+            if [ -s keep.txt ]; then unzip -q -o "$Z" -d sonniss/raw -@ < keep.txt >> info/log.txt 2>&1 || true; fi
             rm -f "$Z"
+            df -h . | tail -1 >> info/log.txt
           done
-          du -sh sonniss
-          find sonniss -type f | wc -l
+          du -sh sonniss >> info/log.txt; find sonniss -type f | wc -l >> info/log.txt
+          [ -d sonniss/raw ] || exit 1
       - name: Licence and file list
         if: always()
         run: |
           mkdir -p info && cd info
           pip install -q playwright && python -m playwright install --with-deps chromium > /dev/null 2>&1
-          python - <<'PY' || true
+          [ -f licence.txt ] || python - <<'PY' || true
           import asyncio
           from playwright.async_api import async_playwright
           async def main():
