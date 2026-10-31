@@ -1,0 +1,50 @@
+name: Sound library (download)
+
+# Downloads the free professional Sonniss GDC 2026 bundle (royalty-free, commercial use allowed, no credit
+# needed; sounds may only be shared inside finished videos, so they stay in the private Actions cache) and
+# keeps the sounds a YouTube edit needs: whooshes, impacts, risers, pops, clicks, coins, bells, scratches.
+# The list of every file and the licence text are saved on branch sound-library-info.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  download:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - name: Already downloaded?
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: sonniss
+          key: sonniss-gdc2026-v1
+      - name: Download and keep the useful sounds
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          set -e
+          mkdir -p sonniss info
+          KEEP='whoosh|swoosh|swish|woosh|whip|swipe|impact|hit|boom|braam|thud|punch|slam|riser|rise|uplifter|build|sweep|reverse|pop|click|tick|blip|ui|interface|notification|coin|cash|money|register|ching|bell|ding|chime|sparkle|glitter|shimmer|magic|scratch|record|vinyl|stinger|sting|trailer|transition|sub|drop|bass|camera|shutter|flash|fail|wrong|buzzer|cartoon|comedy|boing|splat|gasp|crowd|laugh|cheer|applause'
+          for i in 1 2 3 4 5; do
+            Z="Sonniss.com-GDC2026-GameAudioBundle${i}of5.zip"
+            curl -sSfL -A "Mozilla/5.0" -o "$Z" "https://downloads.sonniss.com/$Z"
+            ls -la "$Z"
+            unzip -Z1 "$Z" >> info/all_files.txt
+            unzip -Z1 "$Z" | grep -iE "($KEEP)" | grep -iE '\.(wav|flac|aif|aiff|mp3|ogg)$' > keep.txt || true
+            echo "part $i: $(wc -l < keep.txt) kept"
+            if [ -s keep.txt ]; then unzip -q -o "$Z" -d sonniss/raw -@ < keep.txt || true; fi
+            rm -f "$Z"
+          done
+          du -sh sonniss
+          find sonniss -type f | wc -l
+      - name: Licence and file list
+        if: always()
+        run: |
+          mkdir -p info && cd info
+          curl -sSL -A "Mozilla/5.0" https://sonniss.com/gdc-bundle-license/ -o licence.html || true
+          python3 -c "import re,html;t=open('licence.html',errors='ignore').read();t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S);print(html.unescape(re.sub(r'<[^>]+>',' ',t)))" | tr -s ' \n' > licence.txt || true
+          [ -d ../sonniss/raw ] && (cd ../sonniss/raw && find . -type f | sort > ../../info/kept_files.txt) || true
+          git init -q -b sound-library-info && git config user.name "video-maker" && git config user.email "video-maker@users.noreply.github.com"
+          git add -A && git commit -q -m "Sonniss bundle: file list and licence" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:sound-library-info
