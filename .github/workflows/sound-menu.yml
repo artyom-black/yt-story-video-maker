@@ -1,7 +1,7 @@
 name: Sound menu
 
 # Makes the sound menu video: for every kind of moment, the 3 best professional sounds from the library
-# (after "Sound library (download)" ran once). Saved on branch sound-menu (sound_menu.mp4 + menu.json).
+# (after "Sound library (download)" ran once). Saved on branch sound-menu (encrypted sound_menu.mp4.enc + menu.json).
 on:
   workflow_dispatch:
 
@@ -34,8 +34,10 @@ jobs:
           git clone -q --depth 1 -b pics-001-1-vs-1000000-life-in-the-middle-ages "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" pics || true
           PIC=$(ls pics/pictures/scene_002_*.png 2>/dev/null | head -1)
           python -m maker.sound_menu sonniss/raw menu "$PIC"
-      - name: Save
+      - name: Save (the video is encrypted: the sounds may only be shared inside finished videos)
         run: |
           cd menu && rm -rf sound_menu.mp4.parts
+          openssl cms -encrypt -binary -aes256 -in sound_menu.mp4 -out sound_menu.mp4.enc -outform DER ../program/keys/menu_cert.pem
+          rm sound_menu.mp4
           git init -q -b sound-menu && git config user.name "video-maker" && git config user.email "video-maker@users.noreply.github.com"
           git add -A && git commit -q -m "Sound menu" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:sound-menu
