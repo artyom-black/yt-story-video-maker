@@ -215,6 +215,12 @@ jobs:
         with:
           path: sound_candidates
           key: sound-candidates-v3
+      - name: Professional sound library (Sonniss, private cache)
+        if: steps.ready.outputs.go == 'true'
+        uses: actions/cache/restore@v4
+        with:
+          path: sonniss
+          key: sonniss-gdc2026-v1
       - name: Sound kit (measured, chosen by rules)
         if: steps.ready.outputs.go == 'true'
         run: |
@@ -222,6 +228,8 @@ jobs:
           python -m maker.sound_kit sound_candidates kit
       - name: Edit
         if: steps.ready.outputs.go == 'true'
+        env:
+          PRO_SOUNDS: ${{ github.workspace }}/sonniss/raw
         run: python -m maker.slideshow "${{ needs.prepare.outputs.story }}" assets kit sound_candidates out
       - name: Package
         if: steps.ready.outputs.go == 'true'

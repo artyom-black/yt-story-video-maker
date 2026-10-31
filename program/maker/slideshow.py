@@ -230,7 +230,7 @@ def make_plan(st, assets, kit_dir, cands):
     pack_dir = os.path.join(kit_dir, "pack")
     if not os.path.exists(os.path.join(pack_dir, "pack.json")):
         from .sfx_pack import build as build_pack
-        build_pack(cands, pack_dir)
+        build_pack(cands, pack_dir, os.environ.get("PRO_SOUNDS"))
     pack = json.load(open(os.path.join(pack_dir, "pack.json")))
     placed, drops, booms = [], [], []
     sfx.sort()

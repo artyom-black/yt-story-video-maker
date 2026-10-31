@@ -1,0 +1,41 @@
+name: Sound menu
+
+# Makes the sound menu video: for every kind of moment, the 3 best professional sounds from the library
+# (after "Sound library (download)" ran once). Saved on branch sound-menu (sound_menu.mp4 + menu.json).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  PYTHONPATH: ${{ github.workspace }}/program
+
+jobs:
+  menu:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q numpy pillow
+      - name: The library
+        uses: actions/cache/restore@v4
+        with:
+          path: sonniss
+          key: sonniss-gdc2026-v1
+          fail-on-cache-miss: true
+      - name: Make the menu
+        run: |
+          git clone -q --depth 1 -b pics-001-1-vs-1000000-life-in-the-middle-ages "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" pics || true
+          PIC=$(ls pics/pictures/scene_002_*.png 2>/dev/null | head -1)
+          python -m maker.sound_menu sonniss/raw menu "$PIC"
+      - name: Save
+        run: |
+          cd menu && rm -rf sound_menu.mp4.parts
+          git init -q -b sound-menu && git config user.name "video-maker" && git config user.email "video-maker@users.noreply.github.com"
+          git add -A && git commit -q -m "Sound menu" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:sound-menu
