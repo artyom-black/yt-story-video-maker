@@ -1,0 +1,26 @@
+name: Sound library (look)
+
+# Looks at the Sonniss free GDC bundle page and saves what it finds (links, sizes) on branch sound-library-info.
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Page to look at"
+        default: "https://gdc.sonniss.com/"
+
+permissions:
+  contents: write
+
+jobs:
+  look:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Look
+        run: |
+          mkdir info && cd info
+          curl -sSL -A "Mozilla/5.0" -D headers.txt "${{ inputs.url }}" -o page.html || true
+          grep -oE 'href="[^"]+"' page.html | sort -u > links.txt || true
+          grep -oiE 'https?://[^" ]+\.(zip|torrent|7z|rar)[^" ]*' page.html | sort -u > files.txt || true
+          wc -c page.html; head -50 links.txt
+          git init -q -b sound-library-info && git config user.name "video-maker" && git config user.email "video-maker@users.noreply.github.com"
+          git add -A && git commit -q -m "Sonniss page" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:sound-library-info
