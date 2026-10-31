@@ -25,31 +25,35 @@ from PIL import Image
 
 MODEL = os.environ.get("CHECK_MODEL", "@cf/meta/llama-4-scout-17b-16e-instruct")
 
-QUESTION = """You are the strict quality checker for a cartoon YouTube video. The picture was drawn by an
-image AI from this description:
+QUESTION = """You are the quality checker for a cartoon YouTube video. The picture was drawn by an image AI
+from this description:
 
 "{desc}"
 
 {kai}
-Look very carefully at the picture and check for these mistakes:
+Answer "redo" ONLY for serious mistakes that a viewer would notice in one second:
 1. A person or animal with the wrong number of heads, faces, arms, hands or legs, or two bodies melted together.
 2. A person's face mixed with an animal or object (for example an animal nose growing out of a person's face).
-3. An animal or heavy object floating in the air with nothing holding it up.
+3. An animal, person or heavy object floating in the air with nothing holding it up, or fire burning somewhere
+   fire cannot be (fire is fine in a fireplace, hearth, torch, candle or campfire).
 4. {red}
-5. The picture clearly does not show what the description asks for (wrong place, wrong main subject, a dark or indoor scene drawn outdoors in daylight).
-6. Any written words, letters or signs.
+5. The picture shows something clearly different from the description: the wrong place (indoors drawn outdoors,
+   night drawn as day), the main person or animal missing, or the main action clearly not happening
+   (for example someone standing when the description says he is lying in bed).
+6. Written words, letters or signs.
 
-Small style details are fine. Only report real, clearly visible mistakes a viewer would notice.
+These are NOT mistakes, never "redo" for them: slightly different colours of small items, small details missing,
+extra harmless background details, the style, a person's exact age or hair length, shoes or accessories.
 Answer with JSON only, no other text:
-{{"what_i_see": "<one short sentence>", "problems": ["<each real mistake, short>"], "verdict": "ok" or "redo"}}"""
+{{"what_i_see": "<one short sentence>", "problems": ["<each serious mistake, short>"], "verdict": "ok" or "redo"}}"""
 
 KAI_NOTE = ("The main character Kai is a young man with short black hair who wears a deep red tunic. "
             "There must be exactly one Kai.")
 KAI_TWO = ("The main character Kai appears twice on purpose: once poor in a patched red wool tunic and once rich in "
            "red velvet with gold. Both must have the same face: a young man with short black hair.")
-RED_TWO = "Someone other than the two versions of Kai wears red clothes."
-RED_KAI = "Kai appears twice, or someone who is not Kai also wears red clothes."
-RED_NO_KAI = "Anyone wears bright red clothes (no red-dressed person should be in this picture)."
+RED_TWO = "One of the two Kais is not dressed in red, or a third person wears mostly red clothes."
+RED_KAI = "Kai appears twice, or another person (not Kai) wears mostly red clothes."
+RED_NO_KAI = "A person wears mostly bright red clothes (nobody in this picture should be dressed in red)."
 
 
 def _image_data_url(path, max_w=768):

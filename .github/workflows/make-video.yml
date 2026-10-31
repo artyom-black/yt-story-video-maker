@@ -15,10 +15,8 @@ on:
       redo:
         description: "Pictures to draw again, numbers from the picture sheets (e.g. 12, 32b, T1)"
         default: ""
-  schedule:                    # GitHub sometimes skips a scheduled run, so there are backups;
-    - cron: "20 0 * * *"       # a run with nothing to do finishes in a few seconds
-    - cron: "40 3 * * *"
-    - cron: "40 9 * * *"
+  schedule:                    # every 2 hours: Cloudflare's free allowance doesn't always come back at the same
+    - cron: "20 */2 * * *"     # time, so the program keeps trying; a run with nothing to do ends in seconds
 
 permissions:
   contents: write

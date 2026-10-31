@@ -93,7 +93,7 @@ def kai_clothes(text, st):
     poor = bool(re.search(r"(?<!RICH )\bKAI\b", text))
     if rich and poor:
         return (f"Poor Kai wears exactly the clothes from image 1: {st.costume}. Rich Kai wears exactly the clothes "
-                f"from image 2: {st.costume_rich}. ")
+                f"from image 2: {st.costume_rich}. Both of them are dressed in deep red. ")
     if rich:
         return (f"Kai wears exactly the clothes from image 1: {st.costume_rich}. Keep his face and hair exactly as "
                 f"in image 0. ")

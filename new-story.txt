@@ -6,7 +6,7 @@ COSTUME_RICH: a long deep red velvet robe embroidered with gold thread, a white 
 CAST: COW = a big brown cow with a white patch on her forehead, short curved horns and a small brass bell on a rope around her neck
 CAST: HOUSE = the inside of a small dark medieval peasant longhouse: rough wooden walls, a beaten earth floor, a small fire in a stone ring in the middle, straw beds along the left wall, a low wooden rail and an animal stall at the right end, a thatched roof with smoke under it
 CAST: GREAT HALL = the inside of a huge medieval castle great hall: tall stone walls with colourful tapestries, a giant fireplace, high wooden roof beams, long tables with white cloths, a raised high table at the end under a blue and gold canopy, big glass windows
-CAST: BEDCHAMBER = a rich medieval castle bedroom: a huge four-poster bed with thick blue curtains and white linen and fur blankets, painted walls with patterns, a fireplace, a carved wooden chest, a glass window
+CAST: BEDCHAMBER = a rich medieval castle bedroom: a huge four-poster bed with thick blue curtains and white linen and fur blankets, painted walls with patterns, a stone fireplace on the wall far from the bed, a carved wooden chest, a glass window
 CAST: SERVANT = a neat young medieval servant about 25, short brown hair, clean-shaven, a green and white striped tunic with a small badge, always polite and calm
 CAST: MOTHER = a medieval peasant woman about 35 with a kind tired face and brown hair under a plain off-white linen headscarf, a long dull green wool dress and a brown apron
 CAST: REEVE = a stern medieval village reeve, a broad man about 45 with a short black beard and thick eyebrows, a brown leather jerkin over a grey tunic, holding a wooden staff
@@ -31,16 +31,16 @@ THEN: (at "breathing") extreme close-up of the nose and nostrils of the COW brea
 KAI: Four in the morning. I'm freezing, and something huge is breathing on my face.
 
 # SCENE 2
-PICTURE: close-up of RICH KAI waking up slowly in the BEDCHAMBER, smiling, golden morning light through the bed curtains, warm and cozy, only one person
+PICTURE: close-up of RICH KAI lying in bed under fur blankets in the BEDCHAMBER, just waking up, head on a white pillow, smiling, golden morning light through the bed curtains, only one person
 MOOD: happy
 TEXT: $1,000,000
 SFX: whoosh
-THEN: (at "silk") RICH KAI stretching happily in the huge bed in the BEDCHAMBER, soft white linen and fur blankets around him
+THEN: (at "silk") RICH KAI alone, one person only, sitting up in the huge bed in the BEDCHAMBER and stretching his arms happily, soft white linen and fur blankets around him
 THEN: (at "warming my shoes") the SERVANT kneeling by the fireplace in the BEDCHAMBER, holding a pair of soft red leather shoes close to the warm fire
 KAI: And at the same moment, I'm waking up in silk and fur, and someone is warming my shoes by the fire.
 
 # SCENE 3
-PICTURE: split image: on the left KAI in the dark HOUSE next to the COW, on the right RICH KAI in the bright BEDCHAMBER, both looking at the viewer
+PICTURE: split image: on the left KAI in his patched red wool tunic in the dark HOUSE next to the COW, on the right RICH KAI in red velvet in the bright BEDCHAMBER, both looking at the viewer
 MOOD: epic
 MUSIC: epic
 TEXT: 1346
