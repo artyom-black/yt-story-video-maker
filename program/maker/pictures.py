@@ -135,7 +135,7 @@ def cast_in(text, cast, first_index):
         if m:
             found.append((m.start(), -len(name), name))
     for _pos, _l, name in sorted(found):                     # in the order they appear in the sentence
-        if first_index + len(used) < 4:
+        if first_index + len(used) < 4 and not is_place(cast[name]):
             idx = first_index + len(used)
             used.append(name)
             text = re.sub(rf"\b{re.escape(name)}\b",
@@ -145,6 +145,13 @@ def cast_in(text, cast, first_index):
             text = re.sub(rf"\b{re.escape(name)}\b", f"{name.lower()} ({cast[name]})", text, count=1)
             text = re.sub(rf"\b{re.escape(name)}\b", name.lower(), text)
     return text, used
+
+
+def is_place(desc):
+    """Places (a room, a house) are described in words, not shown as a reference picture: a reference picture of
+    a room makes the AI copy its exact camera view and any people in it into every picture."""
+    return not re.search(r"stick figure|\bman\b|\bwoman\b|\bboy\b|\bgirl\b|\bcow\b|\box(en)?\b|\bdog\b|"
+                         r"\bhorse\b|\bpig\b|\bsheep\b|\bgoat\b|\bcat\b|\bbird\b|\bfalcon\b", desc, re.I)
 
 
 def cast_ref(path):
@@ -247,6 +254,8 @@ def jobs(st, assets):
     # everyone and everything that comes back more than once gets one reference picture first
     cast_paths = {}
     for name, desc in st.cast.items():
+        if is_place(desc):
+            continue
         if re.search(r"stick figure|\bman\b|\bwoman\b|\bboy\b|\bgirl\b", desc):   # a person: alone, nothing around
             prompt = (f"Character reference of {desc}. One single person, the whole body from head to feet, standing "
                       f"facing the viewer, a calm normal face. Pure plain white background, nothing else. {STYLE}")
