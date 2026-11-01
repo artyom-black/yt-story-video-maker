@@ -15,11 +15,12 @@ REFS = [os.path.join(REPO, "main-character.jpg"), os.path.join(ROOT, "characters
 INSTRUCTION = ("The same stick figure character as in image 0 and image 1: exactly the same round white head, the same "
                "messy brown hair, the same brown patched tunic with a rope belt, and exactly the same legs as in image 1: "
                "two thin white legs with a black outline and small simple feet, drawn in exactly the same way. "
-               "Night in a muddy medieval field under a dark blue sky with stars and a full moon. He stands in the mud, "
-               "completely exhausted, shoulders down, bent forward, covered in mud and sweat, a sad destroyed face, "
-               "holding a sickle hanging down in one hand. His whole body from head to feet is visible, centred, the "
-               "same size and position in the picture as in image 1. Same drawing style as image 1. 16:9 picture. "
-               "Absolutely no text, no letters, no watermark.")
+               "Night in a medieval harvest field, lit by ONE full moon in a dark blue sky with stars. Behind him you can "
+               "see everything he did today: a whole field of wheat already cut, long rows of tied wheat bundles standing "
+               "in stooks, a wooden cart piled high with wheat bundles, a sickle stuck in the ground. He stands in front "
+               "of it all, completely exhausted, shoulders down, covered in mud and sweat, a sad destroyed face. His whole "
+               "body from head to feet is visible, centred, the same size and position in the picture as in image 1. "
+               "Same drawing style as image 1. Only one moon. 16:9 picture. Absolutely no text, no letters, no watermark.")
 
 if __name__ == "__main__":
     out = sys.argv[1]
