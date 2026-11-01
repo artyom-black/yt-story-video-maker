@@ -31,7 +31,7 @@ Answer with JSON only, no other text:
   "people_in_red": <how many people wear mostly red clothes>,
   "young_men_with_short_black_hair": <how many>,
   "broken_body": <true if any person or animal has two heads, extra or missing arms, hands or legs, or two bodies melted together>,
-  "face_mixed": <true if a person's face has an animal part or object growing out of it>,
+  "face_mixed": <true if a person has an animal's head or face, or an animal part or object growing out of their face>,
   "floating": <true if an animal, a person or a heavy object hangs in the air with nothing holding it>,
   "indoors": <true if the scene is inside a building or room>,
   "has_text": <true if there are written words or letters>,
@@ -114,7 +114,8 @@ def _parse(answer, description, n_kai):
         problems.append("should be indoors but is drawn outside")
     if "indoors" in d and want_out and yes("indoors"):
         problems.append("should be outdoors but is drawn inside")
-    return {"ok": not problems, "problems": problems, "seen": str(d.get("what_i_see", ""))}
+    severe = any(w in p_ for p_ in problems for w in ("broken body", "face mixed", "real photo", "Kai appears"))
+    return {"ok": not problems, "severe": severe, "problems": problems, "seen": str(d.get("what_i_see", ""))}
 
 
 def check(path, description, has_kai, model=MODEL):

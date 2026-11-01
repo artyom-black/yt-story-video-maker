@@ -153,6 +153,54 @@ def picture_files(st, assets):
     return out
 
 
+SPLIT = re.compile(r"^split (?:image|screen):\s*on the left (.+?);?\s*,?\s*on the right (.+)$", re.I | re.S)
+
+
+def split_prompt(pic, st, costume_ref, costume_rich_ref, cast_paths, thumb=False):
+    """'split image: on the left X, on the right Y' -> two pictures drawn separately and put side by side.
+    (Drawing both halves in one go mixes them up: Kai with a cow's head, two Kais in one body.)"""
+    m = SPLIT.match(pic.strip())
+    if not m:
+        return None
+    halves = []
+    for part in (m.group(1).strip(" ,;"), m.group(2).strip(" ,;")):
+        text, refs, first = kai_refs(part, st, costume_ref, costume_rich_ref)
+        text, used = cast_in(text, st.cast, first)
+        refs = refs + [cast_ref(cast_paths[n]) for n in used]
+        if thumb:
+            prompt = f"{text}. One person only. {kai_clothes(part, st)}Tall picture. {THUMB_STYLE}"
+        else:
+            prompt = (f"{text}. One person only. {_place_rule(st)} {kai_clothes(part, st)}{ONLY_KAI_RED} {FACE_RULE} "
+                      f"Tall picture. {STYLE}")
+        halves.append([prompt, refs])
+    return "SPLIT||" + json.dumps(halves)
+
+
+def draw(prompt, w, h, seed, refs, out):
+    """Draw one picture; a SPLIT prompt draws two halves and joins them with a white line in the middle."""
+    if not prompt.startswith("SPLIT||"):
+        return _gen(prompt, w, h, seed, refs, out)
+    halves = json.loads(prompt[len("SPLIT||"):])
+    hw = (w // 2) // 16 * 16
+    parts = []
+    for j, (pr, rf) in enumerate(halves):
+        tmp = out + f".half{j}.png"
+        _gen(pr, hw, h, seed + 101 * j, rf, tmp)
+        parts.append(tmp)
+    canvas = Image.new("RGB", (w, h), (255, 255, 255))
+    for j, tmp in enumerate(parts):
+        im = Image.open(tmp).convert("RGB")
+        s = max((w // 2) / im.width, h / im.height)
+        im = im.resize((int(im.width * s) + 1, int(im.height * s) + 1), Image.LANCZOS)
+        x0 = (im.width - w // 2) // 2
+        canvas.paste(im.crop((x0, 0, x0 + w // 2, h)), (j * (w // 2), 0))
+        os.remove(tmp)
+    bar = max(6, w // 160)
+    canvas.paste((255, 255, 255), (w // 2 - bar // 2, 0, w // 2 + bar // 2, h))
+    canvas.save(out + ".part.png")
+    os.replace(out + ".part.png", out)
+
+
 def jobs(st, assets):
     """Every picture the video needs, in the order they are made."""
     costume = os.path.join(assets, "costume.png")
@@ -190,6 +238,9 @@ def jobs(st, assets):
             prompt = f"{text}. {_place_rule(st)} {kai_clothes(pic, st)}{ONLY_KAI_RED} {FACE_RULE} 16:9 picture. {STYLE}"
             if os.path.exists(_named(path, legacy)):          # already drawn with the older rules: keep it
                 prompt = legacy
+            sp = split_prompt(pic, st, costume_ref, costume_rich_ref, cast_paths)
+            if sp:
+                prompt = sp
             check_desc = pic                         # what the checker reads: cast names spelled out
             for n_, d_ in st.cast.items():
                 check_desc = re.sub(rf"\b{re.escape(n_)}\b", f"{n_.lower()} ({d_})", check_desc)
@@ -200,6 +251,7 @@ def jobs(st, assets):
         text, used = cast_in(text, st.cast, first)
         refs = refs + [cast_ref(cast_paths[n]) for n in used]
         prompt = f"{text}. {kai_clothes(idea, st)}{THUMB_STYLE}"
+        prompt = split_prompt(idea, st, costume_ref, costume_rich_ref, cast_paths, thumb=True) or prompt
         out.append((f"thumbnail {i + 1}", _named(path, prompt), prompt, W, H, refs, idea))
     # the costume entry: (name, path, prompt, w, h, refs) like the others
     c = out[0]
@@ -265,15 +317,15 @@ def run(story_path, assets):
             extra = 104729 * (1 if redone.get(lab) == "pending" else 0)
             if not os.path.exists(path):
                 best = None
-                for attempt in range(2):            # draw, check, and draw once more if the checker finds a mistake
+                for attempt in range(3):            # draw, check, draw again if the checker finds a mistake
                     tmp = path + f".try{attempt}.png"
                     try:
-                        _gen(prompt, w, h, seed=1000 + i * 17 + 7919 * attempt + extra, refs=refs, out=tmp)
+                        draw(prompt, w, h, seed=1000 + i * 17 + 7919 * attempt + extra, refs=refs, out=tmp)
                     except AllowanceUsedUp:
                         raise
                     except Exception:
                         try:
-                            _gen(prompt + " Friendly and tasteful.", w, h, seed=5000 + i * 31 + 7919 * attempt + extra,
+                            draw(prompt if prompt.startswith("SPLIT||") else prompt + " Friendly and tasteful.", w, h, seed=5000 + i * 31 + 7919 * attempt + extra,
                                  refs=refs, out=tmp)
                         except AllowanceUsedUp:
                             raise
@@ -293,7 +345,7 @@ def run(story_path, assets):
                         res = {"ok": True, "problems": ["checker error: " + str(ex)[:120]]}
                     if attempt == 0:
                         tried += 1
-                        rejected += 0 if res["ok"] else 1
+                        rejected += 1 if res.get("severe") else 0
                         if tried >= 12 and rejected / tried > 0.6 and checker_on:
                             checker_on = False
                             print("WARNING: the checker rejected most pictures - switched off for this run, "
@@ -307,12 +359,12 @@ def run(story_path, assets):
                         best = (tmp, res)
                     else:
                         os.remove(tmp)
-                    if res["ok"]:
-                        break
+                    if res["ok"] or (attempt >= 1 and not res.get("severe")):
+                        break                       # small problems: 2 tries; monsters: 3 tries
                 if best is None:
                     continue
                 os.replace(best[0], path)
-                checks[key] = {"status": "ok" if best[1]["ok"] else "kept_with_problems",
+                checks[key] = {"status": "ok" if best[1]["ok"] else "bad" if best[1].get("severe") else "kept_with_problems",
                                "problems": best[1]["problems"], "tries": attempt + 1}
                 if redone.get(lab) == "pending":
                     redone[lab] = key

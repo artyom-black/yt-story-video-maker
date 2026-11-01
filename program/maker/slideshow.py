@@ -232,6 +232,9 @@ def make_plan(st, assets, kit_dir, cands):
     moods = smooth_music(st, voices)
     t = 0.1
     scenes, sfx, music_runs = [], [], []
+    checks_path = os.path.join(assets, "checks.json")
+    checks = json.load(open(checks_path)) if os.path.exists(checks_path) else {}
+    last_good, last_grade = None, ""
     prev_music = None
     side = 0
     for idx, s in enumerate(st.scenes):
@@ -246,7 +249,15 @@ def make_plan(st, assets, kit_dir, cands):
         pics, switch, grades = [], [], []
         for k, (word, _pic) in enumerate(s.all_pictures):
             key = f"scene_{s.number:03d}" + ("" if k == 0 else f"x{k + 1}")
-            pics.append(files[key])
+            path = files[key]
+            if checks.get(os.path.basename(path), {}).get("status") == "bad" or not os.path.exists(path):
+                if not (pics or last_good):              # a broken picture is never shown: keep the one before
+                    pics.append(path)
+                    switch.append(0.0); grades.append(life_grade(_pic))
+                elif k == 0:
+                    pics.append(last_good); switch.append(0.0); grades.append(last_grade)
+                continue
+            pics.append(path)
             grades.append(life_grade(_pic))
             switch.append(0.0 if k == 0 else (word_time(s.line, word, voice) if word else None))
         # pictures without a word share the remaining time evenly
@@ -256,6 +267,7 @@ def make_plan(st, assets, kit_dir, cands):
         order = sorted(range(len(pics)), key=lambda k: switch[k])
         pics, switch = [pics[k] for k in order], [max(0.0, switch[k]) for k in order]
         grades = [grades[k] for k in order]
+        last_good, last_grade = pics[-1], grades[-1]
         # every picture stays long enough to take in (MrBeast is fast, but you always know what you're seeing)
         hold = MIN_PICTURE if s.number > HOOK_SCENES else MIN_PICTURE_HOOK
         for k in range(1, len(switch)):
