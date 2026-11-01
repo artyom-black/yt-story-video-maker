@@ -46,7 +46,7 @@ def _place_rule(st):
             f"mention. Time period, only for clothes, tools and buildings: {st.era}.")
 
 
-CHECK_VERSION = 3          # raise when the checker learns a new kind of mistake: old pictures get looked at again
+CHECK_VERSION = 4          # raise when the checker learns a new kind of mistake: old pictures get looked at again
 
 
 class AllowanceUsedUp(Exception):

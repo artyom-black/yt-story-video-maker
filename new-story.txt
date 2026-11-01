@@ -110,7 +110,7 @@ THEN: (at "candles") a castle servant in brown carefully lighting a long row of 
 KAI: And this guy isn't alone. A great lord's household can be over a hundred people. Cooks, grooms for the horses, guards, musicians, even someone whose whole job is the candles.
 
 # SCENE 11
-PICTURE: in the BEDCHAMBER, RICH KAI washing his face in a silver bowl of warm water with rose petals floating in it, the SERVANT holding a white towel
+PICTURE: in the BEDCHAMBER, the SERVANT holding a big silver bowl of warm water with rose petals firmly in both hands, RICH KAI bending over the bowl and splashing water on his face with both hands, a white towel over the servant's shoulder
 MOOD: calm
 THEN: (at "warm water") close-up of a shiny silver bowl of steaming water with rose petals and herbs floating in it, standing on a carved wooden table in a rich castle bedroom, no people
 THEN: (at "cold stream") KAI splashing freezing water on his face at a small stream at dawn, shivering, his breath steaming
