@@ -297,7 +297,8 @@ def jobs(st, assets):
             v8 = prompt.replace(" If the description names no place, draw a simple medieval outdoor background (a wheat "
                                 "field or a muddy village lane under the sky): never a modern room, never an empty white "
                                 "background. Objects and animals never have faces.", "")
-            for older in (v8, before, legacy):                # already drawn with older rules: keep it (the checker
+            asked = label(os.path.splitext(os.path.basename(path))[0]).lower() in redo_requests()
+            for older in ([] if asked else (v8, before, legacy)):   # kept unless you asked to redraw it (the checker
                 if os.path.exists(_named(path, older)):       # looks at it again and redraws it if it's wrong)
                     prompt = older
                     break

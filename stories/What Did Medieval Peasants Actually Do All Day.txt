@@ -88,7 +88,7 @@ THEN: (at "poison") a medieval stone well in a village with a skull-and-crossbon
 KAI: Breakfast: dark bread and a cup of ale. Wait, beer for breakfast? You've heard it: the water was poison, so everyone drank beer.
 
 # SCENE 10
-PICTURE: KAI pulling a bucket of clean water up from a stone well, smiling
+PICTURE: outdoors in a sunny village lane, KAI pulling a bucket of clean water up from an old stone well, smiling
 MOOD: curious
 TEXT: MYTH
 SFX: hit
@@ -312,7 +312,7 @@ THEN: (at "sweat") close-up of sweat drops flying off KAI's face in the bright s
 KAI: And the heat. August sun, no shade, no hat, bent over all day. You sweat out everything you drink.
 
 # SCENE 41
-PICTURE: KAI cutting wheat in the lord's field in the hot afternoon sun, exhausted, the dark clouds now closer behind him
+PICTURE: in bright afternoon daylight, KAI cutting wheat in the lord's field in the hot sun, exhausted, the dark clouds now closer behind him
 MOOD: tense
 MUSIC: tense
 TEXT: 3:00 PM
@@ -353,7 +353,7 @@ THEN: (at "took their cow") a stick figure woman with grey hair crying in the do
 KAI: And when someone dies, the family must give the lord their best animal. Last month your neighbour's father died. The lord took their cow.
 
 # SCENE 46
-PICTURE: a stick figure steward in a dark red tunic riding slowly along the edge of the wheat field on a brown horse, watching the workers, stern face
+PICTURE: in bright afternoon daylight, a stick figure steward in a dark red tunic riding slowly along the edge of the golden wheat field on a brown horse, watching the workers, stern face
 MOOD: tense
 TEXT: 4:00 PM
 THEN: (at "slows down") KAI quickly bending back down to his work as the steward looks at him
