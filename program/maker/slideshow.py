@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 import math
+import re
 import os
 import shutil
 import subprocess
@@ -181,6 +182,45 @@ def smooth_music(st, voices):
             moods[k] = fill
     return moods
 
+POOR_WORDS = re.compile(r"(?<!RICH )\bKAI\b|\bHOUSE\b|MOTHER|REEVE|\bCOW\b|peasant|\bmud|village|hut\b|pottage|straw", re.I)
+RICH_WORDS = re.compile(r"RICH KAI|GREAT HALL|BEDCHAMBER|castle|\bCOOK\b|SERVANT|feast|\bgold", re.I)
+
+
+def life_grade(picture_text):
+    """$1 vs $1,000,000: the poor life looks cold, grey and dark; the rich life warm and golden.
+    Pictures showing both (split screens) stay neutral."""
+    poor = bool(POOR_WORDS.search(picture_text.replace("RICH KAI", "")))
+    rich = bool(RICH_WORDS.search(picture_text))
+    return "poor" if poor and not rich else "rich" if rich and not poor else ""
+
+
+def grade_picture(im, grade):
+    from PIL import ImageEnhance
+    if grade == "poor":                     # cold, drained of colour, darker: the worst life ever
+        im = ImageEnhance.Color(im).enhance(0.55)
+        im = ImageEnhance.Brightness(im).enhance(0.86)
+        im = Image.blend(im, Image.new("RGB", im.size, (45, 65, 95)), 0.14)
+        im = ImageEnhance.Contrast(im).enhance(1.08)
+    elif grade == "rich":                   # warm, golden, glowing
+        im = ImageEnhance.Color(im).enhance(1.22)
+        im = Image.blend(im, Image.new("RGB", im.size, (255, 195, 100)), 0.10)
+        im = ImageEnhance.Brightness(im).enhance(1.05)
+    return im
+
+
+_VIGNETTE = {}
+
+
+def vignette(size, strength):
+    if (size, strength) not in _VIGNETTE:
+        w, h = size
+        y, x = np.ogrid[:h, :w]
+        r = np.sqrt(((x - w / 2) / (w / 2)) ** 2 + ((y - h / 2) / (h / 2)) ** 2) / math.sqrt(2)
+        m = (1 - strength * np.clip((r - 0.35) / 0.65, 0, 1) ** 1.6) * 255
+        _VIGNETTE[(size, strength)] = Image.fromarray(m.astype(np.uint8), "L")
+    return _VIGNETTE[(size, strength)]
+
+
 def make_plan(st, assets, kit_dir, cands):
     kit = {c["kit_file"]: c for ch in json.load(open(os.path.join(kit_dir, "kit.json")))["roles"].values() for c in ch}
     music_info = json.load(open(os.path.join(kit_dir, "kit.json")))["music"]
@@ -201,10 +241,11 @@ def make_plan(st, assets, kit_dir, cands):
         start = t
         dur = len(voice) / SR + BREATH
         tt = word_time(s.line, s.text, voice) if s.text else None
-        pics, switch = [], []
+        pics, switch, grades = [], [], []
         for k, (word, _pic) in enumerate(s.all_pictures):
             key = f"scene_{s.number:03d}" + ("" if k == 0 else f"x{k + 1}")
             pics.append(files[key])
+            grades.append(life_grade(_pic))
             switch.append(0.0 if k == 0 else (word_time(s.line, word, voice) if word else None))
         # pictures without a word share the remaining time evenly
         for k in range(1, len(switch)):
@@ -212,6 +253,7 @@ def make_plan(st, assets, kit_dir, cands):
                 switch[k] = dur * k / len(switch)
         order = sorted(range(len(pics)), key=lambda k: switch[k])
         pics, switch = [pics[k] for k in order], [max(0.0, switch[k]) for k in order]
+        grades = [grades[k] for k in order]
         # every picture stays long enough to take in (MrBeast is fast, but you always know what you're seeing)
         hold = MIN_PICTURE if s.number > HOOK_SCENES else MIN_PICTURE_HOOK
         for k in range(1, len(switch)):
@@ -221,7 +263,7 @@ def make_plan(st, assets, kit_dir, cands):
         cam = s.camera or ("punch" if s.mood == "shock" or s.sfx == "hit" else
                            ["push", "pan", "pull", "push", "pan"][idx % 5])
         side = 1 - side if s.text else side
-        scenes.append({"n": s.number, "start": start, "dur": dur, "pics": pics, "switch": switch,
+        scenes.append({"n": s.number, "start": start, "dur": dur, "pics": pics, "switch": switch, "grades": grades,
                        "camera": cam, "mood": s.mood,
                        "text": s.text, "text_at": tt, "text_side": side, "voice": voice,
                        "phrases": phrase_starts(voice)})
@@ -342,6 +384,18 @@ def mix(scenes, placed, music_runs, length, out_wav, drops=()):
         end = min(n, a0 + seg_len)
         music[a0:end] += seg[:end - a0]
         offsets[run["file"]] = off + (a1 - a0)
+    # the $1 life: the music goes dull and far away (muffled), the $1,000,000 life gets it full and bright
+    poor = np.zeros(n, np.float32)
+    for sc in scenes:
+        g = sc.get("grades") or []
+        if g and sum(x == "poor" for x in g) * 2 > len(g):
+            poor[int(sc["start"] * SR):min(n, int((sc["start"] + sc["dur"]) * SR))] = 1.0
+    if poor.any():
+        k = int(0.6 * SR)
+        poor = np.convolve(poor, np.ones(k) / k, mode="same").clip(0, 1)
+        dull = np.convolve(music, np.ones(36) / 36, mode="same")           # ~1 kHz low-pass
+        dull = np.convolve(dull, np.ones(36) / 36, mode="same") * 1.15
+        music = music * (1 - poor) + dull * poor
     # duck the music (and loud effects) while Kai talks
     hop = SR // 100
     env = np.sqrt(np.convolve(voice ** 2, np.ones(hop) / hop, mode="same"))
@@ -555,6 +609,7 @@ def render_scene(job):
         im = im.resize((int(im.width * s), int(im.height * s)), Image.LANCZOS)
         from PIL import ImageEnhance                          # MrBeast colour: a bit more saturated and punchy
         im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.15)).enhance(1.06)
+        im = grade_picture(im, (sc.get("grades") or [""] * len(sc["pics"]))[len(pics)])
         pics.append(im)
         infos.append(analyse_picture(p))
     # one segment per picture (a new picture on its word), and shots inside each segment
@@ -610,6 +665,9 @@ def render_scene(job):
         fr = im.resize((W, H), Image.BICUBIC, box=(x0, y0, x0 + vw, y0 + vh))
         if z > 1.5:
             fr = fr.filter(ImageFilter.UnsharpMask(radius=2, percent=50, threshold=2))
+        g = (sc.get("grades") or [""] * len(pics))[seg["pic"]]
+        if g == "poor":                                   # dark, cold edges close in on the poor life
+            fr = Image.composite(fr, Image.new("RGB", fr.size, (5, 8, 14)), vignette(fr.size, 0.55))
         if boom is not None and t - boom < 0.1:           # white flash on the boom
             fr = Image.blend(fr, Image.new("RGB", fr.size, (255, 255, 255)), 0.55 * (1 - (t - boom) / 0.1))
         fr = fr.convert("RGBA")
