@@ -18,10 +18,12 @@ PROMPT = (f"Character reference sheet, one single character. {STICK}. His signat
 
 THIN = ("Character reference for a YouTube history explainer video, one single character, simple stick figure "
         "style like popular animated explainer channels: a big round white head with a clean black outline, two "
-        "round white eyes with small black pupils, simple eyebrows, a small neutral mouth, messy short brown hair. "
+        "simple eyes looking straight at the viewer (black pupils centred, not staring, not wide open), relaxed "
+        "natural eyebrows, a small gentle closed-mouth smile, a calm pleasant everyday expression like a normal "
+        "friendly guy, messy short brown hair. "
         "No clothes at all: a plain stick figure body, the torso, arms and legs drawn as single thin black lines, "
         "small round hands, small simple feet. Big head, small body. Clean confident lines, likeable. Standing "
-        "straight facing the viewer, arms relaxed at his sides, calm normal neutral face, the whole body from head "
+        "straight facing the viewer, arms relaxed at his sides, calm normal friendly face, the whole body from head "
         "to feet visible, centred. Pure plain white background, nothing else, no shadow. Absolutely no text, no "
         "letters, no watermark.")
 
