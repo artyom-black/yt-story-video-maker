@@ -1,1 +1,7 @@
-// Paste your next story here (made with template.txt), then save. The program does the rest.
+TITLE: What Did Medieval Peasants Actually Do All Day?
+CHARACTER: program/characters/stick/video1_reference.png
+CLOTHES: a simple patched brown wool tunic down to his knees with a rope belt, and brown cloth shoes
+THUMBNAIL: COW BEDROOM? | it is night inside a dark medieval peasant hut lit by a small fire; he lies in his straw bed, terrified, eyes huge, while a giant brown cow pushes its huge head right next to his face, steam coming out of its nose
+THUMBNAIL: 4 AM?! | before sunrise in a cold muddy field, dark blue sky with stars and a thin orange line of dawn; he is exhausted and miserable, dragging a heavy wooden plough through thick mud, sweat flying
+THUMBNAIL: NO PAPER? | next to a small wobbly wooden outhouse in a muddy yard, flies buzzing; he holds up a handful of green moss with a disgusted horrified face
+THUMBNAIL: STONE BREAD | inside a dark hut he bites into a hard dark loaf of bread full of little stones, one of his teeth cracking, a funny pained shocked face
