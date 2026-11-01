@@ -16,14 +16,13 @@ PROMPT = (f"Character reference sheet, one single character. {STICK}. His signat
           f"from head to feet visible, centred. Pure plain white background, nothing else, no shadow on the ground. "
           f"Absolutely no text, no letters, no watermark.")
 
-THIN = ("Character reference for a hit YouTube animated explainer channel, one single original mascot character, "
-        "minimal stick figure style: a smooth egg-shaped white head, a little taller than wide, with a bold clean "
-        "black outline; huge expressive round eyes with black pupils and a white shine; thick bold black eyebrows; "
-        "a small simple mouth; ONE big bold black curl of hair sweeping up and over the forehead like a wave, the "
-        "rest of the head bald. A small slim body: the torso is a simple plain white shape, arms and legs are "
-        "single thin black lines, small round hands, small rounded black feet. Big head, small body. Clean "
-        "confident vector lines, flat, very appealing and memorable. Standing facing the viewer, relaxed, "
-        "confident friendly smile, the whole body from head to feet visible, centred. Pure plain white background, "
+THIN = ("Character reference for a YouTube history explainer video, one single character, simple stick figure "
+        "style like popular animated explainer channels: a big round white head with a clean black outline, two "
+        "round white eyes with small black pupils, simple eyebrows, a small mouth, messy short brown hair. He is a "
+        "poor medieval peasant: a simple patched brown wool tunic down to his knees drawn as one flat shape, a "
+        "rope belt, arms and legs drawn as single thin black lines, small round hands, simple brown cloth shoes. "
+        "Big head, small body. Clean confident lines, flat colours, likeable. Standing facing the viewer, a tired "
+        "but friendly face, the whole body from head to feet visible, centred. Pure plain white background, "
         "nothing else, no shadow. Absolutely no text, no letters, no watermark.")
 
 if __name__ == "__main__":
