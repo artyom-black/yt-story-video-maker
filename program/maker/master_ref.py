@@ -16,14 +16,15 @@ PROMPT = (f"Character reference sheet, one single character. {STICK}. His signat
           f"from head to feet visible, centred. Pure plain white background, nothing else, no shadow on the ground. "
           f"Absolutely no text, no letters, no watermark.")
 
-THIN = ("Character reference for a YouTube history explainer channel, one single character, classic stick "
-        "figure style done really well: a big perfectly round white head with a clean black outline, two big round "
-        "white eyes with small black pupils, thin expressive eyebrows, a small simple smile, thick messy spiky "
-        "jet-black hair with many tufts on top of his head. The body, arms and legs are single clean thin black "
-        "lines, small round hands, small simple feet, no clothes, no colour except the black hair. The head is big "
-        "compared with the body. Clean confident lines, appealing and likeable. Standing straight facing the "
-        "viewer, arms relaxed at his sides, the whole body from head to feet visible, centred. Pure plain white "
-        "background, nothing else, no shadow. Absolutely no text, no letters, no watermark.")
+THIN = ("Character reference for a hit YouTube animated explainer channel, one single original mascot character, "
+        "minimal stick figure style: a smooth egg-shaped white head, a little taller than wide, with a bold clean "
+        "black outline; huge expressive round eyes with black pupils and a white shine; thick bold black eyebrows; "
+        "a small simple mouth; ONE big bold black curl of hair sweeping up and over the forehead like a wave, the "
+        "rest of the head bald. A small slim body: the torso is a simple plain white shape, arms and legs are "
+        "single thin black lines, small round hands, small rounded black feet. Big head, small body. Clean "
+        "confident vector lines, flat, very appealing and memorable. Standing facing the viewer, relaxed, "
+        "confident friendly smile, the whole body from head to feet visible, centred. Pure plain white background, "
+        "nothing else, no shadow. Absolutely no text, no letters, no watermark.")
 
 if __name__ == "__main__":
     out = sys.argv[1]
