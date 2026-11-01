@@ -48,6 +48,8 @@ VIEWS = {
                "lord in 1346, proud happy face, full body, plain light background", 768, 1024),
     "4_scene": ("in his patched red wool peasant tunic, sitting up on straw inside a dark medieval wooden hut at "
                 "night next to a big brown cow, shocked face, small fire in the middle, 16:9 picture", 1280, 720),
+    "5_thumb": ("YouTube thumbnail close-up of his face and shoulders, extremely shocked, eyes wide, mouth open, "
+                "in his patched red peasant tunic, very bright simple background", 1280, 720),
 }
 
 
@@ -83,13 +85,13 @@ def sheet(out):
     except Exception:
         font = ImageFont.load_default()
     for d, (name, _look) in DESIGNS.items():
-        row = Image.new("RGB", (300 * 3 + 640 + 40, 440), (25, 25, 25))
+        row = Image.new("RGB", (300 * 3 + 640 * 2 + 50, 440), (25, 25, 25))
         dr = ImageDraw.Draw(row)
         dr.text((16, 6), f"{d}  {name}", font=font, fill=(255, 215, 0))
         x = 10
         for view in VIEWS:
             p = os.path.join(out, f"{d}_{view}.png")
-            box = (300, 380) if view != "4_scene" else (640, 360)
+            box = (300, 380) if view[0] in "123" else (640, 360)
             if os.path.exists(p):
                 im = Image.open(p).convert("RGB")
                 im.thumbnail(box)
