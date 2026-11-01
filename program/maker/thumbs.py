@@ -86,6 +86,8 @@ def make(story, out):
         for old in os.listdir(out):                                # an unchanged one is kept
             if old.startswith(f"thumb_{i}_plain") and old != os.path.basename(plain):
                 os.remove(os.path.join(out, old))
+        if os.path.exists(plain) and os.path.getsize(plain) < 1000:     # a broken file from a failed run
+            os.remove(plain)
         if not os.path.exists(plain):
             data = None
             for t in range(3):                       # the AI sometimes refuses a prompt: try again, gentler
