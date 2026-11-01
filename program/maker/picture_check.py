@@ -28,8 +28,7 @@ MODEL = os.environ.get("CHECK_MODEL", "@cf/meta/llama-4-scout-17b-16e-instruct")
 QUESTION = """Look carefully at this cartoon picture and answer these questions about what you SEE.
 Answer with JSON only, no other text:
 {{"people": <how many people are in the picture>,
-  "people_in_red": <how many people wear mostly red clothes>,
-  "young_men_with_short_black_hair": <how many>,
+  "people_with_messy_brown_hair": <how many people have messy brown hair>,
   "broken_body": <true if any person or animal has two heads, extra or missing arms, hands, fingers or legs, twisted broken-looking fingers, or two bodies melted together>,
   "size_wrong": <true if sizes are clearly unreal: a person as big as a house, a grown man drawn as small as a child next to others, or food, a cup or a tool bigger than a person's chest>,
   "face_mixed": <true if a person has an animal's head or face, or an animal part or object growing out of their face>,
@@ -42,7 +41,7 @@ Answer with JSON only, no other text:
   "looks_like_a_photo": <true if it looks like a real photograph or a photorealistic 3D render, not a drawn cartoon>,
   "what_i_see": "<one short sentence>"}}"""
 
-INDOOR = r"\b(inside|indoors|HOUSE|BEDCHAMBER|GREAT HALL|room|hall|chapel|church|kitchen|cellar|stable|hut|longhouse|tower room)\b"
+INDOOR = r"\b(inside|indoors|HUT|HOUSE|BEDCHAMBER|GREAT HALL|room|hall|chapel|church|kitchen|cellar|stable|hut|longhouse|tower room)\b"
 OUTDOOR = r"\b(field|lane|village|forest|stream|river|meadow|yard|outside|outdoor|battlefield|harbour|road|sky|hill|garden)\b"
 
 
@@ -116,9 +115,7 @@ def _parse(answer, description, n_kai):
         problems.append("looks like a real photo, not our cartoon style")
     if yes("has_text"):
         problems.append("written text in the picture")
-    if num("people_in_red") > max(n_kai, 0) + 0:
-        problems.append(f"{num('people_in_red')} people in red (only Kai may wear red)")
-    if n_kai and num("young_men_with_short_black_hair") > n_kai:
+    if n_kai and num("people_with_messy_brown_hair") > n_kai:
         problems.append("Kai appears more often than he should")
     want_in = bool(re.search(INDOOR, description, re.I)) and not re.search(OUTDOOR, description, re.I)
     want_out = bool(re.search(OUTDOOR, description, re.I)) and not re.search(INDOOR, description, re.I)

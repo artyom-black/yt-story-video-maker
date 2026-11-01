@@ -191,6 +191,7 @@ RICH_WORDS = re.compile(r"RICH KAI|GREAT HALL|BEDCHAMBER|castle|\bCOOK\b|SERVANT
 def life_grade(picture_text):
     """$1 vs $1,000,000: the poor life looks cold, grey and dark; the rich life warm and golden.
     Pictures showing both (split screens) stay neutral."""
+    return ""                               # only for "$1 vs $1,000,000" stories (switched off)
     poor = bool(POOR_WORDS.search(picture_text.replace("RICH KAI", "")))
     rich = bool(RICH_WORDS.search(picture_text))
     return "poor" if poor and not rich else "rich" if rich and not poor else ""

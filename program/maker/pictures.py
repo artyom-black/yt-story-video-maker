@@ -19,25 +19,33 @@ from .art_lab import generate
 from .script import load
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FACE_REF = os.path.join(ROOT, "characters", "ai", "kai_face_ref.png")
+REPO = os.path.dirname(ROOT)
+FACE_REF = os.path.join(REPO, "main-character.jpg")   # set from the story's CHARACTER line in jobs()
 
-KAI_ID = ("a young man about 22 years old, slim, light skin, short black side-swept hair with the fringe falling to "
-          "one side, clean-shaven, friendly expressive face")
-STYLE = ("High quality 2D animated comedy illustration for adults, bold clean outlines, rich cel shading with soft "
-         "light, cinematic composition, expressive faces, vivid but natural colours, professional studio quality. "
+
+def face_ref(st):
+    p = os.path.join(REPO, st.character) if getattr(st, "character", "") else ""
+    return p if p and os.path.exists(p) else FACE_REF
+
+
+# The channel's look: simple stick figures in detailed, colourful painted worlds (like the big explainer channels).
+KAI_ID = ("the main character, a stick figure man exactly like image 0: a big round white head with a black outline, "
+          "small black dot eyes, simple eyebrows and mouth, messy brown hair, thin black line arms and legs")
+STYLE = ("Simple 2D stick figure cartoon in a clean, popular YouTube history explainer style: every person is a simple "
+         "stick figure with a big round white head, small dot eyes, simple expressive eyebrows and mouth, and thin "
+         "black line arms and legs, wearing simple flat-coloured clothes of the time. The backgrounds are detailed, "
+         "colourful, painted 2D cartoon scenes with bold clean outlines and soft light. Clear and easy to read. "
          "Absolutely no text, no letters, no words, no captions, no watermark.")
-THUMB_STYLE = ("YouTube thumbnail illustration: one huge close-up subject filling most of the frame, extreme facial "
-               "expression, very bright saturated colours, strong contrast, simple uncluttered background, bold clean "
-               "outlines, cel shading. Absolutely no text, no letters, no words.")
+THUMB_STYLE = ("YouTube thumbnail in the same stick figure style: one big character with an extreme, clear facial "
+               "expression, very bright colours, strong contrast, a detailed but uncluttered painted background. "
+               "Absolutely no text, no letters, no words.")
 W, H = 1280, 720
-# Everybody except Kai stays out of his signature colour, so viewers always know who Kai is.
-ONLY_KAI_RED = "Nobody except Kai wears red: other people wear plain brown, beige, grey or green clothes."
-# added later; pictures drawn before it was added are kept (see "legacy" in jobs), new ones get it
-SIZE_RULE = ("Real-life sizes and adult proportions: Kai is a normal adult man of average height (not a child, "
-             "no big cartoon head), doors are a bit taller than people, houses are much taller than people, "
-             "animals, food, cups and tools are their real size next to a person. Hands have five fingers.")
-FACE_RULE = ("Only Kai has Kai's face and black hair: every other person has a clearly different face, hair "
-             "colour and age. Every person and animal has a normal body: one head, two arms, two legs.")
+ONLY_KAI_RED = ""
+SIZE_RULE = ("Real-life sizes: grown-ups are taller than children, doors are a bit taller than people, houses are much "
+             "taller than people, animals, food, cups and tools are their real size next to a person.")
+FACE_RULE = ("Only the main character has messy brown hair: every other person has clearly different hair (another "
+             "colour or style, a headscarf, a beard or bald), so nobody looks like him. Every person and animal has a "
+             "normal body: one head, two arms, two legs, animals with the right number of legs, nothing floating.")
 
 
 def _place_rule(st):
@@ -49,7 +57,7 @@ def _place_rule(st):
             f"mention. Time period, only for clothes, tools and buildings: {st.era}.")
 
 
-CHECK_VERSION = 5          # raise when the checker learns a new kind of mistake: old pictures get looked at again
+CHECK_VERSION = 6          # raise when the checker learns a new kind of mistake: old pictures get looked at again
 
 
 class AllowanceUsedUp(Exception):
@@ -77,7 +85,7 @@ def small_ref(src, dst, max_side=500):
 
 
 def kai_in(text: str) -> str:
-    return re.sub(r"\bKAI\b", "Kai (the young man in image 0 and image 1)", text)
+    return re.sub(r"\bKAI\b", "the main character (the stick figure in image 0 and image 1)", text)
 
 
 def kai_refs(text, st, costume_ref, costume_rich_ref):
@@ -91,7 +99,7 @@ def kai_refs(text, st, costume_ref, costume_rich_ref):
         return (text + ". Both are the same young man, with exactly the face and hair from image 0",
                 [FACE_REF, costume_ref, costume_rich_ref], 3)
     if rich:
-        return text.replace("RICH KAI", "Kai (the young man in image 0 and image 1)"), [FACE_REF, costume_rich_ref], 2
+        return text.replace("RICH KAI", "the main character (the stick figure in image 0 and image 1)"), [FACE_REF, costume_rich_ref], 2
     if poor:
         return kai_in(text), [FACE_REF, costume_ref], 2
     return text, [], 0
@@ -220,6 +228,8 @@ def upgrade(path, prompt):
 
 def jobs(st, assets):
     """Every picture the video needs, in the order they are made."""
+    global FACE_REF
+    FACE_REF = face_ref(st)
     costume = os.path.join(assets, "costume.png")
     costume_ref = os.path.join(assets, "costume_ref.png")
     costume_rich_ref = os.path.join(assets, "costume_rich_ref.png")
@@ -253,7 +263,10 @@ def jobs(st, assets):
             refs = refs + [cast_ref(cast_paths[n]) for n in used]
             legacy = f"{text}. {_place_rule(st)} {kai_clothes(pic, st)}{ONLY_KAI_RED} 16:9 picture. {STYLE}"
             before = f"{text}. {_place_rule(st)} {kai_clothes(pic, st)}{ONLY_KAI_RED} {FACE_RULE} 16:9 picture. {STYLE}"
-            prompt = (f"{text}. {_place_rule(st)} {kai_clothes(pic, st)}{ONLY_KAI_RED} {FACE_RULE} {SIZE_RULE} "
+            place = _place_rule(st)
+            if re.search(r"\bmodern\b|1[6-9]00s|laboratory|\b19\d\d\b|\b20\d\d\b", pic, re.I):
+                place = "Draw exactly the place, time and light described above."      # a scene from another time
+            prompt = (f"{text}. {place} {kai_clothes(pic, st)}{ONLY_KAI_RED} {FACE_RULE} {SIZE_RULE} "
                       f"16:9 picture. {STYLE}")
             for older in (before, legacy):                    # already drawn with older rules: keep it (the checker
                 if os.path.exists(_named(path, older)):       # looks at it again and redraws it if it's wrong)
@@ -266,7 +279,8 @@ def jobs(st, assets):
             for n_, d_ in st.cast.items():
                 check_desc = re.sub(rf"\b{re.escape(n_)}\b", f"{n_.lower()} ({d_})", check_desc)
             out.append((f"scene {s.number}{k}", _named(path, prompt), prompt, W, H, refs, check_desc))
-    for i, idea in enumerate(st.thumbnail_ideas[:3]):
+    title_file = os.path.join(REPO, "thumbnail", re.sub(r'[\\/:*?"<>|]', "", st.title).strip() + ".png")
+    for i, idea in enumerate([] if os.path.exists(title_file) else st.thumbnail_ideas[:3]):   # made by hand already
         path = os.path.join(assets, "pictures", f"thumb_{i + 1}.png")
         text, refs, first = kai_refs(idea, st, costume_ref, costume_rich_ref)
         text, used = cast_in(text, st.cast, first)

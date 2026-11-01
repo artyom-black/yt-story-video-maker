@@ -1,16 +1,21 @@
 # yt-story-video-maker
 
-Turns a story `.txt` file into a finished YouTube video with 3 thumbnails.
+Turns a story `.txt` file into a finished YouTube video.
+
+## Folders
+- **main-character.jpg**: the channel's main character (every video draws him from this picture).
+- **new-story.txt**: the story the program is making now.
+- **stories/**: every story, named by its video title.
+- **thumbnail/**: every thumbnail, named by its video title.
+- **ready-to-upload/**: only the video we are working on now (download link, thumbnail, upload text).
+- **old-videos/**: videos already posted on YouTube.
+- **program/**: everything the program needs.
 
 ## How to make a video
-1. Paste [template.txt](template.txt) into ChatGPT or Claude with your topic.
-2. Paste the answer into [new-story.txt](new-story.txt) and save (commit).
-3. Wait. The program runs by itself every night (or click **Actions → Make video → Run workflow**).
-   Pictures take about 3 nights on the free plan.
-4. When it's done, the video waits in **ready-to-upload/**: a download link, 3 thumbnails and
-   `upload.txt` (title, description, tags) and the story. new-story.txt is emptied for your next story.
-5. After uploading to YouTube: **Actions → I uploaded it → Run workflow**. The video moves to **old-videos/**
-   and its story to **old-stories/**. Only videos you really uploaded end up there.
+1. Put the story into new-story.txt (and its thumbnail into thumbnail/ with the video's title as the name).
+2. **Actions → Make video → Run workflow**.
+3. When it's done, the video waits in **ready-to-upload/<title>/**.
+4. After uploading to YouTube: **Actions → I uploaded it → Run workflow**. The folder moves to **old-videos/**.
 
 To redraw a picture you don't like: **Actions → Make video → Run workflow**, type its number from the
 picture sheet in the REDO box (e.g. `12, 32b`).

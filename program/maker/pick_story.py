@@ -9,7 +9,7 @@ import re
 import sys
 
 NEW = "new-story.txt"
-OLD = "old-stories"
+OLD = "old-videos"
 EMPTY_NOTE = "// Paste your next story here (made with template.txt), then save. The program does the rest.\n"
 
 
@@ -29,10 +29,9 @@ def title_of(path):
 
 
 def number():
-    """One more than the videos already uploaded (old-stories/) or waiting (ready-to-upload/)."""
-    made = [f for f in os.listdir(OLD) if re.match(r"\d{3} ", f)] if os.path.isdir(OLD) else []
-    ready = [f for f in os.listdir("ready-to-upload") if re.match(r"\d{3} ", f)] if os.path.isdir("ready-to-upload") else []
-    return len(made) + len(ready) + 1
+    """One more than the videos already uploaded to YouTube (old-videos/)."""
+    made = [f for f in os.listdir(OLD) if os.path.isdir(os.path.join(OLD, f))] if os.path.isdir(OLD) else []
+    return len(made) + 1
 
 
 def slug_for(path):
