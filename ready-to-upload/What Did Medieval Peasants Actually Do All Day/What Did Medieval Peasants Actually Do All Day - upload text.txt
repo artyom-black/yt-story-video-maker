@@ -21,4 +21,4 @@ SETTINGS:
 - Audience: No, it's not made for kids
 - Altered or synthetic content: No (cartoon illustrations, not realistic). Narration voice is AI.
 - Thumbnail: upload all three with 'Test & compare'
-- Length: 7:08
+- Length: 7:54
