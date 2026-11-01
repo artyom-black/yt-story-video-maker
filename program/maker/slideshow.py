@@ -212,6 +212,12 @@ def make_plan(st, assets, kit_dir, cands):
                 switch[k] = dur * k / len(switch)
         order = sorted(range(len(pics)), key=lambda k: switch[k])
         pics, switch = [pics[k] for k in order], [max(0.0, switch[k]) for k in order]
+        # every picture stays long enough to take in (MrBeast is fast, but you always know what you're seeing)
+        hold = MIN_PICTURE if s.number > HOOK_SCENES else MIN_PICTURE_HOOK
+        for k in range(1, len(switch)):
+            if switch[k] < switch[k - 1] + hold:
+                left = len(switch) - k                     # pictures still to come share what's left
+                switch[k] = min(switch[k - 1] + hold, switch[k - 1] + (dur - switch[k - 1]) / (left + 1))
         cam = s.camera or ("punch" if s.mood == "shock" or s.sfx == "hit" else
                            ["push", "pan", "pull", "push", "pan"][idx % 5])
         side = 1 - side if s.text else side
@@ -408,8 +414,13 @@ def camera(kind, t, dur, text_at, n):
 # ---------- the camera operator: several shots inside every picture ----------
 
 FACE_CASCADE = None
-MAX_SHOT = 1.5          # never hold one framing longer than this
+MAX_SHOT = 1.5          # hype moments (hook, shocks, booms): a new framing every 0.7-1.5 s
 MIN_SHOT = 0.7
+CALM_SHOT = 3.2         # everywhere else one picture = one calm, slowly moving shot; a second framing only
+                        # when the picture stays longer than this (or on the key word)
+MIN_PICTURE = 1.9       # a new picture never comes sooner than this...
+MIN_PICTURE_HOOK = 1.3  # ...except in the hook (first scenes), which is allowed to be quick
+HOOK_SCENES = 3
 
 
 def analyse_picture(path):
@@ -467,6 +478,18 @@ def analyse_picture(path):
 def plan_shots(sc, info):
     """Cut the scene into shots of 0.7-1.5 s on the rhythm of Kai's voice, each with its own framing."""
     dur = sc["dur"]
+    if not sc.get("hype"):                               # calm: one shot, a second one only on the key word
+        cuts = [0.0]                                     # or when the picture stays long
+        if sc["text_at"] and 0.8 < sc["text_at"] < dur - 0.8:
+            cuts.append(sc["text_at"])
+        elif dur > CALM_SHOT:
+            mid = [p for p in sc["phrases"] if 1.4 < p < dur - 1.4]
+            cuts.append(min(mid, key=lambda p: abs(p - dur / 2)) if mid else dur / 2)
+        face = info["face"]
+        kinds = ["wide", "face" if face else "medium"]
+        return [{"start": c, "end": cuts[i + 1] if i + 1 < len(cuts) else dur,
+                 "kind": "face" if (sc["text_at"] is not None and abs(c - sc["text_at"]) < 0.05 and face) else kinds[i % 2],
+                 "punch": sc["text_at"] is not None and abs(c - sc["text_at"]) < 0.05} for i, c in enumerate(cuts)]
     cuts = sorted(set([0.0] + [p for p in sc["phrases"] if 0.5 < p < dur - 0.5] +
                       ([sc["text_at"]] if sc["text_at"] and 0.4 < sc["text_at"] < dur - 0.4 else [])))
     pts = []
@@ -544,7 +567,8 @@ def render_scene(job):
             continue
         sub = dict(sc, dur=b - a, phrases=[p - a for p in sc["phrases"] if a < p < b],
                    text_at=(sc["text_at"] - a) if sc["text_at"] is not None and a <= sc["text_at"] < b else None,
-                   mood=sc["mood"] if k == 0 else "calm")
+                   mood=sc["mood"] if k == 0 else "calm",
+                   hype=sc["n"] <= HOOK_SCENES or sc["camera"] == "punch" or bool(sc.get("booms")))
         shots = plan_shots(sub, infos[k])
         if k > 0 and shots:
             shots[0]["kind"] = "wide" if shots[0]["kind"] != "face" else "face"   # first show what it is
@@ -563,7 +587,7 @@ def render_scene(job):
         z, cx, cy = framing(shot["kind"], info, W / H)
         local = lt - shot["start"]
         length = max(0.01, shot["end"] - shot["start"])
-        z *= 1.0 + 0.05 * ease(local / length)            # every shot slowly pushes in
+        z *= 1.0 + 0.07 * ease(local / length)            # every shot slowly pushes in
         since_pic = t - seg["start"]
         if since_pic < 0.18 and (seg["pic"] > 0 or sc.get("snap_first")):   # snap-zoom when a new picture lands
             z *= 1.0 + 0.10 * (1 - ease(since_pic / 0.18))
