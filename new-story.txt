@@ -3,7 +3,7 @@ CHARACTER: main-character.jpg
 FORMAT: day-in-the-life
 ERA: an English farming village in August of the year 1300: small one-room houses of wood and mud with thick straw roofs, muddy lanes, long thin strips of golden wheat fields around the village, a small stone church, a watermill by a stream, and the lord's big stone manor house on a little hill at the edge of the village
 COSTUME: a simple knee-length brown wool tunic with a few patches, a rope belt, brown wool leggings and simple flat leather wrap shoes
-CAST: HUT = the inside of a small one-room medieval peasant house: walls of wood and mud, a thick straw roof with smoke under it and no chimney, a beaten earth floor, a small fire in a ring of stones in the middle, straw mattresses on the floor, a wooden table and stools
+CAST: HUT = the inside of a small one-room medieval peasant house with no windows, only one small wooden door: walls of wood and mud, a thick straw roof with smoke under it and no chimney, a beaten earth floor, a small fire in a ring of stones in the middle, straw mattresses on the floor, a wooden table and stools
 CAST: WIFE = a stick figure woman with a round white head, a friendly tired face, brown hair under a plain white linen headscarf, a long green wool dress and a brown apron
 CAST: SON = a small stick figure boy about eight years old with a round white head and short messy blond hair, a short grey wool tunic, bare feet
 CAST: DAUGHTER = a small stick figure girl about six years old with a round white head and two short brown braids, a long light blue wool dress

@@ -246,9 +246,15 @@ def jobs(st, assets):
     # everyone and everything that comes back more than once gets one reference picture first
     cast_paths = {}
     for name, desc in st.cast.items():
-        prompt = (f"Reference design sheet of {desc}. One single subject, the whole subject clearly visible, "
-                  f"seen from the front at a slight angle, plain light grey background. "
-                  f"Time period: {st.era}. {STYLE}")
+        if re.search(r"stick figure|\bman\b|\bwoman\b|\bboy\b|\bgirl\b", desc):   # a person: alone, nothing around
+            prompt = (f"Character reference of {desc}. One single person, the whole body from head to feet, standing "
+                      f"facing the viewer, a calm normal face. Pure plain white background, nothing else. {STYLE}")
+        elif re.search(r"\binside\b|\binterior\b|\broom\b", desc):               # a room: empty, no windows added
+            prompt = (f"Reference picture of {desc}. Seen from inside, the whole room, empty: no people, no animals. "
+                      f"Only the windows the description mentions, nothing outside. {STYLE}")
+        else:                                                                          # a building, an animal
+            prompt = (f"Reference picture of {desc}. One single subject, the whole subject clearly visible, no "
+                      f"people. Plain simple background. {STYLE}")
         path = _named(os.path.join(assets, "cast", f"cast_{cast_slug(name)}.png"), prompt)
         cast_paths[name] = path
         out.append((f"cast {name.lower()}", path, prompt, 768, 768, [], None))
@@ -266,6 +272,10 @@ def jobs(st, assets):
             place = _place_rule(st)
             if re.search(r"\bmodern\b|1[6-9]00s|laboratory|\b19\d\d\b|\b20\d\d\b", pic, re.I):
                 place = "Draw exactly the place, time and light described above."      # a scene from another time
+            if re.search(r"\b(night|midnight|dark)\b", pic, re.I) and not re.search(r"\b(dawn|sunrise|sunset)\b", pic, re.I):
+                place += " It is night: dark, lit only by firelight, a lamp or the moon, no daylight anywhere."
+            if re.search(r"\bno people\b|\bno humans\b", pic, re.I):
+                place += " There are no people at all in this picture."
             prompt = (f"{text}. {place} {kai_clothes(pic, st)}{ONLY_KAI_RED} {FACE_RULE} {SIZE_RULE} "
                       f"16:9 picture. {STYLE}")
             for older in (before, legacy):                    # already drawn with older rules: keep it (the checker
