@@ -1,6 +1,5 @@
-"""Character options: 4 original simple-style designs for Kai Films' main character, each shown in a neutral
-outfit, as a poor 1346 peasant, as a rich lord and inside a scene, so you can see the same character
-staying recognisable in different clothes and situations.
+"""Character options: 4 original stick-figure designs for the channel's main character, each standing,
+shocked, laughing, in a scene and as a thumbnail face, so one can be chosen.
 
     python -m maker.char_options OUT_DIR
 writes OUT_DIR/<A-D>_<view>.png and OUT_DIR/options.jpg (one row per design)
@@ -16,57 +15,47 @@ from .art_lab import generate
 
 NO_TEXT = "Absolutely no text, no letters, no watermark."
 
+STICK = ("Simple 2D stick figure cartoon in a clean explainer-video style: a big round white head with a bold black "
+         "outline, a body, arms and legs made of thick smooth black lines, simple round hands, two black dot eyes and "
+         "simple expressive eyebrows and mouth, flat bright colours, no shading, very clean and minimal")
+
 DESIGNS = {
-    "A": ("Clean flat",
-          "Simple flat 2D cartoon style with thick clean black outlines, flat colours, no shading, very few "
-          "details. The character: a young man with a round peach-coloured face, two small black oval eyes, short "
-          "thick eyebrows, a simple line mouth, a big swoosh of glossy black side-swept hair with the fringe "
-          "falling over one side of his forehead, a slim simple body with normal adult proportions"),
-    "B": ("Bean head",
-          "Simple flat 2D cartoon style with thick clean black outlines and flat colours. The character: a "
-          "young man with a smooth bean-shaped head with no neck, big expressive black eyebrows that do most of "
-          "the acting, two black dot eyes, a small mouth, a short spiky black fringe sweeping to one side, a "
-          "small simple body with thin arms and legs"),
-    "C": ("Ink + red",
-          "Black ink line drawing on warm off-white paper, loose confident brush lines, the whole world drawn in "
-          "black, white and soft grey ink washes, and ONLY the main character's clothes coloured in bright red. "
-          "The character: a young man with a simple oval face, dot eyes, a strong black ink side-swept fringe, "
-          "a slim body with normal adult proportions"),
-    "D": ("Paper cut-out",
-          "Paper cut-out craft animation style: flat shapes cut from coloured paper with a subtle paper texture "
-          "and soft drop shadows between layers, simple and charming. The character: a young man with a round "
-          "light paper face, two black dot eyes, a black paper side-swept fringe, a slim simple body"),
+    "A": ("Side fringe", f"{STICK}. His signature: a glossy black side-swept fringe of hair falling over one side "
+                         f"of his forehead"),
+    "B": ("Quiff", f"{STICK}. His signature: one tall bouncy black curl of hair standing up on top of his head, "
+                   f"like a question mark"),
+    "C": ("Round glasses", f"{STICK}. His signature: big round black glasses and short messy brown hair"),
+    "D": ("Red scarf", f"{STICK}. He is bald. His signature: a long bright red scarf wrapped around his neck with "
+                       f"the ends flying"),
 }
 
 VIEWS = {
-    "1_neutral": ("wearing a plain grey t-shirt and dark trousers, standing relaxed facing the viewer, friendly "
-                  "smile, full body, plain light background", 768, 1024),
-    "2_peasant": ("wearing a patched rough red wool tunic down to the knees with a rope belt and brown wool "
-                  "trousers, a poor medieval peasant in the year 1346, tired face, full body, plain light "
+    "1_standing": ("standing relaxed facing the viewer, friendly smile, waving one hand, full body, plain light "
+                   "background", 768, 1024),
+    "2_shocked": ("extremely shocked, eyes huge, mouth wide open, both hands on his head, full body, plain light "
                   "background", 768, 1024),
-    "3_lord": ("wearing a long red velvet robe with a white fur collar and a wide gold belt, a rich medieval "
-               "lord in 1346, proud happy face, full body, plain light background", 768, 1024),
-    "4_scene": ("in his patched red wool peasant tunic, sitting up on straw inside a dark medieval wooden hut at "
-                "night next to a big brown cow, shocked face, small fire in the middle, 16:9 picture", 1280, 720),
-    "5_thumb": ("YouTube thumbnail close-up of his face and shoulders, extremely shocked, eyes wide, mouth open, "
-                "in his patched red peasant tunic, very bright simple background", 1280, 720),
+    "3_laughing": ("laughing hard, eyes closed, holding his belly, full body, plain light background", 768, 1024),
+    "4_scene": ("walking along a path through a bright green countryside with simple round trees and a small "
+                "village in the distance, curious face, 16:9 picture", 1280, 720),
+    "5_thumb": ("YouTube thumbnail: close-up of his head and shoulders, extremely shocked, eyes wide, mouth open, "
+                "very bright yellow simple background", 1280, 720),
 }
 
 
 def run(out):
     os.makedirs(out, exist_ok=True)
     for d, (_name, look) in DESIGNS.items():
-        base = os.path.join(out, f"{d}_1_neutral.png")
+        base = os.path.join(out, f"{d}_1_standing.png")
         for view, (what, w, h) in VIEWS.items():
             path = os.path.join(out, f"{d}_{view}.png")
             if os.path.exists(path):
                 continue
-            if view == "1_neutral":
+            if view == "1_standing":
                 prompt = f"Character design. {look}, {what}. {NO_TEXT}"
                 refs = []
             else:
-                prompt = (f"The same young man as in image 0: exactly the same face, hair, head shape and drawing "
-                          f"style. {look}, {what}. Only one person. {NO_TEXT}")
+                prompt = (f"The same stick figure character as in image 0: exactly the same head, face, hair, "
+                          f"signature and drawing style. {look}, {what}. Only one person. {NO_TEXT}")
                 refs = [base] if os.path.exists(base) else []
             try:
                 data = generate(prompt, w, h, seed=4242 + ord(d), refs=refs)
