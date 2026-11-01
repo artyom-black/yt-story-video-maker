@@ -50,15 +50,16 @@ FACE_RULE = ("Only the main character has messy brown hair: every other person h
 
 
 def _place_rule(st):
-    """The scene's own place, light and framing come first; the era only adds period details.
-    (Before this, the era's 'muddy lanes, fields, church' was drawn into every picture, so indoor
-    and night scenes came out in a sunny street.)"""
-    return (f"Draw exactly the place, light and framing described above: indoors stays indoors, dark stays "
-            f"dark, a close-up stays a close-up; add no streets, fields or buildings the description does not "
-            f"mention. Time period, only for clothes, tools and buildings: {st.era}.")
+    """Only what the line describes. The story's ERA is NOT pasted in (it put the same village, manor house,
+    windmill and crowds into every picture); the period is given in a few words only."""
+    period = (st.era.split(":")[0] if st.era else "the past").strip()
+    return (f"Draw exactly and only what is described above: the place, the light and the framing; indoors stays "
+            f"indoors, dark stays dark, a close-up stays a close-up. Show ONLY the people and animals the "
+            f"description names: no extra people, no crowds, no extra animals, no buildings, windows or "
+            f"landscape the description does not mention. Everything belongs to {period}: nothing modern.")
 
 
-CHECK_VERSION = 7          # raise when the checker learns a new kind of mistake: old pictures get looked at again
+CHECK_VERSION = 8          # raise when the checker learns a new kind of mistake: old pictures get looked at again
 
 
 class AllowanceUsedUp(Exception):
@@ -116,8 +117,9 @@ def kai_clothes(text, st):
         return (f"Kai wears exactly the clothes from image 1: {st.costume_rich}. Keep his face and hair exactly as "
                 f"in image 0. ")
     if poor:
-        return (f"Kai wears exactly the clothes from image 1: {st.costume}. Keep his face and hair exactly as in "
-                f"image 0. ")
+        return (f"The main character is a stick figure exactly like image 0: a big round flat white head, small dot "
+                f"eyes, messy brown hair, and arms and legs drawn as thin black lines. He wears exactly the clothes "
+                f"from image 1: {st.costume}. He is a grown man, always drawn in this same simple way. ")
     return ""
 
 

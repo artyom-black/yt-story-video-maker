@@ -36,10 +36,12 @@ Answer with JSON only, no other text:
   "through_body": <true if a pole, bed post, sword or other object goes straight through a person's body>,
   "fire_in_wrong_place": <true if fire burns in a bowl or bucket of water, in a basin, on the floor, in the air or on a person, instead of in a fireplace, fire pit, torch, candle, lamp or campfire>,
   "two_suns_or_moons": <true if there is more than one sun or more than one moon in the sky>,
+  "modern_things": <true if anything modern is visible: modern kitchen or bathroom, tiles, electric lights, cars, phones, modern furniture or clothes>,
   "floating": <true if an animal, a person or an object (a bowl, a cup, a tool) hangs in the air with no hand, table or floor holding it>,
   "indoors": <true if the scene is inside a building or room>,
   "has_text": <true if there are written words or letters>,
   "looks_like_a_photo": <true if it looks like a real photograph or a photorealistic 3D render, not a drawn cartoon>,
+  "main_thing_missing": <true if the main subject of this description is clearly NOT in the picture: "{desc}">,
   "what_i_see": "<one short sentence>"}}"""
 
 INDOOR = r"\b(inside|indoors|HUT|HOUSE|BEDCHAMBER|GREAT HALL|room|hall|chapel|church|kitchen|cellar|stable|hut|longhouse|tower room)\b"
@@ -118,6 +120,10 @@ def _parse(answer, description, n_kai):
         problems.append("two moons or two suns")
     if re.search(r"\bno (people|humans)\b", description, re.I) and num("people") > 0:
         problems.append(f"{num('people')} people in a picture that should have none")
+    if yes("modern_things") and not re.search(r"\bmodern\b|football|laboratory|\b1[89]\d\d\b|\b20\d\d\b", description, re.I):
+        problems.append("modern things in a medieval picture")
+    if yes("main_thing_missing"):
+        problems.append("does not show what the line is about")
     if yes("floating"):
         problems.append("something floating in the air")
     if yes("looks_like_a_photo"):
@@ -132,7 +138,7 @@ def _parse(answer, description, n_kai):
         problems.append("should be indoors but is drawn outside")
     if "indoors" in d and want_out and yes("indoors"):
         problems.append("should be outdoors but is drawn inside")
-    severe = any(w in p_ for p_ in problems for w in ("broken body", "face mixed", "real photo", "Kai appears", "two animals", "through a body", "fire burning", "sizes are unreal"))
+    severe = any(w in p_ for p_ in problems for w in ("broken body", "face mixed", "real photo", "Kai appears", "two animals", "through a body", "fire burning", "sizes are unreal", "modern things"))
     return {"ok": not problems, "severe": severe, "problems": problems, "seen": str(d.get("what_i_see", ""))}
 
 
@@ -140,7 +146,8 @@ def check(path, description, has_kai, model=MODEL):
     """{'ok': bool, 'problems': [...], 'seen': str}. Raises on the daily allowance (caller stops).
     The vision AI only describes what it sees (counts, yes/no); the rules decide, so it can't nitpick."""
     n_kai = (2 if ("RICH KAI" in description and re.search(r"(?<!RICH )\bKAI\b", description)) else 1) if has_kai else 0
-    return _parse(_ask(QUESTION, _image_data_url(path), model), description, n_kai)
+    q = QUESTION.replace("{desc}", re.sub(r"\s*\([^)]*\)", "", description)[:300].replace('"', "'"))
+    return _parse(_ask(q, _image_data_url(path), model), description, n_kai)
 
 
 def _test(story, assets, model, keys):
