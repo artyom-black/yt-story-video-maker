@@ -18,12 +18,12 @@ PROMPT = (f"Character reference sheet, one single character. {STICK}. His signat
 
 THIN = ("Character reference for a YouTube history explainer video, one single character, simple stick figure "
         "style like popular animated explainer channels: a big round white head with a clean black outline, two "
-        "round white eyes with small black pupils, simple eyebrows, a small mouth, messy short brown hair. He is a "
-        "poor medieval peasant: a simple patched brown wool tunic down to his knees drawn as one flat shape, a "
-        "rope belt, arms and legs drawn as single thin black lines, small round hands, simple brown cloth shoes. "
-        "Big head, small body. Clean confident lines, flat colours, likeable. Standing facing the viewer, a tired "
-        "but friendly face, the whole body from head to feet visible, centred. Pure plain white background, "
-        "nothing else, no shadow. Absolutely no text, no letters, no watermark.")
+        "round white eyes with small black pupils, simple eyebrows, a small neutral mouth, messy short brown hair. "
+        "No clothes at all: a plain stick figure body, the torso, arms and legs drawn as single thin black lines, "
+        "small round hands, small simple feet. Big head, small body. Clean confident lines, likeable. Standing "
+        "straight facing the viewer, arms relaxed at his sides, calm normal neutral face, the whole body from head "
+        "to feet visible, centred. Pure plain white background, nothing else, no shadow. Absolutely no text, no "
+        "letters, no watermark.")
 
 if __name__ == "__main__":
     out = sys.argv[1]
