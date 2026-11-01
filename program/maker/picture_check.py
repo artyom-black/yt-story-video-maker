@@ -69,7 +69,11 @@ def _ask(text, data_url, model):
             (f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/{model}",
              {"messages": messages, "max_tokens": 300, "temperature": 0}),
         ):
-            r = requests.post(url, headers=head, json=body, timeout=120)
+            try:
+                r = requests.post(url, headers=head, json=body, timeout=120)
+            except requests.RequestException as ex:          # network hiccup: try again
+                last = f"network: {ex}"[:300]
+                continue
             last = f"HTTP {r.status_code}: {r.text[:300]}"
             if r.status_code == 200:
                 d = r.json()

@@ -82,7 +82,12 @@ def generate(prompt: str, width: int, height: int, seed: int, refs=()):
         files[f"input_image_{i}"] = (os.path.basename(ref), open(ref, "rb"), "image/png")
     last = ""
     for attempt in range(3):
-        r = requests.post(URL.format(acc=acc), headers={"Authorization": f"Bearer {tok}"}, files=files, timeout=180)
+        try:
+            r = requests.post(URL.format(acc=acc), headers={"Authorization": f"Bearer {tok}"}, files=files, timeout=180)
+        except requests.RequestException as ex:              # network hiccup: wait and try again
+            last = f"network: {ex}"[:300]
+            time.sleep(10 * (attempt + 1))
+            continue
         last = f"HTTP {r.status_code}: {r.text[:300]}"
         if r.status_code == 200:
             ctype = r.headers.get("content-type", "")
