@@ -28,8 +28,10 @@ STYLE = ("YouTube thumbnail for a hit animated history explainer channel. Simple
          "like the one in image 0: the same round white head, face, hair and thin black line arms and legs, now "
          "big in the frame and acting with an extreme, clear facial expression. The world around him is a "
          "detailed, colourful, painted 2D cartoon background, bright and high contrast, one clear focal point, "
-         "uncluttered, nothing small and fussy. Leave the {side} third of the picture calm and simple for big "
-         "words. Real-life sizes. Absolutely no text, no letters, no watermark.")
+         "uncluttered, nothing small and fussy. Only ONE person in the whole picture: him. The whole picture is "
+         "fully drawn edge to edge (no empty white areas); the {side} side of the background is just simpler "
+         "(sky, wall or shadow) so big words fit there. Bright enough to see everything clearly even at night. "
+         "Real-life sizes. Absolutely no text, no letters, no watermark.")
 
 
 def read(story):
@@ -75,11 +77,16 @@ def make(story, out):
     done = []
     for i, (words, idea) in enumerate(info["thumbs"], 1):
         side = "right" if i % 2 else "left"
-        plain = os.path.join(out, f"thumb_{i}_plain.png")
+        prompt = (f"{STYLE.format(side=side)} He wears {info.get('clothes', 'simple clothes')}. "
+                  f"The scene: {idea}. The character is on the {'left' if side == 'right' else 'right'} "
+                  f"two thirds of the picture.")
+        import hashlib
+        h = hashlib.sha1(prompt.encode()).hexdigest()[:8]
+        plain = os.path.join(out, f"thumb_{i}_plain_{h}.png")      # a changed idea gets a new picture,
+        for old in os.listdir(out):                                # an unchanged one is kept
+            if old.startswith(f"thumb_{i}_plain") and old != os.path.basename(plain):
+                os.remove(os.path.join(out, old))
         if not os.path.exists(plain):
-            prompt = (f"{STYLE.format(side=side)} He wears {info.get('clothes', 'simple clothes')}. "
-                      f"The scene: {idea}. The character stands on the {'left' if side == 'right' else 'right'} "
-                      f"two thirds of the picture.")
             open(plain, "wb").write(generate(prompt, 1280, 720, seed=900 + i * 37, refs=[ref]))
             print("drew thumbnail", i, flush=True)
         final = os.path.join(out, f"thumb_{i}.png")

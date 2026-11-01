@@ -25,7 +25,9 @@ jobs:
         env:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-        run: python -m maker.thumbs new-story.txt thumbs
+        run: |
+          git clone -q --depth 1 -b thumbnails "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" thumbs 2>/dev/null && rm -rf thumbs/.git || true
+          python -m maker.thumbs new-story.txt thumbs
       - name: Save
         if: always()
         run: |
