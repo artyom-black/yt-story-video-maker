@@ -62,11 +62,11 @@ def finish(plain, words, side, out):
     for l in layers:
         block.alpha_composite(l, ((w - l.width) // 2, y))
         y += l.height - 30
-    s = min(1.0, 460 / block.width, 560 / block.height)
+    s = min(1.0, 460 / block.width, 300 / block.height)
     block = block.resize((int(block.width * s), int(block.height * s)), Image.LANCZOS)
     block = block.rotate(-5 if side == "right" else 5, expand=True, resample=Image.BICUBIC)
     x = 1280 - block.width - 30 if side == "right" else 30
-    im.alpha_composite(block, (x, (720 - block.height) // 2 - 40))
+    im.alpha_composite(block, (x, 25))                    # in the sky / top area, never over the action
     im.convert("RGB").save(out, quality=95)
 
 
