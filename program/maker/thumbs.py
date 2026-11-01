@@ -31,7 +31,9 @@ STYLE = ("YouTube thumbnail for a hit animated history explainer channel. Simple
          "uncluttered, nothing small and fussy. Only ONE person in the whole picture: him. The whole picture is "
          "fully drawn edge to edge (no empty white areas); the {side} side of the background is just simpler "
          "(sky, wall or shadow) so big words fit there. Bright enough to see everything clearly even at night. "
-         "Real-life sizes. Absolutely no text, no letters, no watermark.")
+         "Real-life sizes. Clean and correct: he has exactly two arms, two hands and two legs; every animal has a normal "
+         "body with the right number of legs and stands on something solid; nothing floats in the air. "
+         "Absolutely no text, no letters, no watermark.")
 
 
 def read(story):
