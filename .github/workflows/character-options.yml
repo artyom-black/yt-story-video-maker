@@ -4,6 +4,10 @@ name: Character options
 # chosen. Saved on branch char-options (options.jpg = everything on one sheet).
 on:
   workflow_dispatch:
+    inputs:
+      task:
+        description: "char_options or master_ref"
+        default: "char_options"
 
 permissions:
   contents: write
@@ -25,7 +29,7 @@ jobs:
         env:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-        run: python -m maker.char_options options
+        run: python -m maker.${{ inputs.task || 'char_options' }} options
       - name: Save
         if: always()
         run: |
