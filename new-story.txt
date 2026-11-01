@@ -35,8 +35,8 @@ PICTURE: close-up of RICH KAI lying in bed under fur blankets in the BEDCHAMBER,
 MOOD: happy
 TEXT: $1,000,000
 SFX: whoosh
-THEN: (at "silk") RICH KAI alone, one person only, sitting up in the huge bed in the BEDCHAMBER and stretching his arms happily, soft white linen and fur blankets around him
-THEN: (at "warming my shoes") the SERVANT kneeling by the fireplace in the BEDCHAMBER, holding a pair of soft red leather shoes close to the warm fire
+THEN: (at "silk") close-up of RICH KAI alone, one person only, sitting up in bed under soft white linen and fur blankets and stretching his arms happily, white pillows behind him, nothing standing in front of him
+THEN: (at "warming my shoes") the SERVANT kneeling in front of a big stone fireplace in a castle room, holding a pair of soft red leather shoes towards the fire burning inside the fireplace
 KAI: And at the same moment, I'm waking up in silk and fur, and someone is warming my shoes by the fire.
 
 # SCENE 3

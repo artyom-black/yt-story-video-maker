@@ -33,6 +33,8 @@ Answer with JSON only, no other text:
   "broken_body": <true if any person or animal has two heads, extra or missing arms, hands or legs, or two bodies melted together>,
   "face_mixed": <true if a person has an animal's head or face, or an animal part or object growing out of their face>,
   "animal_mixed": <true if any animal looks like two different animals mixed together, e.g. a cow with sheep wool or a dog with a bird's beak>,
+  "through_body": <true if a pole, bed post, sword or other object goes straight through a person's body>,
+  "fire_in_wrong_place": <true if fire burns on the floor, in the air or on a person instead of in a fireplace, torch, candle, lamp or campfire>,
   "floating": <true if an animal, a person or a heavy object hangs in the air with nothing holding it>,
   "indoors": <true if the scene is inside a building or room>,
   "has_text": <true if there are written words or letters>,
@@ -101,6 +103,10 @@ def _parse(answer, description, n_kai):
         problems.append("a face mixed with an animal or object")
     if yes("animal_mixed"):
         problems.append("an animal mixed from two animals")
+    if yes("through_body"):
+        problems.append("an object goes through a body")
+    if yes("fire_in_wrong_place"):
+        problems.append("fire burning in a place that makes no sense")
     if yes("floating"):
         problems.append("something floating in the air")
     if yes("looks_like_a_photo"):
@@ -117,7 +123,7 @@ def _parse(answer, description, n_kai):
         problems.append("should be indoors but is drawn outside")
     if "indoors" in d and want_out and yes("indoors"):
         problems.append("should be outdoors but is drawn inside")
-    severe = any(w in p_ for p_ in problems for w in ("broken body", "face mixed", "real photo", "Kai appears", "two animals"))
+    severe = any(w in p_ for p_ in problems for w in ("broken body", "face mixed", "real photo", "Kai appears", "two animals", "through a body", "fire burning"))
     return {"ok": not problems, "severe": severe, "problems": problems, "seen": str(d.get("what_i_see", ""))}
 
 
