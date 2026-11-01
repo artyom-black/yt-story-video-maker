@@ -1,0 +1,23 @@
+name: Delete old branches (one-time cleanup)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  clean:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          for b in pics-001-1-dollar-vs-1-million-middle-ages pics-001-1-vs-1000000-life-in-the-middle-ages \
+                   pics-001-medieval-peasant-day voice-001-1-dollar-vs-1-million-middle-ages \
+                   voice-001-1-vs-1000000-life-in-the-middle-ages voice-001-medieval-peasant-day \
+                   preview-clip check-results art-lab; do
+            git push origin --delete "$b" && echo "deleted $b" || echo "skip $b"
+          done
+          for t in $(gh release list --json tagName -q '.[].tagName'); do gh release delete "$t" --yes --cleanup-tag && echo "deleted release $t"; done
+        env:
+          GH_TOKEN: ${{ github.token }}
