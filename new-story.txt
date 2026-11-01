@@ -92,7 +92,7 @@ THEN: (at "deadline") KAI looking at the viewer with a very serious face, holdin
 KAI: And then your family goes hungry all winter. People could actually starve. So today, you have one deadline.
 
 # SCENE 11
-PICTURE: KAI standing at the edge of his golden wheat field in the early morning, holding a sickle, dark clouds on the far horizon
+PICTURE: KAI standing at the edge of his golden wheat field at night, holding a sickle, looking at dark storm clouds on the far horizon
 MOOD: epic
 MUSIC: epic
 TEXT: BEAT THE STORM
@@ -115,12 +115,12 @@ THEN: (at "chimney") the straw roof of a small medieval house from outside, grey
 KAI: Look around. One room. Walls made of sticks and mud, a straw roof, and no chimney. The smoke just finds its own way out.
 
 # SCENE 14
-PICTURE: a long medieval house seen from the side: the family's room at one end and two brown oxen standing in a stall at the other end of the same building, a low wooden fence between them
+PICTURE: a long medieval house seen from the side: the family's room at one end and a brown cow and a few chickens in a stall at the other end of the same building, a low wooden fence between them
 MOOD: shock
 SFX: hit
 THEN: (at "steal") a sneaky stick figure thief at night outside a closed wooden door, unable to get in, frustrated
-THEN: (at "warm") two brown oxen lying on straw with soft warm steam rising from their bodies, cosy, no people
-KAI: And in many villages, the animals live at the other end of the same house. Why? They're the most valuable thing you own. Inside, nobody can steal them, and their body heat keeps you warm.
+THEN: (at "warm") a brown cow lying on straw with soft warm steam rising from her body, cosy, no people
+KAI: And in many villages, the animals live at the other end of the same house. Why? Your cow is the most valuable thing you own. Inside, nobody can steal them, and their body heat keeps you warm.
 
 # SCENE 15
 PICTURE: KAI sitting at the wooden table in the HUT at dawn, gulping a cup of ale and holding a chunk of dark bread, in a hurry
@@ -217,7 +217,7 @@ THEN: (at "every single") the SON and the DAUGHTER walking behind the reapers, p
 KAI: Everyone works at harvest: men, women, even grandparents. Your kids walk behind you, picking up every single fallen grain.
 
 # SCENE 28
-PICTURE: the WIFE carrying a big clay pot and a basket of bread across the field towards the workers at midday
+PICTURE: the WIFE cutting wheat with a sickle in the lord's field, sweating but strong
 MOOD: calm
 MUSIC: calm
 THEN: (at "milked") the WIFE milking a brown cow in a small yard, sitting on a wooden stool with a wooden bucket
@@ -239,23 +239,23 @@ THEN: (at "fresh ale") a few happy villagers walking towards the house with the 
 KAI: When her ale was ready, she tied a bush to a pole above the door. The medieval "open" sign. Everyone knew: fresh ale here.
 
 # SCENE 31
-PICTURE: the family sitting on the grass at the edge of the field at midday, eating from wooden bowls
+PICTURE: a big black iron pot of thick green-brown stew bubbling over the small fire in the HUT, no people
 MOOD: calm
 TEXT: POTTAGE
 THEN: (at "peas") close-up of peas, beans, onions, cabbage leaves and oats on a wooden board, no people
-KAI: Midday dinner, eaten in the field: pottage. A thick stew of peas, beans, onions, cabbage and oats. Almost every single day.
+KAI: Normally, your family eats pottage: a thick stew of peas, beans, onions, cabbage and oats. Almost every single day.
 
 # SCENE 32
 PICTURE: a long wooden table set up at the edge of the lord's field with bread, cheese and jugs of ale, peasants sitting down to eat
 MOOD: happy
 THEN: (at "fed") the LORD's cook in a white apron handing out bread to the workers
-KAI: To be fair, on boon days the lord usually fed the workers: bread, cheese, ale, sometimes even a bit of meat.
+KAI: But today, at midday, you eat fast, one eye on the sky. To be fair, on boon days the lord fed the workers: bread, cheese, ale, sometimes even a bit of meat.
 
 # SCENE 33
 PICTURE: the LORD sitting at a long table inside the MANOR HOUSE with a roast chicken and a leg of meat, happy
 MOOD: funny
-THEN: (at "You eat") KAI looking down sadly into his wooden bowl of pottage
-KAI: Up in the manor house, the lord eats meat almost every day. You eat pottage. Again.
+THEN: (at "back to pottage") KAI looking down sadly into his wooden bowl of pottage
+KAI: Up in the manor house, the lord eats meat almost every day. Tomorrow, you're back to pottage.
 
 # SCENE 34
 PICTURE: the SON chasing a small flock of white geese across a muddy village green, laughing
@@ -327,8 +327,8 @@ MOOD: epic
 MUSIC: epic
 TEXT: RUN
 SFX: whoosh
-THEN: (at "Half") KAI's own strip of wheat, only half cut, dark clouds right above it, no people
-KAI: You run to your own strip. Half of it is still standing. There's no way you can finish it alone.
+THEN: (at "Not one") KAI's own strip of wheat, completely uncut and swaying in the wind, dark clouds right above it, no people
+KAI: You run to your own strip. Not one stalk is cut. There's no way you can finish it alone before the storm.
 
 # SCENE 44
 PICTURE: the NEIGHBOUR walking into KAI's field with his own sickle over his shoulder, smiling
