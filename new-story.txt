@@ -175,7 +175,7 @@ MOOD: happy
 TEXT: SCARLET
 SFX: ding
 THEN: (at "insects") close-up of tiny red insects on a green oak twig and a bowl of bright red powder, plain background
-THEN: (at "fur") close-up of soft white ermine fur with little black tail tips on a red velvet collar
+THEN: (at "fur") RICH KAI alone in the BEDCHAMBER, one person only, proudly stroking the thick white fur collar of his red velvet robe with one hand, chest and smiling face close-up
 THEN: (at "Most expensive") a medieval cloth merchant unrolling a shining bolt of bright scarlet cloth on a table, rich customers staring
 THEN: (at "costs more than a peasant earns") a red velvet robe with fur on one side and a tired medieval peasant holding a few coins on the other side, simple comparison on a plain background
 KAI: Million dollar me? Scarlet. The most expensive cloth in Europe, dyed with crushed insects. Trimmed with fur. One robe like this costs more than a peasant earns in a year.

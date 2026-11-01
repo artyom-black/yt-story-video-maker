@@ -35,6 +35,7 @@ Answer with JSON only, no other text:
   "floating": <true if an animal, a person or a heavy object hangs in the air with nothing holding it>,
   "indoors": <true if the scene is inside a building or room>,
   "has_text": <true if there are written words or letters>,
+  "looks_like_a_photo": <true if it looks like a real photograph or a photorealistic 3D render, not a drawn cartoon>,
   "what_i_see": "<one short sentence>"}}"""
 
 INDOOR = r"\b(inside|indoors|HOUSE|BEDCHAMBER|GREAT HALL|room|hall|chapel|church|kitchen|cellar|stable|hut|longhouse|tower room)\b"
@@ -99,6 +100,8 @@ def _parse(answer, description, n_kai):
         problems.append("a face mixed with an animal or object")
     if yes("floating"):
         problems.append("something floating in the air")
+    if yes("looks_like_a_photo"):
+        problems.append("looks like a real photo, not our cartoon style")
     if yes("has_text"):
         problems.append("written text in the picture")
     if num("people_in_red") > max(n_kai, 0) + 0:

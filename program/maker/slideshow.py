@@ -32,9 +32,11 @@ from .script import load
 
 W, H, FPS = 1920, 1080, 30
 SR = 48000
-BREATH = 0.12                  # pause after each line (MrBeast pace: almost none)
-SECTION_PAUSE = 0.25           # extra pause when the music / section changes
-VOICE_TEMPO = 1.06             # Kai a little faster, same pitch
+BREATH = 0.35                  # pause after each line (default; see MOOD_BREATH)
+MOOD_BREATH = {"shock": 0.3, "funny": 0.45, "tense": 0.4, "curious": 0.4, "happy": 0.45, "calm": 0.55,
+               "sad": 0.75, "epic": 0.6, "gross": 0.45}   # let big or sad moments land
+SECTION_PAUSE = 0.6            # extra pause when the music / section changes
+VOICE_TEMPO = 1.0              # natural speed (the voice itself is already faster on exciting lines)
 VOICE_FILTER = (f"atempo={VOICE_TEMPO},highpass=f=80,"                       # energy: faster, tighter, more present
                 "acompressor=threshold=-22dB:ratio=3.5:attack=4:release=60:makeup=2,"
                 "equalizer=f=3200:t=q:w=1.2:g=3,equalizer=f=220:t=q:w=1:g=-1.5")
@@ -44,7 +46,7 @@ ROLE_GAIN = {"hit": -5, "whoosh": -12, "pop": -11, "sting": -8, "ding": -10}
 MUSIC_FOLDERS = {"tense": ["music_suspense", "music_epic"], "funny": ["music_funny", "music_comedy", "music_quirky"],
                  "calm": ["music_medieval", "music_playful"], "sad": ["music_medieval", "music_suspense"],
                  "epic": ["music_epic", "music_suspense"]}
-MUSIC_DB = -20
+MUSIC_DB = -13
 
 
 # ---------- audio helpers ----------
@@ -72,8 +74,8 @@ def clean_voice(a):
         while j < len(env) and quiet[j] == quiet[i]:
             j += 1
         seg = a[i * hop:j * hop]
-        if quiet[i] and (j - i) > 24:                # pauses longer than 0.24 s become 0.2 s
-            k = int(0.2 * SR)
+        if quiet[i] and (j - i) > 45:                # only very long pauses are shortened (to 0.4 s)
+            k = int(0.4 * SR)
             seg = np.concatenate([seg[:k // 2], seg[-(k - k // 2):]])
         out.append(seg)
         i = j
@@ -161,7 +163,7 @@ def smooth_music(st, voices):
         if s.music not in ("same", ""):
             cur = s.music
         moods.append(cur)
-    dur = [len(v) / SR + BREATH for v in voices]
+    dur = [len(v) / SR + MOOD_BREATH.get(s.mood, BREATH) for v, s in zip(voices, st.scenes)]
     for _ in range(10):
         runs, i = [], 0
         while i < len(moods):
@@ -239,7 +241,7 @@ def make_plan(st, assets, kit_dir, cands):
         if section_change:
             t += SECTION_PAUSE
         start = t
-        dur = len(voice) / SR + BREATH
+        dur = len(voice) / SR + MOOD_BREATH.get(s.mood, BREATH)
         tt = word_time(s.line, s.text, voice) if s.text else None
         pics, switch, grades = [], [], []
         for k, (word, _pic) in enumerate(s.all_pictures):
@@ -329,10 +331,8 @@ def sound_events(s, start, dur, tt, switch, section_change, idx):
     import re
     ev = []
     text = (s.text or "").upper()
-    for k, w in enumerate(switch):
-        if k > 0:
-            ev.append((start + w, "cut", idx + k))
-    ev.append((start, "swoosh" if section_change or s.sfx == "whoosh" else "cut", idx))
+    if section_change or s.sfx == "whoosh":           # MrBeast: no sound on ordinary cuts, a swoosh for a new part
+        ev.append((start, "swoosh", idx))
     at = start + (tt if tt is not None else 0.05)
     label = text.strip() == "$1" or "$" in text or "MILLION" in text
     if label:                                            # "$1" / "$1,000,000": their own sound, nothing else on top
@@ -395,14 +395,14 @@ def mix(scenes, placed, music_runs, length, out_wav, drops=()):
         poor = np.convolve(poor, np.ones(k) / k, mode="same").clip(0, 1)
         dull = np.convolve(music, np.ones(36) / 36, mode="same")           # ~1 kHz low-pass
         dull = np.convolve(dull, np.ones(36) / 36, mode="same") * 1.15
-        music = music * (1 - poor) + dull * poor
+        music = music * (1 - 0.6 * poor) + dull * 0.6 * poor
     # duck the music (and loud effects) while Kai talks
     hop = SR // 100
     env = np.sqrt(np.convolve(voice ** 2, np.ones(hop) / hop, mode="same"))
     talking = (env > 0.02).astype(np.float32)
     k = int(0.25 * SR)
     smooth = np.convolve(talking, np.ones(k) / k, mode="same").clip(0, 1)
-    music *= db(MUSIC_DB) * (1 - 0.55 * smooth)
+    music *= db(MUSIC_DB) * (1 - 0.5 * smooth)
     if drops:                                              # music cuts out on the big hits, then comes back
         gate = np.ones(n, np.float32)
         for a0, a1 in drops:
@@ -530,47 +530,14 @@ def analyse_picture(path):
 
 
 def plan_shots(sc, info):
-    """Cut the scene into shots of 0.7-1.5 s on the rhythm of Kai's voice, each with its own framing."""
+    """MrBeast camera: the picture just sits there with a slow, steady push-in (no zooming in and out).
+    Only on a big moment (a reveal / shock with a word on screen) the camera punches in on the face once."""
     dur = sc["dur"]
-    if not sc.get("hype"):                               # calm: one shot, a second one only on the key word
-        cuts = [0.0]                                     # or when the picture stays long
-        if sc["text_at"] and 0.8 < sc["text_at"] < dur - 0.8:
-            cuts.append(sc["text_at"])
-        elif dur > CALM_SHOT:
-            mid = [p for p in sc["phrases"] if 1.4 < p < dur - 1.4]
-            cuts.append(min(mid, key=lambda p: abs(p - dur / 2)) if mid else dur / 2)
-        face = info["face"]
-        kinds = ["wide", "face" if face else "medium"]
-        return [{"start": c, "end": cuts[i + 1] if i + 1 < len(cuts) else dur,
-                 "kind": "face" if (sc["text_at"] is not None and abs(c - sc["text_at"]) < 0.05 and face) else kinds[i % 2],
-                 "punch": sc["text_at"] is not None and abs(c - sc["text_at"]) < 0.05} for i, c in enumerate(cuts)]
-    cuts = sorted(set([0.0] + [p for p in sc["phrases"] if 0.5 < p < dur - 0.5] +
-                      ([sc["text_at"]] if sc["text_at"] and 0.4 < sc["text_at"] < dur - 0.4 else [])))
-    pts = []
-    for i, c in enumerate(cuts):                         # split long pieces, drop pieces that are too short
-        end = cuts[i + 1] if i + 1 < len(cuts) else dur
-        n = max(1, math.ceil((end - c) / MAX_SHOT))
-        pts += [c + k * (end - c) / n for k in range(n)]
-    shots = [pts[0]]
-    for p in pts[1:]:
-        if p - shots[-1] >= MIN_SHOT and dur - p >= MIN_SHOT:
-            shots.append(p)
-    face = info["face"]
-    order = (["face", "wide", "detail", "face", "medium", "detail2"] if sc["mood"] == "shock" else
-             ["wide", "face", "detail", "medium", "face", "detail2"])
-    if not face:
-        order = ["wide", "detail", "medium", "detail2"]
-    out = []
-    for i, st in enumerate(shots):
-        kind = order[i % len(order)]
-        if sc["text_at"] is not None and abs(st - sc["text_at"]) < 0.05:
-            kind = "face" if face else "detail"          # the key word: punch into the face
-        if out and kind == out[-1]["kind"]:
-            kind = order[(i + 1) % len(order)]
-        end = shots[i + 1] if i + 1 < len(shots) else dur
-        out.append({"start": st, "end": end, "kind": kind,
-                    "punch": sc["text_at"] is not None and abs(st - sc["text_at"]) < 0.05})
-    return out
+    t = sc["text_at"]
+    if sc.get("hype") and t is not None and 0.6 < t < dur - 0.4 and info["face"]:
+        return [{"start": 0.0, "end": t, "kind": "wide", "punch": False},
+                {"start": t, "end": dur, "kind": "medium", "punch": True}]
+    return [{"start": 0.0, "end": dur, "kind": "wide", "punch": False}]
 
 
 def framing(kind, info, aspect):
@@ -623,10 +590,8 @@ def render_scene(job):
         sub = dict(sc, dur=b - a, phrases=[p - a for p in sc["phrases"] if a < p < b],
                    text_at=(sc["text_at"] - a) if sc["text_at"] is not None and a <= sc["text_at"] < b else None,
                    mood=sc["mood"] if k == 0 else "calm",
-                   hype=sc["n"] <= HOOK_SCENES or sc["camera"] == "punch" or bool(sc.get("booms")))
+                   hype=sc["camera"] == "punch")
         shots = plan_shots(sub, infos[k])
-        if k > 0 and shots:
-            shots[0]["kind"] = "wide" if shots[0]["kind"] != "face" else "face"   # first show what it is
         segs.append({"start": a, "end": b, "pic": k, "shots": shots})
     layer = text_layer(sc["text"].upper(), 175) if sc["text"] else None
     frames = sc["frames"]
@@ -642,10 +607,8 @@ def render_scene(job):
         z, cx, cy = framing(shot["kind"], info, W / H)
         local = lt - shot["start"]
         length = max(0.01, shot["end"] - shot["start"])
-        z *= 1.0 + 0.07 * ease(local / length)            # every shot slowly pushes in
+        z *= 1.0 + 0.012 * (t - seg["start"])           # slow steady push-in (about 1% a second)
         since_pic = t - seg["start"]
-        if since_pic < 0.18 and (seg["pic"] > 0 or sc.get("snap_first")):   # snap-zoom when a new picture lands
-            z *= 1.0 + 0.10 * (1 - ease(since_pic / 0.18))
         if shot["punch"] and local < 0.08:                # punch-in on the key word
             z *= 0.82 + 0.18 * local / 0.08
         dx = dy = 0.0
