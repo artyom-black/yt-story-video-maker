@@ -16,15 +16,14 @@ PROMPT = (f"Character reference sheet, one single character. {STICK}. His signat
           f"from head to feet visible, centred. Pure plain white background, nothing else, no shadow on the ground. "
           f"Absolutely no text, no letters, no watermark.")
 
-THIN = ("Character design for a hit YouTube history explainer channel, one single character, simple hand-drawn "
-        "stick figure style: a big perfectly round white head with a clean black outline, two big round white "
-        "eyes with small black pupils and expressive thin eyebrows, a small simple mouth, thick messy spiky "
-        "jet-black hair with many tufts on top of his head. A small simple body: a plain bright red t-shirt drawn "
-        "as one flat shape, arms and legs drawn as single thin black lines, small round hands, small simple black "
-        "shoes. The head is big compared with the body. Clean confident lines, flat colours, appealing and "
-        "likeable. Standing facing the viewer, friendly curious smile, the whole body from head to feet visible, "
-        "centred. Pure plain white background, nothing else, no shadow. Absolutely no text, no letters, no "
-        "watermark.")
+THIN = ("Character reference for a YouTube history explainer channel, one single character, classic stick "
+        "figure style done really well: a big perfectly round white head with a clean black outline, two big round "
+        "white eyes with small black pupils, thin expressive eyebrows, a small simple smile, thick messy spiky "
+        "jet-black hair with many tufts on top of his head. The body, arms and legs are single clean thin black "
+        "lines, small round hands, small simple feet, no clothes, no colour except the black hair. The head is big "
+        "compared with the body. Clean confident lines, appealing and likeable. Standing straight facing the "
+        "viewer, arms relaxed at his sides, the whole body from head to feet visible, centred. Pure plain white "
+        "background, nothing else, no shadow. Absolutely no text, no letters, no watermark.")
 
 if __name__ == "__main__":
     out = sys.argv[1]
