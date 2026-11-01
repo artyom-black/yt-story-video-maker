@@ -11,16 +11,19 @@ from .art_lab import generate
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO = os.path.dirname(ROOT)
-REFS = [os.path.join(REPO, "main-character.jpg"), os.path.join(ROOT, "characters", "stick", "edit_src.png")]
-INSTRUCTION = ("The same stick figure character as in image 0 and image 1: exactly the same round white head, the same "
-               "messy brown hair, the same brown patched tunic with a rope belt, and exactly the same legs as in image 1: "
-               "two thin white legs with a black outline and small simple feet, drawn in exactly the same way. "
-               "Night in a medieval harvest field, lit by ONE full moon in a dark blue sky with stars. Behind him you can "
-               "see everything he did today: a whole field of wheat already cut, long rows of tied wheat bundles standing "
-               "in stooks, a wooden cart piled high with wheat bundles, a sickle stuck in the ground. He stands in front "
-               "of it all, completely exhausted, shoulders down, covered in mud and sweat, a sad destroyed face. His whole "
-               "body from head to feet is visible, centred, the same size and position in the picture as in image 1. "
-               "Same drawing style as image 1. Only one moon. 16:9 picture. Absolutely no text, no letters, no watermark.")
+REFS = [os.path.join(REPO, "main-character.jpg"), os.path.join(ROOT, "characters", "stick", "edit_src.png"),
+        os.path.join(ROOT, "characters", "stick", "edit_src2.png")]
+INSTRUCTION = ("The same stick figure character as in image 1: exactly the same round white head, messy brown hair, "
+               "brown patched tunic with a rope belt, and exactly the same thin white legs with a black outline and small "
+               "feet. His face exactly like image 2: dirty, sweaty, sad and exhausted, with mud on his cheek and tunic. "
+               "His body shows he is completely exhausted: shoulders dropped, back bent forward, both arms hanging down "
+               "limp at his sides, one hand loosely dragging a sickle on the ground, knees slightly bent, as if he could "
+               "collapse any second. He stands in the middle, his whole body from head to feet visible, about the same size "
+               "as in image 1. Background: a beautiful wide medieval harvest field at night under one big full moon and a "
+               "dark blue sky full of stars, the whole field cut, many neat rows of tied golden wheat bundles standing in "
+               "stooks going far into the distance, a wooden cart piled high with wheat behind him, and far away a small "
+               "village with straw roofs and warm glowing windows. Moonlight makes the wheat glow softly. Same drawing "
+               "style as image 1. Only one moon. 16:9 picture. Absolutely no text, no letters, no watermark.")
 
 if __name__ == "__main__":
     out = sys.argv[1]
