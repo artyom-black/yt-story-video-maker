@@ -33,7 +33,8 @@ KAI_ID = ("the main character, a stick figure man exactly like image 0: a big ro
           "small black dot eyes, simple eyebrows and mouth, messy brown hair, thin black line arms and legs")
 STYLE = ("Simple 2D stick figure cartoon in a clean, popular YouTube history explainer style: every person is a simple "
          "stick figure with a big round white head, small dot eyes, simple expressive eyebrows and mouth, and thin "
-         "black line arms and legs, wearing simple flat-coloured clothes of the time. The backgrounds are detailed, "
+         "black line arms and legs, wearing simple flat-coloured clothes of the time. Every face is a plain flat white "
+         "circle with tiny black dot eyes and a simple line mouth: no skin colour, no shading, no nose. The backgrounds are detailed, "
          "colourful, painted 2D cartoon scenes with bold clean outlines and soft light. Clear and easy to read. "
          "Absolutely no text, no letters, no words, no captions, no watermark.")
 THUMB_STYLE = ("YouTube thumbnail in the same stick figure style: one big character with an extreme, clear facial "
@@ -57,7 +58,7 @@ def _place_rule(st):
             f"mention. Time period, only for clothes, tools and buildings: {st.era}.")
 
 
-CHECK_VERSION = 6          # raise when the checker learns a new kind of mistake: old pictures get looked at again
+CHECK_VERSION = 7          # raise when the checker learns a new kind of mistake: old pictures get looked at again
 
 
 class AllowanceUsedUp(Exception):

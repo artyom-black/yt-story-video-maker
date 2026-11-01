@@ -35,6 +35,7 @@ Answer with JSON only, no other text:
   "animal_mixed": <true if any animal looks like two different animals mixed together, e.g. a cow with sheep wool or a dog with a bird's beak>,
   "through_body": <true if a pole, bed post, sword or other object goes straight through a person's body>,
   "fire_in_wrong_place": <true if fire burns in a bowl or bucket of water, in a basin, on the floor, in the air or on a person, instead of in a fireplace, fire pit, torch, candle, lamp or campfire>,
+  "two_suns_or_moons": <true if there is more than one sun or more than one moon in the sky>,
   "floating": <true if an animal, a person or an object (a bowl, a cup, a tool) hangs in the air with no hand, table or floor holding it>,
   "indoors": <true if the scene is inside a building or room>,
   "has_text": <true if there are written words or letters>,
@@ -109,6 +110,10 @@ def _parse(answer, description, n_kai):
         problems.append("an object goes through a body")
     if yes("fire_in_wrong_place"):
         problems.append("fire burning in a place that makes no sense")
+    if yes("two_suns_or_moons"):
+        problems.append("two moons or two suns")
+    if re.search(r"\bno (people|humans)\b", description, re.I) and num("people") > 0:
+        problems.append(f"{num('people')} people in a picture that should have none")
     if yes("floating"):
         problems.append("something floating in the air")
     if yes("looks_like_a_photo"):
