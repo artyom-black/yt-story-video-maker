@@ -87,7 +87,17 @@ def make(story, out):
             if old.startswith(f"thumb_{i}_plain") and old != os.path.basename(plain):
                 os.remove(os.path.join(out, old))
         if not os.path.exists(plain):
-            open(plain, "wb").write(generate(prompt, 1280, 720, seed=900 + i * 37, refs=[ref]))
+            data = None
+            for t in range(3):                       # the AI sometimes refuses a prompt: try again, gentler
+                try:
+                    data = generate(prompt + (" Friendly, clean, family-friendly cartoon." if t else ""), 1280, 720,
+                                    seed=900 + i * 37 + 1000 * t, refs=[ref])
+                    break
+                except Exception as ex:
+                    print(f"thumbnail {i} try {t + 1} failed: {str(ex)[:150]}", flush=True)
+            if data is None:
+                continue
+            open(plain, "wb").write(data)
             print("drew thumbnail", i, flush=True)
         final = os.path.join(out, f"thumb_{i}.png")
         finish(plain, words, side, final)
