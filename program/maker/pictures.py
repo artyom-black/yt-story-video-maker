@@ -33,6 +33,9 @@ W, H = 1280, 720
 # Everybody except Kai stays out of his signature colour, so viewers always know who Kai is.
 ONLY_KAI_RED = "Nobody except Kai wears red: other people wear plain brown, beige, grey or green clothes."
 # added later; pictures drawn before it was added are kept (see "legacy" in jobs), new ones get it
+SIZE_RULE = ("Real-life sizes and adult proportions: Kai is a normal adult man of average height (not a child, "
+             "no big cartoon head), doors are a bit taller than people, houses are much taller than people, "
+             "animals, food, cups and tools are their real size next to a person. Hands have five fingers.")
 FACE_RULE = ("Only Kai has Kai's face and black hair: every other person has a clearly different face, hair "
              "colour and age. Every person and animal has a normal body: one head, two arms, two legs.")
 
@@ -46,7 +49,7 @@ def _place_rule(st):
             f"mention. Time period, only for clothes, tools and buildings: {st.era}.")
 
 
-CHECK_VERSION = 4          # raise when the checker learns a new kind of mistake: old pictures get looked at again
+CHECK_VERSION = 5          # raise when the checker learns a new kind of mistake: old pictures get looked at again
 
 
 class AllowanceUsedUp(Exception):
@@ -173,7 +176,7 @@ def split_prompt(pic, st, costume_ref, costume_rich_ref, cast_paths, thumb=False
         if thumb:
             prompt = f"{text}. One person only. {kai_clothes(part, st)}Tall picture. {THUMB_STYLE}"
         else:
-            prompt = (f"{text}. One person only. {_place_rule(st)} {kai_clothes(part, st)}{ONLY_KAI_RED} {FACE_RULE} "
+            prompt = (f"{text}. One person only. {_place_rule(st)} {kai_clothes(part, st)}{ONLY_KAI_RED} {FACE_RULE} {SIZE_RULE} "
                       f"Tall picture. {STYLE}")
         halves.append([prompt, refs])
     return "SPLIT||" + json.dumps(halves)
@@ -202,6 +205,17 @@ def draw(prompt, w, h, seed, refs, out):
     canvas.paste((255, 255, 255), (w // 2 - bar // 2, 0, w // 2 + bar // 2, h))
     canvas.save(out + ".part.png")
     os.replace(out + ".part.png", out)
+
+
+def upgrade(path, prompt):
+    """A picture that gets drawn again always gets today's rules (not the older prompt it was kept under)."""
+    if prompt and not prompt.startswith("SPLIT||") and SIZE_RULE not in prompt:
+        if FACE_RULE in prompt:
+            prompt = prompt.replace(f"{FACE_RULE} 16:9", f"{FACE_RULE} {SIZE_RULE} 16:9")
+        else:
+            prompt = prompt.replace(f"{ONLY_KAI_RED} 16:9", f"{ONLY_KAI_RED} {FACE_RULE} {SIZE_RULE} 16:9")
+        path = _named(path.rsplit("_", 1)[0] + ".png", prompt)
+    return path, prompt
 
 
 def jobs(st, assets):
@@ -238,9 +252,13 @@ def jobs(st, assets):
             text, used = cast_in(text, st.cast, first)
             refs = refs + [cast_ref(cast_paths[n]) for n in used]
             legacy = f"{text}. {_place_rule(st)} {kai_clothes(pic, st)}{ONLY_KAI_RED} 16:9 picture. {STYLE}"
-            prompt = f"{text}. {_place_rule(st)} {kai_clothes(pic, st)}{ONLY_KAI_RED} {FACE_RULE} 16:9 picture. {STYLE}"
-            if os.path.exists(_named(path, legacy)):          # already drawn with the older rules: keep it
-                prompt = legacy
+            before = f"{text}. {_place_rule(st)} {kai_clothes(pic, st)}{ONLY_KAI_RED} {FACE_RULE} 16:9 picture. {STYLE}"
+            prompt = (f"{text}. {_place_rule(st)} {kai_clothes(pic, st)}{ONLY_KAI_RED} {FACE_RULE} {SIZE_RULE} "
+                      f"16:9 picture. {STYLE}")
+            for older in (before, legacy):                    # already drawn with older rules: keep it (the checker
+                if os.path.exists(_named(path, older)):       # looks at it again and redraws it if it's wrong)
+                    prompt = older
+                    break
             sp = split_prompt(pic, st, costume_ref, costume_rich_ref, cast_paths)
             if sp:
                 prompt = sp
@@ -324,6 +342,8 @@ def run(story_path, assets):
                 if res.get("severe"):
                     print(f"  {name}: re-check found {'; '.join(res['problems'])} - drawing it again", flush=True)
                     os.remove(path)
+                    path, prompt = upgrade(path, prompt)
+                    key = os.path.basename(path)
                 else:
                     checks[key] = dict(checks.get(key, {}), v=CHECK_VERSION,
                                        status=checks.get(key, {}).get("status", "ok"))
@@ -332,6 +352,9 @@ def run(story_path, assets):
                 continue
             lab = label(_key(path)).lower()
             extra = 104729 * (1 if redone.get(lab) == "pending" else 0)
+            if not os.path.exists(path) and desc is not None:
+                path, prompt = upgrade(path, prompt)
+                key = os.path.basename(path)
             if not os.path.exists(path):
                 best = None
                 for attempt in range(3):            # draw, check, draw again if the checker finds a mistake

@@ -181,7 +181,7 @@ THEN: (at "costs more than a peasant earns") a red velvet robe with fur on one s
 KAI: Million dollar me? Scarlet. The most expensive cloth in Europe, dyed with crushed insects. Trimmed with fur. One robe like this costs more than a peasant earns in a year.
 
 # SCENE 19
-PICTURE: KAI walking out of the HOUSE at sunrise carrying a heavy wooden hoe on his shoulder, tired face, peasants walking to the fields behind him
+PICTURE: outdoors at sunrise, KAI stepping out through the low wooden door of a small thatched peasant house into the muddy lane, a heavy wooden hoe resting on his shoulder and held with both hands, tired face, a few peasants walking to the fields far behind him
 MOOD: tense
 MUSIC: tense
 TEXT: 6 AM
@@ -244,7 +244,7 @@ PICTURE: inside the GREAT HALL used as a court, RICH KAI sitting in a big chair 
 MOOD: funny
 TEXT: MANOR COURT
 SFX: ding
-THEN: (at "pig") a fat pink pig happily eating grain in the lord's golden field, no people
+THEN: (at "pig") a fat pink pig standing in the middle of the lord's tall golden wheat field, happily chewing a mouthful of wheat stalks it has pulled down, trampled wheat around it, no people
 THEN: (at "Guess who pays") an old grey-haired nervous peasant in a plain brown tunic handing a small bag of coins to a bald clerk at a table in the GREAT HALL, RICH KAI smiling smugly in his big carved chair behind the table
 KAI: Like this guy. His pig got into my field. In my own manor court, I'm the judge. Guess who pays.
 
