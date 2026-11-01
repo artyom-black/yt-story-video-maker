@@ -11,10 +11,11 @@ from .art_lab import generate
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "characters", "stick", "edit_src.png")
-INSTRUCTION = ("Exactly the same picture as image 0, same composition, same character, same ox, same colours and "
-               "style. Change only his footwear: replace the boots with simple flat medieval leather wrap shoes, "
-               "low, soft and shapeless, tied around the ankle with thin leather straps, no heels, no soles, no laces. "
-               "Absolutely no text, no letters, no watermark.")
+INSTRUCTION = ("Exactly the same picture as image 0: the same composition, the same room, the same character, the same "
+               "sleeping family, the same window, the same drawing style. Only two changes: 1) the whole picture is "
+               "brighter, with warm orange firelight glowing on everything; 2) his face is more surprised and shocked, "
+               "eyebrows raised high, eyes a bit wider, mouth open in a small 'wait, what?' shape. Keep his small dot "
+               "eyes and his hand on his forehead. Absolutely no text, no letters, no watermark.")
 
 if __name__ == "__main__":
     out = sys.argv[1]
