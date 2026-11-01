@@ -93,7 +93,7 @@ KAI: Million dollar life. My room has a real chimney, and glass in the windows. 
 PICTURE: the SERVANT kneeling and putting soft red leather shoes on RICH KAI's feet, RICH KAI sitting relaxed with a surprised face
 MOOD: funny
 THEN: (at "dress me") the SERVANT and a second servant helping RICH KAI into his red velvet robe, one fixing the fur collar, one the gold belt
-THEN: (at "sleeps") the SERVANT sleeping on a thin straw mattress on the stone floor outside the door of the BEDCHAMBER
+THEN: (at "sleeps") a narrow dark stone castle corridor at night, the SERVANT sleeping on a thin straw mattress on the floor right next to a closed heavy wooden door, one candle on the wall, no bed in the picture
 THEN: (at "in case I need anything") RICH KAI in bed in the BEDCHAMBER at night ringing a small silver bell, the SERVANT instantly opening the door with a candle
 KAI: I don't even dress myself. Servants dress me. And this guy sleeps on the floor outside my door, in case I need anything at night.
 
