@@ -18,7 +18,7 @@ TAGS: medieval peasants, middle ages, medieval life, what did medieval peasants 
 SOURCES: Christopher Dyer, Making a Living in the Middle Ages (Yale, 2002); Christopher Dyer, Standards of Living in the Later Middle Ages (Cambridge, 1989); H. S. Bennett, Life on the English Manor (1937); Barbara Hanawalt, The Ties That Bound: Peasant Families in Medieval England (1986); Judith Bennett, Ale, Beer and Brewsters in England (1996); A. Roger Ekirch, At Day's Close: Night in Times Past (2005); Ian Mortimer, The Time Traveller's Guide to Medieval England (2008); English Heritage, Medieval village life
 
 # SCENE 1
-PICTURE: KAI standing in a moonlit harvested field at night, covered in mud and sweat, shoulders down, arms hanging, completely exhausted, rows of tied wheat bundles behind him
+PICTURE: KAI standing in a moonlit harvested field at night, his face and tunic covered in mud and sweat, a sad exhausted face, shoulders down, arms hanging limp, rows of tied wheat bundles behind him
 MOOD: sad
 MUSIC: tense
 TEXT: 9 PM
@@ -30,7 +30,7 @@ PICTURE: KAI standing in front of his small straw-roofed house at sunrise, fresh
 MOOD: happy
 TEXT: 5 AM
 SFX: whoosh
-THEN: (at "sixteen hours") KAI looking at the viewer with a confused face, scratching his head, in front of the same house in the morning
+THEN: (at "sixteen hours") KAI looking at the viewer with a confused face, scratching his head, in front of his small straw-roofed hut in the morning
 KAI: And this is me at five this morning. So what happened in those sixteen hours?
 
 # SCENE 3

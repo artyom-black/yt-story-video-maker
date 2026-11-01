@@ -56,7 +56,8 @@ def _place_rule(st):
     return (f"Draw exactly and only what is described above: the place, the light and the framing; indoors stays "
             f"indoors, dark stays dark, a close-up stays a close-up. Show ONLY the people and animals the "
             f"description names: no extra people, no crowds, no extra animals, no buildings, windows or "
-            f"landscape the description does not mention. Everything belongs to {period}: nothing modern.")
+            f"landscape the description does not mention. Everything belongs to {period}: nothing modern; houses are "
+            f"small medieval cottages of wood and mud with thick straw roofs.")
 
 
 CHECK_VERSION = 8          # raise when the checker learns a new kind of mistake: old pictures get looked at again
@@ -119,7 +120,8 @@ def kai_clothes(text, st):
     if poor:
         return (f"The main character is a stick figure exactly like image 0: a big round flat white head, small dot "
                 f"eyes, messy brown hair, and arms and legs drawn as thin black lines. He wears exactly the clothes "
-                f"from image 1: {st.costume}. He is a grown man, always drawn in this same simple way. ")
+                f"from image 1: {st.costume}. He is a grown man, always drawn in this same simple way. His face and body "
+                f"show exactly the feeling described above (tired, scared, angry, happy...), never a default smile. ")
     return ""
 
 

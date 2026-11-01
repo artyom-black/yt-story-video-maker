@@ -132,7 +132,8 @@ def _parse(answer, description, n_kai):
         problems.append("written text in the picture")
     if n_kai and num("people_with_messy_brown_hair") > n_kai:
         problems.append("Kai appears more often than he should")
-    want_in = bool(re.search(INDOOR, description, re.I)) and not re.search(OUTDOOR, description, re.I)
+    outside = re.search(r"\b(in front of|outside|outdoors|from outside|from above)\b", description, re.I)
+    want_in = bool(re.search(INDOOR, description, re.I)) and not re.search(OUTDOOR, description, re.I) and not outside
     want_out = bool(re.search(OUTDOOR, description, re.I)) and not re.search(INDOOR, description, re.I)
     if "indoors" in d and want_in and not yes("indoors"):
         problems.append("should be indoors but is drawn outside")
