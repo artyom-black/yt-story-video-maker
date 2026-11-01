@@ -333,7 +333,9 @@ PICTURE: KAI carrying a heavy sack of grain to the watermill, the miller holding
 MOOD: shock
 TEXT: MILL FEE
 THEN: (at "at home") a small hand mill made of two round stones lying broken on the floor of a house, no people
-KAI: Then you pay to grind your grain at the lord's mill. Grinding it at home could get you fined.
+THEN: (at "oven") outdoors in front of a stone bakehouse, KAI handing a small coin to a baker who holds a wooden bread paddle, a big stone oven glowing behind the baker
+THEN: (at "firewood") outdoors at the edge of a forest, KAI carrying a big bundle of sticks on his back, a stern forester with crossed arms watching him
+KAI: Then you pay to grind your grain at the lord's mill. Grinding it at home could get you fined. The lord's oven? Pay to bake your bread. And firewood from his forest? Ask permission, and pay.
 
 # SCENE 44
 PICTURE: a stern steward sitting behind a big wooden table in the hall of the MANOR HOUSE, writing in a big book, peasants waiting in line

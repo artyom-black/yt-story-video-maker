@@ -57,7 +57,9 @@ def _place_rule(st):
             f"indoors, dark stays dark, a close-up stays a close-up. Show ONLY the people and animals the "
             f"description names: no extra people, no crowds, no extra animals, no buildings, windows or "
             f"landscape the description does not mention. Everything belongs to {period}: nothing modern; houses are "
-            f"small medieval cottages of wood and mud with thick straw roofs.")
+            f"small medieval cottages of wood and mud with thick straw roofs. If the description names no place, draw a "
+            f"simple medieval outdoor background (a wheat field or a muddy village lane under the sky): never a modern "
+            f"room, never an empty white background. Objects and animals never have faces.")
 
 
 CHECK_VERSION = 8          # raise when the checker learns a new kind of mistake: old pictures get looked at again
@@ -292,7 +294,10 @@ def jobs(st, assets):
                 place += " There are no people at all in this picture."
             prompt = (f"{text}. {place} {kai_clothes(pic, st)}{ONLY_KAI_RED} {FACE_RULE} {SIZE_RULE} "
                       f"16:9 picture. {STYLE}")
-            for older in (before, legacy):                    # already drawn with older rules: keep it (the checker
+            v8 = prompt.replace(" If the description names no place, draw a simple medieval outdoor background (a wheat "
+                                "field or a muddy village lane under the sky): never a modern room, never an empty white "
+                                "background. Objects and animals never have faces.", "")
+            for older in (v8, before, legacy):                # already drawn with older rules: keep it (the checker
                 if os.path.exists(_named(path, older)):       # looks at it again and redraws it if it's wrong)
                     prompt = older
                     break
