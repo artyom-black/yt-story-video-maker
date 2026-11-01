@@ -20,13 +20,8 @@ STICK = ("Simple 2D stick figure cartoon in a clean explainer-video style: a big
          "simple expressive eyebrows and mouth, flat bright colours, no shading, very clean and minimal")
 
 DESIGNS = {
-    "A": ("Side fringe", f"{STICK}. His signature: a glossy black side-swept fringe of hair falling over one side "
-                         f"of his forehead"),
-    "B": ("Quiff", f"{STICK}. His signature: one tall bouncy black curl of hair standing up on top of his head, "
-                   f"like a question mark"),
-    "C": ("Round glasses", f"{STICK}. His signature: big round black glasses and short messy brown hair"),
-    "D": ("Red scarf", f"{STICK}. He is bald. His signature: a long bright red scarf wrapped around his neck with "
-                       f"the ends flying"),
+    "E": ("Messy black hair", f"{STICK}. His signature: short messy spiky black hair with a few tufts sticking up "
+                              f"and out, no glasses"),
 }
 
 VIEWS = {
