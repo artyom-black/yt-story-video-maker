@@ -32,6 +32,7 @@ Answer with JSON only, no other text:
   "young_men_with_short_black_hair": <how many>,
   "broken_body": <true if any person or animal has two heads, extra or missing arms, hands or legs, or two bodies melted together>,
   "face_mixed": <true if a person has an animal's head or face, or an animal part or object growing out of their face>,
+  "animal_mixed": <true if any animal looks like two different animals mixed together, e.g. a cow with sheep wool or a dog with a bird's beak>,
   "floating": <true if an animal, a person or a heavy object hangs in the air with nothing holding it>,
   "indoors": <true if the scene is inside a building or room>,
   "has_text": <true if there are written words or letters>,
@@ -98,6 +99,8 @@ def _parse(answer, description, n_kai):
         problems.append("broken body (extra head/limbs or merged bodies)")
     if yes("face_mixed"):
         problems.append("a face mixed with an animal or object")
+    if yes("animal_mixed"):
+        problems.append("an animal mixed from two animals")
     if yes("floating"):
         problems.append("something floating in the air")
     if yes("looks_like_a_photo"):
@@ -114,7 +117,7 @@ def _parse(answer, description, n_kai):
         problems.append("should be indoors but is drawn outside")
     if "indoors" in d and want_out and yes("indoors"):
         problems.append("should be outdoors but is drawn inside")
-    severe = any(w in p_ for p_ in problems for w in ("broken body", "face mixed", "real photo", "Kai appears"))
+    severe = any(w in p_ for p_ in problems for w in ("broken body", "face mixed", "real photo", "Kai appears", "two animals"))
     return {"ok": not problems, "severe": severe, "problems": problems, "seen": str(d.get("what_i_see", ""))}
 
 

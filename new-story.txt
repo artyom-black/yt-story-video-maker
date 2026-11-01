@@ -58,7 +58,7 @@ THEN: (at "Not even a king") a medieval king with a golden crown sitting on a th
 KAI: And at the end of this day, something is coming that nobody can buy their way out of. Not even a king.
 
 # SCENE 5
-PICTURE: KAI sitting up on straw inside the HOUSE, the COW and two sheep standing at the far end of the same room, KAI pointing at them in disbelief
+PICTURE: KAI sitting up on straw inside the HOUSE, the COW standing behind a low wooden rail at the far end of the same room, KAI pointing at her in disbelief
 MOOD: funny
 MUSIC: funny
 TEXT: $1
@@ -270,7 +270,7 @@ KAI: Lunch. It's called pottage. Peas, beans, cabbage, onions, boiled in one pot
 # SCENE 29
 PICTURE: KAI looking at the viewer with a sad face, holding up an empty wooden spoon
 MOOD: sad
-THEN: (at "milk") a medieval yard with the COW, hens and sheep, the MOTHER carrying a bucket of milk and a basket of eggs
+THEN: (at "milk") a medieval yard with the COW and a few hens, the MOTHER carrying a bucket of milk and a basket of eggs
 THEN: (at "gone forever") an empty muddy animal pen with a broken rope, no animal left, grey sky, no people
 KAI: Meat is rare. A live animal gives milk, eggs and wool every day. Eat it, and it's gone forever.
 

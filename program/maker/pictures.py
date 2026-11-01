@@ -46,6 +46,9 @@ def _place_rule(st):
             f"mention. Time period, only for clothes, tools and buildings: {st.era}.")
 
 
+CHECK_VERSION = 2          # raise when the checker learns a new kind of mistake: old pictures get looked at again
+
+
 class AllowanceUsedUp(Exception):
     pass
 
@@ -310,6 +313,20 @@ def run(story_path, assets):
     try:
         for i, (name, path, prompt, w, h, refs, desc) in enumerate(todo):
             key = os.path.basename(path)
+            if os.path.exists(path) and desc is not None and checks.get(key, {}).get("v") != CHECK_VERSION \
+                    and checks.get(key, {}).get("status") != "unchecked":
+                try:                                  # drawn before the checker learned something new: look again
+                    res = check(path, desc, bool(re.search(r"\bKAI\b", desc)))
+                except RuntimeError as ex:
+                    if "ALLOWANCE" in str(ex):
+                        raise AllowanceUsedUp(str(ex))
+                    res = {"ok": True, "problems": []}
+                if res.get("severe"):
+                    print(f"  {name}: re-check found {'; '.join(res['problems'])} - drawing it again", flush=True)
+                    os.remove(path)
+                else:
+                    checks[key] = dict(checks.get(key, {}), v=CHECK_VERSION,
+                                       status=checks.get(key, {}).get("status", "ok"))
             if os.path.exists(path) and (desc is None or checks.get(key, {}).get("status") != "unchecked"):
                 done += 1
                 continue
@@ -365,7 +382,7 @@ def run(story_path, assets):
                     continue
                 os.replace(best[0], path)
                 checks[key] = {"status": "ok" if best[1]["ok"] else "bad" if best[1].get("severe") else "kept_with_problems",
-                               "problems": best[1]["problems"], "tries": attempt + 1}
+                               "problems": best[1]["problems"], "tries": attempt + 1, "v": CHECK_VERSION}
                 if redone.get(lab) == "pending":
                     redone[lab] = key
             else:                                    # drawn yesterday, but the check ran out of allowance
