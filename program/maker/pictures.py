@@ -341,6 +341,7 @@ def run(story_path, assets):
     json.dump(checks, open(checks_path, "w"), indent=1)
     json.dump(redone, open(redone_path, "w"), indent=1)
     sheets(st, assets, checks)
+    done = sum(1 for _n, pth, *_ in todo if os.path.exists(pth))     # all pictures that exist, not only this run's
     status = {"done": done, "total": len(todo), "complete": done == len(todo), "stopped": stopped,
               "checker": "on" if checker_on else "switched off (rejected too much)",
               "kept_with_problems": sorted(label(_key(k)) for k, v in checks.items()
