@@ -79,7 +79,7 @@ def generate(prompt: str, width: int, height: int, seed: int, refs=()):
     files = {"prompt": (None, prompt), "width": (None, str(width)), "height": (None, str(height)),
              "seed": (None, str(seed))}
     for i, ref in enumerate(refs[:4]):
-        files[f"input_image_{i}"] = (os.path.basename(ref), open(ref, "rb"), "image/png")
+        files[f"input_image_{i}"] = (os.path.basename(ref), open(ref, "rb").read(), "image/png")   # bytes: safe to resend
     last = ""
     for attempt in range(3):
         try:
