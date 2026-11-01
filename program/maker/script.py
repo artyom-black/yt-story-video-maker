@@ -33,7 +33,7 @@ MOODS = {"calm", "curious", "funny", "shock", "gross", "tense", "sad", "epic", "
 MUSIC = {"tense", "funny", "calm", "epic", "sad", "none", "same"}
 SFX = {"hit", "whoosh", "pop", "sting", "ding", "none"}
 CAMERAS = {"push", "pull", "pan", "punch", "still"}
-HEADER = ("CAST", "COSTUME_RICH", "TITLE", "ERA", "COSTUME", "THUMBNAIL_TEXT", "THUMBNAIL_IDEA", "DESCRIPTION", "TAGS", "SOURCES", "FORMAT")
+HEADER = ("CAST", "CHARACTER", "COSTUME_RICH", "TITLE", "ERA", "COSTUME", "THUMBNAIL_TEXT", "THUMBNAIL_IDEA", "DESCRIPTION", "TAGS", "SOURCES", "FORMAT")
 
 
 @dataclass
@@ -78,6 +78,7 @@ class Script:
     title: str = ""
     era: str = ""
     costume: str = ""
+    character: str = ""                               # the main character reference picture
     costume_rich: str = ""                            # a second look for Kai in the same video ("RICH KAI")
     thumbnail_text: str = ""
     thumbnail_ideas: list = field(default_factory=list)
