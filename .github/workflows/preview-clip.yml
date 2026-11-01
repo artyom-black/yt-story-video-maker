@@ -1,6 +1,6 @@
 name: Preview clip
 
-# Renders the opening of video 001 with the 18 pictures drawn so far, with the professional sounds
+# Renders the part of video 001 whose pictures are drawn (scenes 1-26), with the professional sounds
 # (sound_choices.json), so the edit can be judged before all pictures exist. Saved on branch preview-clip.
 on:
   workflow_dispatch:
@@ -43,18 +43,19 @@ jobs:
           R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}"
           git clone -q --depth 1 -b pics-001-1-vs-1000000-life-in-the-middle-ages "$R" assets
           git clone -q --depth 1 -b voice-001-1-vs-1000000-life-in-the-middle-ages "$R" assets/voice
-          # the 18 pictures were drawn with the version of the story/prompts from commit ea6069f
-          git show ea6069f:program/maker/pictures.py > program/maker/pictures.py
-          git show ea6069f:new-story.txt > story_then.txt
           python - <<'PY'
-          import glob, shutil
-          t = open("story_then.txt").read()
-          t = t[:t.index("# SCENE 4\n")]
-          a = t.index("# SCENE 3\n")
-          s3 = "\n".join(l for l in t[a:].split("\n") if not l.startswith("THEN:"))
-          open("opening.txt", "w").write(t[:a] + s3)
-          bad = glob.glob("assets/pictures/scene_002x2_*.png")[0]          # the 2-heads picture is left out
-          shutil.copy(glob.glob("assets/pictures/scene_002_*.png")[0], bad)
+          import os, shutil
+          from maker.script import load
+          from maker.pictures import picture_files
+          t = open("new-story.txt").read()
+          open("opening.txt", "w").write(t[:t.index("# SCENE 27\n")])
+          files = picture_files(load("opening.txt"), "assets")
+          last = None
+          for k, p in files.items():                       # a picture not drawn yet: show the one before it
+              if os.path.exists(p):
+                  last = p
+              elif k.startswith("scene") and last:
+                  print("missing", k); os.makedirs(os.path.dirname(p), exist_ok=True); shutil.copy(last, p)
           PY
           [ -d sound_candidates ] || python -m maker.sound_fetch sound_candidates
           python -m maker.sound_kit sound_candidates kit > /dev/null
