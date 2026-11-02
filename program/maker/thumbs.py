@@ -46,7 +46,8 @@ HALF_STYLE = ("One half of a split-screen YouTube thumbnail for a hit animated h
               "KAI'S LOOK NEVER CHANGES: his face is a plain flat pure white circle with a black outline, NO nose, no "
               "skin colour, no pink, no blush; his hair is exactly the same dark chocolate brown and the same messy "
               "shape as in image 0; his arms and legs are THIN black stick lines (never thick, never white, never "
-              "filled), with small white cartoon hands and solid black oval feet.")
+              "filled); his hands are small white cartoon hands with four short fingers and a thumb and a black outline, "
+              "exactly like the hands in image 0 (never big, never realistic); solid black oval feet.")
 
 
 def split(words, idea, info, ref, out, i):
@@ -83,19 +84,11 @@ def split(words, idea, info, ref, out, i):
         halves.append(Image.open(hp).convert("RGB").resize((640, 720), Image.LANCZOS))
     im = Image.new("RGB", (1280, 720), "white")
     im.paste(halves[0], (0, 0)); im.paste(halves[1], (640, 0))
-    if keep:                                               # only enhance the newly drawn halves
-        for j in range(2):
-            if not (keep[j] if j < len(keep) else ""):
-                part = im.crop((j * 640, 0, j * 640 + 640, 720))
-                im.paste(ImageEnhance.Contrast(ImageEnhance.Color(part).enhance(1.2)).enhance(1.08), (j * 640, 0))
-        im = im.convert("RGBA")
-    else:
-        im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.2)).enhance(1.08).convert("RGBA")
+    # every half is a raw drawing (kept halves too): same colour boost for both
+    im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.2)).enhance(1.08).convert("RGBA")
     d = ImageDraw.Draw(im)
     d.rectangle([632, 0, 648, 720], fill="#111111"); d.rectangle([636, 0, 644, 720], fill="#ffffff")
     for j, lab in enumerate(labels[:2]):
-        if j < len(keep) and keep[j]:
-            continue
         layer = text_layer(lab.upper(), 150, fill="#ffd23f" if j == 0 else "#ff4d4d")
         s_ = min(1.0, 420 / layer.width, 190 / layer.height)
         layer = layer.resize((int(layer.width * s_), int(layer.height * s_)), Image.LANCZOS)
