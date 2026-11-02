@@ -30,7 +30,7 @@ def face_ref(st):
 
 # The channel's look: simple stick figures in detailed, colourful painted worlds (like the big explainer channels).
 KAI_ID = ("the main character, a stick figure man exactly like image 0: a big round white head with a black outline, "
-          "small black dot eyes, simple eyebrows and mouth, messy brown hair, thin black line arms and legs")
+          "small black dot eyes, two thin black eyebrows, a small smile, messy brown hair with a clean hairline, thin black line arms and legs")
 STYLE = ("Simple 2D stick figure cartoon in a clean, popular YouTube history explainer style: every person is a simple "
          "stick figure with a big round white head, small dot eyes, simple expressive eyebrows and mouth, and thin "
          "black line arms and legs, wearing simple flat-coloured clothes of the time. Every face is a plain flat white "
