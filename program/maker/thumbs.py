@@ -36,6 +36,51 @@ STYLE = ("YouTube thumbnail for a hit animated history explainer channel. Simple
          "Absolutely no text, no letters, no watermark.")
 
 
+HALF_STYLE = ("One half of a split-screen YouTube thumbnail for a hit animated history explainer channel (a tall "
+              "picture). Simple stick figure character exactly like the one in image 0: the same round white head, "
+              "face, hair and thin black line arms and legs, big in the frame, in the lower two thirds, acting with "
+              "an extreme, clear facial expression. Detailed, colourful, painted 2D cartoon world, bright, high "
+              "contrast, one clear focal point, fully drawn edge to edge; the top quarter is open sky so a big word "
+              "fits there. Only ONE person in the whole picture: him. Real-life sizes. He has exactly two arms, two "
+              "hands and two legs; nothing floats. Absolutely no text, no letters, no watermark.")
+
+
+def split(words, idea, info, ref, out, i):
+    """Before/after thumbnail: 'LEFT WORDS / RIGHT WORDS | left scene || right scene'."""
+    labels = [w.strip() for w in words.split("/")]
+    scenes = [x.strip() for x in idea.split("||")]
+    base = int(os.environ.get("THUMB_SEED", "900"))
+    halves = []
+    for j, scene in enumerate(scenes[:2]):
+        prompt = f"{HALF_STYLE} He wears {info.get('clothes', 'simple clothes')}. The scene: {scene}."
+        data = None
+        for t in range(3):
+            try:
+                data = generate(prompt + (" Friendly, clean, family-friendly cartoon." if t else ""), 640, 720,
+                                seed=base + i * 37 + j * 101 + 1000 * t, refs=[ref])
+                break
+            except Exception as ex:
+                print(f"half {j + 1} try {t + 1} failed: {str(ex)[:150]}", flush=True)
+        if data is None:
+            return None
+        hp = os.path.join(out, f"thumb_{i}_half{j + 1}.png")
+        open(hp, "wb").write(data)
+        halves.append(Image.open(hp).convert("RGB").resize((640, 720), Image.LANCZOS))
+    im = Image.new("RGB", (1280, 720), "white")
+    im.paste(halves[0], (0, 0)); im.paste(halves[1], (640, 0))
+    im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.2)).enhance(1.08).convert("RGBA")
+    d = ImageDraw.Draw(im)
+    d.rectangle([632, 0, 648, 720], fill="#111111"); d.rectangle([636, 0, 644, 720], fill="#ffffff")
+    for j, lab in enumerate(labels[:2]):
+        layer = text_layer(lab.upper(), 150, fill="#ffd23f" if j == 0 else "#ff4d4d")
+        s_ = min(1.0, 420 / layer.width, 190 / layer.height)
+        layer = layer.resize((int(layer.width * s_), int(layer.height * s_)), Image.LANCZOS)
+        im.alpha_composite(layer, (j * 640 + (640 - layer.width) // 2, 18))
+    final = os.path.join(out, f"thumb_{i}.png")
+    im.convert("RGB").save(final, quality=95)
+    return final
+
+
 def read(story):
     info = {"thumbs": []}
     for line in open(story, encoding="utf-8"):
@@ -78,6 +123,11 @@ def make(story, out):
     os.makedirs(out, exist_ok=True)
     done = []
     for i, (words, idea) in enumerate(info["thumbs"], 1):
+        if "||" in idea:                                   # before/after split thumbnail
+            final = split(words, idea, info, ref, out, i)
+            if final:
+                done.append((final, words))
+            continue
         side = "right" if i % 2 else "left"
         prompt = (f"{STYLE.format(side=side)} He wears {info.get('clothes', 'simple clothes')}. "
                   f"The scene: {idea}. The character is on the {'left' if side == 'right' else 'right'} "

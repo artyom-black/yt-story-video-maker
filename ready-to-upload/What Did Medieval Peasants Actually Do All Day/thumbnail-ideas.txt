@@ -1,10 +1,12 @@
 // The thumbnail for this video. Saving a change to this file on GitHub redraws thumbnail.png with Cloudflare.
 // THUMBNAIL line = BIG WORDS | what the picture shows. Only the first THUMBNAIL line is drawn.
+// Split before/after: LEFT WORDS / RIGHT WORDS | left scene || right scene
 TITLE: What Did Medieval Peasants Actually Do All Day?
 CHARACTER: main-character.png
 CLOTHES: a plain short brown wool peasant tunic, nothing else; no belt, no rope; his arms and legs are thin black stick lines exactly like image 0, his feet solid black ovals
-THUMBNAIL: EVERY NIGHT?! | close-up inside a tiny dark medieval one-room hut lit by warm firelight: he lies in a straw bed under a rough wool blanket, eyes wide open in shock, mouth open, and right next to him in the same bed lies a giant brown and white cow with its huge head on the pillow beside his face, calmly chewing. Both heads are big and fill most of the picture. The hut's wooden wall, straw and firelight continue across the whole picture, no empty or flat areas
+THUMBNAIL: 6 AM / 6 PM | sunrise, golden morning light: full of energy and happy, a huge excited grin, holding a sickle up proudly, standing in front of his huge field of tall golden wheat, his small straw-roofed cottage behind him || dusk, dark purple and orange sky: crying hard on his knees with big tears, in the same field now completely cut and empty, holding one single stalk of wheat, while far behind him an ox cart piled high with all the wheat sacks rolls away up a hill toward a big dark stone castle
 // Other ideas to try next:
+// EVERY NIGHT?! | shocked in his straw bed, a giant cow right next to him
 // LESS THAN YOU? | relaxed on a haystack with a mug of ale, cows behind
 // 16 HOURS?! | exhausted in an endless golden wheat field at sunset, storm clouds rolling in
 // COW BEDROOM? | terrified, eyes wide, lying in his straw bed inside a dark one-room medieval hut, a giant brown cow head right next to his face, warm firelight
