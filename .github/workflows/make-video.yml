@@ -3,9 +3,10 @@ name: Make video
 # Paste a story into new-story.txt. This workflow makes the whole video by itself: Kai's narration, every
 # picture (checked by the picture checker), the edit with sound and music, 3 thumbnails and the upload text.
 # Pictures use the free daily AI allowance, so it continues by itself every night until the video is done.
-# Then the video waits in ready-to-upload/<title>/, its story is kept in stories/<title>.txt and its thumbnail in
-# thumbnail/<title>.png, and new-story.txt is emptied for the next story. After you upload it to YouTube, click
-# "I uploaded it" (Actions tab): the video's folder moves to old-videos/.
+# Then the video waits in ready-to-upload/<title>/ (thumbnail.png, story.txt, description.txt, video-link.txt)
+# and new-story.txt is emptied for the next story. Your own thumbnail: put it in ready-to-upload/<title>/thumbnail.png
+# before you click Run. After you upload it to YouTube, click "I uploaded it" (Actions tab): the folder moves to
+# previous-videos/.
 on:
   workflow_dispatch:
     inputs:
@@ -275,21 +276,21 @@ jobs:
           git config user.email "video-maker@users.noreply.github.com"
           for i in 1 2 3 4 5; do
             git fetch -q origin main && git reset -q --hard origin/main
-            rm -rf ready-to-upload/*/                       # only the video we are working on lives here
-            mkdir -p "ready-to-upload/$NAME" stories thumbnail
-            cp "out/upload.txt" "ready-to-upload/$NAME/$NAME - upload text.txt" 2>/dev/null || true
-            if [ -f "thumbnail/$NAME.png" ]; then cp "thumbnail/$NAME.png" "ready-to-upload/$NAME/$NAME.png"
-            else cp out/thumbnail_1.png "thumbnail/$NAME.png" 2>/dev/null && cp "thumbnail/$NAME.png" "ready-to-upload/$NAME/$NAME.png" || true; fi
-            printf "Download the video (click, it starts downloading):\n%s\n\nUpload it to YouTube with the title, description and tags from the upload text and the thumbnail in this folder.\nWhen it is uploaded, open Actions -> \"I uploaded it\" -> Run workflow.\n" "$LINK" > "ready-to-upload/$NAME/$NAME - DOWNLOAD THE VIDEO.txt"
-            cp story_made.txt "stories/$NAME.txt"
+            D="ready-to-upload/$NAME"
+            mkdir -p "$D"
+            cp "out/upload.txt" "$D/description.txt" 2>/dev/null || true
+            # keep your own thumbnail if you put one in the folder, otherwise use the one the program made
+            [ -f "$D/thumbnail.png" ] || cp out/thumbnail_1.png "$D/thumbnail.png" 2>/dev/null || true
+            printf "Download the video (click, it starts downloading):\n%s\n\nUpload it to YouTube with the title, description and tags from description.txt and thumbnail.png from this folder.\nWhen it is uploaded, open Actions -> \"I uploaded it\" -> Run workflow. The folder moves to previous-videos.\n" "$LINK" > "$D/video-link.txt"
+            cp story_made.txt "$D/story.txt"
             # empty new-story.txt, unless you already pasted a different story into it meanwhile
             if [ "$STORY" = "new-story.txt" ] && cmp -s new-story.txt story_made.txt; then
               printf '%s' "$(python -c 'import maker.pick_story as p; print(p.EMPTY_NOTE, end="")')" > new-story.txt
             fi
-            git add -A ready-to-upload stories thumbnail new-story.txt
+            git add -A ready-to-upload new-story.txt
             git commit -q -m "Ready to upload: $NAME"
             git push -q origin HEAD:main && break
             sleep 5
           done
           echo "### Video ready" >> $GITHUB_STEP_SUMMARY
-          echo "Open the **ready-to-upload/$NAME** folder in the repository: download link, thumbnail, upload text." >> $GITHUB_STEP_SUMMARY
+          echo "Open the **ready-to-upload/$NAME** folder in the repository: thumbnail.png, story.txt, description.txt, video-link.txt." >> $GITHUB_STEP_SUMMARY

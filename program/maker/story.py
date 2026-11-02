@@ -1,6 +1,6 @@
 """Read and check a story .txt file (format: docs/story-format.md).
 
-Usage:  python -m maker.story stories/my-story.txt
+Usage:  python -m maker.story new-story.txt
 Exit code 0 = OK (warnings allowed), 1 = errors found.
 """
 from __future__ import annotations

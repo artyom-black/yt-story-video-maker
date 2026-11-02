@@ -9,7 +9,7 @@ import re
 import sys
 
 NEW = "new-story.txt"
-OLD = "old-videos"
+OLD = "previous-videos"
 EMPTY_NOTE = "// Paste your next story here (made with template.txt), then save. The program does the rest.\n"
 
 
@@ -29,7 +29,7 @@ def title_of(path):
 
 
 def number():
-    """One more than the videos already uploaded to YouTube (old-videos/)."""
+    """One more than the videos already uploaded to YouTube (previous-videos/)."""
     made = [f for f in os.listdir(OLD) if os.path.isdir(os.path.join(OLD, f))] if os.path.isdir(OLD) else []
     return len(made) + 1
 

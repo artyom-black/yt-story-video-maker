@@ -1,6 +1,7 @@
 # Story format
 
-Every video starts as one plain `.txt` file in the `stories/` folder.
+Every video starts as one plain `.txt` file: `new-story.txt` in the root of the repo.
+After the video is made, it is kept as `story.txt` in the video's folder.
 Any AI chat (Claude, ChatGPT, Gemini...) can write it using the prompt template.
 The program reads this file and builds the video from it. Nothing else is needed.
 

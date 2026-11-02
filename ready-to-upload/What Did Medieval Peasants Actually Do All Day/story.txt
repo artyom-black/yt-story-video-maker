@@ -1,5 +1,5 @@
 TITLE: What Did Medieval Peasants Actually Do All Day?
-CHARACTER: main-character.jpg
+CHARACTER: main-character.png
 FORMAT: day-in-the-life
 ERA: an English farming village in August of the year 1300: small one-room houses of wood and mud with thick straw roofs, muddy lanes, long thin strips of golden wheat fields around the village, a small stone church, a watermill by a stream, and the lord's big stone manor house on a little hill at the edge of the village
 COSTUME: a simple knee-length brown wool tunic with a few patches and a rope belt; below it his legs are bare thin black stick lines with simple flat brown leather wrap shoes

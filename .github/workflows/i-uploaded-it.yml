@@ -1,8 +1,8 @@
 name: I uploaded it
 
 # Click "Run workflow" after you uploaded a video to YouTube. It moves that video's folder from
-# ready-to-upload/ to old-videos/ (its story stays in stories/; the video file itself stays downloadable
-# in the repository's Releases).
+# ready-to-upload/ to previous-videos/ (thumbnail, story, description and video link move together; the
+# video file itself stays downloadable in the repository's Releases).
 on:
   workflow_dispatch:
     inputs:
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - name: Move to old-videos
+      - name: Move to previous-videos
         run: |
           shopt -s nullglob
           if [ -n "${{ inputs.video }}" ]; then DIRS=("ready-to-upload/${{ inputs.video }}"); else DIRS=(ready-to-upload/*/); fi
@@ -27,10 +27,10 @@ jobs:
             exit 1
           fi
           D="${DIRS[0]%/}"; N="$(basename "$D")"
-          mkdir -p old-videos
-          git mv "$D" "old-videos/$N"
+          mkdir -p previous-videos
+          git mv "$D" "previous-videos/$N"
           git config user.name "video-maker"
           git config user.email "video-maker@users.noreply.github.com"
           git commit -q -m "Uploaded to YouTube: $N"
           git push -q
-          echo "### Moved **$N** to old-videos" >> $GITHUB_STEP_SUMMARY
+          echo "### Moved **$N** to previous-videos" >> $GITHUB_STEP_SUMMARY

@@ -1,6 +1,6 @@
 """Draw one picture again using an existing picture as the exact model for the character's body.
 
-    python -m maker.edit_pic OUT_DIR   (uses main-character.jpg and program/characters/stick/edit_src.png)
+    python -m maker.edit_pic OUT_DIR   (uses main-character.png and program/characters/stick/edit_src.png)
 """
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ from .art_lab import generate
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO = os.path.dirname(ROOT)
-REFS = [os.path.join(REPO, "main-character.jpg"), os.path.join(ROOT, "characters", "stick", "edit_src.png"),
+REFS = [os.path.join(REPO, "main-character.png"), os.path.join(ROOT, "characters", "stick", "edit_src.png"),
         os.path.join(ROOT, "characters", "stick", "edit_src2.png")]
 INSTRUCTION = ("The same stick figure character as in image 1: exactly the same round white head, messy brown hair, "
                "brown patched tunic with a rope belt, and exactly the same thin white legs with a black outline and small "

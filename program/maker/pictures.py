@@ -20,7 +20,7 @@ from .script import load
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO = os.path.dirname(ROOT)
-FACE_REF = os.path.join(REPO, "main-character.jpg")   # set from the story's CHARACTER line in jobs()
+FACE_REF = os.path.join(REPO, "main-character.png")   # set from the story's CHARACTER line in jobs()
 
 
 def face_ref(st):
@@ -309,7 +309,7 @@ def jobs(st, assets):
             for n_, d_ in st.cast.items():
                 check_desc = re.sub(rf"\b{re.escape(n_)}\b", f"{n_.lower()} ({d_})", check_desc)
             out.append((f"scene {s.number}{k}", _named(path, prompt), prompt, W, H, refs, check_desc))
-    title_file = os.path.join(REPO, "thumbnail", re.sub(r'[\\/:*?"<>|]', "", st.title).strip() + ".png")
+    title_file = os.path.join(REPO, "ready-to-upload", re.sub(r'[\\/:*?"<>|]', "", st.title).strip(), "thumbnail.png")
     for i, idea in enumerate([] if os.path.exists(title_file) else st.thumbnail_ideas[:3]):   # made by hand already
         path = os.path.join(assets, "pictures", f"thumb_{i + 1}.png")
         text, refs, first = kai_refs(idea, st, costume_ref, costume_rich_ref)
