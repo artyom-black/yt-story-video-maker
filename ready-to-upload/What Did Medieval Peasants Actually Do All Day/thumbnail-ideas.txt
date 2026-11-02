@@ -2,8 +2,8 @@
 // THUMBNAIL line = BIG WORDS | what the picture shows. Only the first THUMBNAIL line is drawn.
 TITLE: What Did Medieval Peasants Actually Do All Day?
 CHARACTER: main-character.png
-CLOTHES: a simple patched brown wool peasant tunic with a rope belt; his arms and legs stay thin black stick lines, with solid black feet
-THUMBNAIL: 16 HOURS?! | totally exhausted and drenched in sweat, collapsing to his knees in an endless golden wheat field at sunset, holding a sickle, mouth open gasping, huge dark storm clouds rolling in behind him
+CLOTHES: a plain short brown wool peasant tunic, nothing else; no belt, no rope; his arms and legs are thin black stick lines exactly like image 0, his feet solid black ovals
+THUMBNAIL: 16 HOURS?! | close-up from the chest up, his big head fills almost half of the picture, completely exhausted and drenched in sweat, eyes squeezed shut, mouth wide open gasping, leaning on a sickle, an endless golden wheat field behind him at sunset and huge dark storm clouds rolling in
 // Other ideas to try next:
 // COW BEDROOM? | terrified, eyes wide, lying in his straw bed inside a dark one-room medieval hut, a giant brown cow head right next to his face, warm firelight
 // BREAKFAST?! | disgusted face, tongue out, holding a wooden bowl of grey lumpy porridge up toward the viewer, one fly buzzing above the bowl, inside a smoky medieval hut
