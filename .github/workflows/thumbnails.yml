@@ -1,12 +1,24 @@
-name: Thumbnails
+name: Make thumbnail
 
-# Draws the thumbnails written in new-story.txt (THUMBNAIL: WORDS | idea) from the video's CHARACTER picture,
-# adds the big words, and saves them on branch thumbnails (thumbnails.jpg = all on one sheet).
+# Draws ready-to-upload/<title>/thumbnail.png with Cloudflare AI from the first THUMBNAIL line in
+# ready-to-upload/<title>/thumbnail-ideas.txt, using main-character.png as the reference (main-character.png
+# itself is never changed). Runs by itself when a thumbnail-ideas.txt changes on main, or from the Run button.
 on:
+  push:
+    branches: [main]
+    paths: ["ready-to-upload/**/thumbnail-ideas.txt"]
   workflow_dispatch:
+    inputs:
+      video:
+        description: "Folder name in ready-to-upload (leave empty if there is only one)"
+        default: ""
 
 permissions:
   contents: write
+
+concurrency:
+  group: make-thumbnail
+  cancel-in-progress: true
 
 env:
   PYTHONPATH: ${{ github.workspace }}/program
@@ -21,16 +33,31 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -q requests numpy pillow
+      - name: Find the video folder
+        id: dir
+        run: |
+          shopt -s nullglob
+          if [ -n "${{ inputs.video }}" ]; then DIRS=("ready-to-upload/${{ inputs.video }}/"); else DIRS=(ready-to-upload/*/thumbnail-ideas.txt); DIRS=("${DIRS[@]%thumbnail-ideas.txt}"); fi
+          if [ ${#DIRS[@]} -ne 1 ] || [ ! -f "${DIRS[0]}thumbnail-ideas.txt" ]; then
+            echo "Need exactly one folder with thumbnail-ideas.txt. Type the folder name in the box:"; ls ready-to-upload; exit 1
+          fi
+          echo "d=${DIRS[0]%/}" >> "$GITHUB_OUTPUT"
       - name: Draw
         env:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          THUMB_SEED: ${{ github.run_number }}
         run: |
-          git clone -q --depth 1 -b thumbnails "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" thumbs 2>/dev/null && rm -rf thumbs/.git || true
-          python -m maker.thumbs new-story.txt thumbs
-      - name: Save
-        if: always()
+          D="${{ steps.dir.outputs.d }}"
+          awk 'BEGIN{n=0} /^THUMBNAIL:/{n++; if(n>1) next} {print}' "$D/thumbnail-ideas.txt" > /tmp/ideas.txt
+          python -m maker.thumbs /tmp/ideas.txt /tmp/thumbs
+          cp /tmp/thumbs/thumb_1.png "$D/thumbnail.png"
+      - name: Save on main
         run: |
-          [ -d thumbs ] || exit 0
-          cd thumbs && git init -q -b thumbnails && git config user.name "video-maker" && git config user.email "video-maker@users.noreply.github.com"
-          git add -A && git commit -q -m "Thumbnails" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:thumbnails
+          D="${{ steps.dir.outputs.d }}"
+          git config user.name "video-maker"; git config user.email "video-maker@users.noreply.github.com"
+          git add "$D/thumbnail.png"
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Thumbnail: $(basename "$D")"
+          for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
+          echo "### New thumbnail: $D/thumbnail.png" >> $GITHUB_STEP_SUMMARY

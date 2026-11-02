@@ -95,7 +95,7 @@ def make(story, out):
             for t in range(3):                       # the AI sometimes refuses a prompt: try again, gentler
                 try:
                     data = generate(prompt + (" Friendly, clean, family-friendly cartoon." if t else ""), 1280, 720,
-                                    seed=900 + i * 37 + 1000 * t, refs=[ref])
+                                    seed=int(os.environ.get("THUMB_SEED", "900")) + i * 37 + 1000 * t, refs=[ref])
                     break
                 except Exception as ex:
                     print(f"thumbnail {i} try {t + 1} failed: {str(ex)[:150]}", flush=True)
