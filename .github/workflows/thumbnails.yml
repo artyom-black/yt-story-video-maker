@@ -52,12 +52,14 @@ jobs:
           awk 'BEGIN{n=0} /^THUMBNAIL:/{n++; if(n>1) next} {print}' "$D/thumbnail-ideas.txt" > /tmp/ideas.txt
           python -m maker.thumbs /tmp/ideas.txt /tmp/thumbs
           cp /tmp/thumbs/thumb_1.png "$D/thumbnail.png"
-          for j in 1 2; do [ -f /tmp/thumbs/thumb_1_half$j.png ] && cp /tmp/thumbs/thumb_1_half$j.png "$D/thumbnail-drawn-half$j.png"; done; true
+          rm -f "$D"/thumbnail-option-*.png "$D"/thumbnail-drawn-half*.png
+          for f in /tmp/thumbs/thumb_1_c*.png; do [ -f "$f" ] && k=${f##*_c} && cp "$f" "$D/thumbnail-option-${k%.png}.png"; done
+          for f in /tmp/thumbs/thumb_1_half*_c*.png; do [ -f "$f" ] && b=$(basename "$f") && cp "$f" "$D/thumbnail-drawn-${b#thumb_1_}"; done; true
       - name: Save on main
         run: |
           D="${{ steps.dir.outputs.d }}"
           git config user.name "video-maker"; git config user.email "video-maker@users.noreply.github.com"
-          git add "$D/thumbnail.png" "$D"/thumbnail-drawn-half*.png 2>/dev/null || git add "$D/thumbnail.png"
+          git add -A "$D"
           git diff --cached --quiet && exit 0
           git commit -q -m "Thumbnail: $(basename "$D")"
           for i in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done

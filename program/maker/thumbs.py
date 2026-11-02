@@ -51,50 +51,62 @@ HALF_STYLE = ("One half of a split-screen YouTube thumbnail for a hit animated h
 
 
 def split(words, idea, info, ref, out, i):
-    """Before/after thumbnail: 'LEFT WORDS / RIGHT WORDS | left scene || right scene'."""
+    """Before/after thumbnail: 'LEFT WORDS / RIGHT WORDS | left scene || right scene'.
+    KEEP: left, right   = use a finished half picture as it is (empty = draw it)
+    REF: left, right    = an extra reference picture for that half (image 1)
+    CANDIDATES: n       = draw n versions of each drawn half -> thumb_<i>_c<k>.png (thumb_<i>.png = the first)"""
     labels = [w.strip() for w in words.split("/")]
     scenes = [x.strip() for x in idea.split("||")]
     base = int(os.environ.get("THUMB_SEED", "900"))
-    halves = []
     keep = info.get("keep") or []
+    n = max(1, int(info.get("candidates", "1") or 1))
+    options = []                                        # per half: list of candidate pictures
     for j, scene in enumerate(scenes[:2]):
         kp = keep[j] if j < len(keep) else ""
-        if kp:                                             # this half is final already (with its words)
-            halves.append(Image.open(os.path.join(ROOT, kp)).convert("RGB").resize((640, 720), Image.LANCZOS))
+        if kp:
+            options.append([Image.open(os.path.join(ROOT, kp)).convert("RGB").resize((640, 720), Image.LANCZOS)])
             continue
         prompt = f"{HALF_STYLE} He wears {info.get('clothes', 'simple clothes')}. The scene: {scene}."
-        data = None
-        for t in range(3):
-            try:
-                pinned = (info.get("seeds") or [])[j:j + 1]
-                seed = (int(pinned[0]) if pinned and pinned[0].isdigit() and not t
-                        else base + i * 37 + j * 101 + 1000 * t)
-                print(f"half {j + 1}: seed {seed}", flush=True)
-                extra = (info.get("ref") or [])[j:j + 1]
-                refs = [ref] + [os.path.join(ROOT, extra[0])] if extra and extra[0] else [ref]
-                data = generate(prompt + (" Friendly, clean, family-friendly cartoon." if t else ""), 640, 720,
-                                seed=seed, refs=refs)
-                break
-            except Exception as ex:
-                print(f"half {j + 1} try {t + 1} failed: {str(ex)[:150]}", flush=True)
-        if data is None:
+        extra = (info.get("ref") or [])[j:j + 1]
+        refs = [ref] + ([os.path.join(ROOT, extra[0])] if extra and extra[0] else [])
+        cands = []
+        for c in range(n):
+            data = None
+            for t in range(3):
+                seed = base + i * 37 + j * 101 + c * 7919 + 1000 * t
+                try:
+                    print(f"half {j + 1} candidate {c + 1}: seed {seed}", flush=True)
+                    data = generate(prompt + (" Friendly, clean, family-friendly cartoon." if t else ""), 640, 720,
+                                    seed=seed, refs=refs)
+                    break
+                except Exception as ex:
+                    print(f"half {j + 1} try {t + 1} failed: {str(ex)[:150]}", flush=True)
+            if data is None:
+                continue
+            hp = os.path.join(out, f"thumb_{i}_half{j + 1}_c{c + 1}.png")
+            open(hp, "wb").write(data)
+            cands.append(Image.open(hp).convert("RGB").resize((640, 720), Image.LANCZOS))
+        if not cands:
             return None
-        hp = os.path.join(out, f"thumb_{i}_half{j + 1}.png")
-        open(hp, "wb").write(data)
-        halves.append(Image.open(hp).convert("RGB").resize((640, 720), Image.LANCZOS))
-    im = Image.new("RGB", (1280, 720), "white")
-    im.paste(halves[0], (0, 0)); im.paste(halves[1], (640, 0))
-    # every half is a raw drawing (kept halves too): same colour boost for both
-    im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.2)).enhance(1.08).convert("RGBA")
-    d = ImageDraw.Draw(im)
-    d.rectangle([632, 0, 648, 720], fill="#111111"); d.rectangle([636, 0, 644, 720], fill="#ffffff")
-    for j, lab in enumerate(labels[:2]):
-        layer = text_layer(lab.upper(), 150, fill="#ffd23f" if j == 0 else "#ff4d4d")
-        s_ = min(1.0, 420 / layer.width, 190 / layer.height)
-        layer = layer.resize((int(layer.width * s_), int(layer.height * s_)), Image.LANCZOS)
-        im.alpha_composite(layer, (j * 640 + (640 - layer.width) // 2, 18))
+        options.append(cands)
+    finals = []
+    for k in range(max(len(o) for o in options)):
+        im = Image.new("RGB", (1280, 720), "white")
+        for j in range(2):
+            im.paste(options[j][min(k, len(options[j]) - 1)], (j * 640, 0))
+        im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.2)).enhance(1.08).convert("RGBA")
+        d = ImageDraw.Draw(im)
+        d.rectangle([632, 0, 648, 720], fill="#111111"); d.rectangle([636, 0, 644, 720], fill="#ffffff")
+        for j, lab in enumerate(labels[:2]):
+            layer = text_layer(lab.upper(), 150, fill="#ffd23f" if j == 0 else "#ff4d4d")
+            s_ = min(1.0, 420 / layer.width, 190 / layer.height)
+            layer = layer.resize((int(layer.width * s_), int(layer.height * s_)), Image.LANCZOS)
+            im.alpha_composite(layer, (j * 640 + (640 - layer.width) // 2, 18))
+        f = os.path.join(out, f"thumb_{i}_c{k + 1}.png")
+        im.convert("RGB").save(f, quality=95)
+        finals.append(f)
     final = os.path.join(out, f"thumb_{i}.png")
-    im.convert("RGB").save(final, quality=95)
+    Image.open(finals[0]).save(final)
     return final
 
 
@@ -108,6 +120,8 @@ def read(story):
         if k == "THUMBNAIL" and "|" in v:
             words, idea = (x.strip() for x in v.split("|", 1))
             info["thumbs"].append((words, idea))
+        elif k == "CANDIDATES":
+            info["candidates"] = v.strip()
         elif k == "REF":                                     # extra picture per half: "REF: , path"
             info["ref"] = [x.strip() for x in v.split(",")]
         elif k == "KEEP":                                    # reuse a finished half: "KEEP: , folder/half.png"
