@@ -27,12 +27,21 @@ Every video folder (`ready-to-upload/<title>/` and `previous-videos/<title>/`) h
 1. Open `template.txt`, put your title on the TITLE line, and send the whole text to any AI (ChatGPT, Claude, Gemini).
 2. Paste the AI's answer into `new-story.txt` and save.
 3. *(Optional)* Your own thumbnail: put it in `ready-to-upload/<title>/thumbnail.png`. Otherwise the program makes one.
-4. **Actions → Make video → Run workflow.**
-5. When it's done, everything is in `ready-to-upload/<title>/`.
-6. Upload to YouTube, then **Actions → I uploaded it → Run workflow.** The folder moves to `previous-videos/`.
+4. **Make the video:** Actions → Make video → **Run workflow** → green **Run workflow** button.<br>
+   👉 **[Open "Make video"](https://github.com/artyom-black/yt-story-video-maker/actions/workflows/make-video.yml)**
+5. When it's done, everything is in `ready-to-upload/<title>/` (thumbnail, story, description, video link).
+   Nothing goes into `previous-videos/` yet.
+6. Download the video from `video-link.txt` and upload it to YouTube with `thumbnail.png` and `description.txt`.
+7. **Only after the video is on YouTube:** Actions → I uploaded it → **Run workflow** → leave the box empty →
+   green **Run workflow** button.<br>
+   👉 **[Open "I uploaded it"](https://github.com/artyom-black/yt-story-video-maker/actions/workflows/i-uploaded-it.yml)**<br>
+   About 30 seconds later, the video's folder is **moved** to `previous-videos/<title>/` and **removed** from
+   `ready-to-upload/`. A video is never in both folders.<br>
+   If more than one video is waiting in `ready-to-upload/`, type the folder name of the one you uploaded in the box.
 
-To redraw a picture you don't like: **Actions → Make video → Run workflow**, type its number from the picture sheet
-in the REDO box (e.g. `12, 32b`).
+To redraw a picture you don't like: open
+**[Make video](https://github.com/artyom-black/yt-story-video-maker/actions/workflows/make-video.yml)** → Run workflow,
+type its number from the picture sheet in the REDO box (e.g. `12, 32b`).
 
 ## Program details
 
