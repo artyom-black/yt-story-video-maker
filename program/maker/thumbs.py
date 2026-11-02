@@ -51,7 +51,12 @@ def split(words, idea, info, ref, out, i):
     scenes = [x.strip() for x in idea.split("||")]
     base = int(os.environ.get("THUMB_SEED", "900"))
     halves = []
+    keep = info.get("keep") or []
     for j, scene in enumerate(scenes[:2]):
+        kp = keep[j] if j < len(keep) else ""
+        if kp:                                             # this half is final already (with its words)
+            halves.append(Image.open(os.path.join(ROOT, kp)).convert("RGB").resize((640, 720), Image.LANCZOS))
+            continue
         prompt = f"{HALF_STYLE} He wears {info.get('clothes', 'simple clothes')}. The scene: {scene}."
         data = None
         for t in range(3):
@@ -72,14 +77,23 @@ def split(words, idea, info, ref, out, i):
         halves.append(Image.open(hp).convert("RGB").resize((640, 720), Image.LANCZOS))
     im = Image.new("RGB", (1280, 720), "white")
     im.paste(halves[0], (0, 0)); im.paste(halves[1], (640, 0))
-    im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.2)).enhance(1.08).convert("RGBA")
+    if keep:                                               # only enhance the newly drawn halves
+        for j in range(2):
+            if not (keep[j] if j < len(keep) else ""):
+                part = im.crop((j * 640, 0, j * 640 + 640, 720))
+                im.paste(ImageEnhance.Contrast(ImageEnhance.Color(part).enhance(1.2)).enhance(1.08), (j * 640, 0))
+        im = im.convert("RGBA")
+    else:
+        im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.2)).enhance(1.08).convert("RGBA")
     d = ImageDraw.Draw(im)
     d.rectangle([632, 0, 648, 720], fill="#111111"); d.rectangle([636, 0, 644, 720], fill="#ffffff")
     for j, lab in enumerate(labels[:2]):
+        if j < len(keep) and keep[j]:
+            continue
         layer = text_layer(lab.upper(), 150, fill="#ffd23f" if j == 0 else "#ff4d4d")
-        s_ = min(1.0, 360 / layer.width, 125 / layer.height)
+        s_ = min(1.0, 420 / layer.width, 190 / layer.height)
         layer = layer.resize((int(layer.width * s_), int(layer.height * s_)), Image.LANCZOS)
-        im.alpha_composite(layer, (j * 640 + (640 - layer.width) // 2, 8))
+        im.alpha_composite(layer, (j * 640 + (640 - layer.width) // 2, 18))
     final = os.path.join(out, f"thumb_{i}.png")
     im.convert("RGB").save(final, quality=95)
     return final
@@ -95,6 +109,8 @@ def read(story):
         if k == "THUMBNAIL" and "|" in v:
             words, idea = (x.strip() for x in v.split("|", 1))
             info["thumbs"].append((words, idea))
+        elif k == "KEEP":                                    # reuse a finished half: "KEEP: , folder/half.png"
+            info["keep"] = [x.strip() for x in v.split(",")]
         elif k == "SEEDS":                                   # pin a picture: "SEEDS: auto, 155"
             info["seeds"] = [x.strip() for x in v.split(",")]
         elif k in ("TITLE", "CHARACTER", "CLOTHES"):
