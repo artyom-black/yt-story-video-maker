@@ -56,8 +56,12 @@ def split(words, idea, info, ref, out, i):
         data = None
         for t in range(3):
             try:
+                pinned = (info.get("seeds") or [])[j:j + 1]
+                seed = (int(pinned[0]) if pinned and pinned[0].isdigit() and not t
+                        else base + i * 37 + j * 101 + 1000 * t)
+                print(f"half {j + 1}: seed {seed}", flush=True)
                 data = generate(prompt + (" Friendly, clean, family-friendly cartoon." if t else ""), 640, 720,
-                                seed=base + i * 37 + j * 101 + 1000 * t, refs=[ref])
+                                seed=seed, refs=[ref])
                 break
             except Exception as ex:
                 print(f"half {j + 1} try {t + 1} failed: {str(ex)[:150]}", flush=True)
@@ -73,9 +77,9 @@ def split(words, idea, info, ref, out, i):
     d.rectangle([632, 0, 648, 720], fill="#111111"); d.rectangle([636, 0, 644, 720], fill="#ffffff")
     for j, lab in enumerate(labels[:2]):
         layer = text_layer(lab.upper(), 150, fill="#ffd23f" if j == 0 else "#ff4d4d")
-        s_ = min(1.0, 420 / layer.width, 190 / layer.height)
+        s_ = min(1.0, 360 / layer.width, 125 / layer.height)
         layer = layer.resize((int(layer.width * s_), int(layer.height * s_)), Image.LANCZOS)
-        im.alpha_composite(layer, (j * 640 + (640 - layer.width) // 2, 18))
+        im.alpha_composite(layer, (j * 640 + (640 - layer.width) // 2, 8))
     final = os.path.join(out, f"thumb_{i}.png")
     im.convert("RGB").save(final, quality=95)
     return final
@@ -91,6 +95,8 @@ def read(story):
         if k == "THUMBNAIL" and "|" in v:
             words, idea = (x.strip() for x in v.split("|", 1))
             info["thumbs"].append((words, idea))
+        elif k == "SEEDS":                                   # pin a picture: "SEEDS: auto, 155"
+            info["seeds"] = [x.strip() for x in v.split(",")]
         elif k in ("TITLE", "CHARACTER", "CLOTHES"):
             info[k.lower()] = v.strip()
     return info

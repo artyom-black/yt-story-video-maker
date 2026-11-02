@@ -1,10 +1,12 @@
 // The thumbnail for this video. Saving a change to this file on GitHub redraws thumbnail.png with Cloudflare.
 // THUMBNAIL line = BIG WORDS | what the picture shows. Only the first THUMBNAIL line is drawn.
 // Split before/after: LEFT WORDS / RIGHT WORDS | left scene || right scene
+// SEEDS: left, right  = keep a half exactly as it was drawn (auto = draw a new one)
 TITLE: What Did Medieval Peasants Actually Do All Day?
 CHARACTER: main-character.png
 CLOTHES: a plain short brown wool peasant tunic, nothing else; no belt, no rope; his arms and legs are thin black stick lines exactly like image 0, his feet solid black ovals
-THUMBNAIL: 6 AM / 6 PM | sunrise, golden morning light: full of energy and happy, a huge excited grin, holding a sickle up proudly, standing in front of his huge field of tall golden wheat, his small straw-roofed cottage behind him || dusk, dark purple and orange sky: crying hard on his knees with big tears, in the same field now completely cut and empty, holding one single stalk of wheat, while far behind him an ox cart piled high with all the wheat sacks rolls away up a hill toward a big dark stone castle
+SEEDS: auto, 155
+THUMBNAIL: 6 AM / 6 PM | sunrise, golden morning light: full of energy and happy, a huge excited grin, holding a big woodcutter's axe up proudly over his shoulder; his face is a plain flat white circle with no skin colour, exactly like image 0, and his legs are thin black stick lines with solid black feet; standing in front of his huge field of tall golden wheat, his small straw-roofed cottage behind him || dusk, dark purple and orange sky: crying hard on his knees with big tears, in the same field now completely cut and empty, holding one single stalk of wheat, while far behind him an ox cart piled high with all the wheat sacks rolls away up a hill toward a big dark stone castle
 // Other ideas to try next:
 // EVERY NIGHT?! | shocked in his straw bed, a giant cow right next to him
 // LESS THAN YOU? | relaxed on a haystack with a mug of ale, cows behind
