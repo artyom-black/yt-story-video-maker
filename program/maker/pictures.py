@@ -121,7 +121,7 @@ def kai_clothes(text, st):
                 f"in image 0. ")
     if poor:
         return (f"The main character is a stick figure exactly like image 0: a big round flat white head, small dot "
-                f"eyes, messy brown hair, and arms and legs drawn as thin black lines. He wears exactly the clothes "
+                f"eyes, two thin black eyebrows, messy brown hair with a clean hairline (nothing on his forehead), and arms and legs drawn as thin black lines. He wears exactly the clothes "
                 f"from image 1: {st.costume}. He is a grown man, always drawn in this same simple way. His face and body "
                 f"show exactly the feeling described above (tired, scared, angry, happy...), never a default smile. ")
     return ""
