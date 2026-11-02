@@ -3,7 +3,8 @@
 TITLE: What Did Medieval Peasants Actually Do All Day?
 CHARACTER: main-character.png
 CLOTHES: a plain short brown wool peasant tunic, nothing else; no belt, no rope; his arms and legs are thin black stick lines exactly like image 0, his feet solid black ovals
-THUMBNAIL: 16 HOURS?! | close-up from the chest up, his big head fills almost half of the picture, completely exhausted and drenched in sweat, eyes squeezed shut, mouth wide open gasping, leaning on a sickle, an endless golden wheat field behind him at sunset and huge dark storm clouds rolling in
+THUMBNAIL: LESS THAN YOU? | close-up, his big head fills almost half of the picture, lying back super relaxed on a big golden haystack in bright sunshine, a huge smug grin with half-closed happy eyes, holding up a big wooden mug of ale with foam spilling over, a few cows grazing in a green meadow far behind him, clear blue sky
 // Other ideas to try next:
+// 16 HOURS?! | exhausted in an endless golden wheat field at sunset, storm clouds rolling in
 // COW BEDROOM? | terrified, eyes wide, lying in his straw bed inside a dark one-room medieval hut, a giant brown cow head right next to his face, warm firelight
 // BREAKFAST?! | disgusted face, tongue out, holding a wooden bowl of grey lumpy porridge up toward the viewer, one fly buzzing above the bowl, inside a smoky medieval hut
