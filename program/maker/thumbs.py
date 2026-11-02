@@ -42,7 +42,11 @@ HALF_STYLE = ("One half of a split-screen YouTube thumbnail for a hit animated h
               "an extreme, clear facial expression. Detailed, colourful, painted 2D cartoon world, bright, high "
               "contrast, one clear focal point, fully drawn edge to edge; the top quarter is open sky so a big word "
               "fits there. Only ONE person in the whole picture: him. Real-life sizes. He has exactly two arms, two "
-              "hands and two legs; nothing floats. Absolutely no text, no letters, no watermark.")
+              "hands and two legs; nothing floats. Absolutely no text, no letters, no watermark. "
+              "KAI'S LOOK NEVER CHANGES: his face is a plain flat pure white circle with a black outline, NO nose, no "
+              "skin colour, no pink, no blush; his hair is exactly the same dark chocolate brown and the same messy "
+              "shape as in image 0; his arms and legs are THIN black stick lines (never thick, never white, never "
+              "filled), with small white cartoon hands and solid black oval feet.")
 
 
 def split(words, idea, info, ref, out, i):
@@ -65,8 +69,10 @@ def split(words, idea, info, ref, out, i):
                 seed = (int(pinned[0]) if pinned and pinned[0].isdigit() and not t
                         else base + i * 37 + j * 101 + 1000 * t)
                 print(f"half {j + 1}: seed {seed}", flush=True)
+                extra = (info.get("ref") or [])[j:j + 1]
+                refs = [ref] + [os.path.join(ROOT, extra[0])] if extra and extra[0] else [ref]
                 data = generate(prompt + (" Friendly, clean, family-friendly cartoon." if t else ""), 640, 720,
-                                seed=seed, refs=[ref])
+                                seed=seed, refs=refs)
                 break
             except Exception as ex:
                 print(f"half {j + 1} try {t + 1} failed: {str(ex)[:150]}", flush=True)
@@ -109,6 +115,8 @@ def read(story):
         if k == "THUMBNAIL" and "|" in v:
             words, idea = (x.strip() for x in v.split("|", 1))
             info["thumbs"].append((words, idea))
+        elif k == "REF":                                     # extra picture per half: "REF: , path"
+            info["ref"] = [x.strip() for x in v.split(",")]
         elif k == "KEEP":                                    # reuse a finished half: "KEEP: , folder/half.png"
             info["keep"] = [x.strip() for x in v.split(",")]
         elif k == "SEEDS":                                   # pin a picture: "SEEDS: auto, 155"
