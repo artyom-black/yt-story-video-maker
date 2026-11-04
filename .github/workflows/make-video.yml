@@ -92,11 +92,13 @@ jobs:
         run: |
           S="${{ needs.prepare.outputs.slug }}"
           cd assets
-          [ -d .git ] || git init -q -b "pics-$S"
+          rm -rf .git                                   # one fresh commit, no history: the branch stays small
+          find pictures -name "*.try*" -delete 2>/dev/null || true
+          git init -q -b "pics-$S"
           git config user.name "video-maker"
           git config user.email "video-maker@users.noreply.github.com"
-          git add -A && git commit -q -m "Pictures for $S" || true
-          git push -q "$REPO_URL" "HEAD:pics-$S"
+          git add -A && git commit -q -m "Pictures for $S"
+          for i in 1 2 3; do git push -q -f "$REPO_URL" "HEAD:pics-$S" && break; sleep 10; done
 
   voice:
     name: Record Kai (part ${{ matrix.shard }} of 4)
