@@ -1,20 +1,21 @@
 TITLE: What Did Medieval Peasants Actually Do All Day?
 CHARACTER: main-character.png
 FORMAT: day-in-the-life
-ERA: an English farming village in August of the year 1300: small one-room houses of wood and mud with thick straw roofs, muddy lanes, long thin strips of golden wheat fields around the village, a small stone church, a watermill by a stream, and the lord's dark stone castle on a green hill above the village
+ERA: an English farming village in August of the year 1300: small houses of wood and mud with thick straw roofs, muddy lanes, long thin strips of golden wheat fields around the village, a small stone church, a watermill by a stream, and the lord's dark stone castle on a green hill above the village
 COSTUME: a plain short brown wool tunic; his arms and legs are thin black stick lines with small white cartoon hands and solid black oval feet
-CAST: HUT = the inside of a small one-room medieval peasant house: walls of wood and mud, a thick straw roof with smoke under it and no chimney, a beaten earth floor, a small fire in a ring of stones in the middle, straw beds on the floor, a wooden table and stools
+CAST: HUT = the inside of a long medieval peasant house: walls of wood and mud, a thick straw roof with smoke under it and no chimney, a beaten earth floor, a small fire in a ring of stones in the middle, straw beds on the floor at one end, a wooden table and stools, and a small animal pen with a low wooden fence at the other end
 CAST: COW = a calm brown and white cow with a small bell around its neck
-CAST: WIFE = a stick figure woman with a round white head and no nose, a kind tired face, brown hair under a plain white linen headscarf, a long green wool dress and a brown apron
-CAST: SON = a small stick figure boy about eight years old with a round white head, no nose and short messy blond hair, a short grey wool tunic, bare feet
-CAST: REEVE = a stick figure man with a round white head and no nose, a short black beard and a stern face, a dark green tunic, holding a long wooden stick and a cow horn
-CAST: NEIGHBOUR = a big friendly stick figure man with a round white head and no nose, a bald head and a bushy ginger beard, a dark blue tunic
+CAST: WIFE = a stick figure woman with a round white head and no nose, a kind face, a plain white linen headscarf that hides all her hair, a long green wool dress and a brown apron
+CAST: SON = a small stick figure boy about eight years old with a round white head, no nose and short straight yellow hair, a short grey wool tunic, bare feet
+CAST: REEVE = a stick figure man with a round white head and no nose, completely bald with no hair at all, a short black beard, a dark green tunic, holding a long wooden stick and a cow horn
+CAST: NEIGHBOUR = a big friendly stick figure man with a round white head and no nose, completely bald with no hair at all, a bushy ginger beard, a dark blue tunic
+CAST: PRIEST = a stick figure man with a round white head and no nose, short grey hair, a long plain black robe, holding a small wooden tally stick
 CAST: CASTLE = the lord's big dark stone castle with tall towers and a gate, on top of a green hill above the village, a dirt road winding up to it
 THUMBNAIL_TEXT: 6 AM / 7 PM
 THUMBNAIL_IDEA: split screen: KAI just woke up and happy at 6 AM at his cottage door, and KAI sad with a few tears at 7 PM in an empty field while an ox cart full of wheat rolls up to the CASTLE
-DESCRIPTION: At 6 AM he was the happiest man in the village. By 7 PM he was standing in an empty field, watching all his work roll up the hill to the castle. Live one full harvest day as a medieval peasant in the year 1300, hour by hour: what they ate, who they worked for, who took their grain, and the one thing almost everyone gets wrong about peasants. Everything in this video is based on real history.
-TAGS: medieval peasants, middle ages, medieval life, what did medieval peasants do all day, history, medieval harvest, daily life in the middle ages, medieval history, peasant life, feudalism, history explained
-SOURCES: Christopher Dyer, Making a Living in the Middle Ages (Yale, 2002); Christopher Dyer, Standards of Living in the Later Middle Ages (Cambridge, 1989); H. S. Bennett, Life on the English Manor (1937); Judith Bennett, Ale, Beer and Brewsters in England (1996); Ian Mortimer, The Time Traveller's Guide to Medieval England (2008); Juliet Schor, The Overworked American (1991); Walsham-le-Willows history society, Farming in Walsham in the Middle Ages; Historic England, tithe barns
+DESCRIPTION: At 6 AM he was the happiest man in the village. By 7 PM he was standing in an empty field, watching all his work roll up the hill to the castle. Live one real harvest day as a medieval peasant in the year 1300, hour by hour: where they slept, what they ate, who they worked for, who took their grain, and the one thing almost everyone gets wrong about peasants. Everything in this video is real history.
+TAGS: medieval peasants, middle ages, medieval life, what did medieval peasants do all day, history, medieval harvest, daily life in the middle ages, medieval history, peasant life, feudalism
+SOURCES: Christopher Dyer, Making a Living in the Middle Ages (Yale, 2002); Christopher Dyer, Changes in Diet in the Late Middle Ages: the Case of Harvest Workers (Agricultural History Review, 1988); Frances and Joseph Gies, Life in a Medieval Village (1990); H. S. Bennett, Life on the English Manor (1937); Judith Bennett, Ale, Beer and Brewsters in England (1996); Barbara Hanawalt, The Ties That Bound: Peasant Families in Medieval England (1986); Ian Mortimer, The Time Traveller's Guide to Medieval England (2008); A. Roger Ekirch, At Day's Close (2005); 1381.online, St Albans and the people of 1381; Tastes of History, Dispelling some myths: dirty water and beer
 
 // ===================== HOOK =====================
 
@@ -24,471 +25,463 @@ MOOD: curious
 MUSIC: tense
 TEXT: 6 AM / 7 PM
 SFX: hit
-THEN: (at "Seven") KAI standing alone in the empty cut field at dusk, sad with a few tears, holding one single stalk of wheat, the ox cart full of wheat rolling up the road to the CASTLE behind him
-KAI: This is what a medieval peasant actually did all day. Six AM, I'm the happiest man in the village. Seven PM... this.
+THEN: (at "crying") outdoors in an empty cut wheat field at dusk, KAI standing alone, sad with a few tears, holding one stalk of wheat, an ox cart full of wheat rolling up the road to the CASTLE far behind him, no other people
+KAI: What did a medieval peasant actually do all day? Six AM, I'm the happiest man in the village. Seven PM, I'm crying in an empty field.
 
 # SCENE 2
-PICTURE: close-up outdoors in the wheat field at dusk of KAI's small white cartoon hand with a few small pink sore spots, holding a sickle, no blood, no other people
-MOOD: sad
-MUSIC: sad
-THEN: (at "castle") close-up of a heavy ox cart piled high with golden wheat sheaves rolling up a dirt road toward the dark CASTLE on the hill at dusk, no people
-KAI: Today we cut every stalk of wheat in this field. Not one of them is ours. All of it is rolling up to that castle.
+PICTURE: outdoors on a dirt road at dusk, a heavy ox cart piled high with golden wheat sheaves rolling up the hill toward the dark CASTLE, no people
+MOOD: curious
+THEN: (at "real") outdoors in the village lane in soft morning light, KAI looking straight at the viewer with a serious face, one finger raised, no other people
+KAI: Today you'll see everything that happens in between. And every single thing in this video is real history.
 
 # SCENE 3
-PICTURE: KAI's own small strip of ripe golden wheat at dusk, still uncut, bending in a strong wind, huge dark storm clouds rolling in above it, no people
-MOOD: tense
-MUSIC: tense
-SFX: sting
-THEN: (at "winter") KAI looking at the storm clouds with a scared face, holding the single stalk of wheat to his chest
-KAI: And my own wheat? Still out there. With a storm coming. If it rots, my family has no bread this winter.
+PICTURE: outdoors in the village lane in soft morning light, KAI leaning toward the viewer with a sly half smile, holding up a wooden cup, no other people
+MOOD: curious
+SFX: whoosh
+THEN: (at "cup") close-up of a plain wooden cup of cloudy brown ale on a rough wooden table inside the dim HUT, no people
+KAI: And before this day ends, I'll show you the one thing almost everyone gets wrong about peasants. Hint: it's in this cup.
 
 # SCENE 4
-PICTURE: KAI looking straight at the viewer with a serious face, one finger raised, in front of a golden wheat field in the morning
-MOOD: curious
-THEN: (at "wrong") KAI leaning toward the viewer with a sly smile, hand next to his mouth as if telling a secret
-KAI: So what happened in those thirteen hours? Stay with me, because before this day ends, I'll show you the one thing about peasants that almost everyone gets wrong.
-
-// ===================== MORNING =====================
+PICTURE: outdoors from a hill in early morning sun, a wide view of a small English village: straw-roofed houses, a stone church, a watermill by a stream, long thin strips of golden wheat, the dark CASTLE on a hill, no people
+MOOD: calm
+MUSIC: calm
+TEXT: 1300
+THEN: (at "farmer") outdoors in the wheat fields at sunrise, many small stick figure farmers walking out to work along the field paths
+KAI: England, the year thirteen hundred. August. Harvest time. Almost everyone alive is a farmer, and that includes me.
 
 # SCENE 5
-PICTURE: a medieval English village from above at sunrise: small straw-roofed houses, long strips of golden wheat, a small stone church, a watermill by a stream, and the CASTLE on the hill, no people
-MOOD: epic
-MUSIC: epic
-TEXT: 1300
-THEN: (at "farmer") a wide view of the village fields with many small stick figure farmers already walking out to work at sunrise
-KAI: England, the year thirteen hundred. August. Harvest. Most people alive right now are farmers. And for the next thirteen hours, you're me.
+PICTURE: outdoors in a golden wheat field in morning sun, close-up of heavy ripe ears of wheat, no people
+MOOD: tense
+THEN: (at "hungry") inside the dim HUT at night by the small fire, the WIFE and the SON sitting by an almost empty bowl, worried faces
+KAI: The rule of the harvest is simple. Get the grain in before the autumn rain, or the whole village goes hungry this winter.
+
+// ===================== 6 AM: HOME =====================
 
 # SCENE 6
-PICTURE: a small stone church tower at sunrise with a bell swinging in it, no people
-MOOD: curious
-SFX: ding
-THEN: (at "sun") KAI standing outside his cottage at dawn, shading his eyes and looking up at the rising sun
-KAI: Nobody here owns a clock. You get up with the sun, the roosters and the church bell.
+PICTURE: inside the dim HUT at dawn, KAI sitting up on his straw bed and yawning, the COW standing calmly in its pen at the other end of the same room behind a low fence, not touching him, no other people
+MOOD: funny
+MUSIC: funny
+TEXT: 6 AM
+SFX: pop
+THEN: (at "cow") inside the dim HUT at dawn, close-up of the COW behind its low wooden fence, chewing, looking calm
+KAI: Six AM. Waking up is easy, because I share a bedroom with a cow.
 
 # SCENE 7
-PICTURE: inside the dim HUT at dawn, KAI sitting up on his straw bed, yawning, the COW standing calmly a few steps away in the same room, not touching him, no other people
-MOOD: funny
-MUSIC: funny
-SFX: pop
-THEN: (at "roommate") the inside of a long medieval house: the family's straw beds at one end and the COW in a small stall at the other end of the same room, a low wooden fence between them
-KAI: And the first thing I see every morning? My cow. Yeah. She's my roommate.
+PICTURE: inside the dim HUT at dawn, a wide view of the long room: the family's straw beds at one end, the small fire in the middle, the COW in its pen at the other end, no people
+MOOD: curious
+THEN: (at "warm") inside the dim HUT at dawn, KAI holding his hands toward the COW and smiling, warm air drawn as soft wavy lines, no other people
+KAI: This is a longhouse. People at one end, animals at the other. Why? The cow keeps the house warm, and nobody can steal her at night.
 
 # SCENE 8
-PICTURE: KAI patting the COW on the head inside the HUT, smiling
-MOOD: curious
-THEN: (at "roof") the straw roof of a small medieval house seen from outside at sunrise, grey smoke seeping out through the straw, no people
-KAI: In houses like mine, animals live under the same roof. She keeps us warm, nobody can steal her. And there's no chimney. Smoke just leaks out through the roof.
+PICTURE: inside the dim HUT at dawn, grey smoke from the small fire rising up into the thick straw roof, no chimney, KAI coughing and waving the smoke away, no other people
+MOOD: funny
+THEN: (at "floor") inside the dim HUT at dawn, close-up of the beaten earth floor with a little straw on it, no people
+KAI: No chimney. The smoke just finds its own way out through the straw roof. And the floor? Hard, beaten earth.
 
 # SCENE 9
-PICTURE: the WIFE standing by the small fire in the HUT, handing KAI a wooden cup and a dark round loaf of bread
-MOOD: happy
+PICTURE: inside the dim HUT at dawn by the small fire, the WIFE handing KAI a dark round loaf of bread and a wooden cup
+MOOD: curious
 TEXT: BREAKFAST
-THEN: (at "ale") close-up inside the dim HUT at dawn by the small fire: a wooden cup of cloudy brown ale and a dark loaf of bread on a rough wooden table, no people, no lamp
-KAI: Breakfast. No eggs, no bacon. My wife hands me dark bread and a cup of ale.
+THEN: (at "rye") close-up inside the dim HUT at dawn of a dark round loaf of bread on a rough wooden table, no people, no lamp
+KAI: Breakfast. Dark bread made from rye and barley, and a cup of ale.
 
 # SCENE 10
-PICTURE: KAI holding up the wooden cup of ale and looking at the viewer with a raised eyebrow
-MOOD: curious
-TEXT: MYTH
-THEN: (at "food") the WIFE stirring a big wooden barrel with a long paddle, steam rising, smiling proudly
-KAI: And no, it's not because water is poison. That's a myth. We drink water too. Weak ale is basically food. She brews it herself.
+PICTURE: inside the dim HUT at dawn, KAI holding the dark bread and looking at it with a sad flat face, no other people
+MOOD: funny
+THEN: (at "rich") outdoors in front of a stone manor house in bright morning sun, a plump stick figure lord in a red robe proudly holding a big white loaf of bread
+KAI: Wait, we grow wheat, but I eat this? Yep. Soft white wheat bread is mostly for the rich. We sell our best wheat or pay with it.
 
 # SCENE 11
-PICTURE: KAI standing in his doorway at sunrise, looking out over his golden wheat strip with a huge happy smile, hands on his hips, the WIFE and the SON beside him
-MOOD: happy
-THEN: (at "ripe") close-up of heavy golden wheat ears bending in the morning sun, no people
-KAI: And here's why I'm smiling. My own wheat is finally ripe. A whole year of work. This is our bread until next summer.
+PICTURE: inside the dim HUT at dawn, KAI raising the wooden cup of ale with a confused face, no other people
+MOOD: curious
+SFX: ding
+THEN: (at "later") outdoors in the village lane in morning light, KAI winking at the viewer and pointing at the cup, no other people
+KAI: Ale for breakfast? Remember that cup. I'll come back to it later.
 
 # SCENE 12
-PICTURE: KAI and the SON walking toward their wheat strip in the morning light, sickles on their shoulders, the SON grinning
-MOOD: happy
-THEN: (at "minute") KAI turning to the viewer, his smile slowly fading, eyebrows raised
-KAI: Today, we cut it. Me and my son. I had about one more minute of happiness.
-
-// ===================== TWIST 1: THE HORN =====================
+PICTURE: inside the dim HUT at dawn, the WIFE milking the COW in its pen, a wooden bucket under the cow
+MOOD: calm
+THEN: (at "brewing") outdoors behind the house in morning light, the WIFE stirring a big wooden barrel with a long paddle, steam rising
+KAI: My wife has been up longer than me. Fire, milking, and brewing.
 
 # SCENE 13
-PICTURE: the REEVE standing in the muddy village lane, blowing a long cow horn, puffing his cheeks
-MOOD: tense
-MUSIC: tense
-SFX: sting
-TEXT: THE HORN
-KAI: Because then I hear it. The horn.
+PICTURE: outdoors in a small vegetable garden behind the house in morning light, the WIFE picking peas, rows of cabbages, onions and beans around her
+MOOD: calm
+THEN: (at "onions") outdoors in the small garden in morning light, close-up of cabbages, onions, garlic and bean plants in neat rows, no people
+KAI: She also runs our garden behind the house. Peas, beans, cabbages, onions, garlic. That garden feeds us more than you'd think.
 
 # SCENE 14
-PICTURE: KAI frozen in the lane, his smile gone, sickle in hand, looking toward the REEVE
-MOOD: shock
-THEN: (at "reeve") outdoors in the village lane in bright morning sun, the bald REEVE with his short black beard pointing his long stick up toward the CASTLE, stern face, no other people
-KAI: That's the reeve. His job is making sure the lord's work gets done. And in August, that horn means one thing.
+PICTURE: outdoors behind the house in morning light, the WIFE pouring brown ale from a jug into a small barrel, KAI watching with a surprised face
+MOOD: curious
+THEN: (at "days") outdoors behind the house, close-up of a wooden jug of ale with a tiny cloud of bad smell drawn above it, no people
+KAI: In villages, women brewed most of the ale. And they had to brew all the time, because ale went sour in just a few days.
 
 # SCENE 15
-PICTURE: KAI holding his head in both hands, shocked, in the village lane in the morning
-MOOD: shock
-SFX: hit
-TEXT: BOON DAY
-THEN: (at "kid") the whole village, men, women and children with sickles, walking out together toward the lord's huge golden field
-KAI: Boon day. Today I don't cut my wheat. I cut the lord's wheat. Every man, every woman, every kid.
+PICTURE: outdoors at the edge of a wheat field in morning light, the SON waving a stick and shouting at a few black crows flying away
+MOOD: funny
+TEXT: AGE 8
+THEN: (at "geese") outdoors on a green in morning light, the SON walking behind a small group of white geese with a stick
+KAI: And my son? He's eight. He has a job too. Chase birds off the fields, look after the geese.
 
 # SCENE 16
-PICTURE: KAI holding up a finger like a teacher, a funny know-it-all face
-MOOD: funny
-MUSIC: funny
-TEXT: REQUEST
-THEN: (at "no") KAI laughing with no joy, shaking his head
-KAI: Fun fact. Boon basically means a request. Like the lord is asking nicely. It's a request you cannot say no to.
+PICTURE: outdoors in the village lane in morning light, KAI ruffling the SON's yellow hair and smiling
+MOOD: calm
+THEN: (at "seven") outdoors in the wheat field, the SON carrying a small bundle of straw, proud face
+KAI: Children did real work from about age seven. Small jobs first, bigger jobs as they grew.
 
 # SCENE 17
-PICTURE: a line of stick figure villagers with sickles walking out of the village toward a huge field of golden wheat in the morning, KAI and the SON among them, heads down
-MOOD: sad
-MUSIC: sad
-THEN: (at "free") KAI turning to the viewer with a flat, unimpressed face
-KAI: And how much does he pay me for a full day? Zero coins. I work for free.
+PICTURE: outdoors in the village lane at sunrise, KAI looking up at the sun with one hand shading his eyes, the small stone church with its bell tower behind him, no other people
+MOOD: curious
+THEN: (at "bell") outdoors at sunrise, close-up of the bell in the small stone church tower, no people
+KAI: What time is it, exactly? No idea. Nobody here owns a clock. We go by the sun and the church bell.
+
+// ===================== 7 AM: THE HORN =====================
 
 # SCENE 18
-PICTURE: a simple map-like view from above of a village with its fields divided into long strips: one big block of fields painted gold near the CASTLE and many thin strips painted green around it
-MOOD: curious
-TEXT: THE DEAL
-THEN: (at "sweat") KAI shrugging with open hands at the edge of the big field
-KAI: Here's the deal. The lord owns a big part of the land. I get my own thin strips to farm. And I pay my rent in sweat.
+PICTURE: outdoors in the village lane in bright morning sun, the REEVE blowing his cow horn, a stern face, no other people
+MOOD: tense
+MUSIC: tense
+TEXT: 7 AM
+SFX: sting
+THEN: (at "fields") outdoors in the village lane in morning sun, villagers with sickles walking out toward the wheat fields together
+KAI: Seven AM. That horn means everyone to the fields.
 
 # SCENE 19
-PICTURE: KAI holding up three fingers, counting, in front of the big wheat field
+PICTURE: outdoors in the village lane in morning sun, the REEVE pointing his long stick toward the fields, KAI looking at him nervously
 MOOD: curious
-TEXT: 3 DAYS
-THEN: (at "first") KAI pointing at a huge wall of golden wheat, eyes wide
-KAI: On many manors, that's about three days a week on his fields. And at harvest, his crop comes first.
+THEN: (at "chose") outdoors on the village green in morning light, a few villagers raising their hands to vote, the REEVE standing in front of them looking unhappy
+KAI: That's the reeve. He's not a knight. He's a peasant like me. The village chose him to organise the work.
 
 # SCENE 20
-PICTURE: KAI looking over his shoulder at his own small strip of ripe wheat far behind him, worried, dark clouds far away on the horizon
-MOOD: tense
-MUSIC: tense
-SFX: sting
-THEN: (at "clouds") dark grey storm clouds gathering far away over the hills, the sun still shining over the village, no people
-KAI: My wheat just has to wait. And see those clouds? That's the storm. It's coming. The only question is when.
-
-// ===================== THE LORD'S FIELD =====================
+PICTURE: outdoors on the village green in morning light, the REEVE shrugging with a tired face, holding his stick and horn, no other people
+MOOD: funny
+THEN: (at "blame") outdoors on the village green, two angry villagers pointing at the REEVE, who looks embarrassed
+KAI: And nobody wanted the job. If the work went wrong, the lord blamed him, and his neighbours blamed him too.
 
 # SCENE 21
-PICTURE: KAI bent over in the golden wheat, grabbing a bunch of stalks with one hand and cutting with the sickle in the other, sweating
-MOOD: tense
-TEXT: 7 AM
-CAMERA: push
-KAI: Seven AM. Grab a handful of stalks. Cut. Drop it. Grab, cut, drop.
+PICTURE: outdoors in a huge golden wheat field in bright morning sun, KAI holding his sickle and smiling happily at the wheat, no other people
+MOOD: happy
+THEN: (at "lord's") outdoors in front of the huge golden wheat field in bright morning sun, KAI frozen with a shocked face, the dark CASTLE on the hill behind the field, no other people
+KAI: Time to cut my wheat. Except... I'm not cutting my wheat today. I'm cutting the lord's.
 
 # SCENE 22
-PICTURE: a long row of stick figure villagers bent over cutting wheat with sickles in a huge golden field, the sun climbing
-MOOD: epic
-MUSIC: epic
-THEN: (at "crying") KAI standing up slowly, holding his lower back with both hands, wincing
-KAI: Now do that thousands of times. Bent over. In the sun. Until sunset. My back is already crying.
+PICTURE: outdoors in the village lane in morning sun, KAI explaining with one hand raised, the CASTLE on the hill behind him, no other people
+MOOD: curious
+TEXT: BOON DAY
+SFX: hit
+THEN: (at "rent") close-up outdoors of KAI's small field strip next to the lord's much bigger field, a low grass path between them, no people
+KAI: Welcome to boon day. I'm a villein. The land I farm belongs to the lord. Part of my rent is paid with work: some days every week, on his fields.
 
 # SCENE 23
-PICTURE: the WIFE and other stick figure village women tying cut wheat into bundles with twisted straw bands, working fast
+PICTURE: outdoors in the wheat field in morning sun, the whole village, men, women and children with sickles, walking into the lord's golden field together
 MOOD: curious
-TEXT: SHEAVES
-THEN: (at "stand") rows of wheat sheaves standing leaning together in small groups across a cut field, no people
-KAI: Behind us, the women tie the wheat into bundles called sheaves and stand them up to dry. Some of them cut too. Faster than me.
+THEN: (at "boon") outdoors in the wheat field in morning sun, KAI rolling his eyes at the viewer, holding his sickle, no other people
+KAI: And at harvest, the lord can call extra days. These are called boon days. Today is one of them.
 
 # SCENE 24
-PICTURE: the SON chasing big black crows away from the wheat sheaves, waving his arms, shouting
-MOOD: funny
-MUSIC: funny
-SFX: pop
-THEN: (at "seriously") KAI laughing and giving the SON a thumbs up from the field
-KAI: My son's job? Chasing birds. Every grain they steal is a grain we lose. He takes this very seriously.
+PICTURE: outdoors from a hill in morning sun, a wide view of the village fields cut into many long thin strips of wheat in slightly different colours, no people
+MOOD: calm
+THEN: (at "scattered") outdoors from a hill in morning sun, the same long thin field strips with three of them marked by small wooden stakes, no people
+KAI: Look at the fields. Long thin strips. My strips are scattered all over, so every family gets some good land and some bad.
+
+// ===================== 8 AM: REAPING =====================
 
 # SCENE 25
-PICTURE: KAI pausing in the field, staring longingly at his own small wheat strip in the distance, the storm clouds a bit bigger
+PICTURE: outdoors in the lord's wheat field in bright morning sun, KAI bending and cutting a handful of wheat with his sickle, no other people
 MOOD: tense
-MUSIC: tense
-THEN: (at "reeve") the REEVE suddenly standing right next to KAI, glaring at him, tapping his long stick on his palm
-KAI: But I keep looking at my own field. And guess who notices. The reeve.
+TEXT: 8 AM
+SFX: whoosh
+THEN: (at "tie") outdoors in the wheat field, close-up of KAI's white cartoon hands tying a bundle of wheat with a twisted band of straw, no other people
+KAI: Eight AM. Grab a handful. Cut it with the sickle. Again and again. Then tie the bundle with a band of straw.
 
 # SCENE 26
-PICTURE: close-up of the REEVE leaning in close to KAI's face, stern, pointing his stick at KAI
-MOOD: tense
-TEXT: FINED
-THEN: (at "court") inside a big medieval stone hall lit by daylight from tall windows, a stick figure judge in a dark robe at a wooden table pointing at a nervous villager, a clerk writing on a long scroll
-KAI: He says if I slack on the lord's harvest, I'll be fined in the manor court. And he means it. One man really got fined sixpence just for bad ploughing on the lord's land.
+PICTURE: outdoors in the wheat field in morning sun, the WIFE binding a sheaf of wheat, a few finished sheaves next to her
+MOOD: calm
+THEN: (at "stooks") outdoors in the cut wheat field, rows of sheaves standing up leaning against each other in small groups, no people
+KAI: Women reaped and bound sheaves too. Then we stand the sheaves up in little groups called stooks, so they dry.
 
 # SCENE 27
-PICTURE: the REEVE and KAI facing each other, KAI with a sour face, the REEVE with a stern face
+PICTURE: outdoors in the wheat field in bright sun, KAI holding his lower back with one hand, sweating, a pained face, no other people
 MOOD: funny
-MUSIC: funny
-TEXT: PLOT TWIST
-THEN: (at "neighbour") the REEVE eating porridge at a wooden table in his own small hut, looking very ordinary
-KAI: And the plot twist? The reeve isn't a noble. He's a peasant, just like me. He lives two houses down. He's basically my neighbour with a stick.
+THEN: (at "hands") outdoors in the wheat field, close-up of KAI's small white cartoon hand with two small pink sore spots, holding the sickle, no blood
+KAI: One hour in, my back hates me. Two hours in, my hands hate me too.
 
 # SCENE 28
-PICTURE: KAI looking up toward the CASTLE on the hill with a squint, hand over his eyes
-MOOD: curious
-THEN: (at "manors") the CASTLE on its hill with its gate closed and a single flag on top, no people
-KAI: The lord himself? I've barely ever seen him. Big lords often held lots of manors, and lived somewhere else most of the year. To him, I'm a name on a list.
+PICTURE: outdoors in the wheat field in bright sun, long rows of villagers bent over cutting wheat side by side, the REEVE walking behind them watching
+MOOD: tense
+THEN: (at "sheaf") outdoors in the wheat field, the REEVE pointing his stick at a single sheaf left on the ground, stern face, no other people
+KAI: And the reeve walks behind us all day, counting. Every sheaf of this field belongs to the lord.
 
 # SCENE 29
-PICTURE: close-up outdoors in the wheat field in bright sun of KAI's small white cartoon hand holding the sickle, a few small pink sore spots on his palm, no blood, no other people
-MOOD: sad
-TEXT: 10 AM
-THEN: (at "gloves") KAI blowing on his sore hand, a sad face
-KAI: Ten AM. My hands are raw. Some lords even bought gloves for their reapers. Not this one.
+PICTURE: inside a wooden manor hall in daylight, a stick figure steward in a red robe at a table writing on a long parchment roll, KAI standing in front of him with a nervous face
+MOOD: tense
+TEXT: FINED
+THEN: (at "records") close-up inside the manor hall in daylight of an old parchment roll covered in neat handwriting lines, no people
+KAI: Reap badly, and you can be fined at the manor court. We know because the court records still survive, full of people fined for bad work.
 
 # SCENE 30
-PICTURE: a clay jug of water being passed from hand to hand along the row of sweating villagers in the field
-MOOD: calm
-THEN: (at "gulp") KAI drinking from the clay jug with water running down his chin, eyes closed in relief
-KAI: The water jug comes down the line. One big gulp each. Best drink of my life.
+PICTURE: outdoors in the cut wheat field in bright sun, close-up of tall stubble left standing after the wheat was cut, no people
+MOOD: curious
+THEN: (at "roof") outdoors in the village lane in bright sun, a stick figure man on a ladder laying straw on a house roof, no other people
+KAI: Nothing is wasted. The straw becomes beds, food for the animals, and new roofs for our houses.
+
+// ===================== 10 AM =====================
 
 # SCENE 31
-PICTURE: KAI looking around the open field, embarrassed, holding his belly, then pointing at a tall hedge at the edge of the field
-MOOD: gross
-MUSIC: funny
+PICTURE: outdoors at the edge of the wheat field in bright sun, KAI drinking water from a clay jug with his eyes closed, happy, no other people
+MOOD: happy
+TEXT: 10 AM
 SFX: pop
-THEN: (at "hedge") a tall green hedge at the edge of a wheat field, leaves rustling, no people
-KAI: And if you need the toilet out here? See that hedge? That's the bathroom.
-
-// ===================== NOON =====================
+THEN: (at "water") outdoors by a small clear stream in bright sun, close-up of clean water flowing over stones, no people
+KAI: Ten AM. A drink break. Yes, that's water. Keep that in mind.
 
 # SCENE 32
-PICTURE: outdoors in the wheat field at noon, the bald REEVE with his short black beard blowing his cow horn, a few villagers dropping their sickles and turning around hopefully
-MOOD: curious
-TEXT: NOON
-SFX: ding
-THEN: (at "food") KAI sniffing the air with a hopeful face
-KAI: Noon. The horn again. Everyone freezes. But this time... it means food.
+PICTURE: outdoors in the wheat field in bright sun, the NEIGHBOUR cutting wheat next to KAI and grinning at him
+MOOD: funny
+THEN: (at "song") outdoors in the wheat field in bright sun, a line of villagers cutting wheat with open mouths, singing, small musical notes drawn above them
+KAI: This is my neighbour. We work side by side, we joke, sometimes the whole line sings a song to keep the speed.
+
+// ===================== NOON: THE LORD'S FOOD =====================
 
 # SCENE 33
-PICTURE: villagers sitting in the shade at the edge of the field, a big basket of round loaves and a barrel of ale in the middle, KAI grabbing a loaf with a huge grin
+PICTURE: outdoors at the edge of the wheat field at noon, the REEVE blowing his cow horn, a few villagers putting down their sickles and turning around happily
 MOOD: happy
-MUSIC: calm
-SFX: pop
-THEN: (at "cheese") KAI raising a wooden cup of ale with a big grin
-KAI: And here's the surprise. On a lot of manors, the lord feeds you on boon days. Bread, cheese, ale. Sometimes even fish or meat.
+MUSIC: funny
+TEXT: NOON
+SFX: ding
+THEN: (at "feed") outdoors at the edge of the wheat field at noon, a big basket of bread and a small barrel carried up by two villagers
+KAI: Noon. And now the best part of a boon day. The lord has to feed us.
 
 # SCENE 34
-PICTURE: outdoors at the edge of the wheat field in bright noon sun, KAI sitting in the shade with his cheeks puffed full of bread like a hamster, giving a thumbs up, no other people
-MOOD: funny
-MUSIC: funny
-THEN: (at "unfair") outdoors at the edge of the wheat field at noon, KAI holding up his own small dark loaf next to the NEIGHBOUR holding a bigger pale loaf, KAI with a flat unimpressed face
-KAI: Best part of my day. But even the bread is unfair. In one village, the free men got wheat bread. Peasants like me got the cheaper mixed loaf.
+PICTURE: outdoors at the edge of the wheat field at noon, villagers sitting on the grass sharing bread and cheese from a big basket, KAI in the middle smiling
+MOOD: happy
+THEN: (at "cheese") outdoors at the edge of the wheat field at noon, close-up of round loaves of bread, a wheel of cheese and a few small fish on a cloth on the grass, no people
+KAI: Bread, lots of bread. Cheese. Maybe a bit of fish or bacon, and something to drink.
 
 # SCENE 35
+PICTURE: outdoors at the edge of the wheat field at noon, KAI sitting with his cheeks puffed full of bread like a hamster, giving a thumbs up, no other people
+MOOD: funny
+THEN: (at "custom") outdoors at the edge of the wheat field at noon, the REEVE reading from a small rolled parchment to a few listening villagers
+KAI: Not a feast, but it's free. And it was a written custom of the manor. Hungry workers do bad work, and the lord knew it.
+
+# SCENE 36
 PICTURE: outdoors at the edge of the wheat field at noon, KAI sitting with his back against a tree trunk in the shade, eyes closed, the SON asleep on the grass next to him, no other people
 MOOD: calm
 MUSIC: calm
-THEN: (at "worse") KAI's eyes snapping open, looking at the viewer with a worried face
-KAI: Ten minutes of rest in the shade. Enjoy it. Because after this lunch, my day gets so much worse.
+THEN: (at "nap") outdoors under the tree at noon, close-up of KAI's peaceful sleeping face, a small Z drawn above his head
+KAI: After eating, a short rest in the shade. Honestly? The best nap of my life.
 
-// ===================== TWIST 2: THE MATH =====================
-
-# SCENE 36
-PICTURE: KAI back in the field in the blazing afternoon sun, sweat pouring, cutting wheat, exhausted face
-MOOD: tense
-MUSIC: tense
-TEXT: 2 PM
-THEN: (at "closer") the storm clouds rolling closer over the hills, darker now, a few birds flying away
-KAI: Two PM. The hottest, longest part of the day. And every time I stand up, those clouds are closer.
+// ===================== 2 PM: WHO TAKES WHAT =====================
 
 # SCENE 37
-PICTURE: KAI looking at the viewer with a serious face, counting on his fingers
-MOOD: curious
-TEXT: THE MATH
-THEN: (at "hundred") a neat pile of exactly one hundred golden wheat sheaves standing in rows in a field, no people
-KAI: So while I work, let's do the math. Say I save my own wheat, and I cut one hundred sheaves. Watch how many I keep.
+PICTURE: outdoors under the tree at the edge of the wheat field in afternoon sun, KAI's eyes snapping open, looking at the viewer with a worried face, no other people
+MOOD: shock
+MUSIC: tense
+TEXT: 2 PM
+SFX: sting
+THEN: (at "mine") outdoors in KAI's own small strip of ripe wheat in afternoon sun, KAI looking at it with a worried face, no other people
+KAI: Two PM. And here's what really hurts. Even my own wheat isn't all mine.
 
 # SCENE 38
-PICTURE: a row of ten golden wheat sheaves standing in a field, the tenth one glowing and marked with a small green branch, no people
-MOOD: curious
+PICTURE: outdoors in a cut wheat field in afternoon sun, the PRIEST picking up one sheaf out of a row of ten sheaves, KAI watching with a flat face
+MOOD: shock
 TEXT: 1 IN 10
-THEN: (at "barn") a huge old stone tithe barn next to a small church, no people
-KAI: First, the church. One in every ten belongs to them. It's called the tithe. Ten sheaves, gone, straight to a giant barn.
+SFX: hit
+THEN: (at "barn") outdoors in afternoon sun, a big stone barn with a tall straw roof next to the small stone church, sheaves of wheat stacked at its open door, no people
+KAI: The tithe. One tenth of everything goes to the church, taken right here in the field, sheaf by sheaf, into the tithe barn.
 
 # SCENE 39
-PICTURE: a stone watermill by a stream, its big wooden wheel turning, a miller with a flour-covered apron standing at the door with his arms crossed
+PICTURE: outdoors by a stream in afternoon sun, the lord's stone watermill with a turning wooden water wheel, a stick figure miller in a white apron standing at the door, no other people
 MOOD: curious
-TEXT: THE MILL
-THEN: (at "cut") the miller scooping flour out of a sack into his own bowl with a sly smile
-KAI: Then the mill. I'm not allowed to grind my grain anywhere else. The lord owns the mill. And the miller takes his cut.
+THEN: (at "share") inside the watermill, close-up of a small wooden bowl scooping flour from a sack, no people
+KAI: Then the grain I keep must be ground at the lord's mill. And the miller keeps a share of my flour as payment.
 
 # SCENE 40
-PICTURE: a small round hand millstone, two flat stones on top of each other with a wooden handle, sitting on a table, no people
+PICTURE: outdoors in the village lane in afternoon sun, a small round stone hand mill made of two flat stones with a wooden handle on a wooden table, no people
 MOOD: shock
-SFX: hit
-THEN: (at "floor") a stone floor in a grand monastery room made of many round grey millstones laid side by side, no people
-KAI: Some people grind at home with little hand mills to dodge that. About thirty years from now, one abbot will take them all away. And pave his floor with them.
+THEN: (at "forbidden") outdoors in the village lane in afternoon sun, the REEVE wagging his finger at KAI, who is hiding the small hand mill behind his back
+KAI: Grind it myself at home with a hand mill? On many manors, forbidden. The lord wants his mill money.
 
 # SCENE 41
-PICTURE: KAI with his mouth hanging open in disbelief, looking at the viewer
+PICTURE: inside a big medieval stone abbey hall lit by daylight from tall windows, a floor made of many round grey millstones laid side by side, no people
 MOOD: shock
-THEN: (at "out") angry stick figure townspeople prying round millstones out of a stone floor with iron bars
-KAI: His floor. And fifty years after that, angry townspeople broke in and ripped them right back out.
+TEXT: 1331
+THEN: (at "rebels") inside the stone abbey hall in daylight, angry villagers breaking up the millstone floor with hammers and carrying pieces away
+KAI: At St Albans in 1331, the abbot took the townspeople's hand mills and broke them into the floor of his abbey. In 1381, rebels smashed that floor and took the pieces back.
 
 # SCENE 42
-PICTURE: KAI standing next to a big pile of wheat sheaves that keeps shrinking as pieces are carried away toward a church, a mill and the CASTLE
+PICTURE: inside the dim HUT in afternoon light, KAI hugging the COW's neck with a worried face, standing next to her
 MOOD: sad
 MUSIC: sad
-THEN: (at "rent") KAI looking down at a small pile of sheaves at his feet, sad
-KAI: Church, mill, and the lord still gets my work, plus rent. My hundred sheaves are down to around eighty-something. And we haven't eaten a single loaf yet.
+THEN: (at "animal") outdoors at the castle gate in afternoon sun, a stick figure servant in a red tunic leading a brown cow away on a rope, no other people
+KAI: And one more. When a peasant died, the lord could take his family's best animal. It was called the heriot.
 
 # SCENE 43
-PICTURE: KAI looking at the COW in her stall in the HUT, sad, gently touching her head
-MOOD: sad
-THEN: (at "cow") KAI hugging the COW's neck, eyes closed, sad
-KAI: And that's not even the worst part. When I die, the lord can take my best animal. That's my cow.
+PICTURE: inside the dim HUT in afternoon light, KAI covering the COW's ears with his hands, a protective face, no other people
+MOOD: funny
+THEN: (at "rude") inside the dim HUT, close-up of the COW looking calm and chewing
+KAI: So if I die, the lord gets my cow. Rude.
 
-// ===================== THE RACE =====================
+// ===================== MYTH 1 =====================
 
 # SCENE 44
-PICTURE: KAI cutting wheat faster and faster, gritting his teeth, sweat flying, the last part of the huge field in front of him
+PICTURE: outdoors in the village lane in afternoon sun, KAI with his arms crossed and a fierce face, no other people
+MOOD: curious
+TEXT: MYTH
+SFX: hit
+THEN: (at "thirty") outdoors in the village lane in afternoon sun, an old stick figure man with a long white beard and a walking stick, waving and smiling
+KAI: Speaking of dying, here's a myth. You've heard that peasants died at thirty? Then who's that guy?
+
+# SCENE 45
+PICTURE: outdoors in the village lane in afternoon sun, a small wooden cradle next to a house door, no people
+MOOD: sad
+THEN: (at "sixty") outdoors on the village green in afternoon sun, three old stick figures with grey and white hair sitting on a bench, laughing
+KAI: The average was low because so many babies and small children died. But if you made it to adulthood, reaching fifty or sixty was normal.
+
+# SCENE 46
+PICTURE: outdoors on the village green in afternoon sun, KAI lying on the grass with his hands behind his head, relaxed and smiling, no other people
+MOOD: happy
+THEN: (at "holy") outdoors in front of the small stone church on a sunny morning, villagers in their best clean clothes walking in through the door
+KAI: And we don't work every single day. Sundays and many church holy days were days off. Work was actually forbidden.
+
+// ===================== 4 PM =====================
+
+# SCENE 47
+PICTURE: outdoors in the lord's wheat field in hot afternoon sun, KAI cutting wheat with sweat pouring, an exhausted face, no other people
 MOOD: tense
 MUSIC: tense
 TEXT: 4 PM
-CAMERA: push
-KAI: Four PM. New plan. If we finish the lord's field fast, maybe there's still time to save mine.
-
-# SCENE 45
-PICTURE: the villagers in the field all freezing at the same moment and looking up at the dark sky, sickles in their hands
-MOOD: tense
-SFX: hit
-THEN: (at "stops") everyone bending back down and cutting even faster, faces determined
-KAI: Then, far away, the first thunder. Everybody hears it. Nobody stops.
-
-# SCENE 46
-PICTURE: KAI and the NEIGHBOUR cutting wheat side by side, racing, both sweating hard
-MOOD: tense
-THEN: (at "faster") the NEIGHBOUR grinning at KAI and wiping his forehead
-KAI: My neighbour sees my face, looks at the clouds, and just starts cutting faster. He doesn't even ask why.
-
-# SCENE 47
-PICTURE: the SON holding up his small hand with a little cut on his finger, about to cry, the WIFE kneeling to wrap it with a strip of cloth
-MOOD: sad
-THEN: (at "back") the SON going back to chasing crows with his wrapped finger, brave face
-KAI: My son cuts his finger. My wife wraps it in cloth, and he goes right back to work. He's eight. Nobody even thinks that's strange.
+THEN: (at "left") outdoors from a low hill in afternoon sun, the lord's huge wheat field mostly cut, only a small part still standing, no people
+KAI: Four PM. Hot. Tired. But look, there's only a little left.
 
 # SCENE 48
-PICTURE: the last stalks of wheat in the huge field falling under a sickle, the field now completely cut, golden stubble everywhere
-MOOD: epic
-MUSIC: epic
-SFX: whoosh
-TEXT: 6 PM
-THEN: (at "done") villagers throwing their arms up in the empty cut field, cheering
-KAI: Six PM. The last stalk falls. The lord's field is done!
+PICTURE: outdoors in the cut wheat field in afternoon sun, an old stick figure woman in a grey headscarf picking up single fallen wheat stalks and putting them in her apron
+MOOD: calm
+TEXT: GLEANING
+THEN: (at "poor") outdoors in the cut wheat field in afternoon sun, two small children and an old man picking up fallen stalks from the ground
+KAI: Behind us come the gleaners, picking up every stalk we dropped. This is gleaning. Village rules often allowed only the poor, the old and the young to do it.
 
 # SCENE 49
-PICTURE: KAI already running across the field toward his own strip of ripe wheat, sickle in hand
-MOOD: tense
-MUSIC: tense
-THEN: (at "carts") the REEVE blocking KAI's path and pointing at a row of empty ox carts
-KAI: I'm already running to my wheat. And then the reeve points at the carts.
+PICTURE: outdoors in the cut wheat field in afternoon sun, KAI handing a small bundle of wheat to the old woman gleaner, both smiling
+MOOD: happy
+THEN: (at "winter") close-up outdoors in the cut field of the old woman's apron holding a small handful of wheat stalks, no other people
+KAI: For some families, those dropped stalks are the difference between bread and no bread this winter.
+
+// ===================== 6 PM - 7 PM: THE THUMBNAIL =====================
 
 # SCENE 50
-PICTURE: KAI and other villagers lifting heavy wheat sheaves up onto a tall ox cart, struggling, the sun going down
-MOOD: sad
-MUSIC: sad
-TEXT: HIS CARTS
-THEN: (at "barn") the loaded ox cart starting to roll up the dirt road toward the CASTLE
-KAI: First we load his carts. Every last sheaf. Up to his barn. That's part of the deal too.
-
-# SCENE 51
-PICTURE: an old stick figure woman with a grey headscarf and a cane, slowly picking up single fallen wheat stalks from the cut field and putting them in her apron
-MOOD: sad
-TEXT: GLEANING
-THEN: (at "winter") close-up of the old woman's apron holding a small handful of wheat stalks
-KAI: As the carts leave, the old and the weak pick up every fallen stalk. It's called gleaning. For some, that's how they get through the winter.
-
-// ===================== 7 PM: THE THUMBNAIL MOMENT =====================
-
-# SCENE 52
-PICTURE: KAI standing alone in the empty cut field at dusk, holding one single stalk of wheat, sad with a few tears, the last ox cart full of wheat rolling up the road to the CASTLE
-MOOD: sad
-TEXT: 7 PM
-SFX: hit
-THEN: (at "bleeding") close-up outdoors in the cut field at dusk of KAI's small white cartoon hands with small pink sore spots, holding the single stalk of wheat, no other people
-KAI: Seven PM. Thirteen hours. My hands are bleeding, my back is broken. And all of it rolls up that hill.
-
-# SCENE 53
-PICTURE: KAI's own small strip of ripe wheat at dusk, still uncut, wind bending it hard, dark clouds right above it, no people
-MOOD: tense
-SFX: sting
-THEN: (at "rain") a flash of lightning far away over the hills at dusk
-KAI: And my own wheat is still standing. The sun is going down. The wind is picking up. I can smell the rain.
-
-# SCENE 54
-PICTURE: KAI sitting on the ground in the darkening empty field, head down, holding the single stalk of wheat
-MOOD: sad
-CAMERA: pull
-THEN: (at "son") the SON standing a few steps away, looking at KAI with a worried face
-KAI: I just sit down in the dirt. I can't move anymore. I don't even know what to tell my son.
-
-# SCENE 55
-PICTURE: the SON sitting down in the dirt next to KAI in the dark field and putting his small sickle into KAI's hand
-MOOD: sad
-THEN: (at "help") close-up of the SON's small hand and KAI's hand together on the little sickle
-KAI: My son walks over, sits next to me, and puts his little sickle in my hand. He doesn't understand any of this. He just wants to help.
-
-// ===================== THE MYTH =====================
-
-# SCENE 56
-PICTURE: KAI sitting in the dark field looking at the viewer, tired, one finger raised a little
-MOOD: curious
-MUSIC: calm
-TEXT: THE MYTH
-THEN: (at "wasn't") KAI shaking his head at the viewer with a small knowing smile
-KAI: And this is where people get peasants wrong. They think every day was like this. It wasn't.
-
-# SCENE 57
-PICTURE: a sunny village green with stick figure villagers dancing, playing games and eating at a summer feast, KAI laughing among them
-MOOD: happy
-THEN: (at "holy") a small stone church with villagers in their best clothes walking in for a feast day, flowers on the door
-KAI: We got Sundays off. And dozens of holy days with feasts and games. No fields, no reeve.
-
-# SCENE 58
-PICTURE: KAI holding up a wooden sign showing the number 150, raising his eyebrows at the viewer
-MOOD: shock
-TEXT: 150 DAYS
-SFX: ding
-THEN: (at "argue") KAI shrugging with a small smile
-KAI: Some historians think that in certain times, workers put in only around a hundred and fifty days a year. They still argue about it.
-
-# SCENE 59
-PICTURE: KAI in the dark field again, looking at the storm clouds, serious face
-MOOD: sad
-MUSIC: sad
-THEN: (at "everything") a wide view of the village fields at dusk, the storm clouds almost overhead
-KAI: But harvest was different. Harvest was dawn to dusk, every day. Because if the harvest fails, you lose everything.
-
-// ===================== CLIMAX =====================
-
-# SCENE 60
-PICTURE: a big hand on KAI's shoulder in the dark field: the NEIGHBOUR standing next to him, smiling kindly
-MOOD: calm
-MUSIC: calm
-THEN: (at "points") the NEIGHBOUR pointing toward KAI's uncut wheat strip with his sickle
-KAI: Then I feel a hand on my shoulder. My neighbour. He doesn't say a word. He just points at my wheat.
-
-# SCENE 61
-PICTURE: a row of village men and women walking across the fields in the moonlight carrying sickles, heading toward KAI's wheat strip, a big full moon above
+PICTURE: outdoors in the cut wheat field in golden evening light, villagers lifting sheaves up onto a big wooden ox cart, two brown oxen standing in front of it
 MOOD: epic
 MUSIC: epic
-THEN: (at "moon") the villagers cutting KAI's wheat in the bright moonlight, the WIFE and the SON tying sheaves
-KAI: And behind him? Half the village. Exhausted, exactly like me. Nobody is paying them. And we cut my wheat by the light of the moon.
+TEXT: 6 PM
+THEN: (at "last") outdoors in the empty cut field in golden evening light, KAI tying the very last sheaf, exhausted but proud, no other people
+KAI: Six PM. We load the carts. And then... the last sheaf. Done.
+
+# SCENE 51
+PICTURE: outdoors in the cut wheat field in golden evening light, villagers cheering with their arms in the air, KAI in the middle laughing
+MOOD: happy
+THEN: (at "rolls") outdoors on the dirt road at dusk, the loaded ox cart full of wheat rolling slowly up the hill toward the CASTLE, no people
+KAI: We did it. The whole field. And then the cart rolls away.
+
+# SCENE 52
+PICTURE: outdoors in the empty cut field at dusk, KAI standing alone, sad with a few tears, holding one stalk of wheat, the ox cart full of wheat rolling up the road to the CASTLE far behind him, no other people
+MOOD: sad
+MUSIC: sad
+TEXT: 7 PM
+SFX: sting
+THEN: (at "Twelve") outdoors in the empty cut field at dusk, close-up of KAI's sad face with a few tears, the CASTLE small and dark on the hill behind him
+KAI: Seven PM. And here I am, in an empty field. Twelve hours of work, and every grain of it goes up there.
+
+# SCENE 53
+PICTURE: outdoors in the empty cut field at dusk, the NEIGHBOUR putting a hand on KAI's shoulder and smiling kindly
+MOOD: calm
+MUSIC: calm
+THEN: (at "tomorrow") outdoors in KAI's own small strip of ripe wheat in early morning light, KAI, the WIFE, the NEIGHBOUR and a few villagers cutting it together
+KAI: But here's what the thumbnail doesn't show. Tomorrow, the village reaps the family strips, and neighbours help each other.
+
+# SCENE 54
+PICTURE: outdoors in the village lane at dusk, KAI and the NEIGHBOUR walking home side by side, tired but smiling, sickles on their shoulders
+MOOD: happy
+THEN: (at "team") outdoors from a hill at dusk, the whole small village with smoke rising from every straw roof, people walking home from the fields
+KAI: Nobody survived the middle ages alone. A peasant village was a team.
+
+// ===================== EVENING =====================
+
+# SCENE 55
+PICTURE: inside the dim HUT at night by the small fire, the WIFE stirring a black iron pot hanging over the fire, KAI and the SON sitting on stools with wooden bowls
+MOOD: calm
+TEXT: 8 PM
+THEN: (at "beans") close-up inside the dim HUT at night of a wooden bowl of thick green and brown stew with peas and beans, no people
+KAI: Eight PM. Supper is pottage. Vegetables, peas, beans and oats, cooked into a thick stew. A bit of bacon if we're lucky.
+
+# SCENE 56
+PICTURE: inside the dim HUT at night, KAI holding up a thin dried rush stalk dipped in fat, burning with a small flame, his face lit up, no other people
+MOOD: curious
+THEN: (at "expensive") inside the dim HUT at night, close-up of a single wax candle on the table with a tiny price tag drawn as a gold coin next to it, no people
+KAI: Light? A rushlight. A dried rush dipped in animal fat. Good candles were expensive, so when it got dark, we mostly went to bed.
+
+# SCENE 57
+PICTURE: inside the dim HUT at night by the dying fire, KAI, the WIFE and the SON sleeping together on the straw beds, the COW sleeping in its pen at the other end
+MOOD: calm
+THEN: (at "second") inside the dim HUT in the middle of the night by the glowing embers, KAI awake, sitting up on his bed and quietly poking the fire, no other people
+KAI: And many people slept in two parts. A first sleep, an hour or so awake in the night, then a second sleep.
+
+# SCENE 58
+PICTURE: inside the dim HUT at night by the small fire, the WIFE spinning wool with a wooden spindle, KAI watching her sleepily
+MOOD: calm
+THEN: (at "tunic") inside the dim HUT at night, close-up of KAI's plain brown wool tunic folded on a stool, no people
+KAI: Even then, my wife spins wool by the fire. Every thread of this tunic was spun by hand.
+
+// ===================== THE PAYOFF =====================
+
+# SCENE 59
+PICTURE: inside the dim HUT at night by the glowing embers, KAI holding the wooden cup and looking straight at the viewer, no other people
+MOOD: curious
+MUSIC: tense
+SFX: whoosh
+THEN: (at "poison") outdoors by a dirty green pond, a stick figure person refusing a cup of water with a disgusted face
+KAI: Now, the cup. The thing almost everyone gets wrong. You've heard that peasants drank beer all day because water was poison.
+
+# SCENE 60
+PICTURE: outdoors by a small clear stream in bright sun, KAI kneeling and drinking water from his cupped hands, happy, no other people
+MOOD: shock
+TEXT: MYTH
+SFX: hit
+THEN: (at "pipes") outdoors in a busy medieval London street in daylight, people filling wooden buckets at a stone water fountain building
+KAI: That's a myth. People drank water all the time. London even built pipes to bring fresh spring water to the city in the twelve hundreds.
+
+# SCENE 61
+PICTURE: outdoors by a dirty green pond in daylight, KAI pointing at the pond and shaking his head, no other people
+MOOD: curious
+THEN: (at "springs") outdoors by a clean stone spring in a green meadow in daylight, clear water bubbling out, no people
+KAI: They just weren't stupid. Don't drink from a dirty pond. Drink from clean springs and wells.
 
 # SCENE 62
-PICTURE: KAI standing up, a few tears on his face but now smiling, holding his sickle, the villagers working around him in the moonlight
-MOOD: happy
-THEN: (at "together") the villagers carrying the last sheaves of KAI's wheat into a small barn just as the first raindrops fall
-KAI: Tomorrow, I'll help him with his. That's how a village works. You don't survive alone. You survive together.
+PICTURE: outdoors behind the house in daylight, KAI holding the wooden cup of ale next to a sack of barley, explaining with a raised finger, no other people
+MOOD: curious
+THEN: (at "food") outdoors behind the house in daylight, the WIFE stirring the big wooden barrel of ale with a long paddle, steam rising, smiling
+KAI: So why ale? Because ale is made from barley. It's food. Extra energy for a body that works twelve hours.
 
 # SCENE 63
-PICTURE: rain pouring down on the village at night, KAI's family safe and dry inside the warm HUT by the fire, the COW in her stall, everyone smiling tiredly
-MOOD: calm
-SFX: whoosh
-TEXT: SAVED
-THEN: (at "inside") the last sheaves of KAI's wheat stacked safe and dry inside a small wooden barn, rain pouring outside the open door
-KAI: The rain hits right after midnight. Hard. Right where my wheat was standing an hour ago. But it's inside. We're saved.
+PICTURE: outdoors in the village lane in daylight, KAI holding a small wooden cup and a big barrel side by side, raising his eyebrows at the viewer, no other people
+MOOD: funny
+THEN: (at "less") outdoors in the village lane, close-up of the small wooden cup half full of ale, no people
+KAI: And historians who counted the grain think the average peasant drank far less ale than you'd guess.
+
+// ===================== ENDING =====================
 
 # SCENE 64
-PICTURE: KAI lying on his straw bed in the dark HUT next to the COW, eyes wide open, staring at the roof
-MOOD: tense
-MUSIC: tense
-THEN: (at "horn") the REEVE standing in the misty village lane at dawn, raising his cow horn to his lips
-KAI: Thirteen hours for the lord. A few hours for us. And at dawn... the horn blows again.
+PICTURE: split screen down the middle: on the left KAI at 6 AM stepping out of his cottage door, arms up, happy, blue sky; on the right KAI at 7 PM in the empty cut field at dusk with a few tears, the ox cart rolling up to the CASTLE
+MOOD: epic
+MUSIC: epic
+TEXT: 6 AM / 7 PM
+THEN: (at "day") outdoors in the village lane at sunrise, KAI smiling and picking up his sickle, ready for another day, no other people
+KAI: So that's what a medieval peasant actually did all day. Happy at six, crying at seven, and tomorrow, another harvest day.
+
+# SCENE 65
+PICTURE: outdoors in front of a big stone castle in bright sun, KAI holding a wooden sword awkwardly and looking at it with a confused face, no other people
+MOOD: funny
+MUSIC: funny
+SFX: pop
+THEN: (at "fighting") outdoors in a castle courtyard in bright sun, a stick figure knight in grey armour sitting on a bench eating a big pie, no other people
+KAI: Next time, what did medieval knights actually do all day? Spoiler: a lot less fighting than you think.
