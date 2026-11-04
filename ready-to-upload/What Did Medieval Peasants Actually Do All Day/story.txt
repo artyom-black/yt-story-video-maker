@@ -88,7 +88,7 @@ KAI: Breakfast. Dark bread made from rye and barley, and a cup of ale.
 # SCENE 10
 PICTURE: inside the dim HUT at dawn, KAI holding the dark bread and looking at it with a sad flat face, no other people
 MOOD: funny
-THEN: (at "rich") close-up on a wooden table in bright daylight: a big fluffy white loaf of bread next to a small hard brown rye loaf, no people
+THEN: (at "rich") outdoors in the village lane in bright daylight, KAI looking jealously at a big fluffy white loaf of bread lying on a small wooden table, no other people
 KAI: Wait, we grow wheat, but I eat this? Yep. Soft white wheat bread is mostly for the rich. We sell our best wheat or pay with it.
 
 # SCENE 11
@@ -333,7 +333,7 @@ THEN: (at "thirty") outdoors in the village lane in afternoon sun, an old stick 
 KAI: Speaking of dying, here's a myth. You've heard that peasants died at thirty? Then who's that guy?
 
 # SCENE 45
-PICTURE: outdoors in the village lane in afternoon sun, inside the dim HUT, one small empty wooden baby cradle standing on the earth floor next to a straw bed, no people
+PICTURE: inside the dim HUT in afternoon light, one small empty wooden baby cradle standing on the earth floor next to a straw bed, no people
 MOOD: sad
 THEN: (at "sixty") outdoors on the village green in afternoon sun, three old stick figures sitting on a bench, laughing: a bald old man with a white beard, an old woman in a white headscarf and an old man with short white hair
 KAI: The average was low because so many babies and small children died. But if you made it to adulthood, reaching fifty or sixty was normal.
