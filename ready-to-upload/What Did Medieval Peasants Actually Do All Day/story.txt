@@ -28,7 +28,7 @@ THEN: (at "Seven") KAI standing alone in the empty cut field at dusk, sad with a
 KAI: This is what a medieval peasant actually did all day. Six AM, I'm the happiest man in the village. Seven PM... this.
 
 # SCENE 2
-PICTURE: close-up of KAI's small white cartoon hand, red and blistered, still holding a sickle
+PICTURE: close-up outdoors in the wheat field at dusk of KAI's small white cartoon hand with a few small pink sore spots, holding a sickle, no blood, no other people
 MOOD: sad
 MUSIC: sad
 THEN: (at "castle") close-up of a heavy ox cart piled high with golden wheat sheaves rolling up a dirt road toward the dark CASTLE on the hill at dusk, no people
@@ -66,7 +66,7 @@ THEN: (at "sun") KAI standing outside his cottage at dawn, shading his eyes and 
 KAI: Nobody here owns a clock. You get up with the sun, the roosters and the church bell.
 
 # SCENE 7
-PICTURE: KAI waking up on a straw bed in the dim HUT, yawning, a big brown and white COW head right next to his face
+PICTURE: inside the dim HUT at dawn, KAI sitting up on his straw bed, yawning, the COW standing calmly a few steps away in the same room, not touching him, no other people
 MOOD: funny
 MUSIC: funny
 SFX: pop
@@ -208,7 +208,7 @@ KAI: But I keep looking at my own field. And guess who notices. The reeve.
 PICTURE: close-up of the REEVE leaning in close to KAI's face, stern, pointing his stick at KAI
 MOOD: tense
 TEXT: FINED
-THEN: (at "court") a stick figure judge in a dark robe at a wooden table in a big hall pointing at a nervous villager, a clerk writing on a long scroll
+THEN: (at "court") inside a big medieval stone hall lit by daylight from tall windows, a stick figure judge in a dark robe at a wooden table pointing at a nervous villager, a clerk writing on a long scroll
 KAI: He says if I slack on the lord's harvest, I'll be fined in the manor court. And he means it. One man really got fined sixpence just for bad ploughing on the lord's land.
 
 # SCENE 27
@@ -226,7 +226,7 @@ THEN: (at "manors") the CASTLE on its hill with its gate closed and a single fla
 KAI: The lord himself? I've barely ever seen him. Big lords often held lots of manors, and lived somewhere else most of the year. To him, I'm a name on a list.
 
 # SCENE 29
-PICTURE: close-up of KAI's small white cartoon hand holding the sickle, red sore blisters on his palm
+PICTURE: close-up outdoors in the wheat field in bright sun of KAI's small white cartoon hand holding the sickle, a few small pink sore spots on his palm, no blood, no other people
 MOOD: sad
 TEXT: 10 AM
 THEN: (at "gloves") KAI blowing on his sore hand, a sad face
@@ -265,7 +265,7 @@ THEN: (at "cheese") KAI raising a wooden cup of ale with a big grin
 KAI: And here's the surprise. On a lot of manors, the lord feeds you on boon days. Bread, cheese, ale. Sometimes even fish or meat.
 
 # SCENE 34
-PICTURE: KAI with his cheeks stuffed with bread like a hamster, giving a thumbs up
+PICTURE: outdoors at the edge of the wheat field in bright noon sun, KAI sitting in the shade with his cheeks puffed full of bread like a hamster, giving a thumbs up, no other people
 MOOD: funny
 MUSIC: funny
 THEN: (at "unfair") KAI holding up his own small dark loaf next to a bigger white loaf held by another man, comparing them with a flat face
@@ -402,7 +402,7 @@ PICTURE: KAI standing alone in the empty cut field at dusk, holding one single s
 MOOD: sad
 TEXT: 7 PM
 SFX: hit
-THEN: (at "bleeding") close-up of KAI's sore, blistered cartoon hands shaking a little, still holding the single stalk of wheat
+THEN: (at "bleeding") close-up outdoors in the cut field at dusk of KAI's small white cartoon hands with small pink sore spots, holding the single stalk of wheat, no other people
 KAI: Seven PM. Thirteen hours. My hands are bleeding, my back is broken. And all of it rolls up that hill.
 
 # SCENE 53
