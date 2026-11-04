@@ -35,7 +35,11 @@ STYLE = ("Simple 2D stick figure cartoon in a clean, popular YouTube history exp
          "stick figure with a big round white head, small dot eyes, simple expressive eyebrows and mouth, and thin "
          "black line arms and legs, wearing simple flat-coloured clothes of the time. Every face is a plain flat white "
          "circle with tiny black dot eyes and a simple line mouth: no skin colour, no shading, no nose. The backgrounds are detailed, "
-         "colourful, painted 2D cartoon scenes with bold clean outlines and soft light. Clear and easy to read. "
+         "colourful, hand-drawn 2D cartoon scenes with bold clean black outlines and flat colours, like a children's "
+         "picture book: houses, roads, sky, fields and trees are all drawn, never a real photograph, never "
+         "photorealistic, never a 3D render. Every person in the picture, grown-ups and children alike, is the same "
+         "simple stick figure with a round white head and thin black line arms and legs: never a realistic or anime "
+         "person with skin colour. Clear and easy to read. "
          "Absolutely no text, no letters, no words, no captions, no watermark.")
 THUMB_STYLE = ("YouTube thumbnail in the same stick figure style: one big character with an extreme, clear facial "
                "expression, very bright colours, strong contrast, a detailed but uncluttered painted background. "
@@ -46,7 +50,8 @@ SIZE_RULE = ("Real-life sizes: grown-ups are taller than children, doors are a b
              "taller than people, animals, food, cups and tools are their real size next to a person.")
 FACE_RULE = ("Only the main character has messy brown hair: every other person has clearly different hair (another "
              "colour or style, a headscarf, a beard or bald), so nobody looks like him. Every person and animal has a "
-             "normal body: one head, two arms, two legs, animals with the right number of legs, nothing floating.")
+             "normal body: one head, exactly two arms ending in exactly two hands, two legs, animals with the right "
+             "number of legs, nothing floating. A hand that holds something is that person's own hand.")
 
 
 def _place_rule(st):
@@ -62,7 +67,7 @@ def _place_rule(st):
             f"room, never an empty white background. Objects and animals never have faces.")
 
 
-CHECK_VERSION = 8          # raise when the checker learns a new kind of mistake: old pictures get looked at again
+CHECK_VERSION = 9          # raise when the checker learns a new kind of mistake: old pictures get looked at again
 
 
 class AllowanceUsedUp(Exception):

@@ -41,6 +41,9 @@ Answer with JSON only, no other text:
   "indoors": <true if the scene is inside a building or room>,
   "has_text": <true if there are written words or letters>,
   "looks_like_a_photo": <true if it looks like a real photograph or a photorealistic 3D render, not a drawn cartoon>,
+  "background_is_photo": <true if the background (houses, road, sky, field, trees) looks like a real photograph, even if the person is a cartoon>,
+  "hands_count_wrong": <true if any person has more than two hands, or a third hand or arm coming from anywhere>,
+  "people_not_stick_figures": <true if any person is drawn as a realistic or anime-style person with skin-coloured face, arms or legs instead of a simple stick figure with a round white head and thin black line arms and legs>,
   "main_thing_missing": <true if the main subject of this description is clearly NOT in the picture: "{desc}">,
   "what_i_see": "<one short sentence>"}}"""
 
@@ -67,9 +70,9 @@ def _ask(text, data_url, model):
         # the OpenAI-style endpoint first, then the native one
         for url, body in (
             (f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/v1/chat/completions",
-             {"model": model, "messages": messages, "max_tokens": 300, "temperature": 0}),
+             {"model": model, "messages": messages, "max_tokens": 450, "temperature": 0}),
             (f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/{model}",
-             {"messages": messages, "max_tokens": 300, "temperature": 0}),
+             {"messages": messages, "max_tokens": 450, "temperature": 0}),
         ):
             try:
                 r = requests.post(url, headers=head, json=body, timeout=120)
@@ -128,6 +131,12 @@ def _parse(answer, description, n_kai):
         problems.append("something floating in the air")
     if yes("looks_like_a_photo"):
         problems.append("looks like a real photo, not our cartoon style")
+    if yes("background_is_photo"):
+        problems.append("background looks like a real photo, not our cartoon style")
+    if yes("hands_count_wrong"):
+        problems.append("broken body: more than two hands")
+    if yes("people_not_stick_figures"):
+        problems.append("people not drawn as stick figures (realistic style)")
     if yes("has_text"):
         problems.append("written text in the picture")
     if n_kai and num("people_with_messy_brown_hair") > n_kai:
@@ -139,7 +148,7 @@ def _parse(answer, description, n_kai):
         problems.append("should be indoors but is drawn outside")
     if "indoors" in d and want_out and yes("indoors"):
         problems.append("should be outdoors but is drawn inside")
-    severe = any(w in p_ for p_ in problems for w in ("broken body", "face mixed", "real photo", "Kai appears", "two animals", "through a body", "fire burning", "sizes are unreal", "modern things"))
+    severe = any(w in p_ for p_ in problems for w in ("broken body", "face mixed", "real photo", "stick figures", "Kai appears", "two animals", "through a body", "fire burning", "sizes are unreal", "modern things"))
     return {"ok": not problems, "severe": severe, "problems": problems, "seen": str(d.get("what_i_see", ""))}
 
 

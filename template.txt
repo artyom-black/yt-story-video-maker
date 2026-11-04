@@ -23,13 +23,16 @@ HOW MRBEAST WOULD WRITE IT:
    No intro, no "hey guys". The viewer must feel "yes, this is what I clicked for".
 2. By about 0:40: promise something for the end ("before this day ends, I'll show you the one
    thing almost everyone gets wrong about ..."), and pay it off at the very end.
-3. Give Kai a GOAL with a CLOCK and real stakes (e.g. "get the wheat in before the storm, or my
-   family starves"). Show the clock on screen (TEXT: 6 AM, 9 AM ...). It never goes backwards.
+3. NO MADE-UP DRAMA. No invented storms, chases, courts or rescues. Every event Kai lives through is
+   something that really happened to ordinary people of that time (from historians' books and records).
+   The excitement comes from real surprising facts, not from a fake plot. Give the day a CLOCK on screen
+   (TEXT: 6 AM, 9 AM ...); it never goes backwards. Real stakes only (a real rule, tax, danger or custom).
 4. Something new, surprising, funny or gross every 20-30 seconds. Stakes keep rising.
    A big twist around 3 minutes and another around 5-6 minutes.
 5. Show things happening to Kai, don't list facts. Bad: "Peasants paid many taxes."
    Good: "And look who's in my field: the church's man, taking every tenth bundle."
-6. One last obstacle right before the win (the cart gets stuck, the rain starts), then the win.
+6. Teach something useful in EVERY scene: what they ate, wore, paid, believed, how they slept, and WHY.
+   The viewer should leave knowing 20+ real things about how people actually lived.
 7. After the win, end fast: the promised payoff, one line back to the thumbnail and title, one line
    teasing the next video. No extra facts after the climax.
 8. Every fact must be real, with SOURCES. Bust at least two famous myths. Never state a strange
@@ -45,6 +48,9 @@ PICTURE RULES (the drawing AI only draws what you write, so be exact):
 - Name only the people and animals that should be there. Write "no other people" when Kai is
   alone and "no people" for pictures of things. No crowds unless the line is about a crowd.
 - Kai's face and body show the feeling of the moment (tired, scared, angry, happy).
+- Everything is drawn cartoon (never a photo). Every person is a stickman. Give every CAST person a
+  hair that can't be confused with Kai's (e.g. "completely bald with no hair at all", a headscarf that
+  hides all hair, straight yellow hair).
 - Real-life sizes. Everything belongs to the era: nothing modern (no tiles, light bulbs, modern
   rooms or clothes), unless the line is really about today.
 - One clear subject per picture. Never an animal touching Kai or on his shoulder, never two bodies
