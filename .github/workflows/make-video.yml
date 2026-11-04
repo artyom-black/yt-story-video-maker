@@ -290,6 +290,7 @@ jobs:
               printf '%s' "$(python -c 'import maker.pick_story as p; print(p.EMPTY_NOTE, end="")')" > new-story.txt
             fi
             git add -A ready-to-upload new-story.txt
+            git diff --cached --quiet && break        # a redo run: the folder is already up to date
             git commit -q -m "Ready to upload: $NAME"
             git push -q origin HEAD:main && break
             sleep 5
