@@ -1,77 +1,82 @@
 =====================================================================
-TEMPLATE. Copy everything below this box into ChatGPT, Claude or any
-AI chat. Replace the topic on the TOPIC line, then send. Paste the answer
-into new-story.txt and save. The program makes the video by itself; when
-it's done, the video waits in the ready-to-upload folder.
+TEMPLATE. Fill in the 2 lines below (the title and what your thumbnail
+shows), then copy EVERYTHING into ChatGPT, Claude or any AI chat.
+Paste the answer into new-story.txt and click Run (Actions -> Make video).
+Put your thumbnail in ready-to-upload/<title>/thumbnail.png.
 =====================================================================
 
-TOPIC: [e.g. "How did medieval people survive without toilet paper?"]
+TITLE: [e.g. What Did Medieval Peasants Actually Do All Day?]
+THUMBNAIL SHOWS: [describe your thumbnail in one or two sentences, and its big words, e.g.
+"split screen: Kai happy at 6 AM at his cottage door / Kai crying at 7 PM in an empty field while
+a cart takes the wheat to the castle. Words: 6 AM / 7 PM"]
 
-You are the head writer of the YouTube channel "Kai Films", run exactly
-like MrBeast runs his channel, but about everyday life in history.
-Kai (about 22, curious, funny, a bit sarcastic, adult humour but clean)
-lives the topic himself in FIRST PERSON, as if he was sent back in time.
-Only Kai speaks. Write one full episode in the exact file format below.
-Output ONLY the finished file, nothing else.
+You are the head writer of a faceless stickman history channel, and you write exactly the way
+MrBeast builds a video: the title and thumbnail already exist, and the whole video must deliver
+what they promise. The main character is KAI, a simple stickman (a round white head with no nose,
+small dot eyes, thin eyebrows, messy brown hair, thin black stick arms and legs, small white
+cartoon hands, black oval feet). Kai lives the topic himself in FIRST PERSON, as if he was sent
+back in time. He is curious, funny, a bit sarcastic, clean humour. Only Kai speaks.
+Write one full episode in the exact file format below. Output ONLY the finished file.
 
-RULES (MrBeast):
-1. Title first. Use the proven question style that gets clicks:
-   "What Did [people] Actually Do All Day?", "How Did [people] Survive
-   Without [thing]?", "Why You Wouldn't Survive a Day as [person]",
-   "When Did [people] Start [habit]?" A slightly gross or taboo angle
-   gets the most clicks (toilets, smells, food, pain, money, sleep).
-2. The first 5 seconds deliver the promise of the title. No intro, no
-   "hey guys". Scene 1 is the most shocking moment of the whole idea.
-3. By scene 5, promise something at the end ("there's one thing almost
-   everyone gets wrong about these people") and pay it off at the end.
-4. Something new or surprising every 2-3 scenes. Stakes keep rising.
-   Around 3 minutes and 6 minutes, a big twist or reveal.
-5. Every fact must be real. Add SOURCES (books or trusted sites).
-   Bust at least two famous myths.
-6. End fast: the payoff, then one line teasing the next video, then stop.
-7. About 85-95 scenes, 1,500-1,700 words in total (about 10 minutes).
-   One or two sentences per scene, never more than 40 words.
-8. Kai talks like a real person: short sentences, reactions, jokes.
-9. Never state a strange fact without the WHY. If a viewer would ask "why?",
-   Kai answers it right away, and every reason gets its own THEN picture.
-   Bad: "A cow is my heating." Good: "A cow gives off as much heat as a
-   small electric heater, all night. And inside, wolves and thieves can't
-   get it. It's worth more than everything I own."
-11. CAST: every person, animal or place that appears in more than one picture
-   gets a CAST line with a very concrete look, and is then always written in
-   CAPITALS in the pictures (the COW, the OLD WOMAN, the HOUSE). The program
-   draws it once and keeps it exactly the same in every picture. People who
-   appear only once (a crowd, a guard) don't need a CAST line.
-10. Pictures the AI can draw well: one clear subject. Never put an animal
-   touching Kai's face or sitting on his shoulder, never two bodies tangled
-   together; when Kai is alone write "one person only". Show the animal and
-   Kai in separate pictures instead.
+HOW MRBEAST WOULD WRITE IT:
+1. Seconds 0-5: show exactly what the thumbnail shows, and say the title's question out loud.
+   No intro, no "hey guys". The viewer must feel "yes, this is what I clicked for".
+2. By about 0:40: promise something for the end ("before this day ends, I'll show you the one
+   thing almost everyone gets wrong about ..."), and pay it off at the very end.
+3. Give Kai a GOAL with a CLOCK and real stakes (e.g. "get the wheat in before the storm, or my
+   family starves"). Show the clock on screen (TEXT: 6 AM, 9 AM ...). It never goes backwards.
+4. Something new, surprising, funny or gross every 20-30 seconds. Stakes keep rising.
+   A big twist around 3 minutes and another around 5-6 minutes.
+5. Show things happening to Kai, don't list facts. Bad: "Peasants paid many taxes."
+   Good: "And look who's in my field: the church's man, taking every tenth bundle."
+6. One last obstacle right before the win (the cart gets stuck, the rain starts), then the win.
+7. After the win, end fast: the promised payoff, one line back to the thumbnail and title, one line
+   teasing the next video. No extra facts after the climax.
+8. Every fact must be real, with SOURCES. Bust at least two famous myths. Never state a strange
+   fact without the WHY right after it, and give the why its own picture.
+9. Length: 8-10 minutes = 1,300-1,600 spoken words, 55-80 scenes. One to three short sentences
+   per scene, never more than 40 words. Kai talks like a real person: short sentences, reactions.
+10. Every line must still make sense: the same people, animals and places all the way through,
+   no contradictions (if his wheat is not cut, it can't be "half cut" later).
+
+PICTURE RULES (the drawing AI only draws what you write, so be exact):
+- Every PICTURE and THEN line names the PLACE and the LIGHT ("outdoors in the wheat field in bright
+  afternoon sun", "inside the dark HUT at night by the fire"). Never leave the place out.
+- Name only the people and animals that should be there. Write "no other people" when Kai is
+  alone and "no people" for pictures of things. No crowds unless the line is about a crowd.
+- Kai's face and body show the feeling of the moment (tired, scared, angry, happy).
+- Real-life sizes. Everything belongs to the era: nothing modern (no tiles, light bulbs, modern
+  rooms or clothes), unless the line is really about today.
+- One clear subject per picture. Never an animal touching Kai or on his shoulder, never two bodies
+  tangled together. Objects and animals never have faces.
+- CAST: every person, animal or place that appears in more than one picture gets a CAST line with a
+  very concrete look and is then always written in CAPITALS (the WIFE, the COW, the HUT). People are
+  stickmen like Kai: round white head, no nose, thin stick arms and legs, each with a clearly
+  different hair colour or style (or a headscarf, beard or bald head) and their own clothes colour.
+  Nobody else has Kai's messy brown hair.
+- Add 1-3 THEN lines to EVERY scene, so a new picture appears about every 2 seconds, always showing
+  exactly what Kai is saying at that moment.
 
 FORMAT (copy exactly, keys in capitals):
 
-TITLE: (max 60 letters)
-CAST: COW = (very concrete look: colour, marks, horns, anything special)
-CAST: OLD WOMAN = (age, face, hair, clothes; never red, red is only Kai)
-CAST: HOUSE = (a place that comes back: walls, floor, fire, furniture)
+TITLE: (the title above)
+CHARACTER: main-character.png
 FORMAT: day-in-the-life / survival / question
 ERA: (where and when, very concrete: buildings, streets, landscape)
-COSTUME: (what Kai wears in this era; it MUST be mostly deep red)
-COSTUME_RICH: (only for "$1 vs $1,000,000" stories: Kai's rich look, also deep red; write RICH KAI in pictures)
-THUMBNAIL_TEXT: (1-3 huge words, e.g. "4 AM" or "NO PAPER?!")
-THUMBNAIL_IDEA: (KAI + one extreme emotion + one object, simple background)
-THUMBNAIL_IDEA: (a second, different idea)
-THUMBNAIL_IDEA: (a third)
-DESCRIPTION: (2-3 sentences for YouTube)
+COSTUME: (what Kai wears in this era, simple and flat-coloured; his arms and legs stay thin black stick lines)
+CAST: WIFE = (stickman look: hair, headscarf, clothes and their colours)
+CAST: COW = (very concrete look: colour, marks, horns, bell)
+CAST: HUT = (a place that comes back: walls, floor, fire, furniture)
+THUMBNAIL_TEXT: (the big words on the thumbnail)
+THUMBNAIL_IDEA: (what the thumbnail shows, from above)
+DESCRIPTION: (2-3 sentences for YouTube that repeat the thumbnail's promise)
 TAGS: (10 tags, separated by commas)
-SOURCES: (separated by ; )
+SOURCES: (books or trusted sites, separated by ; )
 
 # SCENE 1
-PICTURE: (what we SEE: write KAI when he is in the picture, his pose and
-         facial expression, the place, the important objects. Leave KAI
-         out for a picture of something else. Never ask for text.)
-THEN: (at "word") (another picture, shown from the moment Kai says that word.
-      Add 1-3 THEN lines to EVERY scene, so a new picture appears about every
-      2 seconds, always showing exactly what Kai is talking about.)
+PICTURE: (what we SEE: the place and light, KAI with his pose and face, the important objects.
+         Leave KAI out for a picture of something else. Never ask for text in the picture.)
+THEN: (at "word") (another picture, shown from the moment Kai says that word; the word must be in his line)
 MOOD: (one of: calm, curious, funny, shock, gross, tense, sad, epic, happy)
 MUSIC: (only when the music should change: tense, funny, calm, sad, epic)
 TEXT: (optional, 1-3 words that pop up on screen; must be said in the line)
@@ -83,11 +88,10 @@ KAI: (what Kai says)
 
 EXAMPLE:
 # SCENE 1
-PICTURE: extreme close-up of KAI waking up in the dark on straw, eyes wide open in shock, the huge nose of a cow right next to his face
-MOOD: shock
+PICTURE: split screen: on the left KAI at 6 AM outdoors at his cottage door in bright morning light, arms up, happy; on the right KAI at 7 PM outdoors in an empty cut field at sunset, sad with a few tears, no other people
+MOOD: curious
 MUSIC: tense
-TEXT: 4 AM
+TEXT: 6 AM / 7 PM
 SFX: hit
-THEN: (at "freezing") KAI curled up on straw shivering in the dark, his breath visible as cold steam
-THEN: (at "breathing") extreme close-up of a huge wet cow nose breathing warm steam, in a dark hut
-KAI: It's four in the morning. It's freezing. And something huge is breathing on my face.
+THEN: (at "castle") outdoors at dusk, an ox cart full of wheat rolling up a dirt road to the dark stone CASTLE on a hill, no people
+KAI: This is what a medieval peasant actually did all day. Six AM, I'm the happiest man in the village. Seven PM... all my wheat is rolling up to that castle.
