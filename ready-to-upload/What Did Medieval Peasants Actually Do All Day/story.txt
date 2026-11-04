@@ -83,7 +83,7 @@ KAI: In houses like mine, animals live under the same roof. She keeps us warm, n
 PICTURE: the WIFE standing by the small fire in the HUT, handing KAI a wooden cup and a dark round loaf of bread
 MOOD: happy
 TEXT: BREAKFAST
-THEN: (at "ale") close-up of a wooden cup of cloudy brown ale and a dark loaf of bread on a wooden table, no people
+THEN: (at "ale") close-up inside the dim HUT at dawn by the small fire: a wooden cup of cloudy brown ale and a dark loaf of bread on a rough wooden table, no people, no lamp
 KAI: Breakfast. No eggs, no bacon. My wife hands me dark bread and a cup of ale.
 
 # SCENE 10
@@ -118,7 +118,7 @@ KAI: Because then I hear it. The horn.
 # SCENE 14
 PICTURE: KAI frozen in the lane, his smile gone, sickle in hand, looking toward the REEVE
 MOOD: shock
-THEN: (at "reeve") close-up of the REEVE pointing his long stick up toward the CASTLE, stern face
+THEN: (at "reeve") outdoors in the village lane in bright morning sun, the bald REEVE with his short black beard pointing his long stick up toward the CASTLE, stern face, no other people
 KAI: That's the reeve. His job is making sure the lord's work gets done. And in August, that horn means one thing.
 
 # SCENE 15
@@ -249,7 +249,7 @@ KAI: And if you need the toilet out here? See that hedge? That's the bathroom.
 // ===================== NOON =====================
 
 # SCENE 32
-PICTURE: the REEVE blowing his horn again at noon, villagers dropping their sickles and turning around hopefully
+PICTURE: outdoors in the wheat field at noon, the bald REEVE with his short black beard blowing his cow horn, a few villagers dropping their sickles and turning around hopefully
 MOOD: curious
 TEXT: NOON
 SFX: ding
@@ -268,11 +268,11 @@ KAI: And here's the surprise. On a lot of manors, the lord feeds you on boon day
 PICTURE: outdoors at the edge of the wheat field in bright noon sun, KAI sitting in the shade with his cheeks puffed full of bread like a hamster, giving a thumbs up, no other people
 MOOD: funny
 MUSIC: funny
-THEN: (at "unfair") KAI holding up his own small dark loaf next to a bigger white loaf held by another man, comparing them with a flat face
+THEN: (at "unfair") outdoors at the edge of the wheat field at noon, KAI holding up his own small dark loaf next to the NEIGHBOUR holding a bigger pale loaf, KAI with a flat unimpressed face
 KAI: Best part of my day. But even the bread is unfair. In one village, the free men got wheat bread. Peasants like me got the cheaper mixed loaf.
 
 # SCENE 35
-PICTURE: KAI lying back in the shade with his eyes closed, the SON asleep against his arm
+PICTURE: outdoors at the edge of the wheat field at noon, KAI sitting with his back against a tree trunk in the shade, eyes closed, the SON asleep on the grass next to him, no other people
 MOOD: calm
 MUSIC: calm
 THEN: (at "worse") KAI's eyes snapping open, looking at the viewer with a worried face
