@@ -143,19 +143,19 @@ MOOD: tense
 MUSIC: tense
 TEXT: 7 AM
 SFX: sting
-THEN: (at "fields") outdoors in the village lane in morning sun, villagers with sickles walking out toward the wheat fields together
+THEN: (at "fields") outdoors in the village lane in morning sun, stick figure villagers with sickles walking out toward the wheat fields together
 KAI: Seven AM. That horn means everyone to the fields.
 
 # SCENE 19
 PICTURE: outdoors in the village lane in morning sun, the REEVE pointing his long stick toward the fields, KAI looking at him nervously
 MOOD: curious
-THEN: (at "chose") outdoors on the village green in morning light, a few villagers raising their hands to vote, the REEVE standing in front of them looking unhappy
+THEN: (at "chose") outdoors on the village green in morning light, a few stick figure villagers raising their hands to vote, the REEVE standing in front of them looking unhappy
 KAI: That's the reeve. He's not a knight. He's a peasant like me. The village chose him to organise the work.
 
 # SCENE 20
 PICTURE: outdoors on the village green in morning light, the REEVE shrugging with a tired face, holding his stick and horn, no other people
 MOOD: funny
-THEN: (at "blame") outdoors on the village green, two angry villagers pointing at the REEVE, who looks embarrassed
+THEN: (at "blame") outdoors on the village green, two angry stick figure villagers pointing at the REEVE, who looks embarrassed
 KAI: And nobody wanted the job. If the work went wrong, the lord blamed him, and his neighbours blamed him too.
 
 # SCENE 21
@@ -173,7 +173,7 @@ THEN: (at "rent") close-up outdoors of KAI's small field strip next to the lord'
 KAI: Welcome to boon day. I'm a villein. The land I farm belongs to the lord. Part of my rent is paid with work: some days every week, on his fields.
 
 # SCENE 23
-PICTURE: outdoors in the wheat field in morning sun, the whole village, men, women and children with sickles, walking into the lord's golden field together
+PICTURE: outdoors in the wheat field in morning sun, the whole village, stick figure men, women and children with sickles, walking into the lord's golden field together
 MOOD: curious
 THEN: (at "boon") outdoors in the wheat field in morning sun, KAI rolling his eyes at the viewer, holding his sickle, no other people
 KAI: And at harvest, the lord can call extra days. These are called boon days. Today is one of them.
@@ -191,7 +191,7 @@ PICTURE: outdoors in the lord's wheat field in bright morning sun, KAI bending a
 MOOD: tense
 TEXT: 8 AM
 SFX: whoosh
-THEN: (at "tie") outdoors in the wheat field, close-up of KAI's white cartoon hands tying a bundle of wheat with a twisted band of straw, no other people
+THEN: (at "tie") outdoors in the wheat field, KAI seen from the waist up tying a bundle of wheat with a twisted band of straw, no other people
 KAI: Eight AM. Grab a handful. Cut it with the sickle. Again and again. Then tie the bundle with a band of straw.
 
 # SCENE 26
@@ -207,7 +207,7 @@ THEN: (at "hands") outdoors in the wheat field, close-up of KAI's small white ca
 KAI: One hour in, my back hates me. Two hours in, my hands hate me too.
 
 # SCENE 28
-PICTURE: outdoors in the wheat field in bright sun, long rows of villagers bent over cutting wheat side by side, the REEVE walking behind them watching
+PICTURE: outdoors in the wheat field in bright sun, long rows of stick figure villagers bent over cutting wheat side by side, the REEVE walking behind them watching
 MOOD: tense
 THEN: (at "sheaf") outdoors in the wheat field, the REEVE pointing his stick at a single sheaf left on the ground, stern face, no other people
 KAI: And the reeve walks behind us all day, counting. Every sheaf of this field belongs to the lord.
@@ -238,22 +238,22 @@ KAI: Ten AM. A drink break. Yes, that's water. Keep that in mind.
 # SCENE 32
 PICTURE: outdoors in the wheat field in bright sun, the NEIGHBOUR cutting wheat next to KAI and grinning at him
 MOOD: funny
-THEN: (at "song") outdoors in the wheat field in bright sun, a line of villagers cutting wheat with open mouths, singing, small musical notes drawn above them
+THEN: (at "song") outdoors in the wheat field in bright sun, a line of stick figure villagers cutting wheat with open mouths, singing, small musical notes drawn above them
 KAI: This is my neighbour. We work side by side, we joke, sometimes the whole line sings a song to keep the speed.
 
 // ===================== NOON: THE LORD'S FOOD =====================
 
 # SCENE 33
-PICTURE: outdoors at the edge of the wheat field at noon, the REEVE blowing his cow horn, a few villagers putting down their sickles and turning around happily
+PICTURE: outdoors at the edge of the wheat field at noon, the REEVE blowing his cow horn, a few stick figure villagers putting down their sickles and turning around happily
 MOOD: happy
 MUSIC: funny
 TEXT: NOON
 SFX: ding
-THEN: (at "feed") outdoors at the edge of the wheat field at noon, a big basket of bread and a small barrel carried up by two villagers
+THEN: (at "feed") outdoors at the edge of the wheat field at noon, a big basket of bread and a small barrel carried up by two stick figure villagers
 KAI: Noon. And now the best part of a boon day. The lord has to feed us.
 
 # SCENE 34
-PICTURE: outdoors at the edge of the wheat field at noon, villagers sitting on the grass sharing bread and cheese from a big basket, KAI in the middle smiling
+PICTURE: outdoors at the edge of the wheat field at noon, stick figure villagers sitting on the grass sharing bread and cheese from a big basket, KAI in the middle smiling
 MOOD: happy
 THEN: (at "cheese") outdoors at the edge of the wheat field at noon, close-up of round loaves of bread, a wheel of cheese and a few small fish on a cloth on the grass, no people
 KAI: Bread, lots of bread. Cheese. Maybe a bit of fish or bacon, and something to drink.
@@ -261,7 +261,7 @@ KAI: Bread, lots of bread. Cheese. Maybe a bit of fish or bacon, and something t
 # SCENE 35
 PICTURE: outdoors at the edge of the wheat field at noon, KAI sitting with his cheeks puffed full of bread like a hamster, giving a thumbs up, no other people
 MOOD: funny
-THEN: (at "custom") outdoors at the edge of the wheat field at noon, the REEVE reading from a small rolled parchment to a few listening villagers
+THEN: (at "custom") outdoors at the edge of the wheat field at noon, the REEVE reading from a small rolled parchment to a few listening stick figure villagers
 KAI: Not a feast, but it's free. And it was a written custom of the manor. Hungry workers do bad work, and the lord knew it.
 
 # SCENE 36
@@ -306,7 +306,7 @@ KAI: Grind it myself at home with a hand mill? On many manors, forbidden. The lo
 PICTURE: inside a big medieval stone abbey hall lit by daylight from tall windows, a floor made of many round grey millstones laid side by side, no people
 MOOD: shock
 TEXT: 1331
-THEN: (at "rebels") inside the stone abbey hall in daylight, angry villagers breaking up the millstone floor with hammers and carrying pieces away
+THEN: (at "rebels") inside the stone abbey hall in daylight, angry stick figure villagers breaking up the millstone floor with hammers and carrying pieces away
 KAI: At St Albans in 1331, the abbot took the townspeople's hand mills and broke them into the floor of his abbey. In 1381, rebels smashed that floor and took the pieces back.
 
 # SCENE 42
@@ -341,7 +341,7 @@ KAI: The average was low because so many babies and small children died. But if 
 # SCENE 46
 PICTURE: outdoors on the village green in afternoon sun, KAI lying on the grass with his hands behind his head, relaxed and smiling, no other people
 MOOD: happy
-THEN: (at "holy") outdoors in front of the small stone church on a sunny morning, villagers in their best clean clothes walking in through the door
+THEN: (at "holy") outdoors in front of the small stone church on a sunny morning, stick figure villagers in their best clean clothes walking in through the door
 KAI: And we don't work every single day. Sundays and many church holy days were days off. Work was actually forbidden.
 
 // ===================== 4 PM =====================
@@ -358,19 +358,19 @@ KAI: Four PM. Hot. Tired. But look, there's only a little left.
 PICTURE: outdoors in the cut wheat field in afternoon sun, an old stick figure woman in a grey headscarf picking up single fallen wheat stalks and putting them in her apron
 MOOD: calm
 TEXT: GLEANING
-THEN: (at "poor") outdoors in the cut wheat field in afternoon sun, two small children and an old man picking up fallen stalks from the ground
+THEN: (at "poor") outdoors in the cut wheat field in afternoon sun, two small stick figure children and an old man picking up fallen stalks from the ground
 KAI: Behind us come the gleaners, picking up every stalk we dropped. This is gleaning. Village rules often allowed only the poor, the old and the young to do it.
 
 # SCENE 49
 PICTURE: outdoors in the cut wheat field in afternoon sun, KAI handing a small bundle of wheat to the old woman gleaner, both smiling
 MOOD: happy
-THEN: (at "winter") close-up outdoors in the cut field of the old woman's apron holding a small handful of wheat stalks, no other people
+THEN: (at "winter") close-up outdoors in the cut field of a small handful of gathered wheat stalks lying in a little woven basket on the stubble, no people
 KAI: For some families, those dropped stalks are the difference between bread and no bread this winter.
 
 // ===================== 6 PM - 7 PM: THE THUMBNAIL =====================
 
 # SCENE 50
-PICTURE: outdoors in the cut wheat field in golden evening light, villagers lifting sheaves up onto a big wooden ox cart, two brown oxen standing in front of it
+PICTURE: outdoors in the cut wheat field in golden evening light, stick figure villagers lifting sheaves up onto a big wooden ox cart, two brown oxen standing in front of it
 MOOD: epic
 MUSIC: epic
 TEXT: 6 PM
@@ -378,7 +378,7 @@ THEN: (at "last") outdoors in the empty cut field in golden evening light, KAI t
 KAI: Six PM. We load the carts. And then... the last sheaf. Done.
 
 # SCENE 51
-PICTURE: outdoors in the cut wheat field in golden evening light, villagers cheering with their arms in the air, KAI in the middle laughing
+PICTURE: outdoors in the cut wheat field in golden evening light, stick figure villagers cheering with their arms in the air, KAI in the middle laughing
 MOOD: happy
 THEN: (at "rolls") outdoors on the dirt road at dusk, the loaded ox cart full of wheat rolling slowly up the hill toward the CASTLE, no people
 KAI: We did it. The whole field. And then the cart rolls away.
@@ -396,13 +396,13 @@ KAI: Seven PM. And here I am, in an empty field. Twelve hours of work, and every
 PICTURE: outdoors in the empty cut field at dusk, the NEIGHBOUR putting a hand on KAI's shoulder and smiling kindly
 MOOD: calm
 MUSIC: calm
-THEN: (at "tomorrow") outdoors in KAI's own small strip of ripe wheat in early morning light, KAI, the WIFE, the NEIGHBOUR and a few villagers cutting it together
+THEN: (at "tomorrow") outdoors in KAI's own small strip of ripe wheat in early morning light, KAI, the WIFE, the NEIGHBOUR and a few stick figure villagers cutting it together
 KAI: But here's what the thumbnail doesn't show. Tomorrow, the village reaps the family strips, and neighbours help each other.
 
 # SCENE 54
 PICTURE: outdoors in the village lane at dusk, KAI and the NEIGHBOUR walking home side by side, tired but smiling, sickles on their shoulders
 MOOD: happy
-THEN: (at "team") outdoors from a hill at dusk, the whole small village with smoke rising from every straw roof, people walking home from the fields
+THEN: (at "team") outdoors from a hill at dusk, the whole small village with smoke rising from every straw roof, stick figure people walking home from the fields
 KAI: Nobody survived the middle ages alone. A peasant village was a team.
 
 // ===================== EVENING =====================
@@ -447,7 +447,7 @@ PICTURE: outdoors by a small clear stream in bright sun, KAI kneeling and drinki
 MOOD: shock
 TEXT: MYTH
 SFX: hit
-THEN: (at "pipes") outdoors in a busy medieval London street in daylight, people filling wooden buckets at a stone water fountain building
+THEN: (at "pipes") outdoors in a busy medieval London street in daylight, stick figure people filling wooden buckets at a stone water fountain building
 KAI: That's a myth. People drank water all the time. London even built pipes to bring fresh spring water to the city in the twelve hundreds.
 
 # SCENE 61
@@ -483,5 +483,5 @@ PICTURE: outdoors in front of a big stone castle in bright sun, KAI holding a wo
 MOOD: funny
 MUSIC: funny
 SFX: pop
-THEN: (at "fighting") outdoors in a castle courtyard in bright sun, a stick figure knight in grey armour sitting on a bench eating a big pie, no other people
+THEN: (at "fighting") outdoors in a castle courtyard in bright sun, a stick figure knight in a shiny metal helmet and full metal armour sitting on a bench eating a big pie, no other people
 KAI: Next time, what did medieval knights actually do all day? Spoiler: a lot less fighting than you think.

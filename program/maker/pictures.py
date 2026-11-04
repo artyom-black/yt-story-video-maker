@@ -54,6 +54,43 @@ FACE_RULE = ("Only the main character has messy brown hair: every other person h
              "number of legs, nothing floating. A hand that holds something is that person's own hand.")
 
 
+# The picture model reads the start of a prompt best and drops the end of a long one, so the look goes FIRST
+# and every scene prompt is kept short (the old long rules at the end got cut off: photo backgrounds, real people).
+HEAD = ("Flat 2D cartoon drawing like a children's picture book: bold clean black outlines, flat bright colours, "
+        "everything hand-drawn, never a photo, never photorealistic, never 3D. Every person is a simple stick figure: "
+        "a round plain white head with tiny dot eyes and a simple line mouth, no nose, no skin colour, thin black "
+        "line arms and legs, simple flat clothes. ")
+TAIL = ("Every person has one head, exactly two arms, two hands and two legs, and a face with eyes and a mouth. Only "
+        "the main character has messy brown hair; everyone else has other hair, a headscarf or is bald. Grown-ups are "
+        "taller than children. 16:9 picture. No text, no letters.")
+
+
+def _short_place(st):
+    period = (st.era.split(":")[0] if st.era else "the past").strip()
+    return (f"Show only what is described: no extra people, no crowds, no extra animals or buildings; indoors stays "
+            f"indoors, a close-up stays a close-up. It is {period}: nothing modern, small cottages of wood and mud "
+            f"with straw roofs. Objects and animals have no faces.")
+
+
+def _short_kai(text, st):
+    if re.search(r"(?<!RICH )\bKAI\b", text) and "RICH KAI" not in text:
+        return (f"The main character is the stick figure from image 0 (big round flat white head, dot eyes, thin "
+                f"eyebrows, messy brown hair) wearing the clothes from image 1: {st.costume}. His face shows exactly "
+                f"the feeling described. ")
+    return kai_clothes(text, st)
+
+
+def scene_prompt(text, pic, st, one=False):
+    place = _short_place(st)
+    if re.search(r"\bmodern\b|1[6-9]00s|laboratory|\b19\d\d\b|\b20\d\d\b", pic, re.I):
+        place = "Draw exactly the place, time and light described."
+    if re.search(r"\b(night|midnight|dark)\b", pic, re.I) and not re.search(r"\b(dawn|sunrise|sunset)\b", pic, re.I):
+        place += " It is night, lit only by firelight or the moon."
+    if re.search(r"\bno people\b|\bno humans\b", pic, re.I):
+        place += " No people at all."
+    return f"{HEAD}{text}. {'One person only. ' if one else ''}{place} {_short_kai(pic, st)}{TAIL}"
+
+
 def _place_rule(st):
     """Only what the line describes. The story's ERA is NOT pasted in (it put the same village, manor house,
     windmill and crowds into every picture); the period is given in a few words only."""
@@ -67,7 +104,7 @@ def _place_rule(st):
             f"room, never an empty white background. Objects and animals never have faces.")
 
 
-CHECK_VERSION = 9          # raise when the checker learns a new kind of mistake: old pictures get looked at again
+CHECK_VERSION = 10         # raise when the checker learns a new kind of mistake: old pictures get looked at again
 
 
 class AllowanceUsedUp(Exception):
@@ -203,8 +240,7 @@ def split_prompt(pic, st, costume_ref, costume_rich_ref, cast_paths, thumb=False
         if thumb:
             prompt = f"{text}. One person only. {kai_clothes(part, st)}Tall picture. {THUMB_STYLE}"
         else:
-            prompt = (f"{text}. One person only. {_place_rule(st)} {kai_clothes(part, st)}{ONLY_KAI_RED} {FACE_RULE} {SIZE_RULE} "
-                      f"Tall picture. {STYLE}")
+            prompt = scene_prompt(text, part, st, one=True).replace("16:9 picture", "Tall picture")
         halves.append([prompt, refs])
     return "SPLIT||" + json.dumps(halves)
 
@@ -236,7 +272,7 @@ def draw(prompt, w, h, seed, refs, out):
 
 def upgrade(path, prompt):
     """A picture that gets drawn again always gets today's rules (not the older prompt it was kept under)."""
-    if prompt and not prompt.startswith("SPLIT||") and SIZE_RULE not in prompt:
+    if prompt and not prompt.startswith("SPLIT||") and not prompt.startswith(HEAD) and SIZE_RULE not in prompt:
         if FACE_RULE in prompt:
             prompt = prompt.replace(f"{FACE_RULE} 16:9", f"{FACE_RULE} {SIZE_RULE} 16:9")
         else:
@@ -297,13 +333,12 @@ def jobs(st, assets):
                 place += " It is night: dark, lit only by firelight, a lamp or the moon, no daylight anywhere."
             if re.search(r"\bno people\b|\bno humans\b", pic, re.I):
                 place += " There are no people at all in this picture."
-            prompt = (f"{text}. {place} {kai_clothes(pic, st)}{ONLY_KAI_RED} {FACE_RULE} {SIZE_RULE} "
-                      f"16:9 picture. {STYLE}")
+            prompt = scene_prompt(text, pic, st)
             v8 = prompt.replace(" If the description names no place, draw a simple medieval outdoor background (a wheat "
                                 "field or a muddy village lane under the sky): never a modern room, never an empty white "
                                 "background. Objects and animals never have faces.", "")
             asked = label(os.path.splitext(os.path.basename(path))[0]).lower() in redo_requests()
-            for older in ([] if asked else (v8, before, legacy)):   # kept unless you asked to redraw it (the checker
+            for older in ():                                  # v10: everything drawn with the short prompt   # kept unless you asked to redraw it (the checker
                 if os.path.exists(_named(path, older)):       # looks at it again and redraws it if it's wrong)
                     prompt = older
                     break
