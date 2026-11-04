@@ -181,7 +181,7 @@ def picture_files(st, assets):
     return out
 
 
-SPLIT = re.compile(r"^split (?:image|screen):\s*on the left (.+?);?\s*,?\s*on the right (.+)$", re.I | re.S)
+SPLIT = re.compile(r"^split (?:image|screen)[^:]*:\s*on the left (.+?);?\s*,?\s*on the right (.+)$", re.I | re.S)
 
 
 def split_prompt(pic, st, costume_ref, costume_rich_ref, cast_paths, thumb=False):
