@@ -84,6 +84,8 @@ def scene_prompt(text, pic, st, one=False):
     place = _short_place(st)
     if re.search(r"\bmodern\b|1[6-9]00s|laboratory|\b19\d\d\b|\b20\d\d\b", pic, re.I):
         place = "Draw exactly the place, time and light described."
+    elif "paved with" in pic:                        # a room that is not a village cottage (an abbey, a church)
+        place = "Draw exactly the room described, indoors, with nothing outside. No people. Nothing modern."
     if re.search(r"\b(night|midnight|dark)\b", pic, re.I) and not re.search(r"\b(dawn|sunrise|sunset)\b", pic, re.I):
         place += " It is night, lit only by firelight or the moon."
     if re.search(r"\bno people\b|\bno humans\b", pic, re.I):
