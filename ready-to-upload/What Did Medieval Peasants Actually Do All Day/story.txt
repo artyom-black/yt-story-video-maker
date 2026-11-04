@@ -42,7 +42,7 @@ THEN: (at "cup") close-up of a plain wooden cup of cloudy brown ale on a rough w
 KAI: And before this day ends, I'll show you the one thing almost everyone gets wrong about peasants. Hint: it's in this cup.
 
 # SCENE 4
-PICTURE: outdoors from a hill in bright early morning daylight under a blue sky with no moon and no fires, a wide view of a small English village: straw-roofed houses, a stone church, a watermill by a stream, long thin strips of golden wheat, the dark CASTLE on a hill, no people
+PICTURE: an empty landscape in bright morning daylight under a blue sky: green hills, a few small straw-roofed cottages far away, a little stone church, a watermill by a stream, long thin strips of golden wheat, the dark CASTLE on a hill; nobody anywhere, no people
 MOOD: calm
 MUSIC: calm
 TEXT: 1300
@@ -52,7 +52,7 @@ KAI: England, the year thirteen hundred. August. Harvest time. Almost everyone a
 # SCENE 5
 PICTURE: outdoors in a golden wheat field in morning sun, close-up of heavy ripe ears of wheat, no people
 MOOD: tense
-THEN: (at "hungry") inside the dim HUT at night by the small fire, the WIFE and the SON sitting by an almost empty bowl, worried faces
+THEN: (at "hungry") inside the dim HUT at night, the WIFE sitting alone by the small fire looking worried at an almost empty wooden bowl, no other people
 KAI: The rule of the harvest is simple. Get the grain in before the autumn rain, or the whole village goes hungry this winter.
 
 // ===================== 6 AM: HOME =====================
@@ -88,7 +88,7 @@ KAI: Breakfast. Dark bread made from rye and barley, and a cup of ale.
 # SCENE 10
 PICTURE: inside the dim HUT at dawn, KAI holding the dark bread and looking at it with a sad flat face, no other people
 MOOD: funny
-THEN: (at "rich") outdoors in front of a stone manor house in bright morning sun, a plump stick figure lord, completely bald with a short grey beard, in a red robe proudly holding a big white loaf of bread
+THEN: (at "rich") outdoors in front of a stone manor house in bright morning sun, a plump stick figure lord with a round plain white head, tiny dot eyes, no nose, completely bald with a short grey beard, in a red robe proudly holding a big white loaf of bread
 KAI: Wait, we grow wheat, but I eat this? Yep. Soft white wheat bread is mostly for the rich. We sell our best wheat or pay with it.
 
 # SCENE 11
@@ -303,7 +303,7 @@ THEN: (at "forbidden") outdoors in the village lane in afternoon sun, the bald R
 KAI: Grind it myself at home with a hand mill? On many manors, forbidden. The lord wants his mill money.
 
 # SCENE 41
-PICTURE: inside a huge empty stone abbey hall with tall pillars and tall windows, the floor is paved with many round flat grey millstones laid side by side, the hall is completely empty: no houses, no people, nothing else inside
+PICTURE: close-up of a grey stone church floor made of many round flat millstones laid side by side, grey stone walls behind, empty, no people
 MOOD: shock
 TEXT: 1331
 THEN: (at "rebels") inside the stone abbey hall in daylight, angry stick figure villagers breaking up the millstone floor with hammers and carrying pieces away
@@ -333,7 +333,7 @@ THEN: (at "thirty") outdoors in the village lane in afternoon sun, an old stick 
 KAI: Speaking of dying, here's a myth. You've heard that peasants died at thirty? Then who's that guy?
 
 # SCENE 45
-PICTURE: outdoors in the village lane in afternoon sun, close-up of a small empty wooden baby cradle on rockers standing on the ground by a cottage door, no bench, no people at all
+PICTURE: outdoors in the village lane in afternoon sun, inside the dim HUT, close-up of a small empty wooden baby cradle on rockers on the earth floor, no people
 MOOD: sad
 THEN: (at "sixty") outdoors on the village green in afternoon sun, three old stick figures sitting on a bench, laughing: a bald old man with a white beard, an old woman in a white headscarf and an old man with short white hair
 KAI: The average was low because so many babies and small children died. But if you made it to adulthood, reaching fifty or sixty was normal.
@@ -358,7 +358,7 @@ KAI: Four PM. Hot. Tired. But look, there's only a little left.
 PICTURE: outdoors in the cut wheat field in afternoon sun, an old stick figure woman in a grey headscarf picking up single fallen wheat stalks and putting them in her apron
 MOOD: calm
 TEXT: GLEANING
-THEN: (at "poor") outdoors in the cut wheat field in afternoon sun, two small stick figure children and a bald old man with a white beard picking up fallen stalks from the ground
+THEN: (at "poor") outdoors in the cut wheat field in afternoon sun, two small stick figure children and a bald old stick figure man with a round plain white head and a white beard picking up fallen stalks from the ground
 KAI: Behind us come the gleaners, picking up every stalk we dropped. This is gleaning. Village rules often allowed only the poor, the old and the young to do it.
 
 # SCENE 49
@@ -408,7 +408,7 @@ KAI: Nobody survived the middle ages alone. A peasant village was a team.
 // ===================== EVENING =====================
 
 # SCENE 55
-PICTURE: inside the dim HUT at night by the small fire, the WIFE stirring a black iron pot hanging over the fire, KAI and the SON sitting on stools a little away from the fire holding wooden bowls
+PICTURE: inside the dim HUT at night by the small fire, the WIFE stirring a black iron pot hanging over the fire, KAI sitting on a stool a little away from the fire holding a wooden bowl
 MOOD: calm
 TEXT: 8 PM
 THEN: (at "beans") close-up inside the dim HUT at night of a wooden bowl of thick green and brown stew with peas and beans, no people
