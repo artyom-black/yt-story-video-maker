@@ -1,0 +1,5 @@
+Download the video (click, it starts downloading):
+https://github.com/artyom-black/yt-story-video-maker/releases/download/video-001-what-did-medieval-peasants-actually-do-all-day/What.Did.Medieval.Peasants.Actually.Do.All.Day.mp4
+
+Upload it to YouTube with the title, description and tags from description.txt and thumbnail.png from this folder.
+When it is uploaded, open Actions -> "I uploaded it" -> Run workflow. The folder moves to previous-videos.
