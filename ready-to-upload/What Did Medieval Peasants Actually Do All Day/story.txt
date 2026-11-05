@@ -464,7 +464,7 @@ THEN: (at "neighbours help") outdoors in a small wheat strip in early morning li
 KAI: But here's what the thumbnail doesn't show. Tomorrow, the village reaps the family strips, and neighbours help each other.
 
 # SCENE 54
-PICTURE: close-up of the heads and shoulders of two friends in the village lane at sunset: on the left KAI with his messy brown hair, no beard and a brown tunic; on the right the NEIGHBOUR, completely bald with a ginger beard and a blue tunic; both tired but smiling, no hands in the picture, no other people
+PICTURE: close-up of KAI and the bald NEIGHBOUR with his ginger beard, heads and shoulders, both tired but smiling, behind them the village lane with straw-roofed cottages and an orange sunset sky, no hands in the picture, no other people
 MOOD: happy
 THEN: (at "team") outdoors from a hill at dusk, the whole small village with smoke rising from every straw roof, stick figure people walking home from the fields
 THEN: (at "A peasant village") close-up of the heads and shoulders of KAI and the bald NEIGHBOUR with his ginger beard in the village lane at sunset, smiling at each other, no hands in the picture, no other people
