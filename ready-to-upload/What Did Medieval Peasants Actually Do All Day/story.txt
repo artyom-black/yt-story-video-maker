@@ -20,13 +20,13 @@ SOURCES: Christopher Dyer, Making a Living in the Middle Ages (Yale, 2002); Chri
 // ===================== HOOK =====================
 
 # SCENE 1
-PICTURE: split screen down the middle: on the left KAI at 6 AM standing on the grass a few steps in front of his cottage, both arms up in a happy morning stretch, blue sky, chickens; on the right KAI at 7 PM standing in an empty cut field at dusk, sad with a few tears, both arms down at his sides, an ox cart full of wheat rolling up to the CASTLE
+PICTURE: split screen down the middle: on the left KAI at 6 AM standing on the grass a few steps in front of his cottage, waving one hand above his head, his other arm straight down at his side, only two hands, blue sky, chickens; on the right KAI at 7 PM standing in an empty cut field at dusk, sad with a few tears, both arms down at his sides, an ox cart full of wheat rolling up to the CASTLE
 MOOD: curious
 MUSIC: tense
 TEXT: 6 AM / 7 PM
 SFX: hit
 THEN: (at "crying") outdoors in an empty cut wheat field at dusk, KAI standing alone, sad with a few tears, holding one stalk of wheat, an ox cart full of wheat rolling up the road to the CASTLE far behind him, no other people
-THEN: (at "do all day") outdoors in a golden wheat field in morning sun, KAI scratching his head with a curious face, no other people
+THEN: (at "do all day") outdoors in a golden wheat field in morning sun, KAI with a puzzled curious face, both arms straight down at his sides, only two hands, no other people
 THEN: (at "happiest man") outdoors at his cottage at sunrise, KAI grinning hugely, birds flying in the blue sky, no other people
 KAI: What did a medieval peasant actually do all day? Six AM, I'm the happiest man in the village. Seven PM, I'm crying in an empty field.
 
@@ -216,7 +216,7 @@ KAI: Look at the fields. Long thin strips. My strips are scattered all over, so 
 // ===================== 8 AM: REAPING =====================
 
 # SCENE 25
-PICTURE: outdoors in the lord's wheat field in bright morning sun, KAI bending and cutting a handful of wheat with his sickle, no other people
+PICTURE: outdoors in the lord's wheat field in bright morning sun, KAI holding a curved iron sickle by its short wooden handle in one hand, his other arm down at his side, smiling, no other people
 MOOD: tense
 TEXT: 8 AM
 SFX: whoosh
@@ -228,7 +228,7 @@ KAI: Eight AM. Grab a handful. Cut it with the sickle. Again and again. Then tie
 PICTURE: outdoors in the wheat field in morning sun, the WIFE binding a sheaf of wheat, a few finished sheaves next to her
 MOOD: calm
 THEN: (at "stooks") outdoors in the cut wheat field, rows of sheaves standing up leaning against each other in small groups, no people
-THEN: (at "stand the sheaves") outdoors in the cut wheat field in morning sun, KAI standing two sheaves of wheat up so they lean against each other, no other people
+THEN: (at "stand the sheaves") outdoors in the cut wheat field in morning sun, two tied sheaves of wheat standing up on the short stubble and leaning against each other, no people
 KAI: Women reaped and bound sheaves too. Then we stand the sheaves up in little groups called stooks, so they dry.
 
 # SCENE 27
@@ -275,7 +275,7 @@ KAI: Ten AM. A drink break. Yes, that's water. Keep that in mind.
 PICTURE: outdoors in the wheat field in bright sun, the NEIGHBOUR cutting wheat next to KAI and grinning at him
 MOOD: funny
 THEN: (at "song") outdoors in the wheat field in bright sun, a line of stick figure villagers cutting wheat with open mouths, singing, small musical notes drawn above them
-THEN: (at "we joke") outdoors in the wheat field in bright sun, KAI and the NEIGHBOUR laughing together, no other people
+THEN: (at "we joke") outdoors in the wheat field in bright sun, KAI and the NEIGHBOUR (short sleeves, thin black stick arms and two white hands) laughing together, both with arms down at their sides, no other people
 KAI: This is my neighbour. We work side by side, we joke, sometimes the whole line sings a song to keep the speed.
 
 // ===================== NOON: THE LORD'S FOOD =====================
@@ -300,7 +300,7 @@ KAI: Bread, lots of bread. Cheese. Maybe a bit of fish or bacon, and something t
 # SCENE 35
 PICTURE: outdoors at the edge of the wheat field at noon, KAI sitting with his cheeks puffed full of bread like a hamster, giving a thumbs up, no other people
 MOOD: funny
-THEN: (at "custom") outdoors at the edge of the wheat field at noon, the REEVE reading from a small rolled parchment to a few listening stick figure villagers
+THEN: (at "custom") outdoors at the edge of the wheat field at noon, the REEVE with two dot eyes and a stern mouth reading from a small rolled parchment to a few listening stick figure villagers
 THEN: (at "And it was") close-up of an old parchment roll covered in neat lines and a red wax seal, lying on a wooden table, no people
 THEN: (at "and the lord knew") outdoors in the wheat field in afternoon sun, a few stick figure villagers happily cutting wheat fast after lunch
 KAI: Not a feast, but it's free. And it was a written custom of the manor. Hungry workers do bad work, and the lord knew it.
@@ -326,7 +326,7 @@ THEN: (at "Even my own") outdoors under the tree in afternoon sun, KAI standing 
 KAI: Two PM. And here's what really hurts. Even my own wheat isn't all mine.
 
 # SCENE 38
-PICTURE: outdoors in a cut wheat field in afternoon sun, the PRIEST picking up one sheaf out of a row of ten sheaves, KAI watching with a flat face
+PICTURE: outdoors in a cut wheat field in afternoon sun, the PRIEST picking up one sheaf out of a row of ten sheaves, KAI watching with a flat face, a small straight line mouth, arms down
 MOOD: shock
 TEXT: 1 IN 10
 SFX: hit
@@ -382,7 +382,7 @@ MOOD: curious
 TEXT: MYTH
 SFX: hit
 THEN: (at "thirty") close-up of an old stick figure man with a completely bald white head and a long white beard, smiling and waving one hand, a walking stick in his other hand, cottages behind him, no other people
-THEN: (at "You've heard") outdoors in the village lane in afternoon sun, KAI raising one eyebrow at the viewer with a doubtful face, no other people
+THEN: (at "You've heard") outdoors in the village lane in afternoon sun, KAI with two dot eyes and a doubtful face, one eyebrow raised, both arms down at his sides, no other people
 KAI: Speaking of dying, here's a myth. You've heard that peasants died at thirty? Then who's that guy?
 
 # SCENE 45
@@ -419,11 +419,11 @@ MOOD: calm
 TEXT: GLEANING
 THEN: (at "poor") outdoors in the cut wheat field in afternoon sun, two small stick figure children picking up fallen stalks from the ground
 THEN: (at "every stalk") outdoors in the cut field in afternoon sun, close-up of single fallen wheat stalks lying on the stubble, no people
-THEN: (at "is gleaning") outdoors in the cut field in afternoon sun, KAI explaining with one finger raised, no other people
+THEN: (at "is gleaning") outdoors in the cut field in afternoon sun, KAI smiling and explaining, both arms down at his sides, only two hands, no other people
 KAI: Behind us come the gleaners, picking up every stalk we dropped. This is gleaning. Village rules often allowed only the poor, the old and the young to do it.
 
 # SCENE 49
-PICTURE: outdoors in the cut wheat field in afternoon sun, KAI handing a small bundle of wheat to the old woman gleaner, both smiling
+PICTURE: outdoors in the cut wheat field in afternoon sun, KAI handing a small bundle of wheat to the old woman gleaner, Kai has only two arms: one arm holding out the wheat and the other arm down at his side, both smiling
 MOOD: happy
 THEN: (at "winter") close-up outdoors in the cut field of a small handful of gathered wheat stalks lying in a little woven basket on the stubble, no people
 THEN: (at "the difference") close-up of a small round loaf of brown bread on a wooden table, no people
@@ -452,7 +452,7 @@ MUSIC: sad
 TEXT: 7 PM
 SFX: sting
 THEN: (at "Twelve") outdoors in the empty cut field at dusk, close-up of KAI's head and shoulders, sad with a few tears, the CASTLE small on the hill behind him, no other people
-THEN: (at "grain of it") outdoors at dusk, an ox pulling a cart full of wheat in through the CASTLE gate, only the ox and the cart, no people
+THEN: (at "grain of it") outdoors at dusk, seen from behind, an ox pulling a cart full of wheat up the dirt road toward the CASTLE gate, only the ox and the cart, no people
 KAI: Seven PM. And here I am, in an empty field. Twelve hours of work, and every grain of it goes up there.
 
 # SCENE 53
@@ -464,10 +464,10 @@ THEN: (at "neighbours help") outdoors in a small wheat strip in early morning li
 KAI: But here's what the thumbnail doesn't show. Tomorrow, the village reaps the family strips, and neighbours help each other.
 
 # SCENE 54
-PICTURE: outdoors in the village lane at dusk, KAI and the NEIGHBOUR walking home side by side, tired but smiling, arms down at their sides, no other people
+PICTURE: outdoors in the village lane at dusk, KAI and the NEIGHBOUR (short sleeves, thin black stick arms and two white hands) walking home side by side, tired but smiling, arms down at their sides, no other people
 MOOD: happy
 THEN: (at "team") outdoors from a hill at dusk, the whole small village with smoke rising from every straw roof, stick figure people walking home from the fields
-THEN: (at "A peasant village") outdoors in the village lane at dusk, KAI and the NEIGHBOUR smiling at each other, no other people
+THEN: (at "A peasant village") outdoors in the village lane at dusk, KAI and the NEIGHBOUR (short sleeves, thin black stick arms and two white hands) smiling at each other, arms down at their sides, no other people
 KAI: Nobody survived the middle ages alone. A peasant village was a team.
 
 // ===================== EVENING =====================
@@ -477,7 +477,7 @@ PICTURE: inside the dim HUT at night by the small fire, the WIFE stirring a blac
 MOOD: calm
 TEXT: 8 PM
 THEN: (at "beans") close-up inside the dim HUT at night of a wooden bowl of thick green and brown stew with peas and beans, no people
-THEN: (at "Vegetables") inside the dim HUT at night, a wooden table with peas, beans, an onion and a cabbage on it, no people
+THEN: (at "Vegetables") close-up of a wooden table with peas, beans, an onion and a cabbage on it, warm firelight, no people
 THEN: (at "A bit of bacon") inside the dim HUT at night, close-up of a small piece of bacon hanging from a roof beam on a string, no people
 KAI: Eight PM. Supper is pottage. Vegetables, peas, beans and oats, cooked into a thick stew. A bit of bacon if we're lucky.
 
@@ -511,7 +511,7 @@ PICTURE: inside the dim HUT at night, KAI standing to one side of the glowing em
 MOOD: curious
 MUSIC: tense
 SFX: whoosh
-THEN: (at "poison") outdoors by a dirty green pond, a stick figure woman in a headscarf holding a wooden cup of pond water in her hand and making a disgusted face, no other people
+THEN: (at "poison") outdoors by a dirty green pond, a stick figure woman in a headscarf holding a wooden cup of pond water with both hands in front of her and making a disgusted face, only two hands, no other people
 THEN: (at "gets wrong") inside the dim HUT at night, KAI with a sly smile and one finger raised, no other people
 THEN: (at "drank beer all day") outdoors next to a cottage, a fat stick figure man with a bald white head drinking from a big wooden cup, no other people
 KAI: Now, the cup. The thing almost everyone gets wrong. You've heard that peasants drank beer all day because water was poison.
@@ -522,7 +522,7 @@ MOOD: shock
 TEXT: MYTH
 SFX: hit
 THEN: (at "pipes") outdoors in a busy medieval London street in daylight, stick figure people filling wooden buckets at a stone water fountain building
-THEN: (at "all the time") close-up of a round stone well with a wooden bucket sitting on its edge, nobody near it, no people
+THEN: (at "all the time") close-up of a round stone well with a small wooden roof over it and a wooden bucket hanging from a rope under the roof, no people
 THEN: (at "the city in") close-up of a medieval stone fountain with water pouring from a stone pipe into a stone basin, no people
 KAI: That's a myth. People drank water all the time. London even built pipes to bring fresh spring water to the city in the twelve hundreds.
 
