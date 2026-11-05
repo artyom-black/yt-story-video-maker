@@ -281,7 +281,7 @@ KAI: This is my neighbour. We work side by side, we joke, sometimes the whole li
 // ===================== NOON: THE LORD'S FOOD =====================
 
 # SCENE 33
-PICTURE: outdoors at the edge of the wheat field at noon, a stick figure man with a completely bald shiny white head with no hair at all, a short black beard and a dark green tunic, shouting with his mouth wide open and one hand cupped next to his mouth, his other arm down at his side with an empty hand, no sticks, no other people
+PICTURE: outdoors at the edge of the wheat field at noon, a stick figure man with a completely bald shiny white head with no hair at all, a short black beard and a deep green tunic, shouting with his mouth wide open and one hand cupped next to his mouth, his other arm down at his side, bright midday sun, no other people
 MOOD: happy
 MUSIC: funny
 TEXT: NOON
