@@ -52,7 +52,7 @@ MOOD: calm
 MUSIC: calm
 TEXT: 1300
 THEN: (at "farmer") outdoors in the wheat fields at sunrise, many small stick figure farmers walking out to work along the field paths
-THEN: (at "August") outdoors in bright summer sun, tall golden wheat next to a small straw-roofed cottage, an empty field, no people, no animals
+THEN: (at "August") close-up of tall ripe golden wheat stalks in bright summer sun, blue sky, no people, no animals
 THEN: (at "almost everyone alive") outdoors in the village lane in morning sun, KAI pointing at himself with his thumb and smiling proudly, no other people
 KAI: England, the year thirteen hundred. August. Harvest time. Almost everyone alive is a farmer, and that includes me.
 
@@ -152,7 +152,7 @@ KAI: Children did real work from about age seven. Small jobs first, bigger jobs 
 PICTURE: outdoors in the village lane at sunrise, KAI looking up at the sun and squinting, both arms down at his sides, the small stone church with its bell tower behind him, no other people
 MOOD: curious
 THEN: (at "bell") outdoors at sunrise, close-up of the bell in the small stone church tower, no people
-THEN: (at "owns a clock") outdoors on the grass in morning sun, close-up of a simple sundial: a flat round stone with a stick standing in it and its shadow on the stone, no numbers, no people
+THEN: (at "owns a clock") close-up of a flat round stone sundial with a thin stick standing in its middle and the stick's shadow on the stone, plain green grass all around, no people
 KAI: What time is it, exactly? No idea. Nobody here owns a clock. We go by the sun and the church bell.
 
 // ===================== 7 AM: THE HORN =====================
@@ -281,7 +281,7 @@ KAI: This is my neighbour. We work side by side, we joke, sometimes the whole li
 // ===================== NOON: THE LORD'S FOOD =====================
 
 # SCENE 33
-PICTURE: outdoors at the edge of the wheat field at noon, the bald REEVE shouting with his mouth wide open and one hand cupped next to his mouth, a few stick figure villagers putting down their sickles and turning around happily
+PICTURE: outdoors at the edge of the wheat field at noon, the bald REEVE with a shiny bald head shouting with his mouth wide open and one hand cupped next to his mouth, no other people
 MOOD: happy
 MUSIC: funny
 TEXT: NOON
@@ -331,7 +331,7 @@ MOOD: shock
 TEXT: 1 IN 10
 SFX: hit
 THEN: (at "barn") outdoors in afternoon sun, a big stone barn with a tall straw roof next to the small stone church, sheaves of wheat stacked at its open door, no people
-THEN: (at "to the church") outdoors in afternoon sun, the small stone church with the PRIEST standing at its door, no other people
+THEN: (at "to the church") outdoors in afternoon sun, the small stone church with its wooden door open, no people
 THEN: (at "sheaf by sheaf") outdoors in the cut wheat field in afternoon sun, a row of ten sheaves standing up, one of them tied with a green branch, no people
 KAI: The tithe. One tenth of everything goes to the church, taken right here in the field, sheaf by sheaf, into the tithe barn.
 
@@ -365,7 +365,7 @@ PICTURE: inside the dim HUT in afternoon light, KAI hugging the COW's neck with 
 MOOD: sad
 MUSIC: sad
 THEN: (at "animal") outdoors at the castle gate in afternoon sun, a stick figure servant in a red tunic leading a brown cow away on a rope, no other people
-THEN: (at "the lord could") the CASTLE alone on top of an empty green hill in afternoon sun, blue sky, no village, no people
+THEN: (at "the lord could") close-up of the CASTLE on top of a green hill, blue sky, no people
 KAI: And one more. When a peasant died, the lord could take his family's best animal. It was called the heriot.
 
 # SCENE 43
@@ -381,7 +381,7 @@ PICTURE: outdoors in the village lane in afternoon sun, KAI with his arms crosse
 MOOD: curious
 TEXT: MYTH
 SFX: hit
-THEN: (at "thirty") outdoors in the village lane in afternoon sun, an old stick figure man with a completely bald round white head, dot eyes, no nose, a long white beard, holding a walking stick in one hand and waving with the other, no other people
+THEN: (at "thirty") close-up of an old stick figure man with a completely bald white head and a long white beard, smiling and waving one hand, a walking stick in his other hand, cottages behind him, no other people
 THEN: (at "You've heard") outdoors in the village lane in afternoon sun, KAI raising one eyebrow at the viewer with a doubtful face, no other people
 KAI: Speaking of dying, here's a myth. You've heard that peasants died at thirty? Then who's that guy?
 
