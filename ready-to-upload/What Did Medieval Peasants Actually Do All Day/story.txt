@@ -452,7 +452,7 @@ MUSIC: sad
 TEXT: 7 PM
 SFX: sting
 THEN: (at "Twelve") outdoors in the empty cut field at dusk, close-up of KAI's head and shoulders, sad with a few tears, the CASTLE small on the hill behind him, no other people
-THEN: (at "grain of it") outdoors at dusk, a wooden cart piled high with wheat standing at the open gate of the CASTLE, no animals, no people
+THEN: (at "grain of it") close-up of a wooden cart piled high with golden wheat at sunset, the CASTLE on the hill behind it, nobody under or near the cart, no animals, no people
 KAI: Seven PM. And here I am, in an empty field. Twelve hours of work, and every grain of it goes up there.
 
 # SCENE 53
@@ -464,10 +464,10 @@ THEN: (at "neighbours help") outdoors in a small wheat strip in early morning li
 KAI: But here's what the thumbnail doesn't show. Tomorrow, the village reaps the family strips, and neighbours help each other.
 
 # SCENE 54
-PICTURE: outdoors in the village lane at dusk, KAI with his messy brown hair and brown tunic walking home side by side with the bald NEIGHBOUR with his ginger beard (dark blue tunic with long dark blue sleeves down to his two white hands), tired but smiling, arms down at their sides, no other people
+PICTURE: close-up of the heads and shoulders of KAI and the bald NEIGHBOUR with his ginger beard side by side in the village lane at sunset, both tired but smiling, no hands in the picture, no other people
 MOOD: happy
 THEN: (at "team") outdoors from a hill at dusk, the whole small village with smoke rising from every straw roof, stick figure people walking home from the fields
-THEN: (at "A peasant village") outdoors in the village lane at dusk, KAI and the bald NEIGHBOUR with his ginger beard (dark blue tunic with long dark blue sleeves down to his two white hands) smiling at each other, arms down at their sides, no other people
+THEN: (at "A peasant village") close-up of the heads and shoulders of KAI and the bald NEIGHBOUR with his ginger beard in the village lane at sunset, smiling at each other, no hands in the picture, no other people
 KAI: Nobody survived the middle ages alone. A peasant village was a team.
 
 // ===================== EVENING =====================
