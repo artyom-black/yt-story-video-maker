@@ -20,7 +20,7 @@ SOURCES: Christopher Dyer, Making a Living in the Middle Ages (Yale, 2002); Chri
 // ===================== HOOK =====================
 
 # SCENE 1
-PICTURE: split screen down the middle: on the left KAI at 6 AM standing on the grass a few steps in front of his cottage, waving one hand above his head, his other arm straight down at his side, only two hands, blue sky, chickens; on the right KAI at 7 PM standing in an empty cut field at dusk, sad with a few tears, both arms down at his sides, an ox cart full of wheat rolling up to the CASTLE
+PICTURE: split screen down the middle: on the left KAI at 6 AM standing on the grass a few steps in front of his cottage, waving one hand above his head, his other arm straight down at his side, only two hands, blue sky, chickens; on the right KAI at 7 PM, one single stick figure, standing in an empty cut field at dusk, sad with a few tears, both arms down at his sides, an ox cart full of wheat rolling up to the CASTLE
 MOOD: curious
 MUSIC: tense
 TEXT: 6 AM / 7 PM
@@ -452,7 +452,7 @@ MUSIC: sad
 TEXT: 7 PM
 SFX: sting
 THEN: (at "Twelve") outdoors in the empty cut field at dusk, close-up of KAI's head and shoulders, sad with a few tears, the CASTLE small on the hill behind him, no other people
-THEN: (at "grain of it") outdoors at dusk, seen from behind, an ox pulling a cart full of wheat up the dirt road toward the CASTLE gate, only the ox and the cart, no people
+THEN: (at "grain of it") outdoors at dusk, a wooden cart piled high with wheat standing at the open gate of the CASTLE, no animals, no people
 KAI: Seven PM. And here I am, in an empty field. Twelve hours of work, and every grain of it goes up there.
 
 # SCENE 53
@@ -464,10 +464,10 @@ THEN: (at "neighbours help") outdoors in a small wheat strip in early morning li
 KAI: But here's what the thumbnail doesn't show. Tomorrow, the village reaps the family strips, and neighbours help each other.
 
 # SCENE 54
-PICTURE: outdoors in the village lane at dusk, KAI and the NEIGHBOUR (short sleeves, thin black stick arms and two white hands) walking home side by side, tired but smiling, arms down at their sides, no other people
+PICTURE: outdoors in the village lane at dusk, KAI with his messy brown hair and brown tunic walking home side by side with the bald NEIGHBOUR with his ginger beard (dark blue tunic with long dark blue sleeves down to his two white hands), tired but smiling, arms down at their sides, no other people
 MOOD: happy
 THEN: (at "team") outdoors from a hill at dusk, the whole small village with smoke rising from every straw roof, stick figure people walking home from the fields
-THEN: (at "A peasant village") outdoors in the village lane at dusk, KAI and the NEIGHBOUR (short sleeves, thin black stick arms and two white hands) smiling at each other, arms down at their sides, no other people
+THEN: (at "A peasant village") outdoors in the village lane at dusk, KAI and the bald NEIGHBOUR with his ginger beard (dark blue tunic with long dark blue sleeves down to his two white hands) smiling at each other, arms down at their sides, no other people
 KAI: Nobody survived the middle ages alone. A peasant village was a team.
 
 // ===================== EVENING =====================
@@ -477,7 +477,7 @@ PICTURE: inside the dim HUT at night by the small fire, the WIFE stirring a blac
 MOOD: calm
 TEXT: 8 PM
 THEN: (at "beans") close-up inside the dim HUT at night of a wooden bowl of thick green and brown stew with peas and beans, no people
-THEN: (at "Vegetables") close-up of a wooden table with peas, beans, an onion and a cabbage on it, warm firelight, no people
+THEN: (at "Vegetables") close-up of a green cabbage, an onion and a few pea pods lying on a wooden table, warm firelight, no people, no faces
 THEN: (at "A bit of bacon") inside the dim HUT at night, close-up of a small piece of bacon hanging from a roof beam on a string, no people
 KAI: Eight PM. Supper is pottage. Vegetables, peas, beans and oats, cooked into a thick stew. A bit of bacon if we're lucky.
 
