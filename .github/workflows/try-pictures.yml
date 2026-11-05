@@ -1,0 +1,54 @@
+name: Try pictures (one by one)
+
+# Draws a few new versions of single pictures, without making the video, so each one can be approved first.
+# The versions go to the "try-pictures" branch. An approved one is copied to ready-to-upload/<title>/kept/
+# and the video then uses it exactly as it is.
+on:
+  workflow_dispatch:
+    inputs:
+      story:
+        description: "The story file"
+        default: "ready-to-upload/What Did Medieval Peasants Actually Do All Day/story.txt"
+      pictures:
+        description: "Picture numbers from the picture sheets, e.g. 1c, 25"
+        default: ""
+      count:
+        description: "Versions of each picture"
+        default: "4"
+
+permissions:
+  contents: write
+
+env:
+  PYTHONPATH: ${{ github.workspace }}/program
+  REPO_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}
+
+jobs:
+  try:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests numpy pillow
+      - name: Draw
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          S=$(python -c "import maker.pick_story as p, sys; print(p.slug_for(sys.argv[1]))" "${{ inputs.story }}" 2>/dev/null || true)
+          [ -n "$S" ] || S="001-what-did-medieval-peasants-actually-do-all-day"
+          git clone -q --depth 1 -b "pics-$S" "$REPO_URL" assets 2>/dev/null || mkdir -p assets
+          python -m maker.try_picture "${{ inputs.story }}" assets "${{ inputs.pictures }}" "${{ inputs.count }}" tries
+      - name: Save
+        if: always()
+        run: |
+          [ -d tries ] || exit 0
+          cd tries
+          git init -q -b try-pictures
+          git config user.name "video-maker"
+          git config user.email "video-maker@users.noreply.github.com"
+          git add -A && git commit -q -m "Tries: ${{ inputs.pictures }}"
+          git push -q -f "$REPO_URL" HEAD:try-pictures

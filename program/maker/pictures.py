@@ -216,6 +216,11 @@ def _named(path, prompt):
     return f"{root}_{hashlib.sha1(prompt.encode()).hexdigest()[:8]}{ext}"
 
 
+def kept_dir(st):
+    """ready-to-upload/<title>/kept: pictures approved by hand (scene_001_kept.png = picture 1, scene_001x3_kept.png = 1c)."""
+    return os.path.join(REPO, "ready-to-upload", re.sub(r'[\\/:*?"<>|]', "", st.title).strip(), "kept")
+
+
 def picture_files(st, assets):
     """{key: path} for every picture: 'costume', 'scene_007', 'scene_007b', 'thumb_1'."""
     out = {}
@@ -323,6 +328,10 @@ def jobs(st, assets):
             if not pic:
                 continue
             path = os.path.join(assets, "pictures", f"scene_{s.number:03d}{k}.png")
+            kept = os.path.join(kept_dir(st), f"scene_{s.number:03d}{k}_kept.png")
+            if os.path.exists(kept):                  # approved by hand: used as it is, never drawn or checked again
+                out.append((f"scene {s.number}{k}", kept, None, W, H, [], None))
+                continue
             text, refs, first = kai_refs(pic, st, costume_ref, costume_rich_ref)
             text, used = cast_in(text, st.cast, first)
             refs = refs + [cast_ref(cast_paths[n]) for n in used]
@@ -408,7 +417,8 @@ def run(story_path, assets):
     # pictures you asked to redo when clicking Run (each request is done once)
     for name, path, *_ in todo:
         lab = label(_key(path)).lower()
-        if lab in redo_requests() and redone.get(lab) != os.path.basename(path) and os.path.exists(path):
+        if lab in redo_requests() and redone.get(lab) != os.path.basename(path) and os.path.exists(path) \
+                and not path.endswith("_kept.png"):
             os.remove(path)
             redone[lab] = "pending"
 
