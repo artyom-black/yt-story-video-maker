@@ -19,10 +19,11 @@ FONT = os.path.join(P.ROOT, "fonts", "Anton-Regular.ttf")
 TAGLINE = "REAL HISTORY. ONE STICKMAN."
 
 PROFILE = (
-    f"{P.HEAD}Clean simple icon of {P.KAI_ID}, drawn exactly like image 0 with the same face and hair: only his big "
-    "round head and the top of his shoulders, filling the middle of a square picture, one eyebrow raised and a curious "
-    "cheeky smile, looking straight at the viewer. No hands, no arms in the picture. Plain pure white background, "
-    "nothing else. Square picture. No text, no letters.")
+    f"{P.HEAD}Clean simple icon of {P.KAI_ID}: exactly the same head, face, smile and messy brown hair as image 0, "
+    "seen from the chest up and centred in a square picture. He wears a plain bright red t-shirt with short sleeves "
+    "and a round neck; his shoulders are drawn by the t-shirt, a thin black neck line joins the head to the collar. "
+    "His arms hang down out of the picture, no hands visible. A happy friendly smile, looking straight at the viewer. "
+    "Plain pure white background, nothing else. Square picture. No text, no letters.")
 
 COSTUMES = {
     "skate": "side view, riding fast on a skateboard to the right: knees bent, body leaning forward, one foot on the "
@@ -100,6 +101,8 @@ def banner(paths, dst):
 def main(out, name, count):
     os.makedirs(out, exist_ok=True)
     refs = [P.small_ref(P.FACE_REF, os.path.join(out, "_kai_ref.png"))]
+    face = os.path.join(P.REPO, "channel", "profile-picture.png")     # the approved face
+    prefs = [P.small_ref(face, os.path.join(out, "_face_ref.png"))] if os.path.exists(face) else refs
     jobs = [(f"profile_{n}", PROFILE, 1024, 1024) for n in range(1, count + 1)]
     jobs += [(f"{k}_{n}", costume_prompt(v), 768, 1024) for k, v in COSTUMES.items() for n in range(1, count + 1)]
     only = [w for w in os.environ.get("ONLY", "").replace(",", " ").split() if w]
@@ -108,11 +111,12 @@ def main(out, name, count):
     for lab, prompt, w, h in jobs:
         dst = os.path.join(out, f"{lab}.png")
         try:
-            P.draw(prompt, w, h, seed=random.randint(1, 10 ** 6), refs=refs, out=dst)
+            P.draw(prompt, w, h, seed=random.randint(1, 10 ** 6), refs=prefs if lab.startswith("profile") else refs, out=dst)
             print("drew", lab, flush=True)
         except Exception as ex:
             print(f"{lab} failed: {str(ex)[:150]}", flush=True)
-    os.remove(refs[0])
+    for r in set(refs + prefs):
+        os.remove(r)
 
 
 if __name__ == "__main__":
