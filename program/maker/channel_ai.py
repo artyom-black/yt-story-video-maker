@@ -25,18 +25,20 @@ PROFILE = (
     "nothing else. Square picture. No text, no letters.")
 
 COSTUMES = {
-    "skate": "riding a skateboard with both arms out for balance, wearing a yellow hoodie",
-    "knight": "in shining grey armour, holding up a sword proudly",
-    "banana": "wearing a plain orange t-shirt with short sleeves and blue jeans, slipping on a banana peel: a big "
-              "bright yellow peeled-open banana skin, its four yellow flaps spread out like a star, lying flat on the "
-              "ground right under his front shoe and clearly visible, he leans backwards with both arms flailing up "
-              "and a shocked face",
-    "caveman": "a caveman wearing a brown fur tunic that reaches his knees, standing straight on two thin black stick "
-               "legs with black shoes, holding a wooden club in one hand and scratching his head with the other, confused",
+    "skate": "riding a skateboard with both arms out for balance, wearing a yellow hoodie and long blue jeans that "
+             "cover his legs down to his shoes",
+    "knight": "in shining grey armour from his neck down to his feet, his legs fully covered by grey leg armour, "
+              "holding up a sword proudly",
+    "banana": "wearing a plain orange t-shirt and long blue jeans, slipping on a banana peel like in an old cartoon: "
+              "one foot shooting up into the air, his body falling backwards, both arms flailing, a shocked face with "
+              "his mouth open, and under his other shoe one small normal-sized peeled yellow banana skin",
+    "caveman": "a caveman wearing a brown fur tunic and long brown fur trousers that cover his legs down to his feet, "
+               "holding a wooden club in one hand and scratching his head with the other, confused",
     "chef": "a chef wearing a white chef jacket, black trousers and a short white chef hat, holding a frying pan and "
             "flipping a pancake in the air, happy",
-    "pharaoh": "an Egyptian pharaoh wearing a blue and gold striped headdress, a white and gold tunic and a gold collar "
-               "on his chest, pointing forward with one hand like a boss",
+    "pharaoh": "an Egyptian pharaoh wearing a blue and gold striped headdress, a gold collar on his chest and a long "
+               "white robe with a gold belt that reaches down to his ankles and covers his legs, golden sandals, "
+               "pointing forward with one hand like a boss",
     "detective": "a detective wearing a long brown trench coat, a brown hat and brown trousers, holding a big round "
                  "magnifying glass up next to his face with one hand, squinting curiously",
     "pirate": "a pirate wearing a red and white striped shirt, a black vest, black trousers and boots, a black pirate "
@@ -46,8 +48,7 @@ COSTUMES = {
 
 def costume_prompt(what):
     return (f"{P.HEAD}One single full body {P.KAI_ID} {what}. He is fully dressed in that outfit. He is a normal grown-up size, the same height as always. A clear funny pose and a big clear "
-            "face, the whole body from the top of his hair to his shoes visible. He has exactly two thin black stick arms "
-            "and two thin black stick legs; each arm ends in one small round white cartoon hand with a black outline, "
+            "face, the whole body from the top of his hair to his shoes visible. He has exactly two thin black stick arms; his legs are fully covered by the clothes of his outfit; each arm ends in one small round white cartoon hand with a black outline, "
             "exactly like image 0. Clean bold even black outlines, flat bright colours. Plain pure white background, nothing else, no ground, no shadow. "
             "No text, no letters.")
 
