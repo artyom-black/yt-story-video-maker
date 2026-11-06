@@ -45,7 +45,7 @@ COSTUMES = {
     "detective": SIDE + "bending forward a little, holding a big round magnifying glass right in front of his eye "
                  "with one hand and looking through it at something ahead of him, his eye looking big through the "
                  "glass, a curious face, wearing a long brown trench coat, a brown hat and brown trousers",
-    "painter": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "standing in front of a wooden easel with a canvas on it, painting with a brush held in one hand, a wooden paint palette with bright colour blobs in his other hand, a happy focused face, wearing a red beret, a white smock with colourful paint spots and grey trousers",
+    "musician": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "standing with feet apart, playing an acoustic guitar: the guitar body held against his belly, one hand strumming the strings, the other hand holding the neck of the guitar out in front of him to the right, eyes closed, singing happily with his mouth open, a few music notes floating in the air, wearing a blue denim jacket, a white t-shirt and black trousers",
     "pirate": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "standing with both feet on the ground, feet apart, front knee a little bent, holding a small curved sword pointed forward with one hand, other hand on his hip, laughing, black trousers tucked into black boots, a red and white striped shirt, a black vest, a black pirate hat and an eye patch",
 }
 
