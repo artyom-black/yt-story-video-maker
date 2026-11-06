@@ -19,26 +19,29 @@ FONT = os.path.join(P.ROOT, "fonts", "Anton-Regular.ttf")
 TAGLINE = "REAL HISTORY. ONE STICKMAN."
 
 PROFILE = (
-    f"{P.HEAD}Clean simple portrait of {P.KAI_ID}, drawn exactly like image 0 with the same face, hair and clothes, "
-    "from the waist up, big in the middle of a square picture, waving hello at the viewer with one small white hand, "
-    "a big friendly happy smile. Plain pure white background, nothing else. Square picture. No text, no letters.")
+    f"{P.HEAD}Clean simple icon of {P.KAI_ID}, drawn exactly like image 0 with the same face and hair: only his big "
+    "round head and the top of his shoulders, filling the middle of a square picture, one eyebrow raised and a curious "
+    "cheeky smile, looking straight at the viewer. No hands, no arms in the picture. Plain pure white background, "
+    "nothing else. Square picture. No text, no letters.")
 
 COSTUMES = {
-    "peasant": "a medieval peasant in a brown tunic carrying a sickle over his shoulder",
-    "knight": "a knight in shining grey armour holding a sword",
-    "pharaoh": "an Egyptian pharaoh with a blue and gold striped headdress and a white skirt",
-    "viking": "a Viking with a round helmet, a fur vest and a round wooden shield",
-    "roman": "a Roman soldier with a red cape, a helmet and a spear",
-    "caveman": "a caveman in a simple brown fur outfit holding a wooden club, only one person in the picture",
-    "pirate": "a pirate with an eye patch, a black hat and a striped shirt, holding a small sword",
+    "skate": "riding a skateboard with both arms out for balance, wearing a yellow hoodie",
+    "knight": "in shining grey armour, holding up a sword proudly",
+    "banana": "slipping on a banana peel, falling backwards with arms flailing and a shocked face, in an orange t-shirt",
+    "caveman": "a caveman in a brown fur outfit, holding a wooden club and scratching his head, confused",
+    "chef": "a chef with a tall white hat, tossing a pancake from a frying pan, happy",
+    "astronaut": "an astronaut in a white space suit with the helmet off under one arm, waving",
+    "pharaoh": "an Egyptian pharaoh with a blue and gold striped headdress, pointing forward like a boss",
+    "detective": "a detective in a brown coat and hat, looking through a big magnifying glass",
+    "pirate": "a pirate with an eye patch and a black pirate hat, holding up a small sword and laughing",
 }
 
 
 def costume_prompt(what):
-    return (f"{P.HEAD}One single full body {P.KAI_ID} dressed as {what}, walking to the right: seen from the side, "
-            "his body, face and feet all turned to the right side of the picture, looking to the right, a happy "
-            "confident face, the whole body from the top of his hair to his shoes visible. Clean bold even black "
-            "outlines, flat colours. Plain pure white background, nothing else, no ground, no shadow. "
+    return (f"{P.HEAD}One single full body {P.KAI_ID} {what}. A clear funny pose and a big clear "
+            "face, the whole body from the top of his hair to his shoes visible. He has exactly two thin black stick arms "
+            "and two thin black stick legs; each arm ends in one small round white cartoon hand with a black outline, "
+            "exactly like image 0. Clean bold even black outlines, flat bright colours. Plain pure white background, nothing else, no ground, no shadow. "
             "No text, no letters.")
 
 
