@@ -45,6 +45,13 @@ COSTUMES = {
                "pointing forward with one hand like a boss",
     "detective": "a detective wearing a long brown trench coat, a brown hat and brown trousers, holding a big round "
                  "magnifying glass up next to his face with one hand, squinting curiously",
+    "scientist": "a scientist wearing a white lab coat, dark trousers and safety goggles pushed up on his hair, "
+                 "holding up a glass flask with one hand that is bubbling over with green foam and a small puff of "
+                 "smoke, a surprised excited face",
+    "cowboy": "a cowboy wearing a brown cowboy hat, a red checked shirt, a brown vest, blue jeans and brown boots, "
+              "swinging a rope lasso in a loop above his head with one hand, a big confident grin",
+    "samurai": "a samurai wearing a dark blue kimono top, wide grey trousers and sandals, holding a katana sword "
+               "with both hands in front of him in a ready pose, a serious brave face",
     "pirate": "a pirate wearing a red and white striped shirt, a black vest, black trousers and boots, a black pirate "
               "hat and an eye patch, holding up a small curved sword and laughing",
 }
