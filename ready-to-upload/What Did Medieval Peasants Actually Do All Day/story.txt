@@ -364,7 +364,7 @@ KAI: At St Albans in 1331, the abbot took the townspeople's hand mills and broke
 PICTURE: inside the dim HUT in afternoon light, KAI hugging the COW's neck with a worried face, standing next to her
 MOOD: sad
 MUSIC: sad
-THEN: (at "animal") outdoors at the castle gate in afternoon sun, a stick figure servant in a red tunic leading a brown cow away on a rope, no other people
+THEN: (at "animal") detailed cartoon picture book drawing with bold black outlines, afternoon sun: on a dirt road leading up to the big stone CASTLE gate, a stick figure servant of the lord in a red tunic walks toward the gate holding a long rope in his hand, the rope is tied around the neck of a brown cow walking behind him, the servant has a plain white round head with two dot eyes and a small line mouth, only the servant and the cow, empty road, no other people
 THEN: (at "the lord could") close-up of the CASTLE on top of a green hill, blue sky, no people
 KAI: And one more. When a peasant died, the lord could take his family's best animal. It was called the heriot.
 
