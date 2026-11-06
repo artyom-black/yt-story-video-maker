@@ -66,11 +66,13 @@ def banner(paths, dst):
     im = Image.new("RGB", (2560, 1440), (255, 255, 255))
     figs = [trim(p) for p in paths]
     h = 380
+    ratio = sum(f.width / f.height for f in figs)
+    h = int(min(h, 1546 * 0.86 / ratio))                    # always some white space between them
     figs = [f.resize((max(1, int(f.width * h / f.height)), h), Image.LANCZOS) for f in figs]
     gap = (1546 - sum(f.width for f in figs)) / (len(figs) + 1)
     x = 507 + gap
     for f in figs:
-        im.paste(f, (int(x), 508 + (424 - h) // 2))
+        im.paste(f, (int(x), 508 + (424 - h) // 2 + (380 - h) // 3))
         x += f.width + gap
     im.save(dst)
 
