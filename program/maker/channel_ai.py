@@ -39,9 +39,7 @@ COSTUMES = {
                "orange flame and smoke starting at the tip of the stick, an amazed excited face, wearing a "
                "sleeveless brown fur tunic and long brown fur trousers",
     "chef": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "standing straight with both feet flat on the ground, legs in black trousers side by side, flipping a pancake: one hand holds a black frying pan by its handle out in front of him and a round golden pancake is in the air just above the pan, his face looking at the pancake, wearing a white chef jacket and a white chef hat",
-    "pharaoh": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "standing tall and proud, chin up, one arm stretched out straight in front of him pointing ahead "
-               "and giving an order, his face in profile looking where he points, wearing a blue and gold striped "
-               "headdress, a gold collar and a long white robe to his ankles with a gold belt, golden sandals",
+    "pharaoh": "a short cartoon stick figure: a big round head, short neck, short body and short legs, exactly the same size and shape as KAI always is, no taller. " + SIDE + "standing proud, one arm stretched straight forward to the right pointing ahead and giving an order, his face in profile looking where he points, wearing a low flat blue and gold striped headdress that hugs his head, a gold collar and a white robe down to his ankles with a gold belt, golden sandals",
     "detective": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "holding a small round magnifying glass right in front of his eye "
                  "with one hand and looking through it at something ahead of him, his eye looking big through the "
                  "glass, a curious face, wearing a long brown trench coat, a brown hat and brown trousers",
