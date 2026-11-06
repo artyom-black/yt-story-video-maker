@@ -29,8 +29,8 @@ COSTUMES = {
     "pharaoh": "an Egyptian pharaoh with a blue and gold striped headdress and a white skirt",
     "viking": "a Viking with a round helmet, a fur vest and a round wooden shield",
     "roman": "a Roman soldier with a red cape, a helmet and a spear",
-    "caveman": "a caveman in a fur outfit holding a wooden club",
-    "pirate": "a pirate with an eye patch, a black hat and a striped shirt",
+    "caveman": "a caveman in a simple brown fur outfit holding a wooden club, only one person in the picture",
+    "pirate": "a pirate with an eye patch, a black hat and a striped shirt, holding a small sword",
 }
 
 
@@ -77,6 +77,9 @@ def main(out, name, count):
     refs = [P.small_ref(P.FACE_REF, os.path.join(out, "_kai_ref.png"))]
     jobs = [(f"profile_{n}", PROFILE, 1024, 1024) for n in range(1, count + 1)]
     jobs += [(f"{k}_{n}", costume_prompt(v), 768, 1024) for k, v in COSTUMES.items() for n in range(1, count + 1)]
+    only = [w for w in os.environ.get("ONLY", "").replace(",", " ").split() if w]
+    if only:
+        jobs = [j for j in jobs if j[0].rsplit("_", 1)[0] in only]
     for lab, prompt, w, h in jobs:
         dst = os.path.join(out, f"{lab}.png")
         try:
