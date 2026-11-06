@@ -241,7 +241,7 @@ KAI: One hour in, my back hates me. Two hours in, my hands hate me too.
 # SCENE 28
 PICTURE: outdoors in the wheat field in bright sun, long rows of stick figure villagers bent over cutting wheat side by side, the bald REEVE walking behind them watching
 MOOD: tense
-THEN: (at "sheaf") outdoors in the wheat field, the bald REEVE pointing his stick at a single sheaf left on the ground, stern face, no other people
+THEN: (at "sheaf") bright simple cartoon drawing with bold black outlines: the lord's golden wheat field under a blue sky with white clouds, rows of tied sheaves standing, small drawn straw-roofed cottages far away, the bald REEVE pointing his long stick at a single sheaf of wheat lying on the ground, his face simple like the reference: two small dot eyes and a small flat mouth, no eyebrows, no other people
 THEN: (at "counting") outdoors in the wheat field in bright sun, the bald REEVE looking carefully along a row of sheaves, counting them, no other people
 KAI: And the reeve walks behind us all day, counting. Every sheaf of this field belongs to the lord.
 
