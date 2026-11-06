@@ -36,9 +36,9 @@ COSTUMES = {
                "hands, a fierce face, wearing a dark blue kimono top, wide grey trousers and sandals",
     "caveman": SIDE + "running fast with long strides, holding a wooden club over his shoulder, a scared face looking "
                "back over his shoulder, wearing a sleeveless brown fur tunic and long brown fur trousers",
-    "chef": SIDE + "running forward with a frying pan held out in front of him to catch a pancake that is flying "
-            "through the air above the pan, a worried funny face, wearing a white chef jacket, black trousers and "
-            "a short white chef hat",
+    "chef": SIDE + "running forward wearing a white chef jacket, black trousers and a white chef hat, holding a "
+            "black frying pan by its handle in one hand, stretched out in front of him; a round golden pancake is "
+            "flipping in the air just above the pan; a surprised funny face looking up at the pancake",
     "pharaoh": SIDE + "marching proudly with big steps, chin up, one arm thrown forward pointing ahead and giving "
                "orders, wearing a blue and gold striped headdress, a gold collar and a long white robe to his "
                "ankles with a gold belt, golden sandals",
