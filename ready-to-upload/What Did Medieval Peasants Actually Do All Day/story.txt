@@ -251,7 +251,7 @@ MOOD: tense
 TEXT: FINED
 THEN: (at "records") close-up inside the manor hall in daylight of an old open parchment roll lying on a wooden table, filled from top to bottom with many rows of tiny black scribbled handwriting like an old record list, a small drawn silver coin at the end of each row, a feather quill and an ink pot beside it, no people
 THEN: (at "manor court") inside a stone room in daylight, a tall wooden shelf full of old rolled parchment scrolls, no people
-THEN: (at "people fined") close-up of three small silver coins on a wooden table next to a rolled parchment, no people
+THEN: (at "people fined") close-up inside a stone manor hall of three small silver coins on a wooden table next to a half-open parchment roll filled with many rows of tiny black scribbled handwriting, no people
 KAI: Reap badly, and you can be fined at the manor court. We know because the court records still survive, full of people fined for bad work.
 
 # SCENE 30
