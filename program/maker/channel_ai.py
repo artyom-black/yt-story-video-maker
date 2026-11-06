@@ -39,10 +39,10 @@ COSTUMES = {
                "orange flame and smoke starting at the tip of the stick, an amazed excited face, wearing a "
                "sleeveless brown fur tunic and long brown fur trousers",
     "chef": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "standing straight with both feet flat on the ground, legs in black trousers side by side, flipping a pancake: one hand holds a black frying pan by its handle out in front of him and a round golden pancake is in the air just above the pan, his face looking at the pancake, wearing a white chef jacket and a white chef hat",
-    "pharaoh": SIDE + "standing tall and proud, chin up, one arm stretched out straight in front of him pointing ahead "
+    "pharaoh": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "standing tall and proud, chin up, one arm stretched out straight in front of him pointing ahead "
                "and giving an order, his face in profile looking where he points, wearing a blue and gold striped "
                "headdress, a gold collar and a long white robe to his ankles with a gold belt, golden sandals",
-    "detective": SIDE + "bending forward a little, holding a big round magnifying glass right in front of his eye "
+    "detective": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "holding a small round magnifying glass right in front of his eye "
                  "with one hand and looking through it at something ahead of him, his eye looking big through the "
                  "glass, a curious face, wearing a long brown trench coat, a brown hat and brown trousers",
     "musician": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "standing with feet apart, playing an acoustic guitar: the guitar body held against his belly, one hand strumming the strings, the other hand holding the neck of the guitar out in front of him to the right, eyes closed, singing happily with his mouth open, a few music notes floating in the air, wearing a blue denim jacket, a white t-shirt and black trousers",
@@ -73,31 +73,40 @@ def trim(path):
 
 
 def head_width(path):
-    """Width of Kai's white face circle: the biggest closed white shape in the top half of the picture."""
+    """Diameter of Kai's head circle. The white face is found, and a circle is fitted to its lower half (the chin
+    line), because hair, hats and headdresses cover the top of the head."""
+    import cv2
     import numpy as np
-    g = np.array(Image.open(path).convert("L"))
-    white = (g > 225).astype("uint8")
     from scipy import ndimage
-    lab, n = ndimage.label(white)
-    best = 0
+    g = np.array(Image.open(path).convert("L"))
+    lab, n = ndimage.label(g > 225)
+    best = None
     for i, sl in enumerate(ndimage.find_objects(lab), 1):
         ys, xs = sl
         h, w = ys.stop - ys.start, xs.stop - xs.start
         if ys.start == 0 or xs.start == 0 or ys.stop >= g.shape[0] or xs.stop >= g.shape[1]:
             continue
-        if ys.start > g.shape[0] * 0.55 or not 0.6 < w / h < 1.6:
+        if ys.start > g.shape[0] * 0.55 or not 0.5 < w / h < 1.8:
             continue
         area = int((lab[sl] == i).sum())
-        if area > 3000 and area > best:
-            best, width = area, w
-    return width if best else None
+        if area > 3000 and (best is None or area > best[0]):
+            best = (area, i)
+    if not best:
+        return None
+    m = cv2.morphologyEx((lab == best[1]).astype("uint8"), cv2.MORPH_CLOSE, np.ones((15, 15), "uint8"))
+    cs, _ = cv2.findContours(m, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    pts = max(cs, key=cv2.contourArea)[:, 0, :].astype(float)
+    low = pts[pts[:, 1] > pts[:, 1].mean()]
+    x, y = low[:, 0], low[:, 1]
+    cx, cy, c = np.linalg.lstsq(np.c_[2 * x, 2 * y, np.ones(len(x))], x ** 2 + y ** 2, rcond=None)[0]
+    return 2 * float(np.sqrt(c + cx ** 2 + cy ** 2))
 
 
 def banner(paths, dst, heads=None):
     """Like the big stick figure channels: a white banner with one row of characters, no text. Every Kai's head is
     the same size, they all stand on one ground line, and the row sits inside the 1546x423 centre every device shows."""
     im = Image.new("RGB", (2560, 1440), (255, 255, 255))
-    heads = heads or [head_width(p) for p in paths]       # a hat or headdress can hide part of the face: pass widths by hand
+    heads = heads or [head_width(p) for p in paths]
     known = [h for h in heads if h]
     target = sorted(known)[len(known) // 2] if known else 1
     figs = []
