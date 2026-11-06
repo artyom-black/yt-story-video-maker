@@ -201,7 +201,7 @@ KAI: Welcome to boon day. I'm a villein. The land I farm belongs to the lord. Pa
 # SCENE 23
 PICTURE: outdoors in the wheat field in morning sun, the whole village, stick figure men, women and children with sickles, walking into the lord's golden field together
 MOOD: curious
-THEN: (at "boon") detailed colourful cartoon drawing, like a picture book page: KAI at work in the lord's tall golden wheat field in warm morning sun, a few cut sheaves of wheat lying behind him, straw-roofed cottages and green trees in the distance, KAI has a bored tired face with his two dot eyes looking up at the sky, holding a small sickle upright: his small white hand grips the short wooden handle and the curved iron blade sticks up above his hand, his other thin stick arm down at his side, no other people
+THEN: (at "boon") bright simple cartoon drawing with bold black outlines: KAI at work in the lord's golden wheat field under a blue sky with white clouds, a few tied sheaves of wheat standing behind him, small drawn straw-roofed cottages far away, KAI has a bored tired face with his two dot eyes looking up, holding a small sickle upright: his small white hand grips the short wooden handle and the curved iron blade sticks up above his hand, his other thin stick arm down at his side, no other people
 THEN: (at "extra days") flat cartoon drawing of the village lane with simple drawn cottages in morning sun, KAI with an annoyed angry face and both hands on his hips: his two thin black stick arms bent at the elbows, his two small white hands resting on his hips, thin black stick legs, no other people
 KAI: And at harvest, the lord can call extra days. These are called boon days. Today is one of them.
 
