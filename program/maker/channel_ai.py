@@ -31,9 +31,11 @@ COSTUMES = {
              "small white hands show at the ends",
     "knight": "in shining grey armour from his neck down to his feet, his legs fully covered by grey leg armour, "
               "holding up a sword proudly",
-    "banana": "wearing a plain orange t-shirt and long blue jeans, caught in the moment he slips: his front shoe is "
-              "standing right on a small yellow banana peel and sliding forward, his body tipping backwards about to fall, "
-              "his other foot lifted off the ground, two arms only, thrown up in panic, a shocked face with his mouth open",
+    "banana": "wearing a plain orange t-shirt and long blue jeans, caught in the moment he slips on a banana peel: "
+              "his front shoe is on top of a small classic cartoon banana peel (a curved yellow banana skin with three "
+              "floppy yellow strips hanging open, about as long as his shoe, clearly a banana) and sliding forward, his "
+              "body tipping backwards, his back foot lifted off the ground, two arms only, thrown up in panic, a "
+              "shocked face with his mouth open",
     "caveman": "a caveman wearing a sleeveless brown fur tunic and long brown fur trousers, both arms bare thin black "
                "stick lines exactly the same, holding a wooden club in one hand and scratching his head with the other, confused",
     "chef": "a chef wearing a white chef jacket, black trousers and a short white chef hat, holding a frying pan and "
