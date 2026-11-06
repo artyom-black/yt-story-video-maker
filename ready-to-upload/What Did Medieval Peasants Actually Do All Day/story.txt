@@ -332,7 +332,7 @@ TEXT: 1 IN 10
 SFX: hit
 THEN: (at "barn") outdoors in afternoon sun, a big stone barn with a tall straw roof next to the small stone church, sheaves of wheat stacked at its open door, no people
 THEN: (at "to the church") close-up of the arched wooden door of a small stone church, open, sunlight, nobody there, no people
-THEN: (at "sheaf by sheaf") detailed cartoon picture book drawing with bold black outlines and soft warm shading, warm afternoon sun, green trees and soft clouds: a harvested field of short golden stubble with a dirt path with a straight row of ten big tied golden wheat sheaves standing up, nine of them plain and the tenth one at the end set a little apart with a small wooden church cross standing next to it, tall uncut golden wheat and small straw-roofed cottages far behind, blue sky, no people
+THEN: (at "sheaf by sheaf") detailed cartoon picture book drawing with bold black outlines and soft warm shading, warm afternoon sun, green trees and soft clouds: a harvested field of short golden stubble with a dirt path with a straight row of ten big tied golden wheat sheaves standing up, nine of them plain and the tenth one at the end set a little apart with one single small wooden church cross standing next to it, tall uncut golden wheat and small straw-roofed cottages far behind, blue sky, an empty field with nobody in it, no people, no children
 KAI: The tithe. One tenth of everything goes to the church, taken right here in the field, sheaf by sheaf, into the tithe barn.
 
 # SCENE 39
