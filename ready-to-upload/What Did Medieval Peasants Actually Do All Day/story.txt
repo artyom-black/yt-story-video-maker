@@ -202,7 +202,7 @@ KAI: Welcome to boon day. I'm a villein. The land I farm belongs to the lord. Pa
 PICTURE: outdoors in the wheat field in morning sun, the whole village, stick figure men, women and children with sickles, walking into the lord's golden field together
 MOOD: curious
 THEN: (at "boon") outdoors in the wheat field in morning sun, KAI rolling his eyes at the viewer, holding his sickle, no other people
-THEN: (at "extra days") outdoors in the village lane in morning sun, KAI with his arms crossed and an annoyed face, no other people
+THEN: (at "extra days") outdoors in the village lane in morning sun, KAI with his arms crossed and an annoyed face, thin black stick legs, no other people
 KAI: And at harvest, the lord can call extra days. These are called boon days. Today is one of them.
 
 # SCENE 24
