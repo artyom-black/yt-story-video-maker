@@ -343,7 +343,7 @@ THEN: (at "And the miller") inside the watermill, close-up of the big round grey
 KAI: Then the grain I keep must be ground at the lord's mill. And the miller keeps a share of my flour as payment.
 
 # SCENE 40
-PICTURE: detailed cartoon picture book drawing with bold black outlines and soft warm firelight shading: inside the HUT, KAI sitting at a rough wooden table grinding grain with a small hand mill, his one hand turning the short wooden handle on top of two flat round grey stones, his other hand pouring grain from a small bowl into the hole in the middle, white flour coming out around the stones, KAI looking over his shoulder nervously as if hiding, the small fire and straw beds behind him, no other people
+PICTURE: detailed cartoon picture book drawing with bold black outlines and warm light: inside the HUT, KAI kneeling on the earth floor in front of a big round grey stone hand mill, which is two thick round grey stones as wide as a cart wheel stacked on top of each other with a wooden stick handle standing up on top, KAI holding the stick handle with both hands and turning the top stone, white flour spilling out around the bottom stone onto a cloth, KAI looking sideways with a nervous face, straw beds and wooden walls behind, no fire, no table, no other people
 MOOD: shock
 THEN: (at "forbidden") outdoors in the village lane in afternoon sun, the bald REEVE wagging his finger at KAI, who is hiding the small hand mill behind his back
 THEN: (at "On many manors") outdoors in the village lane in afternoon sun, the bald REEVE with his arms crossed and a stern face, no other people
