@@ -90,7 +90,7 @@ THEN: (at "way out through") close-up of the straw roof of a small cottage with 
 KAI: No chimney. The smoke just finds its own way out through the straw roof. And the floor? Hard, beaten earth.
 
 # SCENE 9
-PICTURE: inside the dim HUT at dawn by the small fire, the WIFE handing KAI a dark round loaf of bread and a wooden cup
+PICTURE: inside the dim HUT at dawn, the small fire on the floor at the side, the WIFE holding out a dark round loaf of bread to KAI with both hands, KAI reaching out one hand to take it, his other arm down at his side, no other people
 MOOD: curious
 TEXT: BREAKFAST
 THEN: (at "rye") close-up inside the dim HUT at dawn of a dark round loaf of bread on a rough wooden table, no people, no lamp
