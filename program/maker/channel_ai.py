@@ -25,29 +25,33 @@ PROFILE = (
     "His arms hang down out of the picture, no hands visible. A happy friendly smile, looking straight at the viewer. "
     "Plain pure white background, nothing else. Square picture. No text, no letters.")
 
-SIDE = ("seen from the side, moving to the right of the picture, his face, body and feet turned to the right, "
-        "caught in the middle of the action: ")
+SIDE = ("side view facing the right of the picture: his face, body and feet turned to the right. He is NOT "
+        "running and NOT walking: he stands in place with both feet on the ground, busy doing his action, a normal "
+        "grown-up size: ")
 COSTUMES = {
-    "skate": SIDE + "riding fast on a skateboard, knees bent, leaning forward, arms out for balance, wind lines "
-             "behind him, an excited grin, wearing a yellow hoodie and long blue jeans",
-    "knight": SIDE + "charging forward at a run, one leg far in front of the other, holding his sword high above "
-              "his head, a brave shouting face, wearing shining grey armour from neck to feet",
-    "samurai": SIDE + "jumping forward through the air with both knees bent, swinging a katana sword with both "
-               "hands, a fierce face, wearing a dark blue kimono top, wide grey trousers and sandals",
-    "caveman": SIDE + "running fast with long strides, holding a wooden club over his shoulder, a scared face looking "
-               "back over his shoulder, wearing a sleeveless brown fur tunic and long brown fur trousers",
-    "chef": SIDE + "running forward wearing a white chef jacket, black trousers and a white chef hat, holding a "
-            "black frying pan by its handle in one hand, stretched out in front of him; a round golden pancake is "
-            "flipping in the air just above the pan; a surprised funny face looking up at the pancake",
-    "pharaoh": SIDE + "marching proudly with big steps, chin up, one arm thrown forward pointing ahead and giving "
-               "orders, wearing a blue and gold striped headdress, a gold collar and a long white robe to his "
-               "ankles with a gold belt, golden sandals",
-    "detective": SIDE + "sneaking forward on tiptoe, bent over, holding a big magnifying glass close to the ground "
-                 "and following a trail of footprints, a curious squinting face, wearing a long brown trench coat, "
-                 "a brown hat and brown trousers",
-    "pirate": SIDE + "leaping forward with one foot in the air, holding a small curved sword up high, laughing, "
-              "wearing a red and white striped shirt, a black vest, black trousers, boots, a black pirate hat and "
-              "an eye patch",
+    "skate": SIDE + "riding a skateboard, knees bent, leaning forward, arms out for balance, wind lines behind him, "
+             "an excited grin, wearing a yellow hoodie and long blue jeans",
+    "knight": SIDE + "in a fighting stance, front knee bent, holding the handle of his sword firmly with both hands "
+              "and swinging it forward in front of him, the sword clearly in his hands, a brave face, wearing shining "
+              "grey armour from neck to feet",
+    "samurai": SIDE + "in a calm ready stance, feet apart, knees slightly bent, holding a katana with both hands at the "
+               "handle, the blade raised up in front of his face pointing forward and up, a focused serious face, "
+               "wearing a dark blue kimono top, wide grey trousers and sandals",
+    "caveman": SIDE + "kneeling on one knee and rubbing a stick between both hands on a small piece of wood, a little "
+               "orange flame and smoke starting at the tip of the stick, an amazed excited face, wearing a "
+               "sleeveless brown fur tunic and long brown fur trousers",
+    "chef": SIDE + "standing at the same size as everyone, flipping a pancake: one hand holds a black frying pan by its "
+            "handle in front of him and the round golden pancake is flipping in the air just above the pan, his face "
+            "looking up at the pancake, wearing a white chef jacket, black trousers and a white chef hat",
+    "pharaoh": SIDE + "standing tall and proud, chin up, one arm stretched out straight in front of him pointing ahead "
+               "and giving an order, his face in profile looking where he points, wearing a blue and gold striped "
+               "headdress, a gold collar and a long white robe to his ankles with a gold belt, golden sandals",
+    "detective": SIDE + "bending forward a little, holding a big round magnifying glass right in front of his eye "
+                 "with one hand and looking through it at something ahead of him, his eye looking big through the "
+                 "glass, a curious face, wearing a long brown trench coat, a brown hat and brown trousers",
+    "pirate": SIDE + "in a sword fighting stance, front knee bent, one arm holding a small curved sword pointed "
+              "forward, the other arm up behind him, laughing, his legs fully covered by black trousers tucked into "
+              "black boots, wearing a red and white striped shirt, a black vest, a black pirate hat and an eye patch",
 }
 
 
