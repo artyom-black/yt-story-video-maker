@@ -19,20 +19,27 @@ FONT = os.path.join(P.ROOT, "fonts", "Anton-Regular.ttf")
 TAGLINE = "REAL HISTORY. ONE STICKMAN."
 
 PROFILE = (
-    f"{P.HEAD}Simple funny stick figure icon of {P.KAI_ID}, seen from the waist up, big in the middle of a square "
-    "picture, wearing his brown peasant tunic, holding a round loaf of bread up next to his face with one small white "
-    "hand and giving a thumbs up with the other, a cheeky happy smile. Plain pure white background, nothing else, "
-    "no ground, no shadow. Square picture. No text, no letters.")
+    f"{P.HEAD}Clean simple portrait of {P.KAI_ID}, drawn exactly like image 0 with the same face, hair and clothes, "
+    "from the waist up, big in the middle of a square picture, waving hello at the viewer with one small white hand, "
+    "a big friendly happy smile. Plain pure white background, nothing else. Square picture. No text, no letters.")
 
-BANNER = (
-    f"{P.HEAD}A very wide, short picture on a plain pure white background with nothing else: seven copies of "
-    f"{P.KAI_ID} standing in one row from left to right, evenly spaced, each one small enough to be seen whole from "
-    "head to feet, each a different person from history doing something funny: a medieval peasant swinging a sickle, "
-    "a knight tripping over his own sword, an Egyptian pharaoh in a striped headdress pointing proudly, a Viking with "
-    "a round helmet shouting and holding up a shield, a Roman soldier in a red cape marching, a caveman in a fur "
-    "holding a club and looking confused, and a pirate with an eye patch laughing. Every one has the same white round "
-    "head, messy brown hair, dot eyes and a funny clear face. No ground, no scenery, plain white background. "
-    "Very wide picture. No text, no letters.")
+COSTUMES = {
+    "peasant": "a medieval peasant in a brown tunic carrying a sickle over his shoulder",
+    "knight": "a knight in shining grey armour holding a sword",
+    "pharaoh": "an Egyptian pharaoh with a blue and gold striped headdress and a white skirt",
+    "viking": "a Viking with a round helmet, a fur vest and a round wooden shield",
+    "roman": "a Roman soldier with a red cape, a helmet and a spear",
+    "caveman": "a caveman in a fur outfit holding a wooden club",
+    "pirate": "a pirate with an eye patch, a black hat and a striped shirt",
+}
+
+
+def costume_prompt(what):
+    return (f"{P.HEAD}One single full body {P.KAI_ID} dressed as {what}, walking to the right: seen from the side, "
+            "his body, face and feet all turned to the right side of the picture, looking to the right, a happy "
+            "confident face, the whole body from the top of his hair to his shoes visible. Clean bold even black "
+            "outlines, flat colours. Plain pure white background, nothing else, no ground, no shadow. "
+            "No text, no letters.")
 
 
 def profile(src, dst):
@@ -42,34 +49,43 @@ def profile(src, dst):
     im.resize((800, 800), Image.LANCZOS).save(dst)
 
 
-def banner(src, dst, name):
-    """Like the big stick figure channels: a white banner with a row of characters, no text. The drawn strip fills
-    exactly the 1546x423 centre that every device shows; the rest of the 2560x1440 is plain white."""
-    strip = Image.open(src).convert("RGB")
+def trim(path):
+    """Cut the white around a drawn character."""
+    im = Image.open(path).convert("RGB")
+    gray = im.convert("L").point(lambda v: 255 if v < 235 else 0)
+    box = gray.getbbox()
+    return im.crop(box) if box else im
+
+
+def banner(paths, dst):
+    """Like the big stick figure channels: a white banner with one row of characters all walking the same way,
+    no text. The row sits inside the 1546x423 centre that every device shows."""
     im = Image.new("RGB", (2560, 1440), (255, 255, 255))
-    im.paste(strip.resize((1546, 424), Image.LANCZOS), (507, 508))
+    figs = [trim(p) for p in paths]
+    h = 380
+    figs = [f.resize((max(1, int(f.width * h / f.height)), h), Image.LANCZOS) for f in figs]
+    gap = (1546 - sum(f.width for f in figs)) / (len(figs) + 1)
+    x = 507 + gap
+    for f in figs:
+        im.paste(f, (int(x), 508 + (424 - h) // 2))
+        x += f.width + gap
     im.save(dst)
 
 
 def main(out, name, count):
     os.makedirs(out, exist_ok=True)
     refs = [P.small_ref(P.FACE_REF, os.path.join(out, "_kai_ref.png"))]
-    for n in range(1, count + 1):
-        for kind, prompt, w, h in (("profile", PROFILE, 1024, 1024), ("banner", BANNER, 1920, 528)):
-            raw = os.path.join(out, f"_{kind}_{n}_raw.png")
-            try:
-                P.draw(prompt, w, h, seed=random.randint(1, 10 ** 6), refs=refs, out=raw)
-            except Exception as ex:
-                print(f"{kind} {n} failed: {str(ex)[:150]}", flush=True)
-                continue
-            if kind == "profile":
-                profile(raw, os.path.join(out, f"profile_{n}.png"))
-            else:
-                banner(raw, os.path.join(out, f"banner_{n}.png"), name)
-            os.remove(raw)
-            print("drew", kind, n, flush=True)
+    jobs = [(f"profile_{n}", PROFILE, 1024, 1024) for n in range(1, count + 1)]
+    jobs += [(f"{k}_{n}", costume_prompt(v), 768, 1024) for k, v in COSTUMES.items() for n in range(1, count + 1)]
+    for lab, prompt, w, h in jobs:
+        dst = os.path.join(out, f"{lab}.png")
+        try:
+            P.draw(prompt, w, h, seed=random.randint(1, 10 ** 6), refs=refs, out=dst)
+            print("drew", lab, flush=True)
+        except Exception as ex:
+            print(f"{lab} failed: {str(ex)[:150]}", flush=True)
     os.remove(refs[0])
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else "KAI FILMS", int(sys.argv[3]) if len(sys.argv) > 3 else 4)
+    main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else "KAI FILMS", int(sys.argv[3]) if len(sys.argv) > 3 else 3)
