@@ -34,9 +34,7 @@ COSTUMES = {
     "knight": SIDE + "in a fighting stance, front knee bent, holding the handle of his sword firmly with both hands "
               "and swinging it forward in front of him, the sword clearly in his hands, a brave face, wearing shining "
               "grey armour from neck to feet",
-    "samurai": SIDE + "in a calm ready stance, feet apart, knees slightly bent, holding a katana with both hands at the "
-               "handle, the blade raised up in front of his face pointing forward and up, a focused serious face, "
-               "wearing a dark blue kimono top, wide grey trousers and sandals",
+    "samurai": "a full side profile view like a shadow puppet: we see him exactly from his left side, his chest, nose side of his face and toes all pointing to the right edge of the picture, never facing the viewer. " + SIDE + "in a ready fighting stance, front foot forward, knees slightly bent, holding a katana with both hands at the handle near his waist, the long blade pointing forward and up to the right, a focused serious face, wearing a dark blue kimono top, wide grey trousers and sandals",
     "caveman": SIDE + "kneeling on one knee and rubbing a stick between both hands on a small piece of wood, a little "
                "orange flame and smoke starting at the tip of the stick, an amazed excited face, wearing a "
                "sleeveless brown fur tunic and long brown fur trousers",
@@ -49,9 +47,7 @@ COSTUMES = {
     "detective": SIDE + "bending forward a little, holding a big round magnifying glass right in front of his eye "
                  "with one hand and looking through it at something ahead of him, his eye looking big through the "
                  "glass, a curious face, wearing a long brown trench coat, a brown hat and brown trousers",
-    "pirate": SIDE + "in a sword fighting stance, front knee bent, one arm holding a small curved sword pointed "
-              "forward, the other arm up behind him, laughing, his legs fully covered by black trousers tucked into "
-              "black boots, wearing a red and white striped shirt, a black vest, a black pirate hat and an eye patch",
+    "pirate": "a full side profile view like a shadow puppet: we see him exactly from his left side, his chest, nose side of his face and toes all pointing to the right edge of the picture, never facing the viewer. " + SIDE + "lunging forward in a sword fight, front knee bent and back leg straight, his sword arm stretched forward to the right holding a small curved sword, his other arm raised behind him, laughing, black trousers tucked into black boots, wearing a red and white striped shirt, a black vest, a black pirate hat and an eye patch",
 }
 
 
