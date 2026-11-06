@@ -94,11 +94,11 @@ def head_width(path):
     return width if best else None
 
 
-def banner(paths, dst):
+def banner(paths, dst, heads=None):
     """Like the big stick figure channels: a white banner with one row of characters, no text. Every Kai's head is
     the same size, they all stand on one ground line, and the row sits inside the 1546x423 centre every device shows."""
     im = Image.new("RGB", (2560, 1440), (255, 255, 255))
-    heads = [head_width(p) for p in paths]
+    heads = heads or [head_width(p) for p in paths]       # a hat or headdress can hide part of the face: pass widths by hand
     known = [h for h in heads if h]
     target = sorted(known)[len(known) // 2] if known else 1
     figs = []
