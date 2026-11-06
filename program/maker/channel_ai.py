@@ -19,18 +19,20 @@ FONT = os.path.join(P.ROOT, "fonts", "Anton-Regular.ttf")
 TAGLINE = "REAL HISTORY. ONE STICKMAN."
 
 PROFILE = (
-    f"{P.HEAD}Close-up portrait of {P.KAI_ID}, only his head and shoulders, big in the middle of a square picture, "
-    "a happy confident smile, looking straight at the viewer, wearing his brown peasant tunic. Behind him a plain bright "
-    "golden-yellow circle on a plain deep blue background, nothing else. Square picture. No text, no letters.")
+    f"{P.HEAD}Simple funny stick figure icon of {P.KAI_ID}, seen from the waist up, big in the middle of a square "
+    "picture, wearing his brown peasant tunic, holding a round loaf of bread up next to his face with one small white "
+    "hand and giving a thumbs up with the other, a cheeky happy smile. Plain pure white background, nothing else, "
+    "no ground, no shadow. Square picture. No text, no letters.")
 
 BANNER = (
-    f"{P.HEAD}A wide colourful cartoon picture: a very wide, short picture. Five copies of {P.KAI_ID}, small enough that each one is "
-    "seen whole from head to feet, standing side by side in a row on the right half of the picture, each one in a different time in history: a medieval peasant in a brown tunic holding a "
-    "sickle, a knight in shining armour with a sword, an Egyptian pharaoh with a striped headdress, a Viking with a "
-    "round helmet and a shield, and a Roman soldier with a red cape. Every one of them has the same white round "
-    "head, the same messy brown hair, two dot eyes and a big smile. Behind them a bright drawn landscape that changes "
-    "from a village with a castle to pyramids and the sea. The left half of the picture is open blue sky with a few "
-    "soft clouds and nothing else. Very wide picture. No text, no letters.")
+    f"{P.HEAD}A very wide, short picture on a plain pure white background with nothing else: seven copies of "
+    f"{P.KAI_ID} standing in one row from left to right, evenly spaced, each one small enough to be seen whole from "
+    "head to feet, each a different person from history doing something funny: a medieval peasant swinging a sickle, "
+    "a knight tripping over his own sword, an Egyptian pharaoh in a striped headdress pointing proudly, a Viking with "
+    "a round helmet shouting and holding up a shield, a Roman soldier in a red cape marching, a caveman in a fur "
+    "holding a club and looking confused, and a pirate with an eye patch laughing. Every one has the same white round "
+    "head, messy brown hair, dot eyes and a funny clear face. No ground, no scenery, plain white background. "
+    "Very wide picture. No text, no letters.")
 
 
 def profile(src, dst):
@@ -41,26 +43,11 @@ def profile(src, dst):
 
 
 def banner(src, dst, name):
-    """The drawn strip fills exactly the 1546x423 centre that every device shows; the rest of the 2560x1440
-    (seen only on TVs) is a soft blurred stretch of the same picture."""
+    """Like the big stick figure channels: a white banner with a row of characters, no text. The drawn strip fills
+    exactly the 1546x423 centre that every device shows; the rest of the 2560x1440 is plain white."""
     strip = Image.open(src).convert("RGB")
-    im = strip.resize((2560, 1440), Image.LANCZOS).filter(ImageFilter.GaussianBlur(40))
+    im = Image.new("RGB", (2560, 1440), (255, 255, 255))
     im.paste(strip.resize((1546, 424), Image.LANCZOS), (507, 508))
-    d = ImageDraw.Draw(im)
-    left, size = 560, 190
-    font = ImageFont.truetype(FONT, size)
-    while d.textlength(name, font=font) > 680 and size > 90:
-        size -= 10
-        font = ImageFont.truetype(FONT, size)
-    small = ImageFont.truetype(FONT, 50)
-    y_name = 560
-    for dx, dy in [(x, y) for x in range(-8, 9, 4) for y in range(-8, 9, 4)]:
-        d.text((left + dx, y_name + dy), name, font=font, fill="black")
-    d.text((left, y_name), name, font=font, fill="#ffd23f")
-    y_tag = y_name + size + 30
-    for dx, dy in [(x, y) for x in range(-4, 5, 4) for y in range(-4, 5, 4)]:
-        d.text((left + dx, y_tag + dy), TAGLINE, font=small, fill="black")
-    d.text((left, y_tag), TAGLINE, font=small, fill="white")
     im.save(dst)
 
 
