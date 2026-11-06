@@ -377,7 +377,7 @@ KAI: So if I die, the lord gets my cow. Rude.
 // ===================== MYTH 1 =====================
 
 # SCENE 44
-PICTURE: outdoors in the village lane in afternoon sun, KAI with his arms crossed and a fierce face, no other people
+PICTURE: flat cartoon drawing of the village lane with simple drawn cottages in afternoon sun, KAI with an annoyed angry face and both hands on his hips: his two thin black stick arms bent at the elbows, his two small white hands resting on his hips, thin black stick legs, no other people
 MOOD: curious
 TEXT: MYTH
 SFX: hit
