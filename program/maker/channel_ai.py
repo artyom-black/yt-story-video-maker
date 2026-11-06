@@ -25,15 +25,17 @@ PROFILE = (
     "nothing else. Square picture. No text, no letters.")
 
 COSTUMES = {
-    "skate": "riding a skateboard with both arms out for balance, wearing a yellow hoodie and long blue jeans that "
-             "cover his legs down to his shoes",
+    "skate": "side view, riding fast on a skateboard to the right: knees bent, body leaning forward, one foot on the "
+             "front of the board and one foot on the back, both arms stretched out for balance, wind lines behind him, an "
+             "excited grin, wearing a yellow hoodie and long blue jeans; the hoodie sleeves cover his arms and only two "
+             "small white hands show at the ends",
     "knight": "in shining grey armour from his neck down to his feet, his legs fully covered by grey leg armour, "
               "holding up a sword proudly",
-    "banana": "wearing a plain orange t-shirt and long blue jeans, slipping on a banana peel like in an old cartoon: "
-              "one foot shooting up into the air, his body falling backwards, both arms flailing, a shocked face with "
-              "his mouth open, and under his other shoe one small normal-sized peeled yellow banana skin",
-    "caveman": "a caveman wearing a brown fur tunic and long brown fur trousers that cover his legs down to his feet, "
-               "holding a wooden club in one hand and scratching his head with the other, confused",
+    "banana": "wearing a plain orange t-shirt and long blue jeans, caught in the moment he slips: his front shoe is "
+              "standing right on a small yellow banana peel and sliding forward, his body tipping backwards about to fall, "
+              "his other foot lifted off the ground, two arms only, thrown up in panic, a shocked face with his mouth open",
+    "caveman": "a caveman wearing a sleeveless brown fur tunic and long brown fur trousers, both arms bare thin black "
+               "stick lines exactly the same, holding a wooden club in one hand and scratching his head with the other, confused",
     "chef": "a chef wearing a white chef jacket, black trousers and a short white chef hat, holding a frying pan and "
             "flipping a pancake in the air, happy",
     "pharaoh": "an Egyptian pharaoh wearing a blue and gold striped headdress, a gold collar on his chest and a long "
