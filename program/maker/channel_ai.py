@@ -19,11 +19,12 @@ FONT = os.path.join(P.ROOT, "fonts", "Anton-Regular.ttf")
 TAGLINE = "REAL HISTORY. ONE STICKMAN."
 
 PROFILE = (
-    f"{P.HEAD}Clean simple icon of {P.KAI_ID}: exactly the same head, face, smile and messy brown hair as image 0, "
-    "seen from the chest up and centred in a square picture. He wears a plain bright red t-shirt with short sleeves "
-    "and a round neck; his shoulders are drawn by the t-shirt, a thin black neck line joins the head to the collar. "
-    "His arms hang down out of the picture, no hands visible. A happy friendly smile, looking straight at the viewer. "
-    "Plain pure white background, nothing else. Square picture. No text, no letters.")
+    f"{P.HEAD}Clean simple icon of {P.KAI_ID}: exactly the same head, face, smile and messy brown hair as image 0. "
+    "Seen from the chest up, centred in a square picture, the head big and the body small below it like a cute "
+    "stick figure: a short thin black neck line, then narrow small shoulders in a bright yellow hoodie with the hood "
+    "down behind his neck and two drawstrings, the hoodie only as wide as his head, simple and neat with bold clean "
+    "outlines. A happy friendly smile, looking straight at the viewer. No hands. Plain pure white background, "
+    "nothing else. Square picture. No text, no letters.")
 
 SIDE = ("side view facing the right of the picture: his face, body and feet turned to the right. He is NOT "
         "running and NOT walking: he stands in place with both feet on the ground, busy doing his action, a normal "
