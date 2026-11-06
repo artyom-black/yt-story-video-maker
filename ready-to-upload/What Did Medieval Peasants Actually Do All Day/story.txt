@@ -300,7 +300,7 @@ KAI: Bread, lots of bread. Cheese. Maybe a bit of fish or bacon, and something t
 # SCENE 35
 PICTURE: outdoors at the edge of the wheat field at noon, KAI sitting with his cheeks puffed full of bread like a hamster, giving a thumbs up, no other people
 MOOD: funny
-THEN: (at "custom") bright simple cartoon drawing with bold black outlines: the lord's golden wheat field under a blue sky with white clouds, rows of tied sheaves standing, small drawn straw-roofed cottages far away, the REEVE with a completely bald round white head and no hair at all, a short black beard, two small dot eyes and a small flat mouth, no stick this time, he has only two hands and both of them hold an open parchment with writing on it, reading it aloud to four stick figure villagers listening around him
+THEN: (at "custom") bright cartoon drawing with bold black outlines, warm noon sun: the edge of the lord's harvest field, short golden stubble with neat rows of tied wheat sheaves, tall uncut golden wheat behind, small straw-roofed cottages far away under a blue sky; the REEVE with a completely bald round white head, a short black beard, two small dot eyes and a small mouth, handing a round loaf of bread to a hungry tired stick figure villager, two more villagers waiting in a line behind with empty hands, everyone has two arms and two hands
 THEN: (at "And it was") close-up of an old parchment roll covered in neat lines and a red wax seal, lying on a wooden table, no people
 THEN: (at "and the lord knew") outdoors in the wheat field in afternoon sun, a few stick figure villagers happily cutting wheat fast after lunch
 KAI: Not a feast, but it's free. And it was a written custom of the manor. Hungry workers do bad work, and the lord knew it.
