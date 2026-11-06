@@ -70,14 +70,15 @@ def banner(paths, dst):
     no text. The row sits inside the 1546x423 centre that every device shows."""
     im = Image.new("RGB", (2560, 1440), (255, 255, 255))
     figs = [trim(p) for p in paths]
-    h = 380
-    ratio = sum(f.width / f.height for f in figs)
-    h = int(min(h, 1546 * 0.86 / ratio))                    # always some white space between them
-    figs = [f.resize((max(1, int(f.width * h / f.height)), h), Image.LANCZOS) for f in figs]
+    # one common scale for all, so a tall hat does not make a character smaller than the others
+    k = 380 / max(f.height for f in figs)
+    k = min(k, 1546 * 0.86 / sum(f.width for f in figs))       # always some white space between them
+    figs = [f.resize((max(1, int(f.width * k)), max(1, int(f.height * k))), Image.LANCZOS) for f in figs]
+    h = max(f.height for f in figs)
     gap = (1546 - sum(f.width for f in figs)) / (len(figs) + 1)
     x = 507 + gap
     for f in figs:
-        im.paste(f, (int(x), 508 + (424 - h) // 2 + (380 - h) // 3))
+        im.paste(f, (int(x), 508 + (424 - h) // 2 + (h - f.height)))   # all standing on one line
         x += f.width + gap
     im.save(dst)
 
