@@ -404,7 +404,7 @@ KAI: And we don't work every single day. Sundays and many church holy days were 
 // ===================== 4 PM =====================
 
 # SCENE 47
-PICTURE: bright simple cartoon drawing with bold black outlines: the lord's golden wheat field under a hot blue sky with a big yellow sun, rows of tied sheaves behind, small drawn straw-roofed cottages far away; KAI bent forward cutting wheat, one small white hand holding a small curved sickle by its short wooden handle against the wheat stalks, his other small white hand grabbing a bunch of wheat, a tired face with two dot eyes and a small closed wavy mouth, no teeth, a few drops of sweat flying from his head, thin black stick arms and legs, no other people
+PICTURE: bright simple cartoon drawing with bold black outlines: the lord's golden wheat field under a hot blue sky with a big yellow sun, rows of tied sheaves behind, small drawn straw-roofed cottages far away; side view of KAI bent forward cutting wheat, he has exactly two arms and two hands, both in front of his body: his front hand holds a small sickle with a thin curved hook-shaped iron blade and a short wooden handle, cutting the stalks low down, his other hand grabs a bunch of standing wheat above the blade; nothing behind his back; a tired face with two dot eyes and a small closed wavy mouth, no teeth, a few drops of sweat flying from his head, thin black stick arms and legs, one single sun in the sky, no other people
 MOOD: tense
 MUSIC: tense
 TEXT: 4 PM
