@@ -78,7 +78,7 @@ KAI: Six AM. Waking up is easy, because I share a bedroom with a cow.
 # SCENE 7
 PICTURE: inside the dim HUT at dawn, a wide view of the long room: the family's straw beds at one end, the small fire in the middle, the COW in its pen at the other end, no people
 MOOD: curious
-THEN: (at "warm") inside the dim HUT at dawn, KAI holding his hands toward the COW and smiling, warm air drawn as soft wavy lines, no other people
+THEN: (at "warm") inside the dim HUT at dawn, KAI standing next to the COW and holding both hands out toward it to warm them, smiling, warm air drawn as soft wavy lines, his tunic is plain with no line down the middle, no other people
 THEN: (at "at the other") inside the dim HUT, the COW and a few chickens in the animal pen behind the low wooden fence, no people
 KAI: This is a longhouse. People at one end, animals at the other. Why? The cow keeps the house warm, and nobody can steal her at night.
 
