@@ -27,8 +27,10 @@ PROFILE = (
 COSTUMES = {
     "skate": "riding a skateboard with both arms out for balance, wearing a yellow hoodie",
     "knight": "in shining grey armour, holding up a sword proudly",
-    "banana": "wearing a plain orange t-shirt with short sleeves and blue jeans, slipping on a banana peel that lies "
-              "on the ground under his front foot, leaning backwards with both arms flailing up and a shocked face",
+    "banana": "wearing a plain orange t-shirt with short sleeves and blue jeans, slipping on a banana peel: a big "
+              "bright yellow peeled-open banana skin, its four yellow flaps spread out like a star, lying flat on the "
+              "ground right under his front shoe and clearly visible, he leans backwards with both arms flailing up "
+              "and a shocked face",
     "caveman": "a caveman wearing a brown fur tunic that reaches his knees, standing straight on two thin black stick "
                "legs with black shoes, holding a wooden club in one hand and scratching his head with the other, confused",
     "chef": "a chef wearing a white chef jacket, black trousers and a short white chef hat, holding a frying pan and "
