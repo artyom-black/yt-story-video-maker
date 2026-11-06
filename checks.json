@@ -1,0 +1,4154 @@
+{
+ "costume_9e3fba81.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "cast_cow_2993965d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "cast_wife_6695d256.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "cast_son_9eea38e1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "cast_reeve_444ef317.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "cast_neighbour_001b856e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_001_86a18cdb.png": {
+  "status": "bad",
+  "problems": [
+   "does not show what the line is about",
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_001x2_c14c9edc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_002_d3408b56.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_002x2_778d0a21.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_003_c2369f46.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none",
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_003x2_4c47a4b7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_004_75838bc8.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_004x2_14815cc9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_005_c6e2d8d2.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "54 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_005x2_840896ee.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_006_7efadd4d.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "should be indoors but is drawn outside"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_006x2_735335f6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_007_4ee3d2d1.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_007x2_3384d54e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_008_5b3de263.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_008x2_05146ae1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_009_59794c55.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_009x2_866b3aa1.png": {
+  "status": "bad",
+  "problems": [
+   "modern things in a medieval picture"
+  ],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_010_5f58b32a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_010x2_eb236d4f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_011_196f8037.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_011x2_c6d44c34.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_012_184d1635.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_012x2_8d8a1a53.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_013_86f7dc9f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_014_4faecbeb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_014x2_ac49f090.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_015_00234085.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_015x2_55d2acbf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_016_f82ba757.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_016x2_68576fc2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_017_bc2216de.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_017x2_cf873b52.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_018_244c809d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_018x2_502261ad.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_019_ec0e7411.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_019x2_f2990824.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_020_613f5283.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_020x2_1b05650f.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "10 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_021_34c63486.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_022_c742c480.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_022x2_91f79dd0.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_023_3dc4d81e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_023x2_b1df7ad7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_024_0e6689c1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_024x2_d6b2e453.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_025_2c24f7b9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_025x2_53736830.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_026_209946a8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_026x2_5b5eeeea.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_027_1d88c9b5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_027x2_40a1b231.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_028_96cf9bef.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_028x2_24bce7dd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_029_47dbb191.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_029x2_12bd25cc.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_030_d2e6d978.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_030x2_3d2f52ea.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_031_24e3a6dc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_031x2_1ec20309.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_032_68940155.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_032x2_be81aef6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_033_e318119a.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_033x2_7b6ae076.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_034_4179d362.png": {
+  "status": "bad",
+  "problems": [
+   "a face mixed with an animal or object"
+  ],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_034x2_b5554ac6.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_035_ba13b6e8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_035x2_619bc8a6.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_036_783649c7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_036x2_ee2b67ca.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_037_723106bf.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_037x2_a43cfa0c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_038_bdacfefd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_038x2_4bfb9e52.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "should be indoors but is drawn outside"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_039_d396a650.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_039x2_e2b0c749.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_040_f4965658.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_040x2_8c147754.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "2 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_041_cf8f3d6c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_041x2_5f8dc16c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_042_e2011778.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_042x2_adeccd0c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_043_67763b5f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_043x2_147acdfa.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_044_3d4821cc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_045_4bae252c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_045x2_3ef6eee7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_046_a0d3c75e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_046x2_d8d4b4ee.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_047_c0b22c3a.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_047x2_f4b61a56.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_048_b84e0bc7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_048x2_f84515de.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_049_7f3588fa.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_049x2_612aefc0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_050_468cab7c.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_050x2_8a743855.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_051_15b35c30.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_051x2_12cb3113.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_052_380ce6b5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_052x2_9cdbb9cb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_053_f00541d0.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none",
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_053x2_c87e07a7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_054_898e1211.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_054x2_bd556491.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_055_e41dd234.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_055x2_20398314.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_056_b4e75797.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_056x2_d0a0b5f8.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_057_cf3b2ac2.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_057x2_71e4eccd.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "should be indoors but is drawn outside"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_058_6c5cfe1a.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "written text in the picture"
+  ],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_058x2_aa1c2429.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_059_4cf25fcc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_059x2_8f163add.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_060_3e75f4ca.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_060x2_e1b38c8b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_061_c9649b69.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_061x2_11c40811.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_062_78a18f64.png": {
+  "status": "bad",
+  "problems": [
+   "does not show what the line is about",
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_062x2_caac1aa1.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_063_92013a32.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 8
+ },
+ "scene_063x2_575ae375.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_064_413698f0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_064x2_3032fb0d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_002_ac9d0a50.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_007_31578cbd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_026x2_93132e7f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_029_adacd066.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_034_290d36f5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_052x2_faecf57a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_009x2_e6bdce99.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_014x2_a45c7744.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_032_8cd6f76c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 8
+ },
+ "scene_034x2_c54bb562.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 8
+ },
+ "scene_035_e567df74.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 8
+ },
+ "costume_432a769c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "cast_cow_0d27765a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "cast_wife_556c07c7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "cast_son_8b94d512.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "cast_reeve_5fc0ae62.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "cast_neighbour_61482a34.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "cast_priest_ab15e6d2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_001_0e1351cb.png": {
+  "status": "bad",
+  "problems": [
+   "does not show what the line is about",
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_001x2_795dd110.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_002_563c1328.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_002x2_e84436c6.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_003_62c23c62.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_003x2_35340792.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_004_a29eb05b.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_004x2_fe2e4062.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_005_d258b73e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_005x2_3e985b4f.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_006_5d02bf58.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_006x2_8c91aee7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_007_9e5d507a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_007x2_9ce8a03c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_008_9c1cfaa8.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_008x2_092986b2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_009_9b638877.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_009x2_c1c1fcae.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_010_d8caaec4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_010x2_bff74c35.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_011_3fbc08c9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_011x2_a798eab1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_012_2200d2d8.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_012x2_a23ee902.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_013_14673b1f.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_013x2_430bdb16.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_014_3b3f6ec1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_014x2_715fff4d.png": {
+  "status": "bad",
+  "problems": [
+   "fire burning in a place that makes no sense"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_015_7b199655.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_015x2_76f0aac4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_016_76bffb4b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_016x2_121f8bde.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_017_49568458.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_017x2_fd2daccf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_018_55c1c4df.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_018x2_922842d5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_019_05912084.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_019x2_1b3c3746.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_020_7bbfceee.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_020x2_2c35b8e5.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_021_a3cead82.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_021x2_aebdbc64.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_022_a568203f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_022x2_d3559cc5.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_023_5504b661.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_023x2_778366f4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_024_4932d23c.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "9 people in a picture that should have none"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_024x2_807b1619.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_025_610ce50b.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_025x2_518407bc.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_026_01b438d9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_026x2_319747de.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "6 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_027_9a5d66f8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_027x2_78f7d077.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_028_757f2830.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_028x2_05706b1b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_029_5f805e45.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_029x2_37587906.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none",
+   "written text in the picture"
+  ],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_030_a5a22080.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_030x2_c7084e5f.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_031_1808494b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_031x2_ebfed586.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_032_f9f6763c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_032x2_4d87e0b2.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_033_881819a9.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_033x2_d1531e8b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_034_d5c2117f.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_034x2_113519bd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_035_ac86afb0.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_035x2_2cd44684.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "written text in the picture"
+  ],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_036_1894185f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_036x2_3dd01108.png": {
+  "status": "bad",
+  "problems": [
+   "something floating in the air",
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_037_7acfc467.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_037x2_d044eed1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_038_c1f0db54.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_038x2_c3486e54.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_039_808bd29f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_039x2_c11ef137.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "2 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_040_e32a28b0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_040x2_d74170bb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_041_4d621341.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_041x2_c6167100.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_042_2a4b807f.png": {
+  "status": "bad",
+  "problems": [
+   "fire burning in a place that makes no sense",
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_042x2_2c723d85.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_043_51d34525.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_043x2_e90ad6ac.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_044_695bf7b9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_044x2_9ac1706c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_045_e3f329dc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_045x2_10568716.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_046_4ed258ce.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_046x2_0034c555.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_047_75b65e6e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_047x2_21829331.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_048_8ef724ab.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_048x2_ca8cb248.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_049_0c520d16.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_049x2_561992e4.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_050_c74f7e80.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_050x2_107ad33d.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_051_95eb271b.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_051x2_7a24f033.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_052_64e9a119.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_052x2_ea8ffaad.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_053_a1996cac.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_053x2_d27b45ca.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_054_cdd17d5c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_054x2_b52b905e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_055_db1f6eb3.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_055x2_70d0279a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_056_f73b1e76.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_056x2_d25c33aa.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_057_e82ad66e.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_057x2_5a671a86.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_058_7426491b.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_058x2_1589b56e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_059_05405e0c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_059x2_0c6f98cc.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_060_a3c30362.png": {
+  "status": "bad",
+  "problems": [
+   "modern things in a medieval picture",
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_060x2_f207d563.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_061_d640b347.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_061x2_c22c4217.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_062_ff353a7e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_062x2_2fb455a0.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_063_23b0245b.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 9
+ },
+ "scene_063x2_5eee6807.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 9
+ },
+ "scene_064_6b770a9c.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)",
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_064x2_2229bd04.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_065_56a3c753.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_065x2_80a2e7de.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 9
+ },
+ "scene_001_a956e392.png": {
+  "status": "bad",
+  "problems": [
+   "does not show what the line is about",
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_001x2_330738c9.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_002_af78f33a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_002x2_4fca19bc.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_003_be5f4f4f.png": {
+  "status": "bad",
+  "problems": [
+   "does not show what the line is about",
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_003x2_c7e6e9e6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004_323a2b1a.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "5 people in a picture that should have none",
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_004x2_e4894686.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_005_38ed994f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_005x2_0467ac12.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_006_63ce076b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x2_4230a83b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_007_4d32e7b3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_007x2_380ffa11.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008_030736be.png": {
+  "status": "bad",
+  "problems": [
+   "fire burning in a place that makes no sense"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_008x2_b0315b42.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_009_98d2d2b6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_009x2_dae0d0d5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_010_cef16eca.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_010x2_16be62cb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_011_2e1aa17b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_011x2_c341ebf7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_012_fd7a59d6.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_012x2_06e81804.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_013_506912a3.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_013x2_c2e8358f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_014_13f720e2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_014x2_fe8439b3.png": {
+  "status": "bad",
+  "problems": [
+   "fire burning in a place that makes no sense"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_015_bf97f93f.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_015x2_d319332a.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_016_cdbcdd4f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016x2_d0c31f34.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017_8c0f09e8.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_017x2_376690f6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_018_b1be96e8.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_018x2_13dbe858.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019_029ae07b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019x2_4ca3f556.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_020_b2f68a60.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_020x2_01f27609.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021_d56c7122.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x2_9dd45038.png": {
+  "status": "bad",
+  "problems": [
+   "fire burning in a place that makes no sense"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_022_deac03e5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_022x2_20425289.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_023_259aafff.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_023x2_6b888ac4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_024_95f60b49.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_024x2_bf2b1f4e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_025_7fb51234.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025x2_a44dacdf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026_4fe87fa4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026x2_c89e6c60.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_027_3d700efe.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_027x2_5320389f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_028_872fdb64.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_028x2_78031d0a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_029_3bd5c8f9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_029x2_b1e390d7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030_e96b1849.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_030x2_ad6a130f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_031_1f4fa7ad.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_031x2_45edf916.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032_0de3e701.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x2_c73373bb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_033_0faa1f5f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_033x2_2ad51f47.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034_24469c42.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_034x2_76725e0f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035_90b69a31.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_035x2_9c8aa653.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036_0632442e.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_036x2_bb711df5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_037_acaa7184.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_037x2_7699ad2c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_038_cf562417.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_038x2_a90b727f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_039_c0c49865.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_039x2_aa9a850f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040_eac94f02.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x2_58fda960.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_041_907af524.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_041x2_d9fdd1ae.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042_10a3beb7.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_042x2_871aabf2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_043_50d2e316.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043x2_f960ce5d.png": {
+  "status": "bad",
+  "problems": [
+   "fire burning in a place that makes no sense"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_044_a86ce03f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_044x2_0fd7061d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045_3d18e3b9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_045x2_6e793e42.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_046_59722760.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_046x2_a20fe4d4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_047_3b99893a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_047x2_40f647c8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_048_b8e60267.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_048x2_52aa64d4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_049_3ae1d5f9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_049x2_a51ffdd5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_050_27b2674d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_050x2_8a425325.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_051_72c23010.png": {
+  "status": "bad",
+  "problems": [
+   "sizes are unreal (a giant or tiny person, giant food)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_051x2_6933d9c7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_052_fa9f387c.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_052x2_ff06832e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_053_117d900b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x2_b2e78cae.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_054_cf416baf.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_054x2_3fc31ea1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_055_326da4c3.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_055x2_5b8d9cef.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_056_46834861.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_056x2_c1372d83.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "written text in the picture"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_057_77b28e96.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_057x2_2c5ee978.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_058_b5279413.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058x2_31d7ef9a.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_059_d6669a4a.png": {
+  "status": "bad",
+  "problems": [
+   "fire burning in a place that makes no sense"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_059x2_1f8db543.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_060_4edfe211.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_060x2_21178e4e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061_c97d594d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x2_abdd0b87.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_062_4d072c22.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062x2_72ce5108.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_063_3c079ddd.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_063x2_3fcd5451.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_064_4f42f36f.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_064x2_db28b0b6.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_065_b2e70707.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_065x2_fdcb1886.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_004_7cba62f4.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "25 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_008_98c00750.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_018_1b3550d1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019_8158c026.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019x2_0ad182df.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_020_878f2ec8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_020x2_c7683378.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028_51c47b82.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028x2_4a160fe5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036x2_4e0725b7.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "written text in the picture"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_040x2_199aa59a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_041_b4b9b51d.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "14 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_043x2_9329ba51.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045_4aa978b8.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "6 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_047_cdc750f8.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_052_3bc2a669.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_056x2_361a607b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057x2_3a8e2bba.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_058x2_068793ac.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_059x2_ab3f84a2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_064_2cd951af.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_010x2_b0b0bc1e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_014x2_2f7f380c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036x2_96e320a7.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "written text in the picture"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_041_00f79736.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "17 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_045_0367e332.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_045x2_a6f9ba72.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_048x2_f3bd0851.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_055_7c94c03d.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_059_40723604.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_064_e508d866.png": {
+  "status": "bad",
+  "problems": [
+   "does not show what the line is about",
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_004_1929d478.png": {
+  "status": "bad",
+  "problems": [
+   "fire burning in a place that makes no sense",
+   "6 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_005x2_e0092bce.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_010x2_da62ee34.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_041_3f26abaa.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "should be indoors but is drawn outside"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_045_cd001a0c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_048x2_f9e6851a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_055_9ae6aa40.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_004_831ea748.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_010x2_8f827f93.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "10 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_041_7b61a3f0.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_045_0dce755a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_048x2_9b4a10b5.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_055_af9bf9a5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_010x2_7ff28e0b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045_fdad6795.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_010x2_36c8daf2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045_8bf2dd2a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "cast_reeve_37c1bf08.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_001_83169640.png": {
+  "status": "bad",
+  "problems": [
+   "does not show what the line is about",
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_001x3_2e445651.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_001x4_23b7c351.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_002x3_f9773ebf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_003x3_99e18ecc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_003x4_f86f4f1e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x3_5d959c3b.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "2 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_004x4_f00da33f.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_005x3_7c02425c.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "17 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_006x3_5dc37ba4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_007x3_02d10b6e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008x3_8658762d.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "10 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_010x3_2d79b8e5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_012x3_ba5002ba.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x3_373b3f46.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x4_99525d70.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_014x3_c23357c4.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_014x4_64c0c5f8.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "8 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_015x3_1b159f16.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "10 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_016x3_8acc54f3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017_fefa92de.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_017x3_1c2d855d.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "4 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_018_da1c8dfd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019_90829eac.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019x2_aa316756.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_019x3_fbd0f6b8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_020_42856aa6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_020x2_ca1ec93d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_020x3_aea92d78.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_020x4_f21055a0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_021_7856499a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x3_7fcc0b31.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_022x3_ead073dc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_022x4_d605df37.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_023x3_1cf963e8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_024x3_5ecca5fa.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_024x4_0a0ffec7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_025x3_07326fd2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026x3_c84844f7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027x2_c62f4cdb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027x3_1c8df48b.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_028_b988a39c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028x2_ff4bdb1b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_028x3_d146f426.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_029x3_31e89283.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_029x4_51312f8a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030x3_2853303e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x3_164e9bbf.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "two moons or two suns"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_033_79da9b44.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_033x3_b44d5729.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034x3_bb5794b4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_035x2_e5bc38db.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_035x3_b40c94f0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035x4_2c8ca569.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036x3_39a9f262.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_037x3_ff171aa8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_038x3_ef614919.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_038x4_7e136fac.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_039x3_106707e5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x2_846c43a7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x3_b5833d5f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x4_d40720eb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_041_c7692839.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_041x3_ca1619d4.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "3 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_041x4_087122c9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_041x5_3914fb91.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042x3_c084f8fe.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "13 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_043_fb6a0c8d.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_044x2_a16b83ea.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_044x3_f19bc0ea.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x3_9de7393a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_045x4_275ad776.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_046x3_cd01d953.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "9 people in a picture that should have none"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_046x4_e57a8758.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_047x3_116ec9b7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_047x4_4b449d46.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_048x3_a1c823b4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_048x4_f4aabdfa.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_049x3_6b22b1b6.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "9 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_052_880a7420.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_052x2_06031927.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_052x3_60256841.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "7 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_053x3_72e39ffd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054_e5a0bd20.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054x3_19a97c68.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_055x3_76e4b110.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_055x4_d8d630ca.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_056_dc20cb18.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_056x3_e18acffa.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_056x4_fbfdd17d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057x3_81f6309e.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_057x4_4101c995.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_058x3_f790fb1b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_059_3abeb5ed.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_059x2_eb13b3a1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_059x3_31ef1a7a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_059x4_85ccd02f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_060x3_0eebc08b.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_060x4_a85f56eb.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "8 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_061x3_8abbf4cc.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_062x3_7c006673.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062x4_fd1bdeb9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_063x3_8a5777aa.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_064x3_a86a4bdc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_065x3_8d36083a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x3_19b7995e.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_005x3_8e215624.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008x3_68d99869.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_014x4_f4f2f215.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_015x3_392dbba7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_018_d2518796.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_019x2_8035eb9c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_020x3_f5c00d03.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x3_7f29dbc6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025x3_b3631ac1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027x2_4f9f740c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_033_ab757324.png": {
+  "status": "bad",
+  "problems": [
+   "sizes are unreal (a giant or tiny person, giant food)",
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_041_8a75a464.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_041x3_bd4eab58.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042x3_3956b260.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_044x2_dec63c60.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_046x3_0e7d755e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_049x3_e1d729d5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_052x3_beb012c2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_056x4_1a76d2ca.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_059x4_822c64c1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_060x3_b03e4008.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_060x4_702ffad5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_061x3_fa292150.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x3_655c982a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x3_41a79ab5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_033_ab6581ac.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_038x3_7b4152a4.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_042x3_b47da5ba.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_044x2_f07da535.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_033_3c605165.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_038x3_0e093c99.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "should be indoors but is drawn outside"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_033_4f20b4ea.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_033_6bebb033.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_001_0f5a83bf.png": {
+  "status": "bad",
+  "problems": [
+   "does not show what the line is about",
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_001x3_fb3d3ef6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_025_56d11de9.png": {
+  "status": "bad",
+  "problems": [
+   "background looks like a real photo, not our cartoon style"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_026x3_886bf5e9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x3_ab85f2ff.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035x2_f2925c6d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_038_528104a1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_044x3_4c3d2984.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_048x4_8994449e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_049_959b45a8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_052x3_b63e86e9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054_650f52f4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_054x3_ce7548e8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_055x3_fa855b5e.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "1 people in a picture that should have none"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_059x2_e39fc670.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_060x3_c7d20498.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_001_8bd11efd.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_052x3_89e92754.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054_a1b28aab.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054x3_091c7850.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_055x3_3839c076.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_052x3_44289030.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "11 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054_cb5be5f6.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054x3_a4eaef1e.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_052x3_7ef9e4ea.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054_b1cb7491.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054_12b33b32.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ }
+}
