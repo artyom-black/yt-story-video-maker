@@ -275,7 +275,7 @@ KAI: Ten AM. A drink break. Yes, that's water. Keep that in mind.
 PICTURE: outdoors in the wheat field in bright sun, the NEIGHBOUR cutting wheat next to KAI and grinning at him
 MOOD: funny
 THEN: (at "song") outdoors in the wheat field in bright sun, a line of stick figure villagers cutting wheat with open mouths, singing, small musical notes drawn above them
-THEN: (at "we joke") outdoors in the wheat field in bright sun, KAI and the NEIGHBOUR (short sleeves, thin black stick arms and two white hands) laughing together, both with arms down at their sides, no other people
+THEN: (at "we joke") outdoors in the wheat field in bright sun, KAI and the NEIGHBOUR standing side by side, both smiling with a simple closed line smile, no teeth, the NEIGHBOUR's blue tunic has short sleeves and below them two thin black stick arms hang a little away from his body, each ending in one small white hand exactly like KAI's hands, no other people
 KAI: This is my neighbour. We work side by side, we joke, sometimes the whole line sings a song to keep the speed.
 
 // ===================== NOON: THE LORD'S FOOD =====================
