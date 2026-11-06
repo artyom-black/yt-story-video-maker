@@ -1,0 +1,66 @@
+{
+ "length": 417.0800000000002,
+ "music": [
+  {
+   "mood": "tense",
+   "start": 0.1,
+   "end": 37.13,
+   "file": "sound_candidates/mood_mysterious/staring-at-the-night-sky__168.mp3"
+  },
+  {
+   "mood": "funny",
+   "start": 37.13,
+   "end": 109.68999999999998,
+   "file": "sound_candidates/mood_playful/little-bells__506.mp3"
+  },
+  {
+   "mood": "tense",
+   "start": 109.68999999999998,
+   "end": 201.89999999999998,
+   "file": "sound_candidates/mood_mysterious/staring-at-the-night-sky__168.mp3"
+  },
+  {
+   "mood": "funny",
+   "start": 201.89999999999998,
+   "end": 225.11999999999998,
+   "file": "sound_candidates/mood_playful/little-bells__506.mp3"
+  },
+  {
+   "mood": "tense",
+   "start": 225.11999999999998,
+   "end": 260.64,
+   "file": "sound_candidates/mood_mysterious/staring-at-the-night-sky__168.mp3"
+  },
+  {
+   "mood": "sad",
+   "start": 260.64,
+   "end": 292.71999999999997,
+   "file": "sound_candidates/mood_sad/ode-to-loneliness__520.mp3"
+  },
+  {
+   "mood": "tense",
+   "start": 292.71999999999997,
+   "end": 328.9600000000001,
+   "file": "sound_candidates/mood_mysterious/staring-at-the-night-sky__168.mp3"
+  },
+  {
+   "mood": "calm",
+   "start": 328.9600000000001,
+   "end": 369.8600000000001,
+   "file": "sound_candidates/mood_pastoral/special-days__19.mp3"
+  },
+  {
+   "mood": "tense",
+   "start": 369.8600000000001,
+   "end": 403.14000000000016,
+   "file": "sound_candidates/mood_mysterious/staring-at-the-night-sky__168.mp3"
+  },
+  {
+   "mood": "funny",
+   "start": 403.14000000000016,
+   "end": 417.0800000000002,
+   "file": "sound_candidates/mood_playful/little-bells__506.mp3"
+  }
+ ],
+ "sounds": 48
+}
