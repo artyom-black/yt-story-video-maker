@@ -419,7 +419,7 @@ MOOD: calm
 TEXT: GLEANING
 THEN: (at "poor") outdoors in the cut wheat field in afternoon sun, two small stick figure children picking up fallen stalks from the ground
 THEN: (at "every stalk") outdoors in the cut field in afternoon sun, close-up of single fallen wheat stalks lying on the stubble, no people
-THEN: (at "is gleaning") outdoors in the cut field in afternoon sun, KAI smiling and explaining, both arms down at his sides, only two hands, no other people
+THEN: (at "is gleaning") bright simple cartoon drawing with bold black outlines, afternoon sun, blue sky, small drawn straw-roofed cottages far away: a harvested field of short golden stubble with a few tied sheaves standing; KAI smiling and explaining, holding up one single fallen wheat stalk in one small white hand to show it, his other arm down at his side; both his arms and both his legs are the same thin black lines, with small white hands and black shoes, no white arms or legs; behind him, far away, an old stick figure woman in a grey headscarf bending to pick up stalks
 KAI: Behind us come the gleaners, picking up every stalk we dropped. This is gleaning. Village rules often allowed only the poor, the old and the young to do it.
 
 # SCENE 49
