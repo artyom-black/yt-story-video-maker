@@ -34,7 +34,7 @@ COSTUMES = {
     "knight": SIDE + "in a fighting stance, front knee bent, holding the handle of his sword firmly with both hands "
               "and swinging it forward in front of him, the sword clearly in his hands, a brave face, wearing shining "
               "grey armour from neck to feet",
-    "samurai": "a full side profile view like a shadow puppet: we see him exactly from his left side, his chest, nose side of his face and toes all pointing to the right edge of the picture, never facing the viewer. " + SIDE + "in a ready fighting stance, front foot forward, knees slightly bent, holding a katana with both hands at the handle near his waist, the long blade pointing forward and up to the right, a focused serious face, wearing a dark blue kimono top, wide grey trousers and sandals",
+    "samurai": "a full side profile view like a shadow puppet: we see him exactly from his left side, his chest, nose side of his face and toes all pointing to the right edge of the picture, never facing the viewer. " + SIDE + "with a big round head and a short small cartoon body like every Kai (the head is a quarter of his height), in a ready fighting stance, front foot forward, knees slightly bent, holding a short katana with both hands at the handle near his waist, the long blade pointing forward and up to the right, a focused serious face, wearing a dark blue kimono top, wide grey trousers and sandals",
     "caveman": SIDE + "kneeling on one knee and rubbing a stick between both hands on a small piece of wood, a little "
                "orange flame and smoke starting at the tip of the stick, an amazed excited face, wearing a "
                "sleeveless brown fur tunic and long brown fur trousers",
@@ -73,14 +73,41 @@ def trim(path):
     return im.crop(box) if box else im
 
 
+def head_width(path):
+    """Width of Kai's white face circle: the biggest closed white shape in the top half of the picture."""
+    import numpy as np
+    g = np.array(Image.open(path).convert("L"))
+    white = (g > 225).astype("uint8")
+    from scipy import ndimage
+    lab, n = ndimage.label(white)
+    best = 0
+    for i, sl in enumerate(ndimage.find_objects(lab), 1):
+        ys, xs = sl
+        h, w = ys.stop - ys.start, xs.stop - xs.start
+        if ys.start == 0 or xs.start == 0 or ys.stop >= g.shape[0] or xs.stop >= g.shape[1]:
+            continue
+        if ys.start > g.shape[0] * 0.55 or not 0.6 < w / h < 1.6:
+            continue
+        area = int((lab[sl] == i).sum())
+        if area > 3000 and area > best:
+            best, width = area, w
+    return width if best else None
+
+
 def banner(paths, dst):
-    """Like the big stick figure channels: a white banner with one row of characters all walking the same way,
-    no text. The row sits inside the 1546x423 centre that every device shows."""
+    """Like the big stick figure channels: a white banner with one row of characters, no text. Every Kai's head is
+    the same size, they all stand on one ground line, and the row sits inside the 1546x423 centre every device shows."""
     im = Image.new("RGB", (2560, 1440), (255, 255, 255))
-    figs = [trim(p) for p in paths]
-    # one common scale for all, so a tall hat does not make a character smaller than the others
-    k = 380 / max(f.height for f in figs)
-    k = min(k, 1546 * 0.86 / sum(f.width for f in figs))       # always some white space between them
+    heads = [head_width(p) for p in paths]
+    known = [h for h in heads if h]
+    target = sorted(known)[len(known) // 2] if known else 1
+    figs = []
+    for p, hw in zip(paths, heads):
+        f = trim(p)
+        k = target / hw if hw else 1
+        figs.append(f.resize((max(1, int(f.width * k)), max(1, int(f.height * k))), Image.LANCZOS))
+    k = 400 / max(f.height for f in figs)
+    k = min(k, 1546 * 0.88 / sum(f.width for f in figs))       # always some white space between them
     figs = [f.resize((max(1, int(f.width * k)), max(1, int(f.height * k))), Image.LANCZOS) for f in figs]
     h = max(f.height for f in figs)
     gap = (1546 - sum(f.width for f in figs)) / (len(figs) + 1)
