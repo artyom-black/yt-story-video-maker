@@ -534,7 +534,7 @@ THEN: (at "dirty pond") close-up of murky green pond water with mud and old brow
 KAI: They just weren't stupid. Don't drink from a dirty pond. Drink from clean springs and wells.
 
 # SCENE 62
-PICTURE: outdoors behind the house in daylight, KAI holding the wooden cup of ale next to a sack of barley, explaining with a raised finger, no other people
+PICTURE: detailed cartoon picture book drawing with bold black outlines, warm daylight, behind a straw-roofed cottage: KAI standing next to one open sack full of barley grain, explaining; he has exactly two thin black stick arms with one small white hand at the end of each: his right hand holds up a small wooden cup of ale, his left hand is raised with one finger pointing up; both arms are thin black lines, no white arms, no other people
 MOOD: curious
 THEN: (at "food") outdoors behind the house in daylight, the WIFE stirring the big wooden barrel of ale with a long paddle, steam rising, smiling
 THEN: (at "made from barley") outdoors behind the house, close-up of an open sack full of barley grain on the ground, no people
