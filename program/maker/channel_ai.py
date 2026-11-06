@@ -38,16 +38,16 @@ COSTUMES = {
     "caveman": SIDE + "kneeling on one knee and rubbing a stick between both hands on a small piece of wood, a little "
                "orange flame and smoke starting at the tip of the stick, an amazed excited face, wearing a "
                "sleeveless brown fur tunic and long brown fur trousers",
-    "chef": SIDE + "standing at the same size as everyone, flipping a pancake: one hand holds a black frying pan by its "
-            "handle in front of him and the round golden pancake is flipping in the air just above the pan, his face "
-            "looking up at the pancake, wearing a white chef jacket, black trousers and a white chef hat",
+    "chef": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "standing straight with both feet flat on the ground, legs in black trousers side by side, flipping a pancake: one hand holds a black frying pan by its handle out in front of him and a round golden pancake is in the air just above the pan, his face looking at the pancake, wearing a white chef jacket and a white chef hat",
     "pharaoh": SIDE + "standing tall and proud, chin up, one arm stretched out straight in front of him pointing ahead "
                "and giving an order, his face in profile looking where he points, wearing a blue and gold striped "
                "headdress, a gold collar and a long white robe to his ankles with a gold belt, golden sandals",
     "detective": SIDE + "bending forward a little, holding a big round magnifying glass right in front of his eye "
                  "with one hand and looking through it at something ahead of him, his eye looking big through the "
                  "glass, a curious face, wearing a long brown trench coat, a brown hat and brown trousers",
-    "pirate": "a full side profile view like a shadow puppet: we see him exactly from his left side, his chest, nose side of his face and toes all pointing to the right edge of the picture, never facing the viewer. " + SIDE + "lunging forward in a sword fight, front knee bent and back leg straight, his sword arm stretched forward to the right holding a small curved sword, his other arm raised behind him, laughing, black trousers tucked into black boots, wearing a red and white striped shirt, a black vest, a black pirate hat and an eye patch",
+    "viking": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "standing with feet apart, holding a round wooden shield in one hand and blowing a long curved horn held to his mouth with the other hand, cheeks puffed, wearing a round grey helmet with two small horns, a brown fur vest over a green tunic, brown trousers and boots",
+    "archer": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "standing side-on with feet apart, aiming a wooden bow forward to the right: one hand holds the middle of the bow out in front, the other hand pulls the string back to his cheek with an arrow on it, one eye closed, wearing a green hood, a green tunic, brown trousers and boots",
+    "pirate": "his body the same size as always: a big round head on a normal stick figure body, the head about a quarter of his whole height, " + SIDE + "standing with both feet on the ground, feet apart, front knee a little bent, holding a small curved sword pointed forward with one hand, other hand on his hip, laughing, black trousers tucked into black boots, a red and white striped shirt, a black vest, a black pirate hat and an eye patch",
 }
 
 
