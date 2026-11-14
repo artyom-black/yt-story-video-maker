@@ -342,7 +342,7 @@ KAI: Meet Shanidar One. A Neanderthal who lived about fifty thousand years ago i
 # SCENE 33
 PICTURE: outdoors at the edge of a pine forest at dusk, a grey wolf creeping between the trees, no people
 MOOD: tense
-THEN: (at "couldn't hear") inside a cave lit by one single small campfire on the left side, the NEANDERTHAL sitting by the fire looking the wrong way, unaware, no other people
+THEN: (at "couldn't hear") inside a cave lit by one single small campfire on the left side, the NEANDERTHAL with his messy grey hair and grey beard sitting by the fire looking the wrong way, unaware, no other people
 THEN: (at "On his own") outdoors in a snowy valley at dusk, an empty fur lying alone on the snow, no people
 KAI: He couldn't hunt. He couldn't hear danger coming. On his own, he wouldn't last a week.
 
@@ -638,11 +638,11 @@ THEN: (at "most human thing") close-up of a wooden bowl of warm soup on a flat s
 THEN: (at "took care of each other") inside the CAVE in warm firelight, the FRIEND putting a fur over KAI's shoulders, the HEALER smiling, exactly three people, no other people
 THEN: (at "Forty thousand years ago") inside the CAVE in warm firelight, KAI, the HEALER and the FRIEND laughing together with closed mouths by the fire, no other people
 THEN: (at "your best medicine") close-up of a bundle of green herbs lying on a flat rock in firelight, no people
-THEN: (at "your friends") inside the CAVE in warm firelight, the FRIEND and the HEALER sitting on both sides of KAI by the fire, all smiling, no other people
+THEN: (at "your friends") inside the CAVE in warm firelight, the FRIEND and the HEALER sitting on both sides of KAI, the campfire in front of them, all smiling, exactly three people, no other people
 KAI: But most of all, they did the most human thing there is. They took care of each other. Forty thousand years ago, your best medicine wasn't a plant. It was your friends.
 
 # SCENE 63
-PICTURE: outdoors at the opening of the CAVE at sunset, KAI standing and waving goodbye to the viewer with one raised hand, his other arm down at his side, a big closed-mouth smile, no other people
+PICTURE: outdoors at the opening of the CAVE at sunset, the campfire far behind him on the left, KAI standing and waving goodbye to the viewer with one raised hand, his other arm down at his side, a big closed-mouth smile, no other people
 MOOD: curious
 MUSIC: calm
 TEXT: KISSING?

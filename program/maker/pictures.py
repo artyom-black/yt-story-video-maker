@@ -428,10 +428,13 @@ def run(story_path, assets):
     # pictures you asked to redo when clicking Run (each request is done once)
     for name, path, *_ in todo:
         lab = label(_key(path)).lower()
-        if lab in redo_requests() and redone.get(lab) != os.path.basename(path) and os.path.exists(path) \
+        tag = os.path.basename(path) + "@" + os.environ.get("GITHUB_RUN_ID", "")
+        if lab in redo_requests() and redone.get(lab) != tag and os.path.exists(path) \
                 and not path.endswith("_kept.png"):
             os.remove(path)
-            redone[lab] = "pending"
+            counts = redone.setdefault("_times", {})
+            counts[lab] = counts.get(lab, 1 if lab in redone else 0) + 1
+            redone[lab] = "pending"     # a new seed every time, so asking again gives a new picture
 
     done, stopped = 0, ""
     tried, rejected, checker_on = 0, 0, True   # safety: a checker that rejects almost everything is switched off
@@ -458,7 +461,7 @@ def run(story_path, assets):
                 done += 1
                 continue
             lab = label(_key(path)).lower()
-            extra = 104729 * (1 if redone.get(lab) == "pending" else 0)
+            extra = 104729 * (redone.get("_times", {}).get(lab, 1) if redone.get(lab) == "pending" else 0)
             if not os.path.exists(path) and desc is not None:
                 path, prompt = upgrade(path, prompt)
                 key = os.path.basename(path)
@@ -514,7 +517,7 @@ def run(story_path, assets):
                 checks[key] = {"status": "ok" if best[1]["ok"] else "bad" if best[1].get("severe") else "kept_with_problems",
                                "problems": best[1]["problems"], "tries": attempt + 1, "v": CHECK_VERSION}
                 if redone.get(lab) == "pending":
-                    redone[lab] = key
+                    redone[lab] = key + "@" + os.environ.get("GITHUB_RUN_ID", "")
             else:                                    # drawn yesterday, but the check ran out of allowance
                 res = check(path, desc, bool(re.search(r"\bKAI\b", desc)))
                 if res["ok"]:
