@@ -35,7 +35,7 @@ PICTURE: inside the CAVE in firelight, KAI lying flat on a fur by the fire with 
 MOOD: sad
 THEN: (at "just lie") close-up of an empty fur bed on the sandy floor of the CAVE beside the campfire, no people
 THEN: (at "most people") outdoors in the VALLEY in daylight, KAI looking at the viewer with one eyebrow raised and a doubtful face, both arms down at his sides, no other people
-THEN: (at "hope for the best") inside the CAVE in firelight, KAI lying on a fur with his fingers crossed and his eyes closed, no other people
+THEN: (at "hope for the best") inside the CAVE, KAI with his messy brown hair lying on a fur with his fingers crossed and his eyes closed, there is one single campfire far away on the left, no other people
 KAI: So what happened? Did they just lie down and hope for the best? That's what most people think.
 
 # SCENE 3
@@ -127,7 +127,7 @@ KAI: So I go to the one person everybody goes to: the old woman who knows the pl
 PICTURE: inside the CAVE in firelight, the HEALER crushing green leaves on a flat stone with a round rock, no other people
 MOOD: curious
 THEN: (at "Nobody will") close-up of a round grey rock crushing green leaves into a paste on a flat stone, no people
-THEN: (at "which plants") inside the CAVE in firelight, the HEALER pressing a green leaf paste onto KAI's hand, KAI watching with a curious face, no other people
+THEN: (at "which plants") inside the CAVE in firelight, the HEALER pressing a green leaf paste onto KAI's hand, KAI with his messy brown hair watching with a curious face, no other people
 THEN: (at "forty thousand years") outdoors in the VALLEY in daylight, KAI shrugging with both hands up and a funny face, no other people
 KAI: She doesn't know what germs are. Nobody will for forty thousand years. But she knows which plants make a wound heal.
 
@@ -638,7 +638,7 @@ THEN: (at "most human thing") close-up of a wooden bowl of warm soup on a flat s
 THEN: (at "took care of each other") inside the CAVE in warm firelight, the FRIEND putting a fur over KAI's shoulders, the HEALER smiling, exactly three people, no other people
 THEN: (at "Forty thousand years ago") inside the CAVE in warm firelight, KAI, the HEALER and the FRIEND laughing together with closed mouths by the fire, no other people
 THEN: (at "your best medicine") close-up of a bundle of green herbs lying on a flat rock in firelight, no people
-THEN: (at "your friends") inside the CAVE in warm firelight, the FRIEND and the HEALER sitting on both sides of KAI, the campfire in front of them, all smiling, exactly three people, no other people
+THEN: (at "your friends") inside the CAVE in warm firelight, three people sitting in a row: the FRIEND on the left, KAI with his messy brown hair and no beard in the middle, the HEALER on the right, the campfire in front of them, all smiling, no other people
 KAI: But most of all, they did the most human thing there is. They took care of each other. Forty thousand years ago, your best medicine wasn't a plant. It was your friends.
 
 # SCENE 63
