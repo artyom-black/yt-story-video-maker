@@ -164,7 +164,7 @@ PICTURE: inside the CAVE in firelight, KAI sitting by the fire holding his swoll
 MOOD: funny
 TEXT: PROBLEM 2
 SFX: hit
-THEN: (at "killing me") close-up of KAI's face with a swollen cheek, one tear running down, inside the CAVE in firelight, no other people
+THEN: (at "killing me") close-up of KAI's head and shoulders, his face with a swollen cheek and one tear running down, his body in his brown fur tunic, inside the CAVE, the campfire small and far behind him on the left, no other people
 THEN: (at "a dentist") outdoors at the opening of the CAVE in daylight, KAI looking around in panic, one hand on his cheek, the campfire a few steps to his left side, far from his legs, no other people
 THEN: (at "forty thousand years") outdoors in the VALLEY in daylight, KAI on his knees holding his cheek and looking up at the sky in despair, no other people
 KAI: Problem two. My tooth. It's killing me. And there won't be a dentist for, oh, about forty thousand years.
@@ -320,7 +320,7 @@ KAI: Problem three, the big one. I fall while hunting and break my leg. In the w
 # SCENE 31
 PICTURE: outdoors on the rocky hillside in daylight, KAI sitting alone on the ground holding his leg, a sad face, the CAVE far away on the cliff behind him, no other people
 MOOD: sad
-THEN: (at "leave the weak") outdoors on a path in the VALLEY in daylight, three stick figure people seen from behind walking away into the distance, no other people
+THEN: (at "leave the weak") outdoors on a path in the VALLEY in daylight, three stick figure people in brown fur clothes seen from behind walking away into the distance, no other people
 THEN: (at "most people think") outdoors in the VALLEY in daylight, KAI looking at the viewer with one eyebrow raised, both arms down at his sides, no other people
 THEN: (at "for the wolves") outdoors on the rocky hillside at dusk, two grey wolves standing on a rock watching, no people
 KAI: So did ancient humans just leave the weak behind? Leave me on this hill for the wolves? That's what most people think.
@@ -353,7 +353,7 @@ MUSIC: calm
 THEN: (at "into his forties") inside a cave lit by one single small campfire on the left side, the NEANDERTHAL sitting by the fire as an older man with white hair and a white beard, smiling, no other people
 THEN: (at "fed him") close-up of a wooden bowl of food on a flat stone next to a small campfire, no people
 THEN: (at "took care of him") inside a cave lit by one single small campfire on the left side, the NEANDERTHAL sleeping under a fur by the fire, a stick figure man with short spiky black hair sitting next to him on watch holding a spear, no other people
-THEN: (at "for years") inside a cave lit by one single small campfire on the left side, the stick figure woman with long straight blond hair putting a fur over the NEANDERTHAL's shoulders, no other people
+THEN: (at "for years") inside a cave lit by one single small campfire on the left side, the stick figure woman with long straight blond hair in a brown fur dress putting a fur over the NEANDERTHAL's shoulders, no other people
 KAI: Instead, he lived into his forties. That means for years, someone fed him, protected him, and took care of him.
 
 # SCENE 35
@@ -465,14 +465,14 @@ THEN: (at "the bone around both holes") close-up of the edge of a round hole in 
 THEN: (at "Twice") outdoors in the VALLEY in daylight, KAI holding up two fingers with a shocked face, no other people
 THEN: (at "In France") outdoors in a green valley in France in daylight, a few long wooden houses with straw roofs, no people
 THEN: (at "seven thousand years") close-up of an old skull lying on plain brown earth, two round holes in the top, no people
-THEN: (at "He survived") outdoors by a wooden house in daylight, a stick figure man with short spiky grey hair in a plain brown wool tunic standing and smiling, a cloth wrapped around his head, no other people
+THEN: (at "He survived") outdoors by a simple round Stone Age hut with a thatched roof, no windows and no chimney, in daylight, a stick figure man with short spiky grey hair in a plain brown wool tunic standing and smiling, a cloth wrapped around his head, no other people
 KAI: In France, a man was buried about seven thousand years ago with two big holes cut into his skull. And the bone around both holes grew back. He survived. Twice.
 
 # SCENE 46
-PICTURE: inside a wooden hut in warm firelight, a stick figure man with short spiky grey hair lying on a fur with his head on a rolled fur, a stick figure woman with long straight blond hair kneeling beside him holding a small sharp grey stone tool, no other people
+PICTURE: inside a Stone Age hut lit by one small fire far away on the right side, a stick figure man with short spiky grey hair in a plain brown wool tunic lying on a fur with his head on a rolled fur, a stick figure woman with long straight blond hair kneeling beside him holding a small sharp grey stone tool, no other people
 MOOD: tense
 THEN: (at "No anesthesia") close-up of a small sharp grey flint tool lying on a fur, no people
-THEN: (at "skilled surgeon") inside a wooden hut in firelight, the stick figure woman with long straight blond hair in a brown fur dress washing her hands in a wooden bowl of water, she is alone, nobody else
+THEN: (at "skilled surgeon") inside a wooden hut in firelight, the stick figure woman with long straight blond hair in a brown fur dress washing her hands in a wooden bowl of clear water, no fire near the bowl, she is alone, nobody else
 THEN: (at "two years") inside a wooden hut in daylight, the stick figure man with short spiky grey hair in a plain brown wool tunic sitting up on his fur with a cloth wrapped around his head, smiling, no other people
 THEN: (at "six months") inside a wooden hut by firelight, the stick figure man with short spiky grey hair lying on his fur with a cloth around his head, resting, no other people
 KAI: No infection. No anesthesia. Just a skilled surgeon and a sharp stone. The holes took at least six months to heal, maybe two years.
@@ -513,7 +513,7 @@ MOOD: happy
 MUSIC: calm
 TEXT: 70
 THEN: (at "around seventy") close-up of the old stick figure man, completely bald with a long white beard, in a brown fur tunic, smiling by the fire, no other people
-THEN: (at "hunter-gatherers") outdoors in the VALLEY in daylight, the old stick figure man, completely bald with a long white beard, walking with a wooden stick, no other people
+THEN: (at "hunter-gatherers") outdoors in the VALLEY in daylight, the old stick figure man, completely bald with a long white beard, in a brown fur tunic and fur trousers, walking with a wooden stick, no other people
 THEN: (at "made it through childhood") outdoors in the VALLEY in daylight, a stick figure young man with short spiky black hair in a brown fur tunic carrying a spear, smiling, no other people
 THEN: (at "Not thirty") outdoors in the VALLEY in daylight, KAI wagging one finger no with a smug face, no other people
 THEN: (at "forty-five") inside the CAVE in firelight, a grey-haired stick figure woman with long straight grey hair sitting by the fire sewing a fur, no other people
@@ -566,7 +566,7 @@ PICTURE: outdoors at the opening of the CAVE in daylight, KAI standing and looki
 MOOD: funny
 THEN: (at "dodging diseases") outdoors in the VALLEY in daylight, KAI stepping aside with a funny face as if dodging something, no other people
 THEN: (at "as a hunter") outdoors in the VALLEY in daylight, KAI holding a wooden spear and standing proud, no other people
-THEN: (at "farmers would get") outdoors in a farming village in daylight, a stick figure farmer with short spiky black hair in a plain brown wool tunic coughing into his hand next to a goat, no other people
+THEN: (at "farmers would get") outdoors in a Stone Age farming village of round mud huts with thatched roofs in daylight, a stick figure farmer with short spiky black hair in a plain brown wool tunic coughing into his hand next to a goat, no other people
 KAI: So in a weird way, as a hunter in a cave, I'm dodging diseases that farmers would get stuck with later.
 
 // ===================== THE PAYOFF =====================
@@ -635,14 +635,14 @@ KAI: So what did ancient humans do when they got sick? They used plants, poked t
 PICTURE: inside the CAVE in warm firelight, KAI, the HEALER and the FRIEND sitting together around the campfire, KAI with his leg tied between two sticks, all smiling with closed mouths, no other people
 MOOD: happy
 THEN: (at "most human thing") close-up of a wooden bowl of warm soup on a flat stone next to a small campfire, no people
-THEN: (at "took care of each other") inside the CAVE in warm firelight, the FRIEND putting a fur over KAI's shoulders, the HEALER smiling, no other people
+THEN: (at "took care of each other") inside the CAVE in warm firelight, the FRIEND putting a fur over KAI's shoulders, the HEALER smiling, exactly three people, no other people
 THEN: (at "Forty thousand years ago") inside the CAVE in warm firelight, KAI, the HEALER and the FRIEND laughing together with closed mouths by the fire, no other people
 THEN: (at "your best medicine") close-up of a bundle of green herbs lying on a flat rock in firelight, no people
 THEN: (at "your friends") inside the CAVE in warm firelight, the FRIEND and the HEALER sitting on both sides of KAI by the fire, all smiling, no other people
 KAI: But most of all, they did the most human thing there is. They took care of each other. Forty thousand years ago, your best medicine wasn't a plant. It was your friends.
 
 # SCENE 63
-PICTURE: outdoors at the opening of the CAVE at sunset, KAI standing and waving goodbye to the viewer with one hand, a big closed-mouth smile, no other people
+PICTURE: outdoors at the opening of the CAVE at sunset, KAI standing and waving goodbye to the viewer with one raised hand, his other arm down at his side, a big closed-mouth smile, no other people
 MOOD: curious
 MUSIC: calm
 TEXT: KISSING?
