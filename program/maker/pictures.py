@@ -289,7 +289,8 @@ def draw(prompt, w, h, seed, refs, out):
 
 def upgrade(path, prompt):
     """A picture that gets drawn again always gets today's rules (not the older prompt it was kept under)."""
-    if prompt and not prompt.startswith("SPLIT||") and not prompt.startswith(HEAD) and SIZE_RULE not in prompt:
+    if prompt and not prompt.startswith("SPLIT||") and not prompt.startswith(HEAD) and not prompt.startswith(HEAD_THINGS) \
+            and SIZE_RULE not in prompt:
         if FACE_RULE in prompt:
             prompt = prompt.replace(f"{FACE_RULE} 16:9", f"{FACE_RULE} {SIZE_RULE} 16:9")
         else:
