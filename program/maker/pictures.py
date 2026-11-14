@@ -59,8 +59,10 @@ FACE_RULE = ("Only the main character has messy brown hair: every other person h
 HEAD = ("Flat 2D cartoon drawing like a children's picture book: bold clean black outlines, flat bright colours, "
         "everything hand-drawn, never a photo, never photorealistic, never 3D. Every person is a simple stick figure: "
         "a round plain white head with tiny dot eyes and a simple line mouth, no nose, no skin colour, thin black "
-        "line arms and legs, simple flat clothes. ")
-TAIL = ("Every person has one head, exactly two arms, two hands and two legs, and a face with eyes and a mouth. Only "
+        "line arms and legs, simple flat clothes. The background is drawn in the same simple flat cartoon style, "
+        "never realistic, never painted. ")
+TAIL = ("Every person has one head, exactly two arms, two hands and two legs, and a face with eyes and a mouth. Each "
+        "arm is a thin black line ending in one small round white cartoon hand; mouths are simple lines, no teeth. Only "
         "the main character has messy brown hair; everyone else has other hair, a headscarf or is bald. Grown-ups are "
         "taller than children. 16:9 picture. No text, no letters.")
 
@@ -68,8 +70,8 @@ TAIL = ("Every person has one head, exactly two arms, two hands and two legs, an
 def _short_place(st):
     period = (st.era.split(":")[0] if st.era else "the past").strip()
     return (f"Show only what is described: no extra people, no crowds, no extra animals or buildings; indoors stays "
-            f"indoors, a close-up stays a close-up. It is {period}: nothing modern, small cottages of wood and mud "
-            f"with straw roofs. Objects and animals have no faces.")
+            f"indoors, a close-up stays a close-up. It is {period}: nothing modern, only what that time really had. "
+            f"Objects have no faces; animals look like simple cartoon animals.")
 
 
 def _short_kai(text, st):
