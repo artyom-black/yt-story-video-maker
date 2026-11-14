@@ -61,6 +61,11 @@ HEAD = ("Flat 2D cartoon drawing like a children's picture book: bold clean blac
         "a round plain white head with tiny dot eyes and a simple line mouth, no nose, no skin colour, thin black "
         "line arms and legs, simple flat clothes. The background is drawn in the same simple flat cartoon style, "
         "never realistic, never painted. ")
+HEAD_THINGS = ("Flat 2D cartoon drawing like a children's picture book: bold clean black outlines, flat bright colours, "
+               "everything hand-drawn, never a photo, never photorealistic, never 3D, a simple flat cartoon background. ")
+TAIL_THINGS = ("There is no person, no stick figure, no character, no hair and no face anywhere in the picture, only the "
+               "things and the place described. Tools are made of chipped stone, wood or bone unless the description "
+               "says otherwise. 16:9 picture. No text, no letters.")
 TAIL = ("Every person has one head, exactly two arms, two hands and two legs, and a face with eyes and a mouth. Each "
         "arm is a thin black line ending in one small round white cartoon hand; mouths are simple lines, no teeth. Only "
         "the main character has messy brown hair; everyone else has other hair, a headscarf or is bald. Grown-ups are "
@@ -91,7 +96,10 @@ def scene_prompt(text, pic, st, one=False):
     if re.search(r"\b(night|midnight|dark)\b", pic, re.I) and not re.search(r"\b(dawn|sunrise|sunset)\b", pic, re.I):
         place += " It is night, lit only by firelight or the moon."
     if re.search(r"\bno people\b|\bno humans\b", pic, re.I):
-        place += " No people at all."
+        # a picture of things: no word about people at all, or the AI puts Kai's hair and hands on teeth and stones
+        return f"{HEAD_THINGS}{text}. {place} {TAIL_THINGS}"
+    if re.search(r"\b(fire|campfire|firelight)\b", pic, re.I):
+        place += " There is one fire only; people sit or stand beside it, never in it or on it."
     return f"{HEAD}{text}. {'One person only. ' if one else ''}{place} {_short_kai(pic, st)}{TAIL}"
 
 

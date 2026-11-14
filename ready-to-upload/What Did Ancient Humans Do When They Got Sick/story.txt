@@ -51,10 +51,10 @@ PICTURE: outdoors at the bright opening of the CAVE in daylight, KAI pointing on
 MOOD: tense
 TEXT: 31,000 YEARS
 SFX: sting
-THEN: (at "oldest surgery") close-up of a sharp grey stone blade lying on a flat rock in daylight, no people
+THEN: (at "oldest surgery") close-up of a sharp blade of rough chipped grey flint stone, not metal, lying on a flat rock in daylight, no people
 THEN: (at "thirty-one thousand") outdoors in a steep green jungle with tall trees and a big limestone cliff with a cave mouth, in misty morning light, no people
 THEN: (at "a kid") outdoors in a green jungle in daylight, a small stick figure child with short straight black hair sitting on a rock, smiling a little, no other people
-THEN: (at "show you") close-up of a small sharp grey stone blade lying on a fur in firelight, no people
+THEN: (at "show you") close-up of a small sharp blade of rough chipped grey flint stone, not metal, lying on a fur in firelight, no people
 THEN: (at "And the patient") outdoors at the opening of the CAVE in daylight, KAI with a shocked face, both hands on his cheeks, no other people
 KAI: And stay to the end, because I'll show you the oldest surgery ever found. It happened thirty-one thousand years ago. And the patient was a kid.
 
@@ -77,7 +77,7 @@ MOOD: curious
 THEN: (at "rubbed the juice") outdoors in the rainforest in daylight, the orange orangutan touching its cheek with one hand, green leaf juice on its fingers, no people
 THEN: (at "pressed the leaves") outdoors in the rainforest in daylight, the orange orangutan with a flat green patch of chewed leaves stuck on its cheek, no people
 THEN: (at "A month later") outdoors in the rainforest in daylight, the orange orangutan sitting on a branch with a clean healed face, no cut, no people
-THEN: (at "world first") outdoors in a green rainforest in daylight, a stick figure scientist with short curly black hair in a green jacket watching through binoculars from behind a bush, no other people
+THEN: (at "world first") outdoors in a green rainforest in daylight, one single stick figure scientist with short curly black hair in a green jacket watching through binoculars from behind a bush, he is alone, nobody else
 THEN: (at "Like a bandage") close-up of a flat green patch of chewed leaves pressed on orange hairy skin, no people
 KAI: He chewed the leaves of a healing plant, rubbed the juice into the cut, and pressed the leaves on top. Like a bandage. A month later, the cut was gone. A world first for a wild animal.
 
@@ -221,7 +221,7 @@ TEXT: 13,000 YEARS AGO
 THEN: (at "two rotten teeth") close-up of two old front teeth with brown holes in them, on plain brown earth, no people
 THEN: (at "sticky black tar") close-up of a small lump of sticky shiny black tar on a flat stone, no people
 THEN: (at "and hair") close-up of a small lump of black tar mixed with thin plant fibres and a few hairs, on a flat stone, no people
-THEN: (at "also in Italy") outdoors under a big grey rock shelter in northern Italy in daylight, a stick figure woman with long straight blond hair cleaning a small stone tool, no other people
+THEN: (at "also in Italy") outdoors under a big grey rock shelter in northern Italy in daylight, one single stick figure woman with long straight bright yellow hair kneeling and cleaning a small stone tool with a cloth, she is alone, nobody else
 KAI: Thirteen thousand years ago, also in Italy, someone cleaned out two rotten teeth and filled them with sticky black tar. Mixed with plant fibers and hair.
 
 # SCENE 22
@@ -585,8 +585,8 @@ KAI: And now, the oldest surgery ever found. I promised. A cave called Liang Teb
 PICTURE: close-up of an old leg bone lying on plain brown earth, its end cut straight and clean, no people
 MOOD: shock
 THEN: (at "Not bitten") outdoors in the jungle at dusk, a big crocodile lying on a muddy riverbank, no people
-THEN: (at "Cut cleanly") close-up of a sharp grey stone blade next to the clean straight end of an old leg bone, no people
-THEN: (at "knew exactly") inside a jungle cave in firelight, a stick figure woman with long straight black hair holding a sharp grey stone blade carefully, a focused face, no other people
+THEN: (at "Cut cleanly") close-up of a sharp blade of rough chipped grey flint stone, not metal, next to the clean straight end of an old leg bone, no people
+THEN: (at "knew exactly") inside a jungle cave in firelight, a stick figure woman with long straight black hair holding a sharp blade of rough chipped grey flint stone, not metal, carefully, a focused face, no other people
 KAI: A child's lower leg was removed. Not bitten off by an animal. Cut cleanly, by someone who knew exactly what they were doing.
 
 # SCENE 58
@@ -625,7 +625,7 @@ PICTURE: inside the CAVE in warm firelight, KAI sitting by the fire with a norma
 MOOD: happy
 THEN: (at "used plants") close-up of a bundle of yarrow and chamomile flowers next to a piece of grey poplar bark, no people
 THEN: (at "poked their teeth") close-up of a thin stiff grass stem lying on a flat rock, no people
-THEN: (at "did surgery") close-up of a sharp grey stone blade lying on a fur, no people
+THEN: (at "did surgery") close-up of a sharp blade of rough chipped grey flint stone, not metal, lying on a fur, no people
 THEN: (at "cut holes in skulls") close-up of an old skull with a round healed hole in the top, no people
 THEN: (at "when they got sick") inside the CAVE in firelight, KAI sitting by the fire with a thinking face, one hand on his chin, no other people
 KAI: So what did ancient humans do when they got sick? They used plants, poked their teeth, cut holes in skulls, and even did surgery.
