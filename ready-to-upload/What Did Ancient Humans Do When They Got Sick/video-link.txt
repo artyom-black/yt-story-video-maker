@@ -1,0 +1,5 @@
+Download the video (click, it starts downloading):
+https://github.com/artyom-black/yt-story-video-maker/releases/download/video-002-what-did-ancient-humans-do-when-they-got-sick/What.Did.Ancient.Humans.Do.When.They.Got.Sick.mp4
+
+Upload it to YouTube with the title, description and tags from description.txt and thumbnail.png from this folder.
+When it is uploaded, open Actions -> "I uploaded it" -> Run workflow. The folder moves to previous-videos.
