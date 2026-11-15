@@ -560,7 +560,7 @@ KAI: But more than anything, they had each other. And that was the first medicin
 # SCENE 66
 PICTURE: inside the CAVE in warm firelight, KAI holding his cheek, the HEALER next to him holding out a small lump of black tar, no other people
 MOOD: funny
-THEN: (at "No") inside the CAVE in warm firelight, KAI holding up both hands and leaning back with a scared smile, no other people
+THEN: (at "No") inside the CAVE in warm firelight, KAI standing well to the right of the campfire, leaning back a little with a scared smile, both hands raised up in front of his chest saying no, standing on his two legs with both boots flat on the floor, exactly two arms and two legs, no other people
 KAI: As for my tooth? She's offering me tar. No thanks. I'll take the bark.
 
 # SCENE 67
