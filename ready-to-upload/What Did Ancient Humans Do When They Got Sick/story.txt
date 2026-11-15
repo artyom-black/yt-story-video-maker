@@ -120,7 +120,7 @@ THEN: (at "Slowly") outdoors at the mouth of a rocky cave on a dry hill with oak
 KAI: And here's why it works. Poplar bark has the same natural painkiller that aspirin was first made from. Slowly, the throbbing pain goes down.
 
 # SCENE 12
-PICTURE: outdoors at the mouth of a rocky cave on a dry hill with oak trees in Spain in daylight, KAI standing by the cave with a thinking face, one hand on his chin, no other people
+PICTURE: outdoors at the mouth of a rocky cave on a dry hill with oak trees in Spain in daylight, KAI standing by the cave with a thinking face, his right hand on his chin and his left arm hanging straight down at his side, arms not crossed, exactly two arms and two hands, no other people
 MOOD: curious
 THEN: (at "Animals") outdoors in a green rainforest in daylight, a cartoon orange orangutan sitting on a branch, no people
 THEN: (at "a wild") outdoors in the rainforest, a cartoon orange orangutan chewing a green leaf, no people
