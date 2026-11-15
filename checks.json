@@ -1,0 +1,6476 @@
+{
+ "costume_52dec2ed.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "cast_healer_7cc06c08.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "cast_friend_3ee5c5fa.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "cast_neanderthal_ed1b7b82.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_001_5ba064cf.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_001x2_c748cfd2.png": {
+  "status": "bad",
+  "problems": [
+   "does not show what the line is about",
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_001x3_0e0c3b9b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_001x4_1824e1d4.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_001x5_aba4925e.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_001x6_b2cdfa68.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "5 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_002_82af2a89.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_002x2_55077a1e.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "2 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_002x3_8821dac0.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_002x4_0adb4477.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_003_c20156ad.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_003x2_53a30fb2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_003x3_f3d5bfc6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_003x4_3fcc9365.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_003x5_d28a0908.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004_f22e5a40.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x2_326bf470.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x3_a27c9e65.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x4_f1467b12.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x5_8a50ed4b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x6_42bfe7cb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005_2ca489b5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005x2_46156f8d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005x3_e756b478.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005x4_61ce85bb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005x5_ad47d690.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006_e835e832.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x2_19d25a9d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x3_835a77d6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x4_4ee55645.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x5_35746e6b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x6_563537d1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_007_c6172a57.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_007x2_d6808fb6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_007x3_a7a5a396.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_007x4_330f6a09.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_007x5_49f94624.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008_d0848074.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008x2_dcd191f6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008x3_b9fc7645.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008x4_9a0aa21e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008x5_59df3696.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_009_ca07f90e.png": {
+  "status": "bad",
+  "problems": [
+   "does not show what the line is about",
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_009x2_20ec9319.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_009x3_ab0dd968.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_009x4_08455f4c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_009x5_cd8f2db2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_010_d973ee42.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_010x2_44ac1299.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_010x3_c195dd08.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_010x4_ff22817b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_011_f7735ad0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_011x2_e6b3e03c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_011x3_99ce8721.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_011x4_870b68f1.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_012_262edbf4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_012x2_0d275077.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_012x3_02675cbf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_012x4_402a0920.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013_2fc5e8ef.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x2_19615a82.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x3_d024ea4f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x4_b010550c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x5_bde336c2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_014_43d501ae.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_014x2_9c6a26bc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_014x3_3d4abdd7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_014x4_0dc990a2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_015_c5220d26.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_015x2_ac3ec74c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_015x3_1c4559c4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_015x4_a326ee19.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016_62a1d84c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016x2_cbe6fce5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016x3_3227bdd6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016x4_d2142378.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016x5_05ab15f2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017_5fdd535f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x2_62074c85.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x3_95d5e5ff.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x4_1bdc1a8b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x5_d28550c7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x6_1aebe05c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x7_028ad3a8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_018_3677d0a2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_018x2_306a79f3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_018x3_7d51424c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_018x4_56549c49.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019_cdc184b2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019x2_8d686872.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019x3_3fd0b6e7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019x4_94f7d009.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019x5_66d5901a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_020_cabe993e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_020x2_afa8ae59.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021_06003a0f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x2_bb7bf3d8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x3_ee004807.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x4_e562d4a2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x5_0d5edef6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_022_8dee94d1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_022x2_e9fbc33f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_022x3_3e3f6ba4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_022x4_cd4300e1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_022x5_f5e30cce.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_022x6_69ed4e22.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_023_958de3bc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_023x2_166da5c9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_023x3_bde336c2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_023x4_b730762c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_024_83358633.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_024x2_23bb0e76.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_024x3_af853ebd.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_024x4_8b612e15.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_024x5_06a930e8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025_45b33750.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025x2_f9151dae.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025x3_a0c2a4f1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025x4_d9be7f6f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026_ea3cf5f7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026x2_c52261e8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026x3_be9d7ebf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026x4_6c986102.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027_b62b491a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027x2_4a51d1a8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027x3_eba0a4cc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027x4_0c320c11.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028_cdb97dda.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028x2_82c5c545.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028x3_74cf2862.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028x4_59dd47fc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028x5_d34bab6a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028x6_52335269.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_029_400a4af6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_029x2_f00983fe.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_029x3_ddd830c0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030_12dcd51f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030x2_e88eb47b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030x3_0b671b49.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030x4_a2b6b6a3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030x5_a4f66f2f.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_030x6_4b57ba2d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_031_6ce3504f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_031x2_5b92d3a4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_031x3_1a018794.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_031x4_291be67e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032_cc01d5b7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x2_f8e04f6c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x3_59141325.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x4_0d800474.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x5_e557281e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x6_196da5af.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x7_2a99cc3e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x8_f4dca1fa.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x9_a5863e27.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_033_951b76f2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_033x2_d5fafbea.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_033x3_3bd20b5b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034_6c176328.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034x2_b9640750.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034x3_ec7e02d9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034x4_aa23082e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034x5_64e26302.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035_f1151494.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035x2_795a1b0b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035x3_a9d47766.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035x4_d10cff79.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035x5_c6f95c77.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036_486f5a55.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036x2_dd409d38.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036x3_8be74ae0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036x4_8f081ed9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_037_51d9124b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_037x2_5c9f1da0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_037x3_3c4e1c3f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_037x4_a760b95a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_037x5_3f2b1cf8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_038_9aea0db1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_038x2_67a69a57.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_038x3_65f3627f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_039_19bdfa20.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_039x2_e89be486.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_039x3_5f3dc574.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_039x4_090db14f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_039x5_8ff9c637.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_039x6_14d59632.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040_1c89696f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x2_5dc88adb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x3_403dc7da.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x4_2a7d229c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x5_2c0676ff.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x6_84fe2b6e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x7_8112cccf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_041_f2500842.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_041x2_142fc4e5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_041x3_68d67ea8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042_442ae4c2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042x2_19cf8be0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042x3_c0f284bc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042x4_8fe94643.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042x5_95ef5e8d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042x6_0ebf4bd4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043_751106b1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043x2_6719ae93.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043x3_b27dda2d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043x4_306b05c9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043x5_488c2cd0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043x6_3bb11959.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043x7_9922636b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_044_568770c3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_044x2_e3cdeb2f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_044x3_e6d3df5b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045_ba3c3859.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x2_3c34a97f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x3_794074f7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x4_11f3a433.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x5_5fec65b1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x6_077a9144.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x7_db40cdd9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_046_31a9ebdf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_046x2_abaaccf4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_046x3_13a60ead.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_046x4_5bdc2017.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_046x5_75e06d2d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_047_ff3541b9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_047x2_09ab88d9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_047x3_cc414a5d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_047x4_d7610f75.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_047x5_775be826.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_048_8a3f8550.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_048x2_f00983fe.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_048x3_7f4ae69c.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_049_76f9c436.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_049x2_1e088750.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_049x3_7b4d423e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_049x4_7e93ecf0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_050_331a0826.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_050x2_8d524631.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_050x3_04ec8492.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_050x4_188354ab.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_050x5_f00983fe.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_050x6_ff346a97.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_051_b024bc15.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_051x2_10a4143a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_051x3_206a24f8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_051x4_c0c986c8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_052_c8989481.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_052x2_fc61a61a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_052x3_e0ceb064.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_052x4_d5e3865c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053_c903fa90.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x2_d40bd76d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x3_e41bd350.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x4_c21c0d7e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x5_ebf0d169.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x6_c6b93ccb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054_f5263812.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054x2_4102f058.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054x3_5cdbd0ef.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054x4_6f8db617.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054x5_491063a6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054x6_bbc09342.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_055_b0a180f2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_055x2_1701778e.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_055x3_32c369a7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_055x4_4d9e7ad1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_056_ebe187de.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_056x2_73e73615.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_056x3_7cb9863c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_056x4_04221af8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057_a154831b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057x2_1a58850a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057x3_959ea4b9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057x4_850a1715.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058_282d85b0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058x2_44b6db51.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058x3_424023c7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058x4_b0b31d57.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058x5_25035f33.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058x6_0fa3f33c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_059_dfda35a3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_059x2_a9c649e7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_059x3_efc3af4e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_059x4_872e6c2a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_059x5_9bdd4951.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_060_7d17844d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_060x2_06ef0443.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_060x3_e8a84d66.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061_2ba256f7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x2_7dd0d65c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x3_25f8571e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x4_d7f431d4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x5_37f7dc98.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x6_e23fa7af.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062_fe55fb1c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062x2_a3ff5c16.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062x3_a194b950.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062x4_03f74bd2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062x5_fae9fc5b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062x6_fdc9d448.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_063_870227b6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_063x2_41e70867.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_063x3_71608382.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_063x4_53048332.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "thumb_1_20548447.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_001_3304d651.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_001x2_348ab880.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_001x4_37eb1748.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_001x5_ec6f67a3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_001x6_a6c2379e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_002_02d824bd.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_002x2_c8888545.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_002x4_9a4fecdb.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_003_e22e7248.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_003x2_74dfc782.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_003x3_8903ef79.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_003x5_bf460cae.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x2_93ddb977.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x3_d27df2bc.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_004x5_8bada959.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_005_d19b898c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005x2_397c519e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005x3_0df42dea.png": {
+  "status": "bad",
+  "problems": [
+   "1 people in a picture that should have none",
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_005x4_ede5d23b.png": {
+  "status": "bad",
+  "problems": [
+   "2 people in a picture that should have none",
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_005x5_83cb21d0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_006_2e0f1d01.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x2_08d496e4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x3_e1ea0cf9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x4_e9d2840f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x5_c85f328c.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_006x6_f0ebcced.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_007x2_8c1de39f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008_4dd65dd1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008x2_4c770863.png": {
+  "status": "bad",
+  "problems": [
+   "Kai appears more often than he should"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_008x3_f6027f25.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_008x4_a71c7ade.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008x5_553c758f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_009x2_8cf71f10.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_009x4_91482232.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_009x5_11e732b2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_010_fe586c3a.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_010x2_ec7c3abf.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_010x3_4da9d9f7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_010x4_50deecab.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_011_796abdfd.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_011x2_d88eb8c3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_011x3_c4e022dc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_012_a73ddd63.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_012x3_42962d3e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x2_899ad5b7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x3_e0dc4d43.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x4_33985246.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x5_676d41a9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_014_45ec5971.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_014x2_881c1bb7.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_014x4_e027f42f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_015_6b6ecfb6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_015x2_07c4b6b8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016x3_2d26a7ec.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016x4_517c2a2e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016x5_69d6201c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017_644aceaa.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x2_155914dd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x3_0f7aafb4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x4_5a83fbbc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_017x5_b9515e89.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x6_d8ef4f90.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_017x7_7a22755a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_018x2_7cfe3ead.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_018x4_033f0e0d.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_019x2_76fd8402.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_019x3_7d0f69db.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019x4_ea2eaf08.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "should be indoors but is drawn outside"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_019x5_9f1ce271.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_021_3b1433a3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x2_30d9cebf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x3_94d8bd67.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x4_d65ebe58.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x5_a4568f54.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_022_15104c34.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_022x2_fee51569.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_022x3_2014fdcb.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_022x6_50ead9f3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_023x2_9a43a043.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_023x3_676d41a9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_024_6fb5da3d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_024x2_5f7500ca.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_024x5_aee4f399.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025_606e2f9c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_025x2_a014f9f6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025x3_96b59234.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026_521a8419.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026x2_461f1c47.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_026x3_4604583f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_027_bf89e40c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027x2_fbae3546.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027x4_7248c8ab.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028_8be70d99.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028x2_1898ca72.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028x5_3eed9bda.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_028x6_ddfd360a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_029_d47fd497.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_029x3_fc447704.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030x3_0c3ab299.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030x6_bfe4d22d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_031x4_f497884b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032_037853e4.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_032x2_3db8c160.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_032x3_866f3a30.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x5_0c6a6869.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_032x6_544f379f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_032x7_1fb1026e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x8_084dfb88.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x9_f9e0d1e6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_033_49553f20.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_033x2_e4a2b079.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_033x3_d42d6f6b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034_eecda2f8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034x2_ae68e66e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034x3_8b961ff0.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_034x4_78a628cc.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_034x5_832d62c0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035_161668f6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035x2_9563e935.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_035x3_bda055f1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_035x4_afca402c.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_035x5_a3dedf51.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036_68cbd70c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036x2_3c6c30dc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036x4_cc3dbf87.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_037x3_db1b4af1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_037x5_7ea40c75.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_038_c316904b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_038x2_b74197cb.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_038x3_414df4a4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_039x3_69488c4d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_039x4_c3b2e805.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_040x3_bde84645.png": {
+  "status": "bad",
+  "problems": [
+   "sizes are unreal (a giant or tiny person, giant food)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_040x4_09119bc1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x5_feeefcec.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x7_8e327404.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042x3_00d115d3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043_027cea56.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043x2_59d5d78a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043x5_ab3b0131.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_044x2_8e4afbe4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_044x3_b8a04be0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045_d16c64f7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x2_a2e222f8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x3_130b348f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x5_d808b122.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x6_f69ada00.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_046_ed3d9eae.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_046x2_00366cc1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_046x3_aed3d169.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_046x5_7a43095a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_047x3_33720dc9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_049_8290f4d4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_050_e63883d0.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_050x2_9d417c95.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_050x6_7c57fa3a.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_051x2_5840a002.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_051x3_89a7e1f7.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "something floating in the air"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_052_447c3891.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_052x3_3e984ae5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_052x4_9aabd0aa.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x2_c98ce2e2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x4_4d087e90.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x5_40cce8a8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x6_c43f81e4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054_fc97e4e3.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054x2_7493ae29.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054x3_aee7ed69.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "should be indoors but is drawn outside"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054x4_1c120c46.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054x5_899eb5a0.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054x6_21519d7b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_056_d0f7052a.png": {
+  "status": "bad",
+  "problems": [
+   "3 people in a picture that should have none",
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_056x3_6bc8cd48.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_056x4_9dc9d928.png": {
+  "status": "bad",
+  "problems": [
+   "4 people in a picture that should have none",
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_057_593b3246.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057x2_5e012b0b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057x3_c4019956.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057x4_a0c08b8e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058_8fe6a844.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_058x2_049368f8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058x4_baac4eec.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_058x5_6586f0d2.png": {
+  "status": "bad",
+  "problems": [
+   "5 people in a picture that should have none",
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_059_9f8c7899.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_059x2_47407769.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_059x3_0b195bb9.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_059x4_b8f532f5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_060x2_3bf0d297.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061_8368e7df.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_061x2_1fa644b5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x3_9ab91c74.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x4_18385c29.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x5_c19587dc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x6_6fd17ddd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062_7f8d2070.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_062x2_493f8929.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062x3_ed3664bc.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_062x4_9606f562.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_062x5_a8dddec6.png": {
+  "status": "bad",
+  "problems": [
+   "fire burning in a place that makes no sense"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_062x6_d3ed01f2.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_001x6_0a7e787a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_002x2_3fefd0dd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_003_96a540e6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_003x2_dda946eb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_003x3_d53674ae.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_003x5_891ed589.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x2_91121a18.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x3_80069c40.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_004x5_849c3de0.png": {
+  "status": "bad",
+  "problems": [
+   "fire burning in a place that makes no sense"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_005_1919d76c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005x2_652f8ef1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005x3_79ca3a78.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005x4_0dea5ce8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005x5_0dbb4e58.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006_58ea4e36.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x2_2f4c63e4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x3_afe3e045.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x4_0dd66888.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x6_2444f929.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_007x2_b865beb0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008_6532e029.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008x4_0a886a30.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008x5_779ec257.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_009x2_ba6108fd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_009x4_f77622ac.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_009x5_d63c69f2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_010x3_c8c0c185.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_011x2_84d55992.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_012_a558cf07.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_012x3_42c5e057.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x3_8b5ed5ec.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x4_3b4e8b0b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x5_93c6e2f0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_014x4_393c17ac.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016x3_2c90e237.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016x4_76778b88.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017_314bc538.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x3_710c183f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x5_5715ef95.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x6_67160c20.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_018x2_159f20b0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019x2_c37235a5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_019x3_6bbc0158.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019x4_684bce75.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "should be indoors but is drawn outside"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_019x5_2979c29e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021_07b31b41.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x2_8bf73b57.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x3_34750bbe.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x4_b7f7ab49.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_022_f57ffa51.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_022x2_37024c3a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_022x6_5fb5ede8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_023x3_93c6e2f0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_024x5_873cc408.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025_57b6c3df.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025x2_ebef173d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025x3_1de5baa2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026x2_afea3024.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027_d8688673.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027x2_5ce17c8b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027x4_27ce0fec.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028_aa2b26ed.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_029x3_afdb7b50.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030x3_415ae800.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030x6_13856842.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_031x4_d8872f85.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x5_7a15e4be.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_033_5e61f0f1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_033x3_6b02cbc9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035_272ebbd2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035x5_794cd8ed.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036_b363c67e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036x2_d4c03e37.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036x4_ddadb446.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_037x3_484ee473.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_037x5_5a7433c2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_039x3_945dfdc6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_039x4_8c13f0d6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x3_3d9b1512.png": {
+  "status": "bad",
+  "problems": [
+   "sizes are unreal (a giant or tiny person, giant food)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_040x4_11c9e425.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x5_ec6ae5d4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x7_9d70eddf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042x3_dba6c155.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043_d34237a5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043x2_a26e642c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_043x5_9ac92f91.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_044x2_fe226fdf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_044x3_26ce29a0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045_edc06828.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x2_038d6787.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x3_27dde864.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_045x5_9982bc69.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x6_8500c61a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_046x2_64396be8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_047x3_ec9cc346.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_051x2_585e388c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_051x3_edeb9b72.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "something floating in the air"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_052_7b0d8c6c.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_052x3_f889a99f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_052x4_30164a4a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x2_c06b4291.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_053x4_2ca774e6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x5_aff16575.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x6_a18beef6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054_8f6508e5.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054x2_6639dac5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054x3_3d07d5f5.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "should be indoors but is drawn outside"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054x4_c3eba183.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054x5_8a240911.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054x6_8c610946.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_056_ba7d9aff.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_056x3_4a376e9a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_056x4_9853f0d3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057_a99308f1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057x2_242514ab.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057x3_7b65b988.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058_23057e87.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_058x2_ccf6cb8f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058x4_3e762cf8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058x5_90e4f9f7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_059x2_35136c59.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_059x4_80090e59.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_060x2_a31a63fa.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x2_9456a701.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x3_05da1e3f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x4_fc4d2d09.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x5_f7dada3b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062x5_90d42955.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "cast_otzi_3e6164a5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_001x5_6160d517.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_002_fc0fbc69.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004_01cc99d8.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_004x4_86c5fde0.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_004x6_9244d75f.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_008x3_aea2adb6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_013x2_fbabceee.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_014_036ad5da.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_014x2_99c61e0b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_015_9f752d6f.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_015x3_b671bd76.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_016x5_4bc7b3ac.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x2_685759e3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x4_6f1726e5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x7_4c38ee4d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_018x4_4e1437c1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_019_2ba04cf6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x5_eba4075f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_023x2_7efdd201.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_024_0846ba22.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_024x2_5cc69c8e.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_026_27614b44.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026x3_20c82a56.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_028x2_a36317c8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028x5_4b74b7c6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028x6_ae16088b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_029_d6aab70f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_032x2_45a9e68b.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_032x3_05cd3fb3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x6_7b7a226b.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_032x7_24ad1a18.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x8_bd717ff0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032x9_0a2fdcad.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_033x2_2201c891.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_034_34137cc7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034x2_66953136.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_034x3_4dae121e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034x4_e43c6ed6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034x5_2f53b999.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_038x3_04967160.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_039_f3b9cc29.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_039x2_2bc42209.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_039x5_0ac5f86f.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_040_2a19b460.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x2_23a7b99d.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_040x6_1b19ffc4.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_041_e473e19f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_041x2_0346de87.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_041x3_08439071.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_042_b12df65a.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_042x2_bbf3d790.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_042x4_dfcbb162.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042x6_a400cf30.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_043x3_58fe9af7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_043x6_f71a8042.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_045x7_1e11fd7e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_046x3_fc2f4aa6.png": {
+  "status": "bad",
+  "problems": [
+   "fire burning in a place that makes no sense"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_046x4_023bbe21.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_049_ee3f6f4f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_050x2_4c27dbfe.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_050x4_1543c2b8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_052x2_e409e3a8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_053x3_84a7c2c1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_055x4_84701d17.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_059_680e182f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_059x3_ff1a9407.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x6_92742ec5.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_062x2_09a18485.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_015x2_ad92c9a2.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_031x2_56fa7045.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034x5_e887fba3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x7_3da6a82e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_046_2a2dcefc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_046x3_6f688c73.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_050x3_a4082bd3.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_055x4_ca798775.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062x3_fb896b83.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_063_0a90fea5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_033x2_e960eae6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_062x6_5a680bb5.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_063_ae33cc62.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_002x4_26d04392.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_011x3_02f4183b.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_062x6_da2995ea.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_004x5_91a33086.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062x6_8a6a07cc.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "cast_old_man_22ff8d66.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "cast_otzi_5afa30c8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "cast_child_31e8511c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "cast_farmer_cc7d1f4d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_001_7ad2654f.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_001x2_a11bac7c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_001x3_9f715919.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_002_1330924a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_002x2_c3618c68.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_002x3_723145b6.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_002x4_9c69a2a9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_003_017d29bb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_003x2_7f5de60f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_003x3_e7f83c43.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_003x4_6d3a46ad.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004_0b983d4a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_004x2_de567f88.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_004x3_1e31f69c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005_bd68ab68.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_005x2_93288bea.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005x3_0213c9e6.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "7 people in a picture that should have none"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_006_c860a66b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_006x2_052406aa.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_006x3_d716e8ab.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_007_2ceddc8b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_007x2_409c0279.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_007x3_48181459.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_007x4_9f7650a2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008_c0de760d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_008x2_a47d257e.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_008x3_813de6ab.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_009_b2d09a45.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_009x2_eaa771f2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_009x3_e5c3c50d.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_009x4_1bca23eb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_010_2ba46cab.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_010x2_ad41d6a5.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_010x3_b52fe3c9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_010x4_c8f468a1.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_011_93b07bec.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_011x2_5d3f7392.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_011x3_615c8ab2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_011x4_e920f27b.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_012_b76a50a9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_012x2_94a9eafe.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_012x3_014d5e0b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_012x4_7aeda2a8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_012x5_ab910c8d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013_bc60de2a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x2_f7cc8e78.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_013x3_b2f9fa05.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_014_4629547e.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_014x2_0e4d6906.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_015_5b1c2558.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_015x2_f8467c74.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_015x3_23f4bfde.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_015x4_512dd82d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016_dd7cf1e4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016x2_5fb0c05c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_016x3_949aafe7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017_beaa5e8c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_017x2_53ffa737.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x3_93ce8b08.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_018_1284ec41.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_018x2_e06b3600.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_018x3_59c05685.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019_4f7e8039.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019x2_4b0f5279.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019x3_0aead3c5.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_019x4_d0bccd87.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_020_a2798328.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_020x2_060b241a.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_020x3_f3faa0d7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_021_4c2106b2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_021x2_f3f503aa.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_021x3_b306886b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_022_e851b931.png": {
+  "status": "bad",
+  "problems": [
+   "broken body (extra head/limbs or merged bodies)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_022x2_fdb5d6af.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_022x3_a052976f.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_022x4_e4a89433.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_023_e0f0c39e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_023x2_6347f390.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_023x3_75b9ed39.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_023x4_16ecfc89.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_024_abd04e96.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_024x2_a26d7200.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_024x3_88c2db02.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025_7c74f2b2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025x2_b63e95e0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025x3_172e33ec.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_025x4_d7e587cf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026_acd43ec5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026x2_41bab29e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_026x3_cc606dce.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027_076255aa.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_027x2_ab63bd46.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_027x3_528d4c7b.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_027x4_d2149378.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028_9e4a0633.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_028x2_68795611.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028x3_4229c16f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_028x4_4b49589d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_029_0abcaf26.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_029x2_d92ad5a0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_029x3_5664a08a.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_029x4_f848bca4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030_956d9893.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_030x2_11ac8eae.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_030x3_ecced7a9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030x4_6d0db127.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_031_b3b002ee.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_031x2_f7d59086.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_031x3_c6b9baf8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_031x4_2265c059.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032_54e61dea.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_032x2_fc9ce851.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_032x3_31266984.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_033_747ac54c.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_033x2_f0243c09.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_033x3_cf714a43.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034_becbc762.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_034x2_f848bca4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_034x3_039e7b34.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035_52526812.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035x2_90b800f5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_035x3_43f1905d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036_7c44b268.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036x2_1ab09337.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_036x3_bd41d387.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_037_638c4e34.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_037x2_d0979b53.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_037x3_6a6c1abd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_037x4_497336ff.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_038_381e9238.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_038x2_4aa882b4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_038x3_12c3c936.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_038x4_edaddaa4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_039_7d462457.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_039x2_7ffa03e1.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_039x3_5f5c4ba7.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_040_41f5918f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_040x2_33f17008.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_040x3_0f5ea7b4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_041_b7951dc5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_041x2_ba3e8c6e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042_866b472c.png": {
+  "status": "bad",
+  "problems": [
+   "1 people in a picture that should have none",
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_042x2_2200d6d9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042x3_6ed2403d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042x4_971f075c.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_043_3d9f8619.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_043x2_062e97e4.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_043x3_ffb6c32f.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_043x4_104a738d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_044_1c2db9dd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_044x2_60e07e91.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_044x3_a27681e1.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_045_f6639764.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x2_0fefea56.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x3_c40053d5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_045x4_cba67d67.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_046_90e7b654.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_046x2_e9a55892.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_046x3_50d932c7.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_047_8fe17d9d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_047x2_894b4b26.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_047x3_3d3dd688.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_048_417ed5da.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_048x2_62bd88bd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_048x3_49756fb0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_049_b68f106d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_049x2_3117c454.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_049x3_7ff5d18a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_050_758e0091.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_050x2_6d3a46ad.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_050x3_14258a68.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_051_4252a766.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_051x2_2fd25d0d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_051x3_c3d9f09f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_051x4_ae29414a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_052_eb8aefa0.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)",
+   "should be indoors but is drawn outside"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_052x2_c557fa11.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_052x3_a8d0e5ce.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_053_2b497815.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_053x2_33260b63.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_053x3_a9346709.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054_95601acc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054x2_b36b684c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054x3_46e295b8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_055_b1bdb637.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_055x2_7cd729ce.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_055x3_8650ed8d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_056_4491c704.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_056x2_0f025277.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_056x3_ca4ad828.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057_98ae299d.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057x2_5c073afd.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_057x3_c152eb09.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058_bfdc41bb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058x2_b8495be3.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058x3_4842749c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_059_6cf58ee6.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "should be indoors but is drawn outside"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_059x2_67618bc9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_060_2d162f62.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_060x2_de6fe8de.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_060x3_d864136f.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_060x4_54ba65ff.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_060x5_c8b7d59b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061_2e88848b.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_061x2_eb3e0aaa.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_061x3_8a636d14.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_062_389922fe.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_062x2_0eb490ee.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_062x3_2d8c21f4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_063_f02fa653.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_063x2_8034d07f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_063x3_56d23833.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_063x4_0d887776.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_064_00b22dae.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_064x2_0d88032c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_064x3_d028f950.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_065_3752174f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_065x2_47a6c090.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_066_5e634792.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_066x2_6de88799.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_067_ae064b95.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_067x2_2cb1b4f0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_001x3_3383a5c4.png": {
+  "status": "bad",
+  "problems": [
+   "does not show what the line is about",
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_003_d837389e.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_004x2_c9c610bf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x3_b95bf633.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_011_d866d4bd.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_016_3be68ecf.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_019x2_9c928128.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_020_d81fa200.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_020x2_0638582b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_020x3_7500d1d8.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_022_6f8dd7cd.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_022x2_c436350f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_025_d7ab20cc.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_025x3_8c970b3f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_027_4f972b1c.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_027x2_0cc08c5e.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_027x3_965b3041.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_029x3_9fff95d2.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_030_fdf1b37e.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_030x2_9021f125.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_030x3_7e418ddb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_032_8733d27f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_032x2_c881fe37.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_032x3_1a513867.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_033x2_958fe43f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_034_9a0b30d8.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_036x2_d4b98da9.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_038x2_934f0e14.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_041_3a09ca6f.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_041x2_38c5fc3f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_042_23f37ed5.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_042x4_185077d7.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_043x2_13d2c83b.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_043x3_796bfe2f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_044x2_09103433.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_048_d7888832.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_048x3_516e6470.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_049x2_9681efc6.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_050_e1b927c5.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_053x2_a7fc75ad.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_054_4e54e821.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_054x2_ce11ea7b.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_055x3_1abe7c0a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057_4fc82712.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057x2_1fe5686e.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_057x3_fde161cb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_058x2_08accfd0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_060x2_f2160477.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_060x4_4fd67f0f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_060x5_88801a47.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_063x2_2fd27320.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_064_42694c43.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_065_86384b24.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_065x2_ffe3f35c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x2_855be59f.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_004x3_13eb7e44.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_005x3_7e935feb.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_016_7e9e00d4.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_017x4_402ecbb1.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_041x2_39379d02.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_048x3_b3234172.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_049x2_b1fe6e5a.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_051x5_f624d64e.png": {
+  "status": "bad",
+  "problems": [
+   "people not drawn as stick figures (realistic style)"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_057_6fcb17b8.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_057x2_05c2f795.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_060x2_d1f88157.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 2,
+  "v": 10
+ },
+ "scene_067x2_7ff51087.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 3,
+  "v": 10
+ },
+ "scene_067x3_a2d20933.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_067x4_2cb1b4f0.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_001x3_a965f18c.png": {
+  "status": "ok",
+  "problems": [],
+  "tries": 1,
+  "v": 10
+ },
+ "scene_001x4_3383a5c4.png": {
+  "status": "kept_with_problems",
+  "problems": [
+   "does not show what the line is about"
+  ],
+  "tries": 3,
+  "v": 10
+ }
+}
