@@ -62,7 +62,7 @@ KAI: That last one happened thirty-one thousand years ago, to a child in the jun
 PICTURE: outdoors in the green jungle at sunset, KAI looking at the viewer with a serious face, holding up one finger, no other people
 MOOD: curious
 THEN: (at "changes") outdoors at the JUNGLE CAVE in golden evening light, mist on the jungle, no people
-THEN: (at "who") outdoors in the VALLEY at sunset, a few small stick figure people far away walking by the river, no people
+THEN: (at "who") outdoors in the VALLEY at sunset, three tiny stick figure people in fur clothes walking far away along the river, seen from far, nobody else
 KAI: Stay to the end, because that story changes how you see the people who lived before us.
 
 // ===================== PART 1: THE NEANDERTHAL =====================
@@ -160,6 +160,7 @@ PICTURE: outdoors at the mouth of a rocky cave on a dry hill with oak trees in S
 MOOD: funny
 THEN: (at "Thin") close-up of a big cartoon tooth with thin grooves on its side and a small wooden stick next to it, no people
 THEN: (at "are") close-up of an old brown cartoon tooth lying on a lab table, no people
+THEN: (at "from 130") outdoors at the mouth of a rocky cave on a dry hill with oak trees in Spain at sunset, the NEANDERTHAL with his mouth closed holding a thin wooden stick, a proud face, no other people
 KAI: Oh, and Neanderthals had toothpicks too. Thin grooves from little sticks are still on teeth from 130,000 years ago.
 
 // ===================== PART 2: THE FIRST DENTIST =====================
@@ -444,6 +445,7 @@ MOOD: tense
 THEN: (at "with") close-up of a sharp grey stone blade with a chipped edge, no people
 THEN: (at "And") close-up of a cartoon drawing of two leg bones cut clean and flat at the end, no people
 THEN: (at "That's") close-up of a jagged broken cartoon bone crossed out with a red X, no people
+THEN: (at "That's surgery") outdoors at the JUNGLE CAVE in daylight, the HEALER kneeling beside the CHILD on the leaf mat with a calm focused face, no other people
 KAI: Step one. Cut through two bones with nothing but a stone blade. And the cut is clean and straight. That's not an accident. That's surgery.
 
 # SCENE 52
