@@ -161,7 +161,7 @@ PICTURE: outdoors at the mouth of a rocky cave on a dry hill with oak trees in S
 MOOD: funny
 THEN: (at "Thin") close-up of a big cartoon tooth with thin grooves on its side and a small wooden stick next to it, no people
 THEN: (at "are") close-up of an old brown cartoon tooth lying on a lab table, no people
-THEN: (at "from 130") outdoors at the mouth of a rocky cave on a dry hill with oak trees in Spain at sunset, the NEANDERTHAL with his mouth closed holding a thin wooden stick, a proud face, no other people
+THEN: (at "from 130") outdoors at the mouth of a rocky cave on a dry hill with oak trees in Spain at sunset, the NEANDERTHAL with his mouth closed and a proud face, holding up a short thin twig in front of his chest, his white cartoon hand clearly gripping the middle of the twig with the fingers around it, his other arm down at his side, no other people
 KAI: Oh, and Neanderthals had toothpicks too. Thin grooves from little sticks are still on teeth from 130,000 years ago.
 
 // ===================== PART 2: THE FIRST DENTIST =====================
