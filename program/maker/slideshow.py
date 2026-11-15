@@ -110,8 +110,62 @@ def _spoken_forms(word):
     return forms
 
 
+_ASR = []
+_ALIGN = {}
+
+
+def _norm(w):
+    return re.sub(r"[^a-z0-9]", "", w.lower())
+
+
+def line_word_times(line, a):
+    """The real moment every word of the line is said, heard back with speech recognition (faster-whisper).
+    Returns [(char position of the word in the line, start time)], or None when recognition isn't available.
+    Words the recogniser wrote differently (numbers, names) get a time between their neighbours."""
+    key = (line, len(a))
+    if key in _ALIGN:
+        return _ALIGN[key]
+    out = None
+    try:
+        if not _ASR:
+            from faster_whisper import WhisperModel
+            _ASR.append(WhisperModel("base.en", device="cpu", compute_type="int8"))
+        import difflib
+        n3 = len(a) // 3 * 3
+        a16 = a[:n3].reshape(-1, 3).mean(axis=1).astype(np.float32)   # 48 kHz -> 16 kHz
+        segs, _ = _ASR[0].transcribe(a16, language="en", beam_size=1, word_timestamps=True)
+        heard = [(_norm(w.word), float(w.start)) for sg in segs for w in (sg.words or []) if _norm(w.word)]
+        s = re.sub(r"\[[^\]]+\]", "", line).strip()
+        mine = [(m.start(), _norm(m.group())) for m in re.finditer(r"[A-Za-z0-9][A-Za-z0-9',.\-]*", s)]
+        mine = [(p, w) for p, w in mine if w]
+        if heard and mine:
+            sm = difflib.SequenceMatcher(None, [w for _, w in mine], [w for w, _ in heard], autojunk=False)
+            t = [None] * len(mine)
+            for blk in sm.get_matching_blocks():
+                for k in range(blk.size):
+                    t[blk.a + k] = heard[blk.b + k][1]
+            known = [k for k, x in enumerate(t) if x is not None]
+            end = len(a) / SR
+            for k in range(len(t)):                          # fill the gaps between recognised words
+                if t[k] is None:
+                    before = max([j for j in known if j < k], default=None)
+                    after = min([j for j in known if j > k], default=None)
+                    t0 = t[before] if before is not None else 0.0
+                    t1 = t[after] if after is not None else end
+                    i0 = before if before is not None else -1
+                    i1 = after if after is not None else len(t)
+                    t[k] = t0 + (t1 - t0) * (k - i0) / max(1, i1 - i0)
+            out = [(p, x) for (p, _), x in zip(mine, t)]
+    except Exception as ex:                                  # no recogniser: fall back to the estimate below
+        print("word timing estimate only:", str(ex)[:120], flush=True)
+        out = None
+    _ALIGN[key] = out
+    return out
+
+
 def word_time(line, word, a):
-    """When a word is said: its share of the text, spread over the voiced parts of the recording."""
+    """When a word is said. Heard back with speech recognition when possible (exact to about 0.1 s), else
+    estimated from its share of the text spread over the voiced parts of the recording."""
     import re
     s = re.sub(r"\[[^\]]+\]", "", line).strip().lower()
     i = s.find(word.lower()) if word else -1
@@ -122,6 +176,10 @@ def word_time(line, word, a):
             break
     if i < 0:
         return 0.12
+    words = line_word_times(line, a)
+    if words:
+        at = [x for p, x in words if p <= i]
+        return max(0.0, (at[-1] if at else words[0][1]) - 0.08)   # the picture lands just as the word starts
     v = voiced_times(a)
     if not len(v):
         return 0.12
@@ -229,6 +287,23 @@ def vignette(size, strength):
 SOFT_PROBLEMS = ("people not drawn as stick figures", "Kai appears more often", "sizes are unreal")
 
 
+def earlier_music(st):
+    """Track numbers the channel's other videos already use (channel/used-music.txt: "<video slug> <track>")."""
+    try:
+        from .pick_story import slug_for
+        me = slug_for(st.path) if getattr(st, "path", None) else ""
+    except Exception:
+        me = ""
+    path = os.path.join(os.path.dirname(__file__), "..", "..", "channel", "used-music.txt")
+    out = set()
+    if os.path.exists(path):
+        for ln in open(path):
+            parts = ln.split()
+            if len(parts) == 2 and parts[0] != me:
+                out.add(re.sub(r"\D", "", parts[1]))
+    return out
+
+
 def make_plan(st, assets, kit_dir, cands):
     kit = {c["kit_file"]: c for ch in json.load(open(os.path.join(kit_dir, "kit.json")))["roles"].values() for c in ch}
     music_info = json.load(open(os.path.join(kit_dir, "kit.json")))["music"]
@@ -326,14 +401,18 @@ def make_plan(st, assets, kit_dir, cands):
     by_mood = json.load(open(os.path.join(kit_dir, "kit.json"))).get("music_by_mood", {})
     chosen = {}
     used = set()
+    earlier = earlier_music(st)                                # every video gets its own music
+    tid = lambda tr: re.sub(r"\D", "", tr["file"].split("__")[-1])
     for run in music_runs:
         m = run["mood"]
         if m == "none" or m in chosen:
             continue
-        for tr in by_mood.get(m, []):                          # best-matching track not used by another mood
-            if tr["file"].split("__")[-1] not in used:
+        tracks = by_mood.get(m, [])
+        fresh = [tr for tr in tracks if tid(tr) not in earlier] or tracks
+        for tr in fresh:                                       # best-matching track not used by another mood
+            if tid(tr) not in used:
                 chosen[m] = os.path.join(cands, tr["file"])
-                used.add(tr["file"].split("__")[-1])
+                used.add(tid(tr))
                 break
     for i, run in enumerate(music_runs):
         run["end"] = music_runs[i + 1]["start"] if i + 1 < len(music_runs) else length
@@ -492,8 +571,8 @@ MAX_SHOT = 1.5          # hype moments (hook, shocks, booms): a new framing ever
 MIN_SHOT = 0.7
 CALM_SHOT = 3.2         # everywhere else one picture = one calm, slowly moving shot; a second framing only
                         # when the picture stays longer than this (or on the key word)
-MIN_PICTURE = 1.9       # a new picture never comes sooner than this...
-MIN_PICTURE_HOOK = 1.3  # ...except in the hook (first scenes), which is allowed to be quick
+MIN_PICTURE = 1.1       # a new picture never comes sooner than this (the story spaces its words further apart,
+MIN_PICTURE_HOOK = 0.9  # so every picture lands on its own word; see script.py's spacing check)
 HOOK_SCENES = 3
 
 
@@ -717,6 +796,7 @@ def upload_text(st, out_dir, length):
 
 def build(story_path, assets, kit_dir, cands, out_dir, workers=None):
     st = load(story_path)
+    st.path = story_path
     os.makedirs(out_dir, exist_ok=True)
     work = os.path.join(out_dir, "_scenes")
     os.makedirs(work, exist_ok=True)
@@ -755,6 +835,9 @@ def build(story_path, assets, kit_dir, cands, out_dir, workers=None):
     upload_text(st, out_dir, length)
     json.dump({"length": length, "music": [{k: v for k, v in r.items()} for r in music_runs],
                "sounds": len(placed)}, open(os.path.join(out_dir, "edit.json"), "w"), indent=1)
+    with open(os.path.join(out_dir, "music_used.txt"), "w") as f:
+        for r in {r["file"] for r in music_runs if r.get("file")}:
+            f.write(re.sub(r"\D", "", os.path.basename(r).split("__")[-1]) + "\n")
     shutil.rmtree(work, ignore_errors=True)
     print("wrote", final, f"{length / 60:.1f} min")
     return final

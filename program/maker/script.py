@@ -30,7 +30,7 @@ import sys
 from dataclasses import dataclass, field
 
 MOODS = {"calm", "curious", "funny", "shock", "gross", "tense", "sad", "epic", "happy"}
-MUSIC = {"tense", "funny", "calm", "epic", "sad", "none", "same"}
+MUSIC = {"tense", "funny", "calm", "epic", "sad", "emotional", "hopeful", "none", "same"}
 SFX = {"hit", "whoosh", "pop", "sting", "ding", "none"}
 CAMERAS = {"push", "pull", "pan", "punch", "still"}
 HEADER = ("CAST", "CHARACTER", "COSTUME_RICH", "TITLE", "ERA", "COSTUME", "THUMBNAIL_TEXT", "THUMBNAIL_IDEA", "DESCRIPTION", "TAGS", "SOURCES", "FORMAT")
@@ -173,6 +173,22 @@ def check(sc: Script):
         for word, pic in s.extras:
             if word and word.lower() not in s.spoken.lower():
                 sc.errors.append(f"{where}: THEN (at \"{word}\") - that word is not in the line")
+        # every picture lands on its own word: words of the line between one picture and the next
+        low = s.spoken.lower()
+        starts = [0] + [len(low[:low.find(w.lower())].split()) if w and w.lower() in low else -1
+                        for w, _p in s.extras]
+        if -1 in starts[1:] or any(w is None for w, _p in s.extras):
+            sc.warnings.append(f"{where}: a THEN picture has no (at \"word\") - it would land at a random moment")
+        elif starts != sorted(starts):
+            sc.warnings.append(f"{where}: THEN pictures are not in the order their words are said")
+        else:
+            ends = starts[1:] + [len(low.split())]
+            for k, (a, b) in enumerate(zip(starts, ends)):
+                if k and b - a < 3:
+                    sc.warnings.append(f"{where}: pictures only {b - a} words apart (at \"{s.extras[k - 1][0]}\") - "
+                                       "too fast to see, the picture would come late")
+                if b - a > 9:
+                    sc.warnings.append(f"{where}: {b - a} words on one picture - over 3 seconds, add a THEN")
         n = len(s.spoken.split())
         if n > 45:
             sc.warnings.append(f"{where}: long line ({n} words) - split it or add PICTURE2")

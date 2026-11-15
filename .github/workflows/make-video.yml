@@ -210,14 +210,14 @@ jobs:
         if: steps.ready.outputs.go == 'true'
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
-          pip install -q numpy pillow requests "opencv-python-headless<5"
+          pip install -q numpy pillow requests "opencv-python-headless<5" faster-whisper
       - name: Sound candidates cache
         if: steps.ready.outputs.go == 'true'
         id: snd
         uses: actions/cache@v4
         with:
           path: sound_candidates
-          key: sound-candidates-v3
+          key: sound-candidates-v4
       - name: Professional sound library (Sonniss, private cache)
         if: steps.ready.outputs.go == 'true'
         uses: actions/cache/restore@v4
@@ -285,11 +285,17 @@ jobs:
             [ -f "$D/thumbnail.png" ] || cp out/thumbnail_1.png "$D/thumbnail.png" 2>/dev/null || true
             printf "Download the video (click, it starts downloading):\n%s\n\nUpload it to YouTube with the title, description and tags from description.txt and thumbnail.png from this folder.\nWhen it is uploaded, open Actions -> \"I uploaded it\" -> Run workflow. The folder moves to previous-videos.\n" "$LINK" > "$D/video-link.txt"
             cp story_made.txt "$D/story.txt"
+            # remember this video's music, so the next videos use different tracks
+            if [ -f out/music_used.txt ]; then
+              touch channel/used-music.txt
+              grep -v "^$S " channel/used-music.txt > used.tmp || true
+              sed "s/^/$S /" out/music_used.txt >> used.tmp && mv used.tmp channel/used-music.txt
+            fi
             # empty new-story.txt, unless you already pasted a different story into it meanwhile
             if [ "$STORY" = "new-story.txt" ] && cmp -s new-story.txt story_made.txt; then
               printf '%s' "$(python -c 'import maker.pick_story as p; print(p.EMPTY_NOTE, end="")')" > new-story.txt
             fi
-            git add -A ready-to-upload new-story.txt
+            git add -A ready-to-upload new-story.txt channel/used-music.txt
             git diff --cached --quiet && break        # a redo run: the folder is already up to date
             git commit -q -m "Ready to upload: $NAME"
             git push -q origin HEAD:main && break

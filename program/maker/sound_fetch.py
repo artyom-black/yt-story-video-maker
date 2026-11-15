@@ -18,11 +18,13 @@ import requests
 
 SFX = ["whoosh", "transition", "pop", "cartoon", "impact", "boom", "drum-roll", "suspense", "cash-register",
        "ding", "record-scratch", "crowd", "gasp", "laugh", "fail", "magic", "punch", "medieval", "bell", "fire"]
-MUSIC = ["comedy", "funny", "suspense", "epic", "medieval", "playful", "quirky"]
+MUSIC = ["comedy", "funny", "suspense", "epic", "medieval", "playful", "quirky", "cinematic", "drama", "emotional",
+         "documentary", "tribal", "piano"]
 # mood pages: the video moods are picked from tracks that appear on several matching mood pages
 MOODS = ["mysterious", "tension", "suspenseful", "ominous", "cautious", "humorous", "quirky", "silly",
          "mischievous", "playful", "pastoral", "peaceful", "calm", "melancholic", "sombre", "sad", "epic",
-         "heroic", "triumphant"]
+         "heroic", "triumphant", "emotional", "dramatic", "dark", "sentimental", "hopeful", "inspiring", "dreamy",
+         "romantic", "nostalgic", "uplifting"]
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
 
 

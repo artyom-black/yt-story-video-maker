@@ -22,8 +22,13 @@ import requests
 
 from .characters import CAST, _svg, character, pose_for
 
-MODEL = "@cf/black-forest-labs/flux-2-klein-4b"
-URL = "https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/" + MODEL
+# The bigger model draws hands, arms and legs far more reliably (about $0.016 a picture instead of $0.002).
+# If it ever refuses (not on the plan, renamed), the run carries on with the small one.
+MODELS = [os.environ.get("PICTURE_MODEL") or "@cf/black-forest-labs/flux-2-klein-9b",
+          "@cf/black-forest-labs/flux-2-klein-4b"]
+MODEL = MODELS[0]
+URL = "https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/{model}"
+_model = [0]
 
 STYLE = ("2D cartoon illustration for an adult animated comedy series, clean bold black outlines, "
          "flat colours with soft cel shading, expressive face, appealing proportions, high quality, "
@@ -83,7 +88,8 @@ def generate(prompt: str, width: int, height: int, seed: int, refs=()):
     last = ""
     for attempt in range(3):
         try:
-            r = requests.post(URL.format(acc=acc), headers={"Authorization": f"Bearer {tok}"}, files=files, timeout=180)
+            r = requests.post(URL.format(acc=acc, model=MODELS[_model[0]]), headers={"Authorization": f"Bearer {tok}"},
+                              files=files, timeout=180)
         except requests.RequestException as ex:              # network hiccup: wait and try again
             last = f"network: {ex}"[:300]
             time.sleep(10 * (attempt + 1))
@@ -102,6 +108,10 @@ def generate(prompt: str, width: int, height: int, seed: int, refs=()):
             raise RuntimeError("FREE DAILY ALLOWANCE USED UP (resets 00:00 UTC = 04:00 Armenia). " + last)
         if r.status_code in (429, 500, 502, 503):
             time.sleep(10 * (attempt + 1))
+            continue
+        if r.status_code in (400, 403, 404) and _model[0] + 1 < len(MODELS) and "prompt" not in r.text.lower():
+            print(f"picture model {MODELS[_model[0]]} refused ({last}); using {MODELS[_model[0] + 1]}", flush=True)
+            _model[0] += 1                                   # the bigger model isn't available: use the next one
             continue
         raise RuntimeError(last)
     raise RuntimeError("gave up after retries. " + last)

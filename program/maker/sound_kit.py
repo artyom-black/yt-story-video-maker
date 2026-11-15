@@ -145,11 +145,13 @@ def save_wav(path, a):
 
 
 VIDEO_MOODS = {   # our MUSIC tags -> Mixkit mood pages that describe them
-    "tense": ["mysterious", "tension", "suspenseful", "ominous", "cautious"],
+    "tense": ["mysterious", "tension", "suspenseful", "ominous", "cautious", "dramatic", "dark"],
     "funny": ["humorous", "quirky", "silly", "mischievous", "playful"],
-    "calm": ["pastoral", "peaceful", "calm", "playful"],
-    "sad": ["melancholic", "sombre", "sad"],
-    "epic": ["epic", "heroic", "triumphant"],
+    "calm": ["pastoral", "peaceful", "calm", "dreamy", "nostalgic"],
+    "sad": ["melancholic", "sombre", "sad", "emotional", "sentimental"],
+    "emotional": ["emotional", "sentimental", "dramatic", "melancholic", "nostalgic"],   # moving, makes you feel it
+    "hopeful": ["hopeful", "inspiring", "uplifting", "emotional", "triumphant"],        # the warm, proud ending
+    "epic": ["epic", "heroic", "triumphant", "dramatic"],
 }
 BAD_MUSIC = ("techno", "dance", "edm", "trap", "rap", "hip-hop", "dubstep", "rock", "metal", "party", "club", "house",
              "disco", "reggaeton", "funk", "sexy", "christmas", "xmas", "sci-fi", "cyber", "synthwave", "lofi", "lo-fi",
@@ -162,6 +164,8 @@ GOOD_GENRES = {   # genres that fit a history story; per mood
     "calm": ("folk", "contemporary folk", "acoustic", "classical", "world", "film score", "piano", "ambient"),
     "sad": ("film score", "classical", "piano", "ambient", "atmospheres", "world"),
     "epic": ("film score", "orchestral hybrid", "orchestral", "march & military", "classical"),
+    "emotional": ("film score", "piano", "classical", "orchestral", "cinematic", "ambient", "atmospheres"),
+    "hopeful": ("film score", "orchestral", "piano", "classical", "cinematic", "orchestral hybrid", "acoustic"),
 }
 
 
@@ -192,7 +196,7 @@ def music_by_mood(cands_dir: str, analysed: list[dict]) -> dict:
         order = {g: i for i, g in enumerate(GOOD_GENRES[mood])}
         ranked = sorted(count, key=lambda k: (order.get(genre.get(k), 99), -count[k], ok[k]["loudness_spread"]))
         out[mood] = [{"file": files[k][0], "name": files[k][1], "genre": genre.get(k), "pages": count[k]}
-                     for k in ranked[:5]]
+                     for k in ranked[:10]]
     return out
 
 
