@@ -35,7 +35,7 @@ THEN: (at "And my") close-up of KAI's face inside the CAVE in warm firelight, on
 KAI: No doctors. No pills. No hospitals anywhere, for thousands of years. And my tooth is killing me.
 
 # SCENE 2
-PICTURE: inside the CAVE in warm firelight, KAI looking at the viewer with a worried face, holding his cheek, no other people
+PICTURE: inside the CAVE in warm firelight, KAI looking at the viewer with a worried face, one hand on his cheek and his other arm hanging down at his side, exactly two arms, no other people
 MOOD: tense
 THEN: (at "when") inside the CAVE in warm firelight, KAI lying on a fur with a pale sick face and sweat drops on his head, the campfire far away on the left, no other people
 THEN: (at "Most") outdoors in the VALLEY at dusk, KAI looking at the viewer with one eyebrow raised and a doubtful face, both arms down at his sides, no other people
