@@ -187,7 +187,7 @@ KAI: Thirteen thousand years ago, in the mountains of Italy. This is the healer.
 # SCENE 20
 PICTURE: outdoors under a rocky cliff shelter in the mountains of Italy in daylight, the OLD MAN lying on his back on a fur on the ground, looking up scared, no other people
 MOOD: tense
-THEN: (at "She") close-up of the OLD MAN lying on his back with his mouth wide open, a dark open mouth with no teeth showing, no other people
+THEN: (at "She") outdoors under a rocky cliff shelter in the mountains of Italy in daylight, the OLD MAN lying on his back on a fur with his mouth wide open, a dark open mouth with no teeth showing, both arms lying straight along his sides, exactly two arms and two hands, no other people
 THEN: (at "Then") close-up of the HEALER's hand holding a small sharp pointed grey flint stone, no other people
 KAI: Step one. He lies down on his back. She opens his mouth wide. Then she picks up a tiny pointed flint.
 
