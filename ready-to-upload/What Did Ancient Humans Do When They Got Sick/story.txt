@@ -30,7 +30,7 @@ MUSIC: tense
 TEXT: NO DOCTORS?
 SFX: hit
 THEN: (at "No hospitals") outdoors in the VALLEY in daylight, a wide empty green valley with a river and pine forests, no buildings, no people
-THEN: (at "And my") close-up of KAI's face inside the CAVE in warm firelight, one cheek big and swollen, eyes squeezed shut, sweat drops flying, no other people
+THEN: (at "And my") close-up of KAI's face inside the CAVE in warm firelight, one cheek big and swollen, eyes squeezed shut, sweat drops flying, the campfire far behind him on the right, nothing in his lap, no other people
 KAI: No doctors. No pills. No hospitals anywhere, for thousands of years. And my tooth is killing me.
 
 # SCENE 2
@@ -42,7 +42,7 @@ THEN: (at "But") close-up of an old brown cartoon leg bone lying on a flat rock 
 KAI: So what did ancient humans actually do when they got sick or hurt? Most people think they just died. But the bones tell a different story.
 
 # SCENE 3
-PICTURE: inside the CAVE in warm firelight, KAI holding up one finger with an excited face, no other people
+PICTURE: inside the CAVE in warm firelight, KAI sitting on a fur to the left of the campfire, the fire beside him and not in front of him, holding up one finger with an excited face, no other people
 MOOD: shock
 SFX: sting
 THEN: (at "how they") close-up of a single big cartoon tooth with a black rotten hole in it, lying on a flat stone, no people
@@ -109,7 +109,7 @@ THEN: (at "right") close-up of the NEANDERTHAL with one hand on his cheek, eyes 
 KAI: Step two. He puts it in his mouth and chews it, slowly, for a long time. The bitter juice soaks into his gums, right around the sore tooth.
 
 # SCENE 11
-PICTURE: outdoors by the poplar tree in daylight, KAI standing next to the tree pointing at its bark with a surprised face, no other people
+PICTURE: outdoors by the poplar tree in daylight, KAI standing to the right of the tree with his whole body clear of the trunk, pointing at its bark with a surprised face, no other people
 MOOD: shock
 TEXT: ASPIRIN
 SFX: hit
@@ -149,7 +149,7 @@ THEN: (at "Scientists") inside a bright modern lab, a computer screen showing a 
 KAI: And how do we know any of this? His teeth were covered in hard tartar, the yellow crust your dentist scrapes off. Scientists scraped it and read the DNA inside.
 
 # SCENE 16
-PICTURE: inside a bright modern lab, the scientist with curly red hair smiling and pointing at the computer screen, no other people
+PICTURE: inside a bright modern lab, the scientist with curly red hair alone in the room, smiling and pointing at the computer screen, nobody else
 MOOD: happy
 THEN: (at "A tiny") close-up of an old brown cartoon Neanderthal skull with a heavy brow on a lab table, no people
 THEN: (at "for") outdoors, the dry rocky hill with the cave in Spain at sunset, no people
@@ -357,33 +357,33 @@ THEN: (at "His lower") outdoors in the snowy Alps in bright daylight, OTZI walki
 KAI: His body was found frozen in the ice. And scans show his knees were worn out. His lower back too. Every step hurt.
 
 # SCENE 41
-PICTURE: close-up of a stick figure leg with a few small groups of short black lines drawn on the skin, no people
+PICTURE: outdoors in the snowy Alps in bright daylight, OTZI sitting on a rock with one leather legging rolled up, a few small groups of short black lines drawn on his bare white stick figure knee, no other people
 MOOD: curious
 TEXT: 61 TATTOOS
 THEN: (at "And") outdoors in the snowy Alps by a small campfire, OTZI sitting on a rock looking at his own leg, no other people
 KAI: But his body has sixty-one tattoos. And here's how they made them.
 
 # SCENE 42
-PICTURE: close-up of a sharp bone needle making a tiny dot on a stick figure leg, no people
+PICTURE: outdoors in the snowy Alps by a small campfire, the HEALER kneeling and pressing a thin bone needle onto OTZI's bare knee, OTZI sitting on a rock with a brave face, no other people
 MOOD: tense
 THEN: (at "maybe") close-up of a sharp white bone needle lying on a flat stone, no people
 THEN: (at "Then") close-up of a small pile of black soot on a flat stone next to a campfire, no people
-THEN: (at "and") close-up of a stick figure leg with short black lines in the skin, no people
+THEN: (at "and") outdoors in the snowy Alps in bright daylight, OTZI sitting on a rock looking down at the short black lines on his bare knee, no other people
 KAI: First, they poke tiny holes in the skin maybe with a sharp bone point. Then they take black soot from the fire and rub it into the little wounds.
 
 # SCENE 43
 PICTURE: outdoors in the snowy Alps in bright daylight, KAI pointing at his own knee with a surprised face, no other people
 MOOD: shock
 SFX: ding
-THEN: (at "They're") close-up of a stick figure knee with a few short black lines on it, no people
-THEN: (at "his ankles") close-up of a stick figure ankle with a few short black lines on it, no people
+THEN: (at "They're") outdoors in the snowy Alps in bright daylight, OTZI pointing at the short black lines on his bare knee, no other people
+THEN: (at "his ankles") outdoors in the snowy Alps in bright daylight, OTZI sitting on a rock with his legging rolled up, short black lines on his bare ankle, no other people
 THEN: (at "Exactly") outdoors in the snowy Alps in bright daylight, OTZI touching his knee where the black lines are, with a calm face, no other people
 KAI: But these aren't pictures of animals. They're short lines, right on his knees, his ankles, and his back. Exactly where his joints hurt.
 
 # SCENE 44
 PICTURE: outdoors in the snowy Alps in bright daylight, KAI with a thinking face, one hand on his chin, no other people
 MOOD: curious
-THEN: (at "a bit") close-up of a few thin needles standing in a stick figure knee, on a plain light background, no people
+THEN: (at "a bit") outdoors in the snowy Alps in bright daylight, OTZI sitting on a rock with three thin needles standing in his bare knee, a calm face, no other people
 THEN: (at "thousands") outdoors in the snowy Alps in bright daylight, OTZI sitting on a rock in the snow, rubbing his knee, calm, no other people
 KAI: So scientists think this was a treatment, a bit like acupuncture, thousands of years before anyone called it that.
 
@@ -456,7 +456,7 @@ KAI: How do we know? In 2020, scientists dug in that cave and found a skeleton. 
 # SCENE 53
 PICTURE: close-up of red drops falling on a big green leaf, no people
 MOOD: tense
-THEN: (at "Step three") close-up of a leg wrapped in clean green leaves tied with a vine, no people
+THEN: (at "Step three") outdoors at the JUNGLE CAVE in daylight, the CHILD lying on the leaf mat, the left leg ending below the knee and wrapped in green leaves tied with a vine, no other people
 THEN: (at "maybe") close-up of a pile of fresh green jungle leaves and a small wooden bowl of green paste, no people
 KAI: Step two. Stop the bleeding, fast. Step three. Keep the wound clean, maybe with plants from the jungle.
 
@@ -485,9 +485,9 @@ THEN: (at "No") close-up of a clean white cartoon bone with a green check mark n
 KAI: But the child survived. The bone end healed round and smooth. No sign of infection at all.
 
 # SCENE 57
-PICTURE: outdoors in the green jungle in daylight, the CHILD, a little older, walking with a long wooden crutch under one arm, no other people
+PICTURE: outdoors in the green jungle in daylight, the CHILD, a little older, with only one leg (the left leg ends below the knee), walking with a long wooden crutch under one arm, no other people
 MOOD: happy
-THEN: (at "for") outdoors in the green jungle in daylight, the CHILD, now a teenager, with a wooden crutch, smiling, no other people
+THEN: (at "for") outdoors in the green jungle in daylight, the CHILD, now a teenager, with only one leg (the left leg ends below the knee), leaning on a wooden crutch, smiling, no other people
 THEN: (at "on") outdoors at the JUNGLE CAVE in daylight, the CHILD standing on one leg holding a wooden crutch, looking out at the jungle, no other people
 KAI: And the kid kept living, for six to nine more years, on one leg, in these mountains.
 
@@ -507,10 +507,10 @@ KAI: And when the kid died, years later, they buried them with care, in that cav
 # SCENE 60
 PICTURE: outdoors at the mouth of a rocky cave in the mountains in daylight, the NEANDERTHAL sitting on a rock, no other people
 MOOD: sad
-THEN: (at "One") outdoors at the mouth of the rocky cave, the NEANDERTHAL with only one arm, the other sleeve empty, no other people
+THEN: (at "One") outdoors at the mouth of the rocky cave, the NEANDERTHAL standing with only one arm: his right arm is missing and the right side of his fur cloak hangs empty, no other people
 THEN: (at "was") close-up of the NEANDERTHAL's face with one eye closed, a sad face, no other people
-THEN: (at "Alone") outdoors at the mouth of the rocky cave at sunset, the NEANDERTHAL sitting by one small campfire, no other people
-THEN: (at "because") close-up of a hand giving a piece of roasted meat to another hand, no other people
+THEN: (at "Alone") outdoors at the mouth of the rocky cave at sunset, the NEANDERTHAL sitting all alone by one small campfire, nobody else
+THEN: (at "because") close-up of a piece of roasted meat on a big green leaf next to a small campfire, no people
 KAI: And even Neanderthals did this. One man in Iraq lost his arm, was blind in one eye, and nearly deaf. Alone, he'd have died. But he lived for years, because his group took care of him.
 
 // ===================== ENDING =====================
@@ -536,13 +536,13 @@ KAI: That quote is a myth. Nobody can find where it really comes from. But the r
 # SCENE 63
 PICTURE: inside the CAVE in warm firelight, the HEALER handing KAI a strip of bark with a kind smile, no other people
 MOOD: calm
-THEN: (at "They had") close-up of a strip of grey-white poplar bark in a small white cartoon hand, no other people
+THEN: (at "They had") inside the CAVE in warm firelight, a strip of grey-white poplar bark lying on a fur, no people
 THEN: (at "tar") close-up of a single big cartoon tooth with a black tar filling, no people
 THEN: (at "and") close-up of a cartoon drawing of a round grey skull with a healed round hole on top, lying on a flat rock in daylight, no people
 KAI: When they got sick, they didn't just wait. They had bark for the pain, tar for the teeth, and flint for the skull.
 
 # SCENE 64
-PICTURE: close-up of a single small round white pill in a small white cartoon hand, no other people
+PICTURE: close-up of a single small round white pill lying on a fur in warm firelight, no people
 MOOD: calm
 THEN: (at "for") outdoors at the mouth of a rocky cave on a dry hill with oak trees in Spain in daylight, the NEANDERTHAL sitting on a rock chewing a strip of bark with a calm face, no other people
 THEN: (at "chewing") outdoors by the river in daylight, a tall poplar tree with grey-white bark, no people
@@ -551,7 +551,7 @@ KAI: So next time you take a pill for a headache, remember the Neanderthal chewi
 # SCENE 65
 PICTURE: outdoors at the JUNGLE CAVE at sunset, the HEALER and the CHILD with a wooden crutch sitting side by side on a rock, looking at the jungle, no other people
 MOOD: calm
-THEN: (at "And") close-up of an old hand and a small hand holding each other, no other people
+THEN: (at "And") outdoors at the JUNGLE CAVE at sunset, the HEALER and the CHILD holding hands and smiling, no other people
 KAI: But more than anything, they had each other. And that was the first medicine.
 
 # SCENE 66

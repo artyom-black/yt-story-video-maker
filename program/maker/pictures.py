@@ -87,7 +87,12 @@ def _short_kai(text, st):
     return kai_clothes(text, st)
 
 
-def scene_prompt(text, pic, st, one=False):
+HAIR_KAI = "Only the main character has messy brown hair; everyone else has other hair, a headscarf or is bald."
+HAIR_OTHERS = ("Each person has exactly the hair described for them (white, grey, yellow, black or bald); nobody has "
+               "messy brown hair.")
+
+
+def scene_prompt(text, pic, st, one=False, legacy=False):
     place = _short_place(st)
     if re.search(r"\bmodern\b|1[6-9]00s|laboratory|\b19\d\d\b|\b20\d\d\b", pic, re.I):
         place = "Draw exactly the place, time and light described."
@@ -100,7 +105,10 @@ def scene_prompt(text, pic, st, one=False):
         return f"{HEAD_THINGS}{text}. {place} {TAIL_THINGS}"
     if re.search(r"\b(fire|campfire|firelight)\b", pic, re.I):
         place += " There is one fire only; people sit or stand beside it, never in it or on it."
-    return f"{HEAD}{text}. {'One person only. ' if one else ''}{place} {_short_kai(pic, st)}{TAIL}"
+    tail = TAIL
+    if not legacy and not re.search(r"\bKAI\b", pic):       # no Kai: never mention brown hair (the AI copied it onto everyone)
+        tail = TAIL.replace(HAIR_KAI, HAIR_OTHERS)
+    return f"{HEAD}{text}. {'One person only. ' if one else ''}{place} {_short_kai(pic, st)}{tail}"
 
 
 def _place_rule(st):
@@ -356,6 +364,10 @@ def jobs(st, assets):
             if re.search(r"\bno people\b|\bno humans\b", pic, re.I):
                 place += " There are no people at all in this picture."
             prompt = scene_prompt(text, pic, st)
+            old = scene_prompt(text, pic, st, legacy=True)   # drawn before the hair fix: kept unless asked to redraw
+            if old != prompt and not (label(os.path.splitext(os.path.basename(path))[0]).lower() in redo_requests()) \
+                    and os.path.exists(_named(path, old)):
+                prompt = old
             v8 = prompt.replace(" If the description names no place, draw a simple medieval outdoor background (a wheat "
                                 "field or a muddy village lane under the sky): never a modern room, never an empty white "
                                 "background. Objects and animals never have faces.", "")
