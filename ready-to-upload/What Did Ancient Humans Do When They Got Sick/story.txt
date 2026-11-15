@@ -377,7 +377,7 @@ KAI: First, they poke tiny holes in the skin maybe with a sharp bone point. Then
 PICTURE: outdoors in the snowy Alps in bright daylight, KAI pointing at his own knee with a surprised face, no other people
 MOOD: shock
 SFX: ding
-THEN: (at "They're") outdoors in the snowy Alps in bright daylight, OTZI pointing at the short black lines on his bare knee, no other people
+THEN: (at "They're") outdoors in the snowy Alps in bright daylight, OTZI sitting on a grey rock with both legs bent normally and both feet flat on the snow, his right legging rolled up to show short black lines on his bare knee, pointing at them with one finger, his other hand resting on his thigh, exactly two legs and two arms, no other people
 THEN: (at "his ankles") outdoors in the snowy Alps in bright daylight, OTZI sitting on a rock with his legging rolled up, short black lines on his bare ankle, no other people
 THEN: (at "Exactly") outdoors in the snowy Alps in bright daylight, OTZI touching his knee where the black lines are, with a calm face, no other people
 KAI: But these aren't pictures of animals. They're short lines, right on his knees, his ankles, and his back. Exactly where his joints hurt.
