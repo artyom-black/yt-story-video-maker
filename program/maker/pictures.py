@@ -127,7 +127,7 @@ def _gen(prompt, w, h, seed, refs, out):
     try:
         data = generate(prompt, w, h, seed=seed, refs=refs)
     except RuntimeError as ex:
-        if "ALLOWANCE" in str(ex) or "429" in str(ex):
+        if "ALLOWANCE" in str(ex) or "HTTP 429" in str(ex):     # (not any "429": request ids contain digits)
             raise AllowanceUsedUp(str(ex))
         raise
     tmp = out + ".part"
