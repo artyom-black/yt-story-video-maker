@@ -287,6 +287,12 @@ def vignette(size, strength):
 SOFT_PROBLEMS = ("people not drawn as stick figures", "Kai appears more often", "sizes are unreal")
 
 
+def track_id(path):
+    """'.../staring-at-the-night-sky__168.mp3' -> '168' (not '1683': the 3 of '.mp3' is not part of it)."""
+    m = re.search(r"__(\d+)", os.path.basename(path))
+    return m.group(1) if m else os.path.basename(path)
+
+
 def earlier_music(st):
     """Track numbers the channel's other videos already use (channel/used-music.txt: "<video slug> <track>")."""
     try:
@@ -402,7 +408,7 @@ def make_plan(st, assets, kit_dir, cands):
     chosen = {}
     used = set()
     earlier = earlier_music(st)                                # every video gets its own music
-    tid = lambda tr: re.sub(r"\D", "", tr["file"].split("__")[-1])
+    tid = lambda tr: track_id(tr["file"])
     for run in music_runs:
         m = run["mood"]
         if m == "none" or m in chosen:
@@ -837,7 +843,7 @@ def build(story_path, assets, kit_dir, cands, out_dir, workers=None):
                "sounds": len(placed)}, open(os.path.join(out_dir, "edit.json"), "w"), indent=1)
     with open(os.path.join(out_dir, "music_used.txt"), "w") as f:
         for r in {r["file"] for r in music_runs if r.get("file")}:
-            f.write(re.sub(r"\D", "", os.path.basename(r).split("__")[-1]) + "\n")
+            f.write(track_id(r) + "\n")
     shutil.rmtree(work, ignore_errors=True)
     print("wrote", final, f"{length / 60:.1f} min")
     return final

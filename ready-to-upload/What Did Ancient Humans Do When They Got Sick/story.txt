@@ -563,5 +563,7 @@ KAI: As for my tooth? She's offering me tar. No thanks. I'll take the bark.
 # SCENE 67
 PICTURE: outdoors at the opening of the CAVE at sunset, KAI standing and waving goodbye to the viewer with one raised hand, his other arm down at his side, a big closed-mouth smile, the campfire far behind him on the left, no other people
 MOOD: happy
+THEN: (at "Which") inside the CAVE in warm firelight, KAI sitting by the fire with one hand on his chin and a curious face, the fire beside him, no other people
+THEN: (at "Bark") close-up of a strip of grey-white poplar bark, a lump of black tar and a sharp grey flint blade side by side on a flat stone, no people
 THEN: (at "See") outdoors in the VALLEY at night under a sky full of stars, no people
-KAI: Subscribe, because next time, it gets weirder. See you there.
+KAI: Subscribe, because next time, it gets weirder. Which cure would you try first? Bark, tar, or the skull drill? See you there.

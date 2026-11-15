@@ -366,7 +366,7 @@ def jobs(st, assets):
             prompt = scene_prompt(text, pic, st)
             old = scene_prompt(text, pic, st, legacy=True)   # drawn before the hair fix: kept unless asked to redraw
             if old != prompt and not (label(os.path.splitext(os.path.basename(path))[0]).lower() in redo_requests()) \
-                    and os.path.exists(_named(path, old)):
+                    and os.path.exists(_named(path, old)) and not os.path.exists(_named(path, prompt)):
                 prompt = old
             v8 = prompt.replace(" If the description names no place, draw a simple medieval outdoor background (a wheat "
                                 "field or a muddy village lane under the sky): never a modern room, never an empty white "
