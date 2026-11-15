@@ -528,7 +528,7 @@ THEN: (at "was") close-up of a single big cartoon leg bone with a thick healed b
 KAI: You've maybe heard a famous quote that the first sign of civilization was a healed leg bone.
 
 # SCENE 62
-PICTURE: inside the CAVE in warm firelight, KAI shaking his head with a doubtful face, one finger raised, no other people
+PICTURE: inside the CAVE in warm firelight, KAI sitting on a fur to the left of the campfire with a doubtful face, his right hand raised with one finger up, his left hand resting on his left knee in plain view, exactly two arms and two hands, no other people
 MOOD: funny
 TEXT: MYTH
 SFX: sting
