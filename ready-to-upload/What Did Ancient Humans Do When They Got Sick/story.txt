@@ -55,7 +55,7 @@ SFX: sting
 THEN: (at "oldest surgery") close-up of a sharp blade of rough chipped grey flint stone, not metal, lying on a flat rock in daylight, no people
 THEN: (at "thirty-one thousand") outdoors in a steep green jungle with tall trees and a big limestone cliff with a cave mouth, in misty morning light, no people
 THEN: (at "a kid") outdoors in a green jungle in daylight, a small stick figure child with short straight black hair in a simple brown leather wrap sitting on a rock, smiling a little, no other people
-THEN: (at "show you") close-up of a small sharp blade of rough chipped grey flint stone, not metal, lying on a fur in firelight, no people
+THEN: (at "show you") close-up of a small sharp blade of rough chipped grey flint stone, not metal, lying on a soft brown fur, no fire, no people
 THEN: (at "And the patient") outdoors at the opening of the CAVE in daylight, KAI with a shocked face, both hands on his cheeks, the campfire a few steps to his left side, far from his legs, no other people
 KAI: And stay to the end, because I'll show you the oldest surgery ever found. It happened thirty-one thousand years ago. And the patient was a kid.
 
@@ -638,7 +638,7 @@ THEN: (at "most human thing") close-up of a wooden bowl of warm soup on a flat s
 THEN: (at "took care of each other") inside the CAVE in warm firelight, the FRIEND putting a fur over KAI's shoulders, the HEALER smiling, exactly three people, no other people
 THEN: (at "Forty thousand years ago") inside the CAVE in warm firelight, KAI, the HEALER and the FRIEND laughing together with closed mouths by the fire, no other people
 THEN: (at "your best medicine") close-up of a bundle of green herbs lying on a flat rock in firelight, no people
-THEN: (at "your friends") inside the CAVE in warm firelight, three people sitting in a row: the FRIEND on the left, KAI with his messy brown hair and no beard in the middle, the HEALER on the right, the campfire in front of them, all smiling, no other people
+THEN: (at "your friends") inside the CAVE in warm firelight, three people sitting in a row: the FRIEND on the left, KAI with his messy brown hair and no beard in the middle, the HEALER on the right, the small campfire on the floor two steps in front of them, far from their legs, all smiling, no other people
 KAI: But most of all, they did the most human thing there is. They took care of each other. Forty thousand years ago, your best medicine wasn't a plant. It was your friends.
 
 # SCENE 63

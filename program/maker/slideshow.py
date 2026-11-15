@@ -224,6 +224,11 @@ def vignette(size, strength):
     return _VIGNETTE[(size, strength)]
 
 
+# The checker often says these about good stick figure pictures. Hiding a picture for them only leaves the one
+# before it on screen far too long, so the picture is still shown (the picture sheets are checked by eye).
+SOFT_PROBLEMS = ("people not drawn as stick figures", "Kai appears more often", "sizes are unreal")
+
+
 def make_plan(st, assets, kit_dir, cands):
     kit = {c["kit_file"]: c for ch in json.load(open(os.path.join(kit_dir, "kit.json")))["roles"].values() for c in ch}
     music_info = json.load(open(os.path.join(kit_dir, "kit.json")))["music"]
@@ -251,7 +256,9 @@ def make_plan(st, assets, kit_dir, cands):
         for k, (word, _pic) in enumerate(s.all_pictures):
             key = f"scene_{s.number:03d}" + ("" if k == 0 else f"x{k + 1}")
             path = files[key]
-            if checks.get(os.path.basename(path), {}).get("status") == "bad" or not os.path.exists(path):
+            ck = checks.get(os.path.basename(path), {})
+            hard = [p for p in ck.get("problems", []) if not p.startswith(SOFT_PROBLEMS)]
+            if (ck.get("status") == "bad" and hard) or not os.path.exists(path):
                 if not (pics or last_good):              # a broken picture is never shown: keep the one before
                     pics.append(path)
                     switch.append(0.0); grades.append(life_grade(_pic))
