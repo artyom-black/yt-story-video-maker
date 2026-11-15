@@ -1,0 +1,48 @@
+{
+ "length": 484.32000000000005,
+ "music": [
+  {
+   "mood": "tense",
+   "start": 0.1,
+   "end": 35.47,
+   "file": "sound_candidates/mood_dramatic/classical-vibes-5__688.mp3"
+  },
+  {
+   "mood": "calm",
+   "start": 35.47,
+   "end": 131.04999999999998,
+   "file": "sound_candidates/mood_dreamy/wedding-01__657.mp3"
+  },
+  {
+   "mood": "tense",
+   "start": 131.04999999999998,
+   "end": 291.5799999999999,
+   "file": "sound_candidates/mood_dramatic/classical-vibes-5__688.mp3"
+  },
+  {
+   "mood": "calm",
+   "start": 291.5799999999999,
+   "end": 345.5399999999999,
+   "file": "sound_candidates/mood_dreamy/wedding-01__657.mp3"
+  },
+  {
+   "mood": "emotional",
+   "start": 345.5399999999999,
+   "end": 408.10999999999996,
+   "file": "sound_candidates/mood_sentimental/romantic__659.mp3"
+  },
+  {
+   "mood": "hopeful",
+   "start": 408.10999999999996,
+   "end": 443.04,
+   "file": "sound_candidates/mood_emotional/classical-vibes-2__682.mp3"
+  },
+  {
+   "mood": "emotional",
+   "start": 443.04,
+   "end": 484.32000000000005,
+   "file": "sound_candidates/mood_sentimental/romantic__659.mp3"
+  }
+ ],
+ "sounds": 31
+}
