@@ -30,6 +30,7 @@ MUSIC: tense
 TEXT: NO DOCTORS?
 SFX: hit
 THEN: (at "No hospitals") outdoors in the VALLEY in daylight, a wide empty green valley with a river and pine forests, no buildings, no people
+THEN: (at "for thousands") inside the CAVE in warm firelight, close-up of the red deer and handprint paintings on the grey rock wall, no people
 THEN: (at "And my") close-up of KAI's face inside the CAVE in warm firelight, one cheek big and swollen, eyes squeezed shut, sweat drops flying, the campfire far behind him on the right, nothing in his lap, no other people
 KAI: No doctors. No pills. No hospitals anywhere, for thousands of years. And my tooth is killing me.
 
